@@ -1,3 +1,7 @@
+2003-01-19  Marius Andreiana <marius galuna.ro>
+
+	* configure.in: added 'ro' to ALL_LINGUAS
+
 2003-01-16  Sebastian Rittau  <srittau@jroger.in-berlin.de>
 
 	* libgnomecanvas/gnome-canvas-shape.c (gnome_canvas_shape_init):
@@ -253,7 +257,7 @@
 
 	* configure.in: Release 1.112.1
 
-2002-03-03  Tıivo Leedj‰rv  <leedjarv@interest.ee>
+2002-03-03  T√µivo Leedj√§rv  <leedjarv@interest.ee>
 
 	* configure.in (ALL_LINGUAS): Added et (Estonian).
 
@@ -1323,7 +1327,7 @@ Tue Jun 26 11:29:54 2001  Tim Janik  <timj@gtk.org>
 	This is a good test case for fixing the breakage since it is only
 	caused in gdk mode rather then aa canvas.
 
-2001-06-19  HÈctor GarcÌa ¡lvarez <hector@scouts-es.org>
+2001-06-19  H√©ctor Garc√≠a √Ålvarez <hector@scouts-es.org>
 
 	* configure.in: added "es" for Spanish to $ALL_LINGUAS
 	
