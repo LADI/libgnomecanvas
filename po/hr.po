@@ -4,9 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2004-02-05 23:50+CET\n"
+"POT-Creation-Date: 2004-03-13 12:08+0100\n"
+"PO-Revision-Date: 2004-03-13 12:08+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -111,10 +110,8 @@ msgid "Rise"
 msgstr "Dizanje"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
-"Odmak teksta od osnovne linije (ispod linije ukoliko je vrijednost negativna)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr "Odmak teksta od osnovne linije (ispod linije ukoliko je vrijednost negativna)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -156,7 +153,7 @@ msgstr "Boja teksta, kao Gdk boja"
 
 #: libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Boja teksta, kao kombinacija cjelih brojeva za R/G/B/A"
+msgstr "Boja teksta, kao kombinacija cijelih brojeva za R/G/B/A"
 
 #: libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -232,7 +229,7 @@ msgstr "Bilo da ovaj tag utječe na rast"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "Postavljanje presjecanja"
+msgstr "Postavljanje presijecanja"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -303,18 +300,16 @@ msgid "Cursor Visible"
 msgstr "Kursor je vidljiv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
-msgstr "Da li je kursor vidljiv na ovom dijelu teksta?"
+msgstr "Je li pokazivač vidljiv na ovom dijelu teksta?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
 msgstr "Treperenje kursora"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
-msgstr "Da li kursor trepće na ovom dijelu teksta?"
+msgstr "Da li pokazivač trepće na ovom dijelu teksta?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
@@ -378,7 +373,7 @@ msgstr "Točkice unutar omotavanja"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr "Broj točkica koje treba staviti unurat omotača"
+msgstr "Broj točkica koje treba staviti unutar omotača"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
@@ -403,3 +398,4 @@ msgstr "Podešavanje uvlačenja"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Broj točkica za uvlačenje"
+
