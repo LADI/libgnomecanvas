@@ -1,5 +1,6 @@
 #include <config.h>
-#include <gtk/gtktypeutils.h>
+#include <gobject/genums.h>
+#include <gobject/gboxed.h>
 #include "gnome-canvas.h"
 #include "gnome-canvas-util.h"
 
@@ -17,8 +18,8 @@ gnome_canvas_type_init(void) {
 
     static struct {
       gchar           *type_name;
-      GtkType         *type_id;
-      GtkType          parent;
+      GType           *type_id;
+      GType            parent;
       gconstpointer    pointer1;
       gconstpointer    pointer2;
       gconstpointer    pointer3;
@@ -32,16 +33,16 @@ gnome_canvas_type_init(void) {
 
     for (i = 0; i < GNOME_TYPE_NUM_BUILTINS; i++)
       {
-	GtkType type_id = GTK_TYPE_INVALID;
+	GType type_id = G_TYPE_INVALID;
 	g_assert (builtin_info[i].type_name != NULL);
-	if ( builtin_info[i].parent == GTK_TYPE_ENUM )
-	  type_id = g_enum_register_static (builtin_info[i].type_name, (GtkEnumValue *)builtin_info[i].pointer1);
-	else if ( builtin_info[i].parent == GTK_TYPE_FLAGS )
-	  type_id = g_flags_register_static (builtin_info[i].type_name, (GtkFlagValue *)builtin_info[i].pointer1);
-	else if ( builtin_info[i].parent == GTK_TYPE_BOXED )
+	if ( builtin_info[i].parent == G_TYPE_ENUM )
+	  type_id = g_enum_register_static (builtin_info[i].type_name, (GEnumValue *)builtin_info[i].pointer1);
+	else if ( builtin_info[i].parent == G_TYPE_FLAGS )
+	  type_id = g_flags_register_static (builtin_info[i].type_name, (GFlagsValue *)builtin_info[i].pointer1);
+	else if ( builtin_info[i].parent == G_TYPE_BOXED )
 	  type_id = g_boxed_type_register_static (builtin_info[i].type_name, (GBoxedInitFunc)builtin_info[1].pointer1, (GBoxedCopyFunc)builtin_info[i].pointer2, (GBoxedFreeFunc)builtin_info[i].pointer2, builtin_info[i].boolean1);
 
-	g_assert (type_id != GTK_TYPE_INVALID);
+	g_assert (type_id != G_TYPE_INVALID);
 	(*builtin_info[i].type_id) = type_id;
       }
   }

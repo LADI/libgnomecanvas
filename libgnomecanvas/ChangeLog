@@ -1,3 +1,7 @@
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
+	* gnomecanvastypes.c: Migrate to GObject.
+
 2001-03-24  Martin Baulig  <baulig@suse.de>
 
 	* gnomecanvas-boxed.defs (GnomeCanvasPoints): This is
