@@ -1,3 +1,8 @@
+2001-09-14  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_render):
+	Use NEAREST scaling to be consistant with the rotated case.
+
 2001-09-13  Alex Larsson  <alexl@redhat.com>
 
 	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_render):
