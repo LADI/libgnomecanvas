@@ -1,3 +1,10 @@
+2002-05-02  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas.c
+	(gnome_canvas_set_pixels_per_unit): If center_scroll_region is
+	off, make the upper-left corner of the window the anchor point for
+	zooming.
+
 2002-05-01  Pablo Saratxaga  <pablo@mandrakesoft.com>
 
 	* configure.in: Added Vietnamese (vi) to ALL_LINGUAS

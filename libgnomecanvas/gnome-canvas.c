@@ -3349,27 +3349,38 @@ gnome_canvas_get_center_scroll_region (GnomeCanvas *canvas)
  *
  * Sets the zooming factor of a canvas by specifying the number of pixels that
  * correspond to one canvas unit.
+ *
+ * The anchor point for zooming, i.e. the point that stays fixed and all others
+ * zoom inwards or outwards from it, depends on whether the canvas is set to
+ * center the scrolling region or not.  You can control this using the
+ * gnome_canvas_set_center_scroll_region() function.  If the canvas is set to
+ * center the scroll region, then the center of the canvas window is used as the
+ * anchor point for zooming.  Otherwise, the upper-left corner of the canvas
+ * window is used as the anchor point.
  **/
 void
 gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 {
-	double cx, cy;
+	double ax, ay;
 	int x1, y1;
-	int center_x, center_y;
+	int anchor_x, anchor_y;
 
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (n > GNOME_CANVAS_EPSILON);
 
-	center_x = GTK_WIDGET (canvas)->allocation.width / 2;
-	center_y = GTK_WIDGET (canvas)->allocation.height / 2;
+	if (canvas->center_scroll_region) {
+		anchor_x = GTK_WIDGET (canvas)->allocation.width / 2;
+		anchor_y = GTK_WIDGET (canvas)->allocation.height / 2;
+	} else
+		anchor_x = anchor_y = 0;
 
-	/* Find the coordinates of the screen center in units. */
-	cx = (canvas->layout.hadjustment->value + center_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
-	cy = (canvas->layout.vadjustment->value + center_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
+	/* Find the coordinates of the anchor point in units. */
+	ax = (canvas->layout.hadjustment->value + anchor_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
+	ay = (canvas->layout.vadjustment->value + anchor_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
 
 	/* Now calculate the new offset of the upper left corner. */
-	x1 = ((cx - canvas->scroll_x1) * n) - center_x;
-	y1 = ((cy - canvas->scroll_y1) * n) - center_y;
+	x1 = ((ax - canvas->scroll_x1) * n) - anchor_x;
+	y1 = ((ay - canvas->scroll_y1) * n) - anchor_y;
 
 	canvas->pixels_per_unit = n;
 
