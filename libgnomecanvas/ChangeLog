@@ -1,3 +1,8 @@
+2001-12-17  Darin Adler  <darin@bentspoon.com>
+
+	* gnome-canvas-rich-text.c: (gnome_canvas_rich_text_update):
+	Don't try to update the layout if it wasn't allocated yet.
+
 Wed Dec 12 21:45:08 2001  Tim Janik  <timj@gtk.org>
 
 	* gnome-canvas.c (gnome_canvas_class_init): fix canvas::aa

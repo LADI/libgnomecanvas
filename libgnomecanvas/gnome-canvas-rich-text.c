@@ -1878,8 +1878,9 @@ gnome_canvas_rich_text_update(GnomeCanvasItem *item, double *affine,
 	get_bounds(text, &x1, &y1, &x2, &y2);
 
 	gtk_text_buffer_get_iter_at_offset(text->_priv->buffer, &start, 0);
-	gtk_text_layout_validate_yrange(
-		text->_priv->layout, &start, 0, y2 - y1);
+	if (text->_priv->layout)
+		gtk_text_layout_validate_yrange(
+			text->_priv->layout, &start, 0, y2 - y1);
 
 	gnome_canvas_update_bbox(item, x1, y1, x2, y2);
 } /* gnome_canvas_rich_text_update */
