@@ -1,3 +1,7 @@
+2003-03-19  Paul Duffy <dubhthach@frink.nuigalway.ie>
+
+        * configure.in: Added "ga" to ALL_LINGUAS.
+
 2003-03-06  Sebastian Rittau  <srittau@jroger.in-berlin.de>
 
 	* libgnomecanvas/gnome-canvas.c (gnome_canvas_w2c_d): Corrected
