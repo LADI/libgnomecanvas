@@ -1,3 +1,9 @@
+2004-12-25  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* demos/canvas-curve.c: (create_canvas_bezier_curve): ANSIfication
+	* libgnomecanvas/gnome-canvas.c: (gnome_canvas_group_draw): NULL
+	vs 0.
+
 2004-11-08  Anders Carlsson  <andersca@gnome.org>
 
 	* configure.in: Update to 2.9.1

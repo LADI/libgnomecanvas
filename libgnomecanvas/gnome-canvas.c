@@ -1665,7 +1665,7 @@ gnome_canvas_group_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 {
 	GnomeCanvasGroup *group;
 	GList *list;
-	GnomeCanvasItem *child = 0;
+	GnomeCanvasItem *child = NULL;
 
 	group = GNOME_CANVAS_GROUP (item);
 

@@ -280,7 +280,7 @@ create_canvas (gboolean aa)
 }
 
 GtkWidget *
-create_canvas_bezier_curve ()
+create_canvas_bezier_curve (void)
 {
 	GtkWidget *vbox;
 	GtkWidget *label;
