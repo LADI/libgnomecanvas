@@ -115,7 +115,7 @@ enum {
 static void gnome_canvas_request_update    (GnomeCanvas *canvas);
 static void gnome_canvas_item_class_init   (GnomeCanvasItemClass *class);
 static void gnome_canvas_item_init         (GnomeCanvasItem      *item);
-static void gnome_canvas_item_shutdown     (GObject              *object);
+static void gnome_canvas_item_dispose      (GObject              *object);
 static void gnome_canvas_item_set_property (GObject               *object,
 					    guint                  param_id,
 					    const GValue          *value,
@@ -263,7 +263,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
-	gobject_class->shutdown = gnome_canvas_item_shutdown;
+	gobject_class->dispose = gnome_canvas_item_dispose;
 
 	class->realize = gnome_canvas_item_realize;
 	class->unrealize = gnome_canvas_item_unrealize;
@@ -428,9 +428,9 @@ redraw_if_visible (GnomeCanvasItem *item)
 		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
 }
 
-/* Standard object shutdown function for canvas items */
+/* Standard object dispose function for canvas items */
 static void
-gnome_canvas_item_shutdown (GObject *object)
+gnome_canvas_item_dispose (GObject *object)
 {
 	GnomeCanvasItem *item;
 
@@ -475,8 +475,7 @@ gnome_canvas_item_shutdown (GObject *object)
 	g_free (item->xform);
 	item->xform = NULL;
 
-	if (G_OBJECT_CLASS (item_parent_class)->shutdown)
-		(* G_OBJECT_CLASS (item_parent_class)->shutdown) (object);
+	(* G_OBJECT_CLASS (item_parent_class)->dispose) (object);
 }
 
 /* Realize handler for canvas items */

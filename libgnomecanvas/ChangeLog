@@ -1,3 +1,8 @@
+Mon Jul  2 06:53:24 2001  Tim Janik  <timj@gtk.org>
+
+	* gnome-canvas.c: s/shutdown/dispose/ according to recent
+	GObject changes.
+
 2001-06-28  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas-path-def.c (gnome_canvas_path_def_closepath): 
