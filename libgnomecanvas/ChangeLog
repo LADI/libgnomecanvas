@@ -1,3 +1,11 @@
+2001-11-16  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-line.c (item_to_canvas):
+	Move the subtraction by x/y here.
+	(gnome_canvas_line_draw): Move subtraction
+	of x/y into item_to_canvas, and use it for the
+	arrows too.
+
 2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_update):

@@ -1112,7 +1112,7 @@ gnome_canvas_line_unrealize (GnomeCanvasItem *item)
 
 static void
 item_to_canvas (GnomeCanvas *canvas, double *item_coords, GdkPoint *canvas_coords, int num_points,
-		int *num_drawn_points, double i2c[6])
+		int *num_drawn_points, double i2c[6], int x, int y)
 {
 	int i;
 	int old_cx, old_cy;
@@ -1134,8 +1134,8 @@ item_to_canvas (GnomeCanvas *canvas, double *item_coords, GdkPoint *canvas_coord
 	art_affine_point (&pc, &pi, i2c);
 	cx = floor (pc.x + 0.5);
 	cy = floor (pc.y + 0.5);
-	canvas_coords->x = cx;
-	canvas_coords->y = cy;
+	canvas_coords->x = cx - x;
+	canvas_coords->y = cy - y;
 	canvas_coords++;
 	old_cx = cx;
 	old_cy = cy;
@@ -1148,8 +1148,8 @@ item_to_canvas (GnomeCanvas *canvas, double *item_coords, GdkPoint *canvas_coord
 		cx = floor (pc.x + 0.5);
 		cy = floor (pc.y + 0.5);
 		if (old_cx != cx || old_cy != cy) {
-			canvas_coords->x = cx;
-			canvas_coords->y = cy;
+			canvas_coords->x = cx - x;
+			canvas_coords->y = cy - y;
 			old_cx = cx;
 			old_cy = cy;
 			canvas_coords++;
@@ -1185,16 +1185,11 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 	gnome_canvas_item_i2c_affine (item, i2c);
 
 	item_to_canvas (item->canvas, line->coords, points, line->num_points,
-			&actual_num_points_drawn, i2c);
+			&actual_num_points_drawn, i2c, x, y);
 
 	if (line->stipple)
 		gnome_canvas_set_stipple_origin (item->canvas, line->gc);
 
-	for (i = 0; i < actual_num_points_drawn; i++) {
-		points[i].x -= x;
-		points[i].y -= y;
-	}
-	
 	gdk_draw_lines (drawable, line->gc, points, actual_num_points_drawn);
 
 	if (points != static_points)
@@ -1206,13 +1201,13 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 
 	if (line->first_arrow) {
 		item_to_canvas (item->canvas, line->first_coords, points, NUM_ARROW_POINTS,
-				&actual_num_points_drawn, i2c);
+				&actual_num_points_drawn, i2c, x, y);
 		gdk_draw_polygon (drawable, line->gc, TRUE, points, actual_num_points_drawn );
 	}
 
 	if (line->last_arrow) {
 		item_to_canvas (item->canvas, line->last_coords, points, NUM_ARROW_POINTS,
-				&actual_num_points_drawn, i2c);
+				&actual_num_points_drawn, i2c, x, y);
 		gdk_draw_polygon (drawable, line->gc, TRUE, points, actual_num_points_drawn );
 	}
 }
