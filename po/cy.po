@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2003-05-12 13:09+0200\n"
-"PO-Revision-Date: 2003-05-31 03:12+0100\n"
+"POT-Creation-Date: 2003-05-31 21:02+0200\n"
+"PO-Revision-Date: 2003-06-01 01:33+0100\n"
 "Last-Translator: Dafydd Harries <daf@parnassus.ath.cx>\n"
 "Language-Team: Welsh <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,13 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2053
 # EFALLAI
+#: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
 msgstr "Datamegennu"
 
-#: libgnomecanvas/gnome-canvas.c:2054
 # EFALLAI
+#: libgnomecanvas/gnome-canvas.c:2054
 msgid "The antialiasing mode of the canvas."
 msgstr "Modd datamgennu'r cynfas"
 
@@ -39,18 +39,18 @@ msgstr "Modd datamgennu'r cynfas"
 msgid "Text"
 msgstr "Testun"
 
-#: libgnomecanvas/gnome-canvas-text.c:207
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
 msgstr "Y testun i'w lunio"
 
-#: libgnomecanvas/gnome-canvas-text.c:215
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
 msgstr "Tagiau"
 
-#: libgnomecanvas/gnome-canvas-text.c:216
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
 msgstr "Testun efo tagiau i'w lunio"
 
@@ -111,25 +111,25 @@ msgstr "Pwyntiau'r ffont"
 msgid "Font size in points"
 msgstr "Maint y ffont mewn pwyntiau"
 
+# EFALLAI
 #: libgnomecanvas/gnome-canvas-text.c:340
-# EFALLAI
 msgid "Rise"
-msgstr "Codiad"
+msgstr "Esgyniad"
 
-#: libgnomecanvas/gnome-canvas-text.c:341
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Atred y testun uwchben y sail-linell (islaw os yw'r codiad yn negyddol)"
+"Atred y testun uwchben y sail-linell (islaw os yw'r egyniad yn negyddol)"
 
-#: libgnomecanvas/gnome-canvas-text.c:351
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
 msgstr "Croesi"
 
-#: libgnomecanvas/gnome-canvas-text.c:352
 # EFALLAU
+#: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
 msgstr "Dylid croesi'r testun drwodd"
 
@@ -171,8 +171,8 @@ msgstr "Lliw y testun, fel cyfanrif R/G/B/A cyfansawdd"
 msgid "Text width"
 msgstr "Lled testun"
 
-#: libgnomecanvas/gnome-canvas-text.c:456
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
 msgstr "Lled y testun wedi ei lunio"
 
@@ -180,8 +180,8 @@ msgstr "Lled y testun wedi ei lunio"
 msgid "Text height"
 msgstr "Uchder testun"
 
-#: libgnomecanvas/gnome-canvas-text.c:464
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
 msgstr "Uchder y testun wedi ei lunio"
 
@@ -189,92 +189,92 @@ msgstr "Uchder y testun wedi ei lunio"
 msgid "Font family set"
 msgstr "Gosod teulu ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:473
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "A ydy'r tag yma yn effeithio ar y teulu ffont"
+msgstr "A ydy'r tag yma yn affeithio ar y teulu ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
 msgstr "Gosod arddull ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:477
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "A ydy'r tag yma yn effeithio ar arddull y ffont"
+msgstr "A ydy'r tag yma yn affeithio ar arddull y ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
 msgstr "Gosod amrywiant ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:481
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "A ydy'r tag yma yn effeithio ar amrywiant y ffont"
+msgstr "A ydy'r tag yma yn affeithio ar amrywiant y ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
 msgstr "Gosod pwysau ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:485
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "A ydy'r tag yma yn effeithio ar bwysau'r ffont"
+msgstr "A ydy'r tag yma yn affeithio ar bwysau'r ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
 msgstr "Gosod ymestyniad ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:489
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "A ydy'r tag yma yn effeithio ar ymestyniad y ffont"
+msgstr "A ydy'r tag yma yn affeithio ar ymestyniad y ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
 msgstr "Gosod maint ffont"
 
+# EFALLAI
 #: libgnomecanvas/gnome-canvas-text.c:493
-# EFALLAI
 msgid "Whether this tag affects the font size"
-msgstr "A ydy'r tag yma'n effeithio ar faint y ffont"
+msgstr "A ydy'r tag yma'n affeithio ar faint y ffont"
 
+# EFALLAI
 #: libgnomecanvas/gnome-canvas-text.c:496
-# EFALLAI
 msgid "Rise set"
-msgstr "Gosod codiad"
+msgstr "Gosod esgyniad"
 
+# EFALLAI
 #: libgnomecanvas/gnome-canvas-text.c:497
-# EFALLAI
 msgid "Whether this tag affects the rise"
-msgstr "A ydy'r tag yma yn effeithio ar godiad y ffont"
+msgstr "A ydy'r tag yma yn affeithio ar esgyniad y ffont"
 
-#: libgnomecanvas/gnome-canvas-text.c:500
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
 msgstr "Gosod croesi"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "A ydy'r tag yma yn effeithio ar grosei"
+msgstr "A ydy'r tag yma yn affeithio ar grosei"
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
 msgstr "Gosod tanlinelliad"
 
-#: libgnomecanvas/gnome-canvas-text.c:505
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "A ydy'r tag yma yn effeithio ar danlinelliad"
+msgstr "A ydy'r tag yma yn affeithio ar danlinelliad"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
 msgstr "Gosod graddfa"
 
-#: libgnomecanvas/gnome-canvas-text.c:509
 # EFALLAI
+#: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "A ydy'r tag yma yn effeithio ar raddfa'r ffont"
+msgstr "A ydy'r tag yma yn affeithio ar raddfa'r ffont"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text to display"
@@ -397,8 +397,8 @@ msgid "Pixels Inside Wrap"
 msgstr "Picseli o Fewn Amlapiad"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
-msgid "Number of pixels to put inside the yddwrap"
-msgstr "Y nifer o bicseli i'w rhoi o fewn ampliad"
+msgid "Number of pixels to put inside the wrap"
+msgstr "Y nifer o bicseli i'w rhoi o fewn yr ampliad"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
@@ -423,4 +423,3 @@ msgstr "Menoliad"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Y nifer o bicseli ar gyfer mewnoli"
-
