@@ -1,11 +1,11 @@
-# Translation of libgnomecanvas to Croatian
-# Copyright (C) Croatian team
+# Translation of libgnomecanvas to Croatiann
+# Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Robert Sedak <robert.sedak@sk.tel.hr>,
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 0\n"
-"POT-Creation-Date: 2003-11-06 18:12+0100\n"
-"PO-Revision-Date: 2003-12-31 18:45+CET\n"
+"POT-Creation-Date: 2004-02-01 17:10+0100\n"
+"PO-Revision-Date: 2004-02-05 23:50+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -300,7 +300,8 @@ msgid "Cursor Visible"
 msgstr "Kursor je vidljiv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Da li je kursor vidljiv na ovom dijelu teksta?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -308,7 +309,8 @@ msgid "Cursor Blink"
 msgstr "Treperenje kursora"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Da li kursor trepće na ovom dijelu teksta?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
