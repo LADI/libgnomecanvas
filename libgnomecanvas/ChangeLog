@@ -1,5 +1,13 @@
 2001-08-11  Martin Baulig  <baulig@suse.de>
 
+	* Makefile.am: Added gnome-canvas-rich-text.[ch].
+
+	* libgnomecanvas.h: #include <libgnomecanvas/gnome-canvas-rich-text.h>.
+
+	* gnome-canvas-rich-text.c (main): Removed, moved it into the canvas_demo.
+
+2001-08-11  Martin Baulig  <baulig@suse.de>
+
 	* gnome-canvas-rich-text.[ch]: Added Joe Shaws editable canvas text.
 	
 2001-07-31  Michael Meeks  <michael@ximian.com>
