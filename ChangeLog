@@ -1,6 +1,6 @@
 2002-03-05  Christian Meyer  <chrisime@gnome.org>
 
-	* de.po: Added 'de' to ALL_LINGUAS.
+	* configure.in: Added 'de' to ALL_LINGUAS.
 
 2002-03-04  Anders Carlsson  <andersca@gnu.org>
 
