@@ -1,3 +1,31 @@
+2001-05-18  Joe Shaw  <joe@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_key): Remove an assertion that
+	prevents events (notably key events) from getting to the canvas item.
+	Matches behavior on the stable branch.
+
+2001-05-06  ERDI Gergo  <cactus@cactus.rulez.org>
+
+	* gnome-canvas-text.[ch]: new 'scale' property that does 
+	post-font-size-setting scaling of font size
+
+2001-05-05  ERDI Gergo  <cactus@cactus.rulez.org>
+
+	* gnome-canvas-text.[ch]: new properties:
+	text_markup: the text of the canvas item, with inline Pango markup
+	tags
+	attributes: A read/writeable Pango attribute list of the rendered
+	text
+
+	style, variant, weight, stretch, size, size_points: atomic font 
+	properties
+	style_set, variant_set, weight_set, stretch_set, size_set: toggles
+	usage of font parameters on a per-parameter basis
+
+	underline, strikethrough, rise: atomic attribute elements
+	underline_set, strikethrough_set, rise_set: toggles usage of
+	attribute elements on a per-element basis
+	
 2001-04-29  Martin Baulig  <baulig@suse.de>
 
 	* libgnomecanvastypes.c (libgnomecanvas_init): Removed.
