@@ -2468,7 +2468,7 @@ gnome_canvas_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 static int
 emit_event (GnomeCanvas *canvas, GdkEvent *event)
 {
-	GdkEvent ev;
+	GdkEvent *ev;
 	gint finished;
 	GnomeCanvasItem *item;
 	GnomeCanvasItem *parent;
@@ -2530,36 +2530,26 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	 * offsets of the fields in the event structures.
 	 */
 
-	ev = *event;
+	ev = gdk_event_copy (event);
 
-	switch (ev.type)
+	switch (ev->type)
         {
 	case GDK_ENTER_NOTIFY:
 	case GDK_LEAVE_NOTIFY:
 		gnome_canvas_window_to_world (canvas,
-					      ev.crossing.x, ev.crossing.y,
-					      &ev.crossing.x, &ev.crossing.y);
+					      ev->crossing.x, ev->crossing.y,
+					      &ev->crossing.x, &ev->crossing.y);
 		break;
 
 	case GDK_MOTION_NOTIFY:
-                gnome_canvas_window_to_world (canvas,
-                                              ev.motion.x, ev.motion.y,
-                                              &ev.motion.x, &ev.motion.y);
-                break;
-
 	case GDK_BUTTON_PRESS:
 	case GDK_2BUTTON_PRESS:
 	case GDK_3BUTTON_PRESS:
-                gnome_canvas_window_to_world (canvas,
-                                              ev.motion.x, ev.motion.y,
-                                              &ev.motion.x, &ev.motion.y);
-                break;
-
 	case GDK_BUTTON_RELEASE:
-		gnome_canvas_window_to_world (canvas,
-					      ev.motion.x, ev.motion.y,
-					      &ev.motion.x, &ev.motion.y);
-		break;
+                gnome_canvas_window_to_world (canvas,
+                                              ev->motion.x, ev->motion.y,
+                                              &ev->motion.x, &ev->motion.y);
+                break;
 
 	default:
 		break;
@@ -2586,13 +2576,15 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 		g_object_ref (G_OBJECT (item));
 
 		g_signal_emit (item, item_signals[ITEM_EVENT], 0,
-			       &ev, &finished);
+			       ev, &finished);
 		
 		parent = item->parent;
 		g_object_unref (G_OBJECT (item));
 
 		item = parent;
 	}
+
+	gdk_event_free (ev);
 
 	return finished;
 }

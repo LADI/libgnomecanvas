@@ -2,6 +2,11 @@
 
 	* configure.in: Bump to 2.2.0.2.
 
+2003-02-27  Mike Kestner <mkestner@ximian.com>
+
+	* libgnomecanvas/gnome-canvas.c (emit_event): use gdk_event_copy
+	  and gdk_event_free to dup the event.
+
 2003-02-27  Hans Petter Jansson  <hpj@ximian.com>
 
 	* libgnomecanvas/gnome-canvas.c (gnome_canvas_map): Reinstate the
