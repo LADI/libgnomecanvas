@@ -3,8 +3,6 @@
 #include "testgnome.h"
 #include <gdk/gdkkeysyms.h>
 
-#ifdef GTK_HAVE_FEATURES_1_1_0
-
 
 static void
 zoom_changed (GtkAdjustment *adj, gpointer data)
@@ -675,6 +673,3 @@ create_canvas_primitives (void)
 
 	return vbox;
 }
-
-
-#endif

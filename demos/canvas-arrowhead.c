@@ -3,9 +3,6 @@
 #include "testgnome.h"
 
 
-#ifdef GTK_HAVE_FEATURES_1_1_0
-
-
 #define LEFT    50.0
 #define RIGHT  350.0
 #define MIDDLE 150.0
@@ -499,6 +496,3 @@ create_canvas_arrowhead (void)
 	set_arrow_shape (GNOME_CANVAS (canvas));
 	return vbox;
 }
-
-
-#endif

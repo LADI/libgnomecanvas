@@ -3,9 +3,6 @@
 #include "testgnome.h"
 
 
-#ifdef GTK_HAVE_FEATURES_1_1_0
-
-
 #define PIECE_SIZE 50
 
 
@@ -266,6 +263,3 @@ create_canvas_fifteen (void)
 
 	return vbox;
 }
-
-
-#endif
