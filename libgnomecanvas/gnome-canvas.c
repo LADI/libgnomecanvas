@@ -2790,36 +2790,6 @@ gnome_canvas_motion (GtkWidget *widget, GdkEventMotion *event)
 	return emit_event (canvas, (GdkEvent *) event);
 }
 
-/* Expose handler for the canvas */
-static gint
-gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
-{
-	GnomeCanvas *canvas;
-	ArtIRect rect;
-	ArtUta *uta;
-
-	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
-	g_return_val_if_fail (event != NULL, FALSE);
-
-	canvas = GNOME_CANVAS (widget);
-
-	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window)) return FALSE;
-
-	rect.x0 = event->area.x - canvas->zoom_xofs;
-	rect.y0 = event->area.y - canvas->zoom_yofs;
-	rect.x1 = event->area.x + event->area.width - canvas->zoom_xofs;
-	rect.y1 = event->area.y + event->area.height - canvas->zoom_yofs;
-
-	uta = art_uta_from_irect (&rect);
-	gnome_canvas_request_redraw_uta (canvas, uta);
-	gnome_canvas_update_now (canvas);
-
-	if (GTK_WIDGET_CLASS (canvas_parent_class)->expose_event)
-		return (* GTK_WIDGET_CLASS (canvas_parent_class)->expose_event) (widget, event);
-
-	return FALSE;
-}
-
 /* Key event handler for the canvas */
 static gint
 gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
@@ -2891,17 +2861,157 @@ gnome_canvas_focus_out (GtkWidget *widget, GdkEventFocus *event)
 #define IMAGE_WIDTH_AA 256
 #define IMAGE_HEIGHT_AA 64
 
+static void
+gnome_canvas_paint_rect (GnomeCanvas *canvas, gint x0, gint y0, gint x1, gint y1)
+{
+	GtkWidget *widget;
+	gint draw_x1, draw_y1;
+	gint draw_x2, draw_y2;
+	gint xblock, yblock;
+	guchar *px;
+	GdkPixmap *pixmap;
+
+	g_return_if_fail (!canvas->need_update);
+
+	widget = GTK_WIDGET (canvas);
+
+	draw_x1 = MAX (x0, canvas->layout.hadjustment->value - canvas->zoom_xofs);
+	draw_y1 = MAX (y0, canvas->layout.vadjustment->value - canvas->zoom_yofs);
+	draw_x2 = MIN (draw_x1 + GTK_WIDGET (canvas)->allocation.width, x1);
+	draw_y2 = MIN (draw_y1 + GTK_WIDGET (canvas)->allocation.height, y1);
+
+	/* As we can come from expose, we have to tile here */
+	xblock = (canvas->aa) ? IMAGE_WIDTH_AA : IMAGE_WIDTH;
+	yblock = (canvas->aa) ? IMAGE_HEIGHT_AA : IMAGE_HEIGHT;
+
+	px = NULL;
+	pixmap = NULL;
+
+	for (y0 = draw_y1; y0 < draw_y2; y0 += yblock) {
+		y1 = MIN (y0 + yblock, draw_y2);
+		for (x0 = draw_x1; x0 < draw_x2; x0 += xblock) {
+			x1 = MIN (x0 + xblock, draw_x2);
+
+			canvas->redraw_x1 = x0;
+			canvas->redraw_y1 = y0;
+			canvas->redraw_x2 = x1;
+			canvas->redraw_y2 = y1;
+			canvas->draw_xofs = x0;
+			canvas->draw_yofs = y0;
+
+			if (canvas->aa) {
+				GnomeCanvasBuf buf;
+				GdkColor *color;
+
+				if (!px) px = g_new (guchar, IMAGE_WIDTH_AA * IMAGE_HEIGHT_AA * 3);
+
+				buf.buf = px;
+				buf.buf_rowstride = IMAGE_WIDTH_AA * 3;
+				buf.rect.x0 = x0;
+				buf.rect.y0 = y0;
+				buf.rect.x1 = x1;
+				buf.rect.y1 = y1;
+				color = &widget->style->bg[GTK_STATE_NORMAL];
+				buf.bg_color = (((color->red & 0xff00) << 8) | (color->green & 0xff00) | (color->blue >> 8));
+				buf.is_bg = 1;
+				buf.is_buf = 0;
+
+				g_signal_emit (G_OBJECT (canvas), canvas_signals[RENDER_BACKGROUND], 0, &buf);
+
+				if (canvas->root->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
+					(* GNOME_CANVAS_ITEM_GET_CLASS (canvas->root)->render) (canvas->root, &buf);
+
+				if (buf.is_bg) {
+					gdk_rgb_gc_set_foreground (canvas->pixmap_gc, buf.bg_color);
+					gdk_draw_rectangle (canvas->layout.bin_window,
+							    canvas->pixmap_gc,
+							    TRUE,
+							    (x0 + canvas->zoom_xofs),
+							    (y0 + canvas->zoom_yofs),
+							    x1 - x0, y1 - y0);
+				} else {
+					gdk_draw_rgb_image_dithalign (canvas->layout.bin_window,
+								      canvas->pixmap_gc,
+								      (x0 + canvas->zoom_xofs),
+								      (y0 + canvas->zoom_yofs),
+								      x1 - x0, y1 - y0,
+								      canvas->dither,
+								      buf.buf,
+								      IMAGE_WIDTH_AA * 3,
+								      x0, y0);
+				}
+			} else {
+				if (!pixmap) pixmap = gdk_pixmap_new (canvas->layout.bin_window, IMAGE_WIDTH, IMAGE_HEIGHT,
+								      gtk_widget_get_visual (widget)->depth);
+
+				g_signal_emit (G_OBJECT (canvas), canvas_signals[DRAW_BACKGROUND], 0, pixmap,
+					       x0, y0, x1 - x0, y1 - y0);
+
+				if (canvas->root->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
+					(* GNOME_CANVAS_ITEM_GET_CLASS (
+						canvas->root)->draw) (
+							canvas->root, pixmap,
+							x0, y0,
+							x1 - x0, y1 - y0);
+				/* Copy the pixmap to the window and clean up */
+
+				gdk_draw_pixmap (canvas->layout.bin_window,
+						 canvas->pixmap_gc,
+						 pixmap,
+						 0, 0,
+						 x0 + canvas->zoom_xofs,
+						 y0 + canvas->zoom_yofs,
+						 x1 - x0, y1 - y0);
+			}
+		}
+	}
+
+	if (px) g_free (px);
+	if (pixmap) gdk_pixmap_unref (pixmap);
+}
+
+/* Expose handler for the canvas */
+static gint
+gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
+{
+	GnomeCanvas *canvas;
+	ArtIRect rect;
+
+	canvas = GNOME_CANVAS (widget);
+
+	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window)) return FALSE;
+
+	rect.x0 = event->area.x - canvas->zoom_xofs;
+	rect.y0 = event->area.y - canvas->zoom_yofs;
+	rect.x1 = event->area.x + event->area.width - canvas->zoom_xofs;
+	rect.y1 = event->area.y + event->area.height - canvas->zoom_yofs;
+
+	if (canvas->need_update || canvas->need_redraw) {
+		ArtUta *uta;
+		/* Update or drawing is scheduled, so just mark exposed area as dirty */
+		uta = art_uta_from_irect (&rect);
+		gnome_canvas_request_redraw_uta (canvas, uta);
+	} else {
+		/* No pending updates, draw exposed area immediately */
+		gnome_canvas_paint_rect (canvas, rect.x0, rect.y0, rect.x1, rect.y1);
+
+		/* And call expose on parent container class */
+		if (GTK_WIDGET_CLASS (canvas_parent_class)->expose_event)
+			return (* GTK_WIDGET_CLASS (canvas_parent_class)->expose_event) (widget, event);
+	}
+
+	return FALSE;
+}
+
 /* Repaints the areas in the canvas that need it */
 static void
 paint (GnomeCanvas *canvas)
 {
 	GtkWidget *widget;
-	int draw_x1, draw_y1;
-	int draw_x2, draw_y2;
-	int width, height;
-	GdkPixmap *pixmap;
 	ArtIRect *rects;
 	gint n_rects, i;
+
+	widget = GTK_WIDGET (canvas);
 
 	if (canvas->need_update) {
 		double affine[6];
@@ -2911,164 +3021,46 @@ paint (GnomeCanvas *canvas)
 		canvas->need_update = FALSE;
 	}
 
-	if (!canvas->need_redraw)
-		return;
+	if (!canvas->need_redraw) return;
 
-	if (canvas->aa)
-		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH_AA, IMAGE_HEIGHT_AA,
-						&n_rects);
-	else
-		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH, IMAGE_HEIGHT,
-						&n_rects);
+	if (canvas->aa) {
+		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH_AA, IMAGE_HEIGHT_AA, &n_rects);
+	} else {
+		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH, IMAGE_HEIGHT, &n_rects);
+	}
 
 	art_uta_free (canvas->redraw_area);
-
 	canvas->redraw_area = NULL;
+	canvas->need_redraw = FALSE;
 
-	widget = GTK_WIDGET (canvas);
-
+	/* Send synthetic expose events */
 	for (i = 0; i < n_rects; i++) {
-		canvas->redraw_x1 = rects[i].x0;
-		canvas->redraw_y1 = rects[i].y0;
-		canvas->redraw_x2 = rects[i].x1;
-		canvas->redraw_y2 = rects[i].y1;
+		GdkEventExpose ex;
+		gint x0, y0, x1, y1;
 
-		draw_x1 = canvas->layout.hadjustment->value -
-			canvas->zoom_xofs;
-		draw_y1 = canvas->layout.vadjustment->value -
-			canvas->zoom_yofs;
-		draw_x2 = draw_x1 + GTK_WIDGET (canvas)->allocation.width;
-		draw_y2 = draw_y1 + GTK_WIDGET (canvas)->allocation.height;
+		x0 = MAX (canvas->layout.hadjustment->value - canvas->zoom_xofs, rects[i].x0);
+		y0 = MAX (canvas->layout.vadjustment->value - canvas->zoom_yofs, rects[i].y0);
+		x1 = MIN (x0 + GTK_WIDGET (canvas)->allocation.width, rects[i].x1);
+		y1 = MIN (y0 + GTK_WIDGET (canvas)->allocation.height, rects[i].y1);
 
-		if (canvas->redraw_x1 > draw_x1)
-			draw_x1 = canvas->redraw_x1;
-
-		if (canvas->redraw_y1 > draw_y1)
-			draw_y1 = canvas->redraw_y1;
-
-		if (canvas->redraw_x2 < draw_x2)
-			draw_x2 = canvas->redraw_x2;
-
-		if (canvas->redraw_y2 < draw_y2)
-			draw_y2 = canvas->redraw_y2;
-
-		if ((draw_x1 < draw_x2) && (draw_y1 < draw_y2)) {
-			canvas->draw_xofs = draw_x1;
-			canvas->draw_yofs = draw_y1;
-
-			width = draw_x2 - draw_x1;
-			height = draw_y2 - draw_y1;
-
-			if (canvas->aa) {
-				GnomeCanvasBuf buf;
-				GdkColor *color;
-
-				buf.buf = g_new (guchar, IMAGE_WIDTH_AA * IMAGE_HEIGHT_AA * 3);
-				buf.buf_rowstride = IMAGE_WIDTH_AA * 3;
-				buf.rect.x0 = draw_x1;
-				buf.rect.y0 = draw_y1;
-				buf.rect.x1 = draw_x2;
-				buf.rect.y1 = draw_y2;
-				color = &widget->style->bg[GTK_STATE_NORMAL];
-				buf.bg_color = (((color->red & 0xff00) << 8)
-						| (color->green & 0xff00)
-						| (color->blue >> 8));
-				buf.is_bg = 1;
-				buf.is_buf = 0;
-
-				g_signal_emit (G_OBJECT (canvas),
-					       canvas_signals[RENDER_BACKGROUND],
-					       0,
-					       &buf);
-
-				if (canvas->root->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
-					(* GNOME_CANVAS_ITEM_GET_CLASS (
-						canvas->root)->render) (
-							canvas->root, &buf);
-
-				if (buf.is_bg) {
-					gdk_rgb_gc_set_foreground (canvas->pixmap_gc, buf.bg_color);
-					gdk_draw_rectangle (canvas->layout.bin_window,
-							    canvas->pixmap_gc,
-							    TRUE,
-							    (draw_x1 + canvas->zoom_xofs),
-							    (draw_y1 + canvas->zoom_yofs),
-							    width, height);
-				} else {
-					gdk_draw_rgb_image_dithalign (canvas->layout.bin_window,
-								      canvas->pixmap_gc,
-								      (draw_x1 + canvas->zoom_xofs),
-								      (draw_y1 + canvas->zoom_yofs),
-								      width, height,
-								      canvas->dither,
-								      buf.buf,
-								      IMAGE_WIDTH_AA * 3,
-								      draw_x1, draw_y1);
-				}
-
-				g_free (buf.buf);
-
-			} else {
-				pixmap = gdk_pixmap_new (canvas->layout.bin_window, width, height,
-							 gtk_widget_get_visual (widget)->depth);
-
-				g_signal_emit (G_OBJECT (canvas),
-					       canvas_signals[DRAW_BACKGROUND],
-					       0,
-					       pixmap, draw_x1, draw_y1, width, height);
-
-				if (canvas->root->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
-					(* GNOME_CANVAS_ITEM_GET_CLASS (
-						canvas->root)->draw) (
-							canvas->root, pixmap,
-							draw_x1, draw_y1,
-							width, height);
-#if 0
-				gdk_draw_line (pixmap,
-					       widget->style->black_gc,
-					       0, 0,
-					       width - 1, height - 1);
-				gdk_draw_line (pixmap,
-					       widget->style->black_gc,
-					       width - 1, 0,
-					       0, height - 1);
-#endif
-				/* Copy the pixmap to the window and clean up */
-
-				gdk_draw_pixmap (canvas->layout.bin_window,
-						 canvas->pixmap_gc,
-						 pixmap,
-						 0, 0,
-						 draw_x1 + canvas->zoom_xofs,
-						 draw_y1 + canvas->zoom_yofs,
-						 width, height);
-
-				gdk_pixmap_unref (pixmap);
-			}
-#if 0
+		if ((x0 < x1) && (y0 < y1)) {
 			/* Here we are - whatever type is canvas, we have to send synthetic expose to layout (Lauris) */
-			{
-				GdkEventExpose ex;
-				ex.type = GDK_EXPOSE;
-				ex.window = canvas->layout.bin_window;
-				ex.send_event = TRUE;
-				ex.area.x = draw_x1 + canvas->zoom_xofs;
-				ex.area.y = draw_y1 + canvas->zoom_yofs;
-				ex.area.width = width;
-				ex.area.height = height;
-				ex.region = gdk_region_rectangle (&ex.area);
-				ex.count = 0;
-				gtk_widget_send_expose (GTK_WIDGET (canvas), (GdkEvent *) &ex);
-				gdk_region_destroy (ex.region);
-			}
-#endif
-
-	  	}
+			ex.type = GDK_EXPOSE;
+			ex.window = canvas->layout.bin_window;
+			ex.send_event = TRUE;
+			ex.area.x = x0 + canvas->zoom_xofs;
+			ex.area.y = y0 + canvas->zoom_yofs;
+			ex.area.width = x1 - x0;
+			ex.area.height = y1 - y0;
+			ex.region = gdk_region_rectangle (&ex.area);
+			ex.count = 0;
+			gtk_widget_send_expose (GTK_WIDGET (canvas), (GdkEvent *) &ex);
+			gdk_region_destroy (ex.region);
+		}
 	}
 
 	art_free (rects);
 
-	canvas->need_redraw = FALSE;
 	canvas->redraw_x1 = 0;
 	canvas->redraw_y1 = 0;
 	canvas->redraw_x2 = 0;
@@ -3138,10 +3130,9 @@ idle_handler (gpointer data)
 static void
 add_idle (GnomeCanvas *canvas)
 {
-	if (canvas->idle_id != 0)
-		return;
-	
-	canvas->idle_id = gtk_idle_add (idle_handler, canvas);
+	if (!canvas->idle_id) {
+		canvas->idle_id = gtk_idle_add (idle_handler, canvas);
+	}
 }
 
 /**
