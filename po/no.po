@@ -51,60 +51,60 @@ msgstr "Tagget tekst som skal rendres"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
-msgstr "Skrifttype"
+msgstr "Skrift"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Beskrivelse av skrifttype som en streng"
+msgstr "Beskrivelse av skrift som en streng"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "Beskrivelse av skrifttype"
+msgstr "Beskrivelse av skrift"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Beskrivelse av skrifttype som en PangoFontDescription struct"
+msgstr "Beskrivelse av skrift som en PangoFontDescription struct"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "Skrifttypefamilie"
+msgstr "Skriftfamilie"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Navn på skrifttypefamilien, f.eks. Sans, Helvetica, Times, Monospace"
+msgstr "Navn på skriftfamilien, f.eks. Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "Skrifttypestil"
+msgstr "Skriftstil"
 
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "Skrifttypevariant"
+msgstr "Skriftvariant"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "Skrifttypens tyngde"
+msgstr "Skriftens tyngde"
 
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "Skrifttypen strukket"
+msgstr "Skriftens strekk"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
-msgstr "Skrifttypens størrelse"
+msgstr "Skriftens størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr "Skrifttypens punkter"
+msgstr "Skriftens punkter"
 
 #: libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points"
-msgstr "Skrifttypens størrelse i punkter"
+msgstr "Skriftens størrelse i punkter"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -138,7 +138,7 @@ msgstr "Skalering"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "Størrelse på skrifttypen, relativ til standard størrelse"
+msgstr "Størrelse på skriften, relativ til forvalgt størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
@@ -176,11 +176,11 @@ msgstr "Høyde på rendret tekst"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "Skrifttypefamilie satt"
+msgstr "Skriftfamilie satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Om denne merkingen påvirker skrifttypefamilien"
+msgstr "Om denne merkingen påvirker skriftfamilien"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -188,15 +188,15 @@ msgstr "Skrifttypestil satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "Om denne merkingen påvirker skrifttypestilen"
+msgstr "Om denne merkingen påvirker skriftstilen"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "Variantsett for skrifttype"
+msgstr "Skriftvariant satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Om denne merkingen påvirker skrifttypevarianten"
+msgstr "Om denne merkingen påvirker skriftvarianten"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -204,23 +204,23 @@ msgstr "Skrifttypens tyngde satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "Om denne merkingen påvirker skrifttypens vekt"
+msgstr "Om denne merkingen påvirker skriftens vekt"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Strekking av skrifttype satt"
+msgstr "Strekking av skrift satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Om denne merkingen påvirker skrifttypens strekk"
+msgstr "Om denne merkingen påvirker skriftens strekk"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Størrelse på skrifttype satt"
+msgstr "Størrelse på skrift satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Om denne merkingen påvirker skrifttypens størrelse"
+msgstr "Om denne merkingen påvirker skriftens størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -252,7 +252,7 @@ msgstr "Skalering satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "Om denne merkingen påvirker skalering av skrifttypen"
+msgstr "Om denne merkingen påvirker skalering av skriften"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text to display"
