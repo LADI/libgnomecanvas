@@ -1,3 +1,12 @@
+2001-09-06  Anders Carlsson  <andersca@gnu.org>
+
+	* libgnomecanvas-2.0.pc.in (Cflags): Change includedir to be
+	gnome-2.0/ instead of gnome/2/
+
+	* Makefile.am (libgnomecanvasincludedir): Change includedir to be
+	gnome-2.0/ instead of gnome/2/ and moved libgnomecanvas.h into
+	libgnomecanvas/
+
 2001-09-04  Anders Carlsson  <andersca@gnu.org>
 
 	* gnome-canvas.c (gnome_canvas_init): Disable gtk+ double buffering
