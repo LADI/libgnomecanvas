@@ -1,3 +1,24 @@
+2002-01-14  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_set_property) : Here we
+	  do need to use gdk_rgb_find_color.
+
+2002-01-13  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Use
+	  gdk_colormap_query_color not gdk_rgb_find_color.
+	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
+	* gnome-canvas-shape.c (get_color_value) : ditto.
+
+2002-01-13  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Do not use
+	  g_new to allocate (and leak) the color.
+	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
+	* gnome-canvas-shape.c (get_color_value) : ditto.
+	(gnome_canvas_shape_set_property) : PROP_FILL_COLOR_GDK, colorptr can
+	  be NULL.
+
 2002-01-15  Lauris Kaplinski  <lauris@ximian.com>
 
 	* gnome-canvas-bpath.c (gnome_canvas_bpath_set_property): Use new

@@ -872,7 +872,6 @@ gnome_canvas_line_get_property (GObject              *object,
 				GParamSpec           *pspec)
 {
 	GnomeCanvasLine *line;
-	GdkColor *color;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_LINE (object));
@@ -893,13 +892,12 @@ gnome_canvas_line_get_property (GObject              *object,
 		break;
 
 	case PROP_FILL_COLOR_GDK: {
-		GdkColormap *colormap;
+		GnomeCanvas *canvas = GNOME_CANVAS_ITEM (line)->canvas;
+		GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (canvas));
+		GdkColor color;
 
-		color = g_new (GdkColor, 1);
-		color->pixel = line->fill_pixel;
-		colormap = gtk_widget_get_colormap (GTK_WIDGET (line->item.canvas));
-		gdk_rgb_find_color (colormap, color);
-		g_value_set_boxed (value, color);
+		gdk_colormap_query_color (colormap, line->fill_pixel, &color);
+		g_value_set_boxed (value, &color);
 		break;
 	}
 

@@ -1102,7 +1102,6 @@ gnome_canvas_text_get_property (GObject            *object,
 				GParamSpec         *pspec)
 {
 	GnomeCanvasText *text;
-	GdkColor *color;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_TEXT (object));
@@ -1265,13 +1264,12 @@ gnome_canvas_text_get_property (GObject            *object,
 		break;
 
 	case PROP_FILL_COLOR_GDK: {
-		GdkColormap *colormap;
+		GnomeCanvas *canvas = GNOME_CANVAS_ITEM (text)->canvas;
+		GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (canvas));
+		GdkColor color;
 
-		color = g_new (GdkColor, 1);
-		color->pixel = text->pixel;
-		colormap = gtk_widget_get_colormap (GTK_WIDGET (text->item.canvas));
-		gdk_rgb_find_color (colormap, color);
-		g_value_set_boxed (value, color);
+		gdk_colormap_query_color (colormap, text->pixel, &color);
+		g_value_set_boxed (value, &color);
 		break;
 	}
 	case PROP_FILL_COLOR_RGBA:

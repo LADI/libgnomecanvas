@@ -357,10 +357,17 @@ gnome_canvas_shape_set_property (GObject      *object,
 
 	case PROP_FILL_COLOR_GDK:
 		colorptr = g_value_get_boxed (value);
+		if (colorptr == NULL)
+			break;
 
 		priv->fill_set = TRUE;
 		priv->fill_rgba = get_rgba_from_color (colorptr);
-		if (gdk) gdk->fill_pixel = colorptr->pixel;
+		if (gdk) {
+			GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
+			GdkColor tmp = *colorptr;
+			gdk_rgb_find_color (colormap, &tmp);
+			gdk->fill_pixel = tmp.pixel;
+		}
 
 		gnome_canvas_item_request_update (item);
 		break;
@@ -390,7 +397,12 @@ gnome_canvas_shape_set_property (GObject      *object,
 
 		priv->outline_set = TRUE;
 		priv->outline_rgba = get_rgba_from_color (colorptr);
-		if (gdk) gdk->outline_pixel = colorptr->pixel;
+		if (gdk) {
+			GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
+			GdkColor tmp = *colorptr;
+			gdk_rgb_find_color (colormap, &tmp);
+			gdk->outline_pixel = tmp.pixel;
+		}
 
 		gnome_canvas_item_request_update (item);
 		break;
@@ -480,16 +492,12 @@ gnome_canvas_shape_set_property (GObject      *object,
 static void
 get_color_value (GnomeCanvasShape *shape, gulong pixel, GValue *value)
 {
-  GnomeCanvas *canvas = GNOME_CANVAS_ITEM (shape)->canvas;
-  GdkColor *color;
-  GdkColormap *colormap;
-  
-  color = g_new (GdkColor, 1);
-  color->pixel = pixel;
-  
-  colormap = gtk_widget_get_colormap (GTK_WIDGET (canvas));
-  gdk_rgb_find_color (colormap, color);
-  g_value_set_boxed (value, color);
+	GnomeCanvas *canvas = GNOME_CANVAS_ITEM (shape)->canvas;
+	GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (canvas));
+	GdkColor color;
+
+	gdk_colormap_query_color (colormap, pixel, &color);
+	g_value_set_boxed (value, &color);
 }
 
 /**
