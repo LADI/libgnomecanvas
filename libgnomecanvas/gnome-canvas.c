@@ -1194,12 +1194,11 @@ gnome_canvas_item_get_bounds (GnomeCanvasItem *item, double *x1, double *y1, dou
 	/* Get the item's bounds in its coordinate system */
 
 	if (GNOME_CANVAS_ITEM_GET_CLASS (item)->bounds)
-		(* GNOME_CANVAS_ITEM_GET_CLASS (item)->bounds) (
-			item, &tx1, &ty1, &tx2, &ty2);
+		(* GNOME_CANVAS_ITEM_GET_CLASS (item)->bounds) (item, &tx1, &ty1, &tx2, &ty2);
 
 	/* Make the bounds relative to the item's parent coordinate system */
 
-	if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
+	if (item->xform && (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL)) {
 		p1.x = p2.x = tx1;
 		p1.y = p4.y = ty1;
 		p3.x = p4.x = tx2;
@@ -2374,10 +2373,6 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 	} else
 		canvas->zoom_yofs = 0;
 
-	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
-		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
-	}
-
 	if ((canvas->zoom_xofs != old_zoom_xofs) || (canvas->zoom_yofs != old_zoom_yofs)) {
 		/* This can only occur, if either canvas size or widget size changes */
 		/* So I think we can request full redraw here */
@@ -2386,6 +2381,7 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		gtk_widget_queue_draw (GTK_WIDGET (canvas));
 	}
 
+#if 1
 	if (((int) canvas->layout.hadjustment->value) != cx) {
 		canvas->layout.hadjustment->value = cx;
 		changed_x = TRUE;
@@ -2396,11 +2392,23 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		changed_y = TRUE;
 	}
 
+	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
+		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
+	}
+
 	/* Signal GtkLayout that it should do a redraw. */
 	if (changed_x)
 		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.hadjustment), "value_changed");
 	if (changed_y)
 		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.vadjustment), "value_changed");
+#else
+	gtk_adjustment_set_value (GTK_ADJUSTMENT (canvas->layout.hadjustment), cx);
+	gtk_adjustment_set_value (GTK_ADJUSTMENT (canvas->layout.vadjustment), cy);
+
+	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
+		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
+	}
+#endif
 }
 
 /* Size allocation handler for the canvas */
@@ -2995,6 +3003,8 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 
 	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window)) return FALSE;
 
+	g_print ("Expose\n");
+
 	rect.x0 = event->area.x - canvas->zoom_xofs;
 	rect.y0 = event->area.y - canvas->zoom_yofs;
 	rect.x1 = event->area.x + event->area.width - canvas->zoom_xofs;
@@ -3036,6 +3046,8 @@ paint (GnomeCanvas *canvas)
 	}
 
 	if (!canvas->need_redraw) return;
+
+	g_print ("Scheduled redraw\n");
 
 	if (canvas->aa) {
 		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH_AA, IMAGE_HEIGHT_AA, &n_rects);
@@ -3283,12 +3295,12 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 
 	canvas->pixels_per_unit = n;
 
+	scroll_to (canvas, x1, y1);
+
 	if (!(canvas->root->object.flags & GNOME_CANVAS_ITEM_NEED_AFFINE)) {
 		canvas->root->object.flags |= GNOME_CANVAS_ITEM_NEED_AFFINE;
 		gnome_canvas_request_update (canvas);
 	}
-
-	scroll_to (canvas, x1, y1);
 
 	canvas->need_repick = TRUE;
 }
@@ -3594,8 +3606,7 @@ gnome_canvas_request_redraw (GnomeCanvas *canvas, int x1, int y1, int x2, int y2
 
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
-	if (!GTK_WIDGET_DRAWABLE (canvas) || (x1 == x2) || (y1 == y2))
-		return;
+	if (!GTK_WIDGET_DRAWABLE (canvas) || (x1 >= x2) || (y1 >= y2)) return;
 
 	bbox.x0 = x1;
 	bbox.y0 = y1;
@@ -3830,8 +3841,7 @@ gnome_canvas_get_color (GnomeCanvas *canvas, const char *spec, GdkColor *color)
  * Return value: Allocated pixel value corresponding to the specified color.
  **/
 gulong
-gnome_canvas_get_color_pixel (GnomeCanvas *canvas,
-			      guint        rgba)
+gnome_canvas_get_color_pixel (GnomeCanvas *canvas, guint rgba)
 {
 	GdkColormap *colormap;
 	GdkColor color;
