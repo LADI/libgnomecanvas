@@ -633,16 +633,6 @@ set_stipple (GnomeCanvasLine *line, GdkBitmap *stipple, int reconfigure)
 	}
 }
 
-#ifdef OLD_XFORM
-/* Convenience functions to recalculate the arrows and bounds of the line */
-static void
-reconfigure_arrows_and_bounds (GnomeCanvasLine *line)
-{
-	reconfigure_arrows (line);
-	recalc_bounds (line);
-}
-#endif
-
 static void
 gnome_canvas_line_set_property (GObject              *object,
 				guint                 param_id,
@@ -698,12 +688,7 @@ gnome_canvas_line_set_property (GObject              *object,
 		/* Since the line's points have changed, we need to re-generate arrowheads in
 		 * addition to recalculating the bounds.
 		 */
-
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_FILL_COLOR:
@@ -749,68 +734,40 @@ gnome_canvas_line_set_property (GObject              *object,
 		line->width = g_value_get_uint (value);
 		line->width_pixels = TRUE;
 		set_line_gc_width (line);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_WIDTH_UNITS:
 		line->width = fabs (g_value_get_double (value));
 		line->width_pixels = FALSE;
 		set_line_gc_width (line);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_CAP_STYLE:
 		line->cap = g_value_get_enum (value);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_JOIN_STYLE:
 		line->join = g_value_get_enum (value);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_LINE_STYLE:
 		line->line_style = g_value_get_enum (value);
 		set_line_gc_width (line);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_FIRST_ARROWHEAD:
 		line->first_arrow = g_value_get_boolean (value);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_LAST_ARROWHEAD:
 		line->last_arrow = g_value_get_boolean (value);
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_SMOOTH:
@@ -823,29 +780,17 @@ gnome_canvas_line_set_property (GObject              *object,
 
 	case PROP_ARROW_SHAPE_A:
 		line->shape_a = fabs (g_value_get_double (value));
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_ARROW_SHAPE_B:
 		line->shape_b = fabs (g_value_get_double (value));
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	case PROP_ARROW_SHAPE_C:
 		line->shape_c = fabs (g_value_get_double (value));
-#ifdef OLD_XFORM
-		reconfigure_arrows_and_bounds (line);
-#else
 		gnome_canvas_item_request_update (item);
-#endif
 		break;
 
 	default:
@@ -1085,10 +1030,6 @@ gnome_canvas_line_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_pa
 		get_bounds_canvas (line, &x1, &y1, &x2, &y2, affine);
 		gnome_canvas_update_bbox (item, x1, y1, x2, y2);
 	}
-
-#ifdef OLD_XFORM
-	reconfigure_arrows_and_bounds (line);
-#endif
 }
 
 static void

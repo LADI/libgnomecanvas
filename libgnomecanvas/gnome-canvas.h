@@ -200,7 +200,7 @@ struct _GnomeCanvasItemClass {
 
 	/* Render the item over the buffer given.  The buf data structure
 	 * contains both a pointer to a packed 24-bit RGB array, and the
-	 * coordinates.  This method is only used for libart-based canvases.
+	 * coordinates.  This method is only used for antialiased canvases.
 	 *
 	 * TODO: figure out where clip paths fit into the rendering framework.
 	 */
@@ -393,11 +393,6 @@ struct _GnomeCanvasGroup {
 	/* Children of the group */
 	GList *item_list;
 	GList *item_list_end;
-
-	/* The position of the group has been subsumed into the xform of all items */
-#ifdef OLD_XFORM
-	double xpos, ypos;	/* Point that defines the group's origin */
-#endif
 };
 
 struct _GnomeCanvasGroupClass {
@@ -407,9 +402,6 @@ struct _GnomeCanvasGroupClass {
 
 /* Standard Gtk function */
 GtkType gnome_canvas_group_get_type (void) G_GNUC_CONST;
-
-/* Deprecated.  FIXME: remove this */
-void gnome_canvas_group_child_bounds (GnomeCanvasGroup *group, GnomeCanvasItem *item);
 
 
 /*** GnomeCanvas ***/
@@ -501,13 +493,28 @@ struct _GnomeCanvas {
 
 	/* Whether the canvas is in antialiased mode or not */
 	unsigned int aa : 1;
+
+	/* Which dither mode to use for antialiased mode drawing */
+	GdkRgbDither dither;
 };
 
 struct _GnomeCanvasClass {
 	GtkLayoutClass parent_class;
 
+	/* Draw the background for the area given. This method is only used
+	 * for non-antialiased canvases.
+	 */
+	void (* draw_background) (GnomeCanvas *canvas, GdkDrawable *drawable,
+				  int x, int y, int width, int height);
+
+	/* Render the background for the buffer given. The buf data structure
+	 * contains both a pointer to a packed 24-bit RGB array, and the
+	 * coordinates. This method is only used for antialiased canvases.
+	 */
+	void (* render_background) (GnomeCanvas *canvas, GnomeCanvasBuf *buf);
+
 	/* Private Virtual methods for groping the canvas inside bonobo */
-	void (* request_update ) (GnomeCanvas *canvas);
+	void (* request_update) (GnomeCanvas *canvas);
 
 	/* Reserved for future expansion */
 	gpointer spare_vmethods [4];
@@ -619,6 +626,15 @@ gulong gnome_canvas_get_color_pixel (GnomeCanvas *canvas,
  */
 void gnome_canvas_set_stipple_origin (GnomeCanvas *canvas, GdkGC *gc);
 
+/* Controls the dithering used when the canvas renders.
+ * Only applicable to antialiased canvases - ignored by non-antialiased canvases.
+ */
+void gnome_canvas_set_dither (GnomeCanvas *canvas, GdkRgbDither dither);
+
+/* Returns the dither mode of an antialiased canvas.
+ * Only applicable to antialiased canvases - ignored by non-antialiased canvases.
+ */
+GdkRgbDither gnome_canvas_get_dither (GnomeCanvas *canvas);
 
 G_END_DECLS
 

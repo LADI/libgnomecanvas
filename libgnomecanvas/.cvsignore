@@ -15,3 +15,5 @@ libgnomecanvastypebuiltins_ids.c
 libgnomecanvastypebuiltins_vars.c
 libgnomecanvastypebuiltins_evals.c
 libgnomecanvastypebuiltins.h
+
+gnome-canvas-marshal.[ch]

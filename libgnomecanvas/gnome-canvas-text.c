@@ -795,8 +795,6 @@ recalc_bounds (GnomeCanvasText *text)
 	item = GNOME_CANVAS_ITEM (text);
 
 	get_bounds (text, &item->x1, &item->y1, &item->x2, &item->y2);
-
-	gnome_canvas_group_child_bounds (GNOME_CANVAS_GROUP (item->parent), item);
 }
 
 /* Convenience function to set the text's GC's foreground color */

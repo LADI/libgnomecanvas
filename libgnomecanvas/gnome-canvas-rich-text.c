@@ -27,6 +27,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtksignal.h>
 #include <gtk/gtktextdisplay.h>
+#include <gtk/gtkmain.h>
 
 #include <libgnomecanvas/gnome-canvas.h>
 #include <libgnomecanvas/gnome-canvas-util.h>
@@ -94,7 +95,6 @@ static void gnome_canvas_rich_text_move_cursor(GnomeCanvasRichText *text,
 					       GtkMovementStep step,
 					       gint count,
 					       gboolean extend_selection);
-static void gnome_canvas_rich_text_unselect(GnomeCanvasRichText *text);
 
 
 
@@ -131,7 +131,6 @@ gnome_canvas_rich_text_get_type(void)
 static void
 gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 {
-	GObjectClass *gobject_class = G_OBJECT_CLASS(klass);
 	GtkObjectClass *object_class = GTK_OBJECT_CLASS(klass);
 	GnomeCanvasItemClass *item_class = GNOME_CANVAS_ITEM_CLASS(klass);
 	
@@ -224,9 +223,9 @@ gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 static void
 gnome_canvas_rich_text_init(GnomeCanvasRichText *text)
 {
+#if 0
 	GtkObject *object = GTK_OBJECT(text);
 
-#if 0
 	object->flags |= GNOME_CANVAS_ITEM_ALWAYS_REDRAW;
 #endif
 	/* Try to set some sane defaults */
@@ -535,7 +534,6 @@ gnome_canvas_rich_text_move_cursor(GnomeCanvasRichText *text,
 				   gint count, gboolean extend_selection)
 {
 	GtkTextIter insert, newplace;
-	int cursor_x_pos = 0;
 
 	gtk_text_buffer_get_iter_at_mark(
 		get_buffer(text), &insert, 
@@ -1062,7 +1060,8 @@ gnome_canvas_rich_text_button_press_event(GnomeCanvasItem *item,
 
 	/* The canvas doesn't give us double- or triple-click events, so
 	   we have to synthesize them ourselves. Yay. */
-	if (event->type == GDK_BUTTON_PRESS) {
+	event_type = event->type;
+	if (event_type == GDK_BUTTON_PRESS) {
 		text->clicks++;
 		text->click_timeout = gtk_timeout_add(400, _click, text);
 
@@ -1098,7 +1097,9 @@ gnome_canvas_rich_text_button_press_event(GnomeCanvasItem *item,
 	else if (event->button == 1 && event_type == GDK_2BUTTON_PRESS) {
 		GtkTextIter start, end;
 
+#if 0
 		printf("double-click\n");
+#endif
 		
 		gnome_canvas_rich_text_end_selection_drag(text, event);
 
@@ -1128,7 +1129,9 @@ gnome_canvas_rich_text_button_press_event(GnomeCanvasItem *item,
 	else if (event->button == 1 && event_type == GDK_3BUTTON_PRESS) {
 		GtkTextIter start, end;
 
+#if 0
 		printf("triple-click\n");
+#endif
 
 		gnome_canvas_rich_text_end_selection_drag(text, event);
 
@@ -1469,7 +1472,6 @@ static void
 invalidated_handler(GtkTextLayout *layout, gpointer data)
 {
 	GnomeCanvasRichText *text = GNOME_CANVAS_RICH_TEXT(data);
-	GtkTextIter start;
 
 #if 0
 	printf("Text is being invalidated.\n");
@@ -1486,7 +1488,6 @@ static void
 scale_fonts(GtkTextTag *tag, gpointer data)
 {
 	GnomeCanvasRichText *text = GNOME_CANVAS_RICH_TEXT(data);
-	GtkTextAttributes *attr;
 
 	if (!tag->values)
 		return;
@@ -1603,7 +1604,6 @@ gnome_canvas_rich_text_ensure_layout(GnomeCanvasRichText *text)
 		GtkWidget *canvas;
 		GtkTextAttributes *style;
 		PangoContext *ltr_context, *rtl_context;
-		GSList *tmp_list;
 
 		text->layout = gtk_text_layout_new();
 
@@ -1833,9 +1833,6 @@ gnome_canvas_rich_text_draw(GnomeCanvasItem *item, GdkDrawable *drawable,
 	ArtPoint i1, i2;
 	ArtPoint c1, c2;
 
-	GdkRectangle clip;
-	GdkGC *gc;
-
 	gnome_canvas_item_i2w_affine(item, i2w);
 	gnome_canvas_w2c_affine(item->canvas, w2c);
 	art_affine_multiply(i2c, i2w, w2c);
@@ -1867,6 +1864,7 @@ gnome_canvas_rich_text_draw(GnomeCanvasItem *item, GdkDrawable *drawable,
 static void
 gnome_canvas_rich_text_render(GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 {
+	g_warning ("rich text item not implemented for anti-aliased canvas");
 } /* gnome_canvas_rich_text_render */
 
 static GtkTextTag *

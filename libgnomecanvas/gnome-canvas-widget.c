@@ -260,8 +260,6 @@ recalc_bounds (GnomeCanvasWidget *witem)
 	item->x2 = witem->cx + witem->cwidth;
 	item->y2 = witem->cy + witem->cheight;
 
-	gnome_canvas_group_child_bounds (GNOME_CANVAS_GROUP (item->parent), item);
-
 	if (witem->widget)
 		gtk_layout_move (GTK_LAYOUT (item->canvas), witem->widget,
 				 witem->cx + item->canvas->zoom_xofs,

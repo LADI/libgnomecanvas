@@ -61,6 +61,17 @@ libgnomecanvas_2_la_SOURCES =			\
 	gnome-canvas.c				\
 	libgnomecanvastypes.c
 
+marshal_sources =				\
+	gnome-canvas-marshal.c			\
+	gnome-canvas-marshal.h
+
+$(libgnomecanvas_2_la_OBJECTS): $(marshal_sources)
+
+gnome-canvas-marshal.h: gnome-canvas-marshal.list
+	glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --header > $@
+gnome-canvas-marshal.c: gnome-canvas-marshal.list
+	glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --body > $@
+
 EXTRA_DIST = libgnomecanvas-2.0.pc.in
 
 pkgconfigdir = $(libdir)/pkgconfig

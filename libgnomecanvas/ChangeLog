@@ -1,3 +1,34 @@
+2001-08-13  Darin Adler  <darin@bentspoon.com>
+
+	* Makefile.am: Generate marshal files.
+	* .cvsignore: Ignore generated marshal files.
+	* gnome-canvas-marshal.list: New file with the one marshal we need.
+	
+	* gnome-canvas.h: Add gnome_canvas_set_dither and
+	gnome_canvas_get_dither from the stable branch. Add signals to
+	allow control of background. Remove obsolete
+	gnome_canvas_group_child_bounds.
+	* gnome-canvas.c: Remove obsolete gnome_canvas_group_child_bounds.
+	(gnome_canvas_class_init): Set up new signals.
+	(gnome_canvas_init): Set up default dither.
+	(paint): Use the new render_background and draw_background signals
+	to paint the background.
+	(gnome_canvas_draw_background): New default handler for
+	draw_background signal.
+	(gnome_canvas_set_dither), (gnome_canvas_get_dither): Added.
+
+	* gnome-canvas-line.c: (gnome_canvas_line_set_property),
+	(gnome_canvas_line_update): Removed OLD_XFORM code.
+	
+	* gnome-canvas-rich-text.c: Fix a lot of warnings.
+	(gnome_canvas_rich_text_render): Do a g_warning instead of just
+	quietly not drawing anything for the antialiased case.
+	
+	* gnome-canvas-text.c: (recalc_bounds): Remove use of obsolete
+	gnome_canvas_group_child_bounds.
+	* gnome-canvas-widget.c: (recalc_bounds): Remove use of obsolete
+	gnome_canvas_group_child_bounds.
+
 2001-08-12  Joe Shaw  <joe@ximian.com>
 
 	* gnome-canvas-rich-text.c: Clean up the #includes. Change
