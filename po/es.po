@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2001-06-25 02:26-0600\n"
+"POT-Creation-Date: 2001-08-05 13:28+0200\n"
 "PO-Revision-Date: 2001-06-19 12:54+0200\n"
 "Last-Translator: Héctor García Álvarez <hector@scouts-es.org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -13,231 +13,233 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1598 libgnomecanvas/gnome-canvas.c:1599
+#: libgnomecanvas/gnome-canvas.c:1552 libgnomecanvas/gnome-canvas.c:1553
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1605 libgnomecanvas/gnome-canvas.c:1606
+#: libgnomecanvas/gnome-canvas.c:1559 libgnomecanvas/gnome-canvas.c:1560
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas-text.c:202
+#: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
 msgstr "Texto"
 
-#: libgnomecanvas/gnome-canvas-text.c:203
+#: libgnomecanvas/gnome-canvas-text.c:204
 msgid "Text to render"
 msgstr "Text a renderizar"
 
-#: libgnomecanvas/gnome-canvas-text.c:211
+#: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
 msgstr "Marca"
 
-#: libgnomecanvas/gnome-canvas-text.c:212
+#: libgnomecanvas/gnome-canvas-text.c:213
 msgid "Marked up text to render"
 msgstr "Text marcado a renderizar"
 
-#: libgnomecanvas/gnome-canvas-text.c:237
+#: libgnomecanvas/gnome-canvas-text.c:238
 msgid "Font"
 msgstr "Fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:238
+#: libgnomecanvas/gnome-canvas-text.c:239
 msgid "Font description as a string"
 msgstr "Descrición de fuente como una cadena"
 
-#: libgnomecanvas/gnome-canvas-text.c:246
+#: libgnomecanvas/gnome-canvas-text.c:247
 msgid "Font description"
 msgstr "Descripción de fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:247
+#: libgnomecanvas/gnome-canvas-text.c:248
 msgid "Font description as a PangoFontDescription struct"
 msgstr "Descripción de fuente como una estructura PangoFontDescription"
 
-#: libgnomecanvas/gnome-canvas-text.c:255
+#: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Font family"
 msgstr "Familia de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:256
+#: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
 msgstr ""
 "Nombre de la familia de la fuente, p.e. Sans, Helvetica, Times, Monospace"
 
-#: libgnomecanvas/gnome-canvas-text.c:272
 #: libgnomecanvas/gnome-canvas-text.c:273
+#: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
 msgstr "Estilo de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:282
 #: libgnomecanvas/gnome-canvas-text.c:283
+#: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
 msgstr "Variación de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:292
 #: libgnomecanvas/gnome-canvas-text.c:293
+#: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
 msgstr "Peso de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:304
 #: libgnomecanvas/gnome-canvas-text.c:305
+#: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr ""
+msgstr "Alargamiento de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:314
 #: libgnomecanvas/gnome-canvas-text.c:315
+#: libgnomecanvas/gnome-canvas-text.c:316
 msgid "Font size"
 msgstr "Tamaño de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:325
+#: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
 msgstr "Puntos de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:326
+#: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
 msgstr "Tamaño de la fuente en puntos"
 
-#: libgnomecanvas/gnome-canvas-text.c:336
-msgid "Rise"
-msgstr ""
-
 #: libgnomecanvas/gnome-canvas-text.c:337
+msgid "Rise"
+msgstr "Aumento"
+
+#: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"Desviación por encima del texto base (por debajo si el aumento es negativo)"
 
-#: libgnomecanvas/gnome-canvas-text.c:347
+#: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
 msgstr "Tachado"
 
-#: libgnomecanvas/gnome-canvas-text.c:348
+#: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "Si tachar el texto"
 
-#: libgnomecanvas/gnome-canvas-text.c:356
+#: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
 msgstr "Subrayado"
 
-#: libgnomecanvas/gnome-canvas-text.c:357
+#: libgnomecanvas/gnome-canvas-text.c:358
 msgid "Style of underline for this text"
 msgstr "Estilo de subrayado para este texto"
 
-#: libgnomecanvas/gnome-canvas-text.c:366
+#: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Scale"
 msgstr "Escala"
 
-#: libgnomecanvas/gnome-canvas-text.c:367
+#: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
 msgstr "Tamaño de la fuente, relativo al tamaño por defecto"
 
-#: libgnomecanvas/gnome-canvas-text.c:421
-#: libgnomecanvas/gnome-canvas-text.c:429
-#: libgnomecanvas/gnome-canvas-text.c:437
+#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:438
 msgid "Color"
 msgstr "Color"
 
-#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:423
 msgid "Text color, as string"
 msgstr "Color del tecto, como cadena"
 
-#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:431
 msgid "Text color, as a GdkColor"
 msgstr "Color del texto, como un GdkColor"
 
-#: libgnomecanvas/gnome-canvas-text.c:438
+#: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
 msgstr "Color del tecto, como un entero R/G/B/A combinado"
 
-#: libgnomecanvas/gnome-canvas-text.c:451
+#: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"
 msgstr "Ancho del texto"
 
-#: libgnomecanvas/gnome-canvas-text.c:452
+#: libgnomecanvas/gnome-canvas-text.c:453
 msgid "Width of the rendered text"
 msgstr "Ancho del texto renderizado"
 
-#: libgnomecanvas/gnome-canvas-text.c:459
+#: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Text height"
 msgstr "Altura del texto"
 
-#: libgnomecanvas/gnome-canvas-text.c:460
+#: libgnomecanvas/gnome-canvas-text.c:461
 msgid "Height of the rendered text"
 msgstr "Altura del texto rederizado"
 
-#: libgnomecanvas/gnome-canvas-text.c:468
-msgid "Font family set"
-msgstr "Elegir la familia de la fuente"
-
 #: libgnomecanvas/gnome-canvas-text.c:469
-msgid "Whether this tag affects the font family"
-msgstr ""
+msgid "Font family set"
+msgstr "Seleccionar la familia de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:472
-msgid "Font style set"
-msgstr "Elegir el estilo de la fuente"
+#: libgnomecanvas/gnome-canvas-text.c:470
+msgid "Whether this tag affects the font family"
+msgstr "Si esta etiqueta afecta a la familia de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
-msgid "Whether this tag affects the font style"
-msgstr ""
+msgid "Font style set"
+msgstr "Seleccionar el estilo de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:476
-msgid "Font variant set"
-msgstr ""
+#: libgnomecanvas/gnome-canvas-text.c:474
+msgid "Whether this tag affects the font style"
+msgstr "Si esta etiqueta afecta al estilo de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
-msgid "Whether this tag affects the font variant"
-msgstr ""
+msgid "Font variant set"
+msgstr "Juego variable de fuentes"
 
-#: libgnomecanvas/gnome-canvas-text.c:480
-msgid "Font weight set"
-msgstr "Elegir el peso de la fuente"
+#: libgnomecanvas/gnome-canvas-text.c:478
+msgid "Whether this tag affects the font variant"
+msgstr "Si esta etiqueta afecta la variación de fuentes"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
-msgid "Whether this tag affects the font weight"
-msgstr ""
+msgid "Font weight set"
+msgstr "Seleccionar el peso de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:484
-msgid "Font stretch set"
-msgstr ""
+#: libgnomecanvas/gnome-canvas-text.c:482
+msgid "Whether this tag affects the font weight"
+msgstr "Si esta etiqueta afecta al peso de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
-msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgid "Font stretch set"
+msgstr "Seleccionar el alargamiento de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:488
-msgid "Font size set"
-msgstr "Elegir el tamaño de la fuente"
+#: libgnomecanvas/gnome-canvas-text.c:486
+msgid "Whether this tag affects the font stretch"
+msgstr "Si esta etiqueta afecta al alargamiento de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
-msgid "Whether this tag affects the font size"
-msgstr ""
+msgid "Font size set"
+msgstr "Seleccionar el tamaño de la fuente"
 
-#: libgnomecanvas/gnome-canvas-text.c:492
-msgid "Rise set"
-msgstr ""
+#: libgnomecanvas/gnome-canvas-text.c:490
+msgid "Whether this tag affects the font size"
+msgstr "Si esta etiqueta afecta al tamaño de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
-msgid "Whether this tag affects the rise"
-msgstr ""
+msgid "Rise set"
+msgstr "Establecer aumento"
 
-#: libgnomecanvas/gnome-canvas-text.c:496
-msgid "Strikethrough set"
-msgstr "Elegir tachado"
+#: libgnomecanvas/gnome-canvas-text.c:494
+msgid "Whether this tag affects the rise"
+msgstr "Si esta etiqueta afecta al aumento"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
-msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgid "Strikethrough set"
+msgstr "Seleccionar tachado"
 
-#: libgnomecanvas/gnome-canvas-text.c:500
-msgid "Underline set"
-msgstr "Elegir subrayado"
+#: libgnomecanvas/gnome-canvas-text.c:498
+msgid "Whether this tag affects strikethrough"
+msgstr "Si esta estiqueta afecta al tachado"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
-msgid "Whether this tag affects underlining"
-msgstr ""
+msgid "Underline set"
+msgstr "Seleccionar subrayado"
 
-#: libgnomecanvas/gnome-canvas-text.c:504
-msgid "Scale set"
-msgstr "Elegir escala"
+#: libgnomecanvas/gnome-canvas-text.c:502
+msgid "Whether this tag affects underlining"
+msgstr "Si esta etiqueta afecta al subrayado"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
+msgid "Scale set"
+msgstr "Seleccionar escala"
+
+#: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "Si esta etiqueta afecta al escalado de fuentes"
+
