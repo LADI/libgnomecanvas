@@ -809,7 +809,55 @@ gnome_canvas_line_set_property (GObject              *object,
 			set_line_gc_foreground (line);
 
 		gnome_canvas_item_request_redraw_svp (item, line->fill_svp);
+
+		if (line->first_svp) 
+			gnome_canvas_item_request_redraw_svp (item, line->first_svp);
+
+		if (line->last_svp) 
+			gnome_canvas_item_request_redraw_svp (item, line->last_svp);
+
 	}
+}
+
+/* Returns a copy of the line's points without the endpoint adjustments for
+ * arrowheads.
+ */
+static GnomeCanvasPoints *
+get_points (GnomeCanvasLine *line)
+{
+	GnomeCanvasPoints *points;
+	int start_ofs, end_ofs;
+
+	if (line->num_points == 0)
+		return NULL;
+
+	start_ofs = end_ofs = 0;
+
+	points = gnome_canvas_points_new (line->num_points);
+
+	/* Invariant:  if first_coords or last_coords exist, then the line's
+	 * endpoints have been adjusted.
+	 */
+
+	if (line->first_coords) {
+		start_ofs = 1;
+
+		points->coords[0] = line->first_coords[0];
+		points->coords[1] = line->first_coords[1];
+	}
+
+	if (line->last_coords) {
+		end_ofs = 1;
+
+		points->coords[2 * (line->num_points - 1)] = line->last_coords[0];
+		points->coords[2 * (line->num_points - 1) + 1] = line->last_coords[1];
+	}
+
+	memcpy (points->coords + 2 * start_ofs,
+		line->coords + 2 * start_ofs,
+		2 * (line->num_points - (start_ofs + end_ofs)) * sizeof (double));
+
+	return points;
 }
 
 static void
@@ -819,7 +867,6 @@ gnome_canvas_line_get_property (GObject              *object,
 				GParamSpec           *pspec)
 {
 	GnomeCanvasLine *line;
-	GnomeCanvasPoints *points;
 	GdkColor *color;
 
 	g_return_if_fail (object != NULL);
@@ -829,12 +876,7 @@ gnome_canvas_line_get_property (GObject              *object,
 
 	switch (param_id) {
 	case PROP_POINTS:
-		if (line->num_points != 0) {
-			points = gnome_canvas_points_new (line->num_points);
-			memcpy (points->coords, line->coords, 2 * line->num_points * sizeof (double));
-			g_value_set_boxed (value, points);
-		} else
-			g_value_set_boxed (value, NULL);
+		g_value_set_boxed (value, get_points (line));
 		break;
 
 	case PROP_FILL_COLOR_GDK: {
