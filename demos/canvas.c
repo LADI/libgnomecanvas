@@ -449,7 +449,7 @@ create_fifteen (void)
 	/* Create the canvas and board */
 
 	canvas = gnome_canvas_new (gtk_widget_get_default_visual (), gtk_widget_get_default_colormap ());
-	gnome_canvas_set_size (GNOME_CANVAS (canvas), PIECE_SIZE * 4, PIECE_SIZE * 4);
+	gnome_canvas_set_size (GNOME_CANVAS (canvas), PIECE_SIZE * 4 + 1, PIECE_SIZE * 4 + 1);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
@@ -472,11 +472,11 @@ create_fifteen (void)
 
 		gnome_canvas_item_new (GNOME_CANVAS (canvas),
 				       GNOME_CANVAS_GROUP (board[i]),
-				       gnome_canvas_rect_get_type (),
+				       gnome_canvas_ellipse_get_type (),
 				       "x1", 0.0,
 				       "y1", 0.0,
-				       "x2", (double) (PIECE_SIZE - 1),
-				       "y2", (double) (PIECE_SIZE - 1),
+				       "x2", (double) PIECE_SIZE,
+				       "y2", (double) PIECE_SIZE,
 				       "fill_color", get_piece_color (i),
 				       "outline_color", "black",
 				       "width_pixels", 0,
