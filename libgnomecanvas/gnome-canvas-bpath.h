@@ -32,7 +32,7 @@ BEGIN_GNOME_DECLS
  *
  * name			type			read/write	description
  * ------------------------------------------------------------------------------------------
- * bpath		GPPath *		RW		Pointer to an GPPath structure.
+ * bpath		GnomeCanvasPathDef *		RW		Pointer to an GnomeCanvasPathDef structure.
  *								This can be created by a call to
  *								gp_path_new() in (gp-path.h).
  * fill_color		string			W		X color specification for fill color,

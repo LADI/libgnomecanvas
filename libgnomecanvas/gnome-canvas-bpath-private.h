@@ -71,7 +71,7 @@ struct _GnomeCanvasBpathPrivGdk {
 };
 
 struct _GnomeCanvasBpathPriv {
-	GPPath * path;			/* Our bezier path representation */
+	GnomeCanvasPathDef * path;      /* Our bezier path representation */
 
 	gdouble scale;			/* CTM scaling (for pen) */
 

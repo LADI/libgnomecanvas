@@ -288,7 +288,7 @@ gnome_canvas_bpath_destroy (GtkObject *object)
 		priv = bpath->priv;
 		if (priv->gdk) gcbp_destroy_gdk (bpath);
 
-		if (priv->path) gp_path_unref (priv->path);
+		if (priv->path) gnome_canvas_path_def_unref (priv->path);
 
 		if (priv->dash.dash) g_free (priv->dash.dash);
 		if (priv->fill_svp) art_svp_free (priv->fill_svp);
@@ -312,7 +312,7 @@ gnome_canvas_bpath_set_property (GObject      *object,
 	GnomeCanvasBpath        *bpath;
 	GnomeCanvasBpathPriv    *priv;
 	GnomeCanvasBpathPrivGdk *gdk;
-	GPPath                  *gpp;
+	GnomeCanvasPathDef                  *gpp;
 	GdkColor                 color;
 	GdkColor                *colorptr;
 	ArtVpathDash            *dash;
@@ -332,10 +332,10 @@ gnome_canvas_bpath_set_property (GObject      *object,
 	case PROP_BPATH:
 		gpp = g_value_get_pointer (value);
 
-		if (priv->path) gp_path_unref (priv->path);
+		if (priv->path) gnome_canvas_path_def_unref (priv->path);
 
 		if (gpp) {
-			priv->path = gp_path_duplicate (gpp);
+			priv->path = gnome_canvas_path_def_duplicate (gpp);
 		} else {
 			priv->path = NULL;
 		}
@@ -517,7 +517,7 @@ gnome_canvas_bpath_get_property (GObject     *object,
 	switch (param_id) {
 	case PROP_BPATH:
 		if (priv->path) {
-			gp_path_ref (priv->path);
+			gnome_canvas_path_def_ref (priv->path);
 			g_value_set_pointer (value, priv->path);
 		} else
 			g_value_set_pointer (value, NULL);
@@ -852,46 +852,46 @@ gnome_canvas_bpath_update_gdk (GnomeCanvasBpath * bpath, double * affine, ArtSVP
 	/* Calcualte new GdkPoints array and subpath lists */
 
 	if (priv->path) {
-		GPPath * apath, * cpath, * opath;
+		GnomeCanvasPathDef * apath, * cpath, * opath;
 		ArtBpath * abpath;
 		GSList * clist, * olist;
 		gint pos;
 
 		/* Allocate array */
 
-		gdk->num_points = gp_path_length (priv->path) - 1;
+		gdk->num_points = gnome_canvas_path_def_length (priv->path) - 1;
 		gdk->points = g_new (GdkPoint, gdk->num_points);
 
 		/* Transform path */
 
-		abpath = art_bpath_affine_transform (gp_path_bpath (priv->path), affine);
-		apath = gp_path_new_from_bpath (abpath);
+		abpath = art_bpath_affine_transform (gnome_canvas_path_def_bpath (priv->path), affine);
+		apath = gnome_canvas_path_def_new_from_bpath (abpath);
 
 		/* Split path into open and closed parts */
 
-		cpath = gp_path_closed_parts (apath);
-		opath = gp_path_open_parts (apath);
-		gp_path_unref (apath);
+		cpath = gnome_canvas_path_def_closed_parts (apath);
+		opath = gnome_canvas_path_def_open_parts (apath);
+		gnome_canvas_path_def_unref (apath);
 
 		/* Split partial paths into subpaths */
 
-		clist = gp_path_split (cpath);
-		gp_path_unref (cpath);
-		olist = gp_path_split (opath);
-		gp_path_unref (opath);
+		clist = gnome_canvas_path_def_split (cpath);
+		gnome_canvas_path_def_unref (cpath);
+		olist = gnome_canvas_path_def_split (opath);
+		gnome_canvas_path_def_unref (opath);
 
 		pos = 0;
 
 		/* Fill GdkPoints and add subpaths to list: closed subpaths */
 
 		while (clist) {
-			GPPath * path;
+			GnomeCanvasPathDef * path;
 			ArtBpath * bpath;
 			ArtVpath * vpath;
 			gint len, i;
 
-			path = (GPPath *) clist->data;
-			bpath = gp_path_bpath (path);
+			path = (GnomeCanvasPathDef *) clist->data;
+			bpath = gnome_canvas_path_def_bpath (path);
 			vpath = art_bez_path_to_vec (bpath, 0.5);
 			for (len = 0; vpath[len].code != ART_END; len++) ;
 
@@ -907,20 +907,20 @@ gnome_canvas_bpath_update_gdk (GnomeCanvasBpath * bpath, double * affine, ArtSVP
 				gdk->closed_paths = g_slist_append (gdk->closed_paths, GINT_TO_POINTER (len));
 			}
 
-			gp_path_unref (path);
+			gnome_canvas_path_def_unref (path);
 			clist = g_slist_remove (clist, clist->data);
 		}
 
 		/* Fill GdkPoints and add subpaths to list: open subpaths */
 
 		while (olist) {
-			GPPath * path;
+			GnomeCanvasPathDef * path;
 			ArtBpath * bpath;
 			ArtVpath * vpath;
 			gint len, i;
 
-			path = (GPPath *) olist->data;
-			bpath = gp_path_bpath (path);
+			path = (GnomeCanvasPathDef *) olist->data;
+			bpath = gnome_canvas_path_def_bpath (path);
 			vpath = art_bez_path_to_vec (bpath, 0.5);
 			for (len = 0; vpath[len].code != ART_END; len++) ;
 
@@ -936,7 +936,7 @@ gnome_canvas_bpath_update_gdk (GnomeCanvasBpath * bpath, double * affine, ArtSVP
 				gdk->closed_paths = g_slist_append (gdk->closed_paths, GINT_TO_POINTER (len));
 			}
 
-			gp_path_unref (path);
+			gnome_canvas_path_def_unref (path);
 			olist = g_slist_remove (olist, olist->data);
 		}
 
@@ -970,17 +970,17 @@ gnome_canvas_bpath_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 	
 	/* Clipped fill SVP */
 
-	if ((bpath->priv->fill_set) && (gp_path_any_closed (bpath->priv->path))) {
-		GPPath * cpath;
+	if ((bpath->priv->fill_set) && (gnome_canvas_path_def_any_closed (bpath->priv->path))) {
+		GnomeCanvasPathDef * cpath;
 		ArtBpath * abp;
 		ArtVpath * vpath, * pvpath;
 		ArtSVP *tmp_svp;
 
 		/* Get closed part of path */
 
-		cpath = gp_path_closed_parts (bpath->priv->path);
-		abp = art_bpath_affine_transform (gp_path_bpath (cpath), affine);
-		gp_path_unref (cpath);
+		cpath = gnome_canvas_path_def_closed_parts (bpath->priv->path);
+		abp = art_bpath_affine_transform (gnome_canvas_path_def_bpath (cpath), affine);
+		gnome_canvas_path_def_unref (cpath);
 
 		/* Render, until SVP */
 
@@ -1018,7 +1018,7 @@ gnome_canvas_bpath_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		}
 	}
 
-	if ((priv->outline_set) && (!gp_path_is_empty (priv->path))) {
+	if ((priv->outline_set) && (!gnome_canvas_path_def_is_empty (priv->path))) {
 		gdouble width;
 		ArtBpath * abp;
 		ArtVpath * vpath, * pvpath;
@@ -1035,7 +1035,7 @@ gnome_canvas_bpath_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		
 		/* Render full path until vpath */
 
-		abp = art_bpath_affine_transform (gp_path_bpath (priv->path), affine);
+		abp = art_bpath_affine_transform (gnome_canvas_path_def_bpath (priv->path), affine);
 
 		vpath = art_bez_path_to_vec (abp, 0.25);
 		art_free (abp);
