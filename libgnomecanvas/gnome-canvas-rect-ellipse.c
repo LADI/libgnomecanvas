@@ -371,59 +371,64 @@ static void
 gnome_canvas_ellipse_update (GnomeCanvasItem *item, double affine[6], ArtSVP *clip_path, gint flags) {
 	GnomeCanvasPathDef *path_def;
 	GnomeCanvasRE *re;
-#if 0
-	int i = 0;
-	double th;
-#endif
 
 	re = GNOME_CANVAS_RE(item);
 
 	if(re->path_dirty) {
-#if 1
 		gdouble cx, cy, rx, ry;
-#endif
+		gdouble beta = 0.26521648983954400922; /* 4*(1-cos(pi/8))/(3*sin(pi/8)) */
+		gdouble sincosA = 0.70710678118654752440; /* sin (pi/4), cos (pi/4) */
+		gdouble dx1, dy1, dx2, dy2;
+		gdouble mx, my;
 
 		path_def = gnome_canvas_path_def_new();
-#if 0
-		th = (2 * M_PI * i) / N_PTS;
-		
-		gnome_canvas_path_def_moveto(path_def, (re->x1 + re->x2) * 0.5 + (re->x2 - re->x1) * 0.5 * cos (th), (re->y1 + re->y2) * 0.5 - (re->y2 - re->y1) * 0.5 * sin (th));       
-		
-		for (i = 1; i < N_PTS + 1; i++) {
-			th = (2 * M_PI * i) / N_PTS;		
-			gnome_canvas_path_def_lineto(path_def,
-						     (re->x1+ re->x2) * 0.5 + (re->x2 - re->x1) * 0.5 * cos (th), 
-						     (re->y1 + re->y2) * 0.5 - (re->y2 - re->y1) * 0.5 * sin (th));	
-		}
-#else
-
-#define EBD 0.552
 
 		cx = (re->x2 + re->x1) * 0.5;
 		cy = (re->y2 + re->y1) * 0.5;
 		rx = re->x2 - cx;
 		ry = re->y2 - cy;
 
-		gnome_canvas_path_def_moveto (path_def, cx - rx, cy);
+		dx1 = beta * rx;
+		dy1 = beta * ry;
+		dx2 = beta * rx * sincosA;
+		dy2 = beta * ry * sincosA;
+		mx = rx * sincosA;
+		my = ry * sincosA;
+
+		gnome_canvas_path_def_moveto (path_def, cx + rx, cy);
 		gnome_canvas_path_def_curveto (path_def,
-					       cx - rx, cy + ry * EBD,
-					       cx - rx * EBD, cy + ry,
-					       cx, cy + ry);
+					       cx + rx, cy - dy1,
+					       cx + mx + dx2, cy - my + dy2,
+					       cx + mx, cy - my);
 		gnome_canvas_path_def_curveto (path_def,
-					       cx + rx * EBD, cy + ry,
-					       cx + rx, cy + ry * EBD,
-					       cx + rx, cy);
-		gnome_canvas_path_def_curveto (path_def,
-					       cx + rx, cy - ry * EBD,
-					       cx + rx * EBD, cy - ry,
+					       cx + mx - dx2, cy - my - dy2,
+					       cx + dx1, cy - ry,
 					       cx, cy - ry);
 		gnome_canvas_path_def_curveto (path_def,
-					       cx - rx * EBD, cy - ry,
-					       cx - rx, cy - ry * EBD,
+					       cx - dx1, cy - ry,
+					       cx - mx + dx2, cy - my - dy2,
+					       cx - mx, cy - my);
+		gnome_canvas_path_def_curveto (path_def,
+					       cx - mx - dx2, cy - my + dy2,
+					       cx - rx, cy - dy1,
 					       cx - rx, cy);
-#endif
-
-#undef EBD
+		
+		gnome_canvas_path_def_curveto (path_def,
+					       cx - rx, cy + dy1,
+					       cx - mx - dx2, cy + my - dy2,
+					       cx - mx, cy + my);
+		gnome_canvas_path_def_curveto (path_def,
+					       cx - mx + dx2, cy + my + dy2,
+					       cx - dx1, cy + ry,
+					       cx, cy + ry);
+		gnome_canvas_path_def_curveto (path_def,
+					       cx + dx1, cy + ry,
+					       cx + mx - dx2, cy + my + dy2,
+					       cx + mx, cy + my);
+		gnome_canvas_path_def_curveto (path_def,
+					       cx + mx + dx2, cy + my - dy2,
+					       cx + rx, cy + dy1,
+					       cx + rx, cy);
 		
 		gnome_canvas_path_def_closepath_current(path_def);
 		
