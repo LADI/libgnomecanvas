@@ -260,7 +260,6 @@ msgid "Whether this tag affects font scaling"
 msgstr "Po decider si ciste etikete a on efet sol metowe e schåle do tecse"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
-#, fuzzy
 msgid "Text to display"
 msgstr "Tecse a håyner"
 
@@ -274,24 +273,23 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
-msgstr ""
+msgstr "Lårdjeu"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width for text box"
-msgstr ""
+msgstr "Lårdjeu del boesse di tecse"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:241
 msgid "Height"
-msgstr ""
+msgstr "Hôteu"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
-#, fuzzy
 msgid "Height for text box"
-msgstr "Hôteu do tecse a håyner"
+msgstr "Hôteu del boesse di tecse"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
-msgstr ""
+msgstr "Aspougnåve"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
@@ -299,7 +297,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
-msgstr ""
+msgstr "Veyåve"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
@@ -348,16 +346,15 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
-msgstr ""
+msgstr "Direccion"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
-#, fuzzy
 msgid "Text direction"
-msgstr "Discrijhaedje del fonte"
+msgstr "Direccion do scrijhaedje"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
-msgstr ""
+msgstr "Anke"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
