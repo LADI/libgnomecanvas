@@ -49,13 +49,6 @@ dnl Utility conditional
 AM_CONDITIONAL(FALSE, test x = y)
 
 dnl
-dnl Start of pkg-config checks
-dnl
-GNOME_PKGCONFIG_CHECK_MODULES(LIBGNOMEBASE, libgnomebase-2.0:1.96.0)
-AC_SUBST(LIBGNOMEBASE_CFLAGS)
-AC_SUBST(LIBGNOMEBASE_LIBS)
-
-dnl
 dnl GTK+ check
 dnl
 GNOME_PKGCONFIG_CHECK_MODULES(GTK, gtk+-2.0:1.3.2)

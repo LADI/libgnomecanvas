@@ -6,7 +6,6 @@ INCLUDES = \
         -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
 	$(GTK_CFLAGS)					\
-	$(LIBGNOMEBASE_CFLAGS)				\
 	$(LIBART_CFLAGS)				\
 	$(PANGO_CFLAGS)					\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
@@ -22,7 +21,7 @@ INCLUDES = \
 lib_LTLIBRARIES = libgnomecanvas-2.la
 
 libgnomecanvas_2_la_LIBADD = \
-	$(LIBGNOMEBASE_LIBS) $(GTK_LIBS) $(LIBART_LIBS) $(PANGO_LIBS)
+	$(GTK_LIBS) $(LIBART_LIBS) $(PANGO_LIBS)
 
 libgnomecanvasincludedir = $(includedir)/gnome/2/libgnomecanvas
 
@@ -42,6 +41,7 @@ libgnomecanvasinclude_HEADERS =			\
 
 libgnomecanvas_2_la_SOURCES =			\
 	$(libgnomecanvasinclude_HEADERS)	\
+	gnome-canvas-i18n.h			\
 	gnome-canvas-line.c			\
 	gnome-canvas-pixbuf.c			\
 	gnome-canvas-polygon.c			\
@@ -50,7 +50,6 @@ libgnomecanvas_2_la_SOURCES =			\
 	gnome-canvas-util.c			\
 	gnome-canvas-widget.c			\
 	gnome-canvas.c				\
-	libgnomecanvas-init.c			\
 	libgnomecanvastypes.c
 
 BUILT_SOURCES = \

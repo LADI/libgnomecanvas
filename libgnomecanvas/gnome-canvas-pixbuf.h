@@ -23,7 +23,7 @@
 #ifndef GNOME_CANVAS_PIXBUF_H
 #define GNOME_CANVAS_PIXBUF_H
 
-#include <libgnomebase/gnome-defs.h>
+
 #include <libgnomecanvas/gnome-canvas.h>
 
 G_BEGIN_DECLS

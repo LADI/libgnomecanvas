@@ -30,15 +30,13 @@ create_canvas (void)
 int
 main (int argc, char *argv[])
 {
-    gnome_program_init ("canvas_demo", VERSION, argc, argv,
-			GNOME_PARAM_MODULE_INFO, &libgnomecanvas_module_info,
-			GNOME_PARAM_HUMAN_READABLE_NAME,
-			("Canvas Demo"),
-			NULL);
+	gtk_init (&argc, &argv);
 
-    create_canvas ();
+	libgnomecanvas_init ();
 
-    gtk_main ();
+	create_canvas ();
 
-    return 0;
+	gtk_main ();
+
+	return 0;
 }

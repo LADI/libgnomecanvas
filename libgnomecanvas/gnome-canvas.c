@@ -79,7 +79,7 @@
 #include <gtk/gtkmain.h>
 #include <gtk/gtksignal.h>
 #include "gnome-canvas.h"
-#include "libgnomebase/gnome-i18n.h"
+#include "gnome-canvas-i18n.h"
 #include "libart_lgpl/art_rect.h"
 #include "libart_lgpl/art_rect_uta.h"
 #include "libart_lgpl/art_uta_rect.h"

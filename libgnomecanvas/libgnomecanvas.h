@@ -26,9 +26,6 @@
 #ifndef LIBGNOMECANVAS_H
 #define LIBGNOMECANVAS_H
 
-#include <libgnomebase/gnome-defs.h>
-#include <libgnomebase/gnome-program.h>
-
 #include <libgnomecanvas/gnome-canvas.h>
 #include <libgnomecanvas/gnome-canvas-line.h>
 #include <libgnomecanvas/gnome-canvas-text.h>
@@ -40,10 +37,7 @@
 
 G_BEGIN_DECLS
 
-extern GnomeModuleInfo gtk_module_info;
-extern GnomeModuleInfo libgnomecanvas_module_info;
-
-void libgnomecanvas_types_init (void);
+void libgnomecanvas_init (void);
 
 G_END_DECLS
 
