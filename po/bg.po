@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-06-22 05:08+0200\n"
+"POT-Creation-Date: 2002-06-11 22:53+0200\n"
 "PO-Revision-Date: 2002-06-30 10:30+0200\n"
 "Last-Translator: Alexander Shopov <al_shopov@web.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
-#: libgnomecanvas/gnome-canvas.c:1396
-#: libgnomecanvas/gnome-canvas.c:1397
+#: libgnomecanvas/gnome-canvas.c:1396 libgnomecanvas/gnome-canvas.c:1397
 msgid "X"
 msgstr "X"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:225
-#: libgnomecanvas/gnome-canvas.c:1403
-#: libgnomecanvas/gnome-canvas.c:1404
+#: libgnomecanvas/gnome-canvas.c:1403 libgnomecanvas/gnome-canvas.c:1404
 msgid "Y"
 msgstr "Y"
 
@@ -112,8 +110,11 @@ msgid "Rise"
 msgstr "Издигане"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Издигане на текста спрямо базовата линия (под линията при отрицателна височина)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Издигане на текста спрямо базовата линия (под линията при отрицателна "
+"височина)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -400,4 +401,3 @@ msgstr "Отстъп"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Брой пиксели в отстъпа"
-

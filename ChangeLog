@@ -1,3 +1,7 @@
+2002-08-05  Anders Carlsson  <andersca@gnu.org>
+
+	* configure.in: Release 2.0.2
+
 2002-06-30  Yanko Kaneti  <yaneti@declera.com>
 
 	* configure.in: (ALL_LINGUAS) Added Bulgarian (bg).
