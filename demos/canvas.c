@@ -29,55 +29,6 @@ test_win (GnomeCanvasItem **board)
 	gnome_dialog_run_modal (GNOME_DIALOG (gnome_ok_dialog ("You stud, you win!")));
 }
 
-static gint
-piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
-{
-	GnomeCanvas *canvas;
-	GnomeCanvasItem **board;
-	int num, pos, newpos;
-	int x, y;
-
-	canvas = item->canvas;
-	board = gtk_object_get_user_data (GTK_OBJECT (canvas));
-	num = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_num"));
-	pos = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_pos"));
-
-	switch (event->type) {
-	case GDK_BUTTON_PRESS:
-		y = pos / 4;
-		x = pos % 4;
-
-		/* up */
-
-		if ((y > 0) && (board[(y - 1) * 4 + x] == NULL))
-			y--;
-		else if ((y < 3) && (board[(y + 1) * 4 + x] == NULL))
-			y++;
-		else if ((x > 0) && (board[y * 4 + x - 1] == NULL))
-			x--;
-		else if ((x < 3) && (board[y * 4 + x + 1] == NULL))
-			x++;
-
-		newpos = y * 4 + x;
-		board[pos] = NULL;
-		board[newpos] = item;
-		gtk_object_set_data (GTK_OBJECT (item), "piece_pos", GINT_TO_POINTER (newpos));
-		gnome_canvas_item_set (item,
-				       "GnomeCanvasRE::x1", (double) (x * PIECE_SIZE),
-				       "GnomeCanvasRE::y1", (double) (y * PIECE_SIZE),
-				       "GnomeCanvasRE::x2", (double) ((x + 1) * PIECE_SIZE - 1),
-				       "GnomeCanvasRE::y2", (double) ((y + 1) * PIECE_SIZE - 1),
-				       NULL);
-		test_win (board);
-		break;
-
-	default:
-		break;
-	}
-
-	return FALSE;
-}
-
 static char *
 get_piece_color (int piece)
 {
@@ -95,6 +46,60 @@ get_piece_color (int piece)
 	sprintf (buf, "#%02x%02x%02x", r, g, b);
 
 	return buf;
+}
+
+static gint
+piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
+{
+	GnomeCanvas *canvas;
+	GnomeCanvasItem **board;
+	int num, pos, newpos;
+	int x, y;
+	double dx, dy;
+
+	canvas = item->canvas;
+	board = gtk_object_get_user_data (GTK_OBJECT (canvas));
+	num = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_num"));
+	pos = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_pos"));
+
+	switch (event->type) {
+	case GDK_BUTTON_PRESS:
+		y = pos / 4;
+		x = pos % 4;
+
+		/* up */
+
+		if ((y > 0) && (board[(y - 1) * 4 + x] == NULL)) {
+			dx = 0.0;
+			dy = -1.0;
+			y--;
+		} else if ((y < 3) && (board[(y + 1) * 4 + x] == NULL)) {
+			dx = 0.0;
+			dy = 1.0;
+			y++;
+		} else if ((x > 0) && (board[y * 4 + x - 1] == NULL)) {
+			dx = -1.0;
+			dy = 0.0;
+			x--;
+		} else if ((x < 3) && (board[y * 4 + x + 1] == NULL)) {
+			dx = 1.0;
+			dy = 0.0;
+			x++;
+		}
+
+		newpos = y * 4 + x;
+		board[pos] = NULL;
+		board[newpos] = item;
+		gtk_object_set_data (GTK_OBJECT (item), "piece_pos", GINT_TO_POINTER (newpos));
+		gnome_canvas_item_move (item, dx * PIECE_SIZE, dy * PIECE_SIZE);
+		test_win (board);
+		break;
+
+	default:
+		break;
+	}
+
+	return FALSE;
 }
 
 static GtkWidget *
@@ -134,7 +139,7 @@ create_fifteen (void)
 						  "GnomeCanvasRE::y2", (double) ((y + 1) * PIECE_SIZE - 1),
 						  "GnomeCanvasRE::fill_color", get_piece_color (i),
 						  "GnomeCanvasRE::outline_color", "black",
-						  "GnomeCanvasRE::width_pixels", 1,
+						  "GnomeCanvasRE::width_pixels", 0,
 						  NULL);
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_num", GINT_TO_POINTER (i));
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_pos", GINT_TO_POINTER (i));
