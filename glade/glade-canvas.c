@@ -32,17 +32,15 @@
 #include <glade/glade-build.h>
 #include <libgnomecanvas/gnome-canvas.h>
 
-static GladeWidgetBuildData widget_data[] = {
-    { "GnomeCanvas", glade_standard_build_widget, NULL, gnome_canvas_get_type },
-    { NULL, NULL, NULL, 0, 0 }
-};
-
 /* this macro puts a version check function into the module */
 GLADE_MODULE_CHECK_INIT
 
 void
 glade_module_register_widgets (void)
 {
+
     glade_provide ("canvas");
-    glade_register_widgets (widget_data);
+    glade_register_widget (GNOME_TYPE_CANVAS,
+			   glade_standard_build_widget,
+			   NULL, NULL);
 }

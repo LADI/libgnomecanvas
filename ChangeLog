@@ -1,3 +1,8 @@
+2001-10-26  Michael Meeks  <michael@ximian.com>
+
+	* glade/glade-canvas.c (glade_module_register_widgets):
+	register the canvas widget with the new API.
+
 2001-10-24  jacob berkman  <jacob@ximian.com>
 
 	* glade/glade-canvas.c: moved from libglade/glade/
