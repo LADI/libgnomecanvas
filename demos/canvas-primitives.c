@@ -74,6 +74,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	case GDK_BUTTON_RELEASE:
 		gnome_canvas_item_ungrab (item, event->button.time);
 		dragging = FALSE;
+		break;
 
 	default:
 		break;
