@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2001-12-11 20:47+0100\n"
+"POT-Creation-Date: 2002-01-10 12:39+0100\n"
 "PO-Revision-Date: 2001-06-19 12:54+0200\n"
 "Last-Translator: Héctor García Álvarez <hector@scouts-es.org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -13,19 +13,19 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1456 libgnomecanvas/gnome-canvas.c:1457
+#: libgnomecanvas/gnome-canvas.c:1392 libgnomecanvas/gnome-canvas.c:1393
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1463 libgnomecanvas/gnome-canvas.c:1464
+#: libgnomecanvas/gnome-canvas.c:1399 libgnomecanvas/gnome-canvas.c:1400
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2106
+#: libgnomecanvas/gnome-canvas.c:2041
 msgid "Antialiased"
 msgstr ""
 
-#: libgnomecanvas/gnome-canvas.c:2107
+#: libgnomecanvas/gnome-canvas.c:2042
 msgid "The antialiasing mode of the canvas."
 msgstr ""
 
