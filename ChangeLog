@@ -1,3 +1,7 @@
+Wed Aug 15 11:55:09 2001  Tim Janik  <timj@gtk.org>
+
+	* configure.in: require automake 2.13.
+
 2001-08-14  Martin Baulig  <baulig@suse.de>
 
 	Released libgnomecanvas 1.102.0 "Roswell".
