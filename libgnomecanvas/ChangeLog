@@ -1,5 +1,9 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas.h (gtk_module_info): Added external declaration.
+
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
 	* libgnomecanvas.h: #include all of the canvas header files.
 
 	* libgnomecanvas-init.c: Initialize GTK+.
