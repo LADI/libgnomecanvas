@@ -2379,6 +2379,11 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		/* So I think we can request full redraw here */
 		/* The reason is, that coverage UTA will be invalidated by offset change */
 		/* fixme: Strictly this is not correct - we have to remove our own idle (Lauris) */
+		/* More stuff - we have to mark root as needing fresh affine (Lauris) */
+		if (!(canvas->root->object.flags & GNOME_CANVAS_ITEM_NEED_AFFINE)) {
+			canvas->root->object.flags |= GNOME_CANVAS_ITEM_NEED_AFFINE;
+			gnome_canvas_request_update (canvas);
+		}
 		gtk_widget_queue_draw (GTK_WIDGET (canvas));
 	}
 
@@ -3040,10 +3045,18 @@ paint (GnomeCanvas *canvas)
 	widget = GTK_WIDGET (canvas);
 
 	if (canvas->need_update) {
-		double affine[6];
+		gdouble w2cpx[6];
 
-		art_affine_identity (affine);
-		gnome_canvas_item_invoke_update (canvas->root, affine, NULL, 0);
+		/* We start updating root with w2cpx affine */
+		w2cpx[0] = canvas->pixels_per_unit;
+		w2cpx[1] = 0.0;
+		w2cpx[2] = 0.0;
+		w2cpx[3] = canvas->pixels_per_unit;
+		w2cpx[4] = -canvas->scroll_x1 * canvas->pixels_per_unit;
+		w2cpx[5] = -canvas->scroll_y1 * canvas->pixels_per_unit;
+
+		gnome_canvas_item_invoke_update (canvas->root, w2cpx, NULL, 0);
+
 		canvas->need_update = FALSE;
 	}
 

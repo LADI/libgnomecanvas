@@ -29,8 +29,6 @@
 #include <libart_lgpl/art_rgb_rgba_affine.h>
 #include "gnome-canvas-pixbuf.h"
 
-
-
 /* Private part of the GnomeCanvasPixbuf structure */
 typedef struct {
 	/* Our gdk-pixbuf */
@@ -65,8 +63,6 @@ typedef struct {
 	/* Anchor */
 	GtkAnchorType anchor;
 } PixbufPrivate;
-
-
 
 /* Object argument IDs */
 enum {
@@ -660,12 +656,18 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
  * by some other amount.
  */
 static void
-compute_render_affine (GnomeCanvasPixbuf *gcp, double *render_affine, double *i2c)
+compute_render_affine (GnomeCanvasPixbuf *gcp, double *ra, double *i2c)
 {
-	double viewport_affine[6];
+	double va[6];
 
-	compute_viewport_affine (gcp, viewport_affine, i2c);
-	art_affine_multiply (render_affine, viewport_affine, i2c);
+	compute_viewport_affine (gcp, va, i2c);
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+	g_print ("va %g %g %g %g %g %g\n", va[0], va[1], va[2], va[3], va[4], va[5]);
+#endif
+	art_affine_multiply (ra, va, i2c);
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+	g_print ("ra %g %g %g %g %g %g\n", ra[0], ra[1], ra[2], ra[3], ra[4], ra[5]);
+#endif
 }
 
 /* Recomputes the bounding box of a pixbuf canvas item.  The horizontal and
@@ -673,11 +675,11 @@ compute_render_affine (GnomeCanvasPixbuf *gcp, double *render_affine, double *i2
  * have to compute the components individually for each dimension.
  */
 static void
-recompute_bounding_box (GnomeCanvasPixbuf *gcp)
+recompute_bounding_box (GnomeCanvasPixbuf *gcp, gdouble *i2c)
 {
 	GnomeCanvasItem *item;
 	PixbufPrivate *priv;
-	double i2c[6], render_affine[6];
+	double ra[6];
 	ArtDRect rect;
 
 	item = GNOME_CANVAS_ITEM (gcp);
@@ -694,9 +696,18 @@ recompute_bounding_box (GnomeCanvasPixbuf *gcp)
 	rect.y0 = 0.0;
 	rect.y1 = gdk_pixbuf_get_height (priv->pixbuf);
 
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+	g_print ("i2c %g %g %g %g %g %g\n", i2c[0], i2c[1], i2c[2], i2c[3], i2c[4], i2c[5]);
+#endif
 	gnome_canvas_item_i2c_affine (item, i2c);
-	compute_render_affine (gcp, render_affine, i2c);
-	art_drect_affine_transform (&rect, &rect, render_affine);
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+	g_print ("i2c %g %g %g %g %g %g\n", i2c[0], i2c[1], i2c[2], i2c[3], i2c[4], i2c[5]);
+#endif
+	compute_render_affine (gcp, ra, i2c);
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+	g_print ("ra %g %g %g %g %g %g\n", ra[0], ra[1], ra[2], ra[3], ra[4], ra[5]);
+#endif
+	art_drect_affine_transform (&rect, &rect, ra);
 
 	item->x1 = floor (rect.x0);
 	item->y1 = floor (rect.y0);
@@ -725,8 +736,9 @@ gnome_canvas_pixbuf_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 	     && !(GTK_OBJECT_FLAGS (item) & GNOME_CANVAS_ITEM_VISIBLE))
 	    || (flags & GNOME_CANVAS_UPDATE_AFFINE)
 	    || priv->need_pixbuf_update
-	    || priv->need_xform_update)
+	    || priv->need_xform_update) {
 		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+	}
 
 	/* If we need a pixbuf update, or if the item changed visibility to
 	 * shown, recompute the bounding box.
@@ -736,7 +748,10 @@ gnome_canvas_pixbuf_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 	    || ((flags & GNOME_CANVAS_UPDATE_VISIBILITY)
 		&& (GTK_OBJECT_FLAGS (gcp) & GNOME_CANVAS_ITEM_VISIBLE))
 	    || (flags & GNOME_CANVAS_UPDATE_AFFINE)) {
-		recompute_bounding_box (gcp);
+		recompute_bounding_box (gcp, affine);
+#ifdef GNOME_CANVAS_PIXBUF_VERBOSE
+		g_print ("BBox is %g %g %g %g\n", item->x1, item->y1, item->x2, item->y2);
+#endif
 		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
 		priv->need_pixbuf_update = FALSE;
 		priv->need_xform_update = FALSE;
