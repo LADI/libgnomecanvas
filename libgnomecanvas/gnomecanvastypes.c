@@ -20,7 +20,9 @@ gnome_canvas_type_init(void) {
       GtkType         *type_id;
       GtkType          parent;
       gconstpointer    pointer1;
-      gpointer         pointer2;
+      gconstpointer    pointer2;
+      gconstpointer    pointer3;
+      gboolean         boolean1;
     } builtin_info[GNOME_TYPE_NUM_BUILTINS + 1] = {
 #include "gnomecanvastypebuiltins_ids.c"
       { NULL }
@@ -37,7 +39,7 @@ gnome_canvas_type_init(void) {
 	else if ( builtin_info[i].parent == GTK_TYPE_FLAGS )
 	  type_id = g_flags_register_static (builtin_info[i].type_name, (GtkFlagValue *)builtin_info[i].pointer1);
 	else if ( builtin_info[i].parent == GTK_TYPE_BOXED )
-	  type_id = g_boxed_type_register_static (builtin_info[i].type_name, (GBoxedCopyFunc)builtin_info[i].pointer1, (GBoxedFreeFunc)builtin_info[i].pointer2);
+	  type_id = g_boxed_type_register_static (builtin_info[i].type_name, (GBoxedInitFunc)builtin_info[1].pointer1, (GBoxedCopyFunc)builtin_info[i].pointer2, (GBoxedFreeFunc)builtin_info[i].pointer2, builtin_info[i].boolean1);
 
 	g_assert (type_id != GTK_TYPE_INVALID);
 	(*builtin_info[i].type_id) = type_id;
