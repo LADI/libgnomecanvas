@@ -1,0 +1,5 @@
+Makefile.in
+Makefile
+.deps
+.libs
+canvas_demo
