@@ -916,7 +916,10 @@ gnome_canvas_pixbuf_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
         gnome_canvas_buf_ensure_buf (buf);
 
 
-	if (art_affine_rectilinear (render_affine))
+	if ((fabs (render_affine[1]) < GNOME_CANVAS_EPSILON) &&
+	    (fabs (render_affine[2]) < GNOME_CANVAS_EPSILON) &&
+	    render_affine[0] > 0.0 &&
+	    render_affine[3] > 0.0)
 	  {
 	    GdkPixbuf *dest_pixbuf;
 	    int x0, y0, x1, y1;

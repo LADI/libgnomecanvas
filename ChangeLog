@@ -1,3 +1,19 @@
+2003-05-03  Kjartan Maraas  <kmaraas@gnome.org>
+
+	reviewed by: Tim Janik <timj@gtk.org>
+
+	* libgnomecanvas/gnome-canvas-line.c: (gnome_canvas_line_update):
+	Fix for bug #72424. AA Canvas crashes if you create a line that has 
+	arrows enabled but not yet any point positions set. Patch from
+	Andreas Holzmann <Andreas.Holzmann@epost.de>.
+	* libgnomecanvas/gnome-canvas-pixbuf.c: Fix for bug 97604.
+	Certain affine transforms do not work for pixbuf items. Patch from
+	Jim Evins <evins@snaught.com>.
+	(gnome_canvas_pixbuf_render): Same as above.
+	* libgnomecanvas/gnome-canvas-shape.c: (gnome_canvas_shape_update):
+	Fix for bug #98258. Outline widths of rect, ellipse, and polygon
+	items don't rotate. Patch from Jim Evins <evins@snaught.com>
+
 Mon Mar 31 07:21:33 2003  Tim Janik  <timj@gtk.org>
 
 	* libgnomecanvas/gnome-canvas-pixbuf.c:
