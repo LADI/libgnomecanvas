@@ -39,7 +39,7 @@
 #include <libart_lgpl/art_svp_vpath_stroke.h>
 
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* This structure defines an array of points.  X coordinates are stored in the even-numbered
@@ -148,6 +148,6 @@ ArtPathStrokeJoinType gnome_canvas_join_gdk_to_art (GdkJoinStyle gdk_join);
 /* Convert from GDK line cap specifier to libart. */
 ArtPathStrokeCapType gnome_canvas_cap_gdk_to_art (GdkCapStyle gdk_cap);
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

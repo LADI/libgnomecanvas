@@ -39,7 +39,7 @@
 #include "gnome-canvas.h"
 
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Widget item for canvas.  The widget is positioned with respect to an anchor point.
@@ -99,6 +99,6 @@ struct _GnomeCanvasWidgetClass {
 GtkType gnome_canvas_widget_get_type (void) G_GNUC_CONST;
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

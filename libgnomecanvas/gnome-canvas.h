@@ -36,7 +36,6 @@
 #ifndef GNOME_CANVAS_H
 #define GNOME_CANVAS_H
 
-#include <libgnomebase/gnome-defs.h>
 #include <gtk/gtklayout.h>
 #include <stdarg.h>
 #include <libart_lgpl/art_misc.h>
@@ -48,7 +47,7 @@
 /* EEK!, gdk leaks some Xlib stuff, such as the grab success codes */
 #include <X11/X.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* "Small" value used by canvas stuff */
@@ -611,6 +610,6 @@ gulong gnome_canvas_get_color_pixel (GnomeCanvas *canvas,
 void gnome_canvas_set_stipple_origin (GnomeCanvas *canvas, GdkGC *gc);
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

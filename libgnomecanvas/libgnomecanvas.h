@@ -38,13 +38,13 @@
 #include <libgnomecanvas/gnome-canvas-rect-ellipse.h>
 #include <libgnomecanvas/gnome-canvas-util.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 extern GnomeModuleInfo gtk_module_info;
 extern GnomeModuleInfo libgnomecanvas_module_info;
 
 void libgnomecanvas_types_init (void);
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif /* LIBGNOMECANVAS_H */

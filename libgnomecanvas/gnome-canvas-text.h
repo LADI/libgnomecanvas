@@ -39,7 +39,7 @@
 #include "gnome-canvas.h"
 
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Text item for the canvas.  Text items are positioned by an anchor point and an anchor direction.
@@ -130,6 +130,6 @@ struct _GnomeCanvasTextClass {
 GtkType gnome_canvas_text_get_type (void) G_GNUC_CONST;
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

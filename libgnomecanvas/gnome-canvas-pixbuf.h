@@ -26,7 +26,7 @@
 #include <libgnomebase/gnome-defs.h>
 #include <libgnomecanvas/gnome-canvas.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 
@@ -57,6 +57,6 @@ GtkType gnome_canvas_pixbuf_get_type (void) G_GNUC_CONST;
 
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

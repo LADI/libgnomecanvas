@@ -39,7 +39,7 @@
 
 #include <libart_lgpl/art_svp.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Base class for rectangle and ellipse item types.  These are defined by their top-left and
@@ -173,6 +173,6 @@ struct _GnomeCanvasEllipseClass {
 GtkType gnome_canvas_ellipse_get_type (void) G_GNUC_CONST;
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

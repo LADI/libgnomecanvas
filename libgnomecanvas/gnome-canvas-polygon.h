@@ -37,7 +37,7 @@
 #include <libgnomebase/gnome-defs.h>
 #include "gnome-canvas.h"
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Polygon item for the canvas.  A polygon is a bit different from rectangles and ellipses in that
@@ -118,6 +118,6 @@ struct _GnomeCanvasPolygonClass {
 GtkType gnome_canvas_polygon_get_type (void) G_GNUC_CONST;
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

@@ -39,7 +39,7 @@
 #include "gnome-canvas.h"
 
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Line item for the canvas.  This is a polyline with configurable width, cap/join styles, and arrowheads.
@@ -149,6 +149,6 @@ struct _GnomeCanvasLineClass {
 GtkType gnome_canvas_line_get_type (void) G_GNUC_CONST;
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif
