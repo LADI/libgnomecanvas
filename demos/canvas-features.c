@@ -1,6 +1,10 @@
 #include <config.h>
-#include "testgnome.h"
+#include <libgnome/libgnome.h>
+#include "canvas_demo.h"
 
+#ifndef GNOME_PAD_SMALL
+#define GNOME_PAD_SMALL 4
+#endif
 
 /* Event handler for the item to be reparented.  When the user clicks on the item, it will be
  * reparented to another group.

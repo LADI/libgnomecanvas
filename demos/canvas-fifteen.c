@@ -1,6 +1,7 @@
 #include <config.h>
 #include <math.h>
-#include "testgnome.h"
+#include <time.h>
+#include "canvas_demo.h"
 
 
 #define PIECE_SIZE 50
