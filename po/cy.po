@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "POT-Creation-Date: 2003-05-12 13:09+0200\n"
-"PO-Revision-Date: 2003-05-19 02:47+0100\n"
+"PO-Revision-Date: 2003-05-31 03:12+0100\n"
 "Last-Translator: Dafydd Harries <daf@parnassus.ath.cx>\n"
 "Language-Team: Welsh <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
@@ -25,9 +25,9 @@ msgid "Y"
 msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2053
-# EFALLAU
+# EFALLAI
 msgid "Antialiased"
-msgstr "Datamegnnu"
+msgstr "Datamegennu"
 
 #: libgnomecanvas/gnome-canvas.c:2054
 # EFALLAI
@@ -42,7 +42,7 @@ msgstr "Testun"
 #: libgnomecanvas/gnome-canvas-text.c:207
 # EFALLAI
 msgid "Text to render"
-msgstr "Y testun i'w llunio"
+msgstr "Y testun i'w lunio"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 # EFALLAI
@@ -322,19 +322,19 @@ msgstr "Ydy'r eitem testun cyfoethog yma yn weladwy?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
-msgstr "Cyrchwr Gweladwy"
+msgstr "Cyrchydd Gweladwy"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
-msgstr "A ydy'r cyrchwr yn weladwy yn yr eitem testun cyfoethog yma?"
+msgstr "A ydy'r cyrchydd yn weladwy yn yr eitem testun cyfoethog yma?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
-msgstr "Chwincio'r Cyrchwr"
+msgstr "Chwincio'r Cyrchydd"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
-msgstr "A ydy'r cyrchwr yn chwincio yn yr eitem testun cyfoethog yma?"
+msgstr "A ydy'r cyrchydd yn chwincio yn yr eitem testun cyfoethog yma?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
@@ -397,7 +397,7 @@ msgid "Pixels Inside Wrap"
 msgstr "Picseli o Fewn Amlapiad"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
-msgid "Number of pixels to put inside the wrap"
+msgid "Number of pixels to put inside the yddwrap"
 msgstr "Y nifer o bicseli i'w rhoi o fewn ampliad"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
