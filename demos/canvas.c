@@ -163,48 +163,48 @@ create_primitives (void)
 	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
 					   root,
 					   gnome_canvas_rect_get_type (),
-					   "GnomeCanvasRE::x1", 10.0,
-					   "GnomeCanvasRE::y1", 10.0,
-					   "GnomeCanvasRE::x2", 160.0,
-					   "GnomeCanvasRE::y2", 60.0,
-					   "GnomeCanvasRE::fill_color", "mediumseagreen",
-					   "GnomeCanvasRE::outline_color", "black",
-					   "GnomeCanvasRE::width_pixels", 4,
+					   "x1", 10.0,
+					   "y1", 10.0,
+					   "x2", 160.0,
+					   "y2", 60.0,
+					   "fill_color", "mediumseagreen",
+					   "outline_color", "black",
+					   "width_pixels", 4,
 					   NULL));
 
 	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
 					   root,
 					   gnome_canvas_ellipse_get_type (),
-					   "GnomeCanvasRE::x1", 20.0,
-					   "GnomeCanvasRE::y1", 70.0,
-					   "GnomeCanvasRE::x2", 100.0,
-					   "GnomeCanvasRE::y2", 130.0,
-					   "GnomeCanvasRE::fill_color", "tan",
-					   "GnomeCanvasRE::outline_color", "slateblue",
-					   "GnomeCanvasRE::width_units", 6.0,
+					   "x1", 20.0,
+					   "y1", 70.0,
+					   "x2", 100.0,
+					   "y2", 130.0,
+					   "fill_color", "tan",
+					   "outline_color", "slateblue",
+					   "width_units", 6.0,
 					   NULL));
 
 	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
 					   root,
 					   gnome_canvas_text_get_type (),
-					   "GnomeCanvasText::text", "Hello, world!",
-					   "GnomeCanvasText::x", 200.0,
-					   "GnomeCanvasText::y", 100.0,
-					   "GnomeCanvasText::font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-					   "GnomeCanvasText::anchor", GTK_ANCHOR_CENTER,
-					   "GnomeCanvasText::fill_color", "blue",
+					   "text", "Hello, world!",
+					   "x", 200.0,
+					   "y", 100.0,
+					   "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					   "anchor", GTK_ANCHOR_CENTER,
+					   "fill_color", "blue",
 					   NULL));
 
 	im = gdk_imlib_load_image ("toroid.png");
 	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
 					   root,
 					   gnome_canvas_image_get_type (),
-					   "GnomeCanvasImage::image", im,
-					   "GnomeCanvasImage::x", 100.0,
-					   "GnomeCanvasImage::y", 200.0,
-					   "GnomeCanvasImage::width", (double) im->rgb_width,
-					   "GnomeCanvasImage::height", (double) im->rgb_height,
-					   "GnomeCanvasImage::anchor", GTK_ANCHOR_CENTER,
+					   "image", im,
+					   "x", 100.0,
+					   "y", 200.0,
+					   "width", (double) im->rgb_width,
+					   "height", (double) im->rgb_height,
+					   "anchor", GTK_ANCHOR_CENTER,
 					   NULL));
 
 	return vbox;
@@ -274,13 +274,13 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	switch (event->type) {
 	case GDK_ENTER_NOTIFY:
 		gnome_canvas_item_set (text,
-				       "GnomeCanvasText::fill_color", "white",
+				       "fill_color", "white",
 				       NULL);
 		break;
 
 	case GDK_LEAVE_NOTIFY:
 		gnome_canvas_item_set (text,
-				       "GnomeCanvasText::fill_color", "black",
+				       "fill_color", "black",
 				       NULL);
 		break;
 
@@ -425,20 +425,20 @@ create_fifteen (void)
 		board[i] = gnome_canvas_item_new (GNOME_CANVAS (canvas),
 						  GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas)->root),
 						  gnome_canvas_group_get_type (),
-						  "GnomeCanvasGroup::x", (double) (x * PIECE_SIZE),
-						  "GnomeCanvasGroup::y", (double) (y * PIECE_SIZE),
+						  "x", (double) (x * PIECE_SIZE),
+						  "y", (double) (y * PIECE_SIZE),
 						  NULL);
 
 		gnome_canvas_item_new (GNOME_CANVAS (canvas),
 				       GNOME_CANVAS_GROUP (board[i]),
 				       gnome_canvas_rect_get_type (),
-				       "GnomeCanvasRE::x1", 0.0,
-				       "GnomeCanvasRE::y1", 0.0,
-				       "GnomeCanvasRE::x2", (double) (PIECE_SIZE - 1),
-				       "GnomeCanvasRE::y2", (double) (PIECE_SIZE - 1),
-				       "GnomeCanvasRE::fill_color", get_piece_color (i),
-				       "GnomeCanvasRE::outline_color", "black",
-				       "GnomeCanvasRE::width_pixels", 0,
+				       "x1", 0.0,
+				       "y1", 0.0,
+				       "x2", (double) (PIECE_SIZE - 1),
+				       "y2", (double) (PIECE_SIZE - 1),
+				       "fill_color", get_piece_color (i),
+				       "outline_color", "black",
+				       "width_pixels", 0,
 				       NULL);
 
 		sprintf (buf, "%d", i + 1);
@@ -446,12 +446,12 @@ create_fifteen (void)
 		text = gnome_canvas_item_new (GNOME_CANVAS (canvas),
 					      GNOME_CANVAS_GROUP (board[i]),
 					      gnome_canvas_text_get_type (),
-					      "GnomeCanvasText::text", buf,
-					      "GnomeCanvasText::x", (double) PIECE_SIZE / 2.0,
-					      "GnomeCanvasText::y", (double) PIECE_SIZE / 2.0,
-					      "GnomeCanvasText::font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-					      "GnomeCanvasText::anchor", GTK_ANCHOR_CENTER,
-					      "GnomeCanvasText::fill_color", "black",
+					      "text", buf,
+					      "x", (double) PIECE_SIZE / 2.0,
+					      "y", (double) PIECE_SIZE / 2.0,
+					      "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					      "anchor", GTK_ANCHOR_CENTER,
+					      "fill_color", "black",
 					      NULL);
 
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_num", GINT_TO_POINTER (i));
