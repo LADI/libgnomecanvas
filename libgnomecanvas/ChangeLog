@@ -1,3 +1,7 @@
+2001-06-16  Cody Russell  <bratsche@gnome.org>
+
+	* gnome-canvas-clipgroup.[ch]: Installed.
+
 2001-06-16  Rusty Conover  <rconover@gnome.org>
 
 	* gnome-canvas-text.c (gnome_canvas_text_set_property): Got the
