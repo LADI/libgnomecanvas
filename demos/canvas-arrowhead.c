@@ -336,7 +336,7 @@ create_dimension (GnomeCanvasGroup *root, char *arrow_name, char *text_name, Gtk
 	item = gnome_canvas_item_new (root,
 				      gnome_canvas_text_get_type (),
 				      "fill_color", "black",
-				      "font", "-adobe-helvetica-medium-r-normal--12-*-72-72-p-*-iso8859-1",
+				      "font", "Sans 12",
 				      "anchor", anchor,
 				      NULL);
 	gtk_object_set_data (GTK_OBJECT (root->item.canvas), text_name, item);
@@ -352,7 +352,7 @@ create_info (GnomeCanvasGroup *root, char *info_name, double x, double y)
 				      "x", x,
 				      "y", y,
 				      "fill_color", "black",
-				      "font", "-adobe-helvetica-bold-r-normal--14-*-72-72-p-*-iso8859-1",
+				      "font", "Sans 14",
 				      "anchor", GTK_ANCHOR_NW,
 				      NULL);
 	gtk_object_set_data (GTK_OBJECT (root->item.canvas), info_name, item);

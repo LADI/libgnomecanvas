@@ -238,7 +238,7 @@ create_canvas_fifteen (void)
 					      "text", buf,
 					      "x", (double) PIECE_SIZE / 2.0,
 					      "y", (double) PIECE_SIZE / 2.0,
-					      "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					      "font", "Sans bold 24",
 					      "anchor", GTK_ANCHOR_CENTER,
 					      "fill_color", "black",
 					      NULL);
