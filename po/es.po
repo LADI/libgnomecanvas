@@ -23,11 +23,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
-msgstr ""
+msgstr "Antialias"
 
 #: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "El modo antialias del canvas"
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
