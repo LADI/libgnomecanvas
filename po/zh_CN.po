@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-04-18 01:39-0600\n"
+"POT-Creation-Date: 2002-04-22 12:03+0200\n"
 "PO-Revision-Date: 2002-03-26 23:31+0800\n"
 "Last-Translator: He Qiangqiang <carton@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
