@@ -1,3 +1,13 @@
+2004-01-23  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* demos/canvas-curve.c: Remove trailing commas from enums. Fixes
+	portability issues. Patch from "The Written Word". Closes bug #131350.
+	* libgnomecanvas/gnome-canvas-bpath.c: Same.
+	* libgnomecanvas/gnome-canvas-polygon.c: Same.
+	* libgnomecanvas/gnome-canvas-rect-ellipse.c: Same. 
+	* libgnomecanvas/gnome-canvas-rich-text.c: Same. 
+	* libgnomecanvas/gnome-canvas-shape.c: (gcbp_draw_ctx_unref): Same.
+
 2004-01-21  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-rich-text.c:
