@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-12-11 20:47+0100\n"
-"PO-Revision-Date: 2001-10-08 08:51+0200\n"
+"POT-Creation-Date: 2001-12-15 15:51+0100\n"
+"PO-Revision-Date: 2001-12-15 15:58+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2106
+#: libgnomecanvas/gnome-canvas.c:2105
 msgid "Antialiased"
-msgstr ""
+msgstr "Jemné hrany"
 
-#: libgnomecanvas/gnome-canvas.c:2107
+#: libgnomecanvas/gnome-canvas.c:2106
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Mód plátna s jemnými hranami."
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
