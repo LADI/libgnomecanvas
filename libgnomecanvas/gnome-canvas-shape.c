@@ -1043,8 +1043,10 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 	}
 
 	if (bbox_set) {
-		if (priv->outline_set && (priv->join == GDK_JOIN_MITER)) {
-			int stroke_border = ceil (10.43*width/2); /* 10.43 is the miter limit for X11 */
+		if (priv->outline_set) {
+			int stroke_border = (priv->join == GDK_JOIN_MITER)
+				? ceil (10.43*width/2) /* 10.43 is the miter limit for X11 */
+				: ceil (width/2);
 			x1 -= stroke_border;
 			x2 += stroke_border;
 			y1 -= stroke_border;
@@ -1516,7 +1518,7 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 		svp = art_svp_vpath_stroke (vpath,
 					    gnome_canvas_join_gdk_to_art (priv->join),
 					    gnome_canvas_cap_gdk_to_art (priv->cap),
-					    priv->width,
+					    width,
 					    priv->miterlimit,
 					    0.25);
 		art_free (vpath);
