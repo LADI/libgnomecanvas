@@ -16,14 +16,19 @@ static void
 test_win (GnomeCanvasItem **board)
 {
 	int i;
+#if 0
 	GtkWidget *dlg;
+#endif
 
 	for (i = 0; i < 15; i++)
 		if (!board[i] || (GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (board[i]), "piece_num")) != i))
 			return;
+
+#if 0
 	dlg=gnome_ok_dialog ("You stud, you win!");
 	gtk_window_set_modal(GTK_WINDOW(dlg),TRUE);
 	gnome_dialog_run (GNOME_DIALOG (dlg));
+#endif
 }
 
 static char *

@@ -1,7 +1,6 @@
 #include <config.h>
 #include <math.h>
-#include "testgnome.h"
-
+#include "canvas_demo.h"
 
 void
 create_canvas (void)
@@ -11,11 +10,10 @@ create_canvas (void)
 
 /* 	gtk_debug_flags = GTK_DEBUG_OBJECTS; */
 
-	app = create_newwin (TRUE, "testGNOME", "Canvas");
+	app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_policy (GTK_WINDOW (app), TRUE, TRUE, FALSE);
 
 	notebook = gtk_notebook_new ();
-	gnome_app_set_contents (GNOME_APP (app), notebook);
 	gtk_widget_show (notebook);
 
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_primitives (0), gtk_label_new ("Primitives"));
@@ -25,4 +23,20 @@ create_canvas (void)
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_features (), gtk_label_new ("Features"));
 
 	gtk_widget_show (app);
+}
+
+int
+main (int argc, char *argv[])
+{
+    gnome_program_init ("canvas_demo", VERSION, argc, argv,
+			GNOME_PARAM_MODULE_INFO, &libgnomecanvas_module_info,
+			GNOME_PARAM_HUMAN_READABLE_NAME,
+			("Canvas Demo"),
+			NULL);
+
+    create_canvas ();
+
+    gtk_main ();
+
+    return 0;
 }

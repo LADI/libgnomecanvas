@@ -1,7 +1,6 @@
 #include <config.h>
 #include <math.h>
-#include "testgnome.h"
-#include <libgnomeui/gnome-cursors.h>
+#include "canvas_demo.h"
 
 #define LEFT    50.0
 #define RIGHT  350.0
@@ -204,7 +203,7 @@ highlight_box (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 		break;
 
 	case GDK_BUTTON_PRESS:
-		fleur = gnome_stock_cursor_new (GNOME_STOCK_CURSOR_FLEUR);
+		fleur = gdk_cursor_new (GDK_FLEUR);
 		gnome_canvas_item_grab (item,
 					GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
 					fleur,

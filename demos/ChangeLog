@@ -1,5 +1,23 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* canvas-arrowhead.c (highlight_box): Use gdk_cursor_new() instead
+	of gnome_stock_cursor_new().
+
+	* canvas-primitives.c (item_event): Use gdk_cursor_new() instead
+	of gnome_stock_cursor_new().
+	(setup_text): Mark this function as G_GNUC_UNUSED.
+
+	* canvas-fifteen.c (test_win): Comment out gnome_dialog() stuff
+	for the moment.
+
+	* canvas.c (create_canvas): Create a toplevel GtkWindow instead of
+	using GnomeApp.
+	(main): Provide main() function.
+
+	* canvas_demo.h: New file.
+
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
 	* Makefile.am: New file.
 
 	* canvas-arrowhead.c, canvas-features.c, canvas-fifteen.c,
