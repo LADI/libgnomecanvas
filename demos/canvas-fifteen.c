@@ -23,7 +23,7 @@ test_win (GnomeCanvasItem **board)
 			return;
 	dlg=gnome_ok_dialog ("You stud, you win!");
 	gtk_window_set_modal(GTK_WINDOW(dlg),TRUE);
-	gnome_dialog_run_modal (GNOME_DIALOG (dlg));
+	gnome_dialog_run (GNOME_DIALOG (dlg));
 }
 
 static char *
