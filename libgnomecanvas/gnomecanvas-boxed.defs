@@ -6,7 +6,9 @@
 
 ;; An array of points used by GnomeCanvasLine and GnomeCanvasPolygon
 (define-boxed GnomeCanvasPoints
+  #f
   gnome_canvas_points_ref
   gnome_canvas_points_free
+  #t
 )
 

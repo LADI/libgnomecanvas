@@ -1,5 +1,8 @@
 2001-03-24  Martin Baulig  <baulig@suse.de>
 
+	* gnomecanvas-boxed.defs (GnomeCanvasPoints): This is
+	refcounted and has no init function.
+
 	* libgnomecanvas-2.0.pc.in: Depend on gtk+-2.0.
 
 2001-03-21  Martin Baulig  <baulig@suse.de>
