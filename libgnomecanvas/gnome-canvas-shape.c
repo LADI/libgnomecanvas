@@ -961,7 +961,6 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 			for (i = 0; i < len; i++) {
 				gdk->points[pos + i].x = (gint16) vpath[i].x;
 				gdk->points[pos + i].y = (gint16) vpath[i].y;
-				g_print ("O Point %d - %g %g\n", i, vpath[i].x, vpath[i].y);
 			}
 			gdk->num_points += len;
 
@@ -969,7 +968,7 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 			if (len > 0) {
 				pos += len;
-				gdk->open_paths = g_slist_append (gdk->closed_paths, GINT_TO_POINTER (len));
+				gdk->open_paths = g_slist_append (gdk->open_paths, GINT_TO_POINTER (len));
 			}
 
 			gnome_canvas_path_def_unref (path);
