@@ -1,3 +1,8 @@
+2002-02-15  Jody Goldberg <jody@gnome.org>
+
+	* libgnomecanvas/gnome-canvas-widget.c (gnome_canvas_widget_destroy) :
+	  handle multiple calls to destroy.
+
 2002-02-11  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Release 1.111.0

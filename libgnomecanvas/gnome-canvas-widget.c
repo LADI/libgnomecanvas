@@ -191,6 +191,7 @@ gnome_canvas_widget_destroy (GtkObject *object)
 	if (witem->widget && !witem->in_destroy) {
 		gtk_signal_disconnect (GTK_OBJECT (witem->widget), witem->destroy_id);
 		gtk_widget_destroy (witem->widget);
+		witem->widget = NULL;
 	}
 
 	if (GTK_OBJECT_CLASS (parent_class)->destroy)
