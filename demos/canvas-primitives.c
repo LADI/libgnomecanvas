@@ -744,7 +744,6 @@ create_canvas_primitives (gint aa)
 
 	/* Create the canvas */
 
-	gtk_widget_push_visual (gdk_rgb_get_visual ());
 	gtk_widget_push_colormap (gdk_rgb_get_cmap ());
 	if (aa)
 	  canvas = gnome_canvas_new_aa ();
@@ -778,7 +777,6 @@ create_canvas_primitives (gint aa)
 #endif
 
 	gtk_widget_pop_colormap ();
-	gtk_widget_pop_visual ();
 
 	/* Zoom */
 
