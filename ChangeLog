@@ -1,3 +1,7 @@
+2004-11-08  Anders Carlsson  <andersca@gnome.org>
+
+	* configure.in: Update to 2.9.1
+
 2004-09-19  Abel Cheung  <maddog@linuxhall.org>
 
 	* configure.in: Added "ang" to ALL_LINGUAS.
