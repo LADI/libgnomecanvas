@@ -117,7 +117,6 @@ enum {
 	ITEM_LAST_SIGNAL
 };
 
-
 static void gnome_canvas_item_class_init     (GnomeCanvasItemClass *class);
 static void gnome_canvas_item_init           (GnomeCanvasItem      *item);
 static void gnome_canvas_item_dispose        (GObject              *object);
@@ -144,6 +143,41 @@ static guint item_signals[ITEM_LAST_SIGNAL];
 
 static GtkObjectClass *item_parent_class;
 
+
+static void
+gnome_canvas_marshal_BOOLEAN__BOXED (GClosure     *closure,
+				     GValue       *return_value,
+				     guint         n_param_values,
+				     const GValue *param_values,
+				     gpointer      invocation_hint,
+				     gpointer      marshal_data)
+{
+	typedef gboolean (*GMarshalFunc_BOOLEAN__BOXED) (gpointer     data1,
+							 gpointer     arg_1,
+							 gpointer     data2);
+	register GMarshalFunc_BOOLEAN__BOXED callback;
+	register GCClosure *cc = (GCClosure*) closure;
+	register gpointer data1, data2;
+	gboolean v_return;
+
+	g_return_if_fail (return_value != NULL);
+	g_return_if_fail (n_param_values == 2);
+
+	if (G_CCLOSURE_SWAP_DATA (closure)) {
+		data1 = closure->data;
+		data2 = g_value_peek_pointer (param_values + 0);
+	} else {
+		data1 = g_value_peek_pointer (param_values + 0);
+		data2 = closure->data;
+	}
+	callback = (GMarshalFunc_BOOLEAN__BOXED) (marshal_data ? marshal_data : cc->callback);
+
+	v_return = callback (data1,
+			     g_value_get_boxed (param_values + 1),
+			     data2);
+
+	g_value_set_boolean (return_value, v_return);
+}
 
 /**
  * gnome_canvas_item_get_type:
@@ -202,7 +236,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 				GTK_RUN_LAST,
 				GTK_CLASS_TYPE (object_class),
 				GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
-				gtk_marshal_BOOLEAN__BOXED,
+				gnome_canvas_marshal_BOOLEAN__BOXED,
 				GTK_TYPE_BOOL, 1,
 				GDK_TYPE_EVENT);
         item_signals[ITEM_BUTTON_PRESS_EVENT] =
@@ -210,7 +244,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_press_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -219,7 +253,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_release_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -228,7 +262,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, motion_notify_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -237,7 +271,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_press_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -246,7 +280,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_release_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -255,7 +289,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, enter_notify_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 
@@ -264,7 +298,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
                                 GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, leave_notify_event),
-                                gtk_marshal_BOOLEAN__BOXED,
+                                gnome_canvas_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
 

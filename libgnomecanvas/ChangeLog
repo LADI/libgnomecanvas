@@ -1,3 +1,10 @@
+2001-11-19  Michael Meeks  <michael@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_marshal_BOOLEAN__BOXED): impl.
+	(gnome_canvas_item_class_init): upd. to use this.
+
+	* libgnomecanvastypes.c: include glib-object.h
+
 2001-11-18  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-text.c (gnome_canvas_text_set_property):

@@ -24,7 +24,7 @@
  */
 
 #include <config.h>
-#include <gobject/gboxed.h>
+#include <glib-object.h>
 
 #include <libgnomecanvas/libgnomecanvas.h>
 
