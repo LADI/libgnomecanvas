@@ -26,7 +26,7 @@ libincludedir = $(includedir)/gnome/2
 
 libgnomecanvasincludedir = $(includedir)/gnome/2/libgnomecanvas
 
-lib_headers = \
+libinclude_HEADERS = \
 	libgnomecanvas.h
 
 libgnomecanvasinclude_HEADERS =			\
