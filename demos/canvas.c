@@ -43,8 +43,6 @@ main (int argc, char *argv[])
 {
 	gtk_init (&argc, &argv);
 
-	libgnomecanvas_init ();
-
 	create_canvas ();
 
 	gtk_main ();
