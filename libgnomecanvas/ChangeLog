@@ -1,3 +1,8 @@
+2001-09-13  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_render):
+	Use gdk-pixbuf to render pixbufs when affine is rectilinear.
+
 2001-09-12  Jonathan Blandford  <jrb@redhat.com>
 
 	* gnome-canvas.c (gnome_canvas_init): change dither to be MAX.

@@ -884,7 +884,52 @@ gnome_canvas_pixbuf_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 	compute_render_affine (gcp, render_affine, i2c);
         gnome_canvas_buf_ensure_buf (buf);
 
-	if (gdk_pixbuf_get_has_alpha(priv->pixbuf))
+
+	if (art_affine_rectilinear (render_affine))
+	  {
+	    GdkPixbuf *dest_pixbuf;
+	    int x0, y0, x1, y1;
+
+	    dest_pixbuf = gdk_pixbuf_new_from_data (buf->buf,
+						    GDK_COLORSPACE_RGB,
+						    FALSE,
+						    8,
+						    buf->rect.x1 - buf->rect.x0,
+						    buf->rect.y1 - buf->rect.y0,
+						    buf->buf_rowstride,
+						    NULL, NULL);
+
+
+	    x0 = floor (render_affine[4] - buf->rect.x0 + 0.5);
+	    y0 = floor (render_affine[5] - buf->rect.y0 + 0.5);
+
+	    x1 = x0 + floor (gdk_pixbuf_get_width (priv->pixbuf) * render_affine[0] + 0.5);
+	    y1 = y0 + floor (gdk_pixbuf_get_height (priv->pixbuf) * render_affine[3] + 0.5);
+
+	    x0 = MAX (x0, 0);
+	    x0 = MIN (x0, buf->rect.x1 - buf->rect.x0);
+	    y0 = MAX (y0, 0);
+	    y0 = MIN (y0, buf->rect.y1 - buf->rect.y0);
+	    
+	    x1 = MAX (x1, 0);
+	    x1 = MIN (x1, buf->rect.x1 - buf->rect.x0);
+	    y1 = MAX (y1, 0);
+	    y1 = MIN (y1, buf->rect.y1 - buf->rect.y0);
+	    
+	    gdk_pixbuf_composite  (priv->pixbuf,
+				   dest_pixbuf,
+				   x0, y0,
+				   x1 - x0, y1 - y0,
+				   render_affine[4] - buf->rect.x0,
+				   render_affine[5] - buf->rect.y0,
+				   render_affine[0],
+				   render_affine[3],
+				   GDK_INTERP_HYPER,
+				   255);
+
+	    gdk_pixbuf_unref (dest_pixbuf);
+	  }
+	else if (gdk_pixbuf_get_has_alpha(priv->pixbuf))
 		art_rgb_rgba_affine (buf->buf,
 				     buf->rect.x0, buf->rect.y0, buf->rect.x1, buf->rect.y1,
 				     buf->buf_rowstride,
