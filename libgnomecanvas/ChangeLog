@@ -1,5 +1,7 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas.h: #include all of the canvas header files.
+
 	* libgnomecanvas-init.c: Initialize GTK+.
 
 2001-04-12  Martin Baulig  <baulig@suse.de>
