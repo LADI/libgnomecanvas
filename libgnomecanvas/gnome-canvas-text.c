@@ -246,7 +246,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 		 g_param_spec_boxed ("font_desc",
 				     _("Font description"),
 				     _("Font description as a PangoFontDescription struct"),
-				     GTK_TYPE_PANGO_FONT_DESCRIPTION,
+				     PANGO_TYPE_FONT_DESCRIPTION,
 				     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 
 	g_object_class_install_property

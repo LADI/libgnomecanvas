@@ -1,3 +1,8 @@
+2001-07-04  Michael Meeks  <michael@ximian.com>
+
+	* gnome-canvas-text.c (gnome_canvas_text_class_init):
+	s/GTK_TYPE_PANGO_FONT_DESCRIPTION/PANGO_TYPE_FONT_DESCRIPTION/
+
 Mon Jul  2 06:53:24 2001  Tim Janik  <timj@gtk.org>
 
 	* gnome-canvas.c: s/shutdown/dispose/ according to recent
