@@ -1,17 +1,24 @@
 # Greek translation of libgnomecanvas.
 # Copyright (C) 2002 Free Software Foundation.
 # Simos Xenitellis <simos@hellug.gr>, 2002.
-# 
+# Kostas Papadimas <pkst@gmx.net>, 2002,2003.
+#
+# simos: 30 messages (approx), initial translation.
+# kostas: 94 messages, 07Nov2002, completed translation.
+# simos: 94 messages, 07Nov2002, translation review.
+# kostas: 05Jan2003, updated translatiom for Gnome2.1x.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2.0.2\n"
-"POT-Creation-Date: 2002-11-27 21:55+0100\n"
-"PO-Revision-Date: 2002-08-17 15:29+0100\n"
-"Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
+"Project-Id-Version: libgnomecanvas 2.0.4\n"
+"POT-Creation-Date: 2003-01-05 11:17+0200\n"
+"PO-Revision-Date: 2003-01-05 11:19+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
 
 #: libgnomecanvas/gnome-canvas.c:1400 libgnomecanvas/gnome-canvas.c:1401
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -24,13 +31,12 @@ msgid "Y"
 msgstr "Ψ"
 
 #: libgnomecanvas/gnome-canvas.c:2052
-#, fuzzy
 msgid "Antialiased"
 msgstr "Εξομάλυνση"
 
 #: libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Η λειτουργία εξομάλυνσης του canvas."
 
 #: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
@@ -38,20 +44,17 @@ msgid "Text"
 msgstr "Κείμενο"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
-#, fuzzy
 msgid "Text to render"
-msgstr "Διορθωτής Κειμένου"
+msgstr "Κείμενο προς εμφάνιση"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
-#, fuzzy
 msgid "Markup"
-msgstr "Σ/δείκτες"
+msgstr "Σήμανση"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:216
-#, fuzzy
 msgid "Marked up text to render"
-msgstr "Κάνει το κείμενο έντονο"
+msgstr "Σήμανση κειμένου για προβολή"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:241
@@ -59,18 +62,16 @@ msgid "Font"
 msgstr "Γραμματοσειρά"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
-#, fuzzy
 msgid "Font description as a string"
-msgstr "κενή περιγραφή"
+msgstr "Περιγραφή γραμματοσειράς ως αλφαριθμητικό"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
-#, fuzzy
 msgid "Font description"
-msgstr "κενή περιγραφή"
+msgstr "Περιγραφή γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr ""
+msgstr "Περιγραφή γραμματοσειράς ως δομή PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
@@ -78,31 +79,28 @@ msgstr "Οικογένεια γραμματοσειρών"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr ""
+msgstr "Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
-#, fuzzy
 msgid "Font style"
-msgstr "Στυλ Γραμματοσειράς:"
+msgstr "Στυλ γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
-#, fuzzy
 msgid "Font variant"
-msgstr "Σημείο σύνδεσης"
+msgstr "Παραλλαγή γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
-#, fuzzy
 msgid "Font weight"
-msgstr "Σημείο σύνδεσης"
+msgstr "Βάρος γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr ""
+msgstr "Τέντωμα γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
@@ -111,31 +109,29 @@ msgstr "Μέγεθος γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr ""
+msgstr "Σημεία γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:330
-#, fuzzy
 msgid "Font size in points"
-msgstr "Αριθμός σημείων."
+msgstr "Μέγεθος γραμματοσειράς σε σημεία"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
-#, fuzzy
 msgid "Rise"
 msgstr "Ανασήκωση"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"Διάταξη κειμένου πάνω από τη γραμμή βάσης (κάτω από τη γραμμή βάσης αν είναι "
+"αρνητική)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Διαγραμμένα"
+msgstr "Επισήμανση"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "Αν θα γίνει επισήμανση κειμένου"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:360
@@ -144,9 +140,8 @@ msgstr "Υπογραμμισμένα"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:361
-#, fuzzy
 msgid "Style of underline for this text"
-msgstr "Υπογραμμίζει το κείμενο"
+msgstr "Στυλ υπογράμμισης του κειμένου"
 
 #: libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -154,7 +149,7 @@ msgstr "Κλίμακα"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr ""
+msgstr "Μέγεθος της γραμματοσειράς σχετικό με το εξ ορισμού μέγεθος"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
@@ -164,143 +159,127 @@ msgstr "Χρώμα"
 
 #: libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr ""
+msgstr "Χρώμα κειμένου, ως αλφαριθμητικό"
 
 #: libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
-msgstr ""
+msgstr "Χρώμα κειμένου, ως GdkColor"
 
 #: libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr ""
+msgstr "Χρώμα κειμένου, ως συνδυασμένος ακέραιος R/G/B/A"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:455
-#, fuzzy
 msgid "Text width"
-msgstr "Καθορισμός Πλάτους:"
+msgstr "Πλάτος κειμένου"
 
 #: libgnomecanvas/gnome-canvas-text.c:456
-#, fuzzy
 msgid "Width of the rendered text"
-msgstr "Το πλάτος του μαραφετιού"
+msgstr "Το πλάτος του εμφανιζόμενου κειμένου"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:463
-#, fuzzy
 msgid "Text height"
-msgstr "Επιπλέον ύψος:"
+msgstr "Ύψος κειμένου"
 
 #: libgnomecanvas/gnome-canvas-text.c:464
-#, fuzzy
 msgid "Height of the rendered text"
-msgstr "Ύψος ναρκοπεδίου"
+msgstr "Ύψος του εμφανιζόμενου κειμένου"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
-#, fuzzy
 msgid "Font family set"
-msgstr "Οικογένεια γραμματοσειών"
+msgstr "Ορισμός οικογένειας γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:476
-#, fuzzy
 msgid "Font style set"
-msgstr "Στυλ Γραμματοσειράς:"
+msgstr "Ορισμός στυλ γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει το στυλ γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
-#, fuzzy
 msgid "Font variant set"
-msgstr "Σημείο σύνδεσης"
+msgstr "Ορισμός παραλλαγής γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
-#, fuzzy
 msgid "Font weight set"
-msgstr "Σημείο σύνδεσης"
+msgstr "Ορισμός βάρους γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει το βάρος γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
-#, fuzzy
 msgid "Font stretch set"
-msgstr "Επιλογή γραμματοσειρών"
+msgstr "Ορισμός τεντώματος γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει το τέντωμα γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
-#, fuzzy
 msgid "Font size set"
-msgstr "Μέγεθος γραμματοσειράς:"
+msgstr "Ορισμός μεγέθους γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει το μέγεθος γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr ""
+msgstr "Ορισμός ανάδυσης"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την ανάδυση"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
-#, fuzzy
 msgid "Strikethrough set"
-msgstr "Διαγραμμένα"
+msgstr "Ορισμός επισήμανσης"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την επισήμανση"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:504
-#, fuzzy
 msgid "Underline set"
-msgstr "Υπογραμμισμένα"
+msgstr "Ορισμός υπογράμμισης"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την υπογράμμιση"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
-#, fuzzy
 msgid "Scale set"
-msgstr "Κλίμακα"
+msgstr "Ορισμός κλίμακας"
 
 #: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την κλιμάκωση γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
-#, fuzzy
 msgid "Text to display"
-msgstr "Κείμενο προς εμφάνιση:"
+msgstr "Κείμενο προς εμφάνιση"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
-#, fuzzy
 msgid "X position"
-msgstr "Θέση Χ: "
+msgstr "Θέση Χ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:226
-#, fuzzy
 msgid "Y position"
-msgstr "Θέση Υ: "
+msgstr "Θέση Ψ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
@@ -308,25 +287,23 @@ msgstr "Πλάτος"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width for text box"
-msgstr ""
+msgstr "Πλάτος για κουτί κειμένου"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:241
 msgid "Height"
 msgstr "Ύψος"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
-#, fuzzy
 msgid "Height for text box"
-msgstr "Ύψος μπάρας τίτλου."
+msgstr "Ύψος για κουτί κειμένου"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
-#, fuzzy
 msgid "Editable"
-msgstr "απενεργοποίηση"
+msgstr "Επεξεργάσιμο"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
-msgstr ""
+msgstr "Είναι επεξεργάσιμο αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
@@ -334,53 +311,47 @@ msgstr "Ορατό"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
-msgstr ""
+msgstr "Είναι ορατό αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
-#, fuzzy
 msgid "Cursor Visible"
-msgstr "Ορατό"
+msgstr "Ορατός Δρομέας"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
-msgstr ""
+msgstr "Είναι ορατός ο δρομέας σε αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
-#, fuzzy
 msgid "Cursor Blink"
-msgstr "Τρέχουσα γραμματοσειρά"
+msgstr "Αναβόσβημα Δρομέα"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
-msgstr ""
+msgstr "Αναβοσβήνει ο δρομέας σε αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
-#, fuzzy
 msgid "Grow Height"
-msgstr "Στη λίστα _παραθύρων"
+msgstr "Μεγάλωμα Ύψους"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr ""
+msgstr "Να μεγαλώνει το κουτί κειμένου αν δεν χωράει το κείμενο;"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
-#, fuzzy
 msgid "Wrap Mode"
-msgstr "Κανονική Κατάσταση"
+msgstr "Κατάσταση Αναδίπλωσης"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr ""
+msgstr "Λειτουργία αναδίπλωσης για κείμενο πολλαπλών γραμμών"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
-#, fuzzy
 msgid "Justification"
-msgstr "Πιστοποίηση ταυτότητας"
+msgstr "Στοίχιση"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
-#, fuzzy
 msgid "Justification mode"
-msgstr "Ώρα τελευταίας αλλαγής"
+msgstr "Λειτουργία στοίχισης"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
@@ -388,69 +359,63 @@ msgstr "Κατεύθυνση"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Text direction"
-msgstr ""
+msgstr "Κατεύθυνση κειμένου"
 
 #
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
-msgstr ""
+msgstr "Άγκυρα"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
-msgstr ""
+msgstr "Σημείο άγκυρας για κείμενο"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
-msgstr ""
+msgstr "Εικονοστοιχεία Πάνω από Γραμμές"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
-#, fuzzy
 msgid "Number of pixels to put above lines"
-msgstr "Αριθμός εικονοστοιχείων προς χρήση."
+msgstr "Αριθμός εικονοστοιχείων για χρήση πάνω από τις γραμμές"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
-msgstr ""
+msgstr "Εικονοστοιχεία Κάτω από Γραμμές"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:335
-#, fuzzy
 msgid "Number of pixels to put below lines"
-msgstr "Αριθμός εικονοστοιχείων προς χρήση."
+msgstr "Αριθμός εικονοστοιχείων για χρήση κάτω από τις γραμμές"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "Εικονοστοιχεία Μέσα σε Αναδίπλωση"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
-#, fuzzy
 msgid "Number of pixels to put inside the wrap"
-msgstr "Αριθμός εικονοστοιχείων προς χρήση."
+msgstr "Αριθμός εικονοστοιχείων για χρήση μέσα στην αναδίπλωση"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
 msgstr "Αριστερό Περιθώριο"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
-#, fuzzy
 msgid "Number of pixels in the left margin"
-msgstr "Αριθμός εικονοστοιχείων προς χρήση."
+msgstr "Αριθμός εικονοστοιχείων στο αριστερό περιθώριο"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
-#, fuzzy
 msgid "Right Margin"
-msgstr "Στοίχιση στα δεξιά"
+msgstr "Στοίχιση στα Δεξιά"
 
 # sysdeps/names/msg_limits.c:43 sysdeps/names/msg_limits.c:54
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
-#, fuzzy
 msgid "Number of pixels in the right margin"
-msgstr "Αριθμός καταχωρήσεων στο χάρτη μηνυμάτων"
+msgstr "Αριθμός εικονοστοιχείων στο δεξί περιθώριο"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
-msgstr ""
+msgstr "Εσοχές"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
-#, fuzzy
 msgid "Number of pixels for indentation"
-msgstr "Αριθμός εικονοστοιχείων προς χρήση."
+msgstr "Αριθμός εικονοστοιχείων για εσοχή"
+
