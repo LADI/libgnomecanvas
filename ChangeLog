@@ -1,3 +1,8 @@
+2001-09-13  Havoc Pennington  <hp@redhat.com>
+
+	* autogen.sh (srcdir): remove more CERTIFIED_GNOMIE bullshit, 
+	George didn't shovel it all. ;-)
+
 Tue Sep 04 16:42:30 2001  George Lebl <jirka@5z.com>
 
 	* configure.in: remove CERTIFIED_GNOMIE bullshit
