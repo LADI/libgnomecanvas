@@ -8,12 +8,12 @@ AC_PREREQ(2.54)
 # set LIBGNOMECANVAS_BINARY_AGE and LIBGNOMECANVAS_INTERFACE_AGE to 0.
 #
 m4_define([libgnomecanvas_major_version], [2])
-m4_define([libgnomecanvas_minor_version], [6])
+m4_define([libgnomecanvas_minor_version], [7])
 m4_define([libgnomecanvas_micro_version], [1])
-m4_define([libgnomecanvas_interface_age], [1])
+m4_define([libgnomecanvas_interface_age], [0])
 # If you need a modifier for the version number. 
 # Normally empty, but can be used to make "fixup" releases.
-m4_define([libgnomecanvas_extraversion],  [.1])
+m4_define([libgnomecanvas_extraversion],  [])
 
 dnl required versions of other programs
 m4_define([gtk_required_version],      [2.0.3])
