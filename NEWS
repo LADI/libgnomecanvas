@@ -1,5 +1,15 @@
+libgnomecanvas 2.6.1 "Girzby"
+-----------------------------
+
+What's new since 2.6.0
+
+* Translations:
+	- Added Gujarati translation (Gujarati Team)
+	- Added Basque translation (Iñaki Larrañaga)
+	- Various updated translations (ca, he, nn, wa)
+
 libgnomecanvas 2.6.0 "Skree"
------------------------
+----------------------------
 
 What's new since 2.4
 
