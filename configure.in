@@ -43,9 +43,9 @@ PKG_CHECK_MODULES(LIBGNOMECANVAS, $CANVAS_MODULES)
 AC_SUBST(LIBGNOMECANVAS_CFLAGS)
 AC_SUBST(LIBGNOMECANVAS_LIBS)
 
-PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= 1.99.3)
-AC_SUBST(CANVAS_GLADE_CFLAGS)
-AC_SUBST(CANVAS_GLADE_LIBS)
+dnl PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= 1.99.3)
+dnl AC_SUBST(CANVAS_GLADE_CFLAGS)
+dnl AC_SUBST(CANVAS_GLADE_LIBS)
 
 dnl Don't use AC_PROG_AWK since we need the full pathname.
 AC_PATH_PROGS(AWK, mawk gawk nawk awk, )
@@ -82,11 +82,11 @@ Makefile
 po/Makefile.in
 libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
-glade/Makefile
 demos/Makefile
 tests/Makefile
 docs/Makefile
 docs/reference/Makefile
 ])
-
+dnl glade/Makefile
+ 
 cat $srcdir/message-of-doom

@@ -408,14 +408,14 @@ gnome_canvas_shape_set_property (GObject      *object,
 
 	case PROP_FILL_STIPPLE:
 		if (gdk) {
-			set_stipple (gdk->fill_gc, &gdk->fill_stipple, (GdkBitmap *)g_value_get_object (value), FALSE);
+			set_stipple (gdk->fill_gc, &gdk->fill_stipple, (GdkBitmap*) g_value_get_object (value), FALSE);
 			gnome_canvas_item_request_update (item);
 		}
 		break;
 
 	case PROP_OUTLINE_STIPPLE:
 		if (gdk) {
-			set_stipple (gdk->outline_gc, &gdk->outline_stipple, (GdkBitmap *)g_value_get_object (value), FALSE);
+			set_stipple (gdk->outline_gc, &gdk->outline_stipple, (GdkBitmap*) g_value_get_object (value), FALSE);
 			gnome_canvas_item_request_update (item);
 		}
 		break;
@@ -435,7 +435,7 @@ gnome_canvas_shape_set_property (GObject      *object,
 		break;
 
 	case PROP_WIND:
-		priv->wind = g_value_get_enum (value);
+		priv->wind = g_value_get_uint (value);
 		gnome_canvas_item_request_update (item);
 		break;
 
@@ -470,6 +470,7 @@ gnome_canvas_shape_set_property (GObject      *object,
 		gnome_canvas_item_request_update (item);
 		break;
 	default:
+	  G_OBJECT_WARN_INVALID_PROPERTY_ID (object, param_id, pspec);
 		break;
 	}
 }
@@ -482,15 +483,16 @@ gnome_canvas_shape_set_property (GObject      *object,
 static void
 get_color_value (GnomeCanvasShape *shape, gulong pixel, GValue *value)
 {
-	GdkColor *color;
-	GdkColormap *colormap;
-
-	color = g_new (GdkColor, 1);
-	color->pixel = pixel;
-
-	colormap = gtk_widget_get_colormap (GTK_WIDGET (shape));
-	gdk_rgb_find_color (colormap, color);
-	g_value_set_boxed (value, color);
+  GnomeCanvas *canvas = GNOME_CANVAS_ITEM (shape)->canvas;
+  GdkColor *color;
+  GdkColormap *colormap;
+  
+  color = g_new (GdkColor, 1);
+  color->pixel = pixel;
+  
+  colormap = gtk_widget_get_colormap (GTK_WIDGET (canvas));
+  gdk_rgb_find_color (colormap, color);
+  g_value_set_boxed (value, color);
 }
 
 /**
@@ -527,14 +529,10 @@ gnome_canvas_shape_get_property (GObject     *object,
                                  GValue      *value,
                                  GParamSpec  *pspec)
 {
-	GnomeCanvasItem         *item;
-	GnomeCanvasShape        *shape;
-	GnomeCanvasShapePriv    *priv;
+	GnomeCanvasItem         *item = GNOME_CANVAS_ITEM (object);
+	GnomeCanvasShape        *shape = GNOME_CANVAS_SHAPE (object);
+	GnomeCanvasShapePriv    *priv = shape->priv;
 	GnomeCanvasShapePrivGdk *gdk;
-
-	item = (GnomeCanvasItem *) object;
-	shape = (GnomeCanvasShape *) object;
-	priv = shape->priv;
 
 	if (!item->canvas->aa) {
 		gcbp_ensure_gdk (shape);
@@ -571,22 +569,22 @@ gnome_canvas_shape_get_property (GObject     *object,
 
 	case PROP_FILL_STIPPLE:
 		if (gdk) {
-			g_value_set_boxed (value, gdk->fill_stipple);
+			g_value_set_object (value, gdk->fill_stipple);
 		} else {
-			g_value_set_boxed (value, NULL);
+			g_value_set_object (value, NULL);
 		}
 		break;
 
 	case PROP_OUTLINE_STIPPLE:
 		if (gdk) {
-			g_value_set_boxed (value, gdk->outline_stipple);
+			g_value_set_object (value, gdk->outline_stipple);
 		} else {
-			g_value_set_boxed (value, NULL);
+			g_value_set_object (value, NULL);
 		}
 		break;
 
 	case PROP_WIND:
-		g_value_set_enum (value, priv->wind);
+		g_value_set_uint (value, priv->wind);
 		break;
 
 	case PROP_CAP_STYLE:
@@ -597,6 +595,18 @@ gnome_canvas_shape_get_property (GObject     *object,
 		g_value_set_enum (value, priv->join);
 		break;
 
+	case PROP_WIDTH_PIXELS:
+		g_value_set_uint (value, priv->width);
+		break;
+
+	case PROP_MITERLIMIT:
+		g_value_set_double (value, priv->miterlimit);
+		break;
+
+	case PROP_DASH:
+		g_value_set_pointer (value, priv->dash.dash);
+		break;
+		
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, param_id, pspec);
 		break;

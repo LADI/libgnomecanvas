@@ -884,6 +884,14 @@ gnome_canvas_line_get_property (GObject              *object,
 		g_value_set_boxed (value, get_points (line));
 		break;
 
+	case PROP_FILL_COLOR:
+		g_value_set_string_take_ownership (value,
+						   g_strdup_printf ("#%02x%02x%02x",
+								    line->fill_rgba >> 24,
+								    (line->fill_rgba >> 16) & 0xff,
+								    (line->fill_rgba >> 8) & 0xff));
+		break;
+
 	case PROP_FILL_COLOR_GDK: {
 		GdkColormap *colormap;
 
@@ -900,9 +908,17 @@ gnome_canvas_line_get_property (GObject              *object,
 		break;
 
 	case PROP_FILL_STIPPLE:
-		g_value_set_boxed (value, line->stipple);
+		g_value_set_object (value, line->stipple);
 		break;
 
+	case PROP_WIDTH_PIXELS:
+		g_value_set_uint (value, line->width);
+		break;
+		
+	case PROP_WIDTH_UNITS:
+		g_value_set_double (value, line->width);
+		break;
+		
 	case PROP_CAP_STYLE:
 		g_value_set_enum (value, line->cap);
 		break;

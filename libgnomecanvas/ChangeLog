@@ -1,3 +1,23 @@
+Wed Jan  9 06:02:17 2002  Tim Janik  <timj@gtk.org>
+
+	* gnome-canvas-line.c: fix PROP_FILL_COLOR, PROP_FILL_STIPPLE,
+	PROP_WIDTH_PIXELS and PROP_WIDTH_UNITS properties.
+	
+	* gnome-canvas-shape.c: fix PROP_FILL_STIPPLE, PROP_OUTLINE_STIPPLE,
+	PROP_WIND, PROP_DASH, PROP_WIDTH_PIXELS and PROP_MITERLIMIT properties.
+	PROP_WIND: eek this is an uint property eventhough ArtSvpWind is
+	an enum, but doesn't seem to be exported to the typessystem.
+	at least get the value as uint as well.
+
+	* gnome-canvas-shape.c (get_color_value): fix this to use
+	the canvas, not the item as widget.
+	
+	* gnome-canvas-text.c: fix PROP_CLIP_WIDTH, PROP_FILL_COLOR and
+	PROP_FILL_STIPPLE properties.
+	
+	* gnome-canvas.c (gnome_canvas_item_get_property): don't cast a
+	NULL object into G_OBJECT().
+
 Sat Jan  5 07:07:08 2002  Tim Janik  <timj@gtk.org>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_bounds): issue the

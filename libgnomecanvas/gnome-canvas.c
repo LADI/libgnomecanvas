@@ -314,7 +314,7 @@ gnome_canvas_item_get_property (GObject *gobject, guint param_id,
 
 	switch (param_id) {
 	case ITEM_PROP_PARENT:
-		g_value_set_object (value, G_OBJECT (item->parent));
+		g_value_set_object (value, item->parent);
 		break;
 
 	default:

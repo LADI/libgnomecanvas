@@ -1,3 +1,3 @@
-SUBDIRS = libgnomecanvas glade demos po tests docs
+SUBDIRS = libgnomecanvas demos po docs # tests glade
 
 EXTRA_DIST = message-of-doom COPYING.LIB

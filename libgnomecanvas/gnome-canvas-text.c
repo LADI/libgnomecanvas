@@ -1234,7 +1234,7 @@ gnome_canvas_text_get_property (GObject            *object,
 		break;
 
 	case PROP_CLIP_WIDTH:
-		g_value_set_enum (value, text->clip_width);
+		g_value_set_double (value, text->clip_width);
 		break;
 
 	case PROP_CLIP_HEIGHT:
@@ -1253,6 +1253,14 @@ gnome_canvas_text_get_property (GObject            *object,
 		g_value_set_double (value, text->yofs);
 		break;
 
+	case PROP_FILL_COLOR:
+                g_value_set_string_take_ownership (value,
+						   g_strdup_printf ("#%02x%02x%02x",
+                                                                    text->rgba >> 24,
+                                                                    (text->rgba >> 16) & 0xff,
+                                                                    (text->rgba >> 8) & 0xff));
+		break;
+
 	case PROP_FILL_COLOR_GDK: {
 		GdkColormap *colormap;
 
@@ -1268,7 +1276,7 @@ gnome_canvas_text_get_property (GObject            *object,
 		break;
 
 	case PROP_FILL_STIPPLE:
-		g_value_set_boxed (value, text->stipple);
+		g_value_set_object (value, text->stipple);
 		break;
 
 	case PROP_TEXT_WIDTH:
