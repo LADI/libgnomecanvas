@@ -56,6 +56,7 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	int num, pos, newpos;
 	int x, y;
 	double dx, dy;
+	int move;
 
 	canvas = item->canvas;
 	board = gtk_object_get_user_data (GTK_OBJECT (canvas));
@@ -67,7 +68,7 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 		y = pos / 4;
 		x = pos % 4;
 
-		/* up */
+		move = TRUE;
 
 		if ((y > 0) && (board[(y - 1) * 4 + x] == NULL)) {
 			dx = 0.0;
@@ -85,14 +86,18 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 			dx = 1.0;
 			dy = 0.0;
 			x++;
+		} else
+			move = FALSE;
+
+		if (move) {
+			newpos = y * 4 + x;
+			board[pos] = NULL;
+			board[newpos] = item;
+			gtk_object_set_data (GTK_OBJECT (item), "piece_pos", GINT_TO_POINTER (newpos));
+			gnome_canvas_item_move (item, dx * PIECE_SIZE, dy * PIECE_SIZE);
+			test_win (board);
 		}
 
-		newpos = y * 4 + x;
-		board[pos] = NULL;
-		board[newpos] = item;
-		gtk_object_set_data (GTK_OBJECT (item), "piece_pos", GINT_TO_POINTER (newpos));
-		gnome_canvas_item_move (item, dx * PIECE_SIZE, dy * PIECE_SIZE);
-		test_win (board);
 		break;
 
 	default:
@@ -141,6 +146,7 @@ create_fifteen (void)
 						  "GnomeCanvasRE::outline_color", "black",
 						  "GnomeCanvasRE::width_pixels", 0,
 						  NULL);
+
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_num", GINT_TO_POINTER (i));
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_pos", GINT_TO_POINTER (i));
 		gtk_signal_connect (GTK_OBJECT (board[i]), "event",
