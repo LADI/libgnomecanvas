@@ -6,10 +6,7 @@ INCLUDES = \
 	-I$(builddir)					\
         -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
-	$(GTK_CFLAGS)					\
-	$(LIBGNOMEBASE_CFLAGS)				\
-	$(LIBART_CFLAGS)				\
-	$(PANGO_CFLAGS)					\
+	$(LIBGNOMECANVAS_CFLAGS)			\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
         -DGNOMECANVASDATADIR=\""$(datadir)"\" 		\
         -DGNOMECANVASPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
