@@ -1,3 +1,10 @@
+2003-09-11  Jody Goldberg <jody@gnome.org>
+
+	For David Boucher <bouda1@wanadoo.fr>
+	* libgnomecanvas/gnome-canvas-path-def.c
+	(gnome_canvas_path_def_concat) : A bpath is not of size 1, copy the
+	  full path.
+
 2003-09-01  Anders Carlsson  <andersca@gnome.org>
 
 	* configure.in: Release 2.4.0
