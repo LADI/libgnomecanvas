@@ -1,13 +1,13 @@
 # Romanian translation for libgnomecanvas
-# Copyright (C) 2003 Free Software Foundation, Inc.
-# Mişu Moldovan <dumol@go.ro>, 2003.
+# Copyright (C) 2003 - 2004 Free Software Foundation, Inc.
+# Mişu Moldovan <dumol@go.ro>, 2003, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2.3.6\n"
+"Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2003-08-24 21:06+0300\n"
+"POT-Creation-Date: 2004-03-18 23:12+0200\n"
+"PO-Revision-Date: 2004-03-18 14:52+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@go.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Text"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "Text de randat"
+msgstr "Text de afişat"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
@@ -47,7 +47,7 @@ msgstr "Selecţie"
 
 #: libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "Text selectat de randat"
+msgstr "Text selectat de afişat"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -164,7 +164,7 @@ msgstr "Lăţime text"
 
 #: libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
-msgstr "Lăţime text randat"
+msgstr "Lăţime text afişat"
 
 #: libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
@@ -172,7 +172,7 @@ msgstr "Înălţime text"
 
 #: libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
-msgstr "Înălţime text randat"
+msgstr "Înălţime text afişat"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
@@ -260,11 +260,11 @@ msgstr "Text de afişat"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
-msgstr "Coordonata X"
+msgstr "Coordonată X"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y position"
-msgstr "Coordonata Y"
+msgstr "Coordonată Y"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
@@ -303,7 +303,6 @@ msgid "Cursor Visible"
 msgstr "Cursor vizibil"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Este cursorul vizibil în acest item de text cu atribute?"
 
@@ -312,7 +311,6 @@ msgid "Cursor Blink"
 msgstr "Pâlpâire cursor"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Pâlpâie cursorul în acest item de text cu atribute?"
 
@@ -354,7 +352,7 @@ msgstr "Ancoră"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
-msgstr "Punctul de fixare a textului"
+msgstr "Punctul de ancorare a textului"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
