@@ -52,28 +52,45 @@ G_BEGIN_DECLS
  * position.  If used in conjunction with the clipping rectangle, these could be used to implement
  * simple scrolling of the text within the clipping rectangle.
  *
+ * Properties marked with [*] also have _set properties associated
+ * with them, that determine if the specified value should be used
+ * instead of the default (style-defined) values
+ *
  * The following object arguments are available:
  *
  * name			type			read/write	description
  * ------------------------------------------------------------------------------------------
  * text			string			RW		The string of the text label
+ * markup		string			 W		A Pango markup string for the text label
+ *
  * x			double			RW		X coordinate of anchor point
  * y			double			RW		Y coordinate of anchor point
- * font			string			W		A string describing the font
+ *
+ * font			string			 W		A string describing the font
  * font_desc	        PangoFontDescription*	RW		Pointer to a PangoFontDescriptor
+ * attributes           PangoAttrList*          RW		Pointer to a Pango attribute list
+ * style		PangoStyle		RW		Pango style of font to use	[*]
+ * variant		PangoVariant		RW		Pango variant of font to use	[*]
+ * weight		int			RW		Pango weight of font to use	[*]
+ * stretch		PangoStretch		RW		Pango stretch of font to use	[*]
+ * size			int			RW		Size (in pixels) of font	[*]
+ * size_points		double			RW		Size (in points) of font
+ *
  * anchor		GtkAnchorType		RW		Anchor side for the text
  * justification	GtkJustification	RW		Justification for multiline text
- * fill_color		string			W		X color specification for text
- * fill_color_gdk	GdkColor*		RW		Pointer to an allocated GdkColor
- * fill_color_rgba	guint   		RW		RGBA value used for AA color.
- * fill_stipple		GdkBitmap*		RW		Stipple pattern for filling the text
  * clip_width		double			RW		Width of clip rectangle
  * clip_height		double			RW		Height of clip rectangle
  * clip			boolean			RW		Use clipping rectangle?
  * x_offset		double			RW		Horizontal offset distance from anchor position
  * y_offset		double			RW		Vertical offset distance from anchor position
+ *
  * text_width		double			R		Used to query the width of the rendered text
  * text_height		double			R		Used to query the rendered height of the text
+ *
+ * fill_color		string			 W		X color specification for text
+ * fill_color_gdk	GdkColor*		RW		Pointer to an allocated GdkColor
+ * fill_color_rgba	guint   		RW		RGBA value used for AA color.
+ * fill_stipple		GdkBitmap*		RW		Stipple pattern for filling the text
  */
 
 #define GNOME_TYPE_CANVAS_TEXT            (gnome_canvas_text_get_type ())
@@ -90,7 +107,12 @@ typedef struct _GnomeCanvasTextClass GnomeCanvasTextClass;
 struct _GnomeCanvasText {
 	GnomeCanvasItem item;
 
-	PangoFontDescription *font_desc; /* Font description for text */
+	PangoFontDescription font_desc; /* Font description for text */
+	PangoAttrList *attr_list;       /* Attribute list of the text (caching) */
+	PangoUnderline underline;
+	gboolean       strikethrough;
+	int            rise;
+	
 	char *text;			/* Text to display */
 	GdkBitmap *stipple;		/* Stipple for text */
 	GdkGC *gc;			/* GC for drawing text */
@@ -119,6 +141,17 @@ struct _GnomeCanvasText {
         guint32 rgba;			/* RGBA color for text */ /*AA*/
 
 	guint clip : 1;			/* Use clip rectangle? */
+
+	guint family_set    : 1;        /* Use specified font_family? */
+	guint style_set     : 1;        /* Use specified font style? */
+	guint variant_set   : 1;        /* Use specified font variant? */
+	guint weight_set    : 1;        /* Use specified font weight? */
+	guint size_set      : 1;        /* Use specified font size? */
+	guint stretch_set   : 1;        /* Use specified font stretch? */
+
+	guint underline_set : 1;        /* Apply specified underline style? */
+	guint strike_set    : 1;        /* Apply specified strikethrough style? */
+	guint rise_set      : 1;        /* Apply specified ascension/descension? */
 };
 
 struct _GnomeCanvasTextClass {
