@@ -1,7 +1,7 @@
 AC_INIT(libgnomecanvas)
 
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE(libgnomecanvas, 1.116.0)
+AM_INIT_AUTOMAKE(libgnomecanvas, 1.117.0)
 
 AM_MAINTAINER_MODE
 
