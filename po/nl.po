@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2003-06-11 12:47+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-07-16 15:44+0200\n"
 "PO-Revision-Date: 2003-06-11 18:48+0100\n"
 "Last-Translator: Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -284,7 +285,7 @@ msgstr "Hoogte van tekstkader"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
-msgstr "Te Bewerken"
+msgstr "Bewerkbaar"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
@@ -324,7 +325,7 @@ msgstr "Moet het tekstkader in hoogte groeien als de tekst niet past?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
-msgstr "Doorloop-modus"
+msgstr "Terugloopmodus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
