@@ -22,15 +22,37 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 
 	switch (event->type) {
 	case GDK_BUTTON_PRESS:
-		x = event->button.x;
-		y = event->button.y;
+		switch (event->button.button) {
+		case 1:
+			x = event->button.x;
+			y = event->button.y;
 
-		fleur = gdk_cursor_new (GDK_FLEUR);
-		gnome_canvas_item_grab (item,
-					GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
-					fleur,
-					event->button.time);
-		gdk_cursor_destroy (fleur);
+			fleur = gdk_cursor_new (GDK_FLEUR);
+			gnome_canvas_item_grab (item,
+						GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
+						fleur,
+						event->button.time);
+			gdk_cursor_destroy (fleur);
+			break;
+
+		case 2:
+			if (event->button.state & GDK_SHIFT_MASK)
+				gnome_canvas_item_lower (item, 0);
+			else
+				gnome_canvas_item_lower (item, 1);
+			break;
+
+		case 3:
+			if (event->button.state & GDK_SHIFT_MASK)
+				gnome_canvas_item_raise (item, 0);
+			else
+				gnome_canvas_item_raise (item, 1);
+			break;
+
+		default:
+			break;
+		}
+
 		break;
 
 	case GDK_MOTION_NOTIFY:
@@ -129,6 +151,14 @@ create_primitives (void)
 	vbox = gtk_vbox_new (FALSE, 4);
 	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
 	gtk_widget_show (vbox);
+
+	w = gtk_label_new ("Drag an item with button 1.\n"
+			   "Click button 2 on an item to lower it,\n"
+			   "or button 3 to raise it.\n"
+			   "Shift+click with buttons 2 or 3 to send\n"
+			   "an item to the bottom or top, respectively.");
+	gtk_box_pack_start (GTK_BOX (vbox), w, FALSE, FALSE, 0);
+	gtk_widget_show (w);
 
 	hbox = gtk_hbox_new (FALSE, 4);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
