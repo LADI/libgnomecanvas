@@ -349,26 +349,29 @@ gnome_canvas_shape_set_property (GObject      *object,
 			priv->fill_set = TRUE;
 			priv->fill_rgba = get_rgba_from_color (&color);
 			if (gdk) gdk->fill_pixel = color.pixel;
-		} else {
+		} else if (priv->fill_set)
 			priv->fill_set = FALSE;
-		}
+		else
+			break;
 
 		gnome_canvas_item_request_update (item);
 		break;
 
 	case PROP_FILL_COLOR_GDK:
 		colorptr = g_value_get_boxed (value);
-		if (colorptr == NULL)
+		if (colorptr != NULL) {
+			priv->fill_set = TRUE;
+			priv->fill_rgba = get_rgba_from_color (colorptr);
+			if (gdk) {
+				GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
+				GdkColor tmp = *colorptr;
+				gdk_rgb_find_color (colormap, &tmp);
+				gdk->fill_pixel = tmp.pixel;
+			}
+		} else if (priv->fill_set)
+			priv->fill_set = FALSE;
+		else
 			break;
-
-		priv->fill_set = TRUE;
-		priv->fill_rgba = get_rgba_from_color (colorptr);
-		if (gdk) {
-			GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
-			GdkColor tmp = *colorptr;
-			gdk_rgb_find_color (colormap, &tmp);
-			gdk->fill_pixel = tmp.pixel;
-		}
 
 		gnome_canvas_item_request_update (item);
 		break;
@@ -386,24 +389,29 @@ gnome_canvas_shape_set_property (GObject      *object,
 			priv->outline_set = TRUE;
 			priv->outline_rgba = get_rgba_from_color (&color);
 			if (gdk) gdk->outline_pixel = color.pixel;
-		} else {
+		} else if (priv->outline_set)
 			priv->outline_set = FALSE;
-		}
+		else
+			break;
 
 		gnome_canvas_item_request_update (item);
 		break;
 
 	case PROP_OUTLINE_COLOR_GDK:
 		colorptr = g_value_get_boxed (value);
-
-		priv->outline_set = TRUE;
-		priv->outline_rgba = get_rgba_from_color (colorptr);
-		if (gdk) {
-			GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
-			GdkColor tmp = *colorptr;
-			gdk_rgb_find_color (colormap, &tmp);
-			gdk->outline_pixel = tmp.pixel;
-		}
+		if (colorptr != NULL) {
+			priv->outline_set = TRUE;
+			priv->outline_rgba = get_rgba_from_color (colorptr);
+			if (gdk) {
+				GdkColormap *colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
+				GdkColor tmp = *colorptr;
+				gdk_rgb_find_color (colormap, &tmp);
+				gdk->outline_pixel = tmp.pixel;
+			}
+		} else if (priv->outline_set)
+			priv->outline_set = FALSE;
+		else
+			break;
 
 		gnome_canvas_item_request_update (item);
 		break;
