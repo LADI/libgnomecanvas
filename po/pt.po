@@ -1,19 +1,19 @@
 # libgnomecanvas's Portuguese Translation
-# Copyright (C) 2001,2003 libgnomecanvas
+# Copyright © 2001, 2004 libgnomecanvas
 # Distributed under the same licence as the libgnomecanvas package
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2003
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
-"PO-Revision-Date: 2003-12-07 19:50+0000\n"
+"Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"POT-Creation-Date: 2004-02-01 16:36+0000\n"
+"PO-Revision-Date: 2004-02-01 16:40+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -305,7 +305,7 @@ msgid "Cursor Visible"
 msgstr "Cursor Visível"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+msgid "Is the cursor visible in this rich text item?"
 msgstr "O cursor é visível neste item de texto rico?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -313,7 +313,7 @@ msgid "Cursor Blink"
 msgstr "Cursor Pisca"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+msgid "Does the cursor blink in this rich text item?"
 msgstr "O cursor pisca neste item de texto rico?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
