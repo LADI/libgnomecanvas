@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2001-11-11 14:14+0100\n"
+"POT-Creation-Date: 2001-12-11 20:47+0100\n"
 "PO-Revision-Date: 2001-11-30 10:27+0100\n"
 "Last-Translator: Dirk-Jan C. Binnema <djcb@djcbsoftware.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -13,13 +13,21 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
+#: libgnomecanvas/gnome-canvas.c:1456 libgnomecanvas/gnome-canvas.c:1457
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
+#: libgnomecanvas/gnome-canvas.c:1463 libgnomecanvas/gnome-canvas.c:1464
 msgid "Y"
 msgstr "Y"
+
+#: libgnomecanvas/gnome-canvas.c:2106
+msgid "Antialiased"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas.c:2107
+msgid "The antialiasing mode of the canvas."
+msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
@@ -101,7 +109,9 @@ msgstr "Verhoging"
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Afstand van de tekst boven de grondlijn (of eronder als de verhoging negatief is)"
+msgstr ""
+"Afstand van de tekst boven de grondlijn (of eronder als de verhoging "
+"negatief is)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
