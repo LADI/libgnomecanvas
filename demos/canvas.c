@@ -18,11 +18,19 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 {
 	static double x, y;
 	double new_x, new_y;
+	GdkCursor *fleur;
 
 	switch (event->type) {
 	case GDK_BUTTON_PRESS:
 		x = event->button.x;
 		y = event->button.y;
+
+		fleur = gdk_cursor_new (GDK_FLEUR);
+		gnome_canvas_item_grab (item,
+					GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
+					fleur,
+					event->button.time);
+		gdk_cursor_destroy (fleur);
 		break;
 
 	case GDK_MOTION_NOTIFY:
@@ -35,6 +43,9 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 			y = new_y;
 		}
 		break;
+
+	case GDK_BUTTON_RELEASE:
+		gnome_canvas_item_ungrab (item, event->button.time);
 
 	default:
 		break;
@@ -486,6 +497,8 @@ create_canvas (void)
 {
 	GtkWidget *app;
 	GtkWidget *notebook;
+
+/* 	gtk_debug_flags = GTK_DEBUG_OBJECTS; */
 
 	app = create_newwin (TRUE, "testGNOME", "Canvas");
 
