@@ -1,25 +1,26 @@
+# translation of el.po to Greek
 # Greek translation of libgnomecanvas.
 # Copyright (C) 2002 Free Software Foundation.
-# Simos Xenitellis <simos@hellug.gr>, 2002.
-# Kostas Papadimas <pkst@gmx.net>, 2002,2003.
 #
 # simos: 30 messages (approx), initial translation.
 # kostas: 94 messages, 07Nov2002, completed translation.
 # simos: 94 messages, 07Nov2002, translation review.
 # kostas: 05Jan2003, updated translatiom for Gnome2.1x.
+# Simos Xenitellis <simos@hellug.gr>, 2002.
+# Kostas Papadimas <pkst@gnome.org>, 2002,2003,2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2.0.4\n"
+"Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2003-01-05 11:19+0200\n"
-"Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
+"POT-Creation-Date: 2004-02-24 20:22+0200\n"
+"PO-Revision-Date: 2004-02-24 20:24+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: KBabel 1.0.2\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -80,8 +81,7 @@ msgstr "Οικογένεια γραμματοσειρών"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr ""
-"Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
+msgstr "Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:276
@@ -122,8 +122,7 @@ msgid "Rise"
 msgstr "Ανασήκωση"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Διάταξη κειμένου πάνω από τη γραμμή βάσης (κάτω από τη γραμμή βάσης αν είναι "
 "αρνητική)"
@@ -196,8 +195,7 @@ msgstr "Ορισμός οικογένειας γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr ""
-"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:476
@@ -214,8 +212,7 @@ msgstr "Ορισμός παραλλαγής γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr ""
-"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
+msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -323,7 +320,6 @@ msgid "Cursor Visible"
 msgstr "Ορατός Δρομέας"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Είναι ορατός ο δρομέας σε αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
@@ -332,7 +328,6 @@ msgid "Cursor Blink"
 msgstr "Αναβόσβημα Δρομέα"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Αναβοσβήνει ο δρομέας σε αυτό το αντικείμενο εμπλουτισμένου κειμένου;"
 
@@ -425,3 +420,4 @@ msgstr "Εσοχές"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Αριθμός εικονοστοιχείων για εσοχή"
+

@@ -1,7 +1,12 @@
+2004-02-24  Kostas Papadimas <pkst@gnome.org>
+
+	* el.po: Updated  Greek translation.
+
 2004-02-24  Adam Weinberger  <adamw@FreeBSD.org>
 
 	* en_CA.po: Updated Canadian English translation.
 
+>>>>>>> 1.186
 2004-02-20  Christian Rose  <menthos@menthos.com>
 
 	* en_CA.po: Added Canadian English translation by
