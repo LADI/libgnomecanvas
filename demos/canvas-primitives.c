@@ -382,63 +382,47 @@ setup_texts (GnomeCanvasGroup *root)
 }
 
 static void
-free_imlib_image (GtkObject *object, gpointer data)
-{
-	gdk_imlib_destroy_image (data);
-}
-
-static void
 plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, int aa)
 {
-	GdkImlibImage *im;
+	GdkPixbuf *im;
 	GnomeCanvasItem *image;
 
-	if (aa)
-		im = gnome_canvas_load_alpha ("flower.png");
-	else
-		im = gdk_imlib_load_image ("flower.png");
+	im = gdk_pixbuf_new_from_file("flower.png");
 
 	if (im){
 		image = gnome_canvas_item_new (root,
-					       gnome_canvas_image_get_type (),
-					       "image", im,
+					       gnome_canvas_pixbuf_get_type (),
+					       "pixbuf", im,
 					       "x", x,
 					       "y", y,
-					       "width", (double) im->rgb_width,
-					       "height", (double) im->rgb_height,
+					       "width", (double) gdk_pixbuf_get_width(im),
+					       "height", (double) gdk_pixbuf_get_height(im),
 					       "anchor", anchor,
 					       NULL);
 		setup_item (image);
-		gtk_signal_connect (GTK_OBJECT (image), "destroy",
-				    (GtkSignalFunc) free_imlib_image,
-				    im);
+		gdk_pixbuf_unref(im);
 	}
 }
 
 static void
 setup_images (GnomeCanvasGroup *root, int aa)
 {
-	GdkImlibImage *im;
+	GdkPixbuf *im;
 	GnomeCanvasItem *image;
 
-	if (aa)
-		im = gnome_canvas_load_alpha ("toroid.png");
-	else
-		im = gdk_imlib_load_image ("toroid.png");
+	im = gdk_pixbuf_new_from_file("toroid.png");
 	if (im){
 		image = gnome_canvas_item_new (root,
-					       gnome_canvas_image_get_type (),
-					       "image", im,
+					       gnome_canvas_pixbuf_get_type (),
+					       "pixbuf", im,
 					       "x", 100.0,
 					       "y", 225.0,
-					       "width", (double) im->rgb_width,
-					       "height", (double) im->rgb_height,
+					       "width", (double) gdk_pixbuf_get_width(im),
+					       "height", (double) gdk_pixbuf_get_height(im),
 					       "anchor", GTK_ANCHOR_CENTER,
 					       NULL);
 		setup_item (image);
-		gtk_signal_connect (GTK_OBJECT (image), "destroy",
-				    (GtkSignalFunc) free_imlib_image,
-				    im);
+		gdk_pixbuf_unref(im);
 	} else
 		g_warning ("Could not find the toroid.png sample file");
 
@@ -760,15 +744,12 @@ create_canvas_primitives (gint aa)
 
 	/* Create the canvas */
 
-	if (aa) {
-		gtk_widget_push_visual (gdk_rgb_get_visual ());
-		gtk_widget_push_colormap (gdk_rgb_get_cmap ());
-		canvas = gnome_canvas_new_aa ();
-	} else {
-		gtk_widget_push_visual (gdk_imlib_get_visual ());
-		gtk_widget_push_colormap (gdk_imlib_get_colormap ());
-		canvas = gnome_canvas_new ();
-	}
+	gtk_widget_push_visual (gdk_rgb_get_visual ());
+	gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+	if (aa)
+	  canvas = gnome_canvas_new_aa ();
+	else
+	  canvas = gnome_canvas_new ();
 
 	/* Setup canvas items */
 
