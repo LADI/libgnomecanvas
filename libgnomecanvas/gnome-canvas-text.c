@@ -558,15 +558,13 @@ gnome_canvas_text_destroy (GtkObject *object)
 {
 	GnomeCanvasText *text;
 
-	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_TEXT (object));
 
 	text = GNOME_CANVAS_TEXT (object);
 
 	/* remember, destroy can be run multiple times! */
 
-	if (text->text)
-		g_free (text->text);
+	g_free (text->text);
 	text->text = NULL;
 
 	if (text->layout)
@@ -585,10 +583,10 @@ gnome_canvas_text_destroy (GtkObject *object)
 		gdk_bitmap_unref (text->stipple);
 	text->stipple = NULL;
 
-	if(text->private->bitmap.buffer) {
-		g_free(text->private->bitmap.buffer);		
+	if (text->private && text->private->bitmap.buffer) {
+		g_free (text->private->bitmap.buffer);		
 	}
-	g_free(text->private);
+	g_free (text->private);
 	text->private = NULL;
 	
 	if (GTK_OBJECT_CLASS (parent_class)->destroy)

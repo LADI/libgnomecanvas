@@ -1,3 +1,9 @@
+Tue Jun 26 12:49:35 2001  Tim Janik  <timj@gtk.org>
+
+	* gnome-canvas-text.c (gnome_canvas_text_destroy): only free
+	text->private->bitmap.buffer if text->private!=NULL, as a comment
+	in this function says, ::destroy may be run multiple times.
+
 Tue Jun 26 12:14:31 2001  Tim Janik  <timj@gtk.org>
 
 	* libgnomecanvas-2.0.pc: add missing -I include directive in
