@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.108.0\n"
-"POT-Creation-Date: 2001-12-23 22:55+0900\n"
-"PO-Revision-Date: 2001-12-23 23:10+0900\n"
+"POT-Creation-Date: 2001-12-25 23:35+0900\n"
+"PO-Revision-Date: 2001-12-25 23:44+0900\n"
 "Last-Translator: Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -106,12 +106,12 @@ msgstr "フォントのポイント単位での大きさ"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr ""
+msgstr "ライズ"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
+msgstr "ベースラインより上方向のテキストのオフセット (負なら下方向)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -119,7 +119,7 @@ msgstr "打ち消し線"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "テキストを打ち消すかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
@@ -173,7 +173,7 @@ msgstr "描画されているテキストの高さ"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr ""
+msgstr "フォントファミリー設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
@@ -181,7 +181,7 @@ msgstr "このタグがフォント ファミリーに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr ""
+msgstr "フォント スタイル設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
@@ -189,7 +189,7 @@ msgstr "このタグがフォントのスタイルに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr ""
+msgstr "フォント バリアント設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
@@ -197,7 +197,7 @@ msgstr "このタグがフォント バリアントに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr ""
+msgstr "フォント ウェイト設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
@@ -205,7 +205,7 @@ msgstr "このタグがフォントのウェイトに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr ""
+msgstr "フォント ストレッチ設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
@@ -213,7 +213,7 @@ msgstr "このタグがフォントのストレッチに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr ""
+msgstr "フォント サイズ設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
@@ -221,15 +221,15 @@ msgstr "このタグがフォントの大きさに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr ""
+msgstr "ライズ 設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "このタグがライズに影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr ""
+msgstr "打ち消し 設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
@@ -237,7 +237,7 @@ msgstr "このタグが打ち消し線に影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr ""
+msgstr "下線 設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
@@ -245,9 +245,8 @@ msgstr "このタグが下線に影響するかどうか"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr ""
+msgstr "スケール設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr "このタグがフォントのスケーリングに影響するかどうか"
-
