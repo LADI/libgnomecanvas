@@ -589,99 +589,6 @@ gnome_canvas_text_destroy (GtkObject *object)
 }
 
 static void
-get_bounds_item_relative (GnomeCanvasText *text, double *px1, double *py1, double *px2, double *py2)
-{
-	GnomeCanvasItem *item;
-	double x, y;
-	double clip_x, clip_y;
-
-	item = GNOME_CANVAS_ITEM (text);
-
-	x = text->x;
-	y = text->y;
-
-	clip_x = x;
-	clip_y = y;
-
-	/* Calculate text dimensions */
-
-	if (text->layout)
-	        pango_layout_get_pixel_size (text->layout,
-					     &text->max_width,
-					     &text->height);
-	else
-		text->height = 0;
-
-	/* Anchor text */
-
-	switch (text->anchor) {
-	case GTK_ANCHOR_NW:
-	case GTK_ANCHOR_W:
-	case GTK_ANCHOR_SW:
-		break;
-
-	case GTK_ANCHOR_N:
-	case GTK_ANCHOR_CENTER:
-	case GTK_ANCHOR_S:
-		x -= text->max_width / 2;
-		clip_x -= text->clip_width / 2;
-		break;
-
-	case GTK_ANCHOR_NE:
-	case GTK_ANCHOR_E:
-	case GTK_ANCHOR_SE:
-		x -= text->max_width;
-		clip_x -= text->clip_width;
-		break;
-
-	default:
-		break;
-	}
-
-	switch (text->anchor) {
-	case GTK_ANCHOR_NW:
-	case GTK_ANCHOR_N:
-	case GTK_ANCHOR_NE:
-		break;
-
-	case GTK_ANCHOR_W:
-	case GTK_ANCHOR_CENTER:
-	case GTK_ANCHOR_E:
-		y -= text->height / 2;
-		clip_y -= text->clip_height / 2;
-		break;
-
-	case GTK_ANCHOR_SW:
-	case GTK_ANCHOR_S:
-	case GTK_ANCHOR_SE:
-		y -= text->height;
-		clip_y -= text->clip_height;
-		break;
-
-	default:
-		break;
-	}
-
-	/* Bounds */
-
-
-	
-
-	if (text->clip) {
-		/* maybe do bbox intersection here? */
-		*px1 = clip_x;
-		*py1 = clip_y;
-		*px2 = clip_x + text->clip_width;
-		*py2 = clip_y + text->clip_height;
-	} else {
-		*px1 = x;
-		*py1 = y;
-		*px2 = x + text->max_width;
-		*py2 = y + text->height;
-	}
-}
-
-static void
 get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double *py2)
 {
 	GnomeCanvasItem *item;
@@ -993,6 +900,7 @@ gnome_canvas_text_set_property (GObject            *object,
 							    g_value_get_enum (value));
 			break;
 		case PROP_SIZE:
+			/* FIXME: This is bogus! It should be pixels, not points/PANGO_SCALE! */
 			pango_font_description_set_size (text->font_desc,
 							 g_value_get_int (value));
 			break;
@@ -1513,31 +1421,19 @@ gnome_canvas_text_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_pa
 {
 	GnomeCanvasText *text;
 	double x1, y1, x2, y2;
-	ArtDRect i_bbox, c_bbox;
-	int i;
 
 	text = GNOME_CANVAS_TEXT (item);
 
 	if (parent_class->update)
 		(* parent_class->update) (item, affine, clip_path, flags);
 
-	if (!item->canvas->aa) {
-		set_text_gc_foreground (text);
-		set_stipple (text, text->stipple, TRUE);
-		get_bounds (text, &x1, &y1, &x2, &y2);
+	set_text_gc_foreground (text);
+	set_stipple (text, text->stipple, TRUE);
+	get_bounds (text, &x1, &y1, &x2, &y2);
 
-		gnome_canvas_update_bbox (item, x1, y1, x2, y2);
-	} else {
-		/* aa rendering */
-		for (i = 0; i < 6; i++)
-			text->affine[i] = affine[i];
-		get_bounds_item_relative (text, &i_bbox.x0, &i_bbox.y0, &i_bbox.x1, &i_bbox.y1);
-		art_drect_affine_transform (&c_bbox, &i_bbox, affine);
-
-		
-		gnome_canvas_update_bbox (item, floor(c_bbox.x0), floor(c_bbox.y0), ceil(c_bbox.x1), ceil(c_bbox.y1));
-
-	}
+	gnome_canvas_update_bbox (item,
+				  floor (x1), floor (y1),
+				  ceil (x2), ceil (y2));
 }
 
 /* Realize handler for the text item */
@@ -1608,36 +1504,38 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 {
 	GnomeCanvasText *text;
 	guint32 fg_color;
-	double affine[6], anchor_affine[6], anchor_x = 0.0, anchor_y = 0.0,
-		bitmap_width, bitmap_height;
-
-
 	int render_x = 0, render_y = 0; /* offsets for text rendering,
 					 * for clipping rectangles */
-
-
+	int x, y;
+	int w, h;
+	guchar *dst, *src;
+	int src_dx, src_dy;
+	int i, alpha;
+	int bm_rows, bm_width;
 	
 	text = GNOME_CANVAS_TEXT (item);
 
 	if (!text->text)
 		return;
 
-	fg_color = text->rgba >> 8;
+	fg_color = text->rgba;
 
         gnome_canvas_buf_ensure_buf (buf);
 
-	
-	if(text->priv->render_dirty) {		
+	bm_rows = (text->clip) ? text->clip_cheight : text->height;
+	bm_width = (text->clip) ? text->clip_cwidth : text->max_width;
+	if(text->priv->render_dirty ||
+	   bm_rows != text->priv->bitmap.rows ||
+	   bm_width != text->priv->bitmap.width) {		
 		if(text->priv->bitmap.buffer) {
 			g_free(text->priv->bitmap.buffer);
 		}
-		text->priv->bitmap.rows =  (text->clip) ? text->clip_height : text->height;
-		text->priv->bitmap.width = (text->clip) ? text->clip_width : text->max_width;
-		text->priv->bitmap.pitch = (text->max_width+3)&~3;
+		text->priv->bitmap.rows =  bm_rows;
+		text->priv->bitmap.width = bm_width;
+		text->priv->bitmap.pitch = (text->priv->bitmap.width+3)&~3;
 		text->priv->bitmap.buffer = g_malloc0 (text->priv->bitmap.rows * text->priv->bitmap.pitch);
 		text->priv->bitmap.num_grays = 256;
 		text->priv->bitmap.pixel_mode = ft_pixel_mode_grays;
-
 
 		/* What this does is when a clipping rectangle is
 		   being used shift the rendering of the text by the
@@ -1649,114 +1547,68 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 		   rasterizing it. */
 
 		if(text->clip) {
-			switch(text->anchor) {
-			case GTK_ANCHOR_NW:				
-				break;
-			case GTK_ANCHOR_W:
-				render_y -= (text->height-text->clip_height)*0.5;
-				break;
-			case GTK_ANCHOR_SW:
-				/* you don't want this */
-				render_y -= (text->height-text->clip_height);
-				break;
-			case GTK_ANCHOR_N:
-				render_x -= (text->max_width-text->clip_width)*0.5;
-				break;
-			case GTK_ANCHOR_CENTER:
-				render_x -= (text->max_width-text->clip_width)*0.5;
-				render_y -= (text->height-text->clip_height)*0.5;
-				break;
-			case GTK_ANCHOR_S:
-				render_x -= (text->max_width-text->clip_width)*0.5;
-				render_y -= (text->height-text->clip_height);
-				break;
-			case GTK_ANCHOR_NE:
-				render_x -= (text->max_width-text->clip_width);
-				break;
-			case GTK_ANCHOR_E:
-				render_x -= (text->max_width-text->clip_width);
-				render_y -= (text->height-text->clip_height)*0.5;
-				break;
-			case GTK_ANCHOR_SE:
-			        render_x -= (text->max_width-text->clip_width);
-				render_y -= (text->height-text->clip_height);
-			default:
-				break;			
-			}
+			render_x = text->cx - text->clip_cx;
+			render_y = text->cy - text->clip_cy;
 		}
-		
 
 		pango_ft2_render_layout (&text->priv->bitmap, text->layout, render_x, render_y);
-		
+
 		text->priv->render_dirty = 0;
 	}
 
+	if (text->clip) {
+		x = text->clip_cx - buf->rect.x0;
+		y = text->clip_cy - buf->rect.y0;
+	} else {
+		x = text->cx - buf->rect.x0;
+		y = text->cy - buf->rect.y0;
+	}
+		
+	w = text->priv->bitmap.width;
+	h = text->priv->bitmap.rows;
 
-
-	memcpy(affine, text->affine, sizeof(gdouble)*6);       
-
-	anchor_x = text->x*item->canvas->pixels_per_unit;
-	anchor_y = text->y*item->canvas->pixels_per_unit;
-
-	bitmap_width = text->priv->bitmap.width;
-	bitmap_height = text->priv->bitmap.rows;
-
+	src_dx = src_dy = 0;
 	
-	/* Figure out the correct translation to apply to affine due
-	 * to the anchor */
-	switch(text->anchor) {
-	case GTK_ANCHOR_NW:
-		break;
-	case GTK_ANCHOR_W:
-		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_SW:
-		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_N:
-		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_CENTER:
-		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
-		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_S:
-		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
-		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_NE:
-		anchor_x -= (bitmap_width)*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_E:
-		anchor_x -= bitmap_width*item->canvas->pixels_per_unit;
-		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
-		break;
-	case GTK_ANCHOR_SE:
-		anchor_x -= bitmap_width*item->canvas->pixels_per_unit;
-		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
-	default:
-		break;
+	if (x + w > buf->rect.x1 - buf->rect.x0) {
+		w = buf->rect.x1 - buf->rect.x0 - x;
+	}
+	
+	if (y + h > buf->rect.y1 - buf->rect.y0) {
+		h = buf->rect.y1 - buf->rect.y0 - y;
 	}
 
-	/* Honor the anchor offsets */
-	anchor_x += text->xofs;
-	anchor_y += text->yofs;
+	if (x < 0) {
+		w -= - x;
+		src_dx += - x;
+		x = 0;
+	}
 	
-	art_affine_translate(anchor_affine, anchor_x, anchor_y);
-	art_affine_multiply(affine, affine, anchor_affine);
-
-	art_rgb_a_affine (buf->buf,
-			  buf->rect.x0, buf->rect.y0, buf->rect.x1, buf->rect.y1,
-			  buf->buf_rowstride,
-			  text->priv->bitmap.buffer,
-			  text->priv->bitmap.width,
-			  text->priv->bitmap.rows,
-			  text->priv->bitmap.pitch,
-			  fg_color,
-			  affine,
-			  ART_FILTER_NEAREST, NULL);
-			
+	if (y < 0) {
+		h -= -y;
+		src_dy += - y;
+		y = 0;
+	}
+	
+	dst = buf->buf + y * buf->buf_rowstride + x * 3;
+	src = text->priv->bitmap.buffer +
+		src_dy * text->priv->bitmap.pitch + src_dx;
+	while (h-- > 0) {
+		i = w;
+		while (i-- > 0) {
+			/* FIXME: Do the libart thing instead of divide by 255 */
+			alpha = ((fg_color & 0xff) * (*src)) / 255;
+			dst[0] = (dst[0] * (255 - alpha) + ((fg_color >> 24) & 0xff) * alpha) / 255;
+			dst[1] = (dst[1] * (255 - alpha) + ((fg_color >> 16) & 0xff) * alpha) / 255;
+			dst[2] = (dst[2] * (255 - alpha) + ((fg_color >> 8) & 0xff) * alpha) / 255;
+			dst += 3;
+			src += 1;
+		}
+		dst += buf->buf_rowstride - w*3;
+		src += text->priv->bitmap.pitch - w;
+	}
+	
 	buf->is_bg = 0;
+	return;
 }
 
 /* Point handler for the text item */

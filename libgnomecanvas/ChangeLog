@@ -1,3 +1,10 @@
+2001-12-11  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_property):
+	Unbreak the AA version of the text item. Now it behaves
+	just like the non-aa version, it's even got the same bugs.
+	None of the bad scaling or rotation is left.
+
 2001-12-10  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-text.c (gnome_canvas_text_class_init):
