@@ -5,7 +5,6 @@
 # erkaN <erkaN@linux-sevenler.de>, 2003.
 # Baris Cicek <baris@teamforce.name.tr>, 2004
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2\n"
