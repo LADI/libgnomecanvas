@@ -9,7 +9,7 @@
  *
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
- *          Lauris Kaplinski <lauris@ariman.ee>
+ *          Lauris Kaplinski <lauris@ximian.com>
  *          Miguel de Icaza <miguel@kernel.org>
  *          Cody Russell <bratsche@gnome.org>
  *          Rusty Conover <rconover@bangtail.net>
@@ -39,6 +39,7 @@
 #include <libart_lgpl/art_vpath_dash.h>
 #include <libart_lgpl/art_svp_wind.h>
 #include <libart_lgpl/art_svp_point.h>
+#include <libart_lgpl/art_rect_svp.h>
 
 enum {
 	PROP_0,
@@ -470,7 +471,7 @@ gnome_canvas_shape_set_property (GObject      *object,
 		gnome_canvas_item_request_update (item);
 		break;
 	default:
-	  G_OBJECT_WARN_INVALID_PROPERTY_ID (object, param_id, pspec);
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, param_id, pspec);
 		break;
 	}
 }
@@ -1051,18 +1052,17 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 	priv = shape->priv;
 
 	/* Common part */
-
-	if (parent_class->update)
+	if (parent_class->update) {
 		(* parent_class->update) (item, affine, clip_path, flags);
+	}
 
 	/* Outline width */
-
 	shape->priv->scale = (fabs (affine[0]) + fabs (affine[3])) / 2.0;
 
 	/* Reset bbox */
-
-	if (item->canvas->aa)
+	if (item->canvas->aa) {
 		gnome_canvas_item_reset_bounds (item);
+	}
 	
 	/* Clipped fill SVP */
 
@@ -1104,7 +1104,10 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 				svp,
 				clip_path);
 		} else {
-
+			if (priv->fill_svp) {
+				art_svp_free (priv->fill_svp);
+				priv->fill_svp = NULL;
+			}
 			/* No clipping */
 			shape->priv->fill_svp = svp;
 		}
@@ -1162,7 +1165,10 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 			gnome_canvas_item_update_svp_clip (item, &priv->outline_svp, svp, clip_path);
 
 		} else {
-
+			if (priv->outline_svp) {
+				art_svp_free (priv->outline_svp);
+				priv->outline_svp = NULL;
+			}
 			/* No clipping (yet) */
 			shape->priv->outline_svp = svp;
 		}
@@ -1183,30 +1189,27 @@ gnome_canvas_shape_point (GnomeCanvasItem *item, double x, double y,
 	double dist;
 	int wind;
 
+	/* fixme: This is just for debugging, canvas should ensure that */
+	/* fixme: IF YOU ARE SURE THAT IT IS CORRECT BEHAVIOUR, you can remove warning */
+	/* fixme: and make it to return silently */
+	g_return_val_if_fail (!item->canvas->need_update, 1e18);
+
 	shape = GNOME_CANVAS_SHAPE (item);
 
 	/* todo: update? */
-	if (shape->priv->fill_set) {
-		if (!shape->priv->fill_svp) {
-			static gboolean need_warning = TRUE;
-			if (need_warning) {
-				need_warning = FALSE;
-				g_warning (G_STRLOC ": FIXME: shape->priv->fill_set == TRUE && shape->priv->fill_svp == NULL");
-			}
-		} else {
-			wind = art_svp_point_wind (shape->priv->fill_svp, cx, cy);
-			if ((shape->priv->wind == ART_WIND_RULE_NONZERO) && (wind != 0)) {
-				*actual_item = item;
-				return 0.0;
-			}
-			if ((shape->priv->wind == ART_WIND_RULE_ODDEVEN) && ((wind & 0x1) != 0)) {
-				*actual_item = item;
-				return 0.0;
-			}
+	if (shape->priv->fill_set && shape->priv->fill_svp) {
+		wind = art_svp_point_wind (shape->priv->fill_svp, cx, cy);
+		if ((shape->priv->wind == ART_WIND_RULE_NONZERO) && (wind != 0)) {
+			*actual_item = item;
+			return 0.0;
+		}
+		if ((shape->priv->wind == ART_WIND_RULE_ODDEVEN) && ((wind & 0x1) != 0)) {
+			*actual_item = item;
+			return 0.0;
 		}
 	}
 
-	if (shape->priv->outline_set) {
+	if (shape->priv->outline_set && shape->priv->outline_svp) {
 		wind = art_svp_point_wind (shape->priv->outline_svp, cx, cy);
 		if (wind) {
 			*actual_item = item;
@@ -1214,9 +1217,9 @@ gnome_canvas_shape_point (GnomeCanvasItem *item, double x, double y,
 		}
 	}
 
-	if (shape->priv->outline_set) {
+	if (shape->priv->outline_set && shape->priv->outline_svp) {
 		dist = art_svp_point_dist (shape->priv->outline_svp, cx, cy);
-	} else if (shape->priv->fill_set) {
+	} else if (shape->priv->fill_set && shape->priv->outline_svp) {
 		dist = art_svp_point_dist (shape->priv->fill_svp, cx, cy);
 	} else {
 		return 1e12;
@@ -1456,9 +1459,91 @@ gcbp_draw_ctx_unref (GCBPDrawCtx * ctx)
 static void
 gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double *x2, double *y2)
 {
-  static gboolean need_warning = TRUE;
-  if (need_warning) {
-    need_warning = FALSE;
-    g_warning ("FIXME: gnome_canvas_shape_bounds() not implemented\n");
-  }
+	GnomeCanvasShape * shape;
+	GnomeCanvasShapePriv * priv;
+	ArtDRect bbox;
+	ArtSVP * svp;
+
+	shape = GNOME_CANVAS_SHAPE (item);
+
+	priv = shape->priv;
+
+	bbox.x0 = *x1;
+	bbox.y0 = *y1;
+	bbox.x1 = *x2;
+	bbox.y1 = *y2;
+
+	if ((priv->outline_set) && (!gnome_canvas_path_def_is_empty (priv->path))) {
+		gdouble width;
+		ArtVpath * vpath, * pvpath;
+
+		/* Set linewidth */
+
+		if (priv->width_pixels) {
+			width = priv->width;
+		} else {
+			width = priv->width * priv->scale;
+		}
+		
+		if (width < 0.5) width = 0.5;
+		
+		/* Render full path until vpath */
+
+		vpath = art_bez_path_to_vec (gnome_canvas_path_def_bpath (priv->path), 0.1);
+
+		pvpath = art_vpath_perturb (vpath);
+		art_free (vpath);
+
+		/* If dashed, apply dash */
+
+		if (priv->dash.dash != NULL)
+		{
+			ArtVpath *old = pvpath;
+			
+			pvpath = art_vpath_dash (old, &priv->dash);
+			art_free (old);
+		}
+		
+		/* Stroke vpath to SVP */
+
+		svp = art_svp_vpath_stroke (pvpath,
+					    gnome_canvas_join_gdk_to_art (priv->join),
+					    gnome_canvas_cap_gdk_to_art (priv->cap),
+					    priv->width,
+					    priv->miterlimit,
+					    0.25);
+		art_free (pvpath);
+		art_drect_svp (&bbox, svp);
+		art_svp_free (svp);
+	} else if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
+		GnomeCanvasPathDef * cpath;
+		ArtVpath * vpath, * pvpath;
+		ArtSVP *tmp_svp;
+
+		/* Get closed part of path */
+		cpath = gnome_canvas_path_def_closed_parts (shape->priv->path);
+		/* Render, until SVP */
+		vpath = art_bez_path_to_vec (gnome_canvas_path_def_bpath (cpath), 0.1);
+		gnome_canvas_path_def_unref (cpath);
+
+		pvpath = art_vpath_perturb (vpath);
+		art_free (vpath);
+
+		svp = art_svp_from_vpath (pvpath);
+		art_free (pvpath);
+		
+		tmp_svp = art_svp_uncross (svp);
+		art_svp_free (svp);
+
+		svp = art_svp_rewind_uncrossed (tmp_svp, shape->priv->wind);
+		art_svp_free (tmp_svp);
+
+		art_drect_svp (&bbox, svp);
+		art_svp_free (svp);
+	}
+
+	*x1 = bbox.x0;
+	*y1 = bbox.y0;
+	*x2 = bbox.x1;
+	*y2 = bbox.y1;
 }
