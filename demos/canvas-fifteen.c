@@ -53,7 +53,7 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	GnomeCanvasItem *text;
 	int num, pos, newpos;
 	int x, y;
-	double dx, dy;
+	double dx = 0.0, dy = 0.0;
 	int move;
 
 	canvas = item->canvas;
