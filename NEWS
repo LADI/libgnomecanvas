@@ -1,3 +1,16 @@
+libgnomecanvas 2.9.2
+--------------------
+
+What's new since 2.9.1
+
+* Bug fixes:
+	- Fix possible crashes in gnome_canvas_text_set_property()
+	  and gnome_canvas_text_set_markup(). Sebastian Rittau.
+
+* Translations:
+	- Added Xhosa (xh)
+	- Updated Belarusian (be)
+
 libgnomecanvas 2.9.1
 --------------------
 
