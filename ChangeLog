@@ -1,3 +1,7 @@
+2003-05-13  Telsa Gwynne  <hobbit@aloss.ukuu.org.uk>
+
+	* configure.in: Added "cy" to ALL_LINGUAS.
+
 2003-05-07  Abel Cheung  <maddog@linux.org.hk>
 
 	* configure.in: Added "cs" to ALL_LINGUAS.
