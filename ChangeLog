@@ -1,3 +1,11 @@
+2001-11-27  jacob berkman  <jacob@ximian.com>
+
+	* glade/glade-canvas.c (glade_module_register_widgets): use the
+	new custom property api
+	(set_aa): 
+	(SET_SCROLL): 
+	(set_pixels_per_unit): implement property settings
+
 2001-11-07  jacob berkman  <jacob@ximian.com>
 
 	* glade/glade-canvas.c (canvas_new): simplify by extracting our

@@ -39,56 +39,48 @@
 /* this macro puts a version check function into the module */
 GLADE_MODULE_CHECK_INIT
 
-static GtkWidget *
-canvas_new (GladeXML *xml, GType widget_type,
-	    GladeWidgetInfo *info)
+static void
+set_aa (GladeXML *xml, GtkWidget *w,
+	const char *name, const char *value)
 {
-    const char *name, *value;
-    gboolean aa = FALSE;
-    gdouble sx1 = 0, sy1 = 0, sx2 = 100, sy2 = 100;
-    gdouble pixels_per_unit = 1;
-    int i;
-    GtkWidget *wid;
+    GNOME_CANVAS (w)->aa = (*value == 'y') ? 1 : 0;
+}
 
-    for (i = 0; i < info->n_properties; i++) {
-	name = info->properties[i].name;
-	value = info->properties[i].value;
+#define SET_SCROLL(corner)                                                        \
+static void                                                                       \
+set_scroll_##corner (GladeXML *xml, GtkWidget *w,                                 \
+		     const char *name, const char *value)                         \
+{                                                                                 \
+    double x1, y1, x2, y2;                                                        \
+    gnome_canvas_get_scroll_region (GNOME_CANVAS (w), &x1, &y1, &x2, &y2);        \
+    corner = strtod (value, NULL);                                                \
+    gnome_canvas_set_scroll_region (GNOME_CANVAS (w), x1, y1, x2, y2);            \
+}
 
-	if (!strcmp(name, "anti_aliased"))
-	    aa = (tolower (value[0] == 't') ||
-		  tolower (value[0] == 'y') ||
-		  strtol (value, NULL, 10));
-	
-	else if (!strcmp(name, "scroll_x1"))
-	    sx1 = g_strtod(value, NULL);
-	
-	else if (!strcmp(name, "scroll_y1"))
-	    sy1 = g_strtod(value, NULL);
-	
-	else if (!strcmp(name, "scroll_x2"))
-	    sx2 = g_strtod(value, NULL);
-	
-	else if (!strcmp(name, "scroll_y2"))
-	    sy2 = g_strtod(value, NULL);
-	
-	else if (!strcmp(name, "pixels_per_unit"))
-	    pixels_per_unit = g_strtod(value, NULL);
-    }
+SET_SCROLL (x1)
+SET_SCROLL (y1)
+SET_SCROLL (x2)
+SET_SCROLL (y2)
 
-    g_message ("ignore warnings about the following: anti_aliased, scroll_x1, scroll_y1, scroll_x2, scroll_y2, pixels_per_unit");
-
-    wid = glade_standard_build_widget (xml, widget_type, info);
-
-    GNOME_CANVAS (wid)->aa = aa;
-    gnome_canvas_set_scroll_region(GNOME_CANVAS(wid), sx1, sy1, sx2, sy2);
-    gnome_canvas_set_pixels_per_unit(GNOME_CANVAS(wid), pixels_per_unit);
-
-    return wid;
+static void
+set_pixels_per_unit (GladeXML *xml, GtkWidget *w,
+		     const char *name, const char *value)
+{
+    gnome_canvas_set_pixels_per_unit (GNOME_CANVAS (w), 
+				      strtod (value, NULL));
 }
 
 void
 glade_module_register_widgets (void)
 {
-    glade_register_widget (GNOME_TYPE_CANVAS, canvas_new, NULL, NULL);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "anti_aliased", set_aa);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "scroll_x1", set_scroll_x1);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "scroll_y1", set_scroll_y1);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "scroll_x2", set_scroll_x2);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "scroll_y2", set_scroll_y2);
+    glade_register_custom_prop (GNOME_TYPE_CANVAS, "pixels_per_unit", set_pixels_per_unit);
+    
+
+    glade_register_widget (GNOME_TYPE_CANVAS, glade_standard_build_widget, NULL, NULL);
     glade_provide ("canvas");
 }
