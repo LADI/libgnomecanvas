@@ -1166,6 +1166,7 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 	GdkPoint static_points[NUM_STATIC_POINTS];
 	GdkPoint *points;
 	int actual_num_points_drawn;
+	int i;
 	double i2c[6];
 
 	line = GNOME_CANVAS_LINE (item);
@@ -1180,10 +1181,8 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 	else
 		points = g_new (GdkPoint, line->num_points);
 
-	gnome_canvas_item_i2c_affine (item, i2c);
 
-	i2c[4] -= x;
-	i2c[5] -= y;
+	gnome_canvas_item_i2c_affine (item, i2c);
 
 	item_to_canvas (item->canvas, line->coords, points, line->num_points,
 			&actual_num_points_drawn, i2c);
@@ -1191,6 +1190,11 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 	if (line->stipple)
 		gnome_canvas_set_stipple_origin (item->canvas, line->gc);
 
+	for (i = 0; i < actual_num_points_drawn; i++) {
+		points[i].x -= x;
+		points[i].y -= y;
+	}
+	
 	gdk_draw_lines (drawable, line->gc, points, actual_num_points_drawn);
 
 	if (points != static_points)

@@ -1,5 +1,12 @@
 2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
-	
+
+	* gnome-canvas-line.c (gnome_canvas_line_draw):
+	Don't put x and y in the affine transformation. Doing so can
+	affect the outcome of the affine transformation in a way so that
+	for lines on position near xxx.5 the result is rounded differently.
+
+2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
+
 	* gnome-canvas-shape.c (gnome_canvas_shape_update):
 	Add some epsilon to the bounding box before rounding, to
 	avoid precision problems.
