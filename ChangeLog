@@ -1,3 +1,7 @@
+2002-04-29  Anders Carlsson  <andersca@gnu.org>
+
+	* Release 1.116.0
+
 2002-04-25  Jody Goldberg <jody@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-shape.c (gnome_canvas_shape_update_gdk)
