@@ -1,6 +1,8 @@
+#include <config.h>
 #include "testgnome.h"
 
 
+#ifdef HAVE_DEVGTK
 static void
 set_pixels_per_unit (GtkAdjustment *adj, GnomeCanvas *canvas)
 {
@@ -167,3 +169,6 @@ create_canvas (void)
 
 	gtk_widget_show (app);
 }
+
+#endif
+
