@@ -26,6 +26,7 @@ canvas_demo_SOURCES =		\
 	canvas-features.c	\
 	canvas-fifteen.c	\
 	canvas-rich-text.c	\
+	canvas-curve.c		\
 	canvas_demo.h
 
 EXTRA_DIST =			\

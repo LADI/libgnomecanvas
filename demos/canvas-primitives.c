@@ -798,7 +798,7 @@ create_canvas_primitives (gint aa)
 #else
 		art_affine_scale (affine, 1.5, 0.7);
 #endif
-		gnome_canvas_item_affine_relative (root, affine);
+		gnome_canvas_item_affine_relative (GNOME_CANVAS_ITEM (root), affine);
 	}
 #endif
 

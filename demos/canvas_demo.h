@@ -9,3 +9,4 @@ GtkWidget *create_canvas_arrowhead (void);
 GtkWidget *create_canvas_fifteen (void);
 GtkWidget *create_canvas_features (void);
 GtkWidget *create_canvas_rich_text (void);
+GtkWidget *create_canvas_bezier_curve (void);
