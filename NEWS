@@ -1,3 +1,16 @@
+libgnomecanvas 2.9.1
+--------------------
+
+What's new since 2.8.0
+
+* Bug fixes:
+	- Build fixes (Ondrej Sury)
+	- Warning fixes (Kjartan)
+
+* Translations:
+	- New translation (ang)
+	- Updated translations (en_CA, et, zh_TW)
+ 
 libgnomecanvas 2.8.0
 --------------------
 

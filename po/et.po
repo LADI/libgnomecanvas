@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-14 12:12+0100\n"
+"POT-Creation-Date: 2005-01-26 01:01+0100\n"
 "PO-Revision-Date: 2004-11-17 21:03+0200\n"
 "Last-Translator: Aarne Männik <amannik@hot.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -114,7 +114,9 @@ msgstr "Tõus"
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Teksti paigutuskaugus baasjoonest üleval (baasjoonest all kui tõus on negatiivne)"
+msgstr ""
+"Teksti paigutuskaugus baasjoonest üleval (baasjoonest all kui tõus on "
+"negatiivne)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -401,4 +403,3 @@ msgstr "Taane"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Taande pikslite arv"
-
