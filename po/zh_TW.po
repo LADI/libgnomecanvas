@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.117.0\n"
-"POT-Creation-Date: 2002-06-11 22:53+0200\n"
+"POT-Creation-Date: 2002-09-27 23:13+0200\n"
 "PO-Revision-Date: 2002-05-21 19:21+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -14,20 +14,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
-#: libgnomecanvas/gnome-canvas.c:1396 libgnomecanvas/gnome-canvas.c:1397
+#: libgnomecanvas/gnome-canvas.c:1400 libgnomecanvas/gnome-canvas.c:1401
 msgid "X"
 msgstr "X"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:225
-#: libgnomecanvas/gnome-canvas.c:1403 libgnomecanvas/gnome-canvas.c:1404
+#: libgnomecanvas/gnome-canvas.c:1407 libgnomecanvas/gnome-canvas.c:1408
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2048
+#: libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
 msgstr "平滑模式"
 
-#: libgnomecanvas/gnome-canvas.c:2049
+#: libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr "平滑模式的 canvas。"
 
