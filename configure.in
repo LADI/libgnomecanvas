@@ -82,11 +82,11 @@ Makefile
 po/Makefile.in
 libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
+glade/Makefile
 demos/Makefile
 tests/Makefile
 docs/Makefile
 docs/reference/Makefile
 ])
-dnl glade/Makefile
  
 cat $srcdir/message-of-doom
