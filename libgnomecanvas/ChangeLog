@@ -1,3 +1,9 @@
+2001-12-10  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-text.c (gnome_canvas_text_class_init):
+	The default value for anchor is actually CENTER.
+	(gnome_canvas_text_point): y2 needs log_rect.y, not log_rect.x
+
 2001-12-07 Marc Mulcahy <marc.mulcahy@sun.com>
 
 	* gnome-canvas-rich-text.(ch): Added

@@ -376,7 +376,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
                  PROP_ANCHOR,
                  g_param_spec_enum ("anchor", NULL, NULL,
                                     GTK_TYPE_ANCHOR_TYPE,
-                                    GTK_ANCHOR_NW,
+                                    GTK_ANCHOR_CENTER,
                                     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
@@ -541,7 +541,7 @@ gnome_canvas_text_init (GnomeCanvasText *text)
 	text->strike_set    = FALSE;
 	text->rise_set      = FALSE;
 	
-	text->priv = g_new(GnomeCanvasTextPrivate, 1);
+	text->priv = g_new (GnomeCanvasTextPrivate, 1);
 	text->priv->bitmap.buffer = NULL;
 	text->priv->render_dirty = 1;
 }
@@ -1792,7 +1792,7 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 			x1 = PANGO_PIXELS (log_rect.x);
 			y1 = PANGO_PIXELS (log_rect.y);
 			x2 = PANGO_PIXELS (log_rect.x+log_rect.width);
-			y2 = PANGO_PIXELS (log_rect.x+log_rect.height);
+			y2 = PANGO_PIXELS (log_rect.y+log_rect.height);
 
 
 			if (x1 < text->clip_cx)
