@@ -1,3 +1,9 @@
+2001-05-21  Joe Shaw  <joe@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_item_grab_focus): Emit a
+	GDK_FOCUS_CHANGE event in the newly focused canvas item. Matches
+	behavior on the stable branch (rev 1.93.4.7).
+
 2001-05-18  Joe Shaw  <joe@ximian.com>
 
 	* gnome-canvas.c (gnome_canvas_key): Remove an assertion that
