@@ -9,7 +9,7 @@ msgstr ""
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=KOI8-R\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
@@ -22,229 +22,229 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
-msgstr "Сглаженный"
+msgstr "п║пЁп╩п╟п╤п╣п╫п╫я▀п╧"
 
 #: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
-msgstr "Режим сглаживания для холста."
+msgstr "п═п╣п╤п╦п╪ я│пЁп╩п╟п╤п╦п╡п╟п╫п╦я▐ п╢п╩я▐ я┘п╬п╩я│я┌п╟."
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
-msgstr "Текст"
+msgstr "п╒п╣п╨я│я┌"
 
 #: libgnomecanvas/gnome-canvas-text.c:204
 msgid "Text to render"
-msgstr "Текст для отображения"
+msgstr "п╒п╣п╨я│я┌ п╢п╩я▐ п╬я┌п╬п╠я─п╟п╤п╣п╫п╦я▐"
 
 #: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
-msgstr "Разметка"
+msgstr "п═п╟п╥п╪п╣я┌п╨п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:213
 msgid "Marked up text to render"
-msgstr "Размеченный для визуализатора текст"
+msgstr "п═п╟п╥п╪п╣я┤п╣п╫п╫я▀п╧ п╢п╩я▐ п╡п╦п╥я┐п╟п╩п╦п╥п╟я┌п╬я─п╟ я┌п╣п╨я│я┌"
 
 #: libgnomecanvas/gnome-canvas-text.c:238
 msgid "Font"
-msgstr "Шрифт"
+msgstr "п╗я─п╦я└я┌"
 
 #: libgnomecanvas/gnome-canvas-text.c:239
 msgid "Font description as a string"
-msgstr "Описание шрифта в виде строки"
+msgstr "п·п©п╦я│п╟п╫п╦п╣ я┬я─п╦я└я┌п╟ п╡ п╡п╦п╢п╣ я│я┌я─п╬п╨п╦"
 
 #: libgnomecanvas/gnome-canvas-text.c:247
 msgid "Font description"
-msgstr "Описание шрифта"
+msgstr "п·п©п╦я│п╟п╫п╦п╣ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:248
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Описание шрифта в виде структуры PangoFontDescription"
+msgstr "п·п©п╦я│п╟п╫п╦п╣ я┬я─п╦я└я┌п╟ п╡ п╡п╦п╢п╣ я│я┌я─я┐п╨я┌я┐я─я▀ PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Font family"
-msgstr "Семейство шрифта"
+msgstr "п║п╣п╪п╣п╧я│я┌п╡п╬ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Название семейства шрифта, например Санс, Гельветика, Таймс и т.п."
+msgstr "п²п╟п╥п╡п╟п╫п╦п╣ я│п╣п╪п╣п╧я│я┌п╡п╟ я┬я─п╦я└я┌п╟, п╫п╟п©я─п╦п╪п╣я─ п║п╟п╫я│, п⌠п╣п╩я▄п╡п╣я┌п╦п╨п╟, п╒п╟п╧п╪я│ п╦ я┌.п©."
 
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
-msgstr "Стиль шрифта"
+msgstr "п║я┌п╦п╩я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:283
 #: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
-msgstr "Вариация шрифта"
+msgstr "п▓п╟я─п╦п╟я├п╦я▐ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr "Насыщенность шрифта"
+msgstr "п²п╟я│я▀я┴п╣п╫п╫п╬я│я┌я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr "Ширина шрифта"
+msgstr "п╗п╦я─п╦п╫п╟ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
 msgid "Font size"
-msgstr "Размер шрифта"
+msgstr "п═п╟п╥п╪п╣я─ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr "Шрифт в пунктах"
+msgstr "п╗я─п╦я└я┌ п╡ п©я┐п╫п╨я┌п╟я┘"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
-msgstr "Размер шрифта в пунктах"
+msgstr "п═п╟п╥п╪п╣я─ я┬я─п╦я└я┌п╟ п╡ п©я┐п╫п╨я┌п╟я┘"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr "Смещённый"
+msgstr "п║п╪п╣я┴я▒п╫п╫я▀п╧"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Смещение текста над основной линией (под основной линией, если отрицательное)"
+"п║п╪п╣я┴п╣п╫п╦п╣ я┌п╣п╨я│я┌п╟ п╫п╟п╢ п╬я│п╫п╬п╡п╫п╬п╧ п╩п╦п╫п╦п╣п╧ (п©п╬п╢ п╬я│п╫п╬п╡п╫п╬п╧ п╩п╦п╫п╦п╣п╧, п╣я│п╩п╦ п╬я┌я─п╦я├п╟я┌п╣п╩я▄п╫п╬п╣)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
-msgstr "Перечёркнутый"
+msgstr "п÷п╣я─п╣я┤я▒я─п╨п╫я┐я┌я▀п╧"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr "Будет ли текст перечёркнут"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я┌п╣п╨я│я┌ п©п╣я─п╣я┤я▒я─п╨п╫я┐я┌"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
-msgstr "Подчёркнутый"
+msgstr "п÷п╬п╢я┤я▒я─п╨п╫я┐я┌я▀п╧"
 
 #: libgnomecanvas/gnome-canvas-text.c:358
 msgid "Style of underline for this text"
-msgstr "Стиль подчёркивания для этого текста"
+msgstr "п║я┌п╦п╩я▄ п©п╬п╢я┤я▒я─п╨п╦п╡п╟п╫п╦я▐ п╢п╩я▐ я█я┌п╬пЁп╬ я┌п╣п╨я│я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Scale"
-msgstr "Масштаб"
+msgstr "п°п╟я│я┬я┌п╟п╠"
 
 #: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
-msgstr "Размер шрифта относительно исходного размера"
+msgstr "п═п╟п╥п╪п╣я─ я┬я─п╦я└я┌п╟ п╬я┌п╫п╬я│п╦я┌п╣п╩я▄п╫п╬ п╦я│я┘п╬п╢п╫п╬пЁп╬ я─п╟п╥п╪п╣я─п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:422
 #: libgnomecanvas/gnome-canvas-text.c:430
 #: libgnomecanvas/gnome-canvas-text.c:438
 msgid "Color"
-msgstr "Цвет"
+msgstr "п╕п╡п╣я┌"
 
 #: libgnomecanvas/gnome-canvas-text.c:423
 msgid "Text color, as string"
-msgstr "Цвет текста в виде строки"
+msgstr "п╕п╡п╣я┌ я┌п╣п╨я│я┌п╟ п╡ п╡п╦п╢п╣ я│я┌я─п╬п╨п╦"
 
 #: libgnomecanvas/gnome-canvas-text.c:431
 msgid "Text color, as a GdkColor"
-msgstr "Цвет текста в формате GdkColor"
+msgstr "п╕п╡п╣я┌ я┌п╣п╨я│я┌п╟ п╡ я└п╬я─п╪п╟я┌п╣ GdkColor"
 
 #: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Цвет текста в виде R/G/B/A объединённого в целое"
+msgstr "п╕п╡п╣я┌ я┌п╣п╨я│я┌п╟ п╡ п╡п╦п╢п╣ R/G/B/A, п╬п╠я┼п╣п╢п╦п╫я▒п╫п╫п╬пЁп╬ п╡ я├п╣п╩п╬п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"
-msgstr "Ширина текста"
+msgstr "п╗п╦я─п╦п╫п╟ я┌п╣п╨я│я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:453
 msgid "Width of the rendered text"
-msgstr "Ширина отображаемого текста"
+msgstr "п╗п╦я─п╦п╫п╟ п╬я┌п╬п╠я─п╟п╤п╟п╣п╪п╬пЁп╬ я┌п╣п╨я│я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Text height"
-msgstr "Высота текста"
+msgstr "п▓я▀я│п╬я┌п╟ я┌п╣п╨я│я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:461
 msgid "Height of the rendered text"
-msgstr "Высота отображаемого текста"
+msgstr "п▓я▀я│п╬я┌п╟ п╬я┌п╬п╠я─п╟п╤п╟п╣п╪п╬пЁп╬ я┌п╣п╨я│я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr "Семейство шрифта"
+msgstr "п║п╣п╪п╣п╧я│я┌п╡п╬ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
-msgstr "Будет ли этот тэг влиять на семейство шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ я│п╣п╪п╣п╧я│я┌п╡п╬ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr "Стиль шрифта"
+msgstr "п║я┌п╦п╩я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr "Будет ли этот тэг влиять на стиль шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ я│я┌п╦п╩я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr "Вариант шрифта"
+msgstr "п▓п╟я─п╦п╟п╫я┌ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr "Будет ли этот тэг влиять на вариант шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ п╡п╟я─п╦п╟п╫я┌ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr "Насыщеность шрифта"
+msgstr "п²п╟я│я▀я┴п╣п╫п╬я│я┌я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr "Будет ли этот тэг влиять на насыщеность шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ п╫п╟я│я▀я┴п╣п╫п╬я│я┌я▄ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr "Ширина шрифта"
+msgstr "п╗п╦я─п╦п╫п╟ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr "Будет ли этот тэг влиять на ширину шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ я┬п╦я─п╦п╫я┐ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr "Размер шрифта"
+msgstr "п═п╟п╥п╪п╣я─ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
-msgstr "Будет ли этот тэг влиять на размер шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ я─п╟п╥п╪п╣я─ я┬я─п╦я└я┌п╟"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr ""
+msgstr "п║п╪п╣я┴п╣п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ я│п╪п╣я┴п╣п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr "Перечёркивание"
+msgstr "п÷п╣я─п╣я┤я▒я─п╨п╦п╡п╟п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr "Будет ли этот тэг влиять на перечёркивание"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ п©п╣я─п╣я┤я▒я─п╨п╦п╡п╟п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr "Подчёркивание"
+msgstr "п÷п╬п╢я┤я▒я─п╨п╦п╡п╟п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
-msgstr "Будет ли этот тэг влиять на подчёркивание"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ п©п╬п╢я┤я▒я─п╨п╦п╡п╟п╫п╦п╣"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr "Масштаб"
+msgstr "п°п╟я│я┬я┌п╟п╠"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr "Будет ли этот тэг влиять на масштабирование шрифта"
+msgstr "п▒я┐п╢п╣я┌ п╩п╦ я█я┌п╬я┌ я┌я█пЁ п╡п╩п╦я▐я┌я▄ п╫п╟ п╪п╟я│я┬я┌п╟п╠п╦я─п╬п╡п╟п╫п╦п╣ я┬я─п╦я└я┌п╟"
