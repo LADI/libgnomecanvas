@@ -593,7 +593,7 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	case GTK_ANCHOR_NW:
 	case GTK_ANCHOR_W:
 	case GTK_ANCHOR_SW:
-		ti_len += x;
+		ti_len *= x;
 		break;
 
 	case GTK_ANCHOR_N:

@@ -1,3 +1,8 @@
+2002-02-23  JP Rosevear  <jpr@ximian.com>
+
+	* libgnomecanvas/gnome-canvas-pixbuf.c (compute_viewport_affine):
+	properly compute ti_len for NW/W/SW anchors
+
 2002-02-20  Murray Cumming  <murrayc@usa.net>
 
 	* libgnomecanvas.h/gnome-canvas.h:
