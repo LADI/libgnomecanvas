@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 1.112.1\n"
-"POT-Creation-Date: 2002-05-13 19:09+0200\n"
-"PO-Revision-Date: 2002-03-12 03:55+0900\n"
+"Project-Id-Version: libgnomecanvas 1.117\n"
+"POT-Creation-Date: 2002-05-30 14:16+0900\n"
+"PO-Revision-Date: 2002-05-30 14:59+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: Korean <gnome-kr-translation@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -252,153 +252,149 @@ msgid "Whether this tag affects font scaling"
 msgstr "이 태그가 글꼴 크기 조정에 영향을 미칠 지 여부"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
-#, fuzzy
 msgid "Text to display"
 msgstr "표시할 텍스트"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
-msgstr ""
+msgstr "X 위치"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y position"
-msgstr ""
+msgstr "Y 위치"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
-msgstr ""
+msgstr "너비"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width for text box"
-msgstr ""
+msgstr "텍스트 박스의 너비"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:241
 msgid "Height"
-msgstr ""
+msgstr "높이"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
-#, fuzzy
 msgid "Height for text box"
-msgstr "표시할 텍스트의 높이"
+msgstr "텍스트 박스의 높이"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
-msgstr ""
+msgstr "편집 가능"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
-msgstr ""
+msgstr "이 서식있는 텍스트 아이템이 편집 가능한지?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
-msgstr ""
+msgstr "보이기"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
-msgstr ""
+msgstr "이 서식있는 텍스트 아이템을 보여줄지?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
-msgstr ""
+msgstr "커서 보이기"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
-msgstr ""
+msgstr "이 서식있는 텍스트 아이템의 커서를 보여줄지?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
-msgstr ""
+msgstr "커서 깜박임"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
-msgstr ""
+msgstr "이 서식있는 텍스트 아이템의 커서가 깜박일지?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
-#, fuzzy
 msgid "Grow Height"
-msgstr "글꼴 두께"
+msgstr "높이 늘림"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr ""
+msgstr "텍스트가 맞지 않는 경우 텍스트 박스 높이를 늘려야 하는지?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
-msgstr ""
+msgstr "줄 바꿈 모드"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr ""
+msgstr "여러 줄에 걸친 텍스트용 줄 바꿈 모드"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
-msgstr ""
+msgstr "양쪽 맞춤"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
-msgstr ""
+msgstr "양쪽 맞춤 모드"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
-msgstr ""
+msgstr "방향"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
-#, fuzzy
 msgid "Text direction"
-msgstr "글꼴 기술"
+msgstr "텍스트 방향"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
-msgstr ""
+msgstr "연결"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
-msgstr ""
+msgstr "텍스트를 연결할 위치"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
-msgstr ""
+msgstr "라인 위 픽셀"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
-msgstr ""
+msgstr "라인 위에 놓을 픽셀 수"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
-msgstr ""
+msgstr "라인 아래 픽셀"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Number of pixels to put below lines"
-msgstr ""
+msgstr "라인 아래 놓을 픽셀 수"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "줄 바꿈 픽셀"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr ""
+msgstr "줄 바꿈에 놓을 픽셀 수"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
-msgstr ""
+msgstr "왼쪽 여백"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
-msgstr ""
+msgstr "왼쪽 여백의 픽셀 수"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
-msgstr ""
+msgstr "오른쪽 여백"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
-msgstr ""
+msgstr "오른쪽 여백의 픽셀 수"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
-msgstr ""
+msgstr "들여쓰기"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
-msgstr ""
+msgstr "들여쓰기 픽셀 수"
