@@ -2467,7 +2467,10 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 
 	if (canvas->grabbed_item &&
 	    !is_descendant (canvas->current_item, canvas->grabbed_item)) {
-                g_warning ("emit_event() returning FALSE!\n");
+		/* I think this warning is annoying and I don't know what it's for
+		 * so I'll disable it for now.
+		 */
+/*                g_warning ("emit_event() returning FALSE!\n");*/
 		return FALSE;
         }
 

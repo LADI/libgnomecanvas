@@ -1,3 +1,8 @@
+2002-04-22  Anders Carlsson  <andersca@gnu.org>
+
+	* libgnomecanvas/gnome-canvas.c (emit_event): Remove this VERY VERY
+	annoying warning.
+
 2002-04-17  Federico Mena Quintero  <federico@ximian.com>
 
 	* libgnomecanvas/gnome-canvas-rich-text.c
