@@ -133,25 +133,25 @@ gnome_canvas_re_class_init (GnomeCanvasREClass *class)
                 (gobject_class,
                  PROP_X1,
                  g_param_spec_double ("x1", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y1,
                  g_param_spec_double ("y1", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_X2,
                  g_param_spec_double ("x2", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y2,
                  g_param_spec_double ("y2", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,

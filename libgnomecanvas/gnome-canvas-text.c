@@ -156,13 +156,13 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
                 (gobject_class,
                  PROP_X,
                  g_param_spec_double ("x", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y,
                  g_param_spec_double ("y", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
@@ -194,13 +194,13 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
                 (gobject_class,
                  PROP_CLIP_WIDTH,
                  g_param_spec_double ("clip_width", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_CLIP_HEIGHT,
                  g_param_spec_double ("clip_height", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
@@ -212,13 +212,13 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
                 (gobject_class,
                  PROP_X_OFFSET,
                  g_param_spec_double ("x_offset", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y_OFFSET,
                  g_param_spec_double ("y_offset", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,

@@ -119,25 +119,25 @@ gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class)
                 (gobject_class,
                  PROP_X,
                  g_param_spec_double ("x", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y,
                  g_param_spec_double ("y", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_WIDTH,
                  g_param_spec_double ("width", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_HEIGHT,
                  g_param_spec_double ("height", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,

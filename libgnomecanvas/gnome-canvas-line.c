@@ -244,19 +244,19 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
                 (gobject_class,
                  PROP_ARROW_SHAPE_A,
                  g_param_spec_double ("arrow_shape_a", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_ARROW_SHAPE_B,
                  g_param_spec_double ("arrow_shape_b", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_ARROW_SHAPE_C,
                  g_param_spec_double ("arrow_shape_c", NULL, NULL,
-				      G_MINDOUBLE, G_MAXDOUBLE, 0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 
 	object_class->destroy = gnome_canvas_line_destroy;

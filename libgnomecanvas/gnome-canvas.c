@@ -1512,14 +1512,14 @@ gnome_canvas_group_class_init (GnomeCanvasGroupClass *class)
 		 g_param_spec_double ("x",
 				      _("X"),
 				      _("X"),
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 	g_object_class_install_property
 		(gobject_class, GROUP_PROP_Y,
 		 g_param_spec_double ("y",
 				      _("Y"),
 				      _("Y"),
-				      G_MINDOUBLE, G_MAXDOUBLE, 0.0,
+				      -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 
 	object_class->destroy = gnome_canvas_group_destroy;
