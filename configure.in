@@ -23,7 +23,7 @@ GETTEXT_PACKAGE=libgnomecanvas-2.0
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
 
-ALL_LINGUAS="az de es et fi fr it ja ms nl nn no pl pt ru sk sl sv ta tr uk wa zh_TW"
+ALL_LINGUAS="az de es et fi fr it ja ko ms nl nn no pl pt ru sk sl sv ta tr uk wa zh_TW"
 AM_GLIB_GNU_GETTEXT
 
 AC_SUBST(CFLAGS)

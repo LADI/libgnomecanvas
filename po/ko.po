@@ -1,0 +1,249 @@
+# Korean messages for libgnomecanvas
+# Changwoo Ryu <cwryu@debian.org>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgnomecanvas 1.112.1\n"
+"POT-Creation-Date: 2002-03-12 03:45+0900\n"
+"PO-Revision-Date: 2002-03-12 03:55+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Language-Team: Korean <gnome-kr-translation@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
+msgid "X"
+msgstr "가로"
+
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
+msgid "Y"
+msgstr "세로"
+
+#: libgnomecanvas/gnome-canvas.c:2039
+msgid "Antialiased"
+msgstr "앤티에일러이징"
+
+#: libgnomecanvas/gnome-canvas.c:2040
+msgid "The antialiasing mode of the canvas."
+msgstr "캔버스의 앤티에일러이징 모드"
+
+#: libgnomecanvas/gnome-canvas-text.c:203
+msgid "Text"
+msgstr "텍스트"
+
+#: libgnomecanvas/gnome-canvas-text.c:204
+msgid "Text to render"
+msgstr "표시할 텍스트"
+
+#: libgnomecanvas/gnome-canvas-text.c:212
+msgid "Markup"
+msgstr "마크업"
+
+#: libgnomecanvas/gnome-canvas-text.c:213
+msgid "Marked up text to render"
+msgstr "표시할 마크업 텍스트"
+
+#: libgnomecanvas/gnome-canvas-text.c:238
+msgid "Font"
+msgstr "글꼴"
+
+#: libgnomecanvas/gnome-canvas-text.c:239
+msgid "Font description as a string"
+msgstr "글꼴 기술 (문자열로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:247
+msgid "Font description"
+msgstr "글꼴 기술"
+
+#: libgnomecanvas/gnome-canvas-text.c:248
+msgid "Font description as a PangoFontDescription struct"
+msgstr "글꼴 기술 (PangoFontDescription struct로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:256
+msgid "Font family"
+msgstr "글꼴 패밀리"
+
+#: libgnomecanvas/gnome-canvas-text.c:257
+msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
+msgstr "글꼴 패밀리 이름, 예를 들어, Sans, Helvetica, Times, Monospace"
+
+#: libgnomecanvas/gnome-canvas-text.c:273
+#: libgnomecanvas/gnome-canvas-text.c:274
+msgid "Font style"
+msgstr "글꼴 유형"
+
+#: libgnomecanvas/gnome-canvas-text.c:283
+#: libgnomecanvas/gnome-canvas-text.c:284
+msgid "Font variant"
+msgstr "글꼴 변형"
+
+#: libgnomecanvas/gnome-canvas-text.c:293
+#: libgnomecanvas/gnome-canvas-text.c:294
+msgid "Font weight"
+msgstr "글꼴 두께"
+
+#: libgnomecanvas/gnome-canvas-text.c:305
+#: libgnomecanvas/gnome-canvas-text.c:306
+msgid "Font stretch"
+msgstr "글꼴 늘림"
+
+#: libgnomecanvas/gnome-canvas-text.c:315
+#: libgnomecanvas/gnome-canvas-text.c:316
+msgid "Font size"
+msgstr "글꼴 크기"
+
+#: libgnomecanvas/gnome-canvas-text.c:326
+msgid "Font points"
+msgstr "글꼴 포인트 수"
+
+#: libgnomecanvas/gnome-canvas-text.c:327
+msgid "Font size in points"
+msgstr "포인트로 나타낸 글꼴 크기"
+
+#: libgnomecanvas/gnome-canvas-text.c:337
+msgid "Rise"
+msgstr "떠오름"
+
+#: libgnomecanvas/gnome-canvas-text.c:338
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr "기준선 위 방향으로 텍스트의 오프셋 (음수이면 기준선 밑으로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:348
+msgid "Strikethrough"
+msgstr "취소선"
+
+#: libgnomecanvas/gnome-canvas-text.c:349
+msgid "Whether to strike through the text"
+msgstr "텍스트에 취소선을 그을 지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:357
+msgid "Underline"
+msgstr "밑줄"
+
+#: libgnomecanvas/gnome-canvas-text.c:358
+msgid "Style of underline for this text"
+msgstr "이 텍스트의 밑줄 유형"
+
+#: libgnomecanvas/gnome-canvas-text.c:367
+msgid "Scale"
+msgstr "크기 조정"
+
+#: libgnomecanvas/gnome-canvas-text.c:368
+msgid "Size of font, relative to default size"
+msgstr "글꼴의 크기 조정, 기본 크기에 대한 상대값"
+
+#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:438
+msgid "Color"
+msgstr "색"
+
+#: libgnomecanvas/gnome-canvas-text.c:423
+msgid "Text color, as string"
+msgstr "텍스트 색 (문자열로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:431
+msgid "Text color, as a GdkColor"
+msgstr "텍스트 색 (GdkColor로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:439
+msgid "Text color, as an R/G/B/A combined integer"
+msgstr "텍스트 색 (R/G/B/A 결합된 정수로)"
+
+#: libgnomecanvas/gnome-canvas-text.c:452
+msgid "Text width"
+msgstr "텍스트 너비"
+
+#: libgnomecanvas/gnome-canvas-text.c:453
+msgid "Width of the rendered text"
+msgstr "표시할 텍스트의 너비"
+
+#: libgnomecanvas/gnome-canvas-text.c:460
+msgid "Text height"
+msgstr "텍스트 높이"
+
+#: libgnomecanvas/gnome-canvas-text.c:461
+msgid "Height of the rendered text"
+msgstr "표시할 텍스트의 높이"
+
+#: libgnomecanvas/gnome-canvas-text.c:469
+msgid "Font family set"
+msgstr "글꼴 패밀리 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:470
+msgid "Whether this tag affects the font family"
+msgstr "이 태그가 글꼴 패밀리에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:473
+msgid "Font style set"
+msgstr "글꼴 유형 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:474
+msgid "Whether this tag affects the font style"
+msgstr "이 태그가 글꼴 유형에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:477
+msgid "Font variant set"
+msgstr "글꼴 변형 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:478
+msgid "Whether this tag affects the font variant"
+msgstr "이 태그가 글꼴 변형에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:481
+msgid "Font weight set"
+msgstr "글꼴 두께 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:482
+msgid "Whether this tag affects the font weight"
+msgstr "이 태그가 글꼴 두께에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:485
+msgid "Font stretch set"
+msgstr "글꼴 늘림 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:486
+msgid "Whether this tag affects the font stretch"
+msgstr "이 태그가 글꼴 늘림에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:489
+msgid "Font size set"
+msgstr "글꼴 크기 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:490
+msgid "Whether this tag affects the font size"
+msgstr "이 태그가 글꼴 크기에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:493
+msgid "Rise set"
+msgstr "떠오름 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:494
+msgid "Whether this tag affects the rise"
+msgstr "이 태그가 떠오름에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:497
+msgid "Strikethrough set"
+msgstr "취소선 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:498
+msgid "Whether this tag affects strikethrough"
+msgstr "이 태그가 취소선에 영향을 미칠지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:501
+msgid "Underline set"
+msgstr "밑줄 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:502
+msgid "Whether this tag affects underlining"
+msgstr "이 태그가 밑줄 치기에 영향을 미칠 지 여부"
+
+#: libgnomecanvas/gnome-canvas-text.c:505
+msgid "Scale set"
+msgstr "크기 조정 설정"
+
+#: libgnomecanvas/gnome-canvas-text.c:506
+msgid "Whether this tag affects font scaling"
+msgstr "이 태그가 글꼴 크기 조정에 영향을 미칠 지 여부"
