@@ -1,3 +1,9 @@
+2001-09-24  Matt Wilson  <msw@redhat.com>
+
+	* gnome-canvas-text.c (gnome_canvas_text_class_init): changed the
+	GValue type from g_param_spec_int to g_param_spec_enum for the
+	weight property, thus matching pango.
+
 2001-09-21  jacob berkman  <jacob@ximian.com>
 
 	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_init): correctly
