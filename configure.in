@@ -9,7 +9,7 @@ AC_INIT(libgnomecanvas)
 #
 LIBGNOMECANVAS_MAJOR_VERSION=2
 LIBGNOMECANVAS_MINOR_VERSION=3
-LIBGNOMECANVAS_MICRO_VERSION=6
+LIBGNOMECANVAS_MICRO_VERSION=7
 LIBGNOMECANVAS_INTERFACE_AGE=0
 # If you need a modifier for the version number. 
 # Normally empty, but can be used to make "fixup" releases.
