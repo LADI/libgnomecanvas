@@ -1,5 +1,8 @@
 2001-11-07  jacob berkman  <jacob@ximian.com>
 
+	* glade/glade-canvas.c (canvas_new): simplify by extracting our
+	properties, then using glade_standard_build_widget
+
 	* glade/Makefile.am (glademoduledir): install into our prefix
 	rather than libglade's
 
