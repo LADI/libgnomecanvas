@@ -1,3 +1,8 @@
+2001-11-06  jacob berkman  <jacob@ximian.com>
+
+	* gnome-canvas-rich-text.c (gnome_canvas_rich_text_draw): get it
+	to build by passing NULL for widgets
+
 2001-10-31  Arjan Molenaar <arjan@xirion.nl>
 
 	* gnome-canvas.c (gnome_canvas_set_pixels_per_unit):

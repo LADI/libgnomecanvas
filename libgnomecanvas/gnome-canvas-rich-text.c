@@ -1926,14 +1926,16 @@ gnome_canvas_rich_text_draw(GnomeCanvasItem *item, GdkDrawable *drawable,
 	y2 = c2.y;
 
 	gtk_text_layout_set_screen_width(text->_priv->layout, x2 - x1);
-
+      
+        /* FIXME: should last arg be NULL? */
 	gtk_text_layout_draw(
 		text->_priv->layout,
 		GTK_WIDGET(item->canvas),
 		drawable,
 		GTK_WIDGET (item->canvas)->style->text_gc[GTK_STATE_NORMAL],
 		x - x1, y - y1,
-		0, 0, (x2 - x1) - (x - x1), (y2 - y1) - (y - y1));
+		0, 0, (x2 - x1) - (x - x1), (y2 - y1) - (y - y1),
+		NULL);
 } /* gnome_canvas_rich_text_draw */
 
 static void
