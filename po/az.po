@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2003-08-11 20:32+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-08-11 12:37+0200\n"
 "PO-Revision-Date: 2003-06-22 17:48+0200\n"
 "Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
 "Language-Team: Azerbaijani Turkish <gnome@azitt.com>\n"
@@ -54,7 +55,7 @@ msgstr "Yazı Növü"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Yazı növü izahat kəlimə olaraq"
+msgstr "Yazı növü izahat kəlmə olaraq"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
