@@ -657,7 +657,7 @@ key_press (GnomeCanvas *canvas, GdkEventKey *event, gpointer data)
 }
 
 GtkWidget *
-create_canvas_primitives (void)
+create_canvas_primitives (gint aa)
 {
 	GtkWidget *vbox;
 	GtkWidget *hbox;
@@ -682,9 +682,15 @@ create_canvas_primitives (void)
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 	gtk_widget_show (hbox);
 
-	gtk_widget_push_visual (gdk_imlib_get_visual ());
-	gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+	if (aa) {
+		gtk_widget_push_visual (gdk_rgb_get_visual ());
+		gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+	} else {
+		gtk_widget_push_visual (gdk_imlib_get_visual ());
+		gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+	}
 	canvas = gnome_canvas_new ();
+	GNOME_CANVAS (canvas)->aa = aa;
 	gtk_widget_pop_colormap ();
 	gtk_widget_pop_visual ();
 
