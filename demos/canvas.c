@@ -72,19 +72,19 @@ create_primitives (void)
 	gtk_widget_show (hbox);
 
 	canvas = gnome_canvas_new (gdk_imlib_get_visual (), gdk_imlib_get_colormap ());
+	GNOME_CANVAS (canvas)->close_enough = 10;
 
 	w = gtk_label_new ("Zoom:");
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
-	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.01, 5.00, 0.01, 0.5, 0.5));
+	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.05, 5.00, 0.05, 0.50, 0.50));
 	gtk_signal_connect (GTK_OBJECT (adj), "value_changed",
 			    (GtkSignalFunc) zoom_changed,
 			    canvas);
-	w = gtk_hscale_new (adj);
-	gtk_scale_set_digits (GTK_SCALE (w), 1);
-	gtk_scale_set_value_pos (GTK_SCALE (w), GTK_POS_LEFT);
-	gtk_box_pack_start (GTK_BOX (hbox), w, TRUE, TRUE, 0);
+	w = gtk_spin_button_new (adj, 0.0, 2);
+	gtk_widget_set_usize (w, 50, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
 	frame = gtk_frame_new (NULL);
