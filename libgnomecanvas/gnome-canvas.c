@@ -332,7 +332,7 @@ item_post_create_setup (GnomeCanvasItem *item)
 
 	group_add (GNOME_CANVAS_GROUP (item->parent), item);
 
-	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
 	item->canvas->need_repick = TRUE;
 }
 
@@ -416,7 +416,7 @@ static void
 redraw_if_visible (GnomeCanvasItem *item)
 {
 	if (item->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
-		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
 }
 
 /* Standard object dispose function for canvas items */
@@ -999,7 +999,7 @@ gnome_canvas_item_show (GnomeCanvasItem *item)
 
 	item->object.flags |= GNOME_CANVAS_ITEM_VISIBLE;
 
-	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
 	item->canvas->need_repick = TRUE;
 }
 
@@ -1021,7 +1021,7 @@ gnome_canvas_item_hide (GnomeCanvasItem *item)
 
 	item->object.flags &= ~GNOME_CANVAS_ITEM_VISIBLE;
 
-	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
 	item->canvas->need_repick = TRUE;
 }
 
@@ -1902,10 +1902,12 @@ gnome_canvas_group_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 	list = list->next;
 
 	for (; list; list = list->next) {
+		child = list->data;
+
 		if (!(child->object.flags & GNOME_CANVAS_ITEM_VISIBLE))
 			continue;
 
-		gnome_canvas_item_get_bounds (list->data, &tx1, &ty1, &tx2, &ty2);
+		gnome_canvas_item_get_bounds (child, &tx1, &ty1, &tx2, &ty2);
 
 		if (tx1 < minx)
 			minx = tx1;
@@ -2228,7 +2230,6 @@ gnome_canvas_destroy (GtkObject *object)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (object));
 
 	/* remember, destroy can be run multiple times! */
@@ -2282,16 +2283,6 @@ gnome_canvas_new_aa (void)
 {
 	GnomeCanvas *canvas;
 
-	{
-		static int warning_shown = 0;
-
-		if (!warning_shown){
-			g_message ("The antialiased canvas is buggy.  Please do not use it unless "
-				   "you know what you are doing.");
-			warning_shown = 1;
-		}
-	}
-
 	canvas = gtk_type_new (gnome_canvas_get_type ());
 	canvas->aa = 1;
 	return GTK_WIDGET (canvas);
@@ -2303,7 +2294,6 @@ gnome_canvas_map (GtkWidget *widget)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (widget != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (widget));
 
 	/* Normal widget mapping stuff */
@@ -2325,7 +2315,6 @@ gnome_canvas_unmap (GtkWidget *widget)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (widget != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (widget));
 
 	canvas = GNOME_CANVAS (widget);
@@ -2349,7 +2338,6 @@ gnome_canvas_realize (GtkWidget *widget)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (widget != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (widget));
 
 	/* Normal widget realization stuff */
@@ -2384,7 +2372,6 @@ gnome_canvas_unrealize (GtkWidget *widget)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (widget != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (widget));
 
 	canvas = GNOME_CANVAS (widget);
@@ -2492,7 +2479,6 @@ gnome_canvas_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 {
 	GnomeCanvas *canvas;
 
-	g_return_if_fail (widget != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (widget));
 	g_return_if_fail (allocation != NULL);
 
@@ -2847,7 +2833,6 @@ gnome_canvas_button (GtkWidget *widget, GdkEventButton *event)
 	int mask;
 	int retval;
 
-	g_return_val_if_fail (widget != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
@@ -2916,7 +2901,6 @@ gnome_canvas_motion (GtkWidget *widget, GdkEventMotion *event)
 {
 	GnomeCanvas *canvas;
 
-	g_return_val_if_fail (widget != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
@@ -2938,7 +2922,6 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 	ArtIRect rect;
 	ArtUta *uta;
 
-	g_return_val_if_fail (widget != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
@@ -2965,7 +2948,6 @@ gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
 {
 	GnomeCanvas *canvas;
 
-	g_return_val_if_fail (widget != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
@@ -2979,7 +2961,6 @@ gnome_canvas_crossing (GtkWidget *widget, GdkEventCrossing *event)
 {
 	GnomeCanvas *canvas;
 
-	g_return_val_if_fail (widget != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
@@ -3276,7 +3257,6 @@ add_idle (GnomeCanvas *canvas)
 GnomeCanvasGroup *
 gnome_canvas_root (GnomeCanvas *canvas)
 {
-	g_return_val_if_fail (canvas != NULL, NULL);
 	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), NULL);
 
 	return GNOME_CANVAS_GROUP (canvas->root);
@@ -3301,7 +3281,6 @@ gnome_canvas_set_scroll_region (GnomeCanvas *canvas, double x1, double y1, doubl
 	double wxofs, wyofs;
 	int xofs, yofs;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	/*
@@ -3349,7 +3328,6 @@ gnome_canvas_set_scroll_region (GnomeCanvas *canvas, double x1, double y1, doubl
 void
 gnome_canvas_get_scroll_region (GnomeCanvas *canvas, double *x1, double *y1, double *x2, double *y2)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (x1)
@@ -3380,7 +3358,6 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 	int x1, y1;
 	int canvas_width, canvas_height;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (n > GNOME_CANVAS_EPSILON);
 
@@ -3409,21 +3386,6 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 
 	gtk_layout_freeze (GTK_LAYOUT (canvas));
 
-	/* Clear the redraw area to avoid creating enormous microtile unions.
-	 * The new area (visible area) will be re-queued when we thaw the
-	 * layout.
-	 */
-
-	if (canvas->need_redraw) {
-		canvas->need_redraw = FALSE;
-		art_uta_free (canvas->redraw_area);
-		canvas->redraw_area = NULL;
-		canvas->redraw_x1 = 0;
-		canvas->redraw_y1 = 0;
-		canvas->redraw_x2 = 0;
-		canvas->redraw_y2 = 0;
-	}
-
 	scroll_to (canvas, x1, y1);
 
 	canvas->need_repick = TRUE;
@@ -3445,7 +3407,6 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 void
 gnome_canvas_scroll_to (GnomeCanvas *canvas, int cx, int cy)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	scroll_to (canvas, cx, cy);
@@ -3463,7 +3424,6 @@ gnome_canvas_scroll_to (GnomeCanvas *canvas, int cx, int cy)
 void
 gnome_canvas_get_scroll_offsets (GnomeCanvas *canvas, int *cx, int *cy)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (cx)
@@ -3485,7 +3445,6 @@ gnome_canvas_get_scroll_offsets (GnomeCanvas *canvas, int *cx, int *cy)
 void
 gnome_canvas_update_now (GnomeCanvas *canvas)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (!(canvas->need_update || canvas->need_redraw))
@@ -3514,7 +3473,6 @@ gnome_canvas_get_item_at (GnomeCanvas *canvas, double x, double y)
 	double dist;
 	int cx, cy;
 
-	g_return_val_if_fail (canvas != NULL, NULL);
 	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), NULL);
 
 	gnome_canvas_w2c (canvas, x, y, &cx, &cy);
@@ -3540,6 +3498,125 @@ gnome_canvas_request_update_real (GnomeCanvas *canvas)
 	add_idle (canvas);
 }
 
+/* Computes the union of two microtile arrays while clipping the result to the
+ * specified rectangle.  Any of the specified utas can be NULL, in which case it
+ * is taken to be an empty region.
+ */
+static ArtUta *
+uta_union_clip (ArtUta *uta1, ArtUta *uta2, ArtIRect *clip)
+{
+	ArtUta *uta;
+	ArtUtaBbox *utiles;
+	int clip_x1, clip_y1, clip_x2, clip_y2;
+	int union_x1, union_y1, union_x2, union_y2;
+	int new_x1, new_y1, new_x2, new_y2;
+	int x, y;
+	int ofs, ofs1, ofs2;
+
+	g_assert (clip != NULL);
+
+	/* Compute the tile indices for the clipping rectangle */
+
+	clip_x1 = clip->x0 >> ART_UTILE_SHIFT;
+	clip_y1 = clip->y0 >> ART_UTILE_SHIFT;
+	clip_x2 = (clip->x1 >> ART_UTILE_SHIFT) + 1;
+	clip_y2 = (clip->y1 >> ART_UTILE_SHIFT) + 1;
+
+	/* Get the union of the bounds of both utas */
+
+	if (!uta1) {
+		if (!uta2)
+			return art_uta_new (clip_x1, clip_y1, clip_x1 + 1, clip_y1 + 1);
+
+		union_x1 = uta2->x0;
+		union_y1 = uta2->y0;
+		union_x2 = uta2->x0 + uta2->width;
+		union_y2 = uta2->y0 + uta2->height;
+	} else {
+		if (!uta2) {
+			union_x1 = uta1->x0;
+			union_y1 = uta1->y0;
+			union_x2 = uta1->x0 + uta1->width;
+			union_y2 = uta1->y0 + uta1->height;
+		} else {
+			union_x1 = MIN (uta1->x0, uta2->x0);
+			union_y1 = MIN (uta1->y0, uta2->y0);
+			union_x2 = MAX (uta1->x0 + uta1->width, uta2->x0 + uta2->width);
+			union_y2 = MAX (uta1->y0 + uta1->height, uta2->y0 + uta2->height);
+		}
+	}
+
+	/* Clip the union of the bounds */
+
+	new_x1 = MAX (clip_x1, union_x1);
+	new_y1 = MAX (clip_y1, union_y1);
+	new_x2 = MIN (clip_x2, union_x2);
+	new_y2 = MIN (clip_y2, union_y2);
+
+	if (new_x1 >= new_x2 || new_y1 >= new_y2)
+		return art_uta_new (clip_x1, clip_y1, clip_x1 + 1, clip_y1 + 1);
+
+	/* Make the new clipped union */
+
+	uta = art_new (ArtUta, 1);
+	uta->x0 = new_x1;
+	uta->y0 = new_y1;
+	uta->width = new_x2 - new_x1;
+	uta->height = new_y2 - new_y1;
+	uta->utiles = utiles = art_new (ArtUtaBbox, uta->width * uta->height);
+
+	ofs = 0;
+	ofs1 = ofs2 = 0;
+
+	for (y = new_y1; y < new_y2; y++) {
+		if (uta1)
+			ofs1 = (y - uta1->y0) * uta1->width + new_x1 - uta1->x0;
+
+		if (uta2)
+			ofs2 = (y - uta2->y0) * uta2->width + new_x1 - uta2->x0;
+
+		for (x = new_x1; x < new_x2; x++) {
+			ArtUtaBbox bb1, bb2, bb;
+
+			if (!uta1
+			    || x < uta1->x0 || y < uta1->y0
+			    || x >= uta1->x0 + uta1->width || y >= uta1->y0 + uta1->height)
+				bb1 = 0;
+			else
+				bb1 = uta1->utiles[ofs1];
+
+			if (!uta2
+			    || x < uta2->x0 || y < uta2->y0
+			    || x >= uta2->x0 + uta2->width || y >= uta2->y0 + uta2->height)
+				bb2 = 0;
+			else
+				bb2 = uta2->utiles[ofs2];
+
+			if (bb1 == 0)
+				bb = bb2;
+			else if (bb2 == 0)
+				bb = bb1;
+			else
+				bb = ART_UTA_BBOX_CONS (MIN (ART_UTA_BBOX_X0 (bb1),
+							     ART_UTA_BBOX_X0 (bb2)),
+							MIN (ART_UTA_BBOX_Y0 (bb1),
+							     ART_UTA_BBOX_Y0 (bb2)),
+							MAX (ART_UTA_BBOX_X1 (bb1),
+							     ART_UTA_BBOX_X1 (bb2)),
+							MAX (ART_UTA_BBOX_Y1 (bb1),
+							     ART_UTA_BBOX_Y1 (bb2)));
+
+			utiles[ofs] = bb;
+
+			ofs++;
+			ofs1++;
+			ofs2++;
+		}
+	}
+
+	return uta;
+}
+
 /**
  * gnome_canvas_request_redraw_uta:
  * @canvas: A canvas.
@@ -3552,18 +3629,33 @@ void
 gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
                                  ArtUta *uta)
 {
-	ArtUta *uta2;
+	ArtIRect visible;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
+	g_return_if_fail (uta != NULL);
+
+	visible.x0 = -canvas->zoom_xofs;
+	visible.y0 = -canvas->zoom_yofs;
+	visible.x1 = visible.x0 + GTK_WIDGET (canvas)->allocation.width;
+	visible.y1 = visible.y0 + GTK_WIDGET (canvas)->allocation.height;
 
 	if (canvas->need_redraw) {
-		uta2 = art_uta_union (uta, canvas->redraw_area);
-		art_uta_free (uta);
+		ArtUta *new_uta;
+
+		g_assert (canvas->redraw_area != NULL);
+
+		new_uta = uta_union_clip (canvas->redraw_area, uta, &visible);
 		art_uta_free (canvas->redraw_area);
-		canvas->redraw_area = uta2;
+		art_uta_free (uta);
+		canvas->redraw_area = new_uta;
 	} else {
-		canvas->redraw_area = uta;
+		ArtUta *new_uta;
+
+		g_assert (canvas->redraw_area == NULL);
+
+		new_uta = uta_union_clip (uta, NULL, &visible);
+		art_uta_free (uta);
+		canvas->redraw_area = new_uta;
 		canvas->need_redraw = TRUE;
 	}
 
@@ -3592,7 +3684,6 @@ gnome_canvas_request_redraw (GnomeCanvas *canvas, int x1, int y1, int x2, int y2
 	ArtIRect visible;
 	ArtIRect clip;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (!GTK_WIDGET_DRAWABLE (canvas) || (x1 == x2) || (y1 == y2))
@@ -3630,7 +3721,6 @@ gnome_canvas_w2c_affine (GnomeCanvas *canvas, double affine[6])
 {
 	double zooom;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (affine != NULL);
 
@@ -3660,7 +3750,6 @@ gnome_canvas_w2c (GnomeCanvas *canvas, double wx, double wy, int *cx, int *cy)
 	double affine[6];
 	ArtPoint w, c;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	gnome_canvas_w2c_affine (canvas, affine);
@@ -3690,7 +3779,6 @@ gnome_canvas_w2c_d (GnomeCanvas *canvas, double wx, double wy, double *cx, doubl
 	double affine[6];
 	ArtPoint w, c;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	gnome_canvas_w2c_affine (canvas, affine);
@@ -3720,7 +3808,6 @@ gnome_canvas_c2w (GnomeCanvas *canvas, int cx, int cy, double *wx, double *wy)
 	double affine[6], inv[6];
 	ArtPoint w, c;
 
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	gnome_canvas_w2c_affine (canvas, affine);
@@ -3751,7 +3838,6 @@ void
 gnome_canvas_window_to_world (GnomeCanvas *canvas, double winx, double winy,
 			      double *worldx, double *worldy)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (worldx)
@@ -3778,7 +3864,6 @@ void
 gnome_canvas_world_to_window (GnomeCanvas *canvas, double worldx, double worldy,
 			      double *winx, double *winy)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 
 	if (winx)
@@ -3809,7 +3894,6 @@ gnome_canvas_get_color (GnomeCanvas *canvas, const char *spec, GdkColor *color)
 {
 	GdkColormap *colormap;
 
-	g_return_val_if_fail (canvas != NULL, FALSE);
 	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), FALSE);
 	g_return_val_if_fail (color != NULL, FALSE);
 
@@ -3874,9 +3958,8 @@ gnome_canvas_get_color_pixel (GnomeCanvas *canvas,
 void
 gnome_canvas_set_stipple_origin (GnomeCanvas *canvas, GdkGC *gc)
 {
-	g_return_if_fail (canvas != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
-	g_return_if_fail (gc != NULL);
+	g_return_if_fail (GDK_IS_GC (gc));
 
 	gdk_gc_set_ts_origin (gc, -canvas->draw_xofs, -canvas->draw_yofs);
 }

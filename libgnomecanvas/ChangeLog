@@ -1,5 +1,50 @@
 2001-08-13  Darin Adler  <darin@bentspoon.com>
 
+	Roll in some desirable fixes from the stable branch:
+
+	2000-05-05  Miguel de Icaza  <miguel@helixcode.com>
+
+	* gnome-canvas.c (gnome_canvas_new_aa): New policy.  Most of the
+	problems on the gnome-canvas-aa can be fixed.  So instead of
+	scaring off people with the AA canvas, we will address their needs
+	as the bug reports arrive.  
+
+	Discussed this with Federico today.
+	
+	2000-04-23  Iain Holmes  <ih@csd.abdn.ac.uk>
+
+	* gnome-canvas.c (item_post_create_setup): Redraw +1 pixel on both
+	x and y axis.
+	(redraw_if_visible): Same
+	(gnome_canvas_item_show): Same
+	(gnome_canvas_item_hide): Same
+
+	2000-02-15  Federico Mena Quintero  <federico@helixcode.com>
+
+	* gnome-canvas.c (uta_union_clip): New function to create the
+	union of two microtile arrays while clipping the result to a given
+	rectangle.  This is based on a wonderful problem analysis and
+	patch by Michael Meeks <michael@helixcode.com>.  He deserves a
+	beer.
+	(gnome_canvas_request_redraw_uta): Use uta_union_clip().  Now we
+	only queue redraws of microtile arrays clipped against the canvas
+	visible area.  This *is* the right thing to do.
+	(gnome_canvas_set_pixels_per_unit): No longer clear the redraw
+	area before scrolling/thawing.  This hack can rest in peace now.
+
+	2000-02-15  Christopher James Lahey  <clahey@helixcode.com>
+
+	* gnome-canvas.c (emit_event): Fixed a bug where GDK_FOCUS_CHANGE
+	events weren't being dispatched properly.
+
+	2000-01-06  Federico Mena Quintero  <federico@helixcode.com>
+
+	* gnome-canvas.c (gnome_canvas_group_bounds): Do update the child
+	pointer when we walk the list.  Thanks to Richard Hult for
+	pointing this out.
+
+2001-08-13  Darin Adler  <darin@bentspoon.com>
+
 	* gnome-canvas.h:
 	* gnome-canvas.c: (gnome_canvas_item_grab):
 	Use GDK's grab constants, not the raw ones from X.
