@@ -1,18 +1,18 @@
 # Translation into the walloon language.
 #
-# Si vos voloz donner on côp di spale pol ratoûrnaedje di Gnome (ou des
+# Si vos voloz donner on côp di spale pol ratournaedje di Gnome (ou des
 # ôtes libes programes) sicrijhoz-mu a l' adresse emile
 # <srtxg@chanae.alphanet.ch>; nos avans co bråmint di l' ovraedje a fé.
 #
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch> 2001
+# Pablo Saratxaga <pablo@walon.org>, 2003.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2 \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-29 03:39+0200\n"
-"PO-Revision-Date: 2002-05-01 11:14MET\n"
+"POT-Creation-Date: 2003-07-07 13:11+0200\n"
+"PO-Revision-Date: 2003-07-07 23:30+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@mandrakesoft.com>\n"
 "Language-Team: Walon <linux-wa@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgstr "Variante del fonte"
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "Pwèds del fonte"
+msgstr "Pwès del fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
@@ -116,8 +116,7 @@ msgid "Rise"
 msgstr "Hôteu"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Eplaeçmint e hôteu pa rapoirt al roye di båze pol tecse (å dzo del roye si "
 "l' valixhance est negative)"
@@ -128,11 +127,11 @@ msgstr "Båré"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "Bårer li tecse d' ene roye å d' traviè"
+msgstr "Bårer li tecse d' ene roye å d' truviè"
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "Sorligné"
+msgstr "Sorlignî"
 
 #: libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
@@ -206,11 +205,11 @@ msgstr "Po decider si ciste etikete a on efet sol variante del fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Pwèds del fonte en alaedje"
+msgstr "Pwès del fonte en alaedje"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "Po decider si ciste etikete a on efet sol pwèds del fonte"
+msgstr "Po decider si ciste etikete a on efet sol pwès del fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
@@ -306,7 +305,7 @@ msgstr "Est çki ci cayet chal di tecse eritchî est veyåve?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
-msgstr ""
+msgstr "Cursoe veyåve"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
@@ -326,8 +325,9 @@ msgstr "Ragrandi l' hôteu"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Est çki l' hôteu del boesse di tecse doet esse ragrandeye si l' tecse"
-" ni rintere nén?"
+msgstr ""
+"Est çki l' hôteu del boesse di tecse doet esse ragrandeye si l' tecse ni "
+"rintere nén?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
@@ -339,7 +339,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
-msgstr ""
+msgstr "Djustifiaedje"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
@@ -403,8 +403,8 @@ msgstr "Nombe di picsels pol mådje a droete"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
-msgstr ""
+msgstr "Ritrait"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
-msgstr ""
+msgstr "Nombe di picsels pol ritrait"
