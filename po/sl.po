@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-11-25 02:36+0100\n"
+"POT-Creation-Date: 2002-02-19 10:47+0100\n"
 "PO-Revision-Date: 2001-07-29 12:32+0200\n"
 "Last-Translator: Andraz Tori <andraz.tori1@guest.arnes.si>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -109,7 +109,8 @@ msgstr "Dvig"
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Odmik besedila nad osnovno črto (pod osnovno črto, je če dvig negativen)"
+msgstr ""
+"Odmik besedila nad osnovno črto (pod osnovno črto, je če dvig negativen)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -248,14 +249,3 @@ msgstr "Nasvati povečavo"
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr "Ali ta oznaka vpliva na povečavo pisave"
-
-
-# Smart report:
-# Total untranslated messages in file: 57 
-# Translations made:
-# full: 58
-# smart: 0
-# cond: 7
-# total: 65 ; distinct: 45
-
-
