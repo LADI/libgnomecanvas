@@ -2088,6 +2088,11 @@ gnome_canvas_init (GnomeCanvas *canvas)
 
 	canvas->dither = GDK_RGB_DITHER_MAX;
 
+	/* This may not be what people want, but it is set to be turned on by
+	 * default to have the same initial behavior as the canvas in GNOME 1.4.
+	 */
+	canvas->center_scroll_region = TRUE;
+
 	gtk_layout_set_hadjustment (GTK_LAYOUT (canvas), NULL);
 	gtk_layout_set_vadjustment (GTK_LAYOUT (canvas), NULL);
 
@@ -2325,14 +2330,10 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 	canvas_width = GTK_WIDGET (canvas)->allocation.width;
 	canvas_height = GTK_WIDGET (canvas)->allocation.height;
 
-	gnome_canvas_w2c (canvas, canvas->scroll_x2, canvas->scroll_y2,
-			  &scroll_width, &scroll_height);
-
-	/* The values computed indicate the maximum pixel offset, so we add one
-	 * to get the width and height.
-	 */
-	scroll_width++;
-	scroll_height++;
+	scroll_width = floor ((canvas->scroll_x2 - canvas->scroll_x1) * canvas->pixels_per_unit
+			      + 0.5);
+	scroll_height = floor ((canvas->scroll_y2 - canvas->scroll_y1) * canvas->pixels_per_unit
+			       + 0.5);
 
 	right_limit = scroll_width - canvas_width;
 	bottom_limit = scroll_height - canvas_height;
@@ -2342,12 +2343,12 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 
 	if (right_limit < 0) {
 		cx = 0;
-#if 1
-		canvas->zoom_xofs = (canvas_width - scroll_width) / 2;
-		scroll_width = canvas_width;
-#else
-		canvas->zoom_xofs = 0;
-#endif
+
+		if (canvas->center_scroll_region) {
+			canvas->zoom_xofs = (canvas_width - scroll_width) / 2;
+			scroll_width = canvas_width;
+		} else
+			canvas->zoom_xofs = 0;
 	} else if (cx < 0) {
 		cx = 0;
 		canvas->zoom_xofs = 0;
@@ -2359,12 +2360,12 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 
 	if (bottom_limit < 0) {
 		cy = 0;
-#if 1
-		canvas->zoom_yofs = (canvas_height - scroll_height) / 2;
-		scroll_height = canvas_height;
-#else
-		canvas->zoom_yofs = 0;
-#endif
+
+		if (canvas->center_scroll_region) {
+			canvas->zoom_yofs = (canvas_height - scroll_height) / 2;
+			scroll_height = canvas_height;
+		} else
+			canvas->zoom_yofs = 0;
 	} else if (cy < 0) {
 		cy = 0;
 		canvas->zoom_yofs = 0;
@@ -2387,7 +2388,6 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		gtk_widget_queue_draw (GTK_WIDGET (canvas));
 	}
 
-#if 1
 	if (((int) canvas->layout.hadjustment->value) != cx) {
 		canvas->layout.hadjustment->value = cx;
 		changed_x = TRUE;
@@ -2398,23 +2398,17 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		changed_y = TRUE;
 	}
 
-	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
+	if ((scroll_width != (int) canvas->layout.width)
+	    || (scroll_height != (int) canvas->layout.height))
 		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
-	}
 
 	/* Signal GtkLayout that it should do a redraw. */
+
 	if (changed_x)
 		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.hadjustment), "value_changed");
+
 	if (changed_y)
 		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.vadjustment), "value_changed");
-#else
-	gtk_adjustment_set_value (GTK_ADJUSTMENT (canvas->layout.hadjustment), cx);
-	gtk_adjustment_set_value (GTK_ADJUSTMENT (canvas->layout.vadjustment), cy);
-
-	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
-		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
-	}
-#endif
 }
 
 /* Size allocation handler for the canvas */
@@ -3279,6 +3273,46 @@ gnome_canvas_get_scroll_region (GnomeCanvas *canvas, double *x1, double *y1, dou
 
 	if (y2)
 		*y2 = canvas->scroll_y2;
+}
+
+/**
+ * gnome_canvas_set_center_scroll_region:
+ * @canvas: A canvas.
+ * @center_scroll_region: Whether to center the scrolling region in the canvas
+ * window when it is smaller than the canvas' allocation.
+ * 
+ * When the scrolling region of the canvas is smaller than the canvas window,
+ * e.g.  the allocation of the canvas, it can be either centered on the window
+ * or simply made to be on the upper-left corner on the window.  This function
+ * lets you configure this property.
+ **/
+void
+gnome_canvas_set_center_scroll_region (GnomeCanvas *canvas, gboolean center_scroll_region)
+{
+	g_return_if_fail (GNOME_IS_CANVAS (canvas));
+
+	canvas->center_scroll_region = center_scroll_region != 0;
+
+	scroll_to (canvas,
+		   canvas->layout.hadjustment->value,
+		   canvas->layout.vadjustment->value);
+}
+
+/**
+ * gnome_canvas_get_center_scroll_region:
+ * @canvas: A canvas.
+ * 
+ * Returns whether the canvas is set to center the scrolling region in the window
+ * if the former is smaller than the canvas' allocation.
+ * 
+ * Return value: Whether the scroll region is being centered in the canvas window.
+ **/
+gboolean
+gnome_canvas_get_center_scroll_region (GnomeCanvas *canvas)
+{
+	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), FALSE);
+
+	return canvas->center_scroll_region ? TRUE : FALSE;
 }
 
 /**

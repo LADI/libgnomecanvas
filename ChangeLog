@@ -1,3 +1,14 @@
+2002-03-13  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas.c
+	(gnome_canvas_set_center_scroll_region): New function.
+	(gnome_canvas_get_center_scroll_region): New function.
+	(scroll_to): Handle the center_scroll_region property.  Copied
+	from Alexander Larsson's (alla@lysator.liu.se) code in the
+	foocanvas module.
+	(gnome_canvas_init): Start with center_scroll_region set to TRUE
+	to be compatible with GNOME 1.4.
+
 2002-03-12  Changwoo Ryu  <cwryu@debian.org>
 
 	* configure.in: Added 'ko' to ALL_LINGUAS.

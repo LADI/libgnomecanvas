@@ -773,6 +773,8 @@ create_canvas_primitives (gint aa)
 	else
 	  canvas = gnome_canvas_new ();
 
+	gnome_canvas_set_center_scroll_region (GNOME_CANVAS (canvas), FALSE);
+
 	/* Setup canvas items */
 
 	root = gnome_canvas_root (GNOME_CANVAS (canvas));
