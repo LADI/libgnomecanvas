@@ -384,7 +384,7 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor)
 	setup_item (image);
 	gtk_signal_connect (GTK_OBJECT (image), "destroy",
 			    (GtkSignalFunc) free_imlib_image,
-			    image);
+			    im);
 }
 
 static void
@@ -406,7 +406,7 @@ setup_images (GnomeCanvasGroup *root)
 	setup_item (image);
 	gtk_signal_connect (GTK_OBJECT (image), "destroy",
 			    (GtkSignalFunc) free_imlib_image,
-			    image);
+			    im);
 
 	plant_flower (root,  20.0, 170.0, GTK_ANCHOR_NW);
 	plant_flower (root, 180.0, 170.0, GTK_ANCHOR_NE);
@@ -459,14 +459,12 @@ polish_diamond (GnomeCanvasGroup *root)
 #define SCALE 7.0
 
 static void
-setup_lines (GnomeCanvasGroup *root)
+make_hilbert (GnomeCanvasGroup *root)
 {
 	char hilbert[] = "urdrrulurulldluuruluurdrurddldrrruluurdrurddldrddlulldrdldrrurd";
 	char *c;
 	double *pp, *p;
 	GnomeCanvasPoints *points;
-
-	polish_diamond (root);
 
 	points = gnome_canvas_points_new (strlen (hilbert) + 1);
 	points->coords[0] = 340.0;
@@ -505,6 +503,34 @@ setup_lines (GnomeCanvasGroup *root)
 					   "join_style", GDK_JOIN_MITER,
 					   NULL));
 
+	gnome_canvas_points_free (points);
+}
+
+static void
+setup_lines (GnomeCanvasGroup *root)
+{
+	GnomeCanvasPoints *points;
+
+	polish_diamond (root);
+	make_hilbert (root);
+
+	/* Arrow tests */
+
+	points = gnome_canvas_points_new (2);
+	points->coords[0] = 340.0;
+	points->coords[1] = 170.0;
+	points->coords[2] = 340.0;
+	points->coords[3] = 210.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_line_get_type (),
+					   "points", points,
+					   "fill_color", "midnightblue",
+					   "width_pixels", 0,
+					   "last_arrowhead", TRUE,
+					   "arrow_shape_a", 8.0,
+					   "arrow_shape_b", 10.0,
+					   "arrow_shape_c", 3.0,
+					   NULL));
 	gnome_canvas_points_free (points);
 }
 
