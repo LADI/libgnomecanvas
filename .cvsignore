@@ -33,5 +33,4 @@ gnome-libs.spec
 .lclintrc
 libvfs
 compatConf.sh
-libgnomecanvas-2-martin-*.tar.gz
-.using-gnome-libs-package
+libgnomecanvas-2-*.tar.gz

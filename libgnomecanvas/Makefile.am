@@ -83,7 +83,7 @@ gnomecanvastypebuiltins_evals.c: @REBUILD@ $(GNOME_MAKEENUMS) gnomecanvas.defs
 CLEANFILES += $(BUILT_SOURCES)
 
 EXTRA_DIST = libgnomecanvas-2.0.pc.in $(GNOME_MAKEENUMS) $(GNOME_MAKETYPES) \
-	gnomecanvas-boxed.defs
+	gnomecanvas.defs gnomecanvas-boxed.defs
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libgnomecanvas-2.0.pc
