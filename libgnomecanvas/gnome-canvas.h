@@ -222,13 +222,9 @@ struct _GnomeCanvasItemClass {
 	 * coordinates are in the canvas world coordinate system.
 	 */
 	gboolean (* event)                (GnomeCanvasItem *item, GdkEvent *event);
-        gboolean (* button_press_event)   (GnomeCanvasItem *item, GdkEventButton *event);
-        gboolean (* button_release_event) (GnomeCanvasItem *item, GdkEventButton *event);
-        gboolean (* motion_notify_event)  (GnomeCanvasItem *item, GdkEventMotion *event);
-        gboolean (* key_press_event)      (GnomeCanvasItem *item, GdkEventKey *event);
-        gboolean (* key_release_event)    (GnomeCanvasItem *item, GdkEventKey *event);
-        gboolean (* enter_notify_event)   (GnomeCanvasItem *item, GdkEventCrossing *event);
-        gboolean (* leave_notify_event)   (GnomeCanvasItem *item, GdkEventCrossing *event);
+
+	/* Reserved for future expansion */
+	gpointer spare_vmethods [4];
 };
 
 

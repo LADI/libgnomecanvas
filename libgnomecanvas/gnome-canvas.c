@@ -204,68 +204,6 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 				gnome_canvas_marshal_BOOLEAN__BOXED,
 				GTK_TYPE_BOOL, 1,
 				GDK_TYPE_EVENT);
-        item_signals[ITEM_BUTTON_PRESS_EVENT] =
-                gtk_signal_new ("button_press_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_press_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_BUTTON_RELEASE_EVENT] =
-                gtk_signal_new ("button_release_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_release_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_MOTION_NOTIFY_EVENT] =
-                gtk_signal_new ("motion_notify_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, motion_notify_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_KEY_PRESS_EVENT] =
-                gtk_signal_new ("key_press_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_press_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_KEY_RELEASE_EVENT] =
-                gtk_signal_new ("key_release_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_release_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_ENTER_NOTIFY_EVENT] =
-                gtk_signal_new ("enter_notify_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, enter_notify_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
-
-        item_signals[ITEM_LEAVE_NOTIFY_EVENT] =
-                gtk_signal_new ("leave_notify_event",
-                                GTK_RUN_LAST,
-                                GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, leave_notify_event),
-                                gnome_canvas_marshal_BOOLEAN__BOXED,
-                                GTK_TYPE_BOOL, 1,
-                                GDK_TYPE_EVENT);
 
 	gobject_class->dispose = gnome_canvas_item_dispose;
 
@@ -2628,33 +2566,7 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 		gtk_signal_emit (
 			GTK_OBJECT (item), item_signals[ITEM_EVENT],
 			&ev, &finished);
-
-                switch (event->type) {
-                case GDK_MOTION_NOTIFY:
-                        signal_num = ITEM_MOTION_NOTIFY_EVENT;
-                        break;
-
-                case GDK_BUTTON_PRESS:
-                case GDK_2BUTTON_PRESS:
-                case GDK_3BUTTON_PRESS:
-                        signal_num = ITEM_BUTTON_PRESS_EVENT;
-                        break;
-
-                case GDK_BUTTON_RELEASE:
-                        signal_num = ITEM_BUTTON_RELEASE_EVENT;
-                        break;
-
-                default:
-                        signal_num = -1;
-                        break;
-                }
-
-                if (signal_num != -1)
-                        gtk_signal_emit (GTK_OBJECT (item),
-                                         item_signals[signal_num],
-                                         &ev,
-                                         &finished);
-
+		
 		parent = item->parent;
 		gtk_object_unref (GTK_OBJECT (item));
 
@@ -2934,13 +2846,15 @@ static gint
 gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
 {
 	GnomeCanvas *canvas;
-
+	
 	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
 	canvas = GNOME_CANVAS (widget);
+	
 	return emit_event (canvas, (GdkEvent *) event);
 }
+
 
 /* Crossing event handler for the canvas */
 static gint

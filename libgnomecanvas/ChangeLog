@@ -1,5 +1,11 @@
 2001-12-02  Anders Carlsson  <andersca@gnu.org>
 
+	* gnome-canvas.h: Remove unused signals from vtable and
+	add some padding.
+
+	* gnome-canvas.c (gnome_canvas_item_class_init): Remove signals.
+	(emit_event): Don't emit any other signals than "event".
+
 	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_draw): Use 
 	GDK_PIXBUF_ALPHA_FULL when rendering the pixbuf.
 
