@@ -1,3 +1,9 @@
+2002-01-21  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-clipgroup.c:
+	* gnome-canvas-shape.c:
+	Update to use the new libart intersector.
+
 2002-01-21  Anders Carlsson  <andersca@gnu.org>
 
 	* gnome-canvas.c (scroll_to): Remove debug print message.

@@ -28,7 +28,7 @@
 #include <libart_lgpl/art_svp.h>
 #include <libart_lgpl/art_svp_vpath.h>
 #include <libart_lgpl/art_vpath_dash.h>
-#include <libart_lgpl/art_svp_wind.h>
+#include <libart_lgpl/art_svp_intersect.h>
 #include <libart_lgpl/art_svp_point.h>
 #include <libart_lgpl/art_svp_ops.h>
 
@@ -215,9 +215,10 @@ gnome_canvas_clipgroup_update (GnomeCanvasItem *item, double *affine, ArtSVP *cl
 {
 	GnomeCanvasGroup * group;
 	GnomeCanvasClipgroup * clipgroup;
+	ArtSvpWriter * swr;
 	ArtBpath * bp;
 	ArtBpath * bpath;
-	ArtVpath * vpath1, * vpath2;
+	ArtVpath * vpath;
 	ArtSVP * svp, * svp1, * svp2;
 
 	group = GNOME_CANVAS_GROUP (item);
@@ -232,26 +233,23 @@ gnome_canvas_clipgroup_update (GnomeCanvasItem *item, double *affine, ArtSVP *cl
 		bp = gnome_canvas_path_def_bpath (clipgroup->path);
 		bpath = art_bpath_affine_transform (bp, affine);
 
-		vpath1 = art_bez_path_to_vec (bpath, 0.25);
+		vpath = art_bez_path_to_vec (bpath, 0.25);
 		art_free (bpath);
 
-		vpath2 = art_vpath_perturb (vpath1);
-		art_free (vpath1);
-
-		svp1 = art_svp_from_vpath (vpath2);
-		art_free (vpath2);
+		svp1 = art_svp_from_vpath (vpath);
+		art_free (vpath);
 		
-		svp2 = art_svp_uncross (svp1);
+		swr = art_svp_writer_rewind_new (clipgroup->wind);
+		art_svp_intersector (svp1, swr);
+
+		svp2 = art_svp_writer_rewind_reap (swr);
 		art_svp_free (svp1);
-
-		svp1 = art_svp_rewind_uncrossed (svp2, clipgroup->wind);
-		art_svp_free (svp2);
-
+		
 		if (clip_path != NULL) {
-			svp = art_svp_intersect (svp1, clip_path);
-			art_svp_free (svp1);
+			svp = art_svp_intersect (svp2, clip_path);
+			art_svp_free (svp2);
 		} else {
-			svp = svp1;
+			svp = svp2;
 		}
 
 	} else {

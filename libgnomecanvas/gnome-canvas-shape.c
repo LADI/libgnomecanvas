@@ -35,10 +35,11 @@
 #include <libart_lgpl/art_bpath.h>
 #include <libart_lgpl/art_vpath_bpath.h>
 #include <libart_lgpl/art_svp.h>
+#include <libart_lgpl/art_svp_point.h>
 #include <libart_lgpl/art_svp_vpath.h>
 #include <libart_lgpl/art_vpath_dash.h>
 #include <libart_lgpl/art_svp_wind.h>
-#include <libart_lgpl/art_svp_point.h>
+#include <libart_lgpl/art_svp_intersect.h>
 #include <libart_lgpl/art_rect_svp.h>
 
 enum {
@@ -1074,9 +1075,10 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 	if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
 		GnomeCanvasPathDef * cpath;
-		ArtBpath * abp;
-		ArtVpath * vpath, * pvpath;
-		ArtSVP *tmp_svp;
+		ArtSvpWriter *swr;
+		ArtVpath *vpath;
+		ArtBpath *abp;
+		ArtSVP *svp2;
 
 		/* Get closed part of path */
 
@@ -1089,40 +1091,35 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		vpath = art_bez_path_to_vec (abp, 0.1);
 		art_free (abp);
 
-		pvpath = art_vpath_perturb (vpath);
+		svp = art_svp_from_vpath (vpath);
 		art_free (vpath);
 
-		svp = art_svp_from_vpath (pvpath);
-		art_free (pvpath);
-		
-		tmp_svp = art_svp_uncross (svp);
+		swr = art_svp_writer_rewind_new (shape->priv->wind);
+		art_svp_intersector (svp, swr);
+
+		svp2 = art_svp_writer_rewind_reap (swr);
 		art_svp_free (svp);
 
-		svp = art_svp_rewind_uncrossed (tmp_svp, shape->priv->wind);
-		art_svp_free (tmp_svp);
-
 		if (item->canvas->aa) {
-
 			/* Update clipped path */
-
 			gnome_canvas_item_update_svp_clip (item,
-				&shape->priv->fill_svp,
-				svp,
-				clip_path);
+							   &shape->priv->fill_svp,
+							   svp2,
+							   clip_path);
 		} else {
 			if (priv->fill_svp) {
 				art_svp_free (priv->fill_svp);
 				priv->fill_svp = NULL;
 			}
 			/* No clipping */
-			shape->priv->fill_svp = svp;
+			shape->priv->fill_svp = svp2;
 		}
 	}
 
 	if (priv->outline_set && priv->path && !gnome_canvas_path_def_is_empty (priv->path)) {
 		gdouble width;
 		ArtBpath * abp;
-		ArtVpath * vpath, * pvpath;
+		ArtVpath * vpath;
 
 		/* Set linewidth */
 
@@ -1141,35 +1138,29 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		vpath = art_bez_path_to_vec (abp, 0.1);
 		art_free (abp);
 
-		pvpath = art_vpath_perturb (vpath);
-		art_free (vpath);
-
 		/* If dashed, apply dash */
 
 		if (priv->dash.dash != NULL)
 		{
-			ArtVpath *old = pvpath;
+			ArtVpath *old = vpath;
 			
-			pvpath = art_vpath_dash (old, &priv->dash);
+			vpath = art_vpath_dash (old, &priv->dash);
 			art_free (old);
 		}
 		
 		/* Stroke vpath to SVP */
 
-		svp = art_svp_vpath_stroke (pvpath,
+		svp = art_svp_vpath_stroke (vpath,
 					    gnome_canvas_join_gdk_to_art (priv->join),
 					    gnome_canvas_cap_gdk_to_art (priv->cap),
 					    width,
 					    priv->miterlimit,
 					    0.25);
-		art_free (pvpath);
+		art_free (vpath);
 
 		if (item->canvas->aa) {
-
 			/* Update clipped */
-
 			gnome_canvas_item_update_svp_clip (item, &priv->outline_svp, svp, clip_path);
-
 		} else {
 			if (priv->outline_svp) {
 				art_svp_free (priv->outline_svp);
@@ -1483,7 +1474,7 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 
 	if (priv->outline_set && priv->path && !gnome_canvas_path_def_is_empty (priv->path)) {
 		gdouble width;
-		ArtVpath * vpath, * pvpath;
+		ArtVpath * vpath;
 
 		/* Set linewidth */
 
@@ -1499,34 +1490,32 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 
 		vpath = art_bez_path_to_vec (gnome_canvas_path_def_bpath (priv->path), 0.1);
 
-		pvpath = art_vpath_perturb (vpath);
-		art_free (vpath);
-
 		/* If dashed, apply dash */
 
 		if (priv->dash.dash != NULL)
 		{
-			ArtVpath *old = pvpath;
+			ArtVpath *old = vpath;
 			
-			pvpath = art_vpath_dash (old, &priv->dash);
+			vpath = art_vpath_dash (old, &priv->dash);
 			art_free (old);
 		}
 		
 		/* Stroke vpath to SVP */
 
-		svp = art_svp_vpath_stroke (pvpath,
+		svp = art_svp_vpath_stroke (vpath,
 					    gnome_canvas_join_gdk_to_art (priv->join),
 					    gnome_canvas_cap_gdk_to_art (priv->cap),
 					    priv->width,
 					    priv->miterlimit,
 					    0.25);
-		art_free (pvpath);
+		art_free (vpath);
 		art_drect_svp (&bbox, svp);
 		art_svp_free (svp);
 	} else if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
-		GnomeCanvasPathDef * cpath;
-		ArtVpath * vpath, * pvpath;
-		ArtSVP *tmp_svp;
+		GnomeCanvasPathDef *cpath;
+		ArtSvpWriter *swr;
+		ArtVpath *vpath;
+		ArtSVP *svp2;
 
 		/* Get closed part of path */
 		cpath = gnome_canvas_path_def_closed_parts (shape->priv->path);
@@ -1534,20 +1523,17 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 		vpath = art_bez_path_to_vec (gnome_canvas_path_def_bpath (cpath), 0.1);
 		gnome_canvas_path_def_unref (cpath);
 
-		pvpath = art_vpath_perturb (vpath);
+		svp = art_svp_from_vpath (vpath);
 		art_free (vpath);
-
-		svp = art_svp_from_vpath (pvpath);
-		art_free (pvpath);
 		
-		tmp_svp = art_svp_uncross (svp);
+		swr = art_svp_writer_rewind_new (shape->priv->wind);
+		art_svp_intersector (svp, swr);
+		
+		svp2 = art_svp_writer_rewind_reap (swr);
 		art_svp_free (svp);
-
-		svp = art_svp_rewind_uncrossed (tmp_svp, shape->priv->wind);
-		art_svp_free (tmp_svp);
-
-		art_drect_svp (&bbox, svp);
-		art_svp_free (svp);
+  
+		art_drect_svp (&bbox, svp2);
+		art_svp_free (svp2);
 	}
 
 	*x1 = bbox.x0;
