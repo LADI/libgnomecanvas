@@ -1246,9 +1246,9 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		if (!item->canvas->aa)
 			set_text_gc_foreground (text);
-
-		gnome_canvas_item_request_update (item);
 	}
+
+	gnome_canvas_item_request_update (item);
 }
 
 /* Get_arg handler for the text item */

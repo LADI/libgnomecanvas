@@ -1,3 +1,8 @@
+2001-09-15  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_property):
+	Always call gnome_canvas_item_request_update (item)
+
 2001-09-14  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_render):
