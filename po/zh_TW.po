@@ -1,12 +1,12 @@
-# traditional Chinese translation for libgnomecanvas2.
-# Copyright (C) 2000-2001 Free Software Foundation, Inc.
-# Abel Cheung <maddog@linux.org.hk>, 2001.
+# traditional Chinese translation for libgnomecanvas.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linux.org.hk>, 2001-2002.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas2 1.102.0\n"
-"POT-Creation-Date: 2002-03-18 14:22+0100\n"
-"PO-Revision-Date: 2001-09-02 14:29+0800\n"
+"Project-Id-Version: libgnomecanvas 1.113.0\n"
+"POT-Creation-Date: 2002-02-19 10:47+0100\n"
+"PO-Revision-Date: 2002-03-28 09:36+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: traditional Chinese <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
-msgstr ""
+msgstr "平滑模式"
 
 #: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "平滑模式的 canvas。"
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
@@ -35,7 +35,7 @@ msgstr "文字"
 
 #: libgnomecanvas/gnome-canvas-text.c:204
 msgid "Text to render"
-msgstr ""
+msgstr "描繪的文字"
 
 #: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
@@ -72,22 +72,22 @@ msgstr "字型集名稱，例如：Sans、Helvetica、Times、Monospace"
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
-msgstr "字款"
+msgstr "字體款式"
 
 #: libgnomecanvas/gnome-canvas-text.c:283
 #: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
-msgstr ""
+msgstr "字型變化"
 
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr ""
+msgstr "字型粗幼"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr ""
+msgstr "字型寬緊"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
@@ -104,20 +104,20 @@ msgstr "以點數表達的字型大小"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr ""
+msgstr "升高文字"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
+msgstr "文字和底部基準線的距離 (如果升高的數值為負數，則表示低於基準線)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
-msgstr ""
+msgstr "劃線"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "是否在文字中央劃線"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
@@ -125,15 +125,15 @@ msgstr "底線"
 
 #: libgnomecanvas/gnome-canvas-text.c:358
 msgid "Style of underline for this text"
-msgstr "此文字的底線款式"
+msgstr "此段文字的底線款式"
 
 #: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Scale"
-msgstr ""
+msgstr "比例"
 
 #: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
-msgstr ""
+msgstr "目前的字型大小和原來大小的比例"
 
 #: libgnomecanvas/gnome-canvas-text.c:422
 #: libgnomecanvas/gnome-canvas-text.c:430
@@ -159,7 +159,7 @@ msgstr "文字寬度"
 
 #: libgnomecanvas/gnome-canvas-text.c:453
 msgid "Width of the rendered text"
-msgstr ""
+msgstr "所描繪的文字的寬度"
 
 #: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Text height"
@@ -167,11 +167,11 @@ msgstr "文字高度"
 
 #: libgnomecanvas/gnome-canvas-text.c:461
 msgid "Height of the rendered text"
-msgstr ""
+msgstr "所描繪的文字的高度"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr ""
+msgstr "字型集設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
@@ -179,39 +179,39 @@ msgstr "此標籤會否影響字型集"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr ""
+msgstr "字體款式設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr "此標籤會否影響字型款式"
+msgstr "此標籤會否影響字體款式"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr ""
+msgstr "字型變化設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "此標籤會否影響字型變化"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr ""
+msgstr "字型粗幼設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "此標籤會否影響字型粗幼"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr ""
+msgstr "字型寬緊設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "此標籤會否影響字型寬緊"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr ""
+msgstr "字型大小設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
@@ -219,23 +219,23 @@ msgstr "此標籤會否影響字型大小"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr ""
+msgstr "升高文字設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "此標籤會否影響文字升高的情況"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr ""
+msgstr "劃線設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "此標籤會否影響文字劃線"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr ""
+msgstr "底線設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
@@ -243,931 +243,8 @@ msgstr "此標籤會否影響底線"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr ""
+msgstr "縮放設定"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr ""
-
-#~ msgid "Failed to open file '%s': %s"
-#~ msgstr "無法開啟檔案 '%s'：%s"
-
-#~ msgid "Image file '%s' contains no data"
-#~ msgstr "圖像檔 '%s' 沒有內容"
-
-#~ msgid "Don't know how to load the animation in file '%s'"
-#~ msgstr "不知如何載入檔案 '%s' 裡的動畫"
-
-#~ msgid ""
-#~ "Failed to load image '%s': reason not known, probably a corrupt image file"
-#~ msgstr "不能載入圖像檔 '%s'：原因不明，可能是檔案已損壞了"
-
-#~ msgid ""
-#~ "Failed to load animation '%s': reason not known, probably a corrupt "
-#~ "animation file"
-#~ msgstr "不能載入動畫檔 '%s'：原因不明，可能是動畫檔已損壞了"
-
-#, fuzzy
-#~ msgid "Unable to load image-loading module: %s: %s"
-#~ msgstr "無法載入用來載入圖像的模組：%s：%s"
-
-#~ msgid "Image type '%s' is not supported"
-#~ msgstr "不支援圖像類型 '%s'"
-
-#~ msgid "Couldn't recognize the image file format for file '%s'"
-#~ msgstr "不能辨別檔案 '%s' 的圖像檔格式"
-
-#~ msgid "Unrecognized image file format"
-#~ msgstr "無法識別的圖像檔格式"
-
-#~ msgid "Don't know how to load the image in file '%s'"
-#~ msgstr "不知如何載入檔案 '%s' 裡的圖像"
-
-#~ msgid "Failed to load image '%s': %s"
-#~ msgstr "無法載入圖像 '%s'：%s"
-
-#~ msgid ""
-#~ "This build of gdk-pixbuf does not support saving the image format: %s"
-#~ msgstr "此 gdk-pixbuf 不支援要儲存的圖像格式：%s"
-
-#~ msgid "Failed to open '%s' for writing: %s"
-#~ msgstr "無法寫入 '%s'：%s"
-
-#~ msgid "BMP image has unsupported header size"
-#~ msgstr "不支援的 BMP 圖像標頭大小"
-
-#~ msgid "BMP image has bogus header data"
-#~ msgstr "BMP 圖像有冗餘的標頭資料"
-
-#~ msgid "Not enough memory to load bitmap image"
-#~ msgstr "記憶體不足以載入點陣圖像"
-
-#~ msgid "Failure reading GIF: %s"
-#~ msgstr "不能讀入 GIF：%s"
-
-#~ msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-#~ msgstr "GIF 檔缺少了某些資料（可能檔案被截短了？）"
-
-#~ msgid "Internal error in the GIF loader (%s)"
-#~ msgstr "載入 GIF 時發生內部程序錯誤（%s）"
-
-#~ msgid "GIF image loader can't understand this image."
-#~ msgstr "GIF 檔案載入程序無法分析此圖像。"
-
-#~ msgid "Not enough memory to load GIF file"
-#~ msgstr "記憶體不足以載入 GIF 檔"
-
-#~ msgid "GIF image is corrupt (incorrect LZW compression)"
-#~ msgstr "GIF 圖像已損壞（不正確的 LZW 壓縮資料）"
-
-#~ msgid "File does not appear to be a GIF file"
-#~ msgstr "檔案好像不是 GIF 檔"
-
-#~ msgid "Version %s of the GIF file format is not supported"
-#~ msgstr "不支援 %s 版本的 GIF 檔案格式"
-
-#~ msgid "GIF image was truncated or incomplete."
-#~ msgstr "GIF 檔案被截短或是不完整。"
-
-#~ msgid "Error interpreting JPEG image file (%s)"
-#~ msgstr "分析 JPEG 圖像檔時發生錯誤（%s）"
-
-#~ msgid ""
-#~ "Insufficient memory to load image, try exiting some applications to free "
-#~ "memory"
-#~ msgstr "記憶體不足以載入圖像，試試退出其它應用程式來釋放記憶體"
-
-#~ msgid "Couldn't allocate memory for loading JPEG file"
-#~ msgstr "無法分配記憶體來載入 JPEG 檔"
-
-#~ msgid ""
-#~ "JPEG quality must be a value between 0 and 100; value '%s' could not be "
-#~ "parsed."
-#~ msgstr "JPEG 品質一定在 0 至 100 之間；無法分析數值 '%s'。"
-
-#~ msgid ""
-#~ "JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
-#~ msgstr "JPEG 品質一定在 0 至 100 之間；不允許使用數值 '%d'。"
-
-#~ msgid "Fatal error in PNG image file: %s"
-#~ msgstr "PNG 圖像檔裡有嚴重錯誤：%s"
-
-#~ msgid "Insufficient memory to load PNG file"
-#~ msgstr "記憶體不足以載入 PNG 檔"
-
-#~ msgid ""
-#~ "Insufficient memory to store a %ld by %ld image; try exiting some "
-#~ "applications to reduce memory usage"
-#~ msgstr ""
-#~ "記憶體不足以載入大小為 %ld x %ld 的圖像；\n"
-#~ "試試退出其它應用程式來減低記憶體使用量"
-
-#~ msgid "Fatal error reading PNG image file: %s"
-#~ msgstr "讀入 PNG 圖像檔時發生嚴重錯誤：%s"
-
-#~ msgid "Insufficient memory to save PNG file"
-#~ msgstr "記憶體不足以儲存 PNG 檔"
-
-#~ msgid "PNM file has an incorrect initial byte"
-#~ msgstr "PNM 檔的第一個位元組不正確"
-
-#~ msgid "PNM file is not in a recognized PNM subformat"
-#~ msgstr "無法辨識這個 PNM 檔的副格式"
-
-#~ msgid "PNM file has an image width of 0"
-#~ msgstr "PNM 圖像檔的寬為 0"
-
-#~ msgid "PNM file has an image height of 0"
-#~ msgstr "PNM 圖像檔的高為 0"
-
-#~ msgid "Maximum color value in PNM file is 0"
-#~ msgstr "PNM 最大的使用顏色數目為 0"
-
-#~ msgid "PNM image format is invalid"
-#~ msgstr "PNM 圖像格式不正確"
-
-#~ msgid "PNM image loader does not support this PNM subformat"
-#~ msgstr "PNM 載入程序不支援這個 PNM 檔的副格式"
-
-#~ msgid "Unexpected end of PNM image data"
-#~ msgstr "PNM 圖像資料過早完結"
-
-#~ msgid "Insufficient memory to load PNM file"
-#~ msgstr "記憶體不足以載入 PNM 檔"
-
-#~ msgid "Could not get image width (bad TIFF file)"
-#~ msgstr "不能取得圖像寬度（TIFF 檔損壞）"
-
-#~ msgid "Could not get image height (bad TIFF file)"
-#~ msgstr "不能取得圖像高度（TIFF 檔損壞）"
-
-#~ msgid "Width or height of TIFF image is zero"
-#~ msgstr "TIFF 圖像的寬度或高度為零"
-
-#~ msgid "Insufficient memory to open TIFF file"
-#~ msgstr "記憶體不足以開啟 TIFF 檔"
-
-#~ msgid "Failed to load RGB data from TIFF file"
-#~ msgstr "不能載入 TIFF 檔裡的 RGB 資料"
-
-#~ msgid "Failed to open TIFF image"
-#~ msgstr "不能開啟 TIFF 圖像"
-
-#~ msgid "TIFFClose operation failed"
-#~ msgstr "TIFFClose 程序失敗"
-
-#~ msgid "Failed to load TIFF image"
-#~ msgstr "不能載入 TIFF 圖像"
-
-#~ msgid "Invalid XBM file: %s"
-#~ msgstr "不正確的 XBM 檔：%s"
-
-#~ msgid "Insufficient memory to load XBM image file"
-#~ msgstr "記憶體不足以載入 XBM 圖像檔"
-
-#~ msgid "Failed to write to temporary file when loading XBM image"
-#~ msgstr "當載入 XBM 圖像時不能寫入暫存檔"
-
-#~ msgid "No XPM header found"
-#~ msgstr "找不到 XPM 標頭"
-
-#~ msgid "XPM has more than 31 chars per pixel"
-#~ msgstr "XPM 的每個像素佔多於 31 字元"
-
-#~ msgid "Can't read XPM colormap"
-#~ msgstr "不能讀入 XPM 色盤"
-
-#~ msgid "Can't allocate memory for loading XPM image"
-#~ msgstr "無法分配記憶體來載入 XPM 圖像"
-
-#~ msgid "Failed to write to temporary file when loading XPM image"
-#~ msgstr "當載入 XPM 圖像時不能寫入暫存檔"
-
-#~ msgid "Pixbuf Object"
-#~ msgstr "Pixbuf 物件"
-
-#~ msgid "Attributes"
-#~ msgstr "屬性"
-
-#~ msgid "Background color name"
-#~ msgstr "背景顏色名稱"
-
-#~ msgid "Background color as a string"
-#~ msgstr "以字串方式表達的背景顏色"
-
-#~ msgid "Background color"
-#~ msgstr "背景顏色"
-
-#~ msgid "Background color as a GdkColor"
-#~ msgstr "以 GdkColor 方式表達的背景顏色"
-
-#~ msgid "Foreground color name"
-#~ msgstr "前景顏色名稱"
-
-#~ msgid "Foreground color"
-#~ msgstr "前景顏色"
-
-#~ msgid "Editable"
-#~ msgstr "可編輯"
-
-#~ msgid "Whether the text can be modified by the user"
-#~ msgstr "使用者可否修改文字"
-
-#~ msgid "Font scale"
-#~ msgstr "字型比例"
-
-#~ msgid "Font scaling factor"
-#~ msgstr "字型縮放比例"
-
-#~ msgid "Whether this tag affects the background color"
-#~ msgstr "此標籤會否影響背景顏色"
-
-#~ msgid "Whether this tag affects the foreground color"
-#~ msgstr "此標籤會否影響前景顏色"
-
-#~ msgid "Whether this tag affects text editability"
-#~ msgstr "此標籤會否影響文字的可編輯性"
-
-#~ msgid "Whether this tag scales the font size by a factor"
-#~ msgstr "此標籤會否縮放字型"
-
-#~ msgid "Pixbuf location"
-#~ msgstr "Pixbuf 位置"
-
-#~ msgid "Toggle state"
-#~ msgstr "切換狀態"
-
-#~ msgid "_Save color here"
-#~ msgstr "在這裡儲存顏色(_S)"
-
-#~ msgid "Has palette"
-#~ msgstr "有調色盤"
-
-#~ msgid "Whether a palette should be used"
-#~ msgstr "應否使用調色盤"
-
-#~ msgid "Current Color"
-#~ msgstr "目前色彩"
-
-#~ msgid "The current color"
-#~ msgstr "目前的色彩"
-
-#~ msgid "Current Alpha"
-#~ msgstr "目前透明度"
-
-#~ msgid "The current opacity value (0 fully transparent, 65535 fully opaque)"
-#~ msgstr "目前的不透明度（0 為完全透明，65535 為完全不透明）"
-
-#~ msgid "Custom palette"
-#~ msgstr "自訂調色盤"
-
-#~ msgid "_Hue:"
-#~ msgstr "色相(_H)："
-
-#~ msgid "_Saturation:"
-#~ msgstr "彩度(_S)："
-
-#~ msgid "_Value:"
-#~ msgstr "明度(_V)："
-
-#~ msgid "_Red:"
-#~ msgstr "紅(_R)："
-
-#~ msgid "_Green:"
-#~ msgstr "綠(_G)："
-
-#~ msgid "_Blue:"
-#~ msgstr "藍(_B)："
-
-#~ msgid "_Opacity:"
-#~ msgstr "不透明度(_O)："
-
-#~ msgid "Color _Name:"
-#~ msgstr "顏色名稱(_N)："
-
-#~ msgid "_Palette"
-#~ msgstr "調色盤(_P)"
-
-#~ msgid "Text Position"
-#~ msgstr "文字位置"
-
-#~ msgid "The current position of the insertion point"
-#~ msgstr "插入點目前的位置"
-
-#~ msgid "Maximum length"
-#~ msgstr "最大長度"
-
-#~ msgid "Maximum number of characters for this entry"
-#~ msgstr "此項目的最大長度"
-
-#~ msgid "Invisible character"
-#~ msgstr "隱形字元"
-
-#~ msgid ""
-#~ "The character to use when masking entry contents (in \"password mode\")"
-#~ msgstr "用來遮蓋輸入內容的字元（在「密碼模式」裡）"
-
-#~ msgid "Cursor color"
-#~ msgstr "游標顏色"
-
-#~ msgid "Color with which to draw insertion cursor"
-#~ msgstr "繪畫插入游標使用的顏色"
-
-#~ msgid "Cut"
-#~ msgstr "剪下"
-
-#~ msgid "Copy"
-#~ msgstr "複製"
-
-#~ msgid "Paste"
-#~ msgstr "貼上"
-
-#~ msgid "Input Methods"
-#~ msgstr "輸入法"
-
-#~ msgid "Filename"
-#~ msgstr "檔案名稱"
-
-#~ msgid "The currently selected filename."
-#~ msgstr "現時所選擇的檔案名稱。"
-
-#~ msgid "Show file operations"
-#~ msgstr "顯示檔案處理"
-
-#~ msgid "Whether buttons for creating/manipulating files should be displayed."
-#~ msgstr "應否顯示用來建立或處理檔案的按鈕。"
-
-#~ msgid "Directories"
-#~ msgstr "目錄"
-
-#~ msgid "Files"
-#~ msgstr "檔案"
-
-#~ msgid "Directory unreadable: %s"
-#~ msgstr "無法讀取目錄：%s"
-
-#~ msgid "Create Dir"
-#~ msgstr "建立目錄"
-
-#~ msgid "Delete File"
-#~ msgstr "刪除檔案"
-
-#~ msgid "Rename File"
-#~ msgstr "改變檔案名稱"
-
-#~ msgid ""
-#~ "The directory name \"%s\" contains symbols that are not allowed in "
-#~ "filenames"
-#~ msgstr "目錄名稱 \"%s\" 中含有不允許存在於檔案名稱的符號"
-
-#~ msgid ""
-#~ "Error creating directory \"%s\": %s\n"
-#~ "%s"
-#~ msgstr ""
-#~ "建立目錄 \"%s\" 時發生錯誤：%s\n"
-#~ "%s"
-
-#~ msgid "You probably used symbols not allowed in filenames."
-#~ msgstr "你可能使用了不允許存在於檔案名稱的符號。"
-
-#~ msgid "Error creating directory \"%s\": %s\n"
-#~ msgstr "建立目錄 \"%s\" 時發生錯誤：%s\n"
-
-#~ msgid "Create Directory"
-#~ msgstr "建立目錄"
-
-#~ msgid "_Directory name:"
-#~ msgstr "目錄名稱(_D)："
-
-#~ msgid "Create"
-#~ msgstr "建立"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid ""
-#~ "The filename \"%s\" contains symbols that are not allowed in filenames"
-#~ msgstr "檔案名稱 \"%s\" 中含有不允許存在於檔案名稱的符號"
-
-#~ msgid ""
-#~ "Error deleting file \"%s\": %s\n"
-#~ "%s"
-#~ msgstr ""
-#~ "刪除檔案 \"%s\" 時發生錯誤：%s\n"
-#~ "%s"
-
-#~ msgid "It probably contains symbols not allowed in filenames."
-#~ msgstr "它可能含有不允許存在於檔案名稱的符號。"
-
-#~ msgid "Error deleting file \"%s\": %s"
-#~ msgstr "刪除檔案 \"%s\" 時發生錯誤：%s"
-
-#~ msgid "Delete"
-#~ msgstr "刪除"
-
-#~ msgid ""
-#~ "The file name \"%s\" contains symbols that are not allowed in filenames"
-#~ msgstr "檔案名稱 \"%s\" 含有不允許存在於檔案名稱的符號"
-
-#~ msgid ""
-#~ "Error renaming file to \"%s\": %s\n"
-#~ "%s"
-#~ msgstr ""
-#~ "更改檔案名稱至 \"%s\" 時發生錯誤：%s\n"
-#~ "%s"
-
-#~ msgid ""
-#~ "Error renaming file \"%s\": %s\n"
-#~ "%s"
-#~ msgstr ""
-#~ "更改檔案 \"%s\" 時發生錯誤：%s\n"
-#~ "%s"
-
-#~ msgid "Error renaming file \"%s\" to \"%s\": %s"
-#~ msgstr "更改檔案 \"%s\" 的名稱至 \"%s\" 時發生錯誤：%s"
-
-#~ msgid "Rename"
-#~ msgstr "改名"
-
-#~ msgid ""
-#~ "The filename %s couldn't be converted to UTF-8. Try setting the "
-#~ "environment variable G_BROKEN_FILENAMES."
-#~ msgstr ""
-#~ "檔案名稱 %s 不可以轉換到 UTF-8。請嘗試設定環境變數 G_BROKEN_FILENAMES。"
-
-#~ msgid "Name too long"
-#~ msgstr "名稱過長"
-
-#~ msgid "Couldn't convert filename"
-#~ msgstr "無法轉換檔案名稱"
-
-#~ msgid "Font name"
-#~ msgstr "字型名稱"
-
-#~ msgid "The X string that represents this font."
-#~ msgstr "表示此字型的 X 字串。"
-
-#~ msgid "The GdkFont that is currently selected."
-#~ msgstr "目前選擇的 GdkFont。"
-
-#~ msgid "Preview text"
-#~ msgstr "預覽文字"
-
-#~ msgid "The text to display in order to demonstrate the selected font."
-#~ msgstr "示範所選擇的字型時使用的文字。"
-
-#~ msgid "_Family:"
-#~ msgstr "字集(_F)："
-
-#~ msgid "_Style:"
-#~ msgstr "款式(_S)："
-
-#~ msgid "Si_ze:"
-#~ msgstr "大小(_Z)："
-
-#~ msgid "Preview:"
-#~ msgstr "預覽："
-
-#~ msgid "Gamma"
-#~ msgstr "Gamma"
-
-#~ msgid "_Gamma value"
-#~ msgstr "Gamma 值"
-
-#~ msgid "OK"
-#~ msgstr "確定"
-
-#~ msgid "Error loading icon: %s"
-#~ msgstr "載入圖示時發生錯誤：%s"
-
-#~ msgid "Input"
-#~ msgstr "輸入"
-
-#~ msgid "No input devices"
-#~ msgstr "缺少輸入裝置"
-
-#~ msgid "_Device:"
-#~ msgstr "裝置(_D)："
-
-#~ msgid "Disabled"
-#~ msgstr "已失效"
-
-#~ msgid "Screen"
-#~ msgstr "螢幕"
-
-#~ msgid "Window"
-#~ msgstr "視窗"
-
-#~ msgid "_Mode: "
-#~ msgstr "模式(_M)："
-
-#~ msgid "_Axes"
-#~ msgstr "軸(_A)"
-
-#~ msgid "_Keys"
-#~ msgstr "按鍵(_K)"
-
-#~ msgid "Close"
-#~ msgstr "關閉"
-
-#~ msgid "Pressure"
-#~ msgstr "力度"
-
-#~ msgid "X Tilt"
-#~ msgstr "X 傾斜"
-
-#~ msgid "Y Tilt"
-#~ msgstr "Y 傾斜"
-
-#~ msgid "Wheel"
-#~ msgstr "滾輪"
-
-#~ msgid "none"
-#~ msgstr "無"
-
-#~ msgid "(disabled)"
-#~ msgstr "(已失效)"
-
-#~ msgid "(unknown)"
-#~ msgstr "(未知)"
-
-#~ msgid "clear"
-#~ msgstr "清除"
-
-#~ msgid "Page"
-#~ msgstr "頁"
-
-#~ msgid "The index of the current page"
-#~ msgstr "本頁的索引"
-
-#~ msgid "Page %u"
-#~ msgstr "第 %u 頁"
-
-#~ msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
-#~ msgstr "無法在 pixmap_path 找到圖像檔：\"%s\" 第 %d 行"
-
-#~ msgid "Unable to locate image file in pixmap_path: \"%s\""
-#~ msgstr "無法在 pixmap_path 找到圖像檔：\"%s\""
-
-#~ msgid "Information"
-#~ msgstr "資訊"
-
-#~ msgid "Warning"
-#~ msgstr "警告"
-
-#~ msgid "Error"
-#~ msgstr "錯誤"
-
-#~ msgid "Question"
-#~ msgstr "問題"
-
-#~ msgid "_Apply"
-#~ msgstr "套用(_A)"
-
-#~ msgid "_Bold"
-#~ msgstr "粗體(_B)"
-
-#~ msgid "_Cancel"
-#~ msgstr "取消(_C)"
-
-#~ msgid "_Clear"
-#~ msgstr "清除(_C)"
-
-#~ msgid "_Close"
-#~ msgstr "關閉(_C)"
-
-#~ msgid "_Copy"
-#~ msgstr "複製(_C)"
-
-#~ msgid "C_ut"
-#~ msgstr "剪下(_U)"
-
-#~ msgid "_Find"
-#~ msgstr "搜尋(_F)"
-
-#~ msgid "_Help"
-#~ msgstr "求助(_H)"
-
-#, fuzzy
-#~ msgid "_Center"
-#~ msgstr "新增"
-
-#, fuzzy
-#~ msgid "_Fill"
-#~ msgstr "字體:"
-
-#~ msgid "_Left"
-#~ msgstr "左(_L)"
-
-#~ msgid "_Right"
-#~ msgstr "右(_R)"
-
-#~ msgid "_New"
-#~ msgstr "新增(_N)"
-
-#~ msgid "_No"
-#~ msgstr "否(_N)"
-
-#~ msgid "_OK"
-#~ msgstr "確定(_O)"
-
-#~ msgid "_Open"
-#~ msgstr "開啟(_O)"
-
-#~ msgid "_Paste"
-#~ msgstr "貼上(_P)"
-
-#~ msgid "_Preferences"
-#~ msgstr "偏好設定(_P)"
-
-#~ msgid "_Print"
-#~ msgstr "列印(_P)"
-
-#~ msgid "Print Pre_view"
-#~ msgstr "列印預覽(_V)"
-
-#~ msgid "_Properties"
-#~ msgstr "屬性(_P)"
-
-#~ msgid "_Quit"
-#~ msgstr "離開(_Q)"
-
-#~ msgid "_Redo"
-#~ msgstr "重做(_R)"
-
-#~ msgid "_Revert"
-#~ msgstr "復原(_R)"
-
-#~ msgid "_Save"
-#~ msgstr "儲存(_S)"
-
-#~ msgid "Save _As"
-#~ msgstr "另存新檔(_A)"
-
-#~ msgid "_Spell Check"
-#~ msgstr "檢查錯字(_S)"
-
-#~ msgid "_Stop"
-#~ msgstr "停止(_S)"
-
-#~ msgid "_Underline"
-#~ msgstr "底線(_U)"
-
-#~ msgid "_Undo"
-#~ msgstr "還原(_U)"
-
-#~ msgid "_Yes"
-#~ msgstr "是(_Y)"
-
-#~ msgid "Zoom _100%"
-#~ msgstr "縮放 100%(_1)"
-
-#~ msgid "Zoom to _Fit"
-#~ msgstr "縮放至符合(_F)"
-
-#~ msgid "Zoom _In"
-#~ msgstr "拉近(_I)"
-
-#~ msgid "Zoom _Out"
-#~ msgstr "拉遠(_O)"
-
-#~ msgid "Text direction"
-#~ msgstr "文字方向"
-
-#~ msgid "Text direction, e.g. right-to-left or left-to-right"
-#~ msgstr "文字方向，例如左至右或右至左"
-
-#~ msgid "Justification"
-#~ msgstr "對齊"
-
-#~ msgid "Left, right, or center justification"
-#~ msgstr "向左、向右或是置中對齊"
-
-#~ msgid "Language"
-#~ msgstr "語言"
-
-#~ msgid "Indent"
-#~ msgstr "縮排"
-
-#~ msgid "Whether this text is hidden"
-#~ msgstr "此文字是否要隱藏"
-
-#~ msgid "Column Width"
-#~ msgstr "欄寬"
-
-#~ msgid "The width of a column"
-#~ msgstr "欄的寬度"
-
-#~ msgid "Cursor Visible"
-#~ msgstr "可見游標"
-
-#~ msgid "If the insertion cursor is shown"
-#~ msgstr "是否顯示插入游標"
-
-#, fuzzy
-#~ msgid "Unable to locate theme engine in module_path: \"%s\","
-#~ msgstr "無法由 module_path 找到可載入模組: \"%s\","
-
-#~ msgid "--- No Tip ---"
-#~ msgstr "--- 無提示 ---"
-
-#~ msgid "Visible"
-#~ msgstr "可見"
-
-#~ msgid "Width"
-#~ msgstr "寬度"
-
-#~ msgid "Current width of the column"
-#~ msgstr "目前的欄寬"
-
-#~ msgid "Minimum Width"
-#~ msgstr "最小寬度"
-
-#~ msgid "Minimum allowed width of the column"
-#~ msgstr "可接受的最小欄寬"
-
-#~ msgid "Maximum Width"
-#~ msgstr "最大寬度"
-
-#~ msgid "Maximum allowed width of the column"
-#~ msgstr "可接受的最大欄寬"
-
-#~ msgid "Title"
-#~ msgstr "標題"
-
-#~ msgid "Clickable"
-#~ msgstr "可按下"
-
-#~ msgid "Whether the header can be clicked"
-#~ msgstr "可否按下標頭"
-
-#~ msgid "Alignment"
-#~ msgstr "排列"
-
-#~ msgid "Reorderable"
-#~ msgstr "可重新排列"
-
-#~ msgid "Sort indicator"
-#~ msgstr "排序指示器"
-
-#~ msgid "Whether to show a sort indicator"
-#~ msgstr "是否顯示排序指示器"
-
-#~ msgid "Vietnamese (VIQR)"
-#~ msgstr "越南文（VIQR）"
-
-#~ msgid "X Input Method"
-#~ msgstr "X 輸入法"
-
-#~ msgid "Image header corrupt"
-#~ msgstr "圖像標頭損壞"
-
-#~ msgid "Image format unknown"
-#~ msgstr "不明圖像格式"
-
-#~ msgid "Image pixel data corrupt"
-#~ msgstr "圖像像素資料損壞"
-
-#~ msgid "failed to allocate image buffer of %u bytes"
-#~ msgstr "無法分配 %u 位元組的圖像緩衝區"
-
-#~ msgid "Horizontal alignment"
-#~ msgstr "水平排列"
-
-#~ msgid "Value between 0.0 and 1.0 to indicate X alignment"
-#~ msgstr "以 0.0 至 1.0 之間的數值表示 X 排列"
-
-#~ msgid "Vertical alignment"
-#~ msgstr "垂直排列"
-
-#~ msgid "Value between 0.0 and 1.0 to indicate Y alignment"
-#~ msgstr "以 0.0 至 1.0 之間的數值表示 Y 排列"
-
-#~ msgid "Horizontal scale"
-#~ msgstr "水平縮放比率"
-
-#~ msgid "Value between 0.0 and 1.0 to indicate X scale"
-#~ msgstr "以 0.0 至 1.0 之間的數值表示 X 縮放比率"
-
-#~ msgid "Vertical scale"
-#~ msgstr "垂直縮放比率"
-
-#~ msgid "Value between 0.0 and 1.0 to indicate Y scale"
-#~ msgstr "以 0.0 至 1.0 之間的數值表示 Y 縮放比率"
-
-#~ msgid "Arrow direction"
-#~ msgstr "箭咀方向"
-
-#~ msgid "The direction the arrow should point"
-#~ msgstr "箭咀所指的方向"
-
-#~ msgid "Arrow shadow"
-#~ msgstr "箭咀陰影"
-
-#~ msgid "Appearance of the shadow surrounding the arrow"
-#~ msgstr "箭咀周圍出現的陰影"
-
-#~ msgid "Horizontal Alignment"
-#~ msgstr "水平排列"
-
-#~ msgid "Vertical Alignment"
-#~ msgstr "垂直排列"
-
-#~ msgid "Ratio"
-#~ msgstr "比率"
-
-#~ msgid "Spacing"
-#~ msgstr "間隔"
-
-#~ msgid "Label"
-#~ msgstr "標籤"
-
-#~ msgid "Default Spacing"
-#~ msgstr "預設間隔"
-
-#~ msgid "Indicator Spacing"
-#~ msgstr "指示器間隔"
-
-#~ msgid "Enable arrow keys"
-#~ msgstr "啟用箭咀鍵"
-
-#~ msgid "Always enable arrows"
-#~ msgstr "永遠啟用箭頭"
-
-#~ msgid "Case sensitive"
-#~ msgstr "區分大小寫"
-
-#~ msgid "Curve type"
-#~ msgstr "曲線類型"
-
-#~ msgid "Minimum X"
-#~ msgstr "X 最小值"
-
-#~ msgid "Minimum possible value for X"
-#~ msgstr "X 可能的最小值"
-
-#~ msgid "Maximum X"
-#~ msgstr "X 最大值"
-
-#~ msgid "Maximum possible X value."
-#~ msgstr "X 可能的最大值"
-
-#~ msgid "Minimum Y"
-#~ msgstr "Y 最小值"
-
-#~ msgid "Minimum possible value for Y"
-#~ msgstr "Y 可能的最小值"
-
-#~ msgid "Maximum Y"
-#~ msgstr "Y 最大值"
-
-#~ msgid "Maximum possible value for Y"
-#~ msgstr "Y 可能的最大值"
-
-#, fuzzy
-#~ msgid "Pattern"
-#~ msgstr "自訂色板"
-
-#, fuzzy
-#~ msgid "Selectable"
-#~ msgstr "刪除"
-
-#, fuzzy
-#~ msgid "Cursor Blink"
-#~ msgstr "已失效"
-
-#, fuzzy
-#~ msgid "Cursor Blink Time"
-#~ msgstr "已失效"
-
-#, fuzzy
-#~ msgid "Value"
-#~ msgstr "明度:"
-
-#, fuzzy
-#~ msgid "Widget name"
-#~ msgstr "更新"
-
-#, fuzzy
-#~ msgid "Style"
-#~ msgstr "格式:"
-
-#, fuzzy
-#~ msgid "Window Type"
-#~ msgstr "視窗"
-
-#, fuzzy
-#~ msgid "Window Title"
-#~ msgstr "視窗"
-
-#, fuzzy
-#~ msgid "Resizable"
-#~ msgstr "已失效"
-
-#, fuzzy
-#~ msgid "Mode"
-#~ msgstr "模式:"
-
-#, fuzzy
-#~ msgid "He_x Value:"
-#~ msgstr "十六進位值:"
+msgstr "此標籤會否影響字型的縮放"
