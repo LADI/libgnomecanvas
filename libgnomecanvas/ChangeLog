@@ -1,3 +1,8 @@
+2001-08-14  Martin Baulig  <baulig@suse.de>
+
+	* gnome-canvas-rich-text.h (GnomeCanvasRichText): Privatized
+	all the fields.
+
 2001-08-13  Darin Adler  <darin@bentspoon.com>
 
 	Roll in some desirable fixes from the stable branch:

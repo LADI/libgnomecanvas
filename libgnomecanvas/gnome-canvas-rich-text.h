@@ -35,52 +35,14 @@ G_BEGIN_DECLS
 #define GNOME_IS_CANVAS_RICH_TEXT_CLASS(klass)  (GTK_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_RICH_TEXT))
 #define GNOME_CANVAS_RICH_TEXT_GET_CLASS(obj)   (GTK_CHECK_GET_CLASS ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichTextClass))
 
-typedef struct _GnomeCanvasRichText      GnomeCanvasRichText;
-typedef struct _GnomeCanvasRichTextClass GnomeCanvasRichTextClass;
+typedef struct _GnomeCanvasRichText             GnomeCanvasRichText;
+typedef struct _GnomeCanvasRichTextPrivate      GnomeCanvasRichTextPrivate;
+typedef struct _GnomeCanvasRichTextClass        GnomeCanvasRichTextClass;
 
 struct _GnomeCanvasRichText {
 	GnomeCanvasItem item;
 
-	GtkTextLayout *layout;
-	GtkTextBuffer *buffer;
-
-	char *text;
-
-	/* Position at anchor */
-	double x, y;
-	/* Dimensions */
-	double width, height;
-	/* Top-left canvas coordinates for text */
-	int cx, cy;
-
-	gboolean cursor_visible;
-	gboolean cursor_blink;
-	gboolean editable;
-	gboolean visible;
-	gboolean grow_height;
-	GtkWrapMode wrap_mode;
-	GtkJustification justification;
-	GtkTextDirection direction;
-	GtkAnchorType anchor;
-	int pixels_above_lines;
-	int pixels_below_lines;
-	int pixels_inside_wrap;
-	int left_margin;
-	int right_margin;
-	int indent;
-
-	guint preblink_timeout;
-	guint blink_timeout;
-
-	guint selection_drag_handler;
-
-	gint drag_start_x;
-	gint drag_start_y;
-
-	gboolean just_selected_element;
-
-	int clicks;
-	guint click_timeout;
+    GnomeCanvasRichTextPrivate *_priv;
 };
 
 struct _GnomeCanvasRichTextClass {
