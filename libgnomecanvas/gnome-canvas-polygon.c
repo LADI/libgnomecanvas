@@ -37,9 +37,7 @@
 #include "libart_lgpl/art_svp.h"
 #include "libart_lgpl/art_svp_vpath.h"
 #include "libart_lgpl/art_svp_vpath_stroke.h"
-#include "gnome-canvas-polygon.h"
-#include "gnome-canvas-util.h"
-#include "libgnomecanvastypebuiltins.h"
+#include "libgnomecanvas.h"
 
 
 #define NUM_STATIC_POINTS 256	/* Number of static points to use to avoid allocating arrays */

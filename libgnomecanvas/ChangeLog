@@ -1,3 +1,16 @@
+2001-04-29  Martin Baulig  <baulig@suse.de>
+
+	* libgnomecanvastypes.c (libgnomecanvas_init): Removed.
+	(gnome_canvas_points_get_type): New function.
+
+	* libgnomecanvas.h (GNOME_TYPE_CANVAS_POINTS): #define this
+	to gnome_canvas_points_get_type().
+
+	* libgnomecanvas-boxed.defs: Removed.
+
+	* Makefile.am: Don't create the type stuff from gnome-makeenums.pl
+	and gnome-maketypes.awk.
+
 2001-04-19  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas.c (gnome_canvas_item_shutdown): this
