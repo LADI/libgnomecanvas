@@ -388,12 +388,15 @@ free_imlib_image (GtkObject *object, gpointer data)
 }
 
 static void
-plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor)
+plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, int aa)
 {
 	GdkImlibImage *im;
 	GnomeCanvasItem *image;
 
-	im = gdk_imlib_load_image ("flower.png");
+	if (aa)
+		im = gnome_canvas_load_png ("flower.png");
+	else
+		im = gdk_imlib_load_image ("flower.png");
 	image = gnome_canvas_item_new (root,
 				       gnome_canvas_image_get_type (),
 				       "image", im,
@@ -410,12 +413,15 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor)
 }
 
 static void
-setup_images (GnomeCanvasGroup *root)
+setup_images (GnomeCanvasGroup *root, int aa)
 {
 	GdkImlibImage *im;
 	GnomeCanvasItem *image;
 
-	im = gdk_imlib_load_image ("toroid.png");
+	if (aa)
+		im = gnome_canvas_load_png ("toroid.png");
+	else
+		im = gdk_imlib_load_image ("toroid.png");
 	image = gnome_canvas_item_new (root,
 				       gnome_canvas_image_get_type (),
 				       "image", im,
@@ -430,10 +436,10 @@ setup_images (GnomeCanvasGroup *root)
 			    (GtkSignalFunc) free_imlib_image,
 			    im);
 
-	plant_flower (root,  20.0, 170.0, GTK_ANCHOR_NW);
-	plant_flower (root, 180.0, 170.0, GTK_ANCHOR_NE);
-	plant_flower (root,  20.0, 280.0, GTK_ANCHOR_SW);
-	plant_flower (root, 180.0, 280.0, GTK_ANCHOR_SE);
+	plant_flower (root,  20.0, 170.0, GTK_ANCHOR_NW, aa);
+	plant_flower (root, 180.0, 170.0, GTK_ANCHOR_NE, aa);
+	plant_flower (root,  20.0, 280.0, GTK_ANCHOR_SW, aa);
+	plant_flower (root, 180.0, 280.0, GTK_ANCHOR_SE, aa);
 }
 
 #define VERTICES 10
@@ -823,7 +829,7 @@ create_canvas_primitives (gint aa)
 	setup_rectangles (root);
 	setup_ellipses (root);
 	setup_texts (root);
-	setup_images (root);
+	setup_images (root, aa);
 	setup_lines (root);
 	setup_polygons (root);
 	setup_widgets (root);
