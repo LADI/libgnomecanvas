@@ -53,9 +53,7 @@ typedef struct {
 	guint width_in_pixels : 1;
 	guint height_set : 1;
 	guint height_in_pixels : 1;
-	guint x_set : 1;
 	guint x_in_pixels : 1;
-	guint y_set : 1;
 	guint y_in_pixels : 1;
 	
 	/* Whether the pixbuf has changed */
@@ -81,10 +79,8 @@ enum {
 	PROP_HEIGHT_SET,
 	PROP_HEIGHT_IN_PIXELS,
 	PROP_X,
-	PROP_X_SET,
 	PROP_X_IN_PIXELS,
 	PROP_Y,
-	PROP_Y_SET,
 	PROP_Y_IN_PIXELS,
 	PROP_ANCHOR
 };
@@ -215,12 +211,6 @@ gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class)
                                     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
-                 PROP_X_SET,
-                 g_param_spec_boolean ("x_set", NULL, NULL,
-				       FALSE,
-				       (G_PARAM_READABLE | G_PARAM_WRITABLE)));
-        g_object_class_install_property
-                (gobject_class,
                  PROP_X_IN_PIXELS,
                  g_param_spec_boolean ("x_in_pixels", NULL, NULL,
 				       FALSE,
@@ -231,12 +221,6 @@ gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class)
                  g_param_spec_double ("y", NULL, NULL,
 				      -G_MAXDOUBLE, G_MAXDOUBLE, 0,
 				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
-        g_object_class_install_property
-                (gobject_class,
-                 PROP_Y_SET,
-                 g_param_spec_boolean ("y_set", NULL, NULL,
-				       FALSE,
-				       (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_Y_IN_PIXELS,
@@ -403,12 +387,6 @@ gnome_canvas_pixbuf_set_property (GObject            *object,
 		gnome_canvas_item_request_update (item);
 		break;
 
-	case PROP_X_SET:
-		priv->x_set = g_value_get_boolean (value);
-		priv->need_xform_update = TRUE;
-		gnome_canvas_item_request_update (item);
-		break;
-
 	case PROP_X_IN_PIXELS:
 		priv->x_in_pixels = g_value_get_boolean (value);
 		priv->need_xform_update = TRUE;
@@ -417,12 +395,6 @@ gnome_canvas_pixbuf_set_property (GObject            *object,
 
 	case PROP_Y:
 		priv->y = g_value_get_double (value);
-		priv->need_xform_update = TRUE;
-		gnome_canvas_item_request_update (item);
-		break;
-
-	case PROP_Y_SET:
-		priv->y_set = g_value_get_boolean (value);
 		priv->need_xform_update = TRUE;
 		gnome_canvas_item_request_update (item);
 		break;
@@ -494,20 +466,12 @@ gnome_canvas_pixbuf_get_property (GObject            *object,
 		g_value_set_double (value, priv->x);
 		break;
 
-	case PROP_X_SET:
-		g_value_set_boolean (value, priv->x_set);
-		break;
-
 	case PROP_X_IN_PIXELS:
 		g_value_set_boolean (value, priv->x_in_pixels);
 		break;
 
 	case PROP_Y:
 		g_value_set_double (value, priv->y);
-		break;
-
-	case PROP_Y_SET:
-		g_value_set_boolean (value, priv->y_set);
 		break;
 
 	case PROP_Y_IN_PIXELS:
@@ -593,15 +557,8 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	else
 		h = gdk_pixbuf_get_height (priv->pixbuf);
 
-	if (priv->x_set)
-		x = priv->x;
-	else
-		x = 0.0;
-
-	if (priv->y_set)
-		y = priv->y;
-	else
-		y = 0.0;
+	x = priv->x;
+	y = priv->y;
 
 	/* Convert i_len and j_len into scaling factors */
 

@@ -1,5 +1,13 @@
 2001-08-27  Michael Meeks  <michael@ximian.com>
 
+	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_class_init),
+	(gnome_canvas_pixbuf_set_property, gnome_canvas_pixbuf_get_property),
+	(compute_viewport_affine): kill duff x_set / y_set things:
+	totaly broken. Now pixbufs position correctly. The _set thing
+	only makes sense for width / height.
+
+2001-08-27  Michael Meeks  <michael@ximian.com>
+
 	* gnome-canvas.c (gnome_canvas_request_redraw_uta): 
 	fix strange rendering bug - split out 
 	(get_visible_region): this.

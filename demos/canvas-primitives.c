@@ -787,6 +787,8 @@ create_canvas_primitives (gint aa)
 	setup_curves (root);
 	setup_widgets (root);
 
+/* FIXME: we should have a 'rotation' spinbutton too - and fix the acute
+   bugs with that ... */
 #if 0
 	{
 		double affine[6];
