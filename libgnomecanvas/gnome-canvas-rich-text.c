@@ -24,25 +24,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <gtk/gtkbindings.h>
-#include <gtk/gtkdnd.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtkmenu.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtkwindow.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtkmenuitem.h>
-#include <gtk/gtkseparatormenuitem.h>
+#include <gdk/gdkkeysyms.h>
 #include <gtk/gtksignal.h>
 #include <gtk/gtktextdisplay.h>
-#include <gtk/gtktextview.h>
-#include <gtk/gtkimmulticontext.h>
-#include <gdk/gdkkeysyms.h>
-#include <string.h>
 
 #include <libgnomecanvas/gnome-canvas.h>
 #include <libgnomecanvas/gnome-canvas-util.h>
-#include <libgnomecanvas/gnome-canvas-rect-ellipse.h>
 #include <libgnomecanvas/gnome-canvas-rich-text.h>
 
 enum {
@@ -94,6 +81,8 @@ static double gnome_canvas_rich_text_point(GnomeCanvasItem *item,
 static void gnome_canvas_rich_text_draw(GnomeCanvasItem *item, 
 					GdkDrawable *drawable,
 					int x, int y, int width, int height);
+static void gnome_canvas_rich_text_render(GnomeCanvasItem *item,
+					  GnomeCanvasBuf *buf);
 static gint gnome_canvas_rich_text_event(GnomeCanvasItem *item, 
 					 GdkEvent *event);
 
@@ -228,9 +217,7 @@ gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 	item_class->unrealize = gnome_canvas_rich_text_unrealize;
 	item_class->draw = gnome_canvas_rich_text_draw;
 	item_class->point = gnome_canvas_rich_text_point;
-#if 0
 	item_class->render = gnome_canvas_rich_text_render;
-#endif
 	item_class->event = gnome_canvas_rich_text_event;
 } /* gnome_canvas_rich_text_class_init */
 
@@ -1670,19 +1657,13 @@ gnome_canvas_rich_text_ensure_layout(GnomeCanvasRichText *text)
 
 		gtk_text_attributes_unref(style);
 
-		g_signal_connect_data(
+		g_signal_connect(
 			G_OBJECT(text->layout), "invalidated",
-			G_CALLBACK (invalidated_handler), text, NULL, 0);
+			G_CALLBACK (invalidated_handler), text);
 
-		g_signal_connect_data(
+		g_signal_connect(
 			G_OBJECT(text->layout), "changed",
-			G_CALLBACK (changed_handler), text, NULL, 0);
-
-#if 0
-		g_signal_connect_data(
-			G_OBJECT(text->layout), "allocate_child",
-			G_CALLBACK (child_allocated), text, NULL, 0);
-#endif
+			G_CALLBACK (changed_handler), text);
 	}
 } /* gnome_canvas_rich_text_ensure_layout */
 
@@ -1883,6 +1864,11 @@ gnome_canvas_rich_text_draw(GnomeCanvasItem *item, GdkDrawable *drawable,
 		0, 0, (x2 - x1) - (x - x1), (y2 - y1) - (y - y1));
 } /* gnome_canvas_rich_text_draw */
 
+static void
+gnome_canvas_rich_text_render(GnomeCanvasItem *item, GnomeCanvasBuf *buf)
+{
+} /* gnome_canvas_rich_text_render */
+
 static GtkTextTag *
 gnome_canvas_rich_text_add_tag(GnomeCanvasRichText *text, char *tag_name,
 			       int start_offset, int end_offset, 
@@ -1918,181 +1904,3 @@ gnome_canvas_rich_text_add_tag(GnomeCanvasRichText *text, char *tag_name,
 
 	return tag;
 } /* gnome_canvas_rich_text_add_tag */
-
-/******** Here is the test code *********/
-
-static gboolean
-quit_cb(GtkWidget *widget)
-{
-	gtk_main_quit();
-
-	return TRUE;
-}
-
-static gint
-tag_event_handler(GtkTextTag *tag, GnomeCanvasRichText *text, GdkEvent *event,
-		  const GtkTextIter *iter, gpointer user_data)
-{
-	gint char_index;
-
-	char_index = gtk_text_iter_get_offset(iter);
-
-	switch (event->type) {
-	case GDK_MOTION_NOTIFY:
-		printf ("Motion event at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-		
-	case GDK_BUTTON_PRESS:
-		printf ("Button press at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-		
-	case GDK_2BUTTON_PRESS:
-		printf ("Double click at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-        
-	case GDK_3BUTTON_PRESS:
-		printf ("Triple click at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-		
-	case GDK_BUTTON_RELEASE:
-		printf ("Button release at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-		
-	case GDK_KEY_PRESS:
-		printf ("Key press at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-	case GDK_KEY_RELEASE:
-		printf ("Key release at char %d tag `%s'\n",
-			char_index, tag->name);
-		break;
-		
-	case GDK_DRAG_ENTER:
-		printf("Drag enter\n");
-		break;
-	case GDK_DRAG_LEAVE:
-		printf("Drag leave\n");
-		break;
-	case GDK_DRAG_MOTION:
-		printf("Drag motion\n");
-		break;
-	case GDK_DRAG_STATUS:
-		printf("Drag status\n");
-		break;
-	case GDK_DROP_START:
-		printf("Drop start\n");
-		break;
-	case GDK_DROP_FINISHED:
-		printf("Drop finished\n");
-		break;
-
-	case GDK_ENTER_NOTIFY:
-	case GDK_LEAVE_NOTIFY:
-	case GDK_PROPERTY_NOTIFY:
-	case GDK_SELECTION_CLEAR:
-	case GDK_SELECTION_REQUEST:
-	case GDK_SELECTION_NOTIFY:
-	case GDK_PROXIMITY_IN:
-	case GDK_PROXIMITY_OUT:
-	default:
-		break;
-	}
-	
-	return FALSE;
-} /* tag_event_handler */
-
-static gboolean
-button_clicked(GtkWidget *canvas, GdkEventButton *event, 
-	       GnomeCanvasRichText *text)
-{
-	GdkColor color;
-	static GtkTextTag *tag;
-
-	static int state = 0;
-
-	{
-		GnomeCanvasItem *item;
-		double worldx, worldy;
-
-		gnome_canvas_window_to_world(
-			GNOME_CANVAS(canvas), event->x, event->y,
-			&worldx, &worldy);
-		item = gnome_canvas_get_item_at(
-			GNOME_CANVAS(canvas), worldx, worldy);
-
-		if (item)
-			gnome_canvas_item_grab_focus(item);
-	}
-
-	if (state == 3)
-		return FALSE;
-
-	if (state == 2) {
-		state = 3;
-
-		color.blue = color.green = 0;
-		color.red = 0xffff;
-
-		g_object_set(G_OBJECT(tag), "foreground_gdk", &color, NULL);
-	}
-
-	if (state == 1) {
-		state = 2;
-
-		g_object_set(G_OBJECT(text), "height", 60.0, NULL);
-
-#if 0
-		gnome_canvas_set_pixels_per_unit(GNOME_CANVAS(canvas), 2.0);
-#endif
-	}
-
-	if (state == 0) {
-		state = 1;
-
-
-		color.red = color.green = 0;
-		color.blue = 0xffff;
-		
-		tag = gnome_canvas_rich_text_add_tag(
-			text, "fg_blue", 4, 15,
-			"foreground_gdk", &color,
-			"size_points", 20.0,
-			"weight", PANGO_WEIGHT_BOLD,
-			NULL);
-		
-		g_signal_connect_data(
-			G_OBJECT(tag), "event", G_CALLBACK(tag_event_handler),
-			NULL, NULL, 0);
-	}
-
-	return FALSE;
-} /* button_clicked */
-
-static void
-tag_changed(GnomeCanvasRichText *text, GtkTextTag *tag)
-{
-	printf("Tag changed to %p\n", tag);
-} /* tag_changed */
-
-static void
-cut_cb(GtkButton *button, GnomeCanvasRichText *text)
-{
-	gnome_canvas_rich_text_cut_clipboard(text);
-} /* cut_cb */
-
-static void
-copy_cb(GtkButton *button, GnomeCanvasRichText *text)
-{
-	gnome_canvas_rich_text_copy_clipboard(text);
-} /* copy_cb */
-
-static void
-paste_cb(GtkButton *button, GnomeCanvasRichText *text)
-{
-	gnome_canvas_rich_text_paste_clipboard(text);
-} /* paste_cb */

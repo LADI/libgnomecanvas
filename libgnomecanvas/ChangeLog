@@ -1,5 +1,11 @@
 2001-08-12  Joe Shaw  <joe@ximian.com>
 
+	* gnome-canvas-rich-text.c: Clean up the #includes. Change
+	references to g_signal_connect_data() to g_signal_connect(). Remove
+	the remainder of the test code.
+
+2001-08-12  Joe Shaw  <joe@ximian.com>
+
 	* gnome-canvas.c (gnome_canvas_class_init): Reference the correct
 	function pointer in the class structure when creating signals for
 	the various event types.
