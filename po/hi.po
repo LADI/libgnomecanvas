@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2002-09-04 20:38+0530\n"
+"PO-Revision-Date: 2004-02-26 18:30+0530\n"
 "Last-Translator: Anurag Seetha <anuragseetha@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi-gnome@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -370,7 +370,6 @@ msgid "Cursor Visible"
 msgstr "कर्सर दर्शनीय"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "कया कर्सर इस रिच पाठ्य आइटम मे दर्शनीय है?"
 
@@ -379,7 +378,6 @@ msgid "Cursor Blink"
 msgstr "कर्सर ब्लिंक"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "कया कर्सर रिच पाठ्य आइटम मे ब्लिंक होता है?"
 
