@@ -112,28 +112,29 @@ enum {
 };
 
 
-static void gnome_canvas_request_update    (GnomeCanvas *canvas);
-static void gnome_canvas_item_class_init   (GnomeCanvasItemClass *class);
-static void gnome_canvas_item_init         (GnomeCanvasItem      *item);
-static void gnome_canvas_item_dispose      (GObject              *object);
-static void gnome_canvas_item_set_property (GObject               *object,
-					    guint                  param_id,
-					    const GValue          *value,
-					    GParamSpec            *pspec);
-static void gnome_canvas_item_get_property (GObject               *object,
-					    guint                  param_id,
-					    GValue                *value,
-					    GParamSpec            *pspec);
+static void gnome_canvas_request_update      (GnomeCanvas *canvas);
+static void gnome_canvas_request_update_real (GnomeCanvas *canvas);
+static void gnome_canvas_item_class_init     (GnomeCanvasItemClass *class);
+static void gnome_canvas_item_init           (GnomeCanvasItem      *item);
+static void gnome_canvas_item_dispose        (GObject              *object);
+static void gnome_canvas_item_set_property   (GObject               *object,
+					      guint                  param_id,
+					      const GValue          *value,
+					      GParamSpec            *pspec);
+static void gnome_canvas_item_get_property   (GObject               *object,
+					      guint                  param_id,
+					      GValue                *value,
+					      GParamSpec            *pspec);
 
 
-static void gnome_canvas_item_realize      (GnomeCanvasItem *item);
-static void gnome_canvas_item_unrealize    (GnomeCanvasItem *item);
-static void gnome_canvas_item_map          (GnomeCanvasItem *item);
-static void gnome_canvas_item_unmap        (GnomeCanvasItem *item);
-static void gnome_canvas_item_update       (GnomeCanvasItem *item, double *affine,
-                                            ArtSVP *clip_path, int flags);
+static void gnome_canvas_item_realize        (GnomeCanvasItem *item);
+static void gnome_canvas_item_unrealize      (GnomeCanvasItem *item);
+static void gnome_canvas_item_map            (GnomeCanvasItem *item);
+static void gnome_canvas_item_unmap          (GnomeCanvasItem *item);
+static void gnome_canvas_item_update         (GnomeCanvasItem *item, double *affine,
+					      ArtSVP *clip_path, int flags);
 
-static int  emit_event                     (GnomeCanvas *canvas, GdkEvent *event);
+static int  emit_event                       (GnomeCanvas *canvas, GdkEvent *event);
 
 static guint item_signals[ITEM_LAST_SIGNAL] = { 0 };
 
@@ -795,7 +796,6 @@ gnome_canvas_item_affine_absolute (GnomeCanvasItem *item, const double affine[6]
  * Moves a canvas item by creating an affine transformation matrix for
  * translation by using the specified values.
  **/
-#ifndef OLD_XFORM
 void
 gnome_canvas_item_move (GnomeCanvasItem *item, double dx, double dy)
 {
@@ -808,28 +808,6 @@ gnome_canvas_item_move (GnomeCanvasItem *item, double dx, double dy)
 
 	gnome_canvas_item_affine_relative (item, translate);
 }
-#else
-void
-gnome_canvas_item_move (GnomeCanvasItem *item, double dx, double dy)
-{
-	g_return_if_fail (item != NULL);
-	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
-
-	if (!GNOME_CANVAS_ITEM_CLASS (item->object.klass)->translate) {
-		g_warning ("Item type %s does not implement translate method.\n",
-			   gtk_type_name (GTK_OBJECT_TYPE (item)));
-		return;
-	}
-
-	if (!item->canvas->aa)
-	redraw_if_visible (item);
-	(* GNOME_CANVAS_ITEM_CLASS (item->object.klass)->translate) (item, dx, dy);
-	if (!item->canvas->aa)
-	redraw_if_visible (item);
-
-	item->canvas->need_repick = TRUE;
-}
-#endif
 
 /* Convenience function to reorder items in a group's child list.  This puts the
  * specified link after the "before" link.
@@ -1149,28 +1127,6 @@ gnome_canvas_item_ungrab (GnomeCanvasItem *item, guint32 etime)
  * Gets the affine transform that converts from the item's coordinate system to
  * world coordinates.
  **/
-#ifdef OLD_XFORM
-void
-gnome_canvas_item_i2w_affine (GnomeCanvasItem *item, double affine[6])
-{
-	GnomeCanvasGroup *group;
-
-	g_return_if_fail (item != NULL);
-	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
-	g_return_if_fail (affine != NULL);
-
-	art_affine_identity (affine);
-
-	while (item->parent) {
-		group = GNOME_CANVAS_GROUP (item->parent);
-
-		affine[4] += group->xpos;
-		affine[5] += group->ypos;
-
-		item = item->parent;
-	}
-}
-#else
 void
 gnome_canvas_item_i2w_affine (GnomeCanvasItem *item, double affine[6])
 {
@@ -1193,7 +1149,6 @@ gnome_canvas_item_i2w_affine (GnomeCanvasItem *item, double affine[6])
 		item = item->parent;
 	}
 }
-#endif
 
 /**
  * gnome_canvas_item_w2i:
@@ -1666,22 +1621,14 @@ gnome_canvas_group_set_property (GObject *gobject, guint param_id,
 
 	switch (param_id) {
 	case GROUP_PROP_X:
-#ifdef OLD_XFORM
-		group->xpos = g_value_get_double (value);
-#else
 		xlat = gnome_canvas_ensure_translate (item);
 		xlat[0] = g_value_get_double (value);
-#endif
 		recalc = TRUE;
 		break;
 
 	case GROUP_PROP_Y:
-#ifdef OLD_XFORM
-		group->ypos = g_value_get_double (value);
-#else
 		xlat = gnome_canvas_ensure_translate (item);
 		xlat[1] = g_value_get_double (value);
-#endif
 		recalc = TRUE;
 		break;
 
@@ -1714,29 +1661,21 @@ gnome_canvas_group_get_property (GObject *gobject, guint param_id,
 
 	switch (param_id) {
 	case GROUP_PROP_X:
-#ifdef OLD_XFORM
-		g_value_set_double (value, group->xpos);
-#else
 		if (item->xform == NULL)
 			g_value_set_double (value, 0);
 		else if (GTK_OBJECT (gobject)->flags & GNOME_CANVAS_ITEM_AFFINE_FULL)
 			g_value_set_double (value, item->xform[4]);
 		else
 			g_value_set_double (value, item->xform[0]);
-#endif
 		break;
 
 	case GROUP_PROP_Y:
-#ifdef OLD_XFORM
-		g_value_set_double (value, group->ypos);
-#else
 		if (item->xform == NULL)
 			g_value_set_double (value, 0);
 		else if (GTK_OBJECT (gobject)->flags & GNOME_CANVAS_ITEM_AFFINE_FULL)
 			g_value_set_double (value, item->xform[5]);
 		else
 			g_value_set_double (value, item->xform[1]);
-#endif
 		break;
 
 	default:
@@ -1938,13 +1877,8 @@ gnome_canvas_group_point (GnomeCanvasItem *item, double x, double y, int cx, int
 	best = 0.0;
 	*actual_item = NULL;
 
-#ifdef OLD_XFORM
-	gx = x - group->xpos;
-	gy = y - group->ypos;
-#else
 	gx = x;
 	gy = y;
-#endif
 
 	dist = 0.0; /* keep gcc happy */
 
@@ -2007,10 +1941,6 @@ gnome_canvas_group_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 	/* If there were no visible items, return an empty bounding box */
 
 	if (!set) {
-#ifdef OLD_XFORM
-		*x1 = *x2 = group->xpos;
-		*y1 = *y2 = group->ypos;
-#endif
 		*x1 = *y1 = *x2 = *y2 = 0.0;
 		return;
 	}
@@ -2037,17 +1967,6 @@ gnome_canvas_group_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 		if (ty2 > maxy)
 			maxy = ty2;
 	}
-
-#ifdef OLD_XFORM
-	/* Make the bounds be relative to our parent's coordinate system */
-
-	if (item->parent) {
-		minx += group->xpos;
-		miny += group->ypos;
-		maxx += group->xpos;
-		maxy += group->ypos;
-	}
-#endif
 
 	*x1 = minx;
 	*y1 = miny;
@@ -2286,13 +2205,13 @@ gnome_canvas_get_type (void)
 
 /* Class initialization function for GnomeCanvasClass */
 static void
-gnome_canvas_class_init (GnomeCanvasClass *class)
+gnome_canvas_class_init (GnomeCanvasClass *klass)
 {
 	GtkObjectClass *object_class;
 	GtkWidgetClass *widget_class;
 
-	object_class = (GtkObjectClass *) class;
-	widget_class = (GtkWidgetClass *) class;
+	object_class = (GtkObjectClass *) klass;
+	widget_class = (GtkWidgetClass *) klass;
 
 	canvas_parent_class = gtk_type_class (gtk_layout_get_type ());
 
@@ -2313,6 +2232,8 @@ gnome_canvas_class_init (GnomeCanvasClass *class)
 	widget_class->leave_notify_event = gnome_canvas_crossing;
 	widget_class->focus_in_event = gnome_canvas_focus_in;
 	widget_class->focus_out_event = gnome_canvas_focus_out;
+
+	klass->request_update = gnome_canvas_request_update_real;
 }
 
 /* Callback used when the root item of a canvas is destroyed.  The user should
@@ -3590,12 +3511,6 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 	scroll_to (canvas, x1, y1);
 
 	canvas->need_repick = TRUE;
-#ifdef OLD_XFORM
-	(* GNOME_CANVAS_ITEM_CLASS (canvas->root->object.klass)->update) (
-		canvas->root, NULL, NULL, 0);
-#else
-
-#endif
 
 	gtk_layout_thaw (GTK_LAYOUT (canvas));
 }
@@ -3698,6 +3613,12 @@ gnome_canvas_get_item_at (GnomeCanvas *canvas, double x, double y)
 /* Queues an update of the canvas */
 static void
 gnome_canvas_request_update (GnomeCanvas *canvas)
+{
+	GNOME_CANVAS_GET_CLASS (canvas)->request_update (canvas);
+}
+
+static void
+gnome_canvas_request_update_real (GnomeCanvas *canvas)
 {
 	canvas->need_update = TRUE;
 	add_idle (canvas);

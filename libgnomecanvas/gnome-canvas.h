@@ -215,9 +215,6 @@ struct _GnomeCanvasItemClass {
 	double (* point) (GnomeCanvasItem *item, double x, double y, int cx, int cy,
 			  GnomeCanvasItem **actual_item);
 
-	/* Deprecated.  FIXME: remove this */
-	void (* translate) (GnomeCanvasItem *item, double dx, double dy);
-
 	/* Fetch the item's bounding box (need not be exactly tight).  This
 	 * should be in item-relative coordinates.
 	 */
@@ -508,6 +505,12 @@ struct _GnomeCanvas {
 
 struct _GnomeCanvasClass {
 	GtkLayoutClass parent_class;
+
+	/* Private Virtual methods for groping the canvas inside bonobo */
+	void (* request_update ) (GnomeCanvas *canvas);
+
+	/* Reserved for future expansion */
+	gpointer spare_vmethods [4];
 };
 
 

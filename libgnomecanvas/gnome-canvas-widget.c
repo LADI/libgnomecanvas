@@ -63,7 +63,6 @@ static void gnome_canvas_widget_set_property (GObject            *object,
 static void   gnome_canvas_widget_update      (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags);
 static double gnome_canvas_widget_point       (GnomeCanvasItem *item, double x, double y,
 					       int cx, int cy, GnomeCanvasItem **actual_item);
-static void   gnome_canvas_widget_translate   (GnomeCanvasItem *item, double dx, double dy);
 static void   gnome_canvas_widget_bounds      (GnomeCanvasItem *item, double *x1, double *y1, double *x2, double *y2);
 
 
@@ -157,7 +156,6 @@ gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class)
 
 	item_class->update = gnome_canvas_widget_update;
 	item_class->point = gnome_canvas_widget_point;
-	item_class->translate = gnome_canvas_widget_translate;
 	item_class->bounds = gnome_canvas_widget_bounds;
 }
 
@@ -500,19 +498,6 @@ gnome_canvas_widget_point (GnomeCanvasItem *item, double x, double y,
 		dy = 0.0;
 
 	return sqrt (dx * dx + dy * dy);
-}
-
-static void
-gnome_canvas_widget_translate (GnomeCanvasItem *item, double dx, double dy)
-{
-	GnomeCanvasWidget *witem;
-
-	witem = GNOME_CANVAS_WIDGET (item);
-
-	witem->x = dx;
-	witem->y = dy;
-
-	recalc_bounds (witem);
 }
 
 static void

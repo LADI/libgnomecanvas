@@ -104,7 +104,6 @@ static void   gnome_canvas_line_draw        (GnomeCanvasItem *item, GdkDrawable 
 					     int x, int y, int width, int height);
 static double gnome_canvas_line_point       (GnomeCanvasItem *item, double x, double y,
 					     int cx, int cy, GnomeCanvasItem **actual_item);
-static void   gnome_canvas_line_translate   (GnomeCanvasItem *item, double dx, double dy);
 static void   gnome_canvas_line_bounds      (GnomeCanvasItem *item, double *x1, double *y1, double *x2, double *y2);
 static void   gnome_canvas_line_render      (GnomeCanvasItem *item, GnomeCanvasBuf *buf);
 
@@ -264,7 +263,6 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
 	item_class->unrealize = gnome_canvas_line_unrealize;
 	item_class->draw = gnome_canvas_line_draw;
 	item_class->point = gnome_canvas_line_point;
-	item_class->translate = gnome_canvas_line_translate;
 	item_class->bounds = gnome_canvas_line_bounds;
 
 	item_class->render = gnome_canvas_line_render;
@@ -417,47 +415,6 @@ get_bounds_canvas (GnomeCanvasLine *line, double *bx1, double *by1, double *bx2,
 	*by1 = bbox_canvas.y0 - 1;
 	*bx2 = bbox_canvas.x1 + 1;
 	*by2 = bbox_canvas.y1 + 1;
-}
-
-static void
-recalc_bounds (GnomeCanvasLine *line)
-{
-	GnomeCanvasItem *item;
-	double x1, y1, x2, y2;
-	int cx1, cx2, cy1, cy2;
-	double dx, dy;
-
-	item = GNOME_CANVAS_ITEM (line);
-
-	if (line->num_points == 0) {
-		item->x1 = item->y1 = item->x2 = item->y2 = 0;
-		return;
-	}
-
-	/* Get bounds in world coordinates */
-
-	get_bounds (line, &x1, &y1, &x2, &y2);
-
-	/* Convert to canvas pixel coords */
-
-	dx = dy = 0.0;
-	gnome_canvas_item_i2w (item, &dx, &dy);
-
-	gnome_canvas_w2c (item->canvas, x1 + dx, y1 + dy, &cx1, &cy1);
-	gnome_canvas_w2c (item->canvas, x2 + dx, y2 + dy, &cx2, &cy2);
-	item->x1 = cx1;
-	item->y1 = cy1;
-	item->x2 = cx2;
-	item->y2 = cy2;
-
-	/* Some safety fudging */
-
-	item->x1--;
-	item->y1--;
-	item->x2++;
-	item->y2++;
-
-	gnome_canvas_group_child_bounds (GNOME_CANVAS_GROUP (item->parent), item);
 }
 
 /* Recalculates the arrow polygons for the line */
@@ -1448,35 +1405,6 @@ done:
 		g_free (line_points);
 
 	return best;
-}
-
-static void
-gnome_canvas_line_translate (GnomeCanvasItem *item, double dx, double dy)
-{
-	GnomeCanvasLine *line;
-	int i;
-	double *coords;
-
-	line = GNOME_CANVAS_LINE (item);
-
-	for (i = 0, coords = line->coords; i < line->num_points; i++, coords += 2) {
-		coords[0] += dx;
-		coords[1] += dy;
-	}
-
-	if (line->first_arrow)
-		for (i = 0, coords = line->first_coords; i < NUM_ARROW_POINTS; i++, coords += 2) {
-			coords[0] += dx;
-			coords[1] += dy;
-		}
-
-	if (line->last_arrow)
-		for (i = 0, coords = line->last_coords; i < NUM_ARROW_POINTS; i++, coords += 2) {
-			coords[0] += dx;
-			coords[1] += dy;
-		}
-
-	recalc_bounds (line);
 }
 
 static void
