@@ -1,3 +1,10 @@
+2001-10-29  jacob berkman  <jacob@ximian.com>
+
+	* configure.in: drop the 2 from the package name, set
+	GETTEXT_PACKAGE
+
+	* acconfig.h: set GETTEXT_PACKAGE
+
 2001-10-29  Michael Meeks  <michael@ximian.com>
 
 	* configure.in: depend on the latest gtk+ and pango.
