@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2001-09-19 18:13+0200\n"
-"PO-Revision-Date: 2001-09-19 18:14+0200\n"
+"POT-Creation-Date: 2001-09-26 08:41+0200\n"
+"PO-Revision-Date: 2001-09-26 08:41+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Skrifttypens tyngde"
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr ""
+msgstr "Skrifttypen strukket"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
@@ -88,11 +88,11 @@ msgstr "Skrifttypens størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr ""
+msgstr "Skrifttypens punkter"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
-msgstr ""
+msgstr "Skrifttypens størrelse i punkter"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
@@ -102,6 +102,7 @@ msgstr "Hev"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"Tekstens avstand over grunnlinjen (under grunnlinjen er hevingen negativ)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -167,7 +168,7 @@ msgstr "Skrifttypefamilie satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypefamilien"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
@@ -175,15 +176,15 @@ msgstr "Skrifttypestil satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypestilen"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr ""
+msgstr "Variantsett for skrifttype"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypevarianten"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
@@ -191,7 +192,7 @@ msgstr "Skrifttypens tyngde satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypens vekt"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
@@ -199,7 +200,7 @@ msgstr "Strekking av skrifttype satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypens strekk"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
@@ -207,7 +208,7 @@ msgstr "Størrelse på skrifttype satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
-msgstr ""
+msgstr "Om denne merkingen påvirker skrifttypens størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
@@ -215,7 +216,7 @@ msgstr "Heving satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "Om denne merkingen påvirker hevingen"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
@@ -223,7 +224,7 @@ msgstr "Gjennomstreking satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Om denne merkingen påvirker gjennomstreking"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
@@ -231,7 +232,7 @@ msgstr "Understreking satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "Om denne merkingen påvirker understreking"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
@@ -239,4 +240,4 @@ msgstr "Skalering satt"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "Om denne merkingen påvirker skalering av skrifttypen"
