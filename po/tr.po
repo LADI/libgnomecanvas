@@ -3,14 +3,16 @@
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2001.
 # erkaN <erkaN@linux-sevenler.de>, 2003.
+# Baris Cicek <baris@teamforce.name.tr>, 2004
 #
+
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-08-30 16:22+0200\n"
 "PO-Revision-Date: 2003-02-07 15:22+0000\n"
-"Last-Translator: erkaN <erkaN@linux-sevenler.de>\n"
+"Last-Translator: Baris Cicek <baris@teamforce.name.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -304,7 +306,6 @@ msgid "Cursor Visible"
 msgstr "Görünür İmleç"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "İmleç, zengin metin öğesi içinde görünebilir mi?"
 
@@ -313,7 +314,6 @@ msgid "Cursor Blink"
 msgstr "İmleç Yanıp Sönmesi"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "İmleç, bu metin içinde yanıp sönebilir mi?"
 
