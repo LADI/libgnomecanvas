@@ -37,14 +37,14 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 
 		case 2:
 			if (event->button.state & GDK_SHIFT_MASK)
-				gnome_canvas_item_lower (item, 0);
+				gnome_canvas_item_lower_to_bottom (item);
 			else
 				gnome_canvas_item_lower (item, 1);
 			break;
 
 		case 3:
 			if (event->button.state & GDK_SHIFT_MASK)
-				gnome_canvas_item_raise (item, 0);
+				gnome_canvas_item_raise_to_top (item);
 			else
 				gnome_canvas_item_raise (item, 1);
 			break;
@@ -147,6 +147,7 @@ create_primitives (void)
 	GtkAdjustment *adj;
 	GnomeCanvasGroup *root;
 	GdkImlibImage *im;
+	GnomeCanvasPoints *points;
 
 	vbox = gtk_vbox_new (FALSE, 4);
 	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
@@ -201,8 +202,7 @@ create_primitives (void)
 
 	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
 
-	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
-					   root,
+	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_rect_get_type (),
 					   "x1", 10.0,
 					   "y1", 10.0,
@@ -213,8 +213,7 @@ create_primitives (void)
 					   "width_pixels", 4,
 					   NULL));
 
-	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
-					   root,
+	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_ellipse_get_type (),
 					   "x1", 20.0,
 					   "y1", 70.0,
@@ -225,8 +224,7 @@ create_primitives (void)
 					   "width_units", 6.0,
 					   NULL));
 
-	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
-					   root,
+	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_text_get_type (),
 					   "text", "Hello, world!",
 					   "x", 200.0,
@@ -237,8 +235,7 @@ create_primitives (void)
 					   NULL));
 
 	im = gdk_imlib_load_image ("toroid.png");
-	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
-					   root,
+	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_image_get_type (),
 					   "image", im,
 					   "x", 100.0,
@@ -247,6 +244,23 @@ create_primitives (void)
 					   "height", (double) im->rgb_height,
 					   "anchor", GTK_ANCHOR_CENTER,
 					   NULL));
+
+	points = gnome_canvas_points_new (4);
+	points->coords[0] = 10.0;
+	points->coords[1] = 10.0;
+	points->coords[2] = 200.0;
+	points->coords[3] = 100.0;
+	points->coords[4] = 150.0;
+	points->coords[5] = 200.0;
+	points->coords[6] = 250.0;
+	points->coords[7] = 200.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_line_get_type (),
+					   "points", points,
+					   "fill_color", "blue",
+					   "width_pixels", 10,
+					   NULL));
+	gnome_canvas_points_free (points);
 
 	return vbox;
 }
@@ -463,16 +477,14 @@ create_fifteen (void)
 		y = i / 4;
 		x = i % 4;
 
-		board[i] = gnome_canvas_item_new (GNOME_CANVAS (canvas),
-						  GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas)->root),
+		board[i] = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas)->root),
 						  gnome_canvas_group_get_type (),
 						  "x", (double) (x * PIECE_SIZE),
 						  "y", (double) (y * PIECE_SIZE),
 						  NULL);
 
-		gnome_canvas_item_new (GNOME_CANVAS (canvas),
-				       GNOME_CANVAS_GROUP (board[i]),
-				       gnome_canvas_ellipse_get_type (),
+		gnome_canvas_item_new (GNOME_CANVAS_GROUP (board[i]),
+				       gnome_canvas_rect_get_type (),
 				       "x1", 0.0,
 				       "y1", 0.0,
 				       "x2", (double) PIECE_SIZE,
@@ -484,8 +496,7 @@ create_fifteen (void)
 
 		sprintf (buf, "%d", i + 1);
 
-		text = gnome_canvas_item_new (GNOME_CANVAS (canvas),
-					      GNOME_CANVAS_GROUP (board[i]),
+		text = gnome_canvas_item_new (GNOME_CANVAS_GROUP (board[i]),
 					      gnome_canvas_text_get_type (),
 					      "text", buf,
 					      "x", (double) PIECE_SIZE / 2.0,
