@@ -607,7 +607,7 @@ setup_lines (GnomeCanvasGroup *root)
 	gnome_canvas_points_free (points);
 }
 
-#if 0
+#if 1
 static void
 setup_curves (GnomeCanvasGroup *root) 
 {
@@ -782,7 +782,7 @@ create_canvas_primitives (gint aa)
 	setup_images (root, aa);
 	setup_lines (root);
 	setup_polygons (root);
-/*	setup_curves (root); */
+	setup_curves (root);
 	setup_widgets (root);
 
 #if 0

@@ -1,3 +1,15 @@
+2001-07-11  Lauris Kaplinski  <lauris@ximian.com>
+
+	* gnome-canvas-rect-ellipse.c (gnome_canvas_ellipse_update): Create
+	4-segment bpath instead of 90-segment vpath
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_ensure_gdk_points): New function
+	(gnome_canvas_shape_update_gdk): Fixed bug allocating as many points as
+	there was bpaths, use dynamic growing instead.
+	Also fixed adding open paths to wrong list and drawing as polygon
+
+	* gnome-canvas-shape-private.h: Added len_points member to Gdk structure
+
 2001-07-04  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas-text.c (gnome_canvas_text_class_init):
