@@ -17,7 +17,7 @@ lib_LTLIBRARIES = libgnomecanvas-2.la
 libgnomecanvas_2_la_LIBADD = \
 	$(LIBGNOMECANVAS_LIBS)
 
-libgnomecanvasincludedir = $(includedir)/gnome-2.0/libgnomecanvas
+libgnomecanvasincludedir = $(includedir)/libgnomecanvas-2.0/libgnomecanvas
 
 libgnomecanvasinclude_HEADERS =			\
 	gnome-canvas-shape.h			\
