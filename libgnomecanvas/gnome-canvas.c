@@ -3798,8 +3798,9 @@ gnome_canvas_w2c (GnomeCanvas *canvas, double wx, double wy, int *cx, int *cy)
  * @cx: X pixel coordinate (return value).
  * @cy: Y pixel coordinate (return value).
  *
- * Converts world coordinates into canvas pixel coordinates.  This version
- * returns coordinates in floating point coordinates, for greater precision.
+ * Converts world coordinates into canvas pixel coordinates.  This
+ * version returns coordinates in floating point coordinates, for
+ * greater precision.
  **/
 void
 gnome_canvas_w2c_d (GnomeCanvas *canvas, double wx, double wy, double *cx, double *cy)

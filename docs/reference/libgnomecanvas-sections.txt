@@ -6,6 +6,7 @@
 GnomeCanvasBpath
 GnomeCanvasBpathPriv
 <SUBSECTION Standard>
+GnomeCanvasBpathClass
 GNOME_CANVAS_BPATH
 GNOME_IS_CANVAS_BPATH
 GNOME_TYPE_CANVAS_BPATH
@@ -19,6 +20,7 @@ GNOME_IS_CANVAS_BPATH_CLASS
 <TITLE>GnomeCanvasClipgroup</TITLE>
 GnomeCanvasClipgroup
 <SUBSECTION Standard>
+GnomeCanvasClipgroupClass
 GNOME_CANVAS_CLIPGROUP
 GNOME_IS_CANVAS_CLIPGROUP
 GNOME_TYPE_CANVAS_CLIPGROUP
@@ -32,6 +34,7 @@ GNOME_IS_CANVAS_CLIPGROUP_CLASS
 <TITLE>GnomeCanvasEllipse</TITLE>
 GnomeCanvasEllipse
 <SUBSECTION Standard>
+GnomeCanvasEllipseClass
 GNOME_TYPE_CANVAS_ELLIPSE
 GNOME_CANVAS_ELLIPSE
 gnome_canvas_ellipse_get_type
@@ -46,6 +49,7 @@ GNOME_CANVAS_ELLIPSE_GET_CLASS
 <TITLE>GnomeCanvasGroup</TITLE>
 GnomeCanvasGroup
 <SUBSECTION Standard>
+GnomeCanvasGroupClass
 GNOME_TYPE_CANVAS_GROUP
 GNOME_CANVAS_GROUP
 gnome_canvas_group_get_type
@@ -84,6 +88,7 @@ gnome_canvas_item_grab_focus
 gnome_canvas_item_get_bounds
 gnome_canvas_item_request_update
 <SUBSECTION Standard>
+GnomeCanvasItemClass
 GNOME_CANVAS_ITEM
 GNOME_IS_CANVAS_ITEM
 GNOME_TYPE_CANVAS_ITEM
@@ -98,6 +103,7 @@ GNOME_CANVAS_ITEM_GET_CLASS
 <TITLE>GnomeCanvasLine</TITLE>
 GnomeCanvasLine
 <SUBSECTION Standard>
+GnomeCanvasLineClass
 GNOME_CANVAS_LINE
 GNOME_IS_CANVAS_LINE
 GNOME_TYPE_CANVAS_LINE
@@ -112,6 +118,7 @@ GNOME_CANVAS_LINE_GET_CLASS
 <TITLE>GnomeCanvasPixbuf</TITLE>
 GnomeCanvasPixbuf
 <SUBSECTION Standard>
+GnomeCanvasPixbufClass
 GNOME_CANVAS_PIXBUF
 GNOME_IS_CANVAS_PIXBUF
 GNOME_TYPE_CANVAS_PIXBUF
@@ -126,6 +133,7 @@ GNOME_CANVAS_PIXBUF_GET_CLASS
 <TITLE>GnomeCanvasPolygon</TITLE>
 GnomeCanvasPolygon
 <SUBSECTION Standard>
+GnomeCanvasPolygonClass
 GNOME_CANVAS_POLYGON
 GNOME_IS_CANVAS_POLYGON
 GNOME_TYPE_CANVAS_POLYGON
@@ -140,6 +148,7 @@ GNOME_CANVAS_POLYGON_GET_CLASS
 <TITLE>GnomeCanvasRE</TITLE>
 GnomeCanvasRE
 <SUBSECTION Standard>
+GnomeCanvasREClass
 GNOME_CANVAS_RE
 GNOME_IS_CANVAS_RE
 GNOME_TYPE_CANVAS_RE
@@ -154,6 +163,7 @@ GNOME_CANVAS_RE_GET_CLASS
 <TITLE>GnomeCanvasRect</TITLE>
 GnomeCanvasRect
 <SUBSECTION Standard>
+GnomeCanvasRectClass
 GNOME_TYPE_CANVAS_RECT
 GNOME_CANVAS_RECT
 gnome_canvas_rect_get_type
@@ -177,6 +187,7 @@ gnome_canvas_rich_text_get_buffer
 gnome_canvas_rich_text_get_iter_location
 gnome_canvas_rich_text_get_iter_at_location
 <SUBSECTION Standard>
+GnomeCanvasRichTextClass
 GNOME_CANVAS_RICH_TEXT
 GNOME_IS_CANVAS_RICH_TEXT
 GNOME_TYPE_CANVAS_RICH_TEXT
@@ -195,6 +206,7 @@ GnomeCanvasShapePriv
 gnome_canvas_shape_set_path_def
 gnome_canvas_shape_get_path_def
 <SUBSECTION Standard>
+GnomeCanvasShapeClass
 GNOME_CANVAS_SHAPE
 GNOME_IS_CANVAS_SHAPE
 GNOME_TYPE_CANVAS_SHAPE
@@ -209,6 +221,7 @@ GNOME_IS_CANVAS_SHAPE_CLASS
 GnomeCanvasText
 GnomeCanvasTextPrivate
 <SUBSECTION Standard>
+GnomeCanvasTextClass
 GNOME_CANVAS_TEXT
 GNOME_IS_CANVAS_TEXT
 GNOME_TYPE_CANVAS_TEXT
@@ -223,6 +236,7 @@ GNOME_CANVAS_TEXT_GET_CLASS
 <TITLE>GnomeCanvasWidget</TITLE>
 GnomeCanvasWidget
 <SUBSECTION Standard>
+GnomeCanvasWidgetClass
 GNOME_CANVAS_WIDGET
 GNOME_IS_CANVAS_WIDGET
 GNOME_TYPE_CANVAS_WIDGET
@@ -264,6 +278,7 @@ gnome_canvas_set_stipple_origin
 gnome_canvas_set_dither
 gnome_canvas_get_dither
 <SUBSECTION Standard>
+GnomeCanvasClass
 GNOME_TYPE_CANVAS
 GNOME_CANVAS
 gnome_canvas_get_type

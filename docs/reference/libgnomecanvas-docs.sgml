@@ -1,7 +1,7 @@
 <!doctype book PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
 <!ENTITY libgnomecanvas-GnomeCanvasBpath SYSTEM "sgml/gnome-canvas-bpath.sgml">
 <!ENTITY libgnomecanvas-GnomeCanvasClipgroup SYSTEM "sgml/gnome-canvas-clipgroup.sgml">
-<!ENTITY libgnomecanvas-GnomeCanvasEllipse SYSTEM "sgml/gnome-canvas-rect-ellipse.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasEllipse SYSTEM "sgml/gnome-canvas-ellipse.sgml">
 <!ENTITY libgnomecanvas-GnomeCanvasGroup SYSTEM "sgml/gnome-canvas-group.sgml">
 <!ENTITY libgnomecanvas-GnomeCanvasItem SYSTEM "sgml/gnome-canvas-item.sgml">
 <!ENTITY libgnomecanvas-GnomeCanvasLine SYSTEM "sgml/gnome-canvas-line.sgml">
