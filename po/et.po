@@ -1,0 +1,250 @@
+# libgnomecanvas eesti tõlge.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Tõivo Leedjärv <leedjarv@interest.ee>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgnomecanvas\n"
+"POT-Creation-Date: 2002-03-03 21:20+0200\n"
+"PO-Revision-Date: 2002-03-03 21:34+0200\n"
+"Last-Translator: Tõivo Leedjärv <leedjarv@interest.ee>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
+msgid "X"
+msgstr "X"
+
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
+msgid "Y"
+msgstr "Y"
+
+#: libgnomecanvas/gnome-canvas.c:2039
+msgid "Antialiased"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas.c:2040
+msgid "The antialiasing mode of the canvas."
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:203
+msgid "Text"
+msgstr "Tekst"
+
+#: libgnomecanvas/gnome-canvas-text.c:204
+msgid "Text to render"
+msgstr "Renderdatav tekst"
+
+#: libgnomecanvas/gnome-canvas-text.c:212
+msgid "Markup"
+msgstr "Märgistus"
+
+#: libgnomecanvas/gnome-canvas-text.c:213
+msgid "Marked up text to render"
+msgstr "Märgistatud renderdatav tekst"
+
+#: libgnomecanvas/gnome-canvas-text.c:238
+msgid "Font"
+msgstr "Kirjatüüp"
+
+#: libgnomecanvas/gnome-canvas-text.c:239
+msgid "Font description as a string"
+msgstr "Kirjatüübi kirjeldus stringina"
+
+#: libgnomecanvas/gnome-canvas-text.c:247
+msgid "Font description"
+msgstr "Kirjatüübi kirjeldus"
+
+#: libgnomecanvas/gnome-canvas-text.c:248
+msgid "Font description as a PangoFontDescription struct"
+msgstr "Kirjatüübi kirjeldus, PangoFontDescription struct"
+
+#: libgnomecanvas/gnome-canvas-text.c:256
+msgid "Font family"
+msgstr "Kirjaperekond"
+
+#: libgnomecanvas/gnome-canvas-text.c:257
+msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
+msgstr "Kirjaperekonna nimi, nt Sans, Helvetica, Times, Monospace"
+
+#: libgnomecanvas/gnome-canvas-text.c:273
+#: libgnomecanvas/gnome-canvas-text.c:274
+msgid "Font style"
+msgstr "Kirjalaad"
+
+#: libgnomecanvas/gnome-canvas-text.c:283
+#: libgnomecanvas/gnome-canvas-text.c:284
+msgid "Font variant"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:293
+#: libgnomecanvas/gnome-canvas-text.c:294
+msgid "Font weight"
+msgstr "Kirja paksus"
+
+#: libgnomecanvas/gnome-canvas-text.c:305
+#: libgnomecanvas/gnome-canvas-text.c:306
+msgid "Font stretch"
+msgstr "Kirja venitus"
+
+#: libgnomecanvas/gnome-canvas-text.c:315
+#: libgnomecanvas/gnome-canvas-text.c:316
+msgid "Font size"
+msgstr "Kirjasuurus"
+
+#: libgnomecanvas/gnome-canvas-text.c:326
+msgid "Font points"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:327
+msgid "Font size in points"
+msgstr "Kirja suurus punktides"
+
+#: libgnomecanvas/gnome-canvas-text.c:337
+msgid "Rise"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:338
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:348
+msgid "Strikethrough"
+msgstr "Läbikriipsutus"
+
+#: libgnomecanvas/gnome-canvas-text.c:349
+msgid "Whether to strike through the text"
+msgstr "Määrab teksti läbikriipsutatuse"
+
+#: libgnomecanvas/gnome-canvas-text.c:357
+msgid "Underline"
+msgstr "Allakriipsutus"
+
+#: libgnomecanvas/gnome-canvas-text.c:358
+msgid "Style of underline for this text"
+msgstr "Teksti allakriipsutuse laad"
+
+#: libgnomecanvas/gnome-canvas-text.c:367
+msgid "Scale"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:368
+msgid "Size of font, relative to default size"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:438
+msgid "Color"
+msgstr "Värv"
+
+#: libgnomecanvas/gnome-canvas-text.c:423
+msgid "Text color, as string"
+msgstr "Teksti värv stringina"
+
+#: libgnomecanvas/gnome-canvas-text.c:431
+msgid "Text color, as a GdkColor"
+msgstr "Teksti värv, GdkColor"
+
+#: libgnomecanvas/gnome-canvas-text.c:439
+msgid "Text color, as an R/G/B/A combined integer"
+msgstr "Teksti värv, R/G/B/A kombineeritud arvudena"
+
+#: libgnomecanvas/gnome-canvas-text.c:452
+msgid "Text width"
+msgstr "Teksti laius"
+
+#: libgnomecanvas/gnome-canvas-text.c:453
+msgid "Width of the rendered text"
+msgstr "Renderdatava teksti laius"
+
+#: libgnomecanvas/gnome-canvas-text.c:460
+msgid "Text height"
+msgstr "Teksti kõrgus"
+
+#: libgnomecanvas/gnome-canvas-text.c:461
+msgid "Height of the rendered text"
+msgstr "Renderdatava teksti kõrgus"
+
+#: libgnomecanvas/gnome-canvas-text.c:469
+msgid "Font family set"
+msgstr "Kirjaperekond määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:470
+msgid "Whether this tag affects the font family"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:473
+msgid "Font style set"
+msgstr "Kirjalaad määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:474
+msgid "Whether this tag affects the font style"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:477
+msgid "Font variant set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:478
+msgid "Whether this tag affects the font variant"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:481
+msgid "Font weight set"
+msgstr "Kirja paksus määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:482
+msgid "Whether this tag affects the font weight"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:485
+msgid "Font stretch set"
+msgstr "Kirja venitus määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:486
+msgid "Whether this tag affects the font stretch"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:489
+msgid "Font size set"
+msgstr "Kirjasuurus määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:490
+msgid "Whether this tag affects the font size"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:493
+msgid "Rise set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:494
+msgid "Whether this tag affects the rise"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:497
+msgid "Strikethrough set"
+msgstr "Läbikriipsutus määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:498
+msgid "Whether this tag affects strikethrough"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:501
+msgid "Underline set"
+msgstr "Allakriipsutus määratud"
+
+#: libgnomecanvas/gnome-canvas-text.c:502
+msgid "Whether this tag affects underlining"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:505
+msgid "Scale set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:506
+msgid "Whether this tag affects font scaling"
+msgstr ""
