@@ -7,21 +7,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-11-26 20:53+0100\n"
-"PO-Revision-Date: 2001-07-07 01:49+0200\n"
+"POT-Creation-Date: 2001-12-08 18:44+0100\n"
+"PO-Revision-Date: 2001-12-08 18:44+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1518 libgnomecanvas/gnome-canvas.c:1519
+#: libgnomecanvas/gnome-canvas.c:1456 libgnomecanvas/gnome-canvas.c:1457
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1525 libgnomecanvas/gnome-canvas.c:1526
+#: libgnomecanvas/gnome-canvas.c:1463 libgnomecanvas/gnome-canvas.c:1464
 msgid "Y"
 msgstr "Y"
+
+#: libgnomecanvas/gnome-canvas.c:2106
+msgid "Antialiased"
+msgstr "Kantutjämning"
+
+#: libgnomecanvas/gnome-canvas.c:2107
+msgid "The antialiasing mode of the canvas."
+msgstr "Kantutjämningsläget i duken."
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
