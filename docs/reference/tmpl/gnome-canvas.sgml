@@ -96,6 +96,9 @@ scroll offset call gnome_canvas_get_scroll_offsets().
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvas ##### -->
 <para>
 This should not be accessed directly. Use the accessor functions as described

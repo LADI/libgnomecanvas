@@ -15,6 +15,9 @@ Provides a base class for canvas item shapes, including: #GnomeCanvasBpath,
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasShape ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

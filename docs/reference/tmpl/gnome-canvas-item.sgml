@@ -84,6 +84,9 @@ gnome_canvas_item_get_bounds().
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasItem ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

@@ -16,6 +16,9 @@ structure so one or multiple joined lined segments can be drawn with a single
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasLine ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

@@ -16,6 +16,9 @@ documentation for more details.
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasRichText ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

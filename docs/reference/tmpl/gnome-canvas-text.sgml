@@ -15,6 +15,9 @@ text display and editing canvas item.
 #GnomeCanvasRichText
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasText ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties
