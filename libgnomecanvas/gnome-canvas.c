@@ -3290,8 +3290,10 @@ gnome_canvas_set_scroll_region (GnomeCanvas *canvas, double x1, double y1, doubl
 	 */
 
 	gnome_canvas_c2w (canvas,
-			  canvas->zoom_xofs,
-			  canvas->zoom_yofs,
+			  GTK_LAYOUT (canvas)->hadjustment->value + canvas->zoom_xofs,
+			  GTK_LAYOUT (canvas)->vadjustment->value + canvas->zoom_yofs,
+			  /*canvas->zoom_xofs,
+			  canvas->zoom_yofs,*/
 			  &wxofs, &wyofs);
 
 	canvas->scroll_x1 = x1;
@@ -3362,8 +3364,8 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 	center_y = GTK_WIDGET (canvas)->allocation.height / 2;
 
 	/* Find the coordinates of the screen center in units. */
-	cx = (canvas->layout.hadjustment->value + center_x) / canvas->pixels_per_unit - canvas->scroll_x1;
-	cy = (canvas->layout.vadjustment->value + center_y) / canvas->pixels_per_unit - canvas->scroll_y1;
+	cx = (canvas->layout.hadjustment->value + center_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
+	cy = (canvas->layout.vadjustment->value + center_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
 
 	/* Now calculate the new offset of the upper left corner. */
 	x1 = ((cx - canvas->scroll_x1) * n) - center_x;
