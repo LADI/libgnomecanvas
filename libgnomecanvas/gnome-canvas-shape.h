@@ -68,8 +68,8 @@ struct _GnomeCanvasShapeClass {
 };
 
 
-void gnome_canvas_shape_set_path_def (GObject *object, GnomeCanvasPathDef *def);
-GnomeCanvasPathDef *gnome_canvas_shape_get_path_def(GObject *object);
+void gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape, GnomeCanvasPathDef *def);
+GnomeCanvasPathDef *gnome_canvas_shape_get_path_def (GnomeCanvasShape *shape);
 
 /* Standard Gtk function */
 GtkType gnome_canvas_shape_get_type (void);

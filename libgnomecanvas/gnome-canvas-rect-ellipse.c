@@ -317,7 +317,7 @@ gnome_canvas_rect_update (GnomeCanvasItem *item, double affine[6], ArtSVP *clip_
 		gnome_canvas_path_def_lineto(path_def, re->x1, re->y2);
 		gnome_canvas_path_def_lineto(path_def, re->x1, re->y1);		
 		gnome_canvas_path_def_closepath_current(path_def);		
-		gnome_canvas_shape_set_path_def(G_OBJECT(item), path_def);
+		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (item), path_def);
 		gnome_canvas_path_def_unref(path_def);
 		re->path_dirty = 0;
 	}
@@ -432,7 +432,7 @@ gnome_canvas_ellipse_update (GnomeCanvasItem *item, double affine[6], ArtSVP *cl
 		
 		gnome_canvas_path_def_closepath_current(path_def);
 		
-		gnome_canvas_shape_set_path_def(G_OBJECT(item), path_def);
+		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (item), path_def);
 		gnome_canvas_path_def_unref(path_def);
 		re->path_dirty = 0;
 	}

@@ -288,7 +288,7 @@ gnome_canvas_shape_destroy (GtkObject *object)
 
 /**
  * gnome_canvas_shape_set_path_def:
- * @object: a GnomeCanvasShape
+ * @shape: a GnomeCanvasShape
  * @def: a GnomeCanvasPathDef 
  *
  * This function sets the the GnomeCanvasPathDef used by the
@@ -296,29 +296,26 @@ gnome_canvas_shape_destroy (GtkObject *object)
  */
  
 void
-gnome_canvas_shape_set_path_def (GObject *object,
+gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape,
 				 GnomeCanvasPathDef *def) 
 {
-	GnomeCanvasItem *item;
-	GnomeCanvasShape *shape;
 	GnomeCanvasShapePriv *priv;
-	
-	g_return_if_fail(GNOME_IS_CANVAS_SHAPE(object));
 
-	shape = GNOME_CANVAS_SHAPE(object);
+	g_return_if_fail (shape != NULL);
+	g_return_if_fail (GNOME_IS_CANVAS_SHAPE (shape));
+
 	priv = shape->priv;
 
-	item = GNOME_CANVAS_ITEM(object);
-
-	if(priv->path)
-		gnome_canvas_path_def_unref(priv->path);
-
-	if(def) {
-		priv->path = gnome_canvas_path_def_duplicate(def);
-	} else {
+	if (priv->path) {
+		gnome_canvas_path_def_unref (priv->path);
 		priv->path = NULL;
 	}
+
+	if (def) {
+		priv->path = gnome_canvas_path_def_duplicate (def);
+	}
 	
+	gnome_canvas_item_request_update (GNOME_CANVAS_ITEM (shape));
 }
 
 static void
@@ -498,7 +495,7 @@ get_color_value (GnomeCanvasShape *shape, gulong pixel, GValue *value)
 
 /**
  * gnome_canvas_shape_get_path_def:
- * @object: a GnomeCanvasShape
+ * @shape: a GnomeCanvasShape
  *
  * This function returns the #GnomeCanvasPathDef that the shape
  * currently uses.  It adds a reference to the #GnomeCanvasPathDef and
@@ -509,11 +506,13 @@ get_color_value (GnomeCanvasShape *shape, gulong pixel, GValue *value)
  */
  
 GnomeCanvasPathDef *
-gnome_canvas_shape_get_path_def(GObject *object) {
-	GnomeCanvasShape *shape;
+gnome_canvas_shape_get_path_def (GnomeCanvasShape *shape)
+{
 	GnomeCanvasShapePriv *priv;
 	
-	shape = GNOME_CANVAS_SHAPE(object);
+	g_return_val_if_fail (shape != NULL, NULL);
+	g_return_val_if_fail (GNOME_IS_CANVAS_SHAPE (shape), NULL);
+
 	priv = shape->priv;
 
 	if (priv->path) {

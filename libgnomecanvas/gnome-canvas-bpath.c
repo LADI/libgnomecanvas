@@ -133,7 +133,7 @@ gnome_canvas_bpath_set_property (GObject      *object,
 	case PROP_BPATH:
 		gpp = g_value_get_pointer (value);
 
-		gnome_canvas_shape_set_path_def(object, gpp);
+		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (object), gpp);
 
 		gnome_canvas_item_request_update (item);
 		break;

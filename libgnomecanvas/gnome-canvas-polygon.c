@@ -158,7 +158,7 @@ set_points (GnomeCanvasPolygon *poly, GnomeCanvasPoints *points)
 
 	if(!points) {
 		poly->path_def = gnome_canvas_path_def_new();
-		gnome_canvas_shape_set_path_def(G_OBJECT(poly), poly->path_def);
+		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (poly), poly->path_def);
 		return;
 	}
 
@@ -183,7 +183,7 @@ set_points (GnomeCanvasPolygon *poly, GnomeCanvasPoints *points)
 		gnome_canvas_path_def_closepath(poly->path_def);		
 	}
 
-	gnome_canvas_shape_set_path_def(G_OBJECT(poly), poly->path_def);
+	gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (poly), poly->path_def);
 }
 
 

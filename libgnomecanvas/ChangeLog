@@ -1,3 +1,17 @@
+2002-01-15  Lauris Kaplinski  <lauris@ximian.com>
+
+	* gnome-canvas-bpath.c (gnome_canvas_bpath_set_property): Use new
+	signature for setting path to avoid warning
+
+	* gnome-canvas-polygon.c (set_points): Ditto
+
+	* gnome-canvas-rect-ellipse.c (gnome_canvas_ellipse_update): Ditto
+	(gnome_canvas_rect_update): Ditto
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_get_path_def): Signature
+	change, check argument
+	(gnome_canvas_shape_set_path_def): Ditto
+
 2002-01-14  Lauris Kaplinski  <lauris@ximian.com>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_update): Free old SVP-s
