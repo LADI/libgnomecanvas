@@ -292,12 +292,13 @@ gnome_canvas_shape_destroy (GtkObject *object)
  * @def: a GnomeCanvasPathDef 
  *
  * This function sets the the GnomeCanvasPathDef used by the
- * GnomeCanvasShape.
+ * GnomeCanvasShape. Notice, that it does not request updates, as
+ * it is meant to be used from item implementations, from inside
+ * update queue.
  */
  
 void
-gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape,
-				 GnomeCanvasPathDef *def) 
+gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape, GnomeCanvasPathDef *def) 
 {
 	GnomeCanvasShapePriv *priv;
 
@@ -314,8 +315,6 @@ gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape,
 	if (def) {
 		priv->path = gnome_canvas_path_def_duplicate (def);
 	}
-	
-	gnome_canvas_item_request_update (GNOME_CANVAS_ITEM (shape));
 }
 
 static void

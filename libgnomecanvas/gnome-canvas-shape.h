@@ -68,6 +68,8 @@ struct _GnomeCanvasShapeClass {
 };
 
 
+/* WARNING! These are not usable from modifying shapes from user programs */
+/* These are meant, to set master shape from subclass ::update method */
 void gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape, GnomeCanvasPathDef *def);
 GnomeCanvasPathDef *gnome_canvas_shape_get_path_def (GnomeCanvasShape *shape);
 

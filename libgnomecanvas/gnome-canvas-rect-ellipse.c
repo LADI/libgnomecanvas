@@ -69,8 +69,6 @@ static void gnome_canvas_re_get_property (GObject              *object,
 					  GValue               *value,
 					  GParamSpec           *pspec);
 
-static void gnome_canvas_re_update_shared      (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags);
-
 static void gnome_canvas_rect_update      (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags);
 static void gnome_canvas_ellipse_update      (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags);
 
@@ -250,18 +248,6 @@ gnome_canvas_re_get_property (GObject              *object,
 	}
 }
 
-static void
-gnome_canvas_re_update_shared (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags)
-{
-	GnomeCanvasRE *re;
-
-	re = GNOME_CANVAS_RE (item);
-
-	if (re_parent_class->update)
-		(* re_parent_class->update) (item, affine, clip_path, flags);
-}
-
-
 /* Rectangle item */
 static void gnome_canvas_rect_class_init (GnomeCanvasRectClass *class);
 
@@ -308,8 +294,8 @@ gnome_canvas_rect_update (GnomeCanvasItem *item, double affine[6], ArtSVP *clip_
 
 	re = GNOME_CANVAS_RE(item);
 
-	if(re->path_dirty) {		
-		path_def = gnome_canvas_path_def_new();
+	if (re->path_dirty) {		
+		path_def = gnome_canvas_path_def_new ();
 		
 		gnome_canvas_path_def_moveto(path_def, re->x1, re->y1);
 		gnome_canvas_path_def_lineto(path_def, re->x2, re->y1);
@@ -322,8 +308,8 @@ gnome_canvas_rect_update (GnomeCanvasItem *item, double affine[6], ArtSVP *clip_
 		re->path_dirty = 0;
 	}
 
-	gnome_canvas_re_update_shared (item, affine, clip_path, flags);
-
+	if (re_parent_class->update)
+		(* re_parent_class->update) (item, affine, clip_path, flags);
 }
 
 /* Ellipse item */
@@ -374,7 +360,7 @@ gnome_canvas_ellipse_update (GnomeCanvasItem *item, double affine[6], ArtSVP *cl
 
 	re = GNOME_CANVAS_RE(item);
 
-	if(re->path_dirty) {
+	if (re->path_dirty) {
 		gdouble cx, cy, rx, ry;
 		gdouble beta = 0.26521648983954400922; /* 4*(1-cos(pi/8))/(3*sin(pi/8)) */
 		gdouble sincosA = 0.70710678118654752440; /* sin (pi/4), cos (pi/4) */
@@ -437,6 +423,6 @@ gnome_canvas_ellipse_update (GnomeCanvasItem *item, double affine[6], ArtSVP *cl
 		re->path_dirty = 0;
 	}
 
-		
-	gnome_canvas_re_update_shared(item, affine, clip_path, flags);
+	if (re_parent_class->update)
+		(* re_parent_class->update) (item, affine, clip_path, flags);
 }
