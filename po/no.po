@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2002-05-17 01:01+0200\n"
-"PO-Revision-Date: 2002-05-17 01:03+0200\n"
+"POT-Creation-Date: 2002-05-20 01:12+0200\n"
+"PO-Revision-Date: 2002-05-20 01:15+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -287,7 +287,7 @@ msgstr "Redigerbar"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
-msgstr ""
+msgstr "Er denne rik-tekst oppføringen redigerbar?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
@@ -295,7 +295,7 @@ msgstr "Synlig"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
-msgstr ""
+msgstr "Er denne tekstoppføringen i rikt tekstformat synlig?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
@@ -303,7 +303,7 @@ msgstr "Markør synlig"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
-msgstr ""
+msgstr "Er markøren synlig i denne tekstoppføringen i rikt tekstformat?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
@@ -311,15 +311,15 @@ msgstr "Markøren blinker"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
-msgstr ""
+msgstr "Blinker markøren i denne tekstoppføringen i rikt tekstformat?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
-msgstr ""
+msgstr "Øk høyde"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr ""
+msgstr "Skal høyden på tekstboksen øke hvis teksten ikke passer?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
@@ -327,7 +327,7 @@ msgstr "Brytningsmodus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr ""
+msgstr "Brytningsmodus for flerlinjet tekst"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
@@ -335,7 +335,7 @@ msgstr "Justering"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
-msgstr ""
+msgstr "Justeringsmodus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
@@ -351,31 +351,31 @@ msgstr "Anker"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
-msgstr ""
+msgstr "Ankerpunkt for tekst"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
-msgstr ""
+msgstr "Piksler over linjer"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
-msgstr ""
+msgstr "Antall piksler som skal settes inn over linjer"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
-msgstr ""
+msgstr "Piksler under linjer"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Number of pixels to put below lines"
-msgstr ""
+msgstr "Antall piksler som skal settes inn under linjer"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "Piksler inni brytning"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr ""
+msgstr "Antall piksler som skal plasseres inni brytning"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
@@ -383,20 +383,20 @@ msgstr "Venstre marg"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
-msgstr ""
+msgstr "Antall piksler i venstre marg"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
-msgstr ""
+msgstr "Høyre marg"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
-msgstr ""
+msgstr "Antall piksler i høyre marg"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
-msgstr ""
+msgstr "Indentering"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
-msgstr ""
+msgstr "Antall piksler for indentering"
