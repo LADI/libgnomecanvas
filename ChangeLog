@@ -1,5 +1,10 @@
 2001-11-27  jacob berkman  <jacob@ximian.com>
 
+	* configure.in: look for libglade-convert
+
+	* tests/test-libglade-canvas.c: port libglade's test program to
+	the canvas to test the canvas glade support
+
 	* glade/glade-canvas.c (glade_module_register_widgets): use the
 	new custom property api
 	(set_aa): 

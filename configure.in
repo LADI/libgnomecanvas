@@ -15,6 +15,10 @@ AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_PROG_YACC
 AC_PATH_PROGS(PATH_TO_XRDB, "xrdb")
+AC_PATH_PROG(LIBGLADE_CONVERT, libglade-convert)
+if test -z "$LIBGLADE_CONVERT" ; then
+	AC_MSG_WARN([libglade-convert (from libglade 2.0) is needed for the checks in the tests directory.])
+fi
 
 GNOME_COMPILE_WARNINGS
 
@@ -69,6 +73,7 @@ libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
 glade/Makefile
 demos/Makefile
+tests/Makefile
 ])
 
 cat $srcdir/message-of-doom
