@@ -7,9 +7,39 @@ set_pixels_per_unit (GtkAdjustment *adj, GnomeCanvas *canvas)
 	gnome_canvas_set_pixels_per_unit (canvas, adj->value);
 }
 
+typedef void (* ItemFunc) (GnomeCanvas *canvas, GnomeCanvasId cid, GdkEvent *event);
+
+static double drag_x, drag_y;
+
+static void
+start_drag (GnomeCanvas *canvas, GnomeCanvasId cid, GdkEvent *event)
+{
+	drag_x = event->motion.x;
+	drag_y = event->motion.y;
+}
+
+static void
+drag (GnomeCanvas *canvas, GnomeCanvasId cid, GdkEvent *event)
+{
+	double dx, dy;
+
+	if (!(event->motion.state & GDK_BUTTON1_MASK))
+		return;
+
+	dx = (event->motion.x - drag_x) / canvas->pixels_per_unit;
+	dy = (event->motion.y - drag_y) / canvas->pixels_per_unit;
+
+	gnome_canvas_move (canvas, cid, dx, dy);
+
+	drag_x = event->motion.x;
+	drag_y = event->motion.y;
+}
+
 static gint
 item_event (GnomeCanvas *canvas, GnomeCanvasId *item, GdkEvent *event, gpointer item_data, gpointer user_data)
 {
+	ItemFunc func;
+
 	switch (event->type) {
 	case GDK_ENTER_NOTIFY:
 		gnome_canvas_configure (canvas, *item,
@@ -24,18 +54,26 @@ item_event (GnomeCanvas *canvas, GnomeCanvasId *item, GdkEvent *event, gpointer 
 		break;
 
 	case GDK_BUTTON_PRESS:
-		printf ("button_press\n");
 		gnome_canvas_configure (canvas, *item,
 					GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_STRING, "cyan",
 					GNOME_CANVAS_WIDTH_PIXELS, 5,
 					GNOME_CANVAS_END);
+		func = item_data;
+		if (func)
+			(* func) (canvas, *item, event);
+			
 		break;
 
 	case GDK_BUTTON_RELEASE:
-		printf ("button_release\n");
 		gnome_canvas_configure (canvas, *item,
 					GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_NONE,
 					GNOME_CANVAS_END);
+		break;
+
+	case GDK_MOTION_NOTIFY:
+		func = item_data;
+		if (func)
+			(* func) (canvas, *item, event);
 		break;
 
 	default:
@@ -91,6 +129,8 @@ create_canvas (void)
 				  GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_STRING, "black",
 				  GNOME_CANVAS_WIDTH_PIXELS, 10,
 				  GNOME_CANVAS_END);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, "white");
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_LEAVE_NOTIFY, "red");
 
 	cid = gnome_canvas_create_item (GNOME_CANVAS (canvas), "rectangle",
 					50.0, 35.0, 90.0, 50.0,
@@ -98,6 +138,8 @@ create_canvas (void)
 					GNOME_CANVAS_END);
 	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, "white");
 	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_LEAVE_NOTIFY, "green");
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_BUTTON_PRESS, start_drag);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_MOTION_NOTIFY, drag);
 
 	cid = gnome_canvas_create_item (GNOME_CANVAS (canvas), "rectangle",
 					20.0, 65.0, 50.0, 80.0,
@@ -107,6 +149,8 @@ create_canvas (void)
 					GNOME_CANVAS_END);
 	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, "white");
 	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_LEAVE_NOTIFY, "yellow");
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_BUTTON_PRESS, start_drag);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_MOTION_NOTIFY, drag);
 
 	cid = gnome_canvas_create_tag (GNOME_CANVAS (canvas), GNOME_CANVAS_ALL);
 
