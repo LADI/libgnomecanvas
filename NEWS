@@ -1,15 +1,55 @@
-August 14, 2001:
-===============
+libgnomecanvas 2.6.0 "Skree"
+-----------------------
 
-* Released libgnomecanvas 1.102.0 "Roswell".
+What's new since 2.4
 
-  This is the first library freeze release of libgnomeui.
+* Bug fixes:
+	- BPath fixes (David Boucher)
+	- Doc fixes (Richard Hult)
+	- Set methods for height and width in GnomeCanvasRichText
+	  (Kjartan Maraas)
+	- Build fixes ("The Written Word", Kjartan Maraas)
 
-  Outstanding issues:
+* Translations:
+	- Added British English translation (Gareth Owen)
+	- Added Canadian English translation (Adam Weinberger)
+	- Added Lithuanian translation (Žygimantas Beručka, Tomas Kuliavas)
+	- Added Serbian Jekavian translation (Bojan Suzić)
+	- Added Punjabi translation (Amanpreet Singh Alam)
 
-  - GnomeCanvasRichText: this may need some love.
-
-
-
-
-
+	- Updated Albanian translation (Laurent Dhima)
+	- Updated Arabic translation (Arafat Medini)
+	- Updated Azerbaijani translation (Mətin Əmirov)
+	- Updated Belarusian translation (Ales Nyakhaychyk)
+	- Updated Bengali translation (Sayamindu Dasgupta)
+	- Updated Brazilian Portuguese translation (Medina)
+	- Updated Croatian translation (Robert Sedak)
+	- Updated Czech translation (Miloslav Trmac)
+ 	- Updated Danish translation (Ole Laursen)
+	- Updated Dutch translation (Vincent van Adrighem)
+	- Updated Finnish translation (Pauli Virtanen)
+	- Updated French translation (Christophe Merlet)
+	- Updated German translation (Christian Neumair)
+	- Updated Greek translation (Kostas Papadimas)
+	- Updated Hindi translation (Guntupalli Karunakar)
+	- Updated Hungarian translation (Andras Timar)
+	- Updated Irish translation (Paul Duffy)
+	- Updated Italian translation (Alesso Frusciante)
+	- Updated Japanese translation (Takeshi AIHANA)
+	- Updated Korean translation (Changwoo Ryu)
+	- Updated Malay translation (Hasbullah Bin Pit)
+	- Updated Mongolian translation (Sanlig Badral)
+	- Updated Norwegian translation (Kjartan Maraas)
+	- Updated Norwegian Nynorsk translation (Åsmund Skjæveland)
+	- Updated Polish translation (GNOME PL Team)
+	- Updated Portuguese translation (Duarte Loreto)
+	- Updated Romanian translation (Mişu Moldovan)
+	- Updated Russian translation (Russian Team)
+	- Updated Serbian translations (Branko Ivanovic, Danilo Šegan)
+	- Updated Simplified Chinese translation (Funda Wang)
+	- Updated Slovak translation (Marcel Telka)
+	- Updated Spanish translation (Francisco Javier F. Serrador)
+	- Updated Swedish translation (Christian Rose)
+	- Updated Tamil translation (Dinesh Nadarajah)
+	- Updated Ukrainian translation (Maxim Dziumanenko)
+	- Updated Welsh translation (Dafydd Harries)
