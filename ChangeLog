@@ -1,3 +1,10 @@
+2004-05-13  James Henstridge  <james@daa.com.au>
+
+	* configure.in (ACLOCAL_AMFLAGS): set so that aclocal gets called
+	with contents of $ACLOCAL_FLAGS environment variable.
+	(AC_PROG_YACC): libgnomecanvas doesn't care about yacc
+	(PATH_TO_XRDB): or xrdb
+
 2004-05-11  James Henstridge  <james@daa.com.au>
 
 	* configure.in: use AM_GLIB_DEFINE_LOCALEDIR() to define the
