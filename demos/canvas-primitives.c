@@ -17,6 +17,12 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	double new_x, new_y;
 	GdkCursor *fleur;
 	static int dragging;
+	double item_x, item_y;
+
+	/* set item_[xy] to the event x,y position in the parent's item-relative coordinates */
+	item_x = event->button.x;
+	item_y = event->button.y;
+	gnome_canvas_item_w2i (item->parent, &item_x, &item_y);
 
 	switch (event->type) {
 	case GDK_BUTTON_PRESS:
@@ -25,8 +31,8 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 			if (event->button.state & GDK_SHIFT_MASK)
 				gtk_object_destroy (GTK_OBJECT (item));
 			else {
-				x = event->button.x;
-				y = event->button.y;
+				x = item_x;
+				y = item_y;
 
 				fleur = gdk_cursor_new (GDK_FLEUR);
 				gnome_canvas_item_grab (item,
@@ -60,8 +66,8 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 
 	case GDK_MOTION_NOTIFY:
 		if (dragging && (event->motion.state & GDK_BUTTON1_MASK)) {
-			new_x = event->motion.x;
-			new_y = event->motion.y;
+			new_x = item_x;
+			new_y = item_y;
 
 			gnome_canvas_item_move (item, new_x - x, new_y - y);
 			x = new_x;
@@ -203,19 +209,32 @@ setup_rectangles (GnomeCanvasGroup *root)
 					   "width_pixels", 8,
 					   NULL));
 
-	stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_rect_get_type (),
-					   "x1", 90.0,
-					   "y1", 40.0,
-					   "x2", 180.0,
-					   "y2", 100.0,
-					   "fill_color", "mediumseagreen",
-					   "fill_stipple", stipple,
-					   "outline_color", "black",
-					   "width_units", 4.0,
-					   NULL));
-	gdk_bitmap_unref (stipple);
+	if (root->item.canvas->aa) {
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_rect_get_type (),
+						   "x1", 90.0,
+						   "y1", 40.0,
+						   "x2", 180.0,
+						   "y2", 100.0,
+						   "fill_color_rgba", 0x3cb37180,
+						   "outline_color", "black",
+						   "width_units", 4.0,
+						   NULL));
+	} else {
+		stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_rect_get_type (),
+						   "x1", 90.0,
+						   "y1", 40.0,
+						   "x2", 180.0,
+						   "y2", 100.0,
+						   "fill_color", "mediumseagreen",
+						   "fill_stipple", stipple,
+						   "outline_color", "black",
+						   "width_units", 4.0,
+						   NULL));
+		gdk_bitmap_unref (stipple);
+	}
 
 	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_rect_get_type (),
@@ -253,19 +272,32 @@ setup_ellipses (GnomeCanvasGroup *root)
 					   "width_units", 4.0,
 					   NULL));
 
-	stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_ellipse_get_type (),
-					   "x1", 210.0,
-					   "y1", 80.0,
-					   "x2", 280.0,
-					   "y2", 140.0,
-					   "fill_color", "cadetblue",
-					   "fill_stipple", stipple,
-					   "outline_color", "black",
-					   "width_pixels", 0,
-					   NULL));
-	gdk_bitmap_unref (stipple);
+	if (root->item.canvas->aa) {
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_ellipse_get_type (),
+						   "x1", 210.0,
+						   "y1", 80.0,
+						   "x2", 280.0,
+						   "y2", 140.0,
+						   "fill_color_rgba", 0x5f9ea080,
+						   "outline_color", "black",
+						   "width_pixels", 0,
+						   NULL));
+	} else {
+		stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_ellipse_get_type (),
+						   "x1", 210.0,
+						   "y1", 80.0,
+						   "x2", 280.0,
+						   "y2", 140.0,
+						   "fill_color", "cadetblue",
+						   "fill_stipple", stipple,
+						   "outline_color", "black",
+						   "width_pixels", 0,
+						   NULL));
+		gdk_bitmap_unref (stipple);
+	}
 }
 
 static GnomeCanvasGroup *
@@ -298,18 +330,30 @@ setup_texts (GnomeCanvasGroup *root)
 {
 	GdkBitmap *stipple;
 
-	stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
-	gnome_canvas_item_new (make_anchor (root, 420.0, 20.0),
-			       gnome_canvas_text_get_type (),
-			       "text", "Anchor NW",
-			       "x", 0.0,
-			       "y", 0.0,
-			       "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-			       "anchor", GTK_ANCHOR_NW,
-			       "fill_color", "blue",
-			       "fill_stipple", stipple,
-			       NULL);
-	gdk_bitmap_unref (stipple);
+	if (root->item.canvas->aa) {
+		gnome_canvas_item_new (make_anchor (root, 420.0, 20.0),
+				       gnome_canvas_text_get_type (),
+				       "text", "Anchor NW",
+				       "x", 0.0,
+				       "y", 0.0,
+				       "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+				       "anchor", GTK_ANCHOR_NW,
+				       "fill_color_rgba", 0x0000ff80,
+				       NULL);
+	} else {
+		stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
+		gnome_canvas_item_new (make_anchor (root, 420.0, 20.0),
+				       gnome_canvas_text_get_type (),
+				       "text", "Anchor NW",
+				       "x", 0.0,
+				       "y", 0.0,
+				       "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+				       "anchor", GTK_ANCHOR_NW,
+				       "fill_color", "blue",
+				       "fill_stipple", stipple,
+				       NULL);
+		gdk_bitmap_unref (stipple);
+	}
 
 	gnome_canvas_item_new (make_anchor (root, 470.0, 75.0),
 			       gnome_canvas_text_get_type (),
@@ -473,17 +517,28 @@ make_hilbert (GnomeCanvasGroup *root)
 			break;
 		}
 
-	stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_line_get_type (),
-					   "points", points,
-					   "fill_color", "red",
-					   "fill_stipple", stipple,
-					   "width_units", 4.0,
-					   "cap_style", GDK_CAP_PROJECTING,
-					   "join_style", GDK_JOIN_MITER,
-					   NULL));
-	gdk_bitmap_unref (stipple);
+	if (root->item.canvas->aa) {
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_line_get_type (),
+						   "points", points,
+						   "fill_color_rgba", 0xff000080,
+						   "width_units", 4.0,
+						   "cap_style", GDK_CAP_PROJECTING,
+						   "join_style", GDK_JOIN_MITER,
+						   NULL));
+	} else {
+		stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_line_get_type (),
+						   "points", points,
+						   "fill_color", "red",
+						   "fill_stipple", stipple,
+						   "width_units", 4.0,
+						   "cap_style", GDK_CAP_PROJECTING,
+						   "join_style", GDK_JOIN_MITER,
+						   NULL));
+		gdk_bitmap_unref (stipple);
+	}
 
 	gnome_canvas_points_free (points);
 }
@@ -568,15 +623,24 @@ setup_polygons (GnomeCanvasGroup *root)
 	points->coords[3] = 380.0;
 	points->coords[4] = 260.0;
 	points->coords[5] = 350.0;
-	stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_polygon_get_type (),
-					   "points", points,
-					   "fill_color", "blue",
-					   "fill_stipple", stipple,
-					   "outline_color", "black",
-					   NULL));
-	gdk_bitmap_unref (stipple);
+	if (root->item.canvas->aa) {
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_polygon_get_type (),
+						   "points", points,
+						   "fill_color_rgba", 0x0000ff80,
+						   "outline_color", "black",
+						   NULL));
+	} else {
+		stipple = gdk_bitmap_create_from_data (NULL, gray50_bits, gray50_width, gray50_height);
+		setup_item (gnome_canvas_item_new (root,
+						   gnome_canvas_polygon_get_type (),
+						   "points", points,
+						   "fill_color", "blue",
+						   "fill_stipple", stipple,
+						   "outline_color", "black",
+						   NULL));
+		gdk_bitmap_unref (stipple);
+	}
 	gnome_canvas_points_free (points);
 
 	points = gnome_canvas_points_new (14);
@@ -685,12 +749,12 @@ create_canvas_primitives (gint aa)
 	if (aa) {
 		gtk_widget_push_visual (gdk_rgb_get_visual ());
 		gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+		canvas = gnome_canvas_new_aa ();
 	} else {
 		gtk_widget_push_visual (gdk_imlib_get_visual ());
 		gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+		canvas = gnome_canvas_new ();
 	}
-	canvas = gnome_canvas_new ();
-	GNOME_CANVAS (canvas)->aa = aa;
 	gtk_widget_pop_colormap ();
 	gtk_widget_pop_visual ();
 
@@ -763,6 +827,19 @@ create_canvas_primitives (gint aa)
 	setup_lines (root);
 	setup_polygons (root);
 	setup_widgets (root);
+
+#if 0
+	{
+		double affine[6];
+
+#if 1
+		art_affine_rotate (affine, 15);
+#else
+		art_affine_scale (affine, 1.5, 0.7);
+#endif
+		gnome_canvas_item_affine_relative (root, affine);
+	}
+#endif
 
 	GTK_WIDGET_SET_FLAGS (canvas, GTK_CAN_FOCUS);
 	gtk_widget_grab_focus (canvas);
