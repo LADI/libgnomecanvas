@@ -726,7 +726,7 @@ create_canvas_primitives (gint aa)
 			  0, 0);
 	gtk_widget_show (frame);
 
-	gnome_canvas_set_size (GNOME_CANVAS (canvas), 600, 450);
+	gtk_widget_set_usize (canvas, 600, 450);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 600, 450);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);

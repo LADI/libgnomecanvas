@@ -199,7 +199,7 @@ create_canvas_fifteen (void)
 	/* Create the canvas and board */
 
 	canvas = gnome_canvas_new ();
-	gnome_canvas_set_size (GNOME_CANVAS (canvas), PIECE_SIZE * 4 + 1, PIECE_SIZE * 4 + 1);
+	gtk_widget_set_usize (canvas, PIECE_SIZE * 4 + 1, PIECE_SIZE * 4 + 1);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, PIECE_SIZE * 4 + 1, PIECE_SIZE * 4 + 1);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
