@@ -974,7 +974,7 @@ gnome_canvas_text_set_property (GObject            *object,
 			break;
 		case PROP_WEIGHT:
 			pango_font_description_set_weight (text->font_desc,
-							   g_value_get_enum (value));
+							   g_value_get_int (value));
 			break;
 		case PROP_STRETCH:
 			pango_font_description_set_stretch (text->font_desc,

@@ -1,7 +1,8 @@
 2001-09-24  Matt Wilson  <msw@redhat.com>
 
 	* gnome-canvas-text.c (gnome_canvas_text_class_init): revert
-	property change, the real bug is in pango.
+	property change, the real bug is:
+	(gnome_canvas_text_set_property): here.
 
 2001-09-24  Matt Wilson  <msw@redhat.com>
 
