@@ -1,5 +1,10 @@
 2001-12-18  Alex Larsson  <alexl@redhat.com>
 
+	* gnome-canvas-shape.c (gnome_canvas_shape_bounds):
+	Add g_warning to this unimplemented function.
+	
+2001-12-18  Alex Larsson  <alexl@redhat.com>
+
 	* gnome-canvas-text.c (gnome_canvas_text_set_property):
 	Set the max_width and height properties in set_property instead
 	of doing it in update(), since gnome_canvas_text_bounds() needs

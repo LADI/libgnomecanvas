@@ -79,7 +79,8 @@ static void   gnome_canvas_shape_draw        (GnomeCanvasItem *item, GdkDrawable
 static double gnome_canvas_shape_point       (GnomeCanvasItem *item, double x, double y,
                                               int cx, int cy, GnomeCanvasItem **actual_item);
 static void   gnome_canvas_shape_render      (GnomeCanvasItem *item, GnomeCanvasBuf *buf);
-
+static void   gnome_canvas_shape_bounds      (GnomeCanvasItem *item,
+					      double *x1, double *y1, double *x2, double *y2);
 
 static gulong get_pixel_from_rgba (GnomeCanvasItem *item, guint32 rgba_color);
 static guint32 get_rgba_from_color (GdkColor * color);
@@ -222,6 +223,7 @@ gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class)
 	item_class->draw = gnome_canvas_shape_draw;
 	item_class->point = gnome_canvas_shape_point;
 	item_class->render = gnome_canvas_shape_render;
+	item_class->bounds = gnome_canvas_shape_bounds;
 }
 
 static void
@@ -1441,3 +1443,8 @@ gcbp_draw_ctx_unref (GCBPDrawCtx * ctx)
 	}
 }
 
+static void
+gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double *x2, double *y2)
+{
+  g_warning ("FIXME: gnome_canvas_shape_bounds() not implemented\n");
+}
