@@ -181,7 +181,7 @@ msgstr "Hauteur du texte rendu"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "Famille de police définie"
+msgstr "Famille de la police définie"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
