@@ -1,3 +1,7 @@
+2003-09-01  Anders Carlsson  <andersca@gnome.org>
+
+	* configure.in: Release 2.4.0
+
 2003-09-01  Christian Rose  <menthos@menthos.com>
 
 	* configure.in: Added "ne" to ALL_LINGUAS.
