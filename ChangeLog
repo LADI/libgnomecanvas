@@ -1,3 +1,10 @@
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
+	* demos/: New directory.
+
+	* configure.in (GTK_VERSION): AC_SUBST this to the current
+	GTK+ version.
+
 2001-03-24  Martin Baulig  <baulig@suse.de>
 
 	* configure.in: Removed the REBUILD alias.
