@@ -7,10 +7,10 @@ Makefile.in
 _libs
 so_locations
 .exrc
-gnomecanvas.defs
-gnomecanvastypebuiltins.h
-gnomecanvastypebuiltins_evals.c
-gnomecanvastypebuiltins_ids.c
-gnomecanvastypebuiltins_vars.c
+libgnomecanvas.defs
+libgnomecanvastypebuiltins.h
+libgnomecanvastypebuiltins_evals.c
+libgnomecanvastypebuiltins_ids.c
+libgnomecanvastypebuiltins_vars.c
 libgnomecanvas-2.0.pc
 symlink_stamp

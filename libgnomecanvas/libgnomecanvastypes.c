@@ -4,9 +4,9 @@
 #include "gnome-canvas.h"
 #include "gnome-canvas-util.h"
 
-#include "gnomecanvastypebuiltins.h"
-#include "gnomecanvastypebuiltins_vars.c"
-#include "gnomecanvastypebuiltins_evals.c"
+#include "libgnomecanvastypebuiltins.h"
+#include "libgnomecanvastypebuiltins_vars.c"
+#include "libgnomecanvastypebuiltins_evals.c"
 void gnome_canvas_type_init(void);
 
 void
@@ -25,7 +25,7 @@ gnome_canvas_type_init(void) {
       gconstpointer    pointer3;
       gboolean         boolean1;
     } builtin_info[GNOME_TYPE_NUM_BUILTINS + 1] = {
-#include "gnomecanvastypebuiltins_ids.c"
+#include "libgnomecanvastypebuiltins_ids.c"
       { NULL }
     };
 
