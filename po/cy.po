@@ -1,13 +1,13 @@
-# Gnome yn Gymraeg.
+# GNOME yn Gymraeg.
 # Copyright (C) 2003 Free Software Foundation, Inc.
-# Dafydd Harries <daf@parnassus.ath.cx>, 2003
 # This file is distributed under the same license as the libgnomecanvas package.
+# Dafydd Harries <daf@parnassus.ath.cx>, 2003
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "POT-Creation-Date: 2003-05-12 13:09+0200\n"
-"PO-Revision-Date: 2003-05-13 00:06+0100\n"
+"PO-Revision-Date: 2003-05-19 02:47+0100\n"
 "Last-Translator: Dafydd Harries <daf@parnassus.ath.cx>\n"
 "Language-Team: Welsh <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,14 @@ msgid "Y"
 msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2053
+# EFALLAU
 msgid "Antialiased"
-msgstr ""
+msgstr "Datamegnnu"
 
 #: libgnomecanvas/gnome-canvas.c:2054
+# EFALLAI
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Modd datamgennu'r cynfas"
 
 #: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
@@ -38,16 +40,19 @@ msgid "Text"
 msgstr "Testun"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
+# EFALLAI
 msgid "Text to render"
-msgstr ""
+msgstr "Y testun i'w llunio"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
+# EFALLAI
 msgid "Markup"
-msgstr ""
+msgstr "Tagiau"
 
 #: libgnomecanvas/gnome-canvas-text.c:216
+# EFALLAI
 msgid "Marked up text to render"
-msgstr ""
+msgstr "Testun efo tagiau i'w lunio"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -119,12 +124,14 @@ msgstr ""
 "Atred y testun uwchben y sail-linell (islaw os yw'r codiad yn negyddol)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
+# EFALLAI
 msgid "Strikethrough"
-msgstr ""
+msgstr "Croesi"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
+# EFALLAU
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "Dylid croesi'r testun drwodd"
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
@@ -165,16 +172,18 @@ msgid "Text width"
 msgstr "Lled testun"
 
 #: libgnomecanvas/gnome-canvas-text.c:456
+# EFALLAI
 msgid "Width of the rendered text"
-msgstr ""
+msgstr "Lled y testun wedi ei lunio"
 
 #: libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
 msgstr "Uchder testun"
 
 #: libgnomecanvas/gnome-canvas-text.c:464
+# EFALLAI
 msgid "Height of the rendered text"
-msgstr ""
+msgstr "Uchder y testun wedi ei lunio"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
@@ -241,12 +250,13 @@ msgid "Whether this tag affects the rise"
 msgstr "A ydy'r tag yma yn effeithio ar godiad y ffont"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
+# EFALLAI
 msgid "Strikethrough set"
-msgstr ""
+msgstr "Gosod croesi"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "A ydy'r tag yma yn effeithio ar grosei"
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
