@@ -50,32 +50,32 @@ BUILT_SOURCES = \
 	gnomecanvastypebuiltins_vars.c
 
 # generate gnomecanvas.defs file from gnomecanvas-boxed.defs and *.h
-gnomecanvas.defs: @REBUILD@ $(GNOME_MAKEENUMS) gnomecanvas-boxed.defs $(gnomecanvas_headers)
+gnomecanvas.defs: $(GNOME_MAKEENUMS) gnomecanvas-boxed.defs $(gnomecanvas_headers)
 	cd $(srcdir) \
 	&& $(PERL) $(GNOME_MAKEENUMS) defs $(gnomecanvas_headers) > gd.tmp \
 	&& cat gnomecanvas-boxed.defs >> gd.tmp \
 	&& mv gd.tmp gnomecanvas.defs
 
 # generate type identifier header (GTK_TYPE_WIDGET_FLAGS)
-gnomecanvastypebuiltins.h: @REBUILD@ gnomecanvas.defs $(GNOME_MAKETYPES)
+gnomecanvastypebuiltins.h: gnomecanvas.defs $(GNOME_MAKETYPES)
 	cd $(srcdir) \
 	&& LC_COLLATE=C $(GNOME_MAKETYPES) gnomecanvas.defs macros > gtb.tmp \
 	&& mv gtb.tmp gnomecanvastypebuiltins.h
 
 # generate type identifier variables (GTK_TYPE_WIDGET_FLAGS)
-gnomecanvastypebuiltins_vars.c: @REBUILD@ gnomecanvas.defs $(GNOME_MAKETYPES)
+gnomecanvastypebuiltins_vars.c: gnomecanvas.defs $(GNOME_MAKETYPES)
 	cd $(srcdir) \
 	&& LC_COLLATE=C $(GNOME_MAKETYPES) gnomecanvas.defs variables > gtbv.tmp \
 	&& mv gtbv.tmp gnomecanvastypebuiltins_vars.c
 
 # generate type entries for type-id registration
-gnomecanvastypebuiltins_ids.c: @REBUILD@ gnomecanvas.defs $(GNOME_MAKETYPES)
+gnomecanvastypebuiltins_ids.c: gnomecanvas.defs $(GNOME_MAKETYPES)
 	cd $(srcdir) \
 	&& LC_COLLATE=C $(GNOME_MAKETYPES) gnomecanvas.defs entries > gtbi.tmp \
 	&& mv gtbi.tmp gnomecanvastypebuiltins_ids.c
 
 # generate enum value arrays
-gnomecanvastypebuiltins_evals.c: @REBUILD@ $(GNOME_MAKEENUMS) gnomecanvas.defs
+gnomecanvastypebuiltins_evals.c: $(GNOME_MAKEENUMS) gnomecanvas.defs
 	cd $(srcdir) \
 	&& $(PERL) $(GNOME_MAKEENUMS) arrays $(gnomecanvas_headers) > gtbe.tmp \
 	&& mv gtbe.tmp gnomecanvastypebuiltins_evals.c
