@@ -18,6 +18,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	static double x, y;
 	double new_x, new_y;
 	GdkCursor *fleur;
+	static int dragging;
 
 	switch (event->type) {
 	case GDK_BUTTON_PRESS:
@@ -35,6 +36,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 							fleur,
 							event->button.time);
 				gdk_cursor_destroy (fleur);
+				dragging = TRUE;
 			}
 			break;
 
@@ -59,7 +61,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 		break;
 
 	case GDK_MOTION_NOTIFY:
-		if (event->motion.state & GDK_BUTTON1_MASK) {
+		if (dragging && (event->motion.state & GDK_BUTTON1_MASK)) {
 			new_x = event->motion.x;
 			new_y = event->motion.y;
 
@@ -71,6 +73,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 
 	case GDK_BUTTON_RELEASE:
 		gnome_canvas_item_ungrab (item, event->button.time);
+		dragging = FALSE;
 
 	default:
 		break;
@@ -176,6 +179,9 @@ setup_divisions (GnomeCanvasGroup *root)
 	setup_heading (group, "Images", 3);
 	setup_heading (group, "Lines", 4);
 	setup_heading (group, "Curves", 5);
+	setup_heading (group, "Arcs", 6);
+	setup_heading (group, "Polygons", 7);
+	setup_heading (group, "Widgets", 8);
 }
 
 static void
@@ -519,6 +525,25 @@ setup_lines (GnomeCanvasGroup *root)
 	gnome_canvas_points_free (points);
 }
 
+static void
+setup_widgets (GnomeCanvasGroup *root)
+{
+	GtkWidget *w;
+
+	w = gtk_button_new_with_label ("Hello world!");
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_widget_get_type (),
+					   "widget", w,
+					   "x", 420.0,
+					   "y", 330.0,
+					   "width", 100.0,
+					   "height", 40.0,
+					   "anchor", GTK_ANCHOR_NW,
+					   "size_pixels", FALSE,
+					   NULL));
+	gtk_widget_show (w);
+}
+
 static gint
 key_press (GnomeCanvas *canvas, GdkEventKey *event, gpointer data)
 {
@@ -637,6 +662,7 @@ create_canvas_primitives (void)
 	setup_texts (root);
 	setup_images (root);
 	setup_lines (root);
+	setup_widgets (root);
 
 	GTK_WIDGET_SET_FLAGS (canvas, GTK_CAN_FOCUS);
 	gtk_widget_grab_focus (canvas);
