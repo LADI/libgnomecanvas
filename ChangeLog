@@ -1,3 +1,18 @@
+2003-05-18  Martin Kretzschmar  <m_kretzschmar@gmx.net>
+
+	Implement general clipping in clipgroup. Fixes bug #104602.
+	
+	2001-12-06  Lauris Kaplinski  <lauris@kaplinski.com>
+
+	* gnome-canvas-clipgroup.c (gnome_canvas_clipgroup_update): Invoke
+	parent method with NULL clippath, recalculate bounding box
+	(gnome_canvas_clipgroup_render): Implement, do buffer/buffer
+	clipped composition here
+	(gcg_buf_new): Quick'n'dirty buffer cache
+	(gcg_buf_free): Ditto
+	(gcg_mask_new): Ditto
+	(gcg_mask_free): Ditto
+
 2003-05-13  Telsa Gwynne  <hobbit@aloss.ukuu.org.uk>
 
 	* configure.in: Added "cy" to ALL_LINGUAS.
