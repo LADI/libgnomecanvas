@@ -1,3 +1,8 @@
+Fri Aug 31 04:30:27 2001  George Lebl <jirka@5z.com>
+
+	* gnome-canvas-rich-text.c: Adapt to new GtkTextBuffer API changes,
+	  and fix switch statement warnings
+
 2001-08-27  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_class_init),
