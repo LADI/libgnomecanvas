@@ -20,3 +20,9 @@
 	* gnomecanvas-boxed.defs: New file.
 	* libgnomecanvas-2.0.pc.in: New file.
 
+2001-03-05  Martin Baulig  <baulig@suse.de>
+
+	* gnome-canvas*.[ch]: Moved here from gnome-libs/libgnomeui.
+	All files are copied directly in CVS so they contain the
+	full history.
+
