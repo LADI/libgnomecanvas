@@ -419,7 +419,7 @@ create_canvas_arrowhead (void)
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
-	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
+	root = gnome_canvas_root (GNOME_CANVAS (canvas));
 
 	gtk_object_set_data (GTK_OBJECT (canvas), "width", GINT_TO_POINTER (DEFAULT_WIDTH));
 	gtk_object_set_data (GTK_OBJECT (canvas), "shape_a", GINT_TO_POINTER (DEFAULT_SHAPE_A));

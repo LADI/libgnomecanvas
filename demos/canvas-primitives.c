@@ -660,7 +660,7 @@ create_canvas_primitives (void)
 
 	/* Setup canvas items */
 
-	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
+	root = gnome_canvas_root (GNOME_CANVAS (canvas));
 
 	setup_divisions (root);
 	setup_rectangles (root);

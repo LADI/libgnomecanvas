@@ -215,7 +215,7 @@ create_canvas_fifteen (void)
 		y = i / 4;
 		x = i % 4;
 
-		board[i] = gnome_canvas_item_new (GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas))),
+		board[i] = gnome_canvas_item_new (gnome_canvas_root (GNOME_CANVAS (canvas)),
 						  gnome_canvas_group_get_type (),
 						  "x", (double) (x * PIECE_SIZE),
 						  "y", (double) (y * PIECE_SIZE),
