@@ -448,26 +448,34 @@ gnome_canvas_update_svp (GnomeCanvas *canvas, ArtSVP **p_svp, ArtSVP *new_svp)
 	ArtUta *repaint_uta;
 
 	old_svp = *p_svp;
-	if (old_svp != NULL && new_svp != NULL) {
-#if 0
-		/* should work, but cores :( */
-		diff = art_svp_diff (old_svp, new_svp);
+
+	if (old_svp != NULL) {
+		ArtDRect bb;
+		art_drect_svp (&bb, old_svp);
+		if ((bb.x1 - bb.x0) * (bb.y1 - bb.y0) > (64 * 64)) {
+			repaint_uta = art_uta_from_svp (old_svp);
+			gnome_canvas_request_redraw_uta (canvas, repaint_uta);
+		} else {
+			ArtIRect ib;
+			art_drect_to_irect (&ib, &bb);
+			gnome_canvas_request_redraw (canvas, ib.x0, ib.y0, ib.x1, ib.y1);
+		}
 		art_svp_free (old_svp);
-		repaint_uta = art_uta_from_svp (diff);
-		art_svp_free (diff);
-		gnome_canvas_request_redraw_uta (canvas, repaint_uta);
-#else
-		repaint_uta = art_uta_from_svp (old_svp);
-		gnome_canvas_request_redraw_uta (canvas, repaint_uta);
-		art_svp_free (old_svp);
-		repaint_uta = art_uta_from_svp (new_svp);
-		gnome_canvas_request_redraw_uta (canvas, repaint_uta);
-#endif
-	} else if (old_svp != NULL) {
-		repaint_uta = art_uta_from_svp (old_svp);
-		art_svp_free (old_svp);
-		gnome_canvas_request_redraw_uta (canvas, repaint_uta);
 	}
+
+	if (new_svp != NULL) {
+		ArtDRect bb;
+		art_drect_svp (&bb, new_svp);
+		if ((bb.x1 - bb.x0) * (bb.y1 - bb.y0) > (64 * 64)) {
+			repaint_uta = art_uta_from_svp (new_svp);
+			gnome_canvas_request_redraw_uta (canvas, repaint_uta);
+		} else {
+			ArtIRect ib;
+			art_drect_to_irect (&ib, &bb);
+			gnome_canvas_request_redraw (canvas, ib.x0, ib.y0, ib.x1, ib.y1);
+		}
+	}
+
 	*p_svp = new_svp;
 }
 

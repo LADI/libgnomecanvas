@@ -469,12 +469,15 @@ static void
 gnome_canvas_widget_render (GnomeCanvasItem *item,
 			    GnomeCanvasBuf *buf)
 {
+#if 0
 	GnomeCanvasWidget *witem;
 
 	witem = GNOME_CANVAS_WIDGET (item);
 
 	if (witem->widget) 
 		gtk_widget_queue_draw (witem->widget);
+#endif
+
 }
 
 static void
@@ -483,12 +486,14 @@ gnome_canvas_widget_draw (GnomeCanvasItem *item,
 			  int x, int y,
 			  int width, int height)
 {
+#if 0
 	GnomeCanvasWidget *witem;
 
 	witem = GNOME_CANVAS_WIDGET (item);
 
 	if (witem->widget)
 		gtk_widget_queue_draw (witem->widget);
+#endif
 }
 
 static double

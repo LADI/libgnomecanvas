@@ -1,23 +1,14 @@
-2002-01-14  Jody Goldberg <jody@gnome.org>
+2002-01-16  Lauris Kaplinski  <lauris@ximian.com>
 
-	* gnome-canvas-shape.c (gnome_canvas_shape_set_property) : Here we
-	  do need to use gdk_rgb_find_color.
+	* gnome-canvas.c (gnome_canvas_expose): Emit parent class expose event here,
+	so widget items get drawn
 
-2002-01-13  Jody Goldberg <jody@gnome.org>
+	* gnome-canvas-widget.c (gnome_canvas_widget_render): Comment everything out,
+	or we are creating endless stream of exposes
+	(gnome_canvas_widget_draw): Ditto
 
-	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Use
-	  gdk_colormap_query_color not gdk_rgb_find_color.
-	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
-	* gnome-canvas-shape.c (get_color_value) : ditto.
-
-2002-01-13  Jody Goldberg <jody@gnome.org>
-
-	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Do not use
-	  g_new to allocate (and leak) the color.
-	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
-	* gnome-canvas-shape.c (get_color_value) : ditto.
-	(gnome_canvas_shape_set_property) : PROP_FILL_COLOR_GDK, colorptr can
-	  be NULL.
+	* gnome-canvas-util.c (gnome_canvas_update_svp): Clean it up, use rect
+	coverage for small SVP-s (is much faster).
 
 2002-01-15  Lauris Kaplinski  <lauris@ximian.com>
 
@@ -40,6 +31,27 @@
 	(gnome_canvas_shape_point): Just return, if there are no SVP-s,
 	flood warnings, if canvas->need_update is set
 	(gnome_canvas_shape_bounds): Implement
+
+2002-01-14  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_set_property) : Here we
+	  do need to use gdk_rgb_find_color.
+
+2002-01-13  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Use
+	  gdk_colormap_query_color not gdk_rgb_find_color.
+	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
+	* gnome-canvas-shape.c (get_color_value) : ditto.
+
+2002-01-13  Jody Goldberg <jody@gnome.org>
+
+	* gnome-canvas-text.c (gnome_canvas_text_get_property) : Do not use
+	  g_new to allocate (and leak) the color.
+	* gnome-canvas-line.c (gnome_canvas_line_get_property) : ditto.
+	* gnome-canvas-shape.c (get_color_value) : ditto.
+	(gnome_canvas_shape_set_property) : PROP_FILL_COLOR_GDK, colorptr can
+	  be NULL.
 
 2002-01-09  Darin Adler  <darin@bentspoon.com>
 

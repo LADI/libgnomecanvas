@@ -2803,8 +2803,7 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 
 	canvas = GNOME_CANVAS (widget);
 
-	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window))
-		return FALSE;
+	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window)) return FALSE;
 
 	rect.x0 = event->area.x - canvas->zoom_xofs;
 	rect.y0 = event->area.y - canvas->zoom_yofs;
@@ -2814,6 +2813,9 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 	uta = art_uta_from_irect (&rect);
 	gnome_canvas_request_redraw_uta (canvas, uta);
 	gnome_canvas_update_now (canvas);
+
+	if (GTK_WIDGET_CLASS (canvas_parent_class)->expose_event)
+		return (* GTK_WIDGET_CLASS (canvas_parent_class)->expose_event) (widget, event);
 
 	return FALSE;
 }

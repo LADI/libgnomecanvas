@@ -1195,10 +1195,12 @@ gnome_canvas_shape_point (GnomeCanvasItem *item, double x, double y,
 	double dist;
 	int wind;
 
+#if 0
 	/* fixme: This is just for debugging, canvas should ensure that */
 	/* fixme: IF YOU ARE SURE THAT IT IS CORRECT BEHAVIOUR, you can remove warning */
 	/* fixme: and make it to return silently */
 	g_return_val_if_fail (!item->canvas->need_update, 1e18);
+#endif
 
 	shape = GNOME_CANVAS_SHAPE (item);
 
