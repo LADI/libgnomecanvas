@@ -37,6 +37,7 @@
 
 #include <config.h>
 #include <math.h>
+#include <string.h>
 #include "gnome-canvas-text.h"
 #include <pango/pangoft2.h>
 
