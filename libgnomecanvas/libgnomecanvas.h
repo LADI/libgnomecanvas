@@ -36,6 +36,8 @@ BEGIN_GNOME_DECLS
 
 extern GnomeModuleInfo libgnomecanvas_module_info;
 
+void libgnomecanvas_types_init (void);
+
 END_GNOME_DECLS
 
 #endif /* LIBGNOMECANVAS_H */

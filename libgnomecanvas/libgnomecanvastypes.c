@@ -28,39 +28,13 @@
 #include <gobject/gboxed.h>
 
 #include <libgnomecanvas/libgnomecanvas.h>
-#include <libgnome/libgnome.h>
-
-static void gnome_canvas_type_init (void);
-static void libgnomecanvas_pre_args_parse (GnomeProgram *,
-					   const GnomeModuleInfo *);
-
-GnomeModuleInfo libgnomecanvas_module_info;
-
-static GnomeModuleRequirement libgnomecanvas_requirements[] = {
-    {VERSION, &libgnome_module_info},
-    {NULL}
-};
-
-GnomeModuleInfo libgnomecanvas_module_info = {
-    "libgnomecanvas", VERSION, "GNOME Canvas",
-    libgnomecanvas_requirements,
-    libgnomecanvas_pre_args_parse, NULL, NULL,
-    NULL,
-};
-
-static void
-libgnomecanvas_pre_args_parse (GnomeProgram *program,
-			       const GnomeModuleInfo *mod_info)
-{
-    gnome_canvas_type_init ();
-}
 
 #include "libgnomecanvastypebuiltins.h"
 #include "libgnomecanvastypebuiltins_vars.c"
 #include "libgnomecanvastypebuiltins_evals.c"
 
-static void
-gnome_canvas_type_init (void)
+void
+libgnomecanvas_types_init (void)
 {
     static gboolean initialized = FALSE;
 

@@ -45,6 +45,7 @@ libgnomecanvas_2_la_SOURCES =			\
 	gnome-canvas-util.c			\
 	gnome-canvas-widget.c			\
 	gnome-canvas.c				\
+	libgnomecanvas-init.c			\
 	libgnomecanvastypes.c
 
 BUILT_SOURCES = \

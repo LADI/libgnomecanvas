@@ -1,13 +1,19 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas-init.c: New file.
+	(libgnomecanvas_module_info): New global variable; this is the
+	`GnomeModuleInfo' structure to initialize this module.
+
+	* libgnomecanvastypes.c (gnome_canvas_type_init): Renamed to
+	libgnomecanvas_types_init().
+
+	* libgnomecanvas.h: Added external declaration for
+	`libgnomecanvas_module_info' and function prototype for
+	libgnomecanvas_types_init().
+
 	* libgnomecanvas.h: New header file.
 	It #includes <libgnomecanvas/gnome-canvas.h> and
-	<libgnomecanvas/gnome-canvas-util.h> and also contains the
-	module init stuff.
-
-	* libgnomecanvastypes.c (libgnomecanvas_module_info):
-	New global variable; this is the `GnomeModuleInfo' structure
-	to initialize this module.
+	<libgnomecanvas/gnome-canvas-util.h>.
 
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
