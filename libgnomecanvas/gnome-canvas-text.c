@@ -804,8 +804,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 	switch (param_id) {
 	case PROP_TEXT:
-		if (text->text)
-			g_free (text->text);
+		g_free (text->text);
 
 		text->text = g_value_dup_string (value);
 		pango_layout_set_text (text->layout, text->text, -1);
@@ -969,6 +968,7 @@ gnome_canvas_text_set_property (GObject            *object,
 			pango_attr_list_unref (text->attr_list);
 
 		text->attr_list = g_value_peek_pointer (value);
+		pango_attr_list_ref (text->attr_list);
 		
 		gnome_canvas_text_apply_attributes (text);
 		text->priv->render_dirty = 1;
@@ -1369,11 +1369,6 @@ gnome_canvas_text_set_markup (GnomeCanvasText *textitem,
 	gchar         *text = NULL;
 	GError        *error = NULL;
 
-	if (textitem->text)
-		g_free (textitem->text);
-	if (textitem->attr_list)
-		pango_attr_list_unref (textitem->attr_list);
-
 	if (markup && !pango_parse_markup (markup, -1,
 					   0,
 					   &attr_list, &text, NULL,
@@ -1384,6 +1379,10 @@ gnome_canvas_text_set_markup (GnomeCanvasText *textitem,
 		g_error_free (error);
 		return;
 	}
+
+	g_free (textitem->text);
+	if (textitem->attr_list)
+		pango_attr_list_unref (textitem->attr_list);
 
 	textitem->text = text;
 	textitem->attr_list = attr_list;
