@@ -4,11 +4,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2\n"
-"POT-Creation-Date: 2004-02-03 11:09+0100\n"
-"PO-Revision-Date: 2003-07-25 13:02+0200\n"
-"Last-Translator: Christopher R. Gabriel <cgabriel@cgabriel.org>\n"
-"Language-Team: Italian <it@li.org>\n"
+"Project-Id-Version: libgnomecanvas\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-12 16:45+0100\n"
+"PO-Revision-Date: 2004-02-12 21:40+0100\n"
+"Last-Translator: Alessio Frusciante <algol@firenze.linux.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,11 +26,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
-msgstr ""
+msgstr "Con antialias"
 
 #: libgnomecanvas/gnome-canvas.c:2054
 msgid "The antialiasing mode of the canvas."
-msgstr "La modalita antialias della tela."
+msgstr "La modalità antialias della tela."
 
 #: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
@@ -225,19 +226,19 @@ msgstr "Indica se il tag ha effetto sulla dimensione del carattere"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr ""
+msgstr "Elevazione impostata"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "Indica se il tag ha effetto sull'elevazione"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr ""
+msgstr "Barrato impostato"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Indica se il tag ha effetto sulla barratura"
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -304,7 +305,6 @@ msgid "Cursor Visible"
 msgstr "Cursore visibile"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Il cursore è visibile in questo oggetto rich text?"
 
@@ -313,7 +313,6 @@ msgid "Cursor Blink"
 msgstr "Lampeggiamento cursore"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Il cursore lampeggia in questo oggetto rich text?"
 
@@ -351,11 +350,11 @@ msgstr "Direzione del testo"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
-msgstr ""
+msgstr "Ancoraggio"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
-msgstr ""
+msgstr "Punto di ancoraggio del testo"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
@@ -375,11 +374,11 @@ msgstr "Numero di pixel da mettere sotto le righe"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "Pixel all'interno di un a capo"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr ""
+msgstr "Numero di pixel da mettere tra righe che vanno a capo"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
