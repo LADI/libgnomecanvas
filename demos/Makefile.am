@@ -32,3 +32,8 @@ canvas_demo_SOURCES =		\
 	canvas-features.c	\
 	canvas-fifteen.c
 
+EXTRA_DIST =			\
+	toroid.png
+
+
+

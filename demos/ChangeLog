@@ -1,5 +1,11 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* toroid.png: New file; moved here from gnome-libs/test-gnome.
+	There's a GNOME_LIBS_MODULE_SPLIT tag which points to the latest
+	version in gnome-libs.
+
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
 	* canvas-arrowhead.c (highlight_box): Use gdk_cursor_new() instead
 	of gnome_stock_cursor_new().
 
