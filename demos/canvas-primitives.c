@@ -2,7 +2,7 @@
 #include <math.h>
 #include "testgnome.h"
 #include <gdk/gdkkeysyms.h>
-
+#include <libgnomeui/gnome-cursors.h>
 
 static void
 zoom_changed (GtkAdjustment *adj, gpointer data)
@@ -34,7 +34,7 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 				x = item_x;
 				y = item_y;
 
-				fleur = gdk_cursor_new (GDK_FLEUR);
+				fleur = gnome_stock_cursor_new (GNOME_STOCK_CURSOR_FLEUR);
 				gnome_canvas_item_grab (item,
 							GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
 							fleur,
