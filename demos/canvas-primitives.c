@@ -607,6 +607,7 @@ setup_lines (GnomeCanvasGroup *root)
 	gnome_canvas_points_free (points);
 }
 
+#if 0
 static void
 setup_curves (GnomeCanvasGroup *root) 
 {
@@ -624,6 +625,7 @@ setup_curves (GnomeCanvasGroup *root)
 					 NULL));
 	gnome_canvas_path_def_unref(path_def);
 }
+#endif
 
 static void
 setup_polygons (GnomeCanvasGroup *root)

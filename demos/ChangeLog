@@ -1,3 +1,8 @@
+Thu Jun 28 14:07:57 2001  Jonathan Blandford  <jrb@redhat.com>
+
+	* canvas-primitives.c (setup_curves): ifdefed out dead code to
+	make build with -Werror.
+
 2001-06-28  Michael Meeks  <michael@ximian.com>
 
 	* canvas.c (main): make -lefence link.
