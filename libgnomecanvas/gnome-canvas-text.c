@@ -548,9 +548,9 @@ gnome_canvas_text_init (GnomeCanvasText *text)
 	text->strike_set    = FALSE;
 	text->rise_set      = FALSE;
 	
-	text->private = g_new(GnomeCanvasTextPrivate, 1);
-	text->private->bitmap.buffer = NULL;
-	text->private->render_dirty = 1;
+	text->priv = g_new(GnomeCanvasTextPrivate, 1);
+	text->priv->bitmap.buffer = NULL;
+	text->priv->render_dirty = 1;
 }
 
 /* Destroy handler for the text item */
@@ -584,11 +584,11 @@ gnome_canvas_text_destroy (GtkObject *object)
 		gdk_bitmap_unref (text->stipple);
 	text->stipple = NULL;
 
-	if (text->private && text->private->bitmap.buffer) {
-		g_free (text->private->bitmap.buffer);		
+	if (text->priv && text->priv->bitmap.buffer) {
+		g_free (text->priv->bitmap.buffer);		
 	}
-	g_free (text->private);
-	text->private = NULL;
+	g_free (text->priv);
+	text->priv = NULL;
 	
 	if (GTK_OBJECT_CLASS (parent_class)->destroy)
 		(* GTK_OBJECT_CLASS (parent_class)->destroy) (object);
@@ -886,14 +886,14 @@ gnome_canvas_text_set_property (GObject            *object,
 		pango_layout_set_text (text->layout, text->text, -1);
 		recalc_bounds (text);
 
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_MARKUP:
 		gnome_canvas_text_set_markup (text,
 					      g_value_get_string (value));
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_X:
@@ -929,7 +929,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 			gnome_canvas_text_apply_font_desc (text);
 		}
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 	}
 
@@ -939,7 +939,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_FAMILY:
@@ -948,7 +948,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_FAMILY_SET:
@@ -956,7 +956,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 		
 	case PROP_STYLE:
@@ -965,7 +965,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_STYLE_SET:
@@ -973,7 +973,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 		
 	case PROP_VARIANT:
@@ -982,7 +982,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_VARIANT_SET:
@@ -990,7 +990,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 		
 	case PROP_WEIGHT:
@@ -999,7 +999,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_WEIGHT_SET:
@@ -1007,7 +1007,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_STRETCH:
@@ -1016,7 +1016,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_STRETCH_SET:
@@ -1024,7 +1024,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_SIZE:
@@ -1033,7 +1033,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_SIZE_POINTS:
@@ -1042,7 +1042,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_SIZE_SET:
@@ -1050,7 +1050,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_SCALE:
@@ -1059,7 +1059,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 		
 	case PROP_SCALE_SET:
@@ -1067,7 +1067,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;		
 		
 	case PROP_UNDERLINE:
@@ -1076,7 +1076,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_UNDERLINE_SET:
@@ -1084,7 +1084,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_STRIKETHROUGH:
@@ -1093,7 +1093,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_STRIKETHROUGH_SET:
@@ -1101,7 +1101,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_RISE:
@@ -1110,7 +1110,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_RISE_SET:
@@ -1118,7 +1118,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_ATTRIBUTES:
@@ -1129,7 +1129,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_ANCHOR:
@@ -1157,25 +1157,25 @@ gnome_canvas_text_set_property (GObject            *object,
 		}		  
 		pango_layout_set_alignment (text->layout, align);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;				
+		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_WIDTH:
 		text->clip_width = fabs (g_value_get_double (value));
 		recalc_bounds (text);
-		text->private->render_dirty = 1;				
+		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_HEIGHT:
 		text->clip_height = fabs (g_value_get_double (value));
 		recalc_bounds (text);
-		text->private->render_dirty = 1;				
+		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP:
 		text->clip = g_value_get_boolean (value);
 		recalc_bounds (text);
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_X_OFFSET:
@@ -1201,7 +1201,7 @@ gnome_canvas_text_set_property (GObject            *object,
 				      0xff);
 			color_changed = TRUE;
 		}
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 	}
 
@@ -1226,7 +1226,7 @@ gnome_canvas_text_set_property (GObject            *object,
         case PROP_FILL_COLOR_RGBA:
 		text->rgba = g_value_get_uint (value);
 		color_changed = TRUE;
-		text->private->render_dirty = 1;
+		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_FILL_STIPPLE:
@@ -1666,16 +1666,16 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
         gnome_canvas_buf_ensure_buf (buf);
 
 	
-	if(text->private->render_dirty) {		
-		if(text->private->bitmap.buffer) {
-			g_free(text->private->bitmap.buffer);
+	if(text->priv->render_dirty) {		
+		if(text->priv->bitmap.buffer) {
+			g_free(text->priv->bitmap.buffer);
 		}
-		text->private->bitmap.rows =  (text->clip) ? text->clip_height : text->height;
-		text->private->bitmap.width = (text->clip) ? text->clip_width : text->max_width;
-		text->private->bitmap.pitch = (text->max_width+3)&~3;
-		text->private->bitmap.buffer = g_malloc0 (text->private->bitmap.rows * text->private->bitmap.pitch);
-		text->private->bitmap.num_grays = 256;
-		text->private->bitmap.pixel_mode = ft_pixel_mode_grays;
+		text->priv->bitmap.rows =  (text->clip) ? text->clip_height : text->height;
+		text->priv->bitmap.width = (text->clip) ? text->clip_width : text->max_width;
+		text->priv->bitmap.pitch = (text->max_width+3)&~3;
+		text->priv->bitmap.buffer = g_malloc0 (text->priv->bitmap.rows * text->priv->bitmap.pitch);
+		text->priv->bitmap.num_grays = 256;
+		text->priv->bitmap.pixel_mode = ft_pixel_mode_grays;
 
 
 		/* What this does is when a clipping rectangle is
@@ -1725,9 +1725,9 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 		}
 		
 
-		pango_ft2_render_layout (&text->private->bitmap, text->layout, render_x, render_y);
+		pango_ft2_render_layout (&text->priv->bitmap, text->layout, render_x, render_y);
 		
-		text->private->render_dirty = 0;
+		text->priv->render_dirty = 0;
 	}
 
 
@@ -1737,8 +1737,8 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 	anchor_x = text->x*item->canvas->pixels_per_unit;
 	anchor_y = text->y*item->canvas->pixels_per_unit;
 
-	bitmap_width = text->private->bitmap.width;
-	bitmap_height = text->private->bitmap.rows;
+	bitmap_width = text->priv->bitmap.width;
+	bitmap_height = text->priv->bitmap.rows;
 
 	
 	/* Figure out the correct translation to apply to affine due
@@ -1787,10 +1787,10 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 	art_rgb_a_affine (buf->buf,
 			  buf->rect.x0, buf->rect.y0, buf->rect.x1, buf->rect.y1,
 			  buf->buf_rowstride,
-			  text->private->bitmap.buffer,
-			  text->private->bitmap.width,
-			  text->private->bitmap.rows,
-			  text->private->bitmap.pitch,
+			  text->priv->bitmap.buffer,
+			  text->priv->bitmap.width,
+			  text->priv->bitmap.rows,
+			  text->priv->bitmap.pitch,
 			  fg_color,
 			  affine,
 			  ART_FILTER_NEAREST, NULL);

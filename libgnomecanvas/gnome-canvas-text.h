@@ -160,7 +160,7 @@ struct _GnomeCanvasText {
 
 	guint scale_set     : 1;        /* Apply specified font scaling ratio? */
 
-	GnomeCanvasTextPrivate *private;	
+	GnomeCanvasTextPrivate *priv;	
 };
 
 struct _GnomeCanvasTextClass {

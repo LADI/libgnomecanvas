@@ -1,3 +1,11 @@
+2001-09-02  Anders Carlsson  <andersca@gnu.org>
+
+	* gnome-canvas-text.c: (gnome_canvas_text_init),
+	(gnome_canvas_text_destroy), (gnome_canvas_text_set_property),
+	(gnome_canvas_text_render):
+	* gnome-canvas-text.h:
+	Make C++ safe by replacing "private" with "priv".
+
 Fri Aug 31 04:30:27 2001  George Lebl <jirka@5z.com>
 
 	* gnome-canvas-rich-text.c: Adapt to new GtkTextBuffer API changes,
