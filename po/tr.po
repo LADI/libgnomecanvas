@@ -1,0 +1,23 @@
+# Turkish translation of libgnomecanvas2.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: libgnomecanvas2 1.96.0\n"
+"POT-Creation-Date: 2001-06-02 14:11+0200\n"
+"PO-Revision-Date: 2001-06-02 14:13+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-9\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: libgnomecanvas/gnome-canvas.c:1522 libgnomecanvas/gnome-canvas.c:1523
+msgid "X"
+msgstr "X"
+
+#: libgnomecanvas/gnome-canvas.c:1529 libgnomecanvas/gnome-canvas.c:1530
+msgid "Y"
+msgstr "Y"
+
