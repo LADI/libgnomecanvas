@@ -1,3 +1,20 @@
+2003-01-09  Tor Lillqvist  <tml@iki.fi>
+
+	* configure.in: Similar setup for Win32 build as DLL as in glib
+	etc: Call AC_LIBTOOL_WIN32_DLL. Check for native Win32 or Win32
+	platform in general (including Cygwin). Set automake conditionals
+	OS_WIN32 and PLATFORM_WIN32. Use gcc -mms-bitfields for binary
+	compatibility with GTK+ DLLs.
+	
+	* libgnomecanvas/Makefile.am: [Win32] Use -no-undefined. Install
+	import libraries.
+
+	* glade/Makefile.am: [Win32] Use -no-undefined.
+		
+	* libgnomecanvas/gnome-canvas-util.c
+	(gnome_canvas_get_miter_points): Use G_PI and G_PI_2 instead of
+	M_PI and M_PI_2.
+
 2003-01-08  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Release 2.1.90
