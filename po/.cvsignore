@@ -9,3 +9,4 @@ libgnomecanvas2.pot
 gnome.pot
 stamp-cat-id
 messages
+po2tbl.sed
