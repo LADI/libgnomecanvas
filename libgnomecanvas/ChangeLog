@@ -1,5 +1,13 @@
 2001-06-11  Cody Russell  <bratsche@gnome.org>
 
+	* gnome-canvas-rect-ellipse.c: Don't cast the RectEllipse to GtkWidget.  Use
+	item->canvas instead.  I think this will be correct.
+
+	* gnome-canvas-text.c: Fix some weird Pango issues with 
+	gnome_canvas_text_set_property ().
+
+2001-06-11  Cody Russell  <bratsche@gnome.org>
+
 	* Makefile.am: Updates for GnomeCanvasBpath.
 
 	* gnome-canvas-pixbuf.c: Fixed some weird switch/enum warnings

@@ -591,11 +591,14 @@ get_color_value (GnomeCanvasRE *re, gulong pixel, GValue *value)
 {
 	GdkColor *color;
 	GdkColormap *colormap;
+	GnomeCanvasItem *item;
+
+	item = (GnomeCanvasItem *) re;
 
 	color = g_new (GdkColor, 1);
 	color->pixel = pixel;
 
-	colormap = gtk_widget_get_colormap (GTK_WIDGET (re));
+	colormap = gtk_widget_get_colormap (GTK_WIDGET (item->canvas));
 	gdk_rgb_find_color (colormap, color);
 	g_value_set_boxed (value,  color);
 }
