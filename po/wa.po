@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2 \n"
-"POT-Creation-Date: 2003-07-07 13:11+0200\n"
-"PO-Revision-Date: 2003-07-07 23:30+0200\n"
+"POT-Creation-Date: 2003-07-11 21:10+0200\n"
+"PO-Revision-Date: 2003-07-12 03:51+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@mandrakesoft.com>\n"
 "Language-Team: Walon <linux-wa@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -265,11 +265,11 @@ msgstr "Tecse a håyner"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
-msgstr ""
+msgstr "Plaeçmint X"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y position"
-msgstr ""
+msgstr "Plaeçmint Y"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
@@ -309,7 +309,7 @@ msgstr "Cursoe veyåve"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
-msgstr ""
+msgstr "Est çki l' cursoe est veyåve dins ç' cayet di tecse eritchî chal?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
@@ -343,7 +343,7 @@ msgstr "Djustifiaedje"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
-msgstr ""
+msgstr "Môde djustifiaedje"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
@@ -363,19 +363,19 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
-msgstr ""
+msgstr "Picsels å dzeu des royes"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
-msgstr ""
+msgstr "Nombe di picsels a mete å dzeu des royes"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
-msgstr ""
+msgstr "Picsels å dzo des royes"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Number of pixels to put below lines"
-msgstr ""
+msgstr "Nombe di picsels a mete å dzo des royes"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
