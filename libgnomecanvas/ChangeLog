@@ -1,3 +1,8 @@
+2001-11-18  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_property):
+	Pass screen dpi to pango_ft2_get_context(), as now needed.
+	
 2001-11-16  Glynn Foster  <glynn.foster@sun.com>
 
 	* gnome-canvas-line.c: Removed unused variable stoping build.
