@@ -111,8 +111,8 @@ typedef struct _GnomeCanvasTextPrivate GnomeCanvasTextPrivate;
 struct _GnomeCanvasText {
 	GnomeCanvasItem item;
 
-	PangoFontDescription font_desc; /* Font description for text */
-	PangoAttrList *attr_list;       /* Attribute list of the text (caching) */
+	PangoFontDescription *font_desc; /* Font description for text */
+	PangoAttrList *attr_list;        /* Attribute list of the text (caching) */
 	PangoUnderline underline;
 	gboolean       strikethrough;
 	int            rise;
@@ -146,13 +146,6 @@ struct _GnomeCanvasText {
         guint32 rgba;			/* RGBA color for text */ /*AA*/
 
 	guint clip : 1;			/* Use clip rectangle? */
-
-	guint family_set    : 1;        /* Use specified font_family? */
-	guint style_set     : 1;        /* Use specified font style? */
-	guint variant_set   : 1;        /* Use specified font variant? */
-	guint weight_set    : 1;        /* Use specified font weight? */
-	guint size_set      : 1;        /* Use specified font size? */
-	guint stretch_set   : 1;        /* Use specified font stretch? */
 
 	guint underline_set : 1;        /* Apply specified underline style? */
 	guint strike_set    : 1;        /* Apply specified strikethrough style? */

@@ -531,15 +531,8 @@ gnome_canvas_text_init (GnomeCanvasText *text)
 	text->yofs = 0.0;
 	text->layout = NULL;
 
-	text->font_desc.family_name = NULL;
+	text->font_desc = NULL;
 	
-	text->family_set  = FALSE;
-	text->style_set   = FALSE;
-	text->variant_set = FALSE;
-	text->weight_set  = FALSE;
-	text->stretch_set = FALSE;
-	text->size_set    = FALSE;
-
 	text->underline     = PANGO_UNDERLINE_NONE;
 	text->strikethrough = FALSE;
 	text->rise          = 0;
@@ -572,9 +565,10 @@ gnome_canvas_text_destroy (GtkObject *object)
 	    g_object_unref (G_OBJECT (text->layout));
 	text->layout = NULL;
 	
-	if (text->font_desc.family_name)
-		g_free (text->font_desc.family_name);
-	text->font_desc.family_name = NULL;
+	if (text->font_desc) {
+		pango_font_description_free (text->font_desc);
+		text->font_desc = NULL;
+	}
 
 	if (text->attr_list)
 		pango_attr_list_unref (text->attr_list);
@@ -830,6 +824,35 @@ set_stipple (GnomeCanvasText *text, GdkBitmap *stipple, int reconfigure)
 	}
 }
 
+static PangoFontMask
+get_property_font_set_mask (guint prop_id)
+{
+  switch (prop_id)
+    {
+    case PROP_FAMILY_SET:
+      return PANGO_FONT_MASK_FAMILY;
+    case PROP_STYLE_SET:
+      return PANGO_FONT_MASK_STYLE;
+    case PROP_VARIANT_SET:
+      return PANGO_FONT_MASK_VARIANT;
+    case PROP_WEIGHT_SET:
+      return PANGO_FONT_MASK_WEIGHT;
+    case PROP_STRETCH_SET:
+      return PANGO_FONT_MASK_STRETCH;
+    case PROP_SIZE_SET:
+      return PANGO_FONT_MASK_SIZE;
+    }
+
+  return 0;
+}
+
+static void
+ensure_font (GnomeCanvasText *text)
+{
+	if (!text->font_desc)
+		text->font_desc = pango_font_description_new ();
+}
+
 /* Set_arg handler for the text item */
 static void
 gnome_canvas_text_set_property (GObject            *object,
@@ -908,43 +931,64 @@ gnome_canvas_text_set_property (GObject            *object,
 
 	case PROP_FONT: {
 		const char *font_name;
+		PangoFontDescription *font_desc;
 
 		font_name = g_value_get_string (value);
-		if (font_name) {
-			PangoFontDescription *font_desc;
-
+		if (font_name)
 			font_desc = pango_font_description_from_string (font_name);
-			gnome_canvas_text_set_font_desc (text, font_desc);
+		else
+			font_desc = NULL;
+		
+		gnome_canvas_text_set_font_desc (text, font_desc);
+		if (font_desc)
 			pango_font_description_free (font_desc);
-			
-			gnome_canvas_text_apply_font_desc (text);
-			recalc_bounds (text);
-		} else {
-			text->family_set  = FALSE;
-			text->style_set   = FALSE;
-			text->variant_set = FALSE;
-			text->weight_set  = FALSE;
-			text->stretch_set = FALSE;
-			text->size_set    = FALSE;
 
-			gnome_canvas_text_apply_font_desc (text);
-		}
-		text->priv->render_dirty = 1;
 		break;
 	}
 
 	case PROP_FONT_DESC:
-		gnome_canvas_text_set_font_desc (
-			text, g_value_peek_pointer (value));
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
+		gnome_canvas_text_set_font_desc (text, g_value_peek_pointer (value));
 		break;
 
 	case PROP_FAMILY:
-		text->font_desc.family_name = g_strdup (g_value_get_string (value));
-		text->family_set = TRUE;
+	case PROP_STYLE:
+	case PROP_VARIANT:
+	case PROP_WEIGHT:
+	case PROP_STRETCH:
+	case PROP_SIZE:
+	case PROP_SIZE_POINTS:
+		ensure_font (text);
+
+		switch (param_id) {
+		case PROP_FAMILY:
+			pango_font_description_set_family (text->font_desc,
+							   g_value_get_string (value));
+			break;
+		case PROP_STYLE:
+			pango_font_description_set_style (text->font_desc,
+							  g_value_get_enum (value));
+			break;
+		case PROP_VARIANT:
+			pango_font_description_set_variant (text->font_desc,
+							    g_value_get_enum (value));
+			break;
+		case PROP_WEIGHT:
+			pango_font_description_set_weight (text->font_desc,
+							   g_value_get_enum (value));
+			break;
+		case PROP_STRETCH:
+			pango_font_description_set_stretch (text->font_desc,
+							    g_value_get_enum (value));
+			break;
+		case PROP_SIZE:
+			pango_font_description_set_size (text->font_desc,
+							 g_value_get_int (value));
+			break;
+		case PROP_SIZE_POINTS:
+			pango_font_description_set_size (text->font_desc,
+							 g_value_get_double (value) * PANGO_SCALE);
+			break;
+		}
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
@@ -952,105 +996,14 @@ gnome_canvas_text_set_property (GObject            *object,
 		break;
 
 	case PROP_FAMILY_SET:
-		text->family_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-		
-	case PROP_STYLE:
-		text->font_desc.style = g_value_get_enum (value);
-		text->style_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
 	case PROP_STYLE_SET:
-		text->style_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-		
-	case PROP_VARIANT:
-		text->font_desc.variant = g_value_get_enum (value);
-		text->variant_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
 	case PROP_VARIANT_SET:
-		text->variant_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-		
-	case PROP_WEIGHT:
-		text->font_desc.weight = g_value_get_int (value);
-		text->weight_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
 	case PROP_WEIGHT_SET:
-		text->weight_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
-	case PROP_STRETCH:
-		text->font_desc.stretch = g_value_get_enum (value);
-		text->stretch_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
 	case PROP_STRETCH_SET:
-		text->stretch_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
-	case PROP_SIZE:
-		text->font_desc.size = g_value_get_int (value);
-		text->size_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
-	case PROP_SIZE_POINTS:
-		text->font_desc.size = g_value_get_double (value) * PANGO_SCALE;
-		text->size_set = TRUE;
-		
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
-		break;
-
 	case PROP_SIZE_SET:
-		text->size_set = g_value_get_boolean (value);
-
-		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
-		text->priv->render_dirty = 1;
+		if (!g_value_get_boolean (value) && text->font_desc)
+			pango_font_description_unset_fields (text->font_desc,
+							     get_property_font_set_mask (param_id));
 		break;
 
 	case PROP_SCALE:
@@ -1279,55 +1232,80 @@ gnome_canvas_text_get_property (GObject            *object,
 		g_value_set_double (value, text->y);
 		break;
 
+	case PROP_FONT:
 	case PROP_FONT_DESC:
-		g_value_set_boxed (value, &(text->font_desc));
-		break;
-
 	case PROP_FAMILY:
-		g_value_set_string (value, text->font_desc.family_name);
-		break;
-	case PROP_FAMILY_SET:
-		g_value_set_boolean (value, text->family_set);
-		break;
-		
 	case PROP_STYLE:
-		g_value_set_enum (value, text->font_desc.style);
-		break;
-	case PROP_STYLE_SET:
-		g_value_set_boolean (value, text->style_set);
-		break;
-		
 	case PROP_VARIANT:
-		g_value_set_enum (value, text->font_desc.variant);
-		break;
-	case PROP_VARIANT_SET:
-		g_value_set_boolean (value, text->variant_set);
+	case PROP_WEIGHT:
+	case PROP_STRETCH:
+	case PROP_SIZE:
+	case PROP_SIZE_POINTS:
+		ensure_font (text);
+		
+		switch (param_id) {
+		case PROP_FONT:
+		{
+			/* FIXME GValue imposes a totally gratuitous string copy
+			 * here, we could just hand off string ownership
+			 */
+			gchar *str;
+			
+			str = pango_font_description_to_string (text->font_desc);
+			g_value_set_string (value, str);
+			g_free (str);
+
+			break;
+		}
+			
+		case PROP_FONT_DESC:
+			g_value_set_boxed (value, text->font_desc);
+			break;
+
+		case PROP_FAMILY:
+			g_value_set_string (value, pango_font_description_get_family (text->font_desc));
+			break;
+			
+		case PROP_STYLE:
+			g_value_set_enum (value, pango_font_description_get_style (text->font_desc));
+			break;
+			
+		case PROP_VARIANT:
+			g_value_set_enum (value, pango_font_description_get_variant (text->font_desc));
+			break;
+			
+		case PROP_WEIGHT:
+			g_value_set_int (value, pango_font_description_get_weight (text->font_desc));
+			break;
+			
+		case PROP_STRETCH:
+			g_value_set_enum (value, pango_font_description_get_stretch (text->font_desc));
+			break;
+			
+		case PROP_SIZE:
+			g_value_set_int (value, pango_font_description_get_size (text->font_desc));
+			break;
+			
+		case PROP_SIZE_POINTS:
+			g_value_set_double (value, ((double)pango_font_description_get_size (text->font_desc)) / (double)PANGO_SCALE);
+			break;
+		}
 		break;
 
-	case PROP_WEIGHT:
-		g_value_set_int (value, text->font_desc.weight);
-		break;
+	case PROP_FAMILY_SET:
+	case PROP_STYLE_SET:
+	case PROP_VARIANT_SET:
 	case PROP_WEIGHT_SET:
-		g_value_set_boolean (value, text->weight_set);
-		break;
-		
-	case PROP_STRETCH:
-		g_value_set_enum (value, text->font_desc.stretch);
-		break;
 	case PROP_STRETCH_SET:
-		g_value_set_boolean (value, text->stretch_set);
-		break;
-		
-	case PROP_SIZE:
-		g_value_set_int (value, text->font_desc.size);
-		break;
-	case PROP_SIZE_POINTS:
-		g_value_set_double (value, ((double)text->font_desc.size) / (double)PANGO_SCALE);
-		break;
 	case PROP_SIZE_SET:
-		g_value_set_boolean (value, text->size_set);
+	{
+		PangoFontMask set_mask = text->font_desc ? pango_font_description_get_set_fields (text->font_desc) : 0;
+		PangoFontMask test_mask = get_property_font_set_mask (param_id);
+		g_value_set_boolean (value, (set_mask & test_mask) != 0);
+
 		break;
-		
+	}
+
 	case PROP_SCALE:
 		g_value_set_double (value, text->scale);
 		break;
@@ -1427,34 +1405,11 @@ gnome_canvas_text_apply_font_desc (GnomeCanvasText *text)
 	PangoFontDescription *font_desc =
 		pango_font_description_copy (
 			GTK_WIDGET (GNOME_CANVAS_ITEM (text)->canvas)->style->font_desc);
-	
-	if (text->family_set && text->font_desc.family_name)
-	{
-		if (font_desc->family_name)
-			g_free (font_desc->family_name);
-		font_desc->family_name = g_strdup (text->font_desc.family_name);
-	}
-		
-	if (text->style_set)
-		font_desc->style = text->font_desc.style;
 
-	if (text->variant_set)
-		font_desc->variant = text->font_desc.variant;
+	if (text->font_desc)
+		pango_font_description_merge (font_desc, text->font_desc, TRUE);
 
-	if (text->weight_set)
-		font_desc->weight = text->font_desc.weight;
-	
-	if (text->stretch_set)
-		font_desc->stretch = text->font_desc.stretch;
-
-	if (text->size_set)
-		font_desc->size = text->font_desc.size;
-
-	if (text->scale_set)
-		font_desc->size *= text->scale;
-	
-	pango_layout_set_font_description (text->layout,
-					   font_desc);
+	pango_layout_set_font_description (text->layout, font_desc);
 	pango_font_description_free (font_desc);
 }
 
@@ -1494,23 +1449,17 @@ static void
 gnome_canvas_text_set_font_desc (GnomeCanvasText      *text,
 				 PangoFontDescription *font_desc)
 {
-	if (text->font_desc.family_name)
-		g_free (text->font_desc.family_name);
+	if (text->font_desc)
+		pango_font_description_free (font_desc);
 
-	text->font_desc.family_name = g_strdup (font_desc->family_name);
+	if (font_desc)
+		text->font_desc = pango_font_description_copy (font_desc);
+	else
+		text->font_desc = NULL;
 
-	text->font_desc.style   = font_desc->style;
-	text->font_desc.variant = font_desc->variant;
-	text->font_desc.weight  = font_desc->weight;
-	text->font_desc.stretch = font_desc->stretch;
-	text->font_desc.size    = font_desc->size;
-	
-	text->family_set  = TRUE;
-	text->style_set   = TRUE;
-	text->variant_set = TRUE;
-	text->weight_set  = TRUE;
-	text->stretch_set = TRUE;
-	text->size_set    = TRUE;
+	gnome_canvas_text_apply_font_desc (text);
+	recalc_bounds (text);
+	text->priv->render_dirty = 1;
 }
 
 /* Setting the text from a Pango markup string */

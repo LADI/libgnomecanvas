@@ -1659,11 +1659,11 @@ gnome_canvas_rich_text_set_attributes_from_style(GnomeCanvasRichText *text,
 	values->appearance.bg_color = style->base[GTK_STATE_NORMAL];
 	values->appearance.fg_color = style->fg[GTK_STATE_NORMAL];
 	
-	if (values->font.family_name)
-		g_free (values->font.family_name);
-	
-	values->font = *style->font_desc;
-	values->font.family_name = g_strdup (style->font_desc->family_name);
+	if (values->font)
+		pango_font_description_free (values->font);
+
+	values->font = pango_font_description_copy (style->font_desc);
+
 } /* gnome_canvas_rich_text_set_attributes_from_style */
 
 static void

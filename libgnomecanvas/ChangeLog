@@ -1,3 +1,11 @@
+Tue Sep 18 17:19:41 2001  Owen Taylor  <otaylor@redhat.com>
+
+	* gnome-canvas-text.[ch]: Changes to match new PangoFontDescription
+	API and to take advantage of the ability for PangoFontDescription
+	to be "unset" for all attributes now.
+
+	* gnome-canvas-rich-text.c: Fix for new PangoFontDescription API.
+
 2001-09-15  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-text.c (gnome_canvas_text_set_property):
