@@ -397,19 +397,22 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, 
 		im = gnome_canvas_load_alpha ("flower.png");
 	else
 		im = gdk_imlib_load_image ("flower.png");
-	image = gnome_canvas_item_new (root,
-				       gnome_canvas_image_get_type (),
-				       "image", im,
-				       "x", x,
-				       "y", y,
-				       "width", (double) im->rgb_width,
-				       "height", (double) im->rgb_height,
-				       "anchor", anchor,
-				       NULL);
-	setup_item (image);
-	gtk_signal_connect (GTK_OBJECT (image), "destroy",
-			    (GtkSignalFunc) free_imlib_image,
-			    im);
+
+	if (im){
+		image = gnome_canvas_item_new (root,
+					       gnome_canvas_image_get_type (),
+					       "image", im,
+					       "x", x,
+					       "y", y,
+					       "width", (double) im->rgb_width,
+					       "height", (double) im->rgb_height,
+					       "anchor", anchor,
+					       NULL);
+		setup_item (image);
+		gtk_signal_connect (GTK_OBJECT (image), "destroy",
+				    (GtkSignalFunc) free_imlib_image,
+				    im);
+	}
 }
 
 static void
@@ -422,19 +425,22 @@ setup_images (GnomeCanvasGroup *root, int aa)
 		im = gnome_canvas_load_alpha ("toroid.png");
 	else
 		im = gdk_imlib_load_image ("toroid.png");
-	image = gnome_canvas_item_new (root,
-				       gnome_canvas_image_get_type (),
-				       "image", im,
-				       "x", 100.0,
-				       "y", 225.0,
-				       "width", (double) im->rgb_width,
-				       "height", (double) im->rgb_height,
-				       "anchor", GTK_ANCHOR_CENTER,
-				       NULL);
-	setup_item (image);
-	gtk_signal_connect (GTK_OBJECT (image), "destroy",
-			    (GtkSignalFunc) free_imlib_image,
-			    im);
+	if (im){
+		image = gnome_canvas_item_new (root,
+					       gnome_canvas_image_get_type (),
+					       "image", im,
+					       "x", 100.0,
+					       "y", 225.0,
+					       "width", (double) im->rgb_width,
+					       "height", (double) im->rgb_height,
+					       "anchor", GTK_ANCHOR_CENTER,
+					       NULL);
+		setup_item (image);
+		gtk_signal_connect (GTK_OBJECT (image), "destroy",
+				    (GtkSignalFunc) free_imlib_image,
+				    im);
+	} else
+		g_warning ("Could not find the toroid.png sample file");
 
 	plant_flower (root,  20.0, 170.0, GTK_ANCHOR_NW, aa);
 	plant_flower (root, 180.0, 170.0, GTK_ANCHOR_NE, aa);
