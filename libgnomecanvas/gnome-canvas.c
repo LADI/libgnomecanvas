@@ -3003,8 +3003,9 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 
 	if (!GTK_WIDGET_DRAWABLE (widget) || (event->window != canvas->layout.bin_window)) return FALSE;
 
+#ifdef VERBOSE
 	g_print ("Expose\n");
-
+#endif
 	rect.x0 = event->area.x - canvas->zoom_xofs;
 	rect.y0 = event->area.y - canvas->zoom_yofs;
 	rect.x1 = event->area.x + event->area.width - canvas->zoom_xofs;
@@ -3047,8 +3048,10 @@ paint (GnomeCanvas *canvas)
 
 	if (!canvas->need_redraw) return;
 
+#ifdef VERBOSE
 	g_print ("Scheduled redraw\n");
-
+#endif
+	
 	if (canvas->aa) {
 		rects = art_rect_list_from_uta (canvas->redraw_area, IMAGE_WIDTH_AA, IMAGE_HEIGHT_AA, &n_rects);
 	} else {
