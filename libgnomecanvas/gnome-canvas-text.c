@@ -786,6 +786,9 @@ gnome_canvas_text_set_property (GObject            *object,
 			pango_context_set_language (context, language);
 			pango_context_set_base_dir (context,
 						    pango_context_get_base_dir (gtk_context));
+			pango_context_set_font_description (context,
+							    pango_context_get_font_description (gtk_context));
+			
 		} else
 			context = gtk_context;
 			
