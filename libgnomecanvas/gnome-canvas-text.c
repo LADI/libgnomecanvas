@@ -886,13 +886,18 @@ gnome_canvas_text_set_property (GObject            *object,
 	        if (item->canvas->aa)  {
 			PangoLanguage *language;
 			gint	pixels, mm;
-			double	dpi;
+			double	dpi_x;
+			double	dpi_y;
+			
+			pixels = gdk_screen_width ();
+			mm = gdk_screen_width_mm ();
+			dpi_x = (((double) pixels * 25.4) / (double) mm);
 			
 			pixels = gdk_screen_height ();
 			mm = gdk_screen_height_mm ();
-			dpi = (((double) pixels * 25.4) / (double) mm);
+			dpi_y = (((double) pixels * 25.4) / (double) mm);
 			
-		        context = pango_ft2_get_context (dpi);
+		        context = pango_ft2_get_context (dpi_x, dpi_y);
 			language = pango_context_get_language (gtk_context);
 			pango_context_set_language (context, language);
 			pango_context_set_base_dir (context,

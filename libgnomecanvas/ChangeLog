@@ -1,3 +1,8 @@
+2001-11-18  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_property):
+	Update to new pangoft2 API.
+
 2001-11-19  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas.c (gnome_canvas_marshal_BOOLEAN__BOXED): impl.
