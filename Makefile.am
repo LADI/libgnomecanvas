@@ -1,3 +1,3 @@
-SUBDIRS = libgnomecanvas demos po intl
+SUBDIRS = libgnomecanvas demos po
 
 EXTRA_DIST = message-of-doom

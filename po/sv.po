@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-07-07 01:05+0200\n"
+"POT-Creation-Date: 2001-07-30 13:55+0100\n"
 "PO-Revision-Date: 2001-07-07 01:49+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1597 libgnomecanvas/gnome-canvas.c:1598
+#: libgnomecanvas/gnome-canvas.c:1552 libgnomecanvas/gnome-canvas.c:1553
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1604 libgnomecanvas/gnome-canvas.c:1605
+#: libgnomecanvas/gnome-canvas.c:1559 libgnomecanvas/gnome-canvas.c:1560
 msgid "Y"
 msgstr "Y"
 
@@ -63,23 +63,28 @@ msgstr "Typsnittsfamilj"
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
 msgstr "Namn på typsnittsfamiljen, t.ex. Sans, Helvetica, Times, Monospace"
 
-#: libgnomecanvas/gnome-canvas-text.c:273 libgnomecanvas/gnome-canvas-text.c:274
+#: libgnomecanvas/gnome-canvas-text.c:273
+#: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
 msgstr "Typsnittsstil"
 
-#: libgnomecanvas/gnome-canvas-text.c:283 libgnomecanvas/gnome-canvas-text.c:284
+#: libgnomecanvas/gnome-canvas-text.c:283
+#: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
 msgstr "Typsnittsvariant"
 
-#: libgnomecanvas/gnome-canvas-text.c:293 libgnomecanvas/gnome-canvas-text.c:294
+#: libgnomecanvas/gnome-canvas-text.c:293
+#: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
 msgstr "Typsnittsvikt"
 
-#: libgnomecanvas/gnome-canvas-text.c:305 libgnomecanvas/gnome-canvas-text.c:306
+#: libgnomecanvas/gnome-canvas-text.c:305
+#: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
 msgstr "Typsnittsutsträckning"
 
-#: libgnomecanvas/gnome-canvas-text.c:315 libgnomecanvas/gnome-canvas-text.c:316
+#: libgnomecanvas/gnome-canvas-text.c:315
+#: libgnomecanvas/gnome-canvas-text.c:316
 msgid "Font size"
 msgstr "Typsnittsstorlek"
 
@@ -96,7 +101,8 @@ msgid "Rise"
 msgstr "Höjning"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Höjning av texten ovanför baslinjen (nedanför baslinjen om höjningen är "
 "negativ)"
@@ -125,7 +131,9 @@ msgstr "Skala"
 msgid "Size of font, relative to default size"
 msgstr "Storlek på typsnittet, relativt standardstorleken"
 
-#: libgnomecanvas/gnome-canvas-text.c:422 libgnomecanvas/gnome-canvas-text.c:430 libgnomecanvas/gnome-canvas-text.c:438
+#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:438
 msgid "Color"
 msgstr "Färg"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2001-08-05 13:28+0200\n"
+"POT-Creation-Date: 2001-07-30 13:55+0100\n"
 "PO-Revision-Date: 2001-06-19 12:54+0200\n"
 "Last-Translator: Héctor García Álvarez <hector@scouts-es.org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -242,4 +242,3 @@ msgstr "Seleccionar escala"
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr "Si esta etiqueta afecta al escalado de fuentes"
-
