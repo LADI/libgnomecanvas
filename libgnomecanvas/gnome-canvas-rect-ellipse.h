@@ -37,6 +37,8 @@
 
 #include "gnome-canvas.h"
 
+#include "gnome-canvas-shape.h"
+
 #include <libart_lgpl/art_svp.h>
 
 G_BEGIN_DECLS
@@ -78,36 +80,15 @@ typedef struct _GnomeCanvasRE      GnomeCanvasRE;
 typedef struct _GnomeCanvasREClass GnomeCanvasREClass;
 
 struct _GnomeCanvasRE {
-	GnomeCanvasItem item;
-
-	GdkBitmap *fill_stipple;	/* Stipple for fill */
-	GdkBitmap *outline_stipple;	/* Stipple for outline */
-
-	GdkGC *fill_gc;			/* GC for filling */
-	GdkGC *outline_gc;		/* GC for outline */
-
-	/* Antialiased specific stuff */
-	ArtSVP *fill_svp;		/* The SVP for the filled shape */
-	ArtSVP *outline_svp;		/* The SVP for the outline shape */
-
-	gulong fill_pixel;		/* Fill color */
-	gulong outline_pixel;		/* Outline color */
+	GnomeCanvasShape item;
 
 	double x1, y1, x2, y2;		/* Corners of item */
-	double width;			/* Outline width */
 
-	guint fill_color;		/* Fill color, RGBA */
-	guint outline_color;		/* Outline color, RGBA */
-
-	/* Configuration flags */
-
-	unsigned int fill_set : 1;	/* Is fill color set? */
-	unsigned int outline_set : 1;	/* Is outline color set? */
-	unsigned int width_pixels : 1;	/* Is outline width specified in pixels or units? */
+	unsigned int path_dirty : 1;
 };
 
 struct _GnomeCanvasREClass {
-	GnomeCanvasItemClass parent_class;
+	GnomeCanvasShapeClass parent_class;
 };
 
 

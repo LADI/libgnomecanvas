@@ -30,6 +30,7 @@ libinclude_HEADERS = \
 	libgnomecanvas.h
 
 libgnomecanvasinclude_HEADERS =			\
+	gnome-canvas-shape.h			\
 	gnome-canvas-bpath.h			\
 	gnome-canvas-clipgroup.h		\
 	gnome-canvas-line.h			\
@@ -44,6 +45,8 @@ libgnomecanvasinclude_HEADERS =			\
 
 libgnomecanvas_2_la_SOURCES =			\
 	$(libgnomecanvasinclude_HEADERS)	\
+	gnome-canvas-shape.c			\
+	gnome-canvas-shape-private.h		\
 	gnome-canvas-bpath.c			\
 	gnome-canvas-path-def.c			\
 	gnome-canvas-clipgroup.c		\

@@ -8,6 +8,7 @@
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
  *          Lauris Kaplinski <lauris@ximian.com>
+ *          Rusty Conover <rconover@bangtail.net>
  */
 
 #ifndef GNOME_CANVAS_BPATH_H
@@ -15,13 +16,8 @@
 
 #include <libgnome/gnome-defs.h>
 #include <libgnomeui/gnome-canvas.h>
-#if 0
-#include <libgnomeui/gnome-canvas-util.h>
-#include <libart_lgpl/art_bpath.h>
-#include <libart_lgpl/art_svp_wind.h>
-#include <libart_lgpl/art_vpath_dash.h>
-#include "gp-path.h"
-#endif
+#include "gnome-canvas-shape.h"
+#include "gnome-canvas-path-def.h"
 
 BEGIN_GNOME_DECLS
 
@@ -35,24 +31,6 @@ BEGIN_GNOME_DECLS
  * bpath		GnomeCanvasPathDef *		RW		Pointer to an GnomeCanvasPathDef structure.
  *								This can be created by a call to
  *								gp_path_new() in (gp-path.h).
- * fill_color		string			W		X color specification for fill color,
- *								or NULL pointer for no color (transparent).
- * fill_color_gdk	GdkColor*		RW		Allocated GdkColor for fill.
- * outline_color	string			W		X color specification for outline color,
- *								or NULL pointer for no color (transparent).
- * outline_color_gdk	GdkColor*		RW		Allocated GdkColor for outline.
- * fill_stipple		GdkBitmap*		RW		Stipple pattern for fill
- * outline_stipple	GdkBitmap*		RW		Stipple pattern for outline
- * width_pixels		uint			RW		Width of the outline in pixels.  The outline will
- *								not be scaled when the canvas zoom factor is changed.
- * width_units		double			RW		Width of the outline in canvas units.  The outline
- *								will be scaled when the canvas zoom factor is changed.
- * cap_style		GdkCapStyle		RW		Cap ("endpoint") style for the bpath.
- * join_style		GdkJoinStyle		RW		Join ("vertex") style for the bpath.
- * wind                 ArtWindRule             RW              Winding rule for the bpath.
- * dash			ArtVpathDash		RW		Dashing pattern
- * miterlimit		double			RW		Minimum angle between segments, where miter join
- *								rule is applied.
  */
 
 #define GNOME_TYPE_CANVAS_BPATH            (gnome_canvas_bpath_get_type ())
@@ -67,13 +45,12 @@ typedef struct _GnomeCanvasBpathPriv GnomeCanvasBpathPriv;
 typedef struct _GnomeCanvasBpathClass GnomeCanvasBpathClass;
 
 struct _GnomeCanvasBpath {
-	GnomeCanvasItem item;
-
-	GnomeCanvasBpathPriv *priv;	/* Private data */
+	GnomeCanvasShape item;
+	
 };
 
 struct _GnomeCanvasBpathClass {
-	GnomeCanvasItemClass parent_class;
+	GnomeCanvasShapeClass parent_class;
 };
 
 

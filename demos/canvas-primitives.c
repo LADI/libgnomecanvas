@@ -2,6 +2,7 @@
 #include <math.h>
 #include <string.h>
 #include "canvas_demo.h"
+#include "gnome-canvas-path-def.h"
 #include <gdk/gdkkeysyms.h>
 
 static void
@@ -325,7 +326,7 @@ make_anchor (GnomeCanvasGroup *root, double x, double y)
 	return group;
 }
 
-static void G_GNUC_UNUSED
+static void 
 setup_texts (GnomeCanvasGroup *root)
 {
 	GdkBitmap *stipple;
@@ -607,6 +608,24 @@ setup_lines (GnomeCanvasGroup *root)
 }
 
 static void
+setup_curves (GnomeCanvasGroup *root) 
+{
+	GnomeCanvasPathDef *path_def;
+
+	path_def = gnome_canvas_path_def_new();
+	
+	gnome_canvas_path_def_moveto(path_def, 500.0, 175.0);
+	gnome_canvas_path_def_curveto(path_def, 550.0, 175.0, 550.0, 275.0, 500.0, 275.0);	
+	setup_item(gnome_canvas_item_new(root,
+					 gnome_canvas_bpath_get_type(),
+					 "bpath", path_def,
+					 "outline_color", "black",
+					 "width_pixels", 4,
+					 NULL));
+	gnome_canvas_path_def_unref(path_def);
+}
+
+static void
 setup_polygons (GnomeCanvasGroup *root)
 {
 	GnomeCanvasPoints *points;
@@ -757,10 +776,11 @@ create_canvas_primitives (gint aa)
 	setup_divisions (root);
 	setup_rectangles (root);
 	setup_ellipses (root);
-/*  	setup_texts (root); */
+  	setup_texts (root); 
 	setup_images (root, aa);
 	setup_lines (root);
 	setup_polygons (root);
+/*	setup_curves (root); */
 	setup_widgets (root);
 
 #if 0

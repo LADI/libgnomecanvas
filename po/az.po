@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2001-06-02 21:57+0200\n"
+"POT-Creation-Date: 2001-06-20 01:09-0600\n"
 "PO-Revision-Date: 2001-06-07 20:33GMT +0200\n"
 "Last-Translator: Vasif İsmayıloğlu MD <azerb_linux@hotmail.com>\n"
 "Language-Team: Azerbaijani Turkish <linuxaz@azerimal.net>\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.8\n"
 
-#: libgnomecanvas/gnome-canvas.c:1522 libgnomecanvas/gnome-canvas.c:1523
+#: libgnomecanvas/gnome-canvas.c:1598 libgnomecanvas/gnome-canvas.c:1599
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1529 libgnomecanvas/gnome-canvas.c:1530
+#: libgnomecanvas/gnome-canvas.c:1605 libgnomecanvas/gnome-canvas.c:1606
 msgid "Y"
 msgstr "Y"
 
@@ -103,7 +103,8 @@ msgstr "Yüksəlmə"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Mətnin Offseti ana xəttin üstündə olsun (yüksəlmə mənfi isə altında olsun)"
+"Mətnin Offseti ana xəttin üstündə olsun (yüksəlmə mənfi isə "
+"altında olsun)"
 
 #: libgnomecanvas/gnome-canvas-text.c:342
 msgid "Strikethrough"

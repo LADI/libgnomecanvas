@@ -1,3 +1,10 @@
+2001-06-20    <rconover@gnome.org>
+
+	* canvas-primitives.c (setup_curves): Added initial bpath test,
+	which causes some errors in gdk mode so it is currently disabled.
+	This is a good test case for fixing the breakage since it is only
+	caused in gdk mode rather then aa canvas.
+
 2001-06-11  Cody Russell  <bratsche@gnome.org>
 
 	* canvas-primitives.c: #include <strlen.h>

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2001-05-30 11:57+0200\n"
+"POT-Creation-Date: 2001-06-20 01:09-0600\n"
 "PO-Revision-Date: 2001-05-30 11:59+0200\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
 "Language-Team: Gnome French Team <gnomefr@gnomefr.traduc.org>\n"
@@ -13,10 +13,230 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1522 libgnomecanvas/gnome-canvas.c:1523
+#: libgnomecanvas/gnome-canvas.c:1598 libgnomecanvas/gnome-canvas.c:1599
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1529 libgnomecanvas/gnome-canvas.c:1530
+#: libgnomecanvas/gnome-canvas.c:1605 libgnomecanvas/gnome-canvas.c:1606
 msgid "Y"
 msgstr "Y"
+
+#: libgnomecanvas/gnome-canvas-text.c:197
+msgid "Text"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:198
+msgid "Text to render"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:206
+msgid "Markup"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:207
+msgid "Marked up text to render"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:232
+msgid "Font"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:233
+msgid "Font description as a string"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:241
+msgid "Font description"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:242
+msgid "Font description as a PangoFontDescription struct"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:250
+msgid "Font family"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:251
+msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:267
+#: libgnomecanvas/gnome-canvas-text.c:268
+msgid "Font style"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:277
+#: libgnomecanvas/gnome-canvas-text.c:278
+msgid "Font variant"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:287
+#: libgnomecanvas/gnome-canvas-text.c:288
+msgid "Font weight"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:299
+#: libgnomecanvas/gnome-canvas-text.c:300
+msgid "Font stretch"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:309
+#: libgnomecanvas/gnome-canvas-text.c:310
+msgid "Font size"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:320
+msgid "Font points"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:321
+msgid "Font size in points"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:331
+msgid "Rise"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:332
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:342
+msgid "Strikethrough"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:343
+msgid "Whether to strike through the text"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:351
+msgid "Underline"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:352
+msgid "Style of underline for this text"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:361
+msgid "Scale"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:362
+msgid "Size of font, relative to default size"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:416
+#: libgnomecanvas/gnome-canvas-text.c:424
+#: libgnomecanvas/gnome-canvas-text.c:432
+msgid "Color"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:417
+msgid "Text color, as string"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:425
+msgid "Text color, as a GdkColor"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:433
+msgid "Text color, as an R/G/B/A combined integer"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:446
+msgid "Text width"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:447
+msgid "Width of the rendered text"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:454
+msgid "Text height"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:455
+msgid "Height of the rendered text"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:463
+msgid "Font family set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:464
+msgid "Whether this tag affects the font family"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:467
+msgid "Font style set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:468
+msgid "Whether this tag affects the font style"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:471
+msgid "Font variant set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:472
+msgid "Whether this tag affects the font variant"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:475
+msgid "Font weight set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:476
+msgid "Whether this tag affects the font weight"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:479
+msgid "Font stretch set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:480
+msgid "Whether this tag affects the font stretch"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:483
+msgid "Font size set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:484
+msgid "Whether this tag affects the font size"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:487
+msgid "Rise set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:488
+msgid "Whether this tag affects the rise"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:491
+msgid "Strikethrough set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:492
+msgid "Whether this tag affects strikethrough"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:495
+msgid "Underline set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:496
+msgid "Whether this tag affects underlining"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:499
+msgid "Scale set"
+msgstr ""
+
+#: libgnomecanvas/gnome-canvas-text.c:500
+msgid "Whether this tag affects font scaling"
+msgstr ""

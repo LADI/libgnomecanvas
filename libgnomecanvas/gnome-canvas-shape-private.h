@@ -1,5 +1,5 @@
-#ifndef GNOME_CANVAS_BPATH_PRIVATE_H
-#define GNOME_CANVAS_BPATH_PRIVATE_H
+#ifndef GNOME_CANVAS_SHAPE_PRIVATE_H
+#define GNOME_CANVAS_SHAPE_PRIVATE_H
 
 /* Bpath item type for GnomeCanvas widget
  *
@@ -10,7 +10,7 @@
  *
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
- *          Lauris Kaplinski <lauris@ximian.com>
+ *          Lauris Kaplinski <lauris@ariman.ee>
  */
 
 #include <gdk/gdk.h>
@@ -24,7 +24,7 @@
 
 BEGIN_GNOME_DECLS
 
-typedef struct _GnomeCanvasBpathPrivGdk GnomeCanvasBpathPrivGdk;
+typedef struct _GnomeCanvasShapePrivGdk GnomeCanvasShapePrivGdk;
 typedef struct _GCBPDrawCtx GCBPDrawCtx;
 
 /* Per canvas private structure, holding necessary data for rendering
@@ -52,7 +52,7 @@ struct _GCBPDrawCtx {
 
 /* Per Bpath private structure, holding Gdk specific data */
 
-struct _GnomeCanvasBpathPrivGdk {
+struct _GnomeCanvasShapePrivGdk {
 	gulong fill_pixel;		/* Color for fill */
 	gulong outline_pixel;		/* Color for outline */
 
@@ -70,7 +70,7 @@ struct _GnomeCanvasBpathPrivGdk {
 	GCBPDrawCtx * ctx;		/* Pointer to per-canvas drawing context */
 };
 
-struct _GnomeCanvasBpathPriv {
+struct _GnomeCanvasShapePriv {
 	GnomeCanvasPathDef * path;      /* Our bezier path representation */
 
 	gdouble scale;			/* CTM scaling (for pen) */
@@ -94,7 +94,7 @@ struct _GnomeCanvasBpathPriv {
 	ArtSVP * fill_svp;		/* The SVP for the filled shape */
 	ArtSVP * outline_svp;		/* The SVP for the outline shape */
 
-	GnomeCanvasBpathPrivGdk * gdk;	/* Gdk specific things */
+	GnomeCanvasShapePrivGdk * gdk;	/* Gdk specific things */
 };
 
 END_GNOME_DECLS

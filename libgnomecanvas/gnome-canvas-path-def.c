@@ -6,7 +6,8 @@
  * (C) 1999-2000 Lauris Kaplinski <lauris@ximian.com>
  * Released under LGPL
  *
- * Docified by Rusty Conover <rconover@gnome.org>
+ * Authors: Lauris Kaplinski <lauris@ximian.com>
+ *          Rusty Conover <rconover@bangtail.net>
  *
  * Copyright 1999-2001 Ximian Inc. and authors.
  */

@@ -29,6 +29,7 @@
  *
  *
  * Author: Federico Mena <federico@nuclecu.unam.mx>
+ *         Rusty Conover <rconover@bangtail.net>
  */
 
 #ifndef GNOME_CANVAS_POLYGON_H
@@ -36,6 +37,8 @@
 
 
 #include "gnome-canvas.h"
+#include "gnome-canvas-shape.h"
+#include "gnome-canvas-path-def.h"
 
 G_BEGIN_DECLS
 
@@ -54,18 +57,6 @@ G_BEGIN_DECLS
  *								X coordinates are in the even indices of the
  *								points->coords array, Y coordinates are in
  *								the odd indices.
- * fill_color		string			W		X color specification for fill color,
- *								or NULL pointer for no color (transparent).
- * fill_color_gdk	GdkColor*		RW		Allocated GdkColor for fill.
- * outline_color	string			W		X color specification for outline color,
- *								or NULL pointer for no color (transparent).
- * outline_color_gdk	GdkColor*		RW		Allocated GdkColor for outline.
- * fill_stipple		GdkBitmap*		RW		Stipple pattern for fill
- * outline_stipple	GdkBitmap*		RW		Stipple pattern for outline
- * width_pixels		uint			RW		Width of the outline in pixels.  The outline will
- *								not be scaled when the canvas zoom factor is changed.
- * width_units		double			RW		Width of the outline in canvas units.  The outline
- *								will be scaled when the canvas zoom factor is changed.
  */
 
 #define GNOME_TYPE_CANVAS_POLYGON            (gnome_canvas_polygon_get_type ())
@@ -80,44 +71,18 @@ typedef struct _GnomeCanvasPolygon GnomeCanvasPolygon;
 typedef struct _GnomeCanvasPolygonClass GnomeCanvasPolygonClass;
 
 struct _GnomeCanvasPolygon {
-	GnomeCanvasItem item;
+	GnomeCanvasShape item;
 
-	double *coords;			/* Array of coordinates for the polygon's points.  X coords
-					 * are in the even indices, Y coords are in the odd indices.
-					 */
-	GdkBitmap *fill_stipple;	/* Stipple for fill */
-	GdkBitmap *outline_stipple;	/* Stipple for outline */
-
-	GdkGC *fill_gc;			/* GC for filling */
-	GdkGC *outline_gc;		/* GC for outline */
-	ArtSVP *fill_svp;		/* The SVP for the filled shape */ /*AA*/
-	ArtSVP *outline_svp;		/* The SVP for the outline shape */ /*AA*/
-
-	gulong fill_pixel;		/* Color for fill */
-	gulong outline_pixel;		/* Color for outline */
-	double width;			/* Width of polygon's outline */
-
-	int num_points;			/* Number of points in the polygon */
-	guint fill_color;		/* Fill color, RGBA */
-	guint outline_color;		/* Outline color, RGBA */
-
-        guint32 fill_rgba;		/* RGBA color for filling */ /*AA*/
-	guint32 outline_rgba;		/* RGBA color for outline */ /*AA*/
-
-	guint fill_set : 1;		/* Is fill color set? */
-	guint outline_set : 1;		/* Is outline color set? */
-	guint width_pixels : 1;		/* Is outline width specified in pixels or units? */
+	GnomeCanvasPathDef *path_def;
 };
 
 struct _GnomeCanvasPolygonClass {
-	GnomeCanvasItemClass parent_class;
+	GnomeCanvasShapeClass parent_class;
 };
 
 
 /* Standard Gtk function */
 GtkType gnome_canvas_polygon_get_type (void) G_GNUC_CONST;
 
-
 G_END_DECLS
-
 #endif

@@ -1,6 +1,7 @@
 INCLUDES = \
 	-I. 						\
 	-I$(srcdir) -I$(top_srcdir) 			\
+	-I$(srcdir)/../libgnomecanvas			\
 	-I$(top_builddir)				\
 	-I$(builddir)					\
         -I$(includedir)                                 \
@@ -30,7 +31,8 @@ canvas_demo_SOURCES =		\
 	canvas-primitives.c	\
 	canvas-arrowhead.c	\
 	canvas-features.c	\
-	canvas-fifteen.c
+	canvas-fifteen.c	\
+	canvas_demo.h
 
 EXTRA_DIST =			\
 	toroid.png

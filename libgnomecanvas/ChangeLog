@@ -1,3 +1,36 @@
+2001-06-20  Rusty Conover  <rconover@bangtail.net>
+
+	* This is the start of the changes to convert most shape items to
+	using GnomeCanvasShapeItem, which is essentially a Bezier path
+	item.  Now shapes will only need to construct bezier paths and
+	inherit the rest of the behavior from the GnomeCanvasShapeItem.
+
+	* gnome-canvas-shape.h gnome-canvas-shape-private.h
+	gnome-canvas-shape.c: Added for implmenation of
+	GnomeCanvasShapeItem which is a generic Bezier path item, but
+	allows easy subclassing for shapes.
+	
+	* gnome-canvas-bpath.[c|h]: Moved this object to using the
+	GnomeCanvasShapeItem.  Removed a bunch of duplicate code.
+	
+	* gnome-canvas-polygon.[c|h]: Modified this object to use the
+	GnomeCanvasShapeItem.  Again removed a bunch of duplicate code
+	eliminated since it is implemented in the shape item.
+	
+	* gnome-canvas-rect-ellipse.[c|h]: Modified this object to use the
+	GnomeCanvasShapeItem.
+	
+	* gnome-canvas-text.c (gnome_canvas_text_set_properties): Fixed
+	the stipple parameters handling.
+	
+	* gnome-canvas-bpath-private.h: Removed as it is no longer used.
+	
+	* libgnomecanvas.h: Added gnome-canvas-bpath.h to the list of
+	default includes since bpaths are quite popular.
+		
+	* Miscellaneous makefile fixes so that the module passes make
+	distcheck.
+	
 2001-06-18  Cody Russell  <bratsche@gnome.org>
 
 	* gnome-canvas.[ch]: Added some new signals to GnomeCanvasItem.

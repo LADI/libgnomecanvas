@@ -1181,7 +1181,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		break;
 
 	case PROP_FILL_STIPPLE:
-		set_stipple (text, g_value_get_boxed (value), FALSE);
+		set_stipple (text, (GdkBitmap *)g_value_get_object (value), FALSE);
 		break;
 
 	default:
