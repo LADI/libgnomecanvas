@@ -1,3 +1,7 @@
+2002-01-21  Anders Carlsson  <andersca@gnu.org>
+
+	* gnome-canvas.c (scroll_to): Remove debug print message.
+
 2002-01-17  Lauris Kaplinski  <lauris@ximian.com>
 
 	* gnome-canvas.c (gnome_canvas_item_invoke_update): Clean up code a bit,
