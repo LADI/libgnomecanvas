@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-30 16:22+0200\n"
-"PO-Revision-Date: 2004-08-20 16:06+0530\n"
+"POT-Creation-Date: 2004-10-26 12:45+0200\n"
+"PO-Revision-Date: 2004-10-27 10:15+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "<magnet@magnet-i.com>\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 
 # libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
@@ -33,7 +33,7 @@ msgstr "Y"
 # libgnomecanvas/gnome-canvas.c:2039
 #: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
-msgstr "એન્ટીએલિઆસ્ડ"
+msgstr "એન્ટીએલિઆઝ થયેલ"
 
 # libgnomecanvas/gnome-canvas.c:2040
 #: libgnomecanvas/gnome-canvas.c:2054
@@ -84,12 +84,12 @@ msgstr "પેન્ગોફોન્ટવર્ણન સંરચના ત�
 # libgnomecanvas/gnome-canvas-text.c:256
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "ફોન્ટ કુટુંબ"
+msgstr "ફોન્ટ પરિવાર"
 
 # libgnomecanvas/gnome-canvas-text.c:257
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "ફોન્ટ કુટુંબનું નામ, જેમ કે સેન્સ, હેલ્વેટીકા, ટાઇમ્સ, મોનોસ્પેસ"
+msgstr "ફોન્ટ પરિવારનું નામ, જેમ કે સેન્સ, હેલ્વેટીકા, ટાઇમ્સ, મોનોસ્પેસ"
 
 # libgnomecanvas/gnome-canvas-text.c:273
 # libgnomecanvas/gnome-canvas-text.c:274
@@ -143,8 +143,7 @@ msgstr "વૃદ્ધિ"
 
 # libgnomecanvas/gnome-canvas-text.c:338
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr "બેઇઝ લીટીની ઉપર લખાણને સમયોજીત કરો (જો વૃદ્ધિ ઋણમાં હોય તો બેઇઝ લીટીની નીચે)"
 
 # libgnomecanvas/gnome-canvas-text.c:348
@@ -194,7 +193,7 @@ msgstr "વાક્યની રીતે લખાણનો રંગ"
 # libgnomecanvas/gnome-canvas-text.c:431
 #: libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
-msgstr "GdkColorની રીતે લખાણ રંગ"
+msgstr "GdkColor ની રીતે લખાણ રંગ"
 
 # libgnomecanvas/gnome-canvas-text.c:439
 #: libgnomecanvas/gnome-canvas-text.c:442
@@ -224,12 +223,12 @@ msgstr "ઘાટીલા લખાણની ઊંચાઈ"
 # libgnomecanvas/gnome-canvas-text.c:469
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "ફોન્ટ કુટુંબ સમૂહ"
+msgstr "ફોન્ટ પરિવાર સમૂહ"
 
 # libgnomecanvas/gnome-canvas-text.c:470
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "શું આ ટેગ ફોન્ટ કુટુંબને અસર કરશે"
+msgstr "શું આ ટેગ ફોન્ટ પરિવારને અસર કરશે"
 
 # libgnomecanvas/gnome-canvas-text.c:473
 #: libgnomecanvas/gnome-canvas-text.c:476
@@ -289,7 +288,7 @@ msgstr "વૃદ્ધી સમૂહ"
 # libgnomecanvas/gnome-canvas-text.c:494
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "શું આ ટેગ વૃદ્ધીને પ્રભાવિત કરશે?"
+msgstr "શું આ ટેગ વૃદ્ધીને પ્રભાવિત કરશે"
 
 # libgnomecanvas/gnome-canvas-text.c:497
 #: libgnomecanvas/gnome-canvas-text.c:500
@@ -299,7 +298,7 @@ msgstr "લખીને ચેકો સમૂહ"
 # libgnomecanvas/gnome-canvas-text.c:498
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "શું આ ટેગ લખીને ચેકો પ્રભાવિત કરશે?"
+msgstr "શું આ ટેગ લખીને ચેકો પ્રભાવિત કરશે"
 
 # libgnomecanvas/gnome-canvas-text.c:501
 #: libgnomecanvas/gnome-canvas-text.c:504
@@ -309,7 +308,7 @@ msgstr "નીચેની લીટી સમૂહ"
 # libgnomecanvas/gnome-canvas-text.c:502
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "શું આ ટેગ ને નીચેની લીટી ને પ્રભાવિત કરશે?"
+msgstr "શું આ ટેગને નીચેની લીટીને પ્રભાવિત કરશે"
 
 # libgnomecanvas/gnome-canvas-text.c:505
 #: libgnomecanvas/gnome-canvas-text.c:508
@@ -319,7 +318,7 @@ msgstr "માપણી સમૂહ"
 # libgnomecanvas/gnome-canvas-text.c:506
 #: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "શું આ ટેગ ફોન્ટ ફોન્ટ માપણી પ્રભાવિત કરશે?"
+msgstr "શું આ ટેગ ફોન્ટ ફોન્ટ માપણી પ્રભાવિત કરશે"
 
 # libgnomecanvas/gnome-canvas-text.c:204
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
@@ -357,7 +356,7 @@ msgstr "સંપાદન યોગ્ય"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
-msgstr "શું આ ભરપૂર લખાણ વસ્તુ સંપાદન યોગ્ય છે? "
+msgstr "શું આ ભરપૂર લખાણ વસ્તુ સંપાદન યોગ્ય છે?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
@@ -381,7 +380,7 @@ msgstr "ઝબકતું કર્સર"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this rich text item?"
-msgstr "શું આ ભરપૂર લખાણ વસ્તુ માં કર્સર ઝબકે છે?"
+msgstr "શું આ ભરપૂર લખાણ વસ્તુમાં કર્સર ઝબકે છે?"
 
 # libgnomecanvas/gnome-canvas-text.c:293
 # libgnomecanvas/gnome-canvas-text.c:294
@@ -391,7 +390,7 @@ msgstr "ઊંચાઇ વૃદ્ધિ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "શું લખાણ બંધબેસતી ન હોય તો પણ લખાણપેટી ની ઊંચાઇ માં વૃદ્ધિ થઈ શકે?"
+msgstr "શું લખાણ બંધબેસતી ન હોય તો પણ લખાણપેટીની ઊંચાઇમાં વૃદ્ધિ થઈ શકે?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
@@ -456,7 +455,7 @@ msgstr "ડાબો હાંસીયો"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
-msgstr "ડાબા હાંસીયા માં પિક્સેલની સંખ્યા"
+msgstr "ડાબા હાંસીયામાં પિક્સેલની સંખ્યા"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
@@ -464,7 +463,7 @@ msgstr "જમણો હાંસીયો"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
-msgstr "જમણા હાંસીયા માં પિક્સેલની સંખ્યા"
+msgstr "જમણા હાંસીયામાં પિક્સેલની સંખ્યા"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
@@ -472,4 +471,5 @@ msgstr "ઇન્ડેન્ટેશન"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
-msgstr "ઇન્ડેન્ટેશન માં પિક્સેલની સંખ્યા"
+msgstr "ઇન્ડેન્ટેશનમાં પિક્સેલની સંખ્યા"
+
