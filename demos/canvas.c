@@ -15,6 +15,7 @@ create_canvas (void)
 /* 	gtk_debug_flags = GTK_DEBUG_OBJECTS; */
 
 	app = create_newwin (TRUE, "testGNOME", "Canvas");
+	gtk_window_set_policy (GTK_WINDOW (app), TRUE, TRUE, FALSE);
 
 	notebook = gtk_notebook_new ();
 	gnome_app_set_contents (GNOME_APP (app), notebook);
