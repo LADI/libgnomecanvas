@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-08-14 13:27+0400\n"
+"POT-Creation-Date: 2001-08-14 16:22+0200\n"
 "PO-Revision-Date: 2001-08-14 13:37+0400\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -100,7 +100,8 @@ msgstr "Смещённый"
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Смещение текста над основной линией (под основной линией, если отрицательное)"
+msgstr ""
+"Смещение текста над основной линией (под основной линией, если отрицательное)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2001-07-30 13:55+0100\n"
+"POT-Creation-Date: 2001-08-14 16:22+0200\n"
 "PO-Revision-Date: 2001-05-30 11:59+0200\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
 "Language-Team: Gnome French Team <gnomefr@gnomefr.traduc.org>\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1552 libgnomecanvas/gnome-canvas.c:1553
+#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1559 libgnomecanvas/gnome-canvas.c:1560
+#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
 msgid "Y"
 msgstr "Y"
 

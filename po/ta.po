@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tamil Gnome 1.4.1\n"
-"POT-Creation-Date: 2001-07-30 13:55+0100\n"
+"POT-Creation-Date: 2001-08-14 16:22+0200\n"
 "PO-Revision-Date: 2001-06-09 11:09-0500\n"
 "Last-Translator:  Dinesh Nadarajah\n"
 "Language-Team: Tamil\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1552 libgnomecanvas/gnome-canvas.c:1553
+#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
 msgid "X"
 msgstr "Å¡¢¨º(X)"
 
-#: libgnomecanvas/gnome-canvas.c:1559 libgnomecanvas/gnome-canvas.c:1560
+#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
 msgid "Y"
 msgstr "¦¿ÎÅ¡¢¨º(Y)"
 
