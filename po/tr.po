@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2  1.103.0\n"
-"POT-Creation-Date: 2001-10-22 07:22-0400\n"
+"POT-Creation-Date: 2001-11-26 20:53+0100\n"
 "PO-Revision-Date: 2001-06-02 14:13+0200\n"
 "Last-Translator: Ömer Fadýl USTA <omer_fad@hotmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-9\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
+#: libgnomecanvas/gnome-canvas.c:1518 libgnomecanvas/gnome-canvas.c:1519
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
+#: libgnomecanvas/gnome-canvas.c:1525 libgnomecanvas/gnome-canvas.c:1526
 msgid "Y"
 msgstr "Y"
 

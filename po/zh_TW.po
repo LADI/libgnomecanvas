@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2 1.102.0\n"
-"POT-Creation-Date: 2001-09-02 14:22+0800\n"
+"POT-Creation-Date: 2001-11-26 20:53+0100\n"
 "PO-Revision-Date: 2001-09-02 14:29+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
+#: libgnomecanvas/gnome-canvas.c:1518 libgnomecanvas/gnome-canvas.c:1519
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
+#: libgnomecanvas/gnome-canvas.c:1525 libgnomecanvas/gnome-canvas.c:1526
 msgid "Y"
 msgstr "Y"
 
