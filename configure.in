@@ -41,7 +41,7 @@ AC_PATH_PROG(GNOME_MAKEENUMS, gnome-makeenums.pl)
 if test -z "$GNOME_MAKETYPES" || test -z "$GNOME_MAKEENUMS" ; then
   AC_MSG_ERROR([
 *** Cannot find the gnome-maketypes.awk and gnome-makeenums.pl scripts
-*** which are installed from libgnome-2
+*** which are installed from libgnomebase
 ])
 fi
 
@@ -51,9 +51,9 @@ AM_CONDITIONAL(FALSE, test x = y)
 dnl
 dnl Start of pkg-config checks
 dnl
-GNOME_PKGCONFIG_CHECK_MODULES(LIBGNOME, libgnome-2.0:1.96.0)
-AC_SUBST(LIBGNOME_CFLAGS)
-AC_SUBST(LIBGNOME_LIBS)
+GNOME_PKGCONFIG_CHECK_MODULES(LIBGNOMEBASE, libgnomebase-2.0:1.96.0)
+AC_SUBST(LIBGNOMEBASE_CFLAGS)
+AC_SUBST(LIBGNOMEBASE_LIBS)
 
 dnl
 dnl GTK+ check

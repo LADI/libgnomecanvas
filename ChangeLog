@@ -1,3 +1,7 @@
+2001-04-15  Martin Baulig  <baulig@suse.de>
+
+	* configure.in: Depend on libgnomebase, not libgnome.
+
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
 	* demos/: New directory.
