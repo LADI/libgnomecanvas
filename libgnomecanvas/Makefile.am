@@ -1,7 +1,7 @@
 INCLUDES = \
 	-I$(top_srcdir) 				\
 	-I$(top_builddir)				\
-	$(WARN_CFLAGS) -Wno-unused			\
+	$(WARN_CFLAGS) 					\
 	$(LIBGNOMECANVAS_CFLAGS)			\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
         -DGNOMECANVASDATADIR=\""$(datadir)"\" 		\

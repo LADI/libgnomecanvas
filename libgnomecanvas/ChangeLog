@@ -1,3 +1,6 @@
+2001-09-10  Frank Belew  <frb@ximian.com>
+	* Makefile.am: remove -Wno-unused since it is GCC only
+
 2001-09-06  Anders Carlsson  <andersca@gnu.org>
 
 	* libgnomecanvas-2.0.pc.in (Cflags): Change includedir to be
