@@ -1,4 +1,5 @@
 #include <config.h>
+#include <math.h>
 #include "testgnome.h"
 
 
@@ -228,6 +229,7 @@ setup_divisions (GnomeCanvasGroup *root)
 	setup_heading (group, "Texts", 2);
 	setup_heading (group, "Images", 3);
 	setup_heading (group, "Lines", 4);
+	setup_heading (group, "Curves", 5);
 }
 
 static void
@@ -358,42 +360,151 @@ setup_texts (GnomeCanvasGroup *root)
 }
 
 static void
+free_imlib_image (GtkObject *object, gpointer data)
+{
+	gdk_imlib_destroy_image (data);
+}
+
+static void
+plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor)
+{
+	GdkImlibImage *im;
+	GnomeCanvasItem *image;
+
+	im = gdk_imlib_load_image ("flower.png");
+	image = gnome_canvas_item_new (root,
+				       gnome_canvas_image_get_type (),
+				       "image", im,
+				       "x", x,
+				       "y", y,
+				       "width", (double) im->rgb_width,
+				       "height", (double) im->rgb_height,
+				       "anchor", anchor,
+				       NULL);
+	setup_item (image);
+	gtk_signal_connect (GTK_OBJECT (image), "destroy",
+			    (GtkSignalFunc) free_imlib_image,
+			    image);
+}
+
+static void
 setup_images (GnomeCanvasGroup *root)
 {
 	GdkImlibImage *im;
+	GnomeCanvasItem *image;
 
 	im = gdk_imlib_load_image ("toroid.png");
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_image_get_type (),
-					   "image", im,
-					   "x", 100.0,
-					   "y", 200.0,
-					   "width", (double) im->rgb_width,
-					   "height", (double) im->rgb_height,
-					   "anchor", GTK_ANCHOR_CENTER,
-					   NULL));
+	image = gnome_canvas_item_new (root,
+				       gnome_canvas_image_get_type (),
+				       "image", im,
+				       "x", 100.0,
+				       "y", 225.0,
+				       "width", (double) im->rgb_width,
+				       "height", (double) im->rgb_height,
+				       "anchor", GTK_ANCHOR_CENTER,
+				       NULL);
+	setup_item (image);
+	gtk_signal_connect (GTK_OBJECT (image), "destroy",
+			    (GtkSignalFunc) free_imlib_image,
+			    image);
+
+	plant_flower (root,  20.0, 170.0, GTK_ANCHOR_NW);
+	plant_flower (root, 180.0, 170.0, GTK_ANCHOR_NE);
+	plant_flower (root,  20.0, 280.0, GTK_ANCHOR_SW);
+	plant_flower (root, 180.0, 280.0, GTK_ANCHOR_SE);
 }
+
+#define VERTICES 10
+#define RADIUS 60.0
+
+static void
+polish_diamond (GnomeCanvasGroup *root)
+{
+	GnomeCanvasGroup *group;
+	int i, j;
+	double a;
+	GnomeCanvasPoints *points;
+
+	group = GNOME_CANVAS_GROUP (gnome_canvas_item_new (root,
+							   gnome_canvas_group_get_type (),
+							   "x", 270.0,
+							   "y", 230.0,
+							   NULL));
+	setup_item (GNOME_CANVAS_ITEM (group));
+
+	points = gnome_canvas_points_new (2);
+
+	for (i = 0; i < VERTICES; i++) {
+		a = 2.0 * M_PI * i / VERTICES;
+		points->coords[0] = RADIUS * cos (a);
+		points->coords[1] = RADIUS * sin (a);
+
+		for (j = i + 1; j < VERTICES; j++) {
+			a = 2.0 * M_PI * j / VERTICES;
+			points->coords[2] = RADIUS * cos (a);
+			points->coords[3] = RADIUS * sin (a);
+			gnome_canvas_item_new (group,
+					       gnome_canvas_line_get_type (),
+					       "points", points,
+					       "fill_color", "black",
+					       "width_units", 1.0,
+					       "cap_style", GDK_CAP_ROUND,
+					       NULL);
+		}
+	}
+
+	gnome_canvas_points_free (points);
+}
+
+#define SCALE 7.0
 
 static void
 setup_lines (GnomeCanvasGroup *root)
 {
+	char hilbert[] = "urdrrulurulldluuruluurdrurddldrrruluurdrurddldrddlulldrdldrrurd";
+	char *c;
+	double *pp, *p;
 	GnomeCanvasPoints *points;
 
-	points = gnome_canvas_points_new (4);
-	points->coords[0] = 10.0;
-	points->coords[1] = 10.0;
-	points->coords[2] = 200.0;
-	points->coords[3] = 100.0;
-	points->coords[4] = 150.0;
-	points->coords[5] = 200.0;
-	points->coords[6] = 250.0;
-	points->coords[7] = 200.0;
+	polish_diamond (root);
+
+	points = gnome_canvas_points_new (strlen (hilbert) + 1);
+	points->coords[0] = 340.0;
+	points->coords[1] = 290.0;
+
+	pp = points->coords;
+	for (c = hilbert, p = points->coords + 2; *c; c++, p += 2, pp += 2)
+		switch (*c) {
+		case 'u':
+			p[0] = pp[0];
+			p[1] = pp[1] - SCALE;
+			break;
+
+		case 'd':
+			p[0] = pp[0];
+			p[1] = pp[1] + SCALE;
+			break;
+
+		case 'l':
+			p[0] = pp[0] - SCALE;
+			p[1] = pp[1];
+			break;
+
+		case 'r':
+			p[0] = pp[0] + SCALE;
+			p[1] = pp[1];
+			break;
+		}
+
 	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_line_get_type (),
 					   "points", points,
-					   "fill_color", "blue",
-					   "width_units", 20.0,
+					   "fill_color", "red",
+					   "width_units", 3.0,
+					   "cap_style", GDK_CAP_PROJECTING,
+					   "join_style", GDK_JOIN_MITER,
 					   NULL));
+
 	gnome_canvas_points_free (points);
 }
 
@@ -412,10 +523,8 @@ create_primitives (void)
 	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
 	gtk_widget_show (vbox);
 
-	w = gtk_label_new ("Drag an item with button 1.\n"
-			   "Click button 2 on an item to lower it,\n"
-			   "or button 3 to raise it.\n"
-			   "Shift+click with buttons 2 or 3 to send\n"
+	w = gtk_label_new ("Drag an item with button 1.  Click button 2 on an item to lower it,\n"
+			   "or button 3 to raise it.  Shift+click with buttons 2 or 3 to send\n"
 			   "an item to the bottom or top, respectively.");
 	gtk_box_pack_start (GTK_BOX (vbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
