@@ -1,3 +1,8 @@
+2002-01-24  Alexander Larsson  <alla@lysator.liu.se>
+
+	* libgnomecanvas/gnome-canvas-shape.c (gnome_canvas_shape_get_property):
+	Fix typo for PROP_OUTLINE_COLOR_RGBA.
+
 2002-01-24  jacob berkman  <jacob@ximian.com>
 
 	* Makefile.am (SUBDIRS): revert timj patch again

@@ -572,7 +572,7 @@ gnome_canvas_shape_get_property (GObject     *object,
 		break;
 
 	case PROP_OUTLINE_COLOR_RGBA:
-		g_value_set_uint (value, priv->fill_rgba);
+		g_value_set_uint (value, priv->outline_rgba);
 		break;
 
 	case PROP_FILL_STIPPLE:
