@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2001-08-14 16:22+0200\n"
-"PO-Revision-Date: 2001-08-14 13:37+0400\n"
+"POT-Creation-Date: 2001-10-14 11:52+0400\n"
+"PO-Revision-Date: 2001-10-14 11:57+0400\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Текст для отображения"
 
 #: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
-msgstr ""
+msgstr "Разметка"
 
 #: libgnomecanvas/gnome-canvas-text.c:213
 msgid "Marked up text to render"
@@ -87,7 +87,7 @@ msgstr "Размер шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr ""
+msgstr "Шрифт в пунктах"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
@@ -163,35 +163,35 @@ msgstr "Высота отображаемого текста"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr ""
+msgstr "Семейство шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на семейство шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr ""
+msgstr "Стиль шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на стиль шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr ""
+msgstr "Вариант шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на вариант шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr ""
+msgstr "Насыщеность шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на насыщеность шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
@@ -203,11 +203,11 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr ""
+msgstr "Размер шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на размер шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
@@ -219,24 +219,24 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr ""
+msgstr "Перечёркивание"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на перечёркивание"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr ""
+msgstr "Подчёркивание"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на подчёркивание"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr ""
+msgstr "Масштаб"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на масштабирование шрифта"
