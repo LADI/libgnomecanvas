@@ -7,6 +7,12 @@
 
 /*** Primitives ***/
 
+static void
+zoom_changed (GtkAdjustment *adj, gpointer data)
+{
+	gnome_canvas_set_pixels_per_unit (data, adj->value);
+}
+
 static gint
 item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 {
@@ -48,17 +54,44 @@ setup_item (GnomeCanvasItem *item)
 static GtkWidget *
 create_primitives (void)
 {
+	GtkWidget *vbox;
+	GtkWidget *hbox;
+	GtkWidget *w;
 	GtkWidget *frame;
 	GtkWidget *canvas;
+	GtkAdjustment *adj;
 	GnomeCanvasGroup *root;
 	GdkImlibImage *im;
 
-	frame = gtk_frame_new (NULL);
-	gtk_container_border_width (GTK_CONTAINER (frame), 4);
-	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-	gtk_widget_show (frame);
+	vbox = gtk_vbox_new (FALSE, 4);
+	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
+	gtk_widget_show (vbox);
+
+	hbox = gtk_hbox_new (FALSE, 4);
+	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+	gtk_widget_show (hbox);
 
 	canvas = gnome_canvas_new (gdk_imlib_get_visual (), gdk_imlib_get_colormap ());
+
+	w = gtk_label_new ("Zoom:");
+	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
+	gtk_widget_show (w);
+
+	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.01, 5.00, 0.01, 0.5, 0.5));
+	gtk_signal_connect (GTK_OBJECT (adj), "value_changed",
+			    (GtkSignalFunc) zoom_changed,
+			    canvas);
+	w = gtk_hscale_new (adj);
+	gtk_scale_set_digits (GTK_SCALE (w), 1);
+	gtk_scale_set_value_pos (GTK_SCALE (w), GTK_POS_LEFT);
+	gtk_box_pack_start (GTK_BOX (hbox), w, TRUE, TRUE, 0);
+	gtk_widget_show (w);
+
+	frame = gtk_frame_new (NULL);
+	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
+	gtk_box_pack_start (GTK_BOX (vbox), frame, TRUE, TRUE, 0);
+	gtk_widget_show (frame);
+
 	gnome_canvas_set_size (GNOME_CANVAS (canvas), 300, 300);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
@@ -112,7 +145,7 @@ create_primitives (void)
 					   "GnomeCanvasImage::anchor", GTK_ANCHOR_CENTER,
 					   NULL));
 
-	return frame;
+	return vbox;
 }
 
 
