@@ -107,36 +107,11 @@ enum {
 
 enum {
 	ITEM_EVENT,
-        ITEM_BUTTON_PRESS_EVENT,
-        ITEM_BUTTON_RELEASE_EVENT,
-        ITEM_MOTION_NOTIFY_EVENT,
-        ITEM_KEY_PRESS_EVENT,
-        ITEM_KEY_RELEASE_EVENT,
-        ITEM_ENTER_NOTIFY_EVENT,
-        ITEM_LEAVE_NOTIFY_EVENT,
 	ITEM_LAST_SIGNAL
 };
 
 static void gnome_canvas_item_class_init     (GnomeCanvasItemClass *class);
 static void gnome_canvas_item_init           (GnomeCanvasItem      *item);
-static void gnome_canvas_item_dispose        (GObject              *object);
-static void gnome_canvas_item_set_property   (GObject               *object,
-					      guint                  param_id,
-					      const GValue          *value,
-					      GParamSpec            *pspec);
-static void gnome_canvas_item_get_property   (GObject               *object,
-					      guint                  param_id,
-					      GValue                *value,
-					      GParamSpec            *pspec);
-
-
-static void gnome_canvas_item_realize        (GnomeCanvasItem *item);
-static void gnome_canvas_item_unrealize      (GnomeCanvasItem *item);
-static void gnome_canvas_item_map            (GnomeCanvasItem *item);
-static void gnome_canvas_item_unmap          (GnomeCanvasItem *item);
-static void gnome_canvas_item_update         (GnomeCanvasItem *item, double *affine,
-					      ArtSVP *clip_path, int flags);
-
 static int  emit_event                       (GnomeCanvas *canvas, GdkEvent *event);
 
 static guint item_signals[ITEM_LAST_SIGNAL];
@@ -173,45 +148,6 @@ gnome_canvas_item_get_type (void)
 	}
 
 	return canvas_item_type;
-}
-
-/* Class initialization function for GnomeCanvasItemClass */
-static void
-gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
-{
-	GtkObjectClass *object_class;
-	GObjectClass *gobject_class;
-
-	object_class = (GtkObjectClass *) class;
-	gobject_class = (GObjectClass *) class;
-
-	item_parent_class = gtk_type_class (gtk_object_get_type ());
-
-	gobject_class->set_property = gnome_canvas_item_set_property;
-	gobject_class->get_property = gnome_canvas_item_get_property;
-
-	g_object_class_install_property
-		(gobject_class, ITEM_PROP_PARENT,
-		 g_param_spec_object ("parent", NULL, NULL,
-				      GNOME_TYPE_CANVAS_ITEM,
-				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
-
-	item_signals[ITEM_EVENT] =
-		gtk_signal_new ("event",
-				GTK_RUN_LAST,
-				GTK_CLASS_TYPE (object_class),
-				GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
-				gnome_canvas_marshal_BOOLEAN__BOXED,
-				GTK_TYPE_BOOL, 1,
-				GDK_TYPE_EVENT);
-
-	gobject_class->dispose = gnome_canvas_item_dispose;
-
-	class->realize = gnome_canvas_item_realize;
-	class->unrealize = gnome_canvas_item_unrealize;
-	class->map = gnome_canvas_item_map;
-	class->unmap = gnome_canvas_item_unmap;
-	class->update = gnome_canvas_item_update;
 }
 
 /* Object initialization function for GnomeCanvasItem */
@@ -2495,7 +2431,6 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	GnomeCanvasItem *item;
 	GnomeCanvasItem *parent;
 	guint mask;
-        guint signal_num;
 
 	/* Perform checks for grabbed items */
 
@@ -2504,8 +2439,6 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
                 g_warning ("emit_event() returning FALSE!\n");
 		return FALSE;
         }
-
-        signal_num = -1;
 
 	if (canvas->grabbed_item) {
 		switch (event->type) {
@@ -2532,17 +2465,14 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 			break;
 
 		case GDK_KEY_PRESS:
-                        signal_num = ITEM_KEY_PRESS_EVENT;
 			mask = GDK_KEY_PRESS_MASK;
 			break;
 
 		case GDK_KEY_RELEASE:
-                        signal_num = ITEM_KEY_RELEASE_EVENT;
 			mask = GDK_KEY_RELEASE_MASK;
 			break;
 
 		default:
-                        signal_num = -1;
 			mask = 0;
 			break;
 		}
@@ -3938,4 +3868,58 @@ gnome_canvas_get_dither (GnomeCanvas *canvas)
 	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), GDK_RGB_DITHER_NONE);
 
 	return canvas->dither;
+}
+
+static gboolean
+boolean_handled_accumulator (GSignalInvocationHint *ihint,
+			     GValue                *return_accu,
+			     const GValue          *handler_return,
+			     gpointer               dummy)
+{
+	gboolean continue_emission;
+	gboolean signal_handled;
+	
+	signal_handled = g_value_get_boolean (handler_return);
+	g_value_set_boolean (return_accu, signal_handled);
+	continue_emission = !signal_handled;
+	
+	return continue_emission;
+}
+
+/* Class initialization function for GnomeCanvasItemClass */
+static void
+gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
+{
+	GObjectClass *gobject_class;
+
+	gobject_class = (GObjectClass *) class;
+
+	item_parent_class = gtk_type_class (gtk_object_get_type ());
+
+	gobject_class->set_property = gnome_canvas_item_set_property;
+	gobject_class->get_property = gnome_canvas_item_get_property;
+
+	g_object_class_install_property
+		(gobject_class, ITEM_PROP_PARENT,
+		 g_param_spec_object ("parent", NULL, NULL,
+				      GNOME_TYPE_CANVAS_ITEM,
+				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
+
+	item_signals[ITEM_EVENT] =
+		g_signal_new ("event",
+			      G_TYPE_FROM_CLASS (class),
+			      G_SIGNAL_RUN_LAST,
+			      G_STRUCT_OFFSET (GnomeCanvasItemClass, event),
+			      boolean_handled_accumulator, NULL,
+			      gnome_canvas_marshal_BOOLEAN__BOXED,
+			      G_TYPE_BOOLEAN, 1,
+			      GDK_TYPE_EVENT | G_SIGNAL_TYPE_STATIC_SCOPE);
+
+	gobject_class->dispose = gnome_canvas_item_dispose;
+
+	class->realize = gnome_canvas_item_realize;
+	class->unrealize = gnome_canvas_item_unrealize;
+	class->map = gnome_canvas_item_map;
+	class->unmap = gnome_canvas_item_unmap;
+	class->update = gnome_canvas_item_update;
 }

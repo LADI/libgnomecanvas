@@ -1,3 +1,13 @@
+2002-01-09  Darin Adler  <darin@bentspoon.com>
+
+	* gnome-canvas.c: (emit_event): Remove some dead code.
+	(boolean_handled_accumulator): Stolen from gtk.
+	(gnome_canvas_item_class_init): Moved down to the bottom of the
+	file to avoid having to do so many forward declarations. Also
+	changed the "event" signal to use G_SIGNAL_TYPE_STATIC_SCOPE for
+	efficiency, and boolean_handled_accumulator for consistency with
+	event signals in gtk.
+
 Wed Jan  9 06:02:17 2002  Tim Janik  <timj@gtk.org>
 
 	* gnome-canvas-line.c: fix PROP_FILL_COLOR, PROP_FILL_STIPPLE,
