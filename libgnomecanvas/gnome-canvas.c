@@ -1906,7 +1906,7 @@ static gint gnome_canvas_motion              (GtkWidget        *widget,
 					      GdkEventMotion   *event);
 static gint gnome_canvas_expose              (GtkWidget        *widget,
 					      GdkEventExpose   *event);
-static gint gnome_canvas_key                 (GtkWidget        *widget,
+static gboolean gnome_canvas_key             (GtkWidget        *widget,
 					      GdkEventKey      *event);
 static gint gnome_canvas_crossing            (GtkWidget        *widget,
 					      GdkEventCrossing *event);
@@ -2813,7 +2813,7 @@ gnome_canvas_motion (GtkWidget *widget, GdkEventMotion *event)
 }
 
 /* Key event handler for the canvas */
-static gint
+static gboolean
 gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
 {
 	GnomeCanvas *canvas;
@@ -2823,7 +2823,23 @@ gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
 
 	canvas = GNOME_CANVAS (widget);
 	
-	return emit_event (canvas, (GdkEvent *) event);
+	if (!emit_event (canvas, (GdkEvent *) event)) {
+		GtkWidgetClass *widget_class;
+
+		widget_class = GTK_WIDGET_CLASS (canvas_parent_class);
+
+		if (event->type == GDK_KEY_PRESS) {
+			if (widget_class->key_press_event)
+				return (* widget_class->key_press_event) (widget, event);
+		} else if (event->type == GDK_KEY_RELEASE) {
+			if (widget_class->key_release_event)
+				return (* widget_class->key_release_event) (widget, event);
+		} else
+			g_assert_not_reached ();
+
+		return FALSE;
+	} else
+		return TRUE;
 }
 
 

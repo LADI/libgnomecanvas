@@ -6,6 +6,12 @@
 
 	* configure.in: Up to 1.114.0 and update requirements.
 
+2002-03-15  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas.c (gnome_canvas_key): Chain to the
+	parent class handler so that bindings work.  Thanks to Dave Camp
+	<dave@ximian.com> for pointing this out.
+
 2002-03-15  Jody Goldberg <jody@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-shape.c (gnome_canvas_shape_set_property) :
