@@ -1,3 +1,12 @@
+2004-01-25  Martin Kretzschmar  <m_kretzschmar@gmx.net>
+
+	From HEAD, fixes Bug #111797
+	
+	2003-12-10  Richard Hult  <richard@imendio.com>
+
+	* docs/reference/libgnomecanvas-docs.sgml: Make this valid xml so
+	that gtk-doc doesn't fall back to the old output.
+
 2003-10-09  Žygimantas Beručka  <uid0@tuxfamily.org>
 
 	* configure.in: Added "lt" to ALL_LINGUAS.

@@ -1,4 +1,6 @@
-<!doctype book PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY libgnomecanvas-GnomeCanvasBpath SYSTEM "xml/gnome-canvas-bpath.xml">
 <!ENTITY libgnomecanvas-GnomeCanvasClipgroup SYSTEM "xml/gnome-canvas-clipgroup.xml">
 <!ENTITY libgnomecanvas-GnomeCanvasEllipse SYSTEM "xml/gnome-canvas-ellipse.xml">
