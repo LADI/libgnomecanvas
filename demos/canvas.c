@@ -516,20 +516,59 @@ setup_lines (GnomeCanvasGroup *root)
 
 	/* Arrow tests */
 
-	points = gnome_canvas_points_new (2);
+	points = gnome_canvas_points_new (4);
 	points->coords[0] = 340.0;
 	points->coords[1] = 170.0;
 	points->coords[2] = 340.0;
-	points->coords[3] = 210.0;
+	points->coords[3] = 230.0;
+	points->coords[4] = 390.0;
+	points->coords[5] = 230.0;
+	points->coords[6] = 390.0;
+	points->coords[7] = 170.0;
 	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_line_get_type (),
 					   "points", points,
 					   "fill_color", "midnightblue",
-					   "width_pixels", 0,
+					   "width_units", 3.0,
+					   "first_arrowhead", TRUE,
 					   "last_arrowhead", TRUE,
 					   "arrow_shape_a", 8.0,
-					   "arrow_shape_b", 10.0,
-					   "arrow_shape_c", 3.0,
+					   "arrow_shape_b", 12.0,
+					   "arrow_shape_c", 4.0,
+					   NULL));
+	gnome_canvas_points_free (points);
+
+	points = gnome_canvas_points_new (2);
+	points->coords[0] = 356.0;
+	points->coords[1] = 180.0;
+	points->coords[2] = 374.0;
+	points->coords[3] = 220.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_line_get_type (),
+					   "points", points,
+					   "fill_color", "blue",
+					   "width_pixels", 0,
+					   "first_arrowhead", TRUE,
+					   "last_arrowhead", TRUE,
+					   "arrow_shape_a", 6.0,
+					   "arrow_shape_b", 6.0,
+					   "arrow_shape_c", 4.0,
+					   NULL));
+
+	points->coords[0] = 356.0;
+	points->coords[1] = 220.0;
+	points->coords[2] = 374.0;
+	points->coords[3] = 180.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_line_get_type (),
+					   "points", points,
+					   "fill_color", "blue",
+					   "width_pixels", 0,
+					   "first_arrowhead", TRUE,
+					   "last_arrowhead", TRUE,
+					   "arrow_shape_a", 6.0,
+					   "arrow_shape_b", 6.0,
+					   "arrow_shape_c", 4.0,
 					   NULL));
 	gnome_canvas_points_free (points);
 }
