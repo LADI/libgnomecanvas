@@ -1,3 +1,8 @@
+2001-12-02  Anders Carlsson  <andersca@gnu.org>
+
+	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_draw): Use 
+	GDK_PIXBUF_ALPHA_FULL when rendering the pixbuf.
+
 2001-11-19  Peter Williams  <peterw@ximian.com>
 
 	* gnome-canvas.c: Remove Michael's marshaller from this

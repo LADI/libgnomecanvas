@@ -858,8 +858,8 @@ gnome_canvas_pixbuf_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 					     0, 0,
 					     d_rect.x0 - x, d_rect.y0 - y,
 					     w, h,
-					     GDK_PIXBUF_ALPHA_BILEVEL,
-					     128,
+					     GDK_PIXBUF_ALPHA_FULL,
+					     0,
 					     GDK_RGB_DITHER_MAX,
 					     d_rect.x0, d_rect.y0);
 
