@@ -21,7 +21,7 @@
 #include <libart_lgpl/art_bpath.h>
 #include <libart_lgpl/art_svp_wind.h>
 #include <libart_lgpl/art_vpath_dash.h>
-#include "gp-path.h"
+#include "gnome-canvas-path-def.h"
 
 BEGIN_GNOME_DECLS
 
@@ -39,7 +39,7 @@ typedef struct _GnomeCanvasClipgroupClass GnomeCanvasClipgroupClass;
 struct _GnomeCanvasClipgroup {
 	GnomeCanvasGroup group;
 
-	GPPath * path;
+	GnomeCanvasPathDef * path;
 	ArtWindRule wind;
 
 	ArtSVP * svp;

@@ -1,3 +1,10 @@
+2001-06-17    <rconover@gnome.org>
+
+	* gp-path.c gp-path.h: Removed since they are now replaces with
+	gnome-canvas-path-def.c and gnome-canvas-path-def.h.  Applied this
+	renaming change to the rest of the module and removed the
+	appropriate files from cvs.
+
 2001-06-16  Cody Russell  <bratsche@gnome.org>
 
 	* gnome-canvas-clipgroup.[ch]: Installed.

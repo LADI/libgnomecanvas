@@ -20,7 +20,7 @@
 #include <libart_lgpl/art_svp_wind.h>
 #include <libgnomeui/gnome-canvas.h>
 
-#include "gp-path.h"
+#include "gnome-canvas-path-def.h"
 
 BEGIN_GNOME_DECLS
 

@@ -11,7 +11,7 @@
 
 #include <string.h>
 #include <libart_lgpl/art_misc.h>
-#include "gp-path.h"
+#include "gnome-canvas-path-def.h"
 
 /* The number of points to allocate at once */
 #define GNOME_CANVAS_PATH_DEF_LENSTEP 32

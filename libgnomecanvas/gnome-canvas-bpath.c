@@ -25,7 +25,7 @@
 
 #include "gnome-canvas-bpath.h"
 #include "gnome-canvas-bpath-private.h"
-#include "gp-path.h"
+#include "gnome-canvas-path-def.h"
 
 #include <libart_lgpl/art_rect.h>
 #include <libart_lgpl/art_vpath.h>

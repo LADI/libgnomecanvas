@@ -39,13 +39,14 @@ libgnomecanvasinclude_HEADERS =			\
 	gnome-canvas-text.h			\
 	gnome-canvas-util.h			\
 	gnome-canvas-widget.h			\
+	gnome-canvas-path-def.h			\
 	gnome-canvas.h
 
 libgnomecanvas_2_la_SOURCES =			\
 	$(libgnomecanvasinclude_HEADERS)	\
 	gnome-canvas-bpath.c			\
+	gnome-canvas-path-def.c			\
 	gnome-canvas-clipgroup.c		\
-	gp-path.c				\
 	gnome-canvas-i18n.h			\
 	gnome-canvas-line.c			\
 	gnome-canvas-pixbuf.c			\

@@ -133,7 +133,7 @@ gnome_canvas_clipgroup_destroy (GtkObject *object)
 	clipgroup = GNOME_CANVAS_CLIPGROUP (object);
 
 	if (clipgroup->path) {
-		gp_path_unref (clipgroup->path);
+		gnome_canvas_path_def_unref (clipgroup->path);
 		clipgroup->path = NULL;
 	}
 	
@@ -155,7 +155,7 @@ gnome_canvas_clipgroup_set_property (GObject      *object,
 {
 	GnomeCanvasItem *item;
 	GnomeCanvasClipgroup *cgroup;
-	GPPath *gpp;
+	GnomeCanvasPathDef *gpp;
 
 	item = GNOME_CANVAS_ITEM (object);
 	cgroup = GNOME_CANVAS_CLIPGROUP (object);
@@ -165,11 +165,11 @@ gnome_canvas_clipgroup_set_property (GObject      *object,
 		gpp = g_value_get_pointer (value);
 
 		if (cgroup->path) {
-			gp_path_unref (cgroup->path);
+			gnome_canvas_path_def_unref (cgroup->path);
 			cgroup->path = NULL;
 		}
 		if (gpp != NULL) {
-			cgroup->path = gp_path_closed_parts (gpp);
+			cgroup->path = gnome_canvas_path_def_closed_parts (gpp);
 		}
 
 		gnome_canvas_item_request_update (item);
@@ -229,7 +229,7 @@ gnome_canvas_clipgroup_update (GnomeCanvasItem *item, double *affine, ArtSVP *cl
 	}
 
 	if (clipgroup->path) {
-		bp = gp_path_bpath (clipgroup->path);
+		bp = gnome_canvas_path_def_bpath (clipgroup->path);
 		bpath = art_bpath_affine_transform (bp, affine);
 
 		vpath1 = art_bez_path_to_vec (bpath, 0.25);
