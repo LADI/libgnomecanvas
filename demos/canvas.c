@@ -51,6 +51,58 @@ setup_item (GnomeCanvasItem *item)
 			    NULL);
 }
 
+#define SCROLL_DIST 5
+
+static void
+scroll (GtkWidget *widget, gpointer data)
+{
+	GtkArrowType type;
+	GnomeCanvas *canvas;
+	int dx, dy;
+
+	type = GPOINTER_TO_INT (gtk_object_get_user_data (GTK_OBJECT (widget)));
+	canvas = data;
+
+	dx = 0;
+	dy = 0;
+
+	switch (type) {
+	case GTK_ARROW_LEFT:
+		dx = -SCROLL_DIST;
+		break;
+
+	case GTK_ARROW_RIGHT:
+		dx = SCROLL_DIST;
+		break;
+
+	case GTK_ARROW_UP:
+		dy = -SCROLL_DIST;
+		break;
+
+	case GTK_ARROW_DOWN:
+		dy = SCROLL_DIST;
+		break;
+	}
+
+	gnome_canvas_scroll_to (canvas, canvas->display_x1 + dx, canvas->display_y1 + dy);
+}
+
+static GtkWidget *
+make_arrow (GtkArrowType type, gpointer data)
+{
+	GtkWidget *w;
+
+	w = gtk_button_new ();
+	gtk_signal_connect (GTK_OBJECT (w), "clicked",
+			    (GtkSignalFunc) scroll,
+			    data);
+	gtk_container_add (GTK_CONTAINER (w), gtk_arrow_new (type, GTK_SHADOW_IN));
+	gtk_object_set_user_data (GTK_OBJECT (w), GINT_TO_POINTER (type));
+	gtk_widget_show_all (w);
+
+	return w;
+}
+
 static GtkWidget *
 create_primitives (void)
 {
@@ -72,7 +124,8 @@ create_primitives (void)
 	gtk_widget_show (hbox);
 
 	canvas = gnome_canvas_new (gdk_imlib_get_visual (), gdk_imlib_get_colormap ());
-	GNOME_CANVAS (canvas)->close_enough = 10;
+
+	/* Zoom */
 
 	w = gtk_label_new ("Zoom:");
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
@@ -86,6 +139,15 @@ create_primitives (void)
 	gtk_widget_set_usize (w, 50, 0);
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
+
+	/* Scroll buttons */
+
+	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_LEFT, canvas), FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_DOWN, canvas), FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_UP, canvas), FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_RIGHT, canvas), FALSE, FALSE, 0);
+
+	/* Canvas */
 
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
