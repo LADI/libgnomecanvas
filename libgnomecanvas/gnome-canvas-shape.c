@@ -1155,7 +1155,11 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		gnome_canvas_shape_update_gdk (shape, affine, clip_path, flags);
 	}
 
-	gnome_canvas_update_bbox (item, floor(x0), floor(y0), ceil(x1), ceil(y1));
+	/* We need to add some epsilon to the bbox on right and bottom, because rounding
+	 * errors and the X filling model may make it off by one. */
+	gnome_canvas_update_bbox (item,
+				  floor (x0), floor (y0),
+				  ceil (x1+0.00001), ceil (y1+0.00001));
 }
 
 static double

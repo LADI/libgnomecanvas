@@ -1,4 +1,10 @@
 2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
+	
+	* gnome-canvas-shape.c (gnome_canvas_shape_update):
+	Add some epsilon to the bounding box before rounding, to
+	avoid precision problems.
+
+2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_update_gdk):
 	Correctly round the coordinates when covertin from the double
