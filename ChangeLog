@@ -1,5 +1,8 @@
 2001-03-21  Martin Baulig  <baulig@suse.de>
 
+	* configure.in: Set package name to `libgnomecanvas2', looks
+	better than `libgnomecanvas-2'.
+
 	* configure.in (GNOME_MAKETYPES, GNOME_MAKEENUMS): Check
 	for the `gnome-maketypes.awk' and `gnome-makeenums.pl'
 	scripts which are installed by libgnome-2 and AC_SUBST them.
