@@ -1,3 +1,7 @@
+2001-09-04  Richard Hult  <rhult@codefactory.se>
+
+	* configure.in: Bumped version number to 1.103.0.
+
 2001-09-03  Abel Cheung  <maddog@linux.org.hk>
 
 	* configure.in: Added zh_TW to ALL_LINGUAS.

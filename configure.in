@@ -2,7 +2,7 @@ AC_PREREQ(2.13)
 AC_INIT(libgnomecanvas)
 
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE(libgnomecanvas2, 1.102.0)
+AM_INIT_AUTOMAKE(libgnomecanvas2, 1.103.0)
 
 AM_MAINTAINER_MODE
 
