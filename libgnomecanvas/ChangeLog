@@ -1,3 +1,11 @@
+2001-12-06  jacob berkman  <jacob@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_get_property): 
+	(gnome_canvas_set_property): new functions to se the aa-ness of
+	the canvas
+	(gnome_canvas_class_init): install an aa property
+	(gnome_canvas_new_aa): use the aa property
+
 2001-12-02  Anders Carlsson  <andersca@gnu.org>
 
 	* gnome-canvas.h: Remove unused signals from vtable and

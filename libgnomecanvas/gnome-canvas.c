@@ -1993,6 +1993,10 @@ static GtkLayoutClass *canvas_parent_class;
 
 static guint canvas_signals[LAST_SIGNAL];
 
+enum {
+	PROP_AA = 1
+};
+
 /**
  * gnome_canvas_get_type:
  *
@@ -2024,17 +2028,55 @@ gnome_canvas_get_type (void)
 	return canvas_type;
 }
 
+static void
+gnome_canvas_get_property (GObject    *object, 
+			   guint       prop_id,
+			   GValue     *value,
+			   GParamSpec *pspec)
+{
+	switch (prop_id) {
+	case PROP_AA:
+		g_value_set_ulong (value,
+				   GNOME_CANVAS (object)->aa);
+		break;
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
+
+static void
+gnome_canvas_set_property (GObject      *object, 
+			   guint         prop_id,
+			   const GValue *value,
+			   GParamSpec   *pspec)
+{
+	switch (prop_id) {
+	case PROP_AA:
+		GNOME_CANVAS (object)->aa = g_value_get_ulong (value);
+		break;
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
+
 /* Class initialization function for GnomeCanvasClass */
 static void
 gnome_canvas_class_init (GnomeCanvasClass *klass)
 {
+	GObjectClass   *gobject_class;
 	GtkObjectClass *object_class;
 	GtkWidgetClass *widget_class;
 
-	object_class = (GtkObjectClass *) klass;
-	widget_class = (GtkWidgetClass *) klass;
+	gobject_class = (GObjectClass *)klass;
+	object_class  = (GtkObjectClass *) klass;
+	widget_class  = (GtkWidgetClass *) klass;
 
 	canvas_parent_class = gtk_type_class (gtk_layout_get_type ());
+
+	gobject_class->set_property = gnome_canvas_set_property;
+	gobject_class->get_property = gnome_canvas_get_property;
 
 	object_class->destroy = gnome_canvas_destroy;
 
@@ -2057,6 +2099,14 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 	klass->draw_background = gnome_canvas_draw_background;
 	klass->render_background = NULL;
 	klass->request_update = gnome_canvas_request_update_real;
+
+	g_object_class_install_property (G_OBJECT_CLASS (object_class),
+					 PROP_AA,
+					 g_param_spec_ulong ("aa",
+							     _("Antialiased"),
+							     _("The antialiasing mode of the canvas."),
+							     0, 1, 0,
+							     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
 	canvas_signals[DRAW_BACKGROUND] =
 		g_signal_new ("draw_background",
@@ -2221,11 +2271,9 @@ gnome_canvas_new (void)
 GtkWidget *
 gnome_canvas_new_aa (void)
 {
-	GnomeCanvas *canvas;
-
-	canvas = gtk_type_new (gnome_canvas_get_type ());
-	canvas->aa = 1;
-	return GTK_WIDGET (canvas);
+	return GTK_WIDGET (g_object_new (GNOME_TYPE_CANVAS,
+					 "aa", 1,
+					 NULL));
 }
 
 /* Map handler for the canvas */
