@@ -1,3 +1,8 @@
+2001-11-13  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_update):
+	Actually calculate bounding box for shape items.
+
 2001-11-06  jacob berkman  <jacob@ximian.com>
 
 	* gnome-canvas-rich-text.c (gnome_canvas_rich_text_draw): get it
