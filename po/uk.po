@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-03-18 14:22+0100\n"
-"PO-Revision-Date: 2002-03-11 16:49+0200\n"
+"POT-Creation-Date: 2002-03-26 21:03+0200\n"
+"PO-Revision-Date: 2002-03-26 20:03+0200\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,9 @@ msgstr "Опис шрифту"
 
 #: libgnomecanvas/gnome-canvas-text.c:248
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Опис шрифту у вигляді структури PangoFontDescription"
+msgstr ""
+"Опис шрифту у вигляді структури "
+"PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Font family"
@@ -67,7 +69,9 @@ msgstr "Ґарнітура"
 
 #: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Назва ґарнітури, наприклад Sans, Helvetica, Times, Monospace"
+msgstr ""
+"Назва ґарнітури, наприклад Sans, Helvetica, Times, "
+"Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
@@ -82,12 +86,12 @@ msgstr "Варіант шрифту"
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr ""
+msgstr "Насиченість шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr ""
+msgstr "Ширина шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
@@ -96,7 +100,7 @@ msgstr "Розмір шрифт"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr ""
+msgstr "Шрифт в пунктах"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
@@ -104,12 +108,14 @@ msgstr "Розмір шрифту в пунктах"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr ""
+msgstr "Вертикальний зсув"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"Зсув тексту над основною лінією (під "
+"основною лінією, якщо число від'ємне)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -133,7 +139,8 @@ msgstr "Масштаб"
 
 #: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
-msgstr "Розмір шрифту відносно типового розміру"
+msgstr ""
+"Розмір шрифту відносно типового розміру"
 
 #: libgnomecanvas/gnome-canvas-text.c:422
 #: libgnomecanvas/gnome-canvas-text.c:430
@@ -151,7 +158,9 @@ msgstr "Колір тексту у вигляді GdkColor"
 
 #: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Колір тексту у вигляді складеного цілого з Ч/З/С/А"
+msgstr ""
+"Колір тексту у вигляді складеного цілого "
+"з Ч/З/С/А"
 
 #: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"
@@ -176,6 +185,7 @@ msgstr "Встановити ґарнітуру"
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
 msgstr ""
+"Чи впливатиме ця ознака на родину шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
@@ -184,6 +194,7 @@ msgstr "Встановити стиль шрифту"
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
 msgstr ""
+"Чи впливатиме ця ознака на стиль шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
@@ -192,22 +203,27 @@ msgstr "Встановити варіант шрифту"
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
 msgstr ""
+"Чи впливатиме ця ознакана на варіант "
+"шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr ""
+msgstr "Насиченість шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
 msgstr ""
+"Чи впливатиме ця ознака на насиченість "
+"шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr ""
+msgstr "Ширина шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
 msgstr ""
+"Чи впливатиме ця ознака на ширину шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
@@ -216,14 +232,17 @@ msgstr "Встановити розмір шрифту"
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
 msgstr ""
+"Чи впливатиме ця ознака на розмір шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr ""
+msgstr "Вертикальний зсув"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
 msgstr ""
+"Чи впливатиме ця ознака на вертикальний "
+"зсув"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
@@ -232,6 +251,7 @@ msgstr "Встановити перекреслення"
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
 msgstr ""
+"Чи  впливатиме ця ознака на перекреслення"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
@@ -240,6 +260,7 @@ msgstr "Встановити підкреслення"
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
 msgstr ""
+"Чи впливатиме ця ознака на підкреслення"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
@@ -248,3 +269,5 @@ msgstr "Встановити масштаб"
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr ""
+"Чи впливатиме ця ознака на масштабування "
+"шрифта"
