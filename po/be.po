@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-12 07:29+0100\n"
+"POT-Creation-Date: 2005-03-01 13:10+0100\n"
 "PO-Revision-Date: 2005-02-14 00:34+0200\n"
 "Last-Translator: Ales Nyakhaychyk <nab@mail.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -405,4 +405,3 @@ msgstr "Водступ"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Колькасьць піксэляў для водступу"
-
