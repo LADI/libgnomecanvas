@@ -22,7 +22,12 @@ lib_LTLIBRARIES = libgnomecanvas-2.la
 libgnomecanvas_2_la_LIBADD = \
 	$(GTK_LIBS) $(LIBART_LIBS) $(PANGO_LIBS)
 
+libincludedir = $(includedir)/gnome/2
+
 libgnomecanvasincludedir = $(includedir)/gnome/2/libgnomecanvas
+
+lib_headers = \
+	libgnomecanvas.h
 
 libgnomecanvasinclude_HEADERS =			\
 	gnome-canvas-bpath.h			\
@@ -33,8 +38,7 @@ libgnomecanvasinclude_HEADERS =			\
 	gnome-canvas-text.h			\
 	gnome-canvas-util.h			\
 	gnome-canvas-widget.h			\
-	gnome-canvas.h				\
-	libgnomecanvas.h
+	gnome-canvas.h
 
 libgnomecanvas_2_la_SOURCES =			\
 	$(libgnomecanvasinclude_HEADERS)	\

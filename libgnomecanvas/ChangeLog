@@ -1,3 +1,10 @@
+2001-06-13  Martin Baulig  <baulig@suse.de>
+
+	* Makefile.am: Install libgnomecanvas.h in `$(includedir)/gnome/2' to make it
+	consistent with Bonobo.
+
+	* libgnomecanvas.h: You now use #include <libgnomecanvas.h> to get this.
+
 2001-06-11  Cody Russell  <bratsche@gnome.org>
 
 	* gnome-canvas-rect-ellipse.c: Don't cast the RectEllipse to GtkWidget.  Use
