@@ -10,10 +10,10 @@ AC_INIT(libgnomecanvas)
 LIBGNOMECANVAS_MAJOR_VERSION=2
 LIBGNOMECANVAS_MINOR_VERSION=6
 LIBGNOMECANVAS_MICRO_VERSION=1
-LIBGNOMECANVAS_INTERFACE_AGE=0
+LIBGNOMECANVAS_INTERFACE_AGE=1
 # If you need a modifier for the version number. 
 # Normally empty, but can be used to make "fixup" releases.
-LIBGNOMECANVAS_EXTRAVERSION=
+LIBGNOMECANVAS_EXTRAVERSION=.1
 
 dnl libtool versioning from libgnome
 
