@@ -260,14 +260,6 @@ void gnome_canvas_item_affine_relative (GnomeCanvasItem *item, const double affi
 /* Apply an absolute affine transformation to the item. */
 void gnome_canvas_item_affine_absolute (GnomeCanvasItem *item, const double affine[6]);
 
-/* Scale an item about a point by the specified factors */
-void gnome_canvas_item_scale (GnomeCanvasItem *item,
-			      double x, double y,
-			      double scale_x, double scale_y);
-
-/* Rotate an item about a point by the specified number of degrees */
-void gnome_canvas_item_rotate (GnomeCanvasItem *item, double x, double y, double angle);
-
 /* Raise an item in the z-order of its parent group by the specified number of
  * positions.
  */

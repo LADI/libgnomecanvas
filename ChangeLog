@@ -1,3 +1,9 @@
+2002-02-20  Murray Cumming  <murrayc@usa.net>
+
+	* libgnomecanvas.h/gnome-canvas.h:
+	Removed gnome_canvas_item_scale() and gnome_canvas_item_rotate()
+	because they aren't implemented.
+
 2002-02-19  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Release 1.112.0
