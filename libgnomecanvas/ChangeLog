@@ -1,0 +1,13 @@
+2001-03-05  Martin Baulig  <baulig@suse.de>
+
+	* gnome-canvas-pixbuf.[ch]: #include <libgnomecanvas/*.h>
+	instead of <libgnome/*.h>.
+
+	* gnome-canvas-line.c, gnome-canvas-polygon.c:
+	#include "gnomecanvastypebuiltins.h".
+
+	* gnomecanvastypes.c: New file.
+
+	* gnomecanvas-boxed.defs: New file.
+	* libgnomecanvas-2.0.pc.in: New file.
+
