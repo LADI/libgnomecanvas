@@ -1820,8 +1820,10 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 		else
 			dy = 0;
 
-		if ((dx == 0) && (dy == 0))
+		if ((dx == 0) && (dy == 0)) {
+			pango_layout_iter_free(iter);
 			return 0.0;
+		}
 
 		dist = sqrt (dx * dx + dy * dy);
 		if (dist < best)
@@ -1829,6 +1831,8 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 		
 	} while (pango_layout_iter_next_line(iter));
 
+	pango_layout_iter_free(iter);
+	
 	return best / item->canvas->pixels_per_unit;
 }
 

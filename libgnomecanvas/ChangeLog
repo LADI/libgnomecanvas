@@ -1,3 +1,8 @@
+2001-10-04  Matt Wilson  <msw@redhat.com>
+
+	* gnome-canvas-text.c (gnome_canvas_text_point): free the iter
+	when we're done, plugs a leak.
+
 Tue Sep 25 23:00:43 2001  Jonathan Blandford  <jrb@redhat.com>
 
 	* gnome-canvas-rich-text.c (gnome_canvas_rich_text_draw): modify
