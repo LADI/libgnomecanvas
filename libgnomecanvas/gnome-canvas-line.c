@@ -1166,7 +1166,6 @@ gnome_canvas_line_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 	GdkPoint static_points[NUM_STATIC_POINTS];
 	GdkPoint *points;
 	int actual_num_points_drawn;
-	int i;
 	double i2c[6];
 
 	line = GNOME_CANVAS_LINE (item);

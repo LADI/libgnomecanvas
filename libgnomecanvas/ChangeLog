@@ -1,3 +1,7 @@
+2001-11-16  Glynn Foster  <glynn.foster@sun.com>
+
+	* gnome-canvas-line.c: Removed unused variable stoping build.
+
 2001-11-16  Alex Larsson  <alexl@redhat.com>
 
 	* gnome-canvas-line.c (item_to_canvas):
