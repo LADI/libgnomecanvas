@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-07 12:34+0200\n"
+"POT-Creation-Date: 2004-02-24 11:44+0100\n"
 "PO-Revision-Date: 2002-11-05 23:10+0200\n"
 "Last-Translator: Arafat Medini <lumina@silverpen.de>\n"
 "Language-Team:  <en@li.org>\n"
@@ -307,7 +307,8 @@ msgid "Cursor Visible"
 msgstr "المؤشر مرئي"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "هل المؤشر مرئيٌّ في عنصر النص الغني هذا؟"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -315,7 +316,8 @@ msgid "Cursor Blink"
 msgstr "نبض المؤشر"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "هل المؤشر ينبض في عنصر النص الغني هذا؟"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
