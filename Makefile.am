@@ -4,4 +4,4 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 
 SUBDIRS = libgnomecanvas glade demos po tests docs
 
-EXTRA_DIST = COPYING.LIB NEWS
+EXTRA_DIST = COPYING.LIB NEWS libgnomecanvas-zip.in

@@ -1,3 +1,11 @@
+2005-03-12  Tor Lillqvist  <tml@novell.com>
+
+	* libgnomecanvas-zip.in: New file, to build zipfile distribution
+	for Win32.
+
+	* Makefile.am
+	* configure.in: Distribute it, expand it.
+
 2005-03-07  Anders Carlsson  <andersca@imendio.com>
 
 	* configure.in: Release 2.10.0

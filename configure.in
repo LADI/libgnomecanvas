@@ -28,6 +28,7 @@ m4_define([libgnomecanvas_current], [m4_eval(100 * libgnomecanvas_minor_version 
 m4_define([libgnomecanvas_binary_age], [m4_eval(100 * libgnomecanvas_minor_version + libgnomecanvas_micro_version)])
 m4_define([libgnomecanvas_revision], [libgnomecanvas_interface_age])
 m4_define([libgnomecanvas_age], [m4_eval(libgnomecanvas_binary_age - libgnomecanvas_interface_age)])
+m4_define([libgnomecanvas_current_minus_age], [m4_eval(libgnomecanvas_current - libgnomecanvas_age)])
 m4_define([libgnomecanvas_version], [libgnomecanvas_major_version().libgnomecanvas_minor_version().libgnomecanvas_micro_version()libgnomecanvas_extraversion()])
 
 AC_INIT([libgnomecanvas], [libgnomecanvas_version],
@@ -44,10 +45,12 @@ dnl libtool versioning from libgnome
 LIBGNOMECANVAS_CURRENT=libgnomecanvas_current
 LIBGNOMECANVAS_REVISION=libgnomecanvas_revision
 LIBGNOMECANVAS_AGE=libgnomecanvas_age
+LIBGNOMECANVAS_CURRENT_MINUS_AGE=libgnomecanvas_current_minus_age
 
 AC_SUBST(LIBGNOMECANVAS_CURRENT)
 AC_SUBST(LIBGNOMECANVAS_REVISION)
 AC_SUBST(LIBGNOMECANVAS_AGE)
+AC_SUBST(LIBGNOMECANVAS_CURRENT_MINUS_AGE)
 
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
@@ -174,6 +177,7 @@ AC_SUBST(REBUILD)
 
 AC_CONFIG_FILES([
 Makefile
+libgnomecanvas-zip
 po/Makefile.in
 libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
