@@ -843,18 +843,17 @@ gnome_canvas_text_set_property (GObject            *object,
 	        PangoContext *gtk_context, *context;
 		gtk_context = gtk_widget_get_pango_context (GTK_WIDGET (item->canvas));
 
-#if 0
+		
 	        if (item->canvas->aa)  {
-		        gchar *lang;
+			PangoLanguage *language;
 		        context = pango_ft2_get_context ();
-			lang = pango_context_get_lang (gtk_context);
-			pango_context_set_lang (context, lang);
-			g_free (lang);
+			language = pango_context_get_language (gtk_context);
+			pango_context_set_language (context, language);
 			pango_context_set_base_dir (context,
 						    pango_context_get_base_dir (gtk_context));
-		} else 
-#endif
-	                context = gtk_context;
+		} else
+			context = gtk_context;
+			
 
 		text->layout = pango_layout_new (context);
 		
