@@ -1,5 +1,11 @@
 2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
 
+	* gnome-canvas-shape.c (gnome_canvas_shape_update):
+	Revert all my completely bogus bounding box patches.
+	Sorry about that.
+
+2001-11-14  Alexander Larsson  <alla@lysator.liu.se>
+
 	* gnome-canvas-line.c (gnome_canvas_line_draw):
 	Don't put x and y in the affine transformation. Doing so can
 	affect the outcome of the affine transformation in a way so that

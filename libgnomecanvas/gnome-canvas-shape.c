@@ -985,9 +985,6 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 	GnomeCanvasShape * shape;
 	GnomeCanvasShapePriv * priv;
 	ArtSVP * svp;
-	gboolean bbox_empty = TRUE;
-	double x0 = 0, y0 = 0, x1 = 0, y1 = 0;
-	int i;
 
 	shape = GNOME_CANVAS_SHAPE (item);
 
@@ -1002,6 +999,10 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 	shape->priv->scale = (fabs (affine[0]) + fabs (affine[3])) / 2.0;
 
+	/* Reset bbox */
+
+	gnome_canvas_item_reset_bounds (item);
+	
 	/* Clipped fill SVP */
 
 	if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
@@ -1050,25 +1051,6 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 				svp,
 				NULL);
 		}
-
-		for (i = 0; i < shape->priv->fill_svp->n_segs; i++)
-		  {
-		    if (bbox_empty)
-		      {
-			bbox_empty = FALSE;
-			x0 = shape->priv->fill_svp->segs[i].bbox.x0;
-			y0 = shape->priv->fill_svp->segs[i].bbox.y0;
-			x1 = shape->priv->fill_svp->segs[i].bbox.x1;
-			y1 = shape->priv->fill_svp->segs[i].bbox.y1;
-		      }
-		    else
-		      {
-			x0 = MIN (x0, shape->priv->fill_svp->segs[i].bbox.x0);
-			y0 = MIN (y0, shape->priv->fill_svp->segs[i].bbox.y0);
-			x1 = MAX (x1, shape->priv->fill_svp->segs[i].bbox.x1);
-			y1 = MAX (y1, shape->priv->fill_svp->segs[i].bbox.y1);
-		      }
-		  }
 	}
 
 	if ((priv->outline_set) && (!gnome_canvas_path_def_is_empty (priv->path))) {
@@ -1128,25 +1110,6 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 			gnome_canvas_item_update_svp_clip (item, &priv->outline_svp, svp, NULL);
 		}
-
-		for (i = 0; i < shape->priv->outline_svp->n_segs; i++)
-		  {
-		    if (bbox_empty)
-		      {
-			bbox_empty = FALSE;
-			x0 = shape->priv->outline_svp->segs[i].bbox.x0;
-			y0 = shape->priv->outline_svp->segs[i].bbox.y0;
-			x1 = shape->priv->outline_svp->segs[i].bbox.x1;
-			y1 = shape->priv->outline_svp->segs[i].bbox.y1;
-		      }
-		    else
-		      {
-			x0 = MIN (x0, shape->priv->outline_svp->segs[i].bbox.x0);
-			y0 = MIN (y0, shape->priv->outline_svp->segs[i].bbox.y0);
-			x1 = MAX (x1, shape->priv->outline_svp->segs[i].bbox.x1);
-			y1 = MAX (y1, shape->priv->outline_svp->segs[i].bbox.y1);
-		      }
-		  }
 	}
 
 	/* Gdk requires additional handling */
@@ -1154,12 +1117,6 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 	if (!item->canvas->aa) {
 		gnome_canvas_shape_update_gdk (shape, affine, clip_path, flags);
 	}
-
-	/* We need to add some epsilon to the bbox on right and bottom, because rounding
-	 * errors and the X filling model may make it off by one. */
-	gnome_canvas_update_bbox (item,
-				  floor (x0), floor (y0),
-				  ceil (x1+0.00001), ceil (y1+0.00001));
 }
 
 static double
