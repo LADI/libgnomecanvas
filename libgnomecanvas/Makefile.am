@@ -32,7 +32,8 @@ lib_LTLIBRARIES = libgnomecanvas-2.la
 libgnomecanvas_2_la_LIBADD = \
 	$(LIBGNOMECANVAS_LIBS)
 
-libgnomecanvas_2_la_LDFLAGS = $(no_undefined)
+libgnomecanvas_2_la_LDFLAGS = $(no_undefined) \
+	-version-info $(LIBGNOMECANVAS_CURRENT:)$(LIBGNOMECANVAS_REVISION):$(LIBGNOMECANVAS_AGE) 
 
 libgnomecanvasincludedir = $(includedir)/libgnomecanvas-2.0/libgnomecanvas
 

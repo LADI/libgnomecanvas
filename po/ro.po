@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.1.90\n"
-"POT-Creation-Date: 2003-01-18 12:13+0100\n"
+"POT-Creation-Date: 2003-01-21 10:53+0100\n"
 "PO-Revision-Date: 2003-01-18 20:19+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@go.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -112,7 +112,8 @@ msgstr "Înălţarea"
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Distanţa textului faţă de linia de bază (negativă când textul e coborât)"
+msgstr ""
+"Distanţa textului faţă de linia de bază (negativă când textul e coborât)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -318,7 +319,7 @@ msgstr "Măreşte înălţimea"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Ar trebui înălţimea căsuţei de text să crească dacă nu încape textul?" 
+msgstr "Ar trebui înălţimea căsuţei de text să crească dacă nu încape textul?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
