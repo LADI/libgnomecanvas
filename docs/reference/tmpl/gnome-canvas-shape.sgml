@@ -22,12 +22,6 @@ GnomeCanvasShape
 @item: 
 @priv: 
 
-<!-- ##### STRUCT GnomeCanvasShapePriv ##### -->
-<para>
-
-</para>
-
-
 <!-- ##### FUNCTION gnome_canvas_shape_set_path_def ##### -->
 <para>
 

@@ -22,12 +22,6 @@ GnomeCanvasRichText
 @item: 
 @_priv: 
 
-<!-- ##### STRUCT GnomeCanvasRichTextPrivate ##### -->
-<para>
-
-</para>
-
-
 <!-- ##### FUNCTION gnome_canvas_rich_text_cut_clipboard ##### -->
 <para>
 

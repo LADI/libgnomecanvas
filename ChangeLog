@@ -3,7 +3,8 @@
 	* libgnomecanvas/gnome-canvas.c (gnome_canvas_w2c_d): Corrected
 	docstring so that "returns" is not the first word on a line.
 	* docs/reference/libgnomecanvas-sections.txt: Inserted *Class
-	definitions into standard sections.
+	definitions into standard sections. Moved *Priv definitions into
+	private sections.
 	* docs/reference/libgnomecanvas-docs.sgml: Fixed file include:
 	sgml/gnome-canvas-rect-ellipse.sgml -> sgml/gnome-canvas-ellipse.sgml
 

@@ -56,9 +56,3 @@ GnomeCanvasText
 @scale_set: 
 @priv: 
 
-<!-- ##### STRUCT GnomeCanvasTextPrivate ##### -->
-<para>
-
-</para>
-
-

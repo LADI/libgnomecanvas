@@ -4,7 +4,6 @@
 <FILE>gnome-canvas-bpath</FILE>
 <TITLE>GnomeCanvasBpath</TITLE>
 GnomeCanvasBpath
-GnomeCanvasBpathPriv
 <SUBSECTION Standard>
 GnomeCanvasBpathClass
 GNOME_CANVAS_BPATH
@@ -13,6 +12,8 @@ GNOME_TYPE_CANVAS_BPATH
 gnome_canvas_bpath_get_type
 GNOME_CANVAS_BPATH_CLASS
 GNOME_IS_CANVAS_BPATH_CLASS
+<SUBSECTION Private>
+GnomeCanvasBpathPriv
 </SECTION>
 
 <SECTION>
@@ -177,7 +178,6 @@ GNOME_CANVAS_RECT_GET_CLASS
 <FILE>gnome-canvas-rich-text</FILE>
 <TITLE>GnomeCanvasRichText</TITLE>
 GnomeCanvasRichText
-GnomeCanvasRichTextPrivate
 <SUBSECTION>
 gnome_canvas_rich_text_cut_clipboard
 gnome_canvas_rich_text_copy_clipboard
@@ -195,13 +195,14 @@ gnome_canvas_rich_text_get_type
 GNOME_CANVAS_RICH_TEXT_CLASS
 GNOME_IS_CANVAS_RICH_TEXT_CLASS
 GNOME_CANVAS_RICH_TEXT_GET_CLASS
+<SUBSECTION Private>
+GnomeCanvasRichTextPrivate
 </SECTION>
 
 <SECTION>
 <FILE>gnome-canvas-shape</FILE>
 <TITLE>GnomeCanvasShape</TITLE>
 GnomeCanvasShape
-GnomeCanvasShapePriv
 <SUBSECTION>
 gnome_canvas_shape_set_path_def
 gnome_canvas_shape_get_path_def
@@ -213,13 +214,14 @@ GNOME_TYPE_CANVAS_SHAPE
 gnome_canvas_shape_get_type
 GNOME_CANVAS_SHAPE_CLASS
 GNOME_IS_CANVAS_SHAPE_CLASS
+<SUBSECTION Private>
+GnomeCanvasShapePriv
 </SECTION>
 
 <SECTION>
 <FILE>gnome-canvas-text</FILE>
 <TITLE>GnomeCanvasText</TITLE>
 GnomeCanvasText
-GnomeCanvasTextPrivate
 <SUBSECTION Standard>
 GnomeCanvasTextClass
 GNOME_CANVAS_TEXT
@@ -229,6 +231,8 @@ gnome_canvas_text_get_type
 GNOME_CANVAS_TEXT_CLASS
 GNOME_IS_CANVAS_TEXT_CLASS
 GNOME_CANVAS_TEXT_GET_CLASS
+<SUBSECTION Private>
+GnomeCanvasTextPrivate
 </SECTION>
 
 <SECTION>
