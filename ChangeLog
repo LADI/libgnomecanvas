@@ -1,5 +1,10 @@
 2003-05-03  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* docs/reference/*.*: New docs from Josh Greiner.
+	* libgnomecanvas/gnome-canvas-util.h: Fix for docs.
+	
+2003-05-03  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* configure.in: Fix setup of localedir.
 
 2003-05-03  Kjartan Maraas  <kmaraas@gnome.org>
