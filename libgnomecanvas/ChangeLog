@@ -1,5 +1,10 @@
 2001-09-24  Matt Wilson  <msw@redhat.com>
 
+	* gnome-canvas-text.c (gnome_canvas_text_set_font_desc): free
+	text->font_desc, not font_desc.
+
+2001-09-24  Matt Wilson  <msw@redhat.com>
+
 	* gnome-canvas-text.c (gnome_canvas_text_class_init): changed the
 	GValue type from g_param_spec_int to g_param_spec_enum for the
 	weight property, thus matching pango.

@@ -1449,7 +1449,7 @@ gnome_canvas_text_set_font_desc (GnomeCanvasText      *text,
 				 PangoFontDescription *font_desc)
 {
 	if (text->font_desc)
-		pango_font_description_free (font_desc);
+		pango_font_description_free (text->font_desc);
 
 	if (font_desc)
 		text->font_desc = pango_font_description_copy (font_desc);
