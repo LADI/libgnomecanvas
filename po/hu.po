@@ -325,11 +325,11 @@ msgstr "A szövegdoboz magassága nőjön, ha a szöveg nem fér bele ?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
-msgstr "Sortörési mód"
+msgstr "Sortörés módja"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr "Sortörési mód többsoros szöveghez"
+msgstr "A sortörés módja többsoros szöveghez"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
