@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2002-06-11 22:53+0200\n"
+"POT-Creation-Date: 2002-08-28 17:38+0200\n"
 "PO-Revision-Date: 2002-05-31 02:18+02:00\n"
 "Last-Translator: Dirk-Jan C. Binnema <djcb@djcbsoftware.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"

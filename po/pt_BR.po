@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvs 2.0\n"
-"POT-Creation-Date: 2002-08-17 23:29-0300\n"
+"POT-Creation-Date: 2002-08-28 17:38+0200\n"
 "PO-Revision-Date: 2002-08-19 10:21-0300\n"
 "Last-Translator: Gustavo Noronha Silva <kov@debian.org>\n"
 "Language-Team: Gnome-BR <gnome-br@listas.cipsga.org.br>\n"
@@ -112,7 +112,9 @@ msgstr "Subida"
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Espaçamento do texto acima da linha base (abaixo da linha base se a subida for negativo)"
+msgstr ""
+"Espaçamento do texto acima da linha base (abaixo da linha base se a subida "
+"for negativo)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
