@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas (cvs)\n"
-"POT-Creation-Date: 2002-03-01 12:49+0100\n"
-"PO-Revision-Date: 2002-03-01 12:49+0100\n"
-"Last-Translator: Christian Meyer <chrisime@gnome.org>\n"
+"POT-Creation-Date: 2002-03-05 14:01+0100\n"
+"PO-Revision-Date: 2002-03-05 14:01+01:00\n"
+"Last-Translator: Matthias Warkus <mawarkus@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,12 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
-msgstr "Antialiased"
+msgstr "Kantenglättung"
 
 # CHECK
 #: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
-msgstr "Der antialiasing Modus des Canvas."
+msgstr "Der Antialiasing-Modus des Canvas."
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
@@ -37,15 +37,15 @@ msgstr "Text"
 # CHECK
 #: libgnomecanvas/gnome-canvas-text.c:204
 msgid "Text to render"
-msgstr "Zu rendernder Text"
+msgstr "Darzustellender Text"
 
 #: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
-msgstr ""
+msgstr "Formatierung"
 
 #: libgnomecanvas/gnome-canvas-text.c:213
 msgid "Marked up text to render"
-msgstr "Markierter zu rendernder Text"
+msgstr "Darzustellender formatierter Text"
 
 #: libgnomecanvas/gnome-canvas-text.c:238
 msgid "Font"
@@ -85,12 +85,12 @@ msgstr "Schriftvariante"
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr "Wichtung"
+msgstr "Schriftstärke"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr ""
+msgstr "Laufweite"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
@@ -99,20 +99,21 @@ msgstr "Schriftgröße"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr "Punkte"
+msgstr "Punkt"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
-msgstr "Schriftgröße in Punkten"
+msgstr "Schriftgröße in Punkt"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr ""
+msgstr "Hochstellung"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"Versatz des Textes über die Grundlinie (unter die Grundlinie, wenn negativ)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -120,7 +121,7 @@ msgstr "Durchgestrichen"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr "Ob der Text durchgestrichen werden soll"
+msgstr "Soll der Text durchgestrichen werden?"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
@@ -128,7 +129,7 @@ msgstr "Unterstrichen"
 
 #: libgnomecanvas/gnome-canvas-text.c:358
 msgid "Style of underline for this text"
-msgstr ""
+msgstr "Unterstreichungsart für diesen Text"
 
 #: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Scale"
@@ -154,7 +155,7 @@ msgstr "Textfarbe als GdkColor"
 
 #: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Textfarbe als R/G/B/A-kombinierter Integer"
+msgstr "Textfarbe als R/G/B/A-kombinierte Ganzzahl"
 
 #: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"
@@ -162,7 +163,7 @@ msgstr "Textbreite"
 
 #: libgnomecanvas/gnome-canvas-text.c:453
 msgid "Width of the rendered text"
-msgstr "Breite des gerenderten Texts"
+msgstr "Breite des dargestellten Texts"
 
 #: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Text height"
@@ -170,85 +171,85 @@ msgstr "Texthöhe"
 
 #: libgnomecanvas/gnome-canvas-text.c:461
 msgid "Height of the rendered text"
-msgstr "Höhe des gerenderten Texts"
+msgstr "Höhe des dargestellten Texts"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr "Schriftfamiliensatz"
+msgstr "Schriftfamilie beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
-msgstr "Ob sich dieser Tag die Schriftfamilie auswirkt"
+msgstr "Soll sich dieses Tag auf die Schriftfamilie auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr "Schriftstilstatz"
+msgstr "Schriftstil beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr "Ob dieser Tag sich auf den Schriftstil auswirkt"
+msgstr "Soll sich dieses Tag auf den Schriftstil auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr ""
+msgstr "Schriftvariante beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Schriftvariante auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr ""
+msgstr "Schriftstärke beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Schriftstärke auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr ""
+msgstr "Laufweite beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Laufweite auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr "Schriftgrößesatz"
+msgstr "Schriftgröße beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
-msgstr "Ob dieser sich Tag auf die Schriftgröße auswirkt"
+msgstr "Soll sich dieses Tag auf die Schriftgröße auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr ""
+msgstr "Hochstellung beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Hochstellung auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr ""
+msgstr "Durchstreichen beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Durchstreichung auswirken?"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr ""
+msgstr "Unterstreichen beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "Soll sich dieses Tag auf die Unterstreichungsart auswirken?"
 
 # CHECK
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr "Skalierungssatz"
+msgstr "Skalierung beeinflussen"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr "Ob sich dieser Tag auf die Schriftskalierung auswirkt"
+msgstr "Soll sich dieses Tag auf die Schriftskalierung auswirken?"
