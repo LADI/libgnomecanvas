@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "POT-Creation-Date: 2002-10-31 05:06+0100\n"
-"PO-Revision-Date: 2002-11-06 09:27+EDT\n"
+"PO-Revision-Date: 2002-11-22 23:19+EDT\n"
 "Last-Translator: Ge'ez Frontier Foundation <locales@geez.org>\n"
 "Language-Team: Amharic <locales@geez.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,8 @@ msgstr "የፊደል ቅርጽ መጠን"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr  "የፊደል ቅርጽ ነጥቦች"
+msgstr ""
+
 
 #: libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points"
@@ -308,7 +309,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
-msgstr ""
+msgstr "የመጠቆሚያዋ አበራርና አጠፋፍ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
@@ -396,7 +397,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
-msgstr ""
+msgstr "አዲስ አንቀጽ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
