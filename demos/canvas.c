@@ -2,7 +2,7 @@
 #include "testgnome.h"
 
 
-#ifdef HAVE_DEVGTK
+#ifdef GTK_HAVE_ACCEL_GROUP
 static void
 set_pixels_per_unit (GtkAdjustment *adj, GnomeCanvas *canvas)
 {
