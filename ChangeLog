@@ -1,3 +1,13 @@
+Fri Aug 01 11:49:34 2003  George Lebl <jirka@5z.com>
+
+	* libgnomecanvas/gnome-canvas.c: Inside the do_update function it is
+	  possible that during picking we emitted an event in which the user
+	  then called some function which then requested update of something.
+	  We thus need to check again if we need to update stuff as without
+	  that we'd be left in a state where need_update would have been left
+	  TRUE and the canvas would have been left unpainted until another
+	  expose event.
+
 2003-07-10  Joel Brich <joel.brich@laposte.net>
 
 	* configure.in: Added "eo" to ALL_LINGUAS.

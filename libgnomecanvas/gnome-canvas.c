@@ -3147,6 +3147,7 @@ do_update (GnomeCanvas *canvas)
 {
 	/* Cause the update if necessary */
 
+update_again:
 	if (canvas->need_update) {
 		gdouble w2cpx[6];
 
@@ -3168,6 +3169,15 @@ do_update (GnomeCanvas *canvas)
 	while (canvas->need_repick) {
 		canvas->need_repick = FALSE;
 		pick_current_item (canvas, &canvas->pick_event);
+	}
+
+	/* it is possible that during picking we emitted an event in which
+	   the user then called some function which then requested update
+	   of something.  Without this we'd be left in a state where
+	   need_update would have been left TRUE and the canvas would have
+	   been left unpainted. */
+	if (canvas->need_update) {
+		goto update_again;
 	}
 
 	/* Paint if able to */
