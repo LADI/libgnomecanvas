@@ -1,3 +1,8 @@
+Tue Jun 26 11:29:54 2001  Tim Janik  <timj@gtk.org>
+
+	* libgnomecanvas-2.0.pc.in (Requires): fix deps, we actually require
+	pangoft2 and not libgnome-2.0.
+
 2001-06-25  Jens Finke <jens@gnome.org>
 
 	* gnome-canvas-bpath.h, gnome-canvas-clipgroup.h,
