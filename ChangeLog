@@ -1,3 +1,11 @@
+2004-01-21  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* libgnomecanvas/gnome-canvas-rich-text.c:
+	(gnome_canvas_rich_text_class_init),
+	(gnome_canvas_rich_text_get_property): Add _set methods
+	for height and width. Fixes bug #112865 and others. Patch
+	by Kristian Rietveld <kris at gtk org>
+
 2004-01-14  Anders Carlsson  <andersca@gnome.org>
 
 	* configure.in: Release 2.5.3
