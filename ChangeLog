@@ -1,5 +1,9 @@
 2002-01-29  Lauris Kaplinski  <lauris@ximian.com>
 
+	* libgnomecanvas/gnome-canvas-polygon.c (set_points): Just close path -
+	this is safe to do, as path def checks start/end coordinate match and
+	appends lineto, if needed
+
 	* libgnomecanvas/gnome-canvas.c (scroll_to): Request full update with affine
 	flag set on offset change, as w2c matrix actually changes. Hopefully fixes
 	mysterious invisible-until-modified item problem.

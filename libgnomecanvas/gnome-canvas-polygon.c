@@ -150,13 +150,13 @@ gnome_canvas_polygon_destroy (GtkObject *object)
 static void
 set_points (GnomeCanvasPolygon *poly, GnomeCanvasPoints *points)
 {
-	int i, duplicate;
+	int i;
 
 
-	if(poly->path_def)
+	if (poly->path_def)
 		gnome_canvas_path_def_unref(poly->path_def);
 
-	if(!points) {
+	if (!points) {
 		poly->path_def = gnome_canvas_path_def_new();
 		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (poly), poly->path_def);
 		return;
@@ -166,22 +166,21 @@ set_points (GnomeCanvasPolygon *poly, GnomeCanvasPoints *points)
 	/* Optomize the path def to the number of points */
 	poly->path_def = gnome_canvas_path_def_new_sized(points->num_points+1);
 
+#if 0
+	/* No need for explicit duplicate, as closepaths does it for us (Lauris) */
 	/* See if we need to duplicate the first point */
 	duplicate = ((points->coords[0] != points->coords[2 * points->num_points - 2])
 		     || (points->coords[1] != points->coords[2 * points->num_points - 1]));
+#endif
 
 	
-	gnome_canvas_path_def_moveto(poly->path_def, points->coords[0], points->coords[1]);
+	gnome_canvas_path_def_moveto (poly->path_def, points->coords[0], points->coords[1]);
 	
-	for(i = 1; i < points->num_points; i++) {
-		gnome_canvas_path_def_lineto(poly->path_def, 
-					     points->coords[i*2], 
-					     points->coords[(i*2)+1]);
+	for (i = 1; i < points->num_points; i++) {
+		gnome_canvas_path_def_lineto(poly->path_def, points->coords[i * 2], points->coords[(i * 2) + 1]);
 	}
 
-	if (duplicate) {
-		gnome_canvas_path_def_closepath(poly->path_def);		
-	}
+	gnome_canvas_path_def_closepath (poly->path_def);
 
 	gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (poly), poly->path_def);
 }
