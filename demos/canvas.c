@@ -136,6 +136,180 @@ make_arrow (GtkArrowType type, gpointer data)
 	return w;
 }
 
+static void
+setup_heading (GnomeCanvasGroup *root, char *text, int pos)
+{
+	gnome_canvas_item_new (root,
+			       gnome_canvas_text_get_type (),
+			       "text", text,
+			       "x", (double) ((pos % 3) * 200 + 100),
+			       "y", (double) ((pos / 3) * 150 + 5),
+			       "font", "-adobe-helvetica-medium-r-normal--12-*-72-72-p-*-iso8859-1",
+			       "anchor", GTK_ANCHOR_N,
+			       "fill_color", "black",
+			       NULL);
+}
+
+static void
+setup_divisions (GnomeCanvasGroup *root)
+{
+	GnomeCanvasGroup *group;
+	GnomeCanvasPoints *points;
+
+	group = GNOME_CANVAS_GROUP (gnome_canvas_item_new (root,
+							   gnome_canvas_group_get_type (),
+							   "x", 0.0,
+							   "y", 0.0,
+							   NULL));
+	setup_item (GNOME_CANVAS_ITEM (group));
+
+	points = gnome_canvas_points_new (2);
+
+	gnome_canvas_item_new (group,
+			       gnome_canvas_rect_get_type (),
+			       "x1", 0.0,
+			       "y1", 0.0,
+			       "x2", 600.0,
+			       "y2", 450.0,
+			       "outline_color", "black",
+			       "width_units", 4.0,
+			       NULL);
+
+	points->coords[0] = 0.0;
+	points->coords[1] = 150.0;
+	points->coords[2] = 600.0;
+	points->coords[3] = 150.0;
+	gnome_canvas_item_new (group,
+			       gnome_canvas_line_get_type (),
+			       "points", points,
+			       "fill_color", "black",
+			       "width_units", 4.0,
+			       NULL);
+
+	points->coords[0] = 0.0;
+	points->coords[1] = 300.0;
+	points->coords[2] = 600.0;
+	points->coords[3] = 300.0;
+	gnome_canvas_item_new (group,
+			       gnome_canvas_line_get_type (),
+			       "points", points,
+			       "fill_color", "black",
+			       "width_units", 4.0,
+			       NULL);
+
+	points->coords[0] = 200.0;
+	points->coords[1] = 0.0;
+	points->coords[2] = 200.0;
+	points->coords[3] = 450.0;
+	gnome_canvas_item_new (group,
+			       gnome_canvas_line_get_type (),
+			       "points", points,
+			       "fill_color", "black",
+			       "width_units", 4.0,
+			       NULL);
+
+	points->coords[0] = 400.0;
+	points->coords[1] = 0.0;
+	points->coords[2] = 400.0;
+	points->coords[3] = 450.0;
+	gnome_canvas_item_new (group,
+			       gnome_canvas_line_get_type (),
+			       "points", points,
+			       "fill_color", "black",
+			       "width_units", 4.0,
+			       NULL);
+
+	setup_heading (group, "Rectangles", 0);
+	setup_heading (group, "Ellipses", 1);
+	setup_heading (group, "Texts", 2);
+	setup_heading (group, "Images", 3);
+	setup_heading (group, "Lines", 4);
+}
+
+static void
+setup_rectangles (GnomeCanvasGroup *root)
+{
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_rect_get_type (),
+					   "x1", 10.0,
+					   "y1", 10.0,
+					   "x2", 160.0,
+					   "y2", 60.0,
+					   "fill_color", "mediumseagreen",
+					   "outline_color", "black",
+					   "width_pixels", 4,
+					   NULL));
+}
+
+static void
+setup_ellipses (GnomeCanvasGroup *root)
+{
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_ellipse_get_type (),
+					   "x1", 20.0,
+					   "y1", 70.0,
+					   "x2", 100.0,
+					   "y2", 130.0,
+					   "fill_color", "tan",
+					   "outline_color", "slateblue",
+					   "width_units", 6.0,
+					   NULL));
+}
+
+static void
+setup_texts (GnomeCanvasGroup *root)
+{
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_text_get_type (),
+					   "text", "Hello, world!",
+					   "x", 200.0,
+					   "y", 100.0,
+					   "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					   "anchor", GTK_ANCHOR_CENTER,
+					   "fill_color", "blue",
+					   NULL));
+}
+
+static void
+setup_images (GnomeCanvasGroup *root)
+{
+	GdkImlibImage *im;
+
+	im = gdk_imlib_load_image ("toroid.png");
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_image_get_type (),
+					   "image", im,
+					   "x", 100.0,
+					   "y", 200.0,
+					   "width", (double) im->rgb_width,
+					   "height", (double) im->rgb_height,
+					   "anchor", GTK_ANCHOR_CENTER,
+					   NULL));
+}
+
+static void
+setup_lines (GnomeCanvasGroup *root)
+{
+	GnomeCanvasPoints *points;
+
+	points = gnome_canvas_points_new (4);
+	points->coords[0] = 10.0;
+	points->coords[1] = 10.0;
+	points->coords[2] = 200.0;
+	points->coords[3] = 100.0;
+	points->coords[4] = 150.0;
+	points->coords[5] = 200.0;
+	points->coords[6] = 250.0;
+	points->coords[7] = 200.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_line_get_type (),
+					   "points", points,
+					   "fill_color", "blue",
+					   "width_units", 20.0,
+					   NULL));
+	gnome_canvas_points_free (points);
+}
+
 static GtkWidget *
 create_primitives (void)
 {
@@ -146,8 +320,6 @@ create_primitives (void)
 	GtkWidget *canvas;
 	GtkAdjustment *adj;
 	GnomeCanvasGroup *root;
-	GdkImlibImage *im;
-	GnomeCanvasPoints *points;
 
 	vbox = gtk_vbox_new (FALSE, 4);
 	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
@@ -196,71 +368,18 @@ create_primitives (void)
 	gtk_box_pack_start (GTK_BOX (vbox), frame, TRUE, TRUE, 0);
 	gtk_widget_show (frame);
 
-	gnome_canvas_set_size (GNOME_CANVAS (canvas), 300, 300);
+	gnome_canvas_set_size (GNOME_CANVAS (canvas), 600, 450);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
 	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
 
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_rect_get_type (),
-					   "x1", 10.0,
-					   "y1", 10.0,
-					   "x2", 160.0,
-					   "y2", 60.0,
-					   "fill_color", "mediumseagreen",
-					   "outline_color", "black",
-					   "width_pixels", 4,
-					   NULL));
-
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_ellipse_get_type (),
-					   "x1", 20.0,
-					   "y1", 70.0,
-					   "x2", 100.0,
-					   "y2", 130.0,
-					   "fill_color", "tan",
-					   "outline_color", "slateblue",
-					   "width_units", 6.0,
-					   NULL));
-
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_text_get_type (),
-					   "text", "Hello, world!",
-					   "x", 200.0,
-					   "y", 100.0,
-					   "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-					   "anchor", GTK_ANCHOR_CENTER,
-					   "fill_color", "blue",
-					   NULL));
-
-	im = gdk_imlib_load_image ("toroid.png");
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_image_get_type (),
-					   "image", im,
-					   "x", 100.0,
-					   "y", 200.0,
-					   "width", (double) im->rgb_width,
-					   "height", (double) im->rgb_height,
-					   "anchor", GTK_ANCHOR_CENTER,
-					   NULL));
-
-	points = gnome_canvas_points_new (4);
-	points->coords[0] = 10.0;
-	points->coords[1] = 10.0;
-	points->coords[2] = 200.0;
-	points->coords[3] = 100.0;
-	points->coords[4] = 150.0;
-	points->coords[5] = 200.0;
-	points->coords[6] = 250.0;
-	points->coords[7] = 200.0;
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_line_get_type (),
-					   "points", points,
-					   "fill_color", "blue",
-					   "width_pixels", 10,
-					   NULL));
-	gnome_canvas_points_free (points);
+	setup_divisions (root);
+	setup_rectangles (root);
+	setup_ellipses (root);
+	setup_texts (root);
+	setup_images (root);
+	setup_lines (root);
 
 	return vbox;
 }
