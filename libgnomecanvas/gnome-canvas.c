@@ -3682,6 +3682,8 @@ gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
 		art_uta_free (canvas->redraw_area);
 		art_uta_free (uta);
 		canvas->redraw_area = new_uta;
+		if (canvas->idle_id == 0)
+			add_idle (canvas);
 	} else {
 		ArtUta *new_uta;
 

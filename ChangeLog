@@ -1,3 +1,10 @@
+2003-02-24  Jody Goldberg <jody@gnome.org>
+
+	* libgnomecanvas/gnome-canvas.c (gnome_canvas_request_redraw_uta) :
+	  Alex's analysis that need_redraw can be true with idle_id == 0.  If
+	  so we need to queue an idle handler or we'll never actually draw
+	  anything.  I just hope this does not set up a cycle.
+
 2003-02-21  Roozbeh Pournader  <roozbeh@sharif.edu>
 
 	* configure.in: Added "fa" to ALL_LINGUAS.
