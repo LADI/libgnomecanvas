@@ -1,4 +1,8 @@
-2001-06-20    <rconover@gnome.org>
+2001-06-28  Michael Meeks  <michael@ximian.com>
+
+	* canvas.c (main): make -lefence link.
+
+2001-06-20  Rusty Connover  <rconover@gnome.org>
 
 	* canvas-primitives.c (setup_curves): Added initial bpath test,
 	which causes some errors in gdk mode so it is currently disabled.

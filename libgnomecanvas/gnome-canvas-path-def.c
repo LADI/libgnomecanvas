@@ -918,6 +918,8 @@ gnome_canvas_path_def_closepath (GnomeCanvasPathDef * path)
 		gnome_canvas_path_def_lineto (path, bs->x3, bs->y3);
 	}
 
+	bs = path->bpath + path->substart; /* NB. def_lineto can
+					      realloc bpath */
 	bs->code = ART_MOVETO;
 
 	path->allclosed = sp_bpath_all_closed (path->bpath);

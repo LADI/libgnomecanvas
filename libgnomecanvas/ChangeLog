@@ -1,3 +1,8 @@
+2001-06-28  Michael Meeks  <michael@ximian.com>
+
+	* gnome-canvas-path-def.c (gnome_canvas_path_def_closepath): 
+	fix a broken asumption that realloc will not move the memory.
+
 2001-06-28  Cody Russell  <bratsche@gnome.org>
 
 	* gnome-canvas-text.c: #include <string.h> to avoid warning.

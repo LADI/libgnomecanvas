@@ -43,6 +43,8 @@ main (int argc, char *argv[])
 {
 	gtk_init (&argc, &argv);
 
+	free (malloc (8)); /* encourage -lefence to link */
+
 	create_canvas ();
 
 	gtk_main ();
