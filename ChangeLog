@@ -1,3 +1,7 @@
+2002-02-11  Anders Carlsson  <andersca@gnu.org>
+
+	* configure.in: Release 1.111.0
+
 2002-01-29  Lauris Kaplinski  <lauris@ximian.com>
 
 	* libgnomecanvas/gnome-canvas-polygon.c (set_points): Just close path -
