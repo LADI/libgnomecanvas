@@ -336,6 +336,11 @@ get_bounds (GnomeCanvasLine *line, double *bx1, double *by1, double *bx2, double
 	double width;
 	int i;
 
+	if (!line->coords) {
+	    *bx1 = *by1 = *bx2 = *by2 = 0.0;
+	    return;
+	}
+	
 	/* Find bounding box of line's points */
 
 	x1 = x2 = line->coords[0];

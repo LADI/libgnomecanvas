@@ -1,3 +1,9 @@
+2001-09-25  Matt Wilson  <msw@redhat.com>
+
+	* gnome-canvas-line.c (get_bounds): if there are no coordinates,
+	the bounding box is 0,0,0,0.  Fixes segfault when points have not
+	been set up yet.
+
 2001-09-24  Matt Wilson  <msw@redhat.com>
 
 	* gnome-canvas-text.c (gnome_canvas_text_class_init): revert
