@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-01-16 21:43+0100\n"
 "Last-Translator: Tegshbayar <zahiatotbr@msn.com>\n"
 "Language-Team: mongolian <mn@li.org>\n"
@@ -306,7 +306,8 @@ msgid "Cursor Visible"
 msgstr "Түүчээ Үзэгддэг"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Эхийн энэ төрөлд Түүчээ үзэгддэг эсэх?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -314,7 +315,8 @@ msgid "Cursor Blink"
 msgstr "Түүчээ Анивчдаг"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Текстийн энэ төрөлд Түүчээ Анивчдаг эсэх?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

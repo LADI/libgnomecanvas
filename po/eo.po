@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.3.0\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-07-9 17:27+0500\n"
 "Last-Translator: Charles Voelger <cvoelger@dweasel.com>\n"
 "Language-Team: Esperanto <LL@li.org>\n"
@@ -304,7 +304,8 @@ msgid "Cursor Visible"
 msgstr "Kursoro Videbla"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Ĉu la kursoro videblas en tiu riĉteksta ero?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -312,7 +313,8 @@ msgid "Cursor Blink"
 msgstr "Kursora flagro"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Ĉu la kursoro flagras en tiu riĉteksta ero?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

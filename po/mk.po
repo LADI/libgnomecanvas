@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.mk\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-06-15 21:48+0000\n"
 "Last-Translator: Vladislav Bidikov <bidikovi@mail.com.mk>\n"
 "Language-Team: Macedonian <lug@lists.linux.net.mk>\n"
@@ -312,7 +312,8 @@ msgid "Cursor Visible"
 msgstr "Курсор Видлив"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Дали е курсорот видлив во овој rich текст предмет?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -320,7 +321,8 @@ msgid "Cursor Blink"
 msgstr "Трепкање на курсорот"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Дали курсорот трепка во овој rich текст предмет?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-06-10 13:01+02:00\n"
 "Last-Translator: Mathieu van Woerkom <mathieu@brabants.org>\n"
 "Language-Team: Limburgish <li@li.org>\n"
@@ -305,7 +305,8 @@ msgid "Cursor Visible"
 msgstr "Kursor zichbaar"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Is de kursor zichbaar in dit \"rich text\" item?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -313,7 +314,8 @@ msgid "Cursor Blink"
 msgstr "Kursor kwink"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Kwink de kursor in dit \"rich text'-item?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

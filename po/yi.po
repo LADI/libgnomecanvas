@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-03-19\n"
 "Last-Translator: Raphael Finkel <raphael@cs.uky.edu>\n"
 "Language-Team: Yiddish <raphael@cs.uky.edu>\n"
@@ -303,7 +303,8 @@ msgid "Cursor Visible"
 msgstr "זעעװדיקער לױפֿער"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "צי איז דער לױפֿער זעעװדיק אין דעם רײַכטעקסט־אײנס?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -311,7 +312,8 @@ msgid "Cursor Blink"
 msgstr "לױפֿער בליצלען"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "צי פּינטלט דער לױפֿער אױף דעם רײַכטעקסט־אײנס?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

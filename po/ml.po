@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.ml\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-07-21 23:37-0600\n"
 "Last-Translator: Suresh Valiya Parambil <mvpsuresh@yahoo.com>\n"
 "Language-Team:  <ml@li.org>\n"
@@ -309,7 +309,8 @@ msgid "Cursor Visible"
 msgstr "ദൃശ്യമായ സ്ഥാനസൂചി"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "ഈ സ്ഥാനസൂചി റിച്ച് ടെക്സ്റ്റ് ഇനത്തില് ദൃശ്യമാണോ ?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -317,7 +318,8 @@ msgid "Cursor Blink"
 msgstr "മിന്നുന്ന സ്ഥാനസൂചി"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr " സ്ഥാനസൂചി ഈ റിച്ച് ടെക്സ്റ്റ് ഇനത്തില് മിന്നുന്നുണ്ടോ?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

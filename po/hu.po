@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2003-08-08 23:13+0200\n"
 "Last-Translator: Andras Timar <timar@gnome.hu>\n"
 "Language-Team: Hungarian <hu@gnome.hu>\n"
@@ -304,7 +304,8 @@ msgid "Cursor Visible"
 msgstr "Kurzor látható"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "Látható a kurzor ebben a rich text elemben?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -312,7 +313,8 @@ msgid "Cursor Blink"
 msgstr "Villogó kurzor"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "Villog a kurzor ebben a rich text elemben ?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

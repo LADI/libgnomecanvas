@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas-bn\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: বৃহস্পতি মে 15 17:40:29 IST 2003\n"
 "Last-Translator: Sayamindu Dasgupta <unmadindu@Softhome.net>\n"
 "Language-Team: Bengali <core@bengalinux.org>\n"
@@ -369,7 +369,8 @@ msgid "Cursor Visible"
 msgstr "কার্সার দৃশ্যমান"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "এই রিচ টেক্সট বস্তুতে কি কার্সার দৃশ্যমান?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -380,7 +381,8 @@ msgstr "কার্সার জ্বলছে নিভছে"
 # খাইছে - ভালো লাগছে নাহ্  - কার্সার কি চোখ নাকি?
 # চোখের ঝামেলা এড়াইতে চাইলে "জ্বলছে নিভছে" ব্যবহার করতে পারো।
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "এই রিচ টেক্সট বস্তুতে কি কার্সার জলানেভা  করবে?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281

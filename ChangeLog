@@ -1,3 +1,7 @@
+2004-02-03  Anders Carlsson  <andersca@gnome.org>
+
+	* configure.in: Release 2.5.4
+
 2004-01-23  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* demos/canvas-curve.c: Remove trailing commas from enums. Fixes

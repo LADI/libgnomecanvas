@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.gnome-2-0\n"
-"POT-Creation-Date: 2003-11-24 11:22+0100\n"
+"POT-Creation-Date: 2004-02-03 11:09+0100\n"
 "PO-Revision-Date: 2002-10-16 14:47+0200\n"
 "Last-Translator: Gil 'Dolfin' Osher <dolfin@rpg.org.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -303,7 +303,8 @@ msgid "Cursor Visible"
 msgstr "סמן נראה"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-msgid "Is the cursor visible in this this rich text item?"
+#, fuzzy
+msgid "Is the cursor visible in this rich text item?"
 msgstr "האם הסמן נראה בפריט המלל העשיר הזה?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
@@ -311,7 +312,8 @@ msgid "Cursor Blink"
 msgstr "הבהוב סמן"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-msgid "Does the cursor blink in this this rich text item?"
+#, fuzzy
+msgid "Does the cursor blink in this rich text item?"
 msgstr "האם הסמן מהבהב בפריט המלל העשיר הזה?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
