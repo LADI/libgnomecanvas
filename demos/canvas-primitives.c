@@ -281,33 +281,38 @@ make_anchor (GnomeCanvasGroup *root, double x, double y)
 static void
 setup_texts (GnomeCanvasGroup *root)
 {
-	gnome_canvas_item_new (make_anchor (root, 420.0, 40.0),
+	gnome_canvas_item_new (make_anchor (root, 420.0, 20.0),
 			       gnome_canvas_text_get_type (),
-			       "text", "Anchor west",
+			       "text", "Anchor NW",
 			       "x", 0.0,
 			       "y", 0.0,
 			       "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-			       "anchor", GTK_ANCHOR_W,
+			       "anchor", GTK_ANCHOR_NW,
 			       "fill_color", "blue",
 			       NULL);
 
-	gnome_canvas_item_new (make_anchor (root, 500.0, 75.0),
+	gnome_canvas_item_new (make_anchor (root, 470.0, 75.0),
 			       gnome_canvas_text_get_type (),
-			       "text", "Anchor center",
+			       "text", "Anchor center\nJustify center\nMultiline text",
 			       "x", 0.0,
 			       "y", 0.0,
-			       "font", "-bitstream-charter-bold-*-normal--20-*-0-0-p-*-iso8859-1",
+			       "font", "-b&h-lucida-bold-r-normal-*-14-*-*-*-p-*-iso8859-1",
 			       "anchor", GTK_ANCHOR_CENTER,
+			       "justification", GTK_JUSTIFY_CENTER,
 			       "fill_color", "firebrick",
 			       NULL);
 
-	gnome_canvas_item_new (make_anchor (root, 500.0, 130.0),
+	gnome_canvas_item_new (make_anchor (root, 590.0, 140.0),
 			       gnome_canvas_text_get_type (),
-			       "text", "Anchor south",
+			       "text", "Clipped text\nClipped text\nClipped text\nClipped text\nClipped text\nClipped text",
 			       "x", 0.0,
 			       "y", 0.0,
-			       "font", "-bitstream-courier-bold-r-normal--25-*-0-0-m-*-iso8859-1",
-			       "anchor", GTK_ANCHOR_S,
+			       "font", "-*-clean-medium-r-*-*-12-*-*-*-*-*-*-*",
+			       "anchor", GTK_ANCHOR_SE,
+			       "clip", TRUE,
+			       "clip_width", 50.0,
+			       "clip_height", 55.0,
+			       "x_offset", 10.0,
 			       "fill_color", "darkgreen",
 			       NULL);
 }
@@ -633,9 +638,9 @@ create_canvas_primitives (void)
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
-	gtk_signal_connect (GTK_OBJECT (canvas), "key_press_event",
-			    (GtkSignalFunc) key_press,
-			    NULL);
+	gtk_signal_connect_after (GTK_OBJECT (canvas), "key_press_event",
+				  (GtkSignalFunc) key_press,
+				  NULL);
 
 	w = gtk_hscrollbar_new (GTK_LAYOUT (canvas)->hadjustment);
 	gtk_table_attach (GTK_TABLE (table), w,
