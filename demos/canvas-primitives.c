@@ -387,7 +387,7 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, 
 	GdkPixbuf *im;
 	GnomeCanvasItem *image;
 
-	im = gdk_pixbuf_new_from_file("flower.png");
+	im = gdk_pixbuf_new_from_file("flower.png", NULL);
 
 	if (im){
 		image = gnome_canvas_item_new (root,
@@ -410,7 +410,7 @@ setup_images (GnomeCanvasGroup *root, int aa)
 	GdkPixbuf *im;
 	GnomeCanvasItem *image;
 
-	im = gdk_pixbuf_new_from_file("toroid.png");
+	im = gdk_pixbuf_new_from_file("toroid.png", NULL);
 	if (im){
 		image = gnome_canvas_item_new (root,
 					       gnome_canvas_pixbuf_get_type (),
