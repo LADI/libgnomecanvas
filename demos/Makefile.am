@@ -1,19 +1,21 @@
 INCLUDES = \
+	-I. 						\
+	-I$(srcdir) -I$(top_srcdir) 			\
 	-I$(top_builddir)				\
-	-I$(top_srcdir)					\
-	-I$(top_srcdir)/intl				\
-	-I$(top_builddir)/intl				\
-	-I$(top_srcdir)/libgnomeui			\
+	-I$(builddir)					\
+        -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
 	$(GTK_CFLAGS)					\
 	$(LIBGNOME_CFLAGS)				\
-	$(LIBGNOMECANVAS_CFLAGS)			\
+	$(LIBART_CFLAGS)				\
+	$(PANGO_CFLAGS)					\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
         -DGNOMECANVASDATADIR=\""$(datadir)"\" 		\
         -DGNOMECANVASPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
         -DGNOMECANVASBINDIR=\""$(bindir)"\" 		\
         -DGNOMECANVASLOCALSTATEDIR=\""$(localstatedir)"\" 	\
         -DGNOMECANVASLOCALEDIR=\""$(gnomelocaledir)"\" 	\
+	-DGTK_VERSION=\""$(GTK_VERSION)"\"		\
 	-DG_LOG_DOMAIN=\"GnomeCANVAS\"			\
 	-DVERSION=\"$(VERSION)\"
 

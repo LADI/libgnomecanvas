@@ -1,8 +1,4 @@
-INCLUDES =                                              \
-        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        \
-	-DBONOBO_UIDIR=\""$(datadir)/gnome/ui/"\"	\
-	-DPLUGIN_DIR=\""$(PLUGIN_DIR)"\"		\
-	-DG_LOG_DOMAIN=\"Bonobo\"			\
+INCLUDES = \
 	-I. 						\
 	-I$(srcdir) -I$(top_srcdir) 			\
 	-I$(top_builddir)				\
@@ -12,7 +8,16 @@ INCLUDES =                                              \
 	$(GTK_CFLAGS)					\
 	$(LIBGNOME_CFLAGS)				\
 	$(LIBART_CFLAGS)				\
-	$(PANGO_CFLAGS)
+	$(PANGO_CFLAGS)					\
+        -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
+        -DGNOMECANVASDATADIR=\""$(datadir)"\" 		\
+        -DGNOMECANVASPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
+        -DGNOMECANVASBINDIR=\""$(bindir)"\" 		\
+        -DGNOMECANVASLOCALSTATEDIR=\""$(localstatedir)"\" 	\
+        -DGNOMECANVASLOCALEDIR=\""$(gnomelocaledir)"\" 	\
+	-DGTK_VERSION=\""$(GTK_VERSION)"\"		\
+	-DG_LOG_DOMAIN=\"GnomeCANVAS\"			\
+	-DVERSION=\"$(VERSION)\"
 
 lib_LTLIBRARIES = libgnomecanvas-2.la
 
