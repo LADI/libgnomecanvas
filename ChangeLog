@@ -1,3 +1,12 @@
+2002-06-07  Anders Carlsson  <andersca@gnu.org>
+
+	* configure.in:
+	* tests/Makefile.am:
+	* tests/test-libglade-canvas.c: (main):
+	* tests/test-libglade-canvas.glade:
+	Update version requirements, check in the glade2 file so we 
+	don't have to depend on libglade-convert.
+	
 2002-05-13  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Release 1.117.0
