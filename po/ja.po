@@ -1,18 +1,18 @@
 # libgnomecanvas ja.po.
-# Copyright (C) 1998-2001 Free Software Foundation, Inc.
+# Copyright (C) 1998-2002 Free Software Foundation, Inc.
 # Yukihiro Nakai <Nakai@abricot.co.jp>, 1998,2001.
 # Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999.
-# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 1999-2001.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 1999-2002.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 1.108.0\n"
-"POT-Creation-Date: 2002-02-19 10:47+0100\n"
-"PO-Revision-Date: 2001-12-25 23:44+0900\n"
+"Project-Id-Version: libgnomecanvas 1.112.0\n"
+"POT-Creation-Date: 2002-02-19 19:31+0900\n"
+"PO-Revision-Date: 2002-02-19 19:32+0900\n"
 "Last-Translator: Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
@@ -25,228 +25,228 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
-msgstr "¥¢¥ó¥Á¥¨¥¤¥ê¥¢¥¹"
+msgstr "ã‚¢ãƒ³ãƒã‚¨ã‚¤ãƒªã‚¢ã‚¹"
 
 #: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
-msgstr "¥­¥ã¥ó¥Ğ¥¹¤Î¥¢¥ó¥Á¥¨¥¤¥ê¥¢¥¹¤Î¥â¡¼¥É"
+msgstr "ã‚­ãƒ£ãƒ³ãƒã‚¹ã®ã‚¢ãƒ³ãƒã‚¨ã‚¤ãƒªã‚¢ã‚¹ã®ãƒ¢ãƒ¼ãƒ‰"
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
-msgstr "¥Æ¥­¥¹¥È"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:204
 msgid "Text to render"
-msgstr "ÉÁ²è¤¹¤ë¥Æ¥­¥¹¥È"
+msgstr "æç”»ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Markup"
-msgstr "¥Ş¡¼¥¯¥¢¥Ã¥×"
+msgstr "ãƒãƒ¼ã‚¯ã‚¢ãƒƒãƒ—"
 
 #: libgnomecanvas/gnome-canvas-text.c:213
 msgid "Marked up text to render"
-msgstr "ÉÁ²è¤¹¤ë¥Ş¡¼¥¯¥¢¥Ã¥×¤µ¤ì¤¿¥Æ¥­¥¹¥È"
+msgstr "æç”»ã™ã‚‹ãƒãƒ¼ã‚¯ã‚¢ãƒƒãƒ—ã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:238
 msgid "Font"
-msgstr "¥Õ¥©¥ó¥È"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:239
 msgid "Font description as a string"
-msgstr "¥Õ¥©¥ó¥È¤ÎÊ¸»úÎó¤Ë¤è¤ëµ­½Ò"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆã®æ–‡å­—åˆ—ã«ã‚ˆã‚‹è¨˜è¿°"
 
 #: libgnomecanvas/gnome-canvas-text.c:247
 msgid "Font description"
-msgstr "¥Õ¥©¥ó¥È¤Îµ­½Ò"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆã®è¨˜è¿°"
 
 #: libgnomecanvas/gnome-canvas-text.c:248
 msgid "Font description as a PangoFontDescription struct"
-msgstr "¥Õ¥©¥ó¥È¤Î PangoFontDescription ¹½Â¤ÂÎ¤Ë¤è¤ëµ­½Ò"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆã® PangoFontDescription æ§‹é€ ä½“ã«ã‚ˆã‚‹è¨˜è¿°"
 
 #: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Font family"
-msgstr "¥Õ¥©¥ó¥È¥Õ¥¡¥ß¥ê¡¼"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼"
 
 #: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "¥Õ¥©¥ó¥È¥Õ¥¡¥ß¥ê¡¼¤ÎÌ¾¾Î (Îã) Sans, Helvetica, Times, Monospace"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼ã®åç§° (ä¾‹) Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
-msgstr "¥Õ¥©¥ó¥È ¥¹¥¿¥¤¥ë"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¹ã‚¿ã‚¤ãƒ«"
 
 #: libgnomecanvas/gnome-canvas-text.c:283
 #: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
-msgstr "¥Õ¥©¥ó¥È ¥Ğ¥ê¥¢¥ó¥È"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ãƒãƒªã‚¢ãƒ³ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr "¥Õ¥©¥ó¥È ¥¦¥§¥¤¥È"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¦ã‚§ã‚¤ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
 msgid "Font stretch"
-msgstr "¥Õ¥©¥ó¥È ¥¹¥È¥ì¥Ã¥Á"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¹ãƒˆãƒ¬ãƒƒãƒ"
 
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
 msgid "Font size"
-msgstr "¥Õ¥©¥ó¥È ¥µ¥¤¥º"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚µã‚¤ã‚º"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
-msgstr "¥Õ¥©¥ó¥È ¥İ¥¤¥ó¥È"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ãƒã‚¤ãƒ³ãƒˆ"
 
 #: libgnomecanvas/gnome-canvas-text.c:327
 msgid "Font size in points"
-msgstr "¥Õ¥©¥ó¥È¤Î¥İ¥¤¥ó¥ÈÃ±°Ì¤Ç¤ÎÂç¤­¤µ"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆã®ãƒã‚¤ãƒ³ãƒˆå˜ä½ã§ã®å¤§ãã•"
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr "¥é¥¤¥º"
+msgstr "ãƒ©ã‚¤ã‚º"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "¥Ù¡¼¥¹¥é¥¤¥ó¤è¤ê¾åÊı¸ş¤Î¥Æ¥­¥¹¥È¤Î¥ª¥Õ¥»¥Ã¥È (Éé¤Ê¤é²¼Êı¸ş)"
+msgstr "ãƒ™ãƒ¼ã‚¹ãƒ©ã‚¤ãƒ³ã‚ˆã‚Šä¸Šæ–¹å‘ã®ãƒ†ã‚­ã‚¹ãƒˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ (è² ãªã‚‰ä¸‹æ–¹å‘)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
-msgstr "ÂÇ¤Á¾Ã¤·Àş"
+msgstr "æ‰“ã¡æ¶ˆã—ç·š"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr "¥Æ¥­¥¹¥È¤òÂÇ¤Á¾Ã¤¹¤«¤É¤¦¤«"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã‚’æ‰“ã¡æ¶ˆã™ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
-msgstr "²¼Àş"
+msgstr "ä¸‹ç·š"
 
 #: libgnomecanvas/gnome-canvas-text.c:358
 msgid "Style of underline for this text"
-msgstr "¤³¤Î¥Æ¥­¥¹¥È¤Î²¼Àş¤Î¥¹¥¿¥¤¥ë"
+msgstr "ã“ã®ãƒ†ã‚­ã‚¹ãƒˆã®ä¸‹ç·šã®ã‚¹ã‚¿ã‚¤ãƒ«"
 
 #: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Scale"
-msgstr "¥¹¥±¡¼¥ë"
+msgstr "ã‚¹ã‚±ãƒ¼ãƒ«"
 
 #: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
-msgstr "¥Õ¥©¥ó¥È¤Î¥µ¥¤¥º (¥Ç¥Õ¥©¥ë¥È¤ÎÂç¤­¤µ¤«¤é¤ÎÁêÂĞÃÍ)"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆã®ã‚µã‚¤ã‚º (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¤§ãã•ã‹ã‚‰ã®ç›¸å¯¾å€¤)"
 
 #: libgnomecanvas/gnome-canvas-text.c:422
 #: libgnomecanvas/gnome-canvas-text.c:430
 #: libgnomecanvas/gnome-canvas-text.c:438
 msgid "Color"
-msgstr "¿§"
+msgstr "è‰²"
 
 #: libgnomecanvas/gnome-canvas-text.c:423
 msgid "Text color, as string"
-msgstr "¥Æ¥­¥¹¥È¤ÎÊ¸»úÎóÉ½¸½¤Ë¤è¤ë¿§"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã«ã‚ˆã‚‹è‰²"
 
 #: libgnomecanvas/gnome-canvas-text.c:431
 msgid "Text color, as a GdkColor"
-msgstr "¥Æ¥­¥¹¥È¤Î GdkColor ¤Ë¤è¤ë¿§"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã® GdkColor ã«ã‚ˆã‚‹è‰²"
 
 #: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "¥Æ¥­¥¹¥È¤Î R/G/B/A ¤ÎÁÈ¤ß¹ç¤ï¤»¤Î¿ôÃÍ¤Ë¤è¤ë¿§"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã® R/G/B/A ã®çµ„ã¿åˆã‚ã›ã®æ•°å€¤ã«ã‚ˆã‚‹è‰²"
 
 #: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"
-msgstr "¥Æ¥­¥¹¥È¤ÎÉı"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã®å¹…"
 
 #: libgnomecanvas/gnome-canvas-text.c:453
 msgid "Width of the rendered text"
-msgstr "ÉÁ²è¤µ¤ì¤Æ¤¤¤ë¥Æ¥­¥¹¥È¤ÎÉı"
+msgstr "æç”»ã•ã‚Œã¦ã„ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã®å¹…"
 
 #: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Text height"
-msgstr "¥Æ¥­¥¹¥È¤Î¹â¤µ"
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆã®é«˜ã•"
 
 #: libgnomecanvas/gnome-canvas-text.c:461
 msgid "Height of the rendered text"
-msgstr "ÉÁ²è¤µ¤ì¤Æ¤¤¤ë¥Æ¥­¥¹¥È¤Î¹â¤µ"
+msgstr "æç”»ã•ã‚Œã¦ã„ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã®é«˜ã•"
 
 #: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Font family set"
-msgstr "¥Õ¥©¥ó¥È¥Õ¥¡¥ß¥ê¡¼ÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:470
 msgid "Whether this tag affects the font family"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È ¥Õ¥¡¥ß¥ê¡¼¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆ ãƒ•ã‚¡ãƒŸãƒªãƒ¼ã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Font style set"
-msgstr "¥Õ¥©¥ó¥È ¥¹¥¿¥¤¥ëÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¹ã‚¿ã‚¤ãƒ«è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:474
 msgid "Whether this tag affects the font style"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È¤Î¥¹¥¿¥¤¥ë¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ã‚¿ã‚¤ãƒ«ã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Font variant set"
-msgstr "¥Õ¥©¥ó¥È ¥Ğ¥ê¥¢¥ó¥ÈÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ãƒãƒªã‚¢ãƒ³ãƒˆè¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:478
 msgid "Whether this tag affects the font variant"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È ¥Ğ¥ê¥¢¥ó¥È¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆ ãƒãƒªã‚¢ãƒ³ãƒˆã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Font weight set"
-msgstr "¥Õ¥©¥ó¥È ¥¦¥§¥¤¥ÈÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¦ã‚§ã‚¤ãƒˆè¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:482
 msgid "Whether this tag affects the font weight"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È¤Î¥¦¥§¥¤¥È¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆã®ã‚¦ã‚§ã‚¤ãƒˆã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr "¥Õ¥©¥ó¥È ¥¹¥È¥ì¥Ã¥ÁÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚¹ãƒˆãƒ¬ãƒƒãƒè¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È¤Î¥¹¥È¥ì¥Ã¥Á¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ãƒˆãƒ¬ãƒƒãƒã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
-msgstr "¥Õ¥©¥ó¥È ¥µ¥¤¥ºÀßÄê"
+msgstr "ãƒ•ã‚©ãƒ³ãƒˆ ã‚µã‚¤ã‚ºè¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:490
 msgid "Whether this tag affects the font size"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È¤ÎÂç¤­¤µ¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆã®å¤§ãã•ã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Rise set"
-msgstr "¥é¥¤¥º ÀßÄê"
+msgstr "ãƒ©ã‚¤ã‚º è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:494
 msgid "Whether this tag affects the rise"
-msgstr "¤³¤Î¥¿¥°¤¬¥é¥¤¥º¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ©ã‚¤ã‚ºã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Strikethrough set"
-msgstr "ÂÇ¤Á¾Ã¤· ÀßÄê"
+msgstr "æ‰“ã¡æ¶ˆã— è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:498
 msgid "Whether this tag affects strikethrough"
-msgstr "¤³¤Î¥¿¥°¤¬ÂÇ¤Á¾Ã¤·Àş¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒæ‰“ã¡æ¶ˆã—ç·šã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Underline set"
-msgstr "²¼Àş ÀßÄê"
+msgstr "ä¸‹ç·š è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:502
 msgid "Whether this tag affects underlining"
-msgstr "¤³¤Î¥¿¥°¤¬²¼Àş¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒä¸‹ç·šã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Scale set"
-msgstr "¥¹¥±¡¼¥ëÀßÄê"
+msgstr "ã‚¹ã‚±ãƒ¼ãƒ«è¨­å®š"
 
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
-msgstr "¤³¤Î¥¿¥°¤¬¥Õ¥©¥ó¥È¤Î¥¹¥±¡¼¥ê¥ó¥°¤Ë±Æ¶Á¤¹¤ë¤«¤É¤¦¤«"
+msgstr "ã“ã®ã‚¿ã‚°ãŒãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã«å½±éŸ¿ã™ã‚‹ã‹ã©ã†ã‹"
