@@ -1,3 +1,7 @@
+2001-10-29  Michael Meeks  <michael@ximian.com>
+
+	* configure.in: depend on the latest gtk+ and pango.
+
 2001-10-26  Michael Meeks  <michael@ximian.com>
 
 	* glade/glade-canvas.c (glade_module_register_widgets):
