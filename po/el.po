@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.0.4\n"
-"POT-Creation-Date: 2003-01-05 11:17+0200\n"
+"POT-Creation-Date: 2003-01-08 10:09+0100\n"
 "PO-Revision-Date: 2003-01-05 11:19+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -79,7 +79,8 @@ msgstr "Οικογένεια γραμματοσειρών"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
+msgstr ""
+"Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:276
@@ -120,7 +121,8 @@ msgid "Rise"
 msgstr "Ανασήκωση"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Διάταξη κειμένου πάνω από τη γραμμή βάσης (κάτω από τη γραμμή βάσης αν είναι "
 "αρνητική)"
@@ -193,7 +195,8 @@ msgstr "Ορισμός οικογένειας γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
+msgstr ""
+"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:476
@@ -210,7 +213,8 @@ msgstr "Ορισμός παραλλαγής γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
+msgstr ""
+"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -418,4 +422,3 @@ msgstr "Εσοχές"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Αριθμός εικονοστοιχείων για εσοχή"
-

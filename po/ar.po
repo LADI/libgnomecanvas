@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-11-27 21:55+0100\n"
+"POT-Creation-Date: 2003-01-08 10:09+0100\n"
 "PO-Revision-Date: 2002-05-16 21:38+0300\n"
 "Last-Translator: Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>\n"
 "Language-Team: Arabic <contact@arabeyes.org>\n"

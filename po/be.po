@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-11-27 21:55+0100\n"
+"POT-Creation-Date: 2003-01-08 10:09+0100\n"
 "PO-Revision-Date: 2002-11-06 10:15+0200\n"
 "Last-Translator: Vital Khilko <dojlid@mova.org>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
