@@ -15,7 +15,7 @@ main (int argc, char *argv[])
 
 	gtk_init (&argc, &argv);
 
-	xml = glade_xml_new ("test-libglade-canvas.glade", NULL, NULL);
+	xml = glade_xml_new (GLADEFILE, NULL, NULL);
 
 	g_assert (xml != NULL);
 

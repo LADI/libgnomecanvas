@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.0\n"
-"POT-Creation-Date: 2002-06-02 13:22+0200\n"
+"POT-Creation-Date: 2002-05-13 19:09+0200\n"
 "PO-Revision-Date: 2002-06-02 17:58+0100\n"
 "Last-Translator: Juan Manuel García Molina <juanma_gm@wanadoo.es>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -73,7 +73,8 @@ msgstr "Familia de la tipografía"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Nombre de la familia de la tipografía, p.e. Sans, Helvetica, Times, Monospace"
+msgstr ""
+"Nombre de la familia de la tipografía, p.e. Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
@@ -113,8 +114,10 @@ msgid "Rise"
 msgstr "Aumento"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Desviación por encima del texto base (por debajo si el aumento es negativo)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Desviación por encima del texto base (por debajo si el aumento es negativo)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -401,4 +404,3 @@ msgstr "Sangrado"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Número de píxeles para sangrado"
-
