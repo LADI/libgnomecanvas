@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2003-03-27 12:45+0100\n"
+"POT-Creation-Date: 2003-08-11 20:32+0200\n"
 "PO-Revision-Date: 2002-09-04 20:38+0530\n"
 "Last-Translator: Anurag Seetha <anuragseetha@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi-gnome@lists.sourceforge.net>\n"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2003-04-09 12:41+0200\n"
+"POT-Creation-Date: 2003-08-11 20:32+0200\n"
 "PO-Revision-Date: 2003-05-03 19:53+0200\n"
 "Last-Translator: Dušan Marjanović <madafaka@root.co.yu>\n"
 "Language-Team: Serbian (sr) <serbiagnome-lista@nongnu.org>\n"
@@ -39,11 +39,9 @@ msgstr "Omekšanost ivica slike"
 msgid "Text"
 msgstr "Tekst"
 
-
 #: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
 msgstr "Tekst za iscrtavanje"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
@@ -114,11 +112,12 @@ msgstr "Veličina fonta u štamparskim tačkama"
 msgid "Rise"
 msgstr "Uspon"
 
-
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Pomeraj teksta iznad osnovne linije (ispod osnovne linije ako je pomeraj negativan)"
+msgstr ""
+"Pomeraj teksta iznad osnovne linije (ispod osnovne linije ako je pomeraj "
+"negativan)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -323,8 +322,9 @@ msgid "Grow Height"
 msgstr "Uvećanje visine"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
- msgid "Should the text box height grow if the text does not fit?"
-msgstr "Da li polje sa tekstom treba da se povećava ukoliko tekst nemože da stane"
+msgid "Should the text box height grow if the text does not fit?"
+msgstr ""
+"Da li polje sa tekstom treba da se povećava ukoliko tekst nemože da stane"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibGnomeCanvas.Gnome.Core-2.1\n"
-"POT-Creation-Date: 2003-03-27 12:45+0100\n"
+"POT-Creation-Date: 2003-08-11 20:32+0200\n"
 "PO-Revision-Date: 2002-12-20 17:23+0530\n"
 "Last-Translator: Pramod <rpramod@postmaster.co.uk>\n"
 "Language-Team: Kannada <LL@li.org>\n"
