@@ -2166,7 +2166,7 @@ gnome_canvas_init (GnomeCanvas *canvas)
 	canvas->pick_event.crossing.x = 0;
 	canvas->pick_event.crossing.y = 0;
 
-	canvas->dither = GDK_RGB_DITHER_NORMAL;
+	canvas->dither = GDK_RGB_DITHER_MAX;
 
 	gtk_layout_set_hadjustment (GTK_LAYOUT (canvas), NULL);
 	gtk_layout_set_vadjustment (GTK_LAYOUT (canvas), NULL);
