@@ -146,7 +146,7 @@ gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class)
                 (gobject_class,
                  PROP_POINTS,
                  g_param_spec_boxed ("points", NULL, NULL,
-				     GTK_TYPE_GNOME_CANVAS_POINTS,
+				     GNOME_TYPE_CANVAS_POINTS,
 				     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
