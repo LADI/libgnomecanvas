@@ -207,6 +207,7 @@ Makefile
 po/Makefile.in
 libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
+libgnomecanvas/libgnomecanvas-2.0-uninstalled.pc
 glade/Makefile
 demos/Makefile
 tests/Makefile

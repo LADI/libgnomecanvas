@@ -88,7 +88,8 @@ gnome-canvas-marshal.c: gnome-canvas-marshal.list $(GLIB_GENMARSHAL)
 
 EXTRA_DIST = \
 	gnome-canvas-marshal.list	\
-	libgnomecanvas-2.0.pc.in
+	libgnomecanvas-2.0.pc.in	\
+	libgnomecanvas-2.0-uninstalled.pc.in
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libgnomecanvas-2.0.pc
