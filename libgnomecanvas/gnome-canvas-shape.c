@@ -1086,7 +1086,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 	
 	/* Clipped fill SVP */
 
-	if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
+	if ((priv->fill_set) && (priv->path) && (gnome_canvas_path_def_any_closed (priv->path))) {
 		GnomeCanvasPathDef * cpath;
 		ArtSvpWriter *swr;
 		ArtVpath *vpath;
@@ -1524,7 +1524,7 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 		art_free (vpath);
 		art_drect_svp (&bbox, svp);
 		art_svp_free (svp);
-	} else if ((shape->priv->fill_set) && (gnome_canvas_path_def_any_closed (shape->priv->path))) {
+	} else if ((priv->fill_set) && (priv->path) && (gnome_canvas_path_def_any_closed (priv->path))) {
 		GnomeCanvasPathDef *cpath;
 		ArtSvpWriter *swr;
 		ArtVpath *vpath;

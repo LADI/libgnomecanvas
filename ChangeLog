@@ -1,3 +1,13 @@
+2002-09-17  Sebastian Rittau  <srittau@jroger.in-berlin.de>
+
+	Backport from HEAD:
+
+	* libgnomecanvas/gnome-canvas-shape.c:
+	(gnome_canvas_shape_update):
+	(gnome_canvas_shape_bounds): Ensure that path is not NULL before
+	calling gnome_canvas_path_def_any(). Original patch by Andreas
+	Holzmann <Andreas.Holzmann@epost.de>. Bugzilla #74127.
+
 2002-09-04  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Release 2.0.4
