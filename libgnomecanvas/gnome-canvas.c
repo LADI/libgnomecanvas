@@ -3621,6 +3621,15 @@ uta_union_clip (ArtUta *uta1, ArtUta *uta2, ArtIRect *clip)
 	return uta;
 }
 
+static inline void
+get_visible_region (GnomeCanvas *canvas, ArtIRect *visible)
+{
+	visible->x0 = canvas->layout.hadjustment->value - canvas->zoom_xofs;
+	visible->y0 = canvas->layout.vadjustment->value - canvas->zoom_yofs;
+	visible->x1 = visible->x0 + GTK_WIDGET (canvas)->allocation.width;
+	visible->y1 = visible->y0 + GTK_WIDGET (canvas)->allocation.height;
+}
+
 /**
  * gnome_canvas_request_redraw_uta:
  * @canvas: A canvas.
@@ -3631,17 +3640,14 @@ uta_union_clip (ArtUta *uta1, ArtUta *uta2, ArtIRect *clip)
  **/
 void
 gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
-                                 ArtUta *uta)
+                                 ArtUta      *uta)
 {
 	ArtIRect visible;
 
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (uta != NULL);
 
-	visible.x0 = -canvas->zoom_xofs;
-	visible.y0 = -canvas->zoom_yofs;
-	visible.x1 = visible.x0 + GTK_WIDGET (canvas)->allocation.width;
-	visible.y1 = visible.y0 + GTK_WIDGET (canvas)->allocation.height;
+	get_visible_region (canvas, &visible);
 
 	if (canvas->need_redraw) {
 		ArtUta *new_uta;
@@ -3698,10 +3704,7 @@ gnome_canvas_request_redraw (GnomeCanvas *canvas, int x1, int y1, int x2, int y2
 	bbox.x1 = x2;
 	bbox.y1 = y2;
 
-	visible.x0 = canvas->layout.hadjustment->value - canvas->zoom_xofs;
-	visible.y0 = canvas->layout.vadjustment->value - canvas->zoom_yofs;
-	visible.x1 = visible.x0 + GTK_WIDGET (canvas)->allocation.width;
-	visible.y1 = visible.y0 + GTK_WIDGET (canvas)->allocation.height;
+	get_visible_region (canvas, &visible);
 
 	art_irect_intersect (&clip, &bbox, &visible);
 

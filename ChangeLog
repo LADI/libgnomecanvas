@@ -1,3 +1,7 @@
+2001-08-27  Michael Meeks  <michael@ximian.com>
+
+	* configure.in: find glib-genmarshal
+
 Wed Aug 15 11:55:09 2001  Tim Janik  <timj@gtk.org>
 
 	* configure.in: require automake 2.13.

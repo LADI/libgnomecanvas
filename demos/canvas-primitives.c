@@ -733,8 +733,10 @@ key_press (GnomeCanvas *canvas, GdkEventKey *event, gpointer data)
 		gnome_canvas_scroll_to (canvas, x - 10, y);
 	else if (event->keyval == GDK_Right)
 		gnome_canvas_scroll_to (canvas, x + 10, y);
+	else
+		return FALSE;
 
-	return FALSE;
+	return TRUE;
 }
 
 GtkWidget *

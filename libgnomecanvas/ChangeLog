@@ -1,3 +1,14 @@
+2001-08-27  Michael Meeks  <michael@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_request_redraw_uta): 
+	fix strange rendering bug - split out 
+	(get_visible_region): this.
+	(gnome_canvas_request_redraw): use it here too.
+	Redrews after zooming are strangely broken as well; doh.
+
+	* Makefile.am: fixup marshal generation to be less broken,
+	from Darin's work.
+
 2001-08-25  Darin Adler  <darin@bentspoon.com>
 
 	* Makefile.am: Remove excessive -I options.
