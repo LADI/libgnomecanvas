@@ -18,7 +18,7 @@ AC_PATH_PROGS(PATH_TO_XRDB, "xrdb")
 
 GNOME_COMPILE_WARNINGS
 
-ALL_LINGUAS="az es fr it nn no ru sv ta tr wa zh_TW"
+ALL_LINGUAS="az es fr it nn no ru sk sv ta tr wa zh_TW"
 AM_GLIB_GNU_GETTEXT
 
 AC_SUBST(CFLAGS)

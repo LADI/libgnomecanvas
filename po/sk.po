@@ -1,0 +1,244 @@
+# libgnomecanvas sk.po
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Marcel Telka <marcel@telka.sk>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgnomecanvas\n"
+"POT-Creation-Date: 2001-10-08 08:29+0200\n"
+"PO-Revision-Date: 2001-10-08 08:51+0200\n"
+"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
+msgid "X"
+msgstr "X"
+
+#: libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
+msgid "Y"
+msgstr "Y"
+
+#: libgnomecanvas/gnome-canvas-text.c:203
+msgid "Text"
+msgstr "Text"
+
+#: libgnomecanvas/gnome-canvas-text.c:204
+msgid "Text to render"
+msgstr "Text na zobrazenie"
+
+#: libgnomecanvas/gnome-canvas-text.c:212
+msgid "Markup"
+msgstr "Oznaèi»"
+
+#: libgnomecanvas/gnome-canvas-text.c:213
+msgid "Marked up text to render"
+msgstr "Oznaèený text na zobrazenie"
+
+#: libgnomecanvas/gnome-canvas-text.c:238
+msgid "Font"
+msgstr "Typ písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:239
+msgid "Font description as a string"
+msgstr "Popis typu písma ako re»azec"
+
+#: libgnomecanvas/gnome-canvas-text.c:247
+msgid "Font description"
+msgstr "Popis typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:248
+msgid "Font description as a PangoFontDescription struct"
+msgstr "Popis typu písma ako ¹truktúra PangoFontDescription"
+
+#: libgnomecanvas/gnome-canvas-text.c:256
+msgid "Font family"
+msgstr "Rodina písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:257
+msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
+msgstr "Meno rodiny písma, napr. Sans, Helvetica, Times, Monospace"
+
+#: libgnomecanvas/gnome-canvas-text.c:273
+#: libgnomecanvas/gnome-canvas-text.c:274
+msgid "Font style"
+msgstr "©týl písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:283
+#: libgnomecanvas/gnome-canvas-text.c:284
+msgid "Font variant"
+msgstr "Varianta typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:293
+#: libgnomecanvas/gnome-canvas-text.c:294
+msgid "Font weight"
+msgstr "Hrúbka písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:305
+#: libgnomecanvas/gnome-canvas-text.c:306
+msgid "Font stretch"
+msgstr "Roztiahnutie písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:315
+#: libgnomecanvas/gnome-canvas-text.c:316
+msgid "Font size"
+msgstr "Veµkos» písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:326
+msgid "Font points"
+msgstr "Body písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:327
+msgid "Font size in points"
+msgstr "Veµkos» typu písma v bodoch"
+
+#: libgnomecanvas/gnome-canvas-text.c:337
+msgid "Rise"
+msgstr "Vzostup"
+
+#: libgnomecanvas/gnome-canvas-text.c:338
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Posunutie textu nad základnou èiarou (pod základnou èiarou, ak je vzostup "
+"negatívny)"
+
+#: libgnomecanvas/gnome-canvas-text.c:348
+msgid "Strikethrough"
+msgstr "Preèiarknuté"
+
+#: libgnomecanvas/gnome-canvas-text.c:349
+msgid "Whether to strike through the text"
+msgstr "Èi bude text preèiarknutý"
+
+#: libgnomecanvas/gnome-canvas-text.c:357
+msgid "Underline"
+msgstr "Podèiarknuté"
+
+#: libgnomecanvas/gnome-canvas-text.c:358
+msgid "Style of underline for this text"
+msgstr "©týl podèiarknutia pre tento text"
+
+#: libgnomecanvas/gnome-canvas-text.c:367
+msgid "Scale"
+msgstr "Mierka"
+
+#: libgnomecanvas/gnome-canvas-text.c:368
+msgid "Size of font, relative to default size"
+msgstr "Veµkos» typu písma, relatívne k predvolenej veµkosti"
+
+#: libgnomecanvas/gnome-canvas-text.c:422
+#: libgnomecanvas/gnome-canvas-text.c:430
+#: libgnomecanvas/gnome-canvas-text.c:438
+msgid "Color"
+msgstr "Farba"
+
+#: libgnomecanvas/gnome-canvas-text.c:423
+msgid "Text color, as string"
+msgstr "Farba textu (ako re»azec)"
+
+#: libgnomecanvas/gnome-canvas-text.c:431
+msgid "Text color, as a GdkColor"
+msgstr "Farba textu (ako GdkColor)"
+
+#: libgnomecanvas/gnome-canvas-text.c:439
+msgid "Text color, as an R/G/B/A combined integer"
+msgstr "Farba textu (ako R/G/B/A kombinované èíslo)"
+
+#: libgnomecanvas/gnome-canvas-text.c:452
+msgid "Text width"
+msgstr "©írka textu"
+
+#: libgnomecanvas/gnome-canvas-text.c:453
+msgid "Width of the rendered text"
+msgstr "©írka zobrazeného textu"
+
+#: libgnomecanvas/gnome-canvas-text.c:460
+msgid "Text height"
+msgstr "Vý¹ka textu"
+
+#: libgnomecanvas/gnome-canvas-text.c:461
+msgid "Height of the rendered text"
+msgstr "Vý¹ka zobrazeného textu"
+
+#: libgnomecanvas/gnome-canvas-text.c:469
+msgid "Font family set"
+msgstr "Nastavi» rodinu typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:470
+msgid "Whether this tag affects the font family"
+msgstr "Èi táto znaèka ovplyvní rodinu typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:473
+msgid "Font style set"
+msgstr "Nastavi» ¹týl typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:474
+msgid "Whether this tag affects the font style"
+msgstr "Èi táto znaèka ovplyvní ¹týl typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:477
+msgid "Font variant set"
+msgstr "Nastavi» variant typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:478
+msgid "Whether this tag affects the font variant"
+msgstr "Èi táto znaèka ovplyvní variant typu písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:481
+msgid "Font weight set"
+msgstr "Nastavi» hrúbku písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:482
+msgid "Whether this tag affects the font weight"
+msgstr "Èi táto znaèka ovplyvní hrúbku písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:485
+msgid "Font stretch set"
+msgstr "Nastavi» roztiahnutie písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:486
+msgid "Whether this tag affects the font stretch"
+msgstr "Èi táto znaèka ovplyvní roztiahnutie písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:489
+msgid "Font size set"
+msgstr "Nastavi» veµkos» písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:490
+msgid "Whether this tag affects the font size"
+msgstr "Èi táto znaèka ovplyvní veµkos» písma"
+
+#: libgnomecanvas/gnome-canvas-text.c:493
+msgid "Rise set"
+msgstr "Nastavi» vzostup"
+
+#: libgnomecanvas/gnome-canvas-text.c:494
+msgid "Whether this tag affects the rise"
+msgstr "Èi táto znaèka ovplyvní vzostup"
+
+#: libgnomecanvas/gnome-canvas-text.c:497
+msgid "Strikethrough set"
+msgstr "Nastavi» preèiarknutie"
+
+#: libgnomecanvas/gnome-canvas-text.c:498
+msgid "Whether this tag affects strikethrough"
+msgstr "Èi táto znaèka ovplyvní preèiarknutie"
+
+#: libgnomecanvas/gnome-canvas-text.c:501
+msgid "Underline set"
+msgstr "Nastavi» podèiarknutie"
+
+#: libgnomecanvas/gnome-canvas-text.c:502
+msgid "Whether this tag affects underlining"
+msgstr "Èi táto znaèka ovplyvní podèiarknutie"
+
+#: libgnomecanvas/gnome-canvas-text.c:505
+msgid "Scale set"
+msgstr "Nastavi» mierku"
+
+#: libgnomecanvas/gnome-canvas-text.c:506
+msgid "Whether this tag affects font scaling"
+msgstr "Èi táto znaèka ovplyvní zmenu veµkosti písma"
