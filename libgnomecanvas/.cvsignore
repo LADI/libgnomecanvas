@@ -9,9 +9,8 @@ so_locations
 .exrc
 libgnomecanvas-2.0.pc
 symlink_stamp
-
-gnomecanvas.defs
-gnomecanvastypebuiltins.h
-gnomecanvastypebuiltins_ids.c
-gnomecanvastypebuiltins_vars.c
-gnomecanvastypebuiltins_evals.c
+libgnomecanvas.defs
+libgnomecanvastypebuiltins.h
+libgnomecanvastypebuiltins_ids.c
+libgnomecanvastypebuiltins_vars.c
+libgnomecanvastypebuiltins_evals.c
