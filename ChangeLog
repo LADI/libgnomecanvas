@@ -1,5 +1,9 @@
 2003-02-27  Hans Petter Jansson  <hpj@ximian.com>
 
+	* configure.in: Bump to 2.2.0.2.
+
+2003-02-27  Hans Petter Jansson  <hpj@ximian.com>
+
 	* libgnomecanvas/gnome-canvas.c (gnome_canvas_map): Reinstate the
 	idle update handler if necessary.
 	(gnome_canvas_request_update_real): No longer assert that we have
