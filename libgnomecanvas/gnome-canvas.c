@@ -205,7 +205,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("button_press_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_press_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -214,7 +214,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("button_release_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, button_release_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -223,7 +223,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("motion_notify_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, motion_notify_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -232,7 +232,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("key_press_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_press_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -241,7 +241,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("key_release_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, key_release_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -250,7 +250,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("enter_notify_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, enter_notify_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);
@@ -259,7 +259,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
                 gtk_signal_new ("leave_notify_event",
                                 GTK_RUN_LAST,
                                 GTK_CLASS_TYPE (object_class),
-                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, leave_notify_event),
                                 gtk_marshal_BOOLEAN__BOXED,
                                 GTK_TYPE_BOOL, 1,
                                 GDK_TYPE_EVENT);

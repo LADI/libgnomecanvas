@@ -1,3 +1,9 @@
+2001-08-12  Joe Shaw  <joe@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_class_init): Reference the correct
+	function pointer in the class structure when creating signals for
+	the various event types.
+
 2001-08-11  Martin Baulig  <baulig@suse.de>
 
 	* Makefile.am: Added gnome-canvas-rich-text.[ch].
@@ -8,7 +14,7 @@
 
 2001-08-11  Martin Baulig  <baulig@suse.de>
 
-	* gnome-canvas-rich-text.[ch]: Added Joe Shaws editable canvas text.
+	* gnome-canvas-rich-text.[ch]: Added Joe Shaw's editable canvas text.
 	
 2001-07-31  Michael Meeks  <michael@ximian.com>
 
