@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.0.4\n"
-"POT-Creation-Date: 2002-11-07 16:31+0000\n"
+"POT-Creation-Date: 2002-11-20 16:01+0000\n"
 "PO-Revision-Date: 2002-11-07 16:42+0000\n"
 "Last-Translator: Simos Xenitellis <simos74@gmx.net>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.6\n"
 
-#: libgnomecanvas/gnome-canvas.c:1396 libgnomecanvas/gnome-canvas.c:1397
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
+#: libgnomecanvas/gnome-canvas.c:1396 libgnomecanvas/gnome-canvas.c:1397
 msgid "X"
 msgstr "Χ"
 
-#: libgnomecanvas/gnome-canvas.c:1403 libgnomecanvas/gnome-canvas.c:1404
 #: libgnomecanvas/gnome-canvas-rich-text.c:225
+#: libgnomecanvas/gnome-canvas.c:1403 libgnomecanvas/gnome-canvas.c:1404
 msgid "Y"
 msgstr "Ψ"
 
@@ -37,8 +37,8 @@ msgstr "Εξομάλυνση"
 msgid "The antialiasing mode of the canvas."
 msgstr "Η λειτουργία εξομάλυνσης του canvas."
 
-#: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
+#: libgnomecanvas/gnome-canvas-text.c:206
 msgid "Text"
 msgstr "Κείμενο"
 
@@ -78,7 +78,8 @@ msgstr "Οικογένεια γραμματοσειρών"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
+msgstr ""
+"Όνομα της οικογένειας γραμματοσειράς, π.χ. Sans, Helvetica, Times, Monospace"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:276
@@ -119,10 +120,11 @@ msgid "Rise"
 msgstr "Ανασήκωση"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Διάταξη κειμένου πάνω από τη γραμμή βάσης (κάτω από τη γραμμή βάσης αν "
-"είναι αρνητική)"
+"Διάταξη κειμένου πάνω από τη γραμμή βάσης (κάτω από τη γραμμή βάσης αν είναι "
+"αρνητική)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -192,7 +194,8 @@ msgstr "Ορισμός οικογένειας γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
+msgstr ""
+"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την οικογένεια γραμματοσειράς"
 
 #
 #: libgnomecanvas/gnome-canvas-text.c:476
@@ -209,7 +212,8 @@ msgstr "Ορισμός παραλλαγής γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
+msgstr ""
+"Αν αυτή η αναγνωριστική ετικέτα επηρεάζει την παραλλαγή της γραμματοσειράς"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -417,4 +421,3 @@ msgstr "Εσοχές"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Αριθμός εικονοστοιχείων για εσοχή"
-
