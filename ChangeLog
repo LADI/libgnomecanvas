@@ -1,3 +1,8 @@
+Mon Mar 31 07:21:33 2003  Tim Janik  <timj@gtk.org>
+
+        * libgnomecanvas/gnome-canvas-pixbuf.c:
+        (gnome_canvas_pixbuf_update): change update logic to fix redrawing bugs.
+
 2003-03-26  Christian Rose  <menthos@menthos.com>
 
 	* configure.in: Added "yi" to ALL_LINGUAS.

@@ -734,6 +734,12 @@ gnome_canvas_pixbuf_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 	if (parent_class->update)
 		(* parent_class->update) (item, affine, clip_path, flags);
 
+        /* the optimzations below cause rarely triggered redrawing bugs and
+	 * don't seem to actually save much performance. so it's probably
+	 * better to turn them off, than to chase subtle optimization bugs
+	 * throughgout all of gnome-canvas-pixbuf.c - TIMJ
+	 */
+#if USE_BROKEN_OPTIMIZATIONS
 	if (((flags & GNOME_CANVAS_UPDATE_VISIBILITY)
 	     && !(GTK_OBJECT_FLAGS (item) & GNOME_CANVAS_ITEM_VISIBLE))
 	    || (flags & GNOME_CANVAS_UPDATE_AFFINE)
@@ -758,6 +764,13 @@ gnome_canvas_pixbuf_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 		priv->need_pixbuf_update = FALSE;
 		priv->need_xform_update = FALSE;
 	}
+#else   /* ordinary update logic */
+        gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+        recompute_bounding_box (gcp, affine);
+        gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
+        priv->need_pixbuf_update = FALSE;
+        priv->need_xform_update = FALSE;
+#endif
 }
 
 
