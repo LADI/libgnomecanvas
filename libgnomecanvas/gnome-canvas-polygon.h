@@ -34,7 +34,7 @@
 #ifndef GNOME_CANVAS_POLYGON_H
 #define GNOME_CANVAS_POLYGON_H
 
-#include <libgnome/gnome-defs.h>
+#include <libgnomebase/gnome-defs.h>
 #include "gnome-canvas.h"
 
 BEGIN_GNOME_DECLS

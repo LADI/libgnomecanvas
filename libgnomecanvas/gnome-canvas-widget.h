@@ -34,7 +34,7 @@
 #ifndef GNOME_CANVAS_WIDGET_H
 #define GNOME_CANVAS_WIDGET_H
 
-#include <libgnome/gnome-defs.h>
+#include <libgnomebase/gnome-defs.h>
 #include <gtk/gtkpacker.h> /* why the hell is GtkAnchorType here and not in gtkenums.h? */
 #include "gnome-canvas.h"
 

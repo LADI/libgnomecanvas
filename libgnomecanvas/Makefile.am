@@ -6,7 +6,7 @@ INCLUDES = \
         -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
 	$(GTK_CFLAGS)					\
-	$(LIBGNOME_CFLAGS)				\
+	$(LIBGNOMEBASE_CFLAGS)				\
 	$(LIBART_CFLAGS)				\
 	$(PANGO_CFLAGS)					\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
@@ -22,7 +22,7 @@ INCLUDES = \
 lib_LTLIBRARIES = libgnomecanvas-2.la
 
 libgnomecanvas_2_la_LIBADD = \
-	$(LIBGNOME_LIBS) $(LIBART_LIBS) $(PANGO_LIBS)
+	$(LIBGNOMEBASE_LIBS) $(GTK_LIBS) $(LIBART_LIBS) $(PANGO_LIBS)
 
 libgnomecanvasincludedir = $(includedir)/gnome/2/libgnomecanvas
 

@@ -26,8 +26,8 @@
 #ifndef LIBGNOMECANVAS_H
 #define LIBGNOMECANVAS_H
 
-#include <libgnome/gnome-defs.h>
-#include <libgnome/gnome-program.h>
+#include <libgnomebase/gnome-defs.h>
+#include <libgnomebase/gnome-program.h>
 
 #include <libgnomecanvas/gnome-canvas.h>
 #include <libgnomecanvas/gnome-canvas-line.h>

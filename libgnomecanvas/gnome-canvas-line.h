@@ -35,7 +35,7 @@
 #ifndef GNOME_CANVAS_LINE_H
 #define GNOME_CANVAS_LINE_H
 
-#include <libgnome/gnome-defs.h>
+#include <libgnomebase/gnome-defs.h>
 #include "gnome-canvas.h"
 
 

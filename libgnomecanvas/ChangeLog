@@ -1,3 +1,8 @@
+2001-04-15  Martin Baulig  <baulig@suse.de>
+
+	* libgnomecanvas-init.c (gtk_module_info): Don't depend on libgnome.
+	(libgnomecanvas_requirements): Depend on libgnomebase.
+
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
 	* libgnomecanvas.c: Added GTK+ arg parsing code from gnome-init.c
