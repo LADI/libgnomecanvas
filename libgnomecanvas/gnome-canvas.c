@@ -73,9 +73,11 @@
  * - Add more image loading techniques to work around imlib deficiencies.
  */
 
-#include <stdio.h>
 #include <config.h>
+
 #include <math.h>
+#include <string.h>
+#include <stdio.h>
 #include <gdk/gdkprivate.h>
 #include <gtk/gtkmain.h>
 #include <gtk/gtksignal.h>
@@ -99,6 +101,10 @@ static void group_remove                (GnomeCanvasGroup *group,
 
 /*** GnomeCanvasItem ***/
 
+/* Some convenience stuff */
+#define GCI_UPDATE_MASK (GNOME_CANVAS_UPDATE_REQUESTED | GNOME_CANVAS_UPDATE_AFFINE | GNOME_CANVAS_UPDATE_CLIP | GNOME_CANVAS_UPDATE_VISIBILITY)
+#define GCI_EPSILON 1e-18
+#define GCI_PRINT_MATRIX(s,a) g_print ("%s %g %g %g %g %g %g\n", s, (a)[0], (a)[1], (a)[2], (a)[3], (a)[4], (a)[5])
 
 enum {
 	ITEM_PROP_0,
@@ -222,15 +228,15 @@ gnome_canvas_item_set_property (GObject *gobject, guint param_id,
 
 	switch (param_id) {
 	case ITEM_PROP_PARENT:
-	    if (item->parent != NULL)
+		if (item->parent != NULL) {
 		    g_warning ("Cannot set `parent' argument after item has "
 			       "already been constructed.");
-	    else if (g_value_get_object (value)) {
-		    item->parent = GNOME_CANVAS_ITEM (g_value_get_object (value));
-		    item->canvas = item->parent->canvas;
-		    item_post_create_setup (item);
-	    }
-	    break;
+		} else if (g_value_get_object (value)) {
+			item->parent = GNOME_CANVAS_ITEM (g_value_get_object (value));
+			item->canvas = item->parent->canvas;
+			item_post_create_setup (item);
+		}
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, param_id, pspec);
 		break;
@@ -381,15 +387,26 @@ gnome_canvas_item_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_pa
 	GTK_OBJECT_UNSET_FLAGS (item, GNOME_CANVAS_ITEM_NEED_VIS);
 }
 
-#define HACKISH_AFFINE
+#define noHACKISH_AFFINE
 
-/* This routine invokes the update method of the item. */
+/*
+ * This routine invokes the update method of the item
+ * Please notice, that we take parent to canvas pixel matrix as argument
+ * unlike virtual method ::update, whose argument is item 2 canvas pixel
+ * matrix
+ *
+ * I will try to force somewhat meaningful naming for affines (Lauris)
+ * General naming rule is FROM2TO, where FROM and TO are abbreviations
+ * So p2cpx is Parent2CanvasPixel and i2cpx is Item2CanvasPixel
+ * I hope that this helps to keep track of what really happens
+ *
+ */
+
 static void
-gnome_canvas_item_invoke_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_path, int flags)
+gnome_canvas_item_invoke_update (GnomeCanvasItem *item, double *p2cpx, ArtSVP *clip_path, int flags)
 {
 	int child_flags;
-	double *child_affine;
-	double new_affine[6];
+	gdouble i2cpx[6];
 
 #ifdef HACKISH_AFFINE
 	double i2w[6], w2c[6], i2c[6];
@@ -399,20 +416,21 @@ gnome_canvas_item_invoke_update (GnomeCanvasItem *item, double *affine, ArtSVP *
 	if (!(item->object.flags & GNOME_CANVAS_ITEM_VISIBLE))
 		child_flags &= ~GNOME_CANVAS_UPDATE_IS_VISIBLE;
 
-	/* Apply the child item's transform */
-	if (item->xform == NULL)
-		child_affine = affine;
-	else if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
-		art_affine_multiply (new_affine, item->xform, affine);
-		child_affine = new_affine;
-	} else {
-		int j;
+	/* Calculate actual item transformation matrix */
 
-		for (j = 0; j < 4; j++)
-			new_affine[j] = affine[j];
-		new_affine[4] = item->xform[0] * affine[0] + item->xform[1] * affine[2] + affine[4];
-		new_affine[5] = item->xform[0] * affine[1] + item->xform[1] * affine[3] + affine[5];
-		child_affine = new_affine;
+	if (item->xform) {
+		if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
+			/* Item has full affine */
+			art_affine_multiply (i2cpx, item->xform, p2cpx);
+		} else {
+			/* Item has only translation */
+			memcpy (i2cpx, p2cpx, 4 * sizeof (gdouble));
+			i2cpx[4] = item->xform[0] * p2cpx[0] + item->xform[1] * p2cpx[2] + p2cpx[4];
+			i2cpx[5] = item->xform[0] * p2cpx[1] + item->xform[1] * p2cpx[3] + p2cpx[5];
+		}
+	} else {
+		/* Item has no matrix (i.e. identity) */
+		memcpy (i2cpx, p2cpx, 6 * sizeof (gdouble));
 	}
 
 #ifdef HACKISH_AFFINE
@@ -439,23 +457,39 @@ gnome_canvas_item_invoke_update (GnomeCanvasItem *item, double *affine, ArtSVP *
 	if (item->object.flags & GNOME_CANVAS_ITEM_NEED_VIS)
 		child_flags |= GNOME_CANVAS_UPDATE_VISIBILITY;
 
-	if ((child_flags & (GNOME_CANVAS_UPDATE_REQUESTED
-			    | GNOME_CANVAS_UPDATE_AFFINE
-			    | GNOME_CANVAS_UPDATE_CLIP
-			    | GNOME_CANVAS_UPDATE_VISIBILITY))
-	    && GNOME_CANVAS_ITEM_GET_CLASS (item)->update)
-		(* GNOME_CANVAS_ITEM_GET_CLASS (item)->update) (
-			item, child_affine, clip_path, child_flags);
+	if (child_flags & GCI_UPDATE_MASK) {
+		if (GNOME_CANVAS_ITEM_GET_CLASS (item)->update)
+			GNOME_CANVAS_ITEM_GET_CLASS (item)->update (item, i2cpx, clip_path, child_flags);
+	}
 }
 
-/* This routine invokes the point method of the item.  The argument x, y should
- * be in the parent's item-relative coordinate system.  This routine applies the
- * inverse of the item's transform, maintaining the affine invariant.
+/*
+ * This routine invokes the point method of the item.
+ * The arguments x, y should be in the parent item local coordinates.
+ *
+ * This is potentially evil, as we are relying on matrix inversion (Lauris)
  */
+
 static double
-gnome_canvas_item_invoke_point (GnomeCanvasItem *item, double x, double y, int cx, int cy,
-				GnomeCanvasItem **actual_item)
+gnome_canvas_item_invoke_point (GnomeCanvasItem *item, double x, double y, int cx, int cy, GnomeCanvasItem **actual_item)
 {
+	/* Calculate x & y in item local coordinates */
+
+	if (item->xform) {
+		if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
+			gdouble p2i[6], t;
+			/* Item has full affine */
+			art_affine_invert (p2i, item->xform);
+			t = x * p2i[0] + y * p2i[2] + p2i[4];
+			y = x * p2i[1] + y * p2i[3] + p2i[5];
+			x = t;
+		} else {
+			/* Item has only translation */
+			x -= item->xform[0];
+			y -= item->xform[1];
+		}
+	}
+
 #ifdef HACKISH_AFFINE
 	double i2w[6], w2c[6], i2c[6], c2i[6];
 	ArtPoint c, i;
@@ -473,8 +507,10 @@ gnome_canvas_item_invoke_point (GnomeCanvasItem *item, double x, double y, int c
 	y = i.y;
 #endif
 
-	return (* GNOME_CANVAS_ITEM_GET_CLASS (item)->point) (
-		item, x, y, cx, cy, actual_item);
+	if (GNOME_CANVAS_ITEM_GET_CLASS (item)->point)
+		return GNOME_CANVAS_ITEM_GET_CLASS (item)->point (item, x, y, cx, cy, actual_item);
+
+	return 1e18;
 }
 
 /**
@@ -513,7 +549,11 @@ gnome_canvas_item_set_valist (GnomeCanvasItem *item, const gchar *first_arg_name
 
 	g_object_set_valist (G_OBJECT (item), first_arg_name, args);
 
+#if 0
+	/* I commented this out, because item implementations have to schedule update/redraw */
 	redraw_if_visible (item);
+#endif
+
 	item->canvas->need_repick = TRUE;
 }
 
@@ -524,73 +564,36 @@ gnome_canvas_item_set_valist (GnomeCanvasItem *item, const gchar *first_arg_name
  * @affine: An affine transformation matrix.
  *
  * Combines the specified affine transformation matrix with the item's current
- * transformation.
+ * transformation. NULL affine is not allowed.
  **/
 #define GCIAR_EPSILON 1e-6
 void
 gnome_canvas_item_affine_relative (GnomeCanvasItem *item, const double affine[6])
 {
-	double *new_affine;
-	int i;
+	gdouble i2p[6];
 
-	if (fabs (affine[0] - 1.0) < GCIAR_EPSILON &&
-	    fabs (affine[1]) < GCIAR_EPSILON &&
-	    fabs (affine[2]) < GCIAR_EPSILON &&
-	    fabs (affine[3] - 1.0) < GCIAR_EPSILON) {
-		/* translation only */
-		if (item->xform) {
-			if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
-				item->xform[4] += affine[4];
-				item->xform[5] += affine[5];
-			} else {
-				item->xform[0] += affine[4];
-				item->xform[1] += affine[5];
-			}
+	g_return_if_fail (item != NULL);
+	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
+	g_return_if_fail (affine != NULL);
+
+	/* Calculate actual item transformation matrix */
+
+	if (item->xform) {
+		if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
+			/* Item has full affine */
+			art_affine_multiply (i2p, affine, item->xform);
 		} else {
-			item->object.flags &= ~GNOME_CANVAS_ITEM_AFFINE_FULL;
-			new_affine = g_new (double, 2);
-			new_affine[0] = affine[4];
-			new_affine[1] = affine[5];
-			item->xform = new_affine;
+			/* Item has only translation */
+			memcpy (i2p, affine, 6 * sizeof (gdouble));
+			i2p[4] += item->xform[0];
+			i2p[5] += item->xform[1];
 		}
 	} else {
-		/* need full affine */
-		if (item->xform) {
-			/* add to existing transform */
-			if (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL) {
-				art_affine_multiply (item->xform, item->xform, affine);
-			} else {
-				item->object.flags |= GNOME_CANVAS_ITEM_AFFINE_FULL;
-				new_affine = g_new (double, 6);
-				for (i = 0; i < 4; i++)
-					new_affine[i] = affine[i];
-				new_affine[4] = (item->xform[0] * affine[0]
-						 + item->xform[1] * affine[2]
-						 + affine[4]);
-				new_affine[5] = (item->xform[0] * affine[1]
-						 + item->xform[1] * affine[3]
-						 + affine[5]);
-				g_free (item->xform);
-				item->xform = new_affine;
-			}
-		} else {
-			item->object.flags |= GNOME_CANVAS_ITEM_AFFINE_FULL;
-			new_affine = g_new (double, 6);
-			for (i = 0; i < 6; i++)
-				new_affine[i] = affine[i];
-			item->xform = new_affine;
-		}
+		/* Item has no matrix (i.e. identity) */
+		memcpy (i2p, affine, 6 * sizeof (gdouble));
 	}
 
-	if (!(item->object.flags & GNOME_CANVAS_ITEM_NEED_AFFINE)) {
-		item->object.flags |= GNOME_CANVAS_ITEM_NEED_AFFINE;
-		if (item->parent != NULL)
-			gnome_canvas_item_request_update (item->parent);
-		else
-			gnome_canvas_request_update (item->canvas);
-	}
-
-	item->canvas->need_repick = TRUE;
+	gnome_canvas_item_affine_absolute (item, i2p);
 }
 
 /**
@@ -599,49 +602,45 @@ gnome_canvas_item_affine_relative (GnomeCanvasItem *item, const double affine[6]
  * @affine: An affine transformation matrix.
  *
  * Makes the item's affine transformation matrix be equal to the specified
- * matrix.
+ * matrix. NULL affine is treated as identity.
  **/
 void
-gnome_canvas_item_affine_absolute (GnomeCanvasItem *item, const double affine[6])
+gnome_canvas_item_affine_absolute (GnomeCanvasItem *item, const double i2p[6])
 {
-	int i;
+	g_return_if_fail (item != NULL);
+	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
 
-	if (fabs (affine[0] - 1.0) < GCIAR_EPSILON &&
-	    fabs (affine[1]) < GCIAR_EPSILON &&
-	    fabs (affine[2]) < GCIAR_EPSILON &&
-	    fabs (affine[3] - 1.0) < GCIAR_EPSILON) {
-		/* translation only */
-		if (item->xform && (item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL)) {
-			g_free (item->xform);
-			item->xform = NULL;
-		}
-		if (item->xform == NULL) {
-			item->object.flags &= ~GNOME_CANVAS_ITEM_AFFINE_FULL;
-			item->xform = g_new (double, 2);
-		}
-		item->xform[0] = affine[4];
-		item->xform[1] = affine[5];
-	} else {
-		/* need full affine */
+	if (i2p &&
+	    (fabs (i2p[0] - 1.0) < GCI_EPSILON) &&
+	    (fabs (i2p[1] - 0.0) < GCI_EPSILON) &&
+	    (fabs (i2p[2] - 0.0) < GCI_EPSILON) &&
+	    (fabs (i2p[3] - 1.0) < GCI_EPSILON) &&
+	    (fabs (i2p[4] - 0.0) < GCI_EPSILON) &&
+	    (fabs (i2p[5] - 0.0) < GCI_EPSILON)) {
+		/* We are identity */
+		i2p = NULL;
+	}
+
+	if (i2p) {
 		if (item->xform && !(item->object.flags & GNOME_CANVAS_ITEM_AFFINE_FULL)) {
+			/* We do not want to deal with translation-only affines */
 			g_free (item->xform);
 			item->xform = NULL;
 		}
-		if (item->xform == NULL) {
-			item->object.flags |= GNOME_CANVAS_ITEM_AFFINE_FULL;
-			item->xform = g_new (double, 6);
-		}
-		for (i = 0; i < 6; i++) {
-			item->xform[i] = affine[i];
+		if (!item->xform) item->xform = g_new (gdouble, 6);
+		memcpy (item->xform, i2p, 6 * sizeof (gdouble));
+		item->object.flags |= GNOME_CANVAS_ITEM_AFFINE_FULL;
+	} else {
+		if (item->xform) {
+			g_free (item->xform);
+			item->xform = NULL;
 		}
 	}
 
 	if (!(item->object.flags & GNOME_CANVAS_ITEM_NEED_AFFINE)) {
+		/* Request update */
 		item->object.flags |= GNOME_CANVAS_ITEM_NEED_AFFINE;
-		if (item->parent != NULL)
-			gnome_canvas_item_request_update (item->parent);
-		else
-			gnome_canvas_request_update (item->canvas);
+		gnome_canvas_item_request_update (item);
 	}
 
 	item->canvas->need_repick = TRUE;
@@ -655,13 +654,16 @@ gnome_canvas_item_affine_absolute (GnomeCanvasItem *item, const double affine[6]
  * @dy: Vertical offset.
  *
  * Moves a canvas item by creating an affine transformation matrix for
- * translation by using the specified values.
+ * translation by using the specified values. This happens in item
+ * local coordinate system, so if you have nontrivial transform, it
+ * most probably does not do, what you want.
  **/
 void
 gnome_canvas_item_move (GnomeCanvasItem *item, double dx, double dy)
 {
 	double translate[6];
 
+	g_return_if_fail (item != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
 
 	art_affine_translate (translate, dx, dy);
@@ -867,13 +869,11 @@ gnome_canvas_item_show (GnomeCanvasItem *item)
 {
 	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
 
-	if (item->object.flags & GNOME_CANVAS_ITEM_VISIBLE)
-		return;
-
-	item->object.flags |= GNOME_CANVAS_ITEM_VISIBLE;
-
-	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
-	item->canvas->need_repick = TRUE;
+	if (!(item->object.flags & GNOME_CANVAS_ITEM_VISIBLE)) {
+		item->object.flags |= GNOME_CANVAS_ITEM_VISIBLE;
+		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
@@ -889,13 +889,11 @@ gnome_canvas_item_hide (GnomeCanvasItem *item)
 {
 	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
 
-	if (!(item->object.flags & GNOME_CANVAS_ITEM_VISIBLE))
-		return;
-
-	item->object.flags &= ~GNOME_CANVAS_ITEM_VISIBLE;
-
-	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
-	item->canvas->need_repick = TRUE;
+	if (item->object.flags & GNOME_CANVAS_ITEM_VISIBLE) {
+		item->object.flags &= ~GNOME_CANVAS_ITEM_VISIBLE;
+		gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
@@ -2344,8 +2342,12 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 
 	if (right_limit < 0) {
 		cx = 0;
+#if 1
 		canvas->zoom_xofs = (canvas_width - scroll_width) / 2;
 		scroll_width = canvas_width;
+#else
+		canvas->zoom_xofs = 0;
+#endif
 	} else if (cx < 0) {
 		cx = 0;
 		canvas->zoom_xofs = 0;
@@ -2357,8 +2359,12 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 
 	if (bottom_limit < 0) {
 		cy = 0;
+#if 1
 		canvas->zoom_yofs = (canvas_height - scroll_height) / 2;
 		scroll_height = canvas_height;
+#else
+		canvas->zoom_yofs = 0;
+#endif
 	} else if (cy < 0) {
 		cy = 0;
 		canvas->zoom_yofs = 0;
@@ -2368,9 +2374,18 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 	} else
 		canvas->zoom_yofs = 0;
 
-	if ((scroll_width != (int) canvas->layout.width)
-	    || (scroll_height != (int) canvas->layout.height))
-	    gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
+	if ((scroll_width != (int) canvas->layout.width) || (scroll_height != (int) canvas->layout.height)) {
+		gtk_layout_set_size (GTK_LAYOUT (canvas), scroll_width, scroll_height);
+	}
+
+	if ((canvas->zoom_xofs != old_zoom_xofs) || (canvas->zoom_yofs != old_zoom_yofs)) {
+		/* This can only occur, if either canvas size or widget size changes */
+		/* So I think we can request full redraw here */
+		/* The reason is, that coverage UTA will be invalidated by offset change */
+		/* fixme: Strictly this is not correct - we have to remove our own idle (Lauris) */
+		g_print ("Queueing redraw\n");
+		gtk_widget_queue_draw (GTK_WIDGET (canvas));
+	}
 
 	if (((int) canvas->layout.hadjustment->value) != cx) {
 		canvas->layout.hadjustment->value = cx;
@@ -3087,10 +3102,18 @@ do_update (GnomeCanvas *canvas)
 	/* Cause the update if necessary */
 
 	if (canvas->need_update) {
-		double affine[6];
+		gdouble w2cpx[6];
 
-		art_affine_identity (affine);
-		gnome_canvas_item_invoke_update (canvas->root, affine, NULL, 0);
+		/* We start updating root with w2cpx affine */
+		w2cpx[0] = canvas->pixels_per_unit;
+		w2cpx[1] = 0.0;
+		w2cpx[2] = 0.0;
+		w2cpx[3] = canvas->pixels_per_unit;
+		w2cpx[4] = -canvas->scroll_x1 * canvas->pixels_per_unit;
+		w2cpx[5] = -canvas->scroll_y1 * canvas->pixels_per_unit;
+
+		gnome_canvas_item_invoke_update (canvas->root, w2cpx, NULL, 0);
+
 		canvas->need_update = FALSE;
 	}
 

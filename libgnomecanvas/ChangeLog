@@ -1,3 +1,15 @@
+2002-01-17  Lauris Kaplinski  <lauris@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_item_invoke_update): Clean up code a bit,
+	mostly to help myself to keep track of affine transformations
+	(gnome_canvas_item_invoke_point): Ditto
+	(gnome_canvas_item_affine_relative): Ditto
+	(gnome_canvas_item_affine_absolute): Ditto
+	(do_update): Start updating root with w2c affine
+	(scroll_to): Schedule widget redraw if scroll ofsets change - this is not
+	the best approach, but IMHO not too bad either, as this can happen only
+	if either canvas size or widget size change - not for normal scrolling
+
 2002-01-16  Lauris Kaplinski  <lauris@ximian.com>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_update): Check for NULL path,
