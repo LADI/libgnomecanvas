@@ -1,5 +1,5 @@
 #include <config.h>
-#include <libgnome/libgnome.h>
+#include <libgnomecanvas/libgnomecanvas.h>
 #include "canvas_demo.h"
 
 #ifndef GNOME_PAD_SMALL

@@ -6,7 +6,7 @@ INCLUDES = \
         -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
 	$(GTK_CFLAGS)					\
-	$(LIBGNOME_CFLAGS)				\
+	$(LIBGNOMEBASE_CFLAGS)				\
 	$(LIBART_CFLAGS)				\
 	$(PANGO_CFLAGS)					\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
