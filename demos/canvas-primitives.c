@@ -397,7 +397,7 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, 
 					       "y", y,
 					       "width", (double) gdk_pixbuf_get_width(im),
 					       "height", (double) gdk_pixbuf_get_height(im),
-					       "anchor", anchor,
+/*  					       "anchor", anchor, */
 					       NULL);
 		setup_item (image);
 		gdk_pixbuf_unref(im);
@@ -419,7 +419,7 @@ setup_images (GnomeCanvasGroup *root, int aa)
 					       "y", 225.0,
 					       "width", (double) gdk_pixbuf_get_width(im),
 					       "height", (double) gdk_pixbuf_get_height(im),
-					       "anchor", GTK_ANCHOR_CENTER,
+/*  					       "anchor", GTK_ANCHOR_CENTER, */
 					       NULL);
 		setup_item (image);
 		gdk_pixbuf_unref(im);
@@ -757,7 +757,7 @@ create_canvas_primitives (gint aa)
 	setup_divisions (root);
 	setup_rectangles (root);
 	setup_ellipses (root);
-	setup_texts (root);
+/*  	setup_texts (root); */
 	setup_images (root, aa);
 	setup_lines (root);
 	setup_polygons (root);
