@@ -5,6 +5,117 @@
 #ifdef GTK_HAVE_ACCEL_GROUP
 
 
+/*** Primitives ***/
+
+static gint
+item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
+{
+	static double x, y;
+	double new_x, new_y;
+
+	switch (event->type) {
+	case GDK_BUTTON_PRESS:
+		x = event->button.x;
+		y = event->button.y;
+		break;
+
+	case GDK_MOTION_NOTIFY:
+		if (event->motion.state & GDK_BUTTON1_MASK) {
+			new_x = event->motion.x;
+			new_y = event->motion.y;
+
+			gnome_canvas_item_move (item, new_x - x, new_y - y);
+			x = new_x;
+			y = new_y;
+		}
+		break;
+
+	default:
+		break;
+	}
+
+	return FALSE;
+}
+
+static void
+setup_item (GnomeCanvasItem *item)
+{
+	gtk_signal_connect (GTK_OBJECT (item), "event",
+			    (GtkSignalFunc) item_event,
+			    NULL);
+}
+
+static GtkWidget *
+create_primitives (void)
+{
+	GtkWidget *frame;
+	GtkWidget *canvas;
+	GnomeCanvasGroup *root;
+	GdkImlibImage *im;
+
+	frame = gtk_frame_new (NULL);
+	gtk_container_border_width (GTK_CONTAINER (frame), 4);
+	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
+	gtk_widget_show (frame);
+
+	canvas = gnome_canvas_new (gdk_imlib_get_visual (), gdk_imlib_get_colormap ());
+	gnome_canvas_set_size (GNOME_CANVAS (canvas), 300, 300);
+	gtk_container_add (GTK_CONTAINER (frame), canvas);
+	gtk_widget_show (canvas);
+
+	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
+
+	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
+					   root,
+					   gnome_canvas_rect_get_type (),
+					   "GnomeCanvasRE::x1", 10.0,
+					   "GnomeCanvasRE::y1", 10.0,
+					   "GnomeCanvasRE::x2", 160.0,
+					   "GnomeCanvasRE::y2", 60.0,
+					   "GnomeCanvasRE::fill_color", "mediumseagreen",
+					   "GnomeCanvasRE::outline_color", "black",
+					   "GnomeCanvasRE::width_pixels", 4,
+					   NULL));
+
+	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
+					   root,
+					   gnome_canvas_ellipse_get_type (),
+					   "GnomeCanvasRE::x1", 20.0,
+					   "GnomeCanvasRE::y1", 70.0,
+					   "GnomeCanvasRE::x2", 100.0,
+					   "GnomeCanvasRE::y2", 130.0,
+					   "GnomeCanvasRE::fill_color", "tan",
+					   "GnomeCanvasRE::outline_color", "slateblue",
+					   "GnomeCanvasRE::width_units", 6.0,
+					   NULL));
+
+	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
+					   root,
+					   gnome_canvas_text_get_type (),
+					   "GnomeCanvasText::text", "Hello, world!",
+					   "GnomeCanvasText::x", 200.0,
+					   "GnomeCanvasText::y", 100.0,
+					   "GnomeCanvasText::font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					   "GnomeCanvasText::anchor", GTK_ANCHOR_CENTER,
+					   "GnomeCanvasText::fill_color", "blue",
+					   NULL));
+
+	im = gdk_imlib_load_image ("toroid.png");
+	setup_item (gnome_canvas_item_new (GNOME_CANVAS (canvas),
+					   root,
+					   gnome_canvas_image_get_type (),
+					   "GnomeCanvasImage::image", im,
+					   "GnomeCanvasImage::x", 100.0,
+					   "GnomeCanvasImage::y", 200.0,
+					   "GnomeCanvasImage::width", (double) im->rgb_width,
+					   "GnomeCanvasImage::height", (double) im->rgb_height,
+					   "GnomeCanvasImage::anchor", GTK_ANCHOR_CENTER,
+					   NULL));
+
+	return frame;
+}
+
+
 /*** Fifteen ***/
 
 
@@ -169,7 +280,6 @@ retry_scramble:
 		gtk_object_set_data (GTK_OBJECT (board[pos]), "piece_pos", GINT_TO_POINTER (pos));
 		gnome_canvas_item_move (board[pos], -x * PIECE_SIZE, -y * PIECE_SIZE);
 		gnome_canvas_update_now (canvas);
-		gdk_flush (); /* Force X repaint */
 		pos = oldpos;
 	}
 }
@@ -178,6 +288,7 @@ static GtkWidget *
 create_fifteen (void)
 {
 	GtkWidget *vbox;
+	GtkWidget *alignment;
 	GtkWidget *frame;
 	GtkWidget *canvas;
 	GtkWidget *button;
@@ -190,9 +301,13 @@ create_fifteen (void)
 	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
 	gtk_widget_show (vbox);
 
+	alignment = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
+	gtk_box_pack_start (GTK_BOX (vbox), alignment, TRUE, TRUE, 0);
+	gtk_widget_show (alignment);
+
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-	gtk_box_pack_start (GTK_BOX (vbox), frame, TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (alignment), frame);
 	gtk_widget_show (frame);
 
 	/* Create the canvas and board */
@@ -283,6 +398,7 @@ create_canvas (void)
 	gnome_app_set_contents (GNOME_APP (app), notebook);
 	gtk_widget_show (notebook);
 
+	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_primitives (), gtk_label_new ("Primitives"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_fifteen (), gtk_label_new ("Fifteen"));
 
 	gtk_widget_show (app);
