@@ -3,9 +3,6 @@
 #include "testgnome.h"
 
 
-#ifdef GTK_HAVE_FEATURES_1_1_0
-
-
 void
 create_canvas (void)
 {
@@ -24,9 +21,7 @@ create_canvas (void)
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_primitives (), gtk_label_new ("Primitives"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_arrowhead (), gtk_label_new ("Arrowhead"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_fifteen (), gtk_label_new ("Fifteen"));
+	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_features (), gtk_label_new ("Features"));
 
 	gtk_widget_show (app);
 }
-
-
-#endif
