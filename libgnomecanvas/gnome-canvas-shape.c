@@ -1119,7 +1119,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		}
 	}
 
-	if ((priv->outline_set) && (!gnome_canvas_path_def_is_empty (priv->path))) {
+	if (priv->outline_set && priv->path && !gnome_canvas_path_def_is_empty (priv->path)) {
 		gdouble width;
 		ArtBpath * abp;
 		ArtVpath * vpath, * pvpath;
@@ -1481,7 +1481,7 @@ gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double
 	bbox.x1 = *x2;
 	bbox.y1 = *y2;
 
-	if ((priv->outline_set) && (!gnome_canvas_path_def_is_empty (priv->path))) {
+	if (priv->outline_set && priv->path && !gnome_canvas_path_def_is_empty (priv->path)) {
 		gdouble width;
 		ArtVpath * vpath, * pvpath;
 

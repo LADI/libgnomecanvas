@@ -3045,6 +3045,24 @@ paint (GnomeCanvas *canvas)
 
 				gdk_pixmap_unref (pixmap);
 			}
+#if 0
+			/* Here we are - whatever type is canvas, we have to send synthetic expose to layout (Lauris) */
+			{
+				GdkEventExpose ex;
+				ex.type = GDK_EXPOSE;
+				ex.window = canvas->layout.bin_window;
+				ex.send_event = TRUE;
+				ex.area.x = draw_x1 + canvas->zoom_xofs;
+				ex.area.y = draw_y1 + canvas->zoom_yofs;
+				ex.area.width = width;
+				ex.area.height = height;
+				ex.region = gdk_region_rectangle (&ex.area);
+				ex.count = 0;
+				gtk_widget_send_expose (GTK_WIDGET (canvas), (GdkEvent *) &ex);
+				gdk_region_destroy (ex.region);
+			}
+#endif
+
 	  	}
 	}
 

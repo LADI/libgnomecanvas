@@ -1,5 +1,9 @@
 2002-01-16  Lauris Kaplinski  <lauris@ximian.com>
 
+	* gnome-canvas-shape.c (gnome_canvas_shape_update): Check for NULL path,
+	kill warning by path def
+	(gnome_canvas_shape_bounds): Ditto
+
 	* gnome-canvas.c (gnome_canvas_expose): Emit parent class expose event here,
 	so widget items get drawn
 
