@@ -31,7 +31,6 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <glade/glade-init.h>
 #include <glade/glade-build.h>
 #include <libgnomecanvas/gnome-canvas.h>
