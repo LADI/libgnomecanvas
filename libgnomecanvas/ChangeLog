@@ -1,3 +1,8 @@
+Sat Jan  5 07:07:08 2002  Tim Janik  <timj@gtk.org>
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_bounds): issue the
+	warning only once to avoid flooding program output.
+
 2001-12-18  Alex Larsson  <alexl@redhat.com>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_bounds):

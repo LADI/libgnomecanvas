@@ -1446,5 +1446,9 @@ gcbp_draw_ctx_unref (GCBPDrawCtx * ctx)
 static void
 gnome_canvas_shape_bounds (GnomeCanvasItem *item, double *x1, double *y1, double *x2, double *y2)
 {
-  g_warning ("FIXME: gnome_canvas_shape_bounds() not implemented\n");
+  static gboolean need_warning = TRUE;
+  if (need_warning) {
+    need_warning = FALSE;
+    g_warning ("FIXME: gnome_canvas_shape_bounds() not implemented\n");
+  }
 }
