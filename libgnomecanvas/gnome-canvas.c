@@ -2840,7 +2840,11 @@ gnome_canvas_button (GtkWidget *widget, GdkEventButton *event)
 
 	canvas = GNOME_CANVAS (widget);
 
-	if (event->window != canvas->layout.bin_window)
+	/*
+	 * dispatch normally regardless of the event's window if an item has
+	 * has a pointer grab in effect
+	 */
+	if (!canvas->grabbed_item && event->window != canvas->layout.bin_window)
 		return retval;
 
 	switch (event->button) {

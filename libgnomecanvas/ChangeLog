@@ -1,3 +1,10 @@
+2001-08-21  Anders Carlsson  <andersca@gnu.org>
+
+	* gnome-canvas.c (gnome_canvas_button): if there's an active
+	pointer grab, dispatch the event even if the window is different.
+	fixes stuck grabs when using dnd from canvas items.
+	(Taken from a patch to stable gnome-libs which Chris Toshok did)
+	
 Wed Aug 15 12:54:58 2001  Tim Janik  <timj@gtk.org>
 
 	* gnome-canvas.c (gnome_canvas_class_init): fix signal creation by
