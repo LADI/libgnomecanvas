@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-03-07 17:40+0300\n"
-"PO-Revision-Date: 2002-03-07 17:42+0300\n"
+"POT-Creation-Date: 2002-03-17 10:42-0500\n"
+"PO-Revision-Date: 2002-03-18 13:41+0300\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -203,11 +203,11 @@ msgstr "Будет ли этот тэг влиять на насыщеность шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Font stretch set"
-msgstr ""
+msgstr "Ширина шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:486
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "Будет ли этот тэг влиять на ширину шрифта"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Font size set"
