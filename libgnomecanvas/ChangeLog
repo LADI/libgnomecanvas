@@ -1,5 +1,8 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas.c: Added GTK+ arg parsing code from gnome-init.c
+	here and improved and cleaned the code a bit.
+
 	* libgnomecanvas.h (gtk_module_info): Added external declaration.
 
 2001-04-12  Martin Baulig  <baulig@suse.de>
