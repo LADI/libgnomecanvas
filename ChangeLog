@@ -1,3 +1,14 @@
+2202-08-24  Sebastian Rittau  <srittau@jroger.in-berlin.de>
+
+	The following patch needs to go into 2.0.x as well if it doesn't
+	break anything.
+
+	* libgnomecanvas/gnome-canvas-shape.c:
+	(gnome_canvas_shape_update):
+	(gnome_canvas_shape_bounds): Ensure that path is not NULL before
+	calling gnome_canvas_path_def_any(). Original patch by Andreas
+	Holzmann <Andreas.Holzmann@epost.de>. Bugzilla #74127.
+
 2002-08-23  Federico Mena Quintero  <federico@ximian.com>
 
 	* libgnomecanvas/gnome-canvas.c (gnome_canvas_expose): Decompose
