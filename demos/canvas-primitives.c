@@ -530,6 +530,65 @@ setup_lines (GnomeCanvasGroup *root)
 }
 
 static void
+setup_polygons (GnomeCanvasGroup *root)
+{
+	GnomeCanvasPoints *points;
+
+	points = gnome_canvas_points_new (3);
+	points->coords[0] = 210.0;
+	points->coords[1] = 320.0;
+	points->coords[2] = 210.0;
+	points->coords[3] = 380.0;
+	points->coords[4] = 260.0;
+	points->coords[5] = 350.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_polygon_get_type (),
+					   "points", points,
+					   "fill_color", "seagreen",
+					   "outline_color", "black",
+					   NULL));
+	gnome_canvas_points_free (points);
+
+	points = gnome_canvas_points_new (14);
+	points->coords[0] = 270.0;
+	points->coords[1] = 330.0;
+	points->coords[2] = 270.0;
+	points->coords[3] = 430.0;
+	points->coords[4] = 390.0;
+	points->coords[5] = 430.0;
+	points->coords[6] = 390.0;
+	points->coords[7] = 330.0;
+	points->coords[8] = 310.0;
+	points->coords[9] = 330.0;
+	points->coords[10] = 310.0;
+	points->coords[11] = 390.0;
+	points->coords[12] = 350.0;
+	points->coords[13] = 390.0;
+	points->coords[14] = 350.0;
+	points->coords[15] = 370.0;
+	points->coords[16] = 330.0;
+	points->coords[17] = 370.0;
+	points->coords[18] = 330.0;
+	points->coords[19] = 350.0;
+	points->coords[20] = 370.0;
+	points->coords[21] = 350.0;
+	points->coords[22] = 370.0;
+	points->coords[23] = 410.0;
+	points->coords[24] = 290.0;
+	points->coords[25] = 410.0;
+	points->coords[26] = 290.0;
+	points->coords[27] = 330.0;
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_polygon_get_type (),
+					   "points", points,
+					   "fill_color", "tan",
+					   "outline_color", "black",
+					   "width_units", 3.0,
+					   NULL));
+	gnome_canvas_points_free (points);
+}
+
+static void
 setup_widgets (GnomeCanvasGroup *root)
 {
 	GtkWidget *w;
@@ -666,6 +725,7 @@ create_canvas_primitives (void)
 	setup_texts (root);
 	setup_images (root);
 	setup_lines (root);
+	setup_polygons (root);
 	setup_widgets (root);
 
 	GTK_WIDGET_SET_FLAGS (canvas, GTK_CAN_FOCUS);
