@@ -1039,9 +1039,9 @@ gnome_canvas_item_hide (GnomeCanvasItem *item)
  * If @cursor is not NULL, then that cursor is used while the grab is active.
  * The @etime parameter is the timestamp required for grabbing the mouse.
  *
- * Return value: If an item was already grabbed, it returns %AlreadyGrabbed.  If
+ * Return value: If an item was already grabbed, it returns %GDK_GRAB_ALREADY_GRABBED.  If
  * the specified item was hidden by calling gnome_canvas_item_hide(), then it
- * returns %GrabNotViewable.  Else, it returns the result of calling
+ * returns %GDK_GRAB_NOT_VIEWABLE.  Else, it returns the result of calling
  * gdk_pointer_grab().
  **/
 int
@@ -1049,14 +1049,14 @@ gnome_canvas_item_grab (GnomeCanvasItem *item, guint event_mask, GdkCursor *curs
 {
 	int retval;
 
-	g_return_val_if_fail (GNOME_IS_CANVAS_ITEM (item), GrabNotViewable);
-	g_return_val_if_fail (GTK_WIDGET_MAPPED (item->canvas), GrabNotViewable);
+	g_return_val_if_fail (GNOME_IS_CANVAS_ITEM (item), GDK_GRAB_NOT_VIEWABLE);
+	g_return_val_if_fail (GTK_WIDGET_MAPPED (item->canvas), GDK_GRAB_NOT_VIEWABLE);
 
 	if (item->canvas->grabbed_item)
-		return AlreadyGrabbed;
+		return GDK_GRAB_ALREADY_GRABBED;
 
 	if (!(item->object.flags & GNOME_CANVAS_ITEM_VISIBLE))
-		return GrabNotViewable;
+		return GDK_GRAB_NOT_VIEWABLE;
 
 	retval = gdk_pointer_grab (item->canvas->layout.bin_window,
 				   FALSE,
@@ -1065,7 +1065,7 @@ gnome_canvas_item_grab (GnomeCanvasItem *item, guint event_mask, GdkCursor *curs
 				   cursor,
 				   etime);
 
-	if (retval != GrabSuccess)
+	if (retval != GDK_GRAB_SUCCESS)
 		return retval;
 
 	item->canvas->grabbed_item = item;

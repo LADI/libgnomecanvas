@@ -1,5 +1,11 @@
 2001-08-13  Darin Adler  <darin@bentspoon.com>
 
+	* gnome-canvas.h:
+	* gnome-canvas.c: (gnome_canvas_item_grab):
+	Use GDK's grab constants, not the raw ones from X.
+
+2001-08-13  Darin Adler  <darin@bentspoon.com>
+
 	* Makefile.am: Generate marshal files.
 	* .cvsignore: Ignore generated marshal files.
 	* gnome-canvas-marshal.list: New file with the one marshal we need.

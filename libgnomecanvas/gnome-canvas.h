@@ -1,3 +1,4 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: 8; c-basic-offset: 8 -*- */
 /*
  * Copyright (C) 1997, 1998, 1999, 2000 Free Software Foundation
  * All rights reserved.
@@ -43,9 +44,6 @@
 #include <libart_lgpl/art_svp.h>
 #include <libart_lgpl/art_uta.h>
 #include <libart_lgpl/art_affine.h>
-
-/* EEK!, gdk leaks some Xlib stuff, such as the grab success codes */
-#include <X11/X.h>
 
 G_BEGIN_DECLS
 
