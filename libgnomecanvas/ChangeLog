@@ -1,3 +1,11 @@
+2001-11-19  Peter Williams  <peterw@ximian.com>
+
+	* gnome-canvas.c: Remove Michael's marshaller from this
+	file (approved by him).
+
+	* gnome-canvas-marshal.list: Add the BOOLEAN:BOXED
+	marshaller here instead of hard-coding it into gnome-canvas.c.
+
 2001-11-19  Alex Larsson  <alexl@redhat.com>
 
 	* gnome-canvas-shape.c (gnome_canvas_shape_init):
