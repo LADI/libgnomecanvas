@@ -2707,7 +2707,9 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	item = canvas->current_item;
 
 	if (canvas->focused_item
-	    && ((event->type == GDK_KEY_PRESS) || (event->type == GDK_KEY_RELEASE)))
+	    && ((event->type == GDK_KEY_PRESS) ||
+		(event->type == GDK_KEY_RELEASE) ||
+		(event->type == GDK_FOCUS_CHANGE)))
 		item = canvas->focused_item;
 
 	/* The event is propagated up the hierarchy (for if someone connected to
