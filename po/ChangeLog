@@ -1,3 +1,7 @@
+2002-05-13  Anders Carlsson  <andersca@gnu.org>
+
+	* POTFILES.in: Add gnome-canvas-richtext.c 
+
 2002-05-10  Valek Filippov  <frob@df.ru>
 
 	* ru.po: Updated russian translation from Dmitry Mastrukov.
