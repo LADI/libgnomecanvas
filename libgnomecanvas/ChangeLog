@@ -1,5 +1,9 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas-init.c: Initialize GTK+.
+
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
 	* libgnomecanvas-init.c: New file.
 	(libgnomecanvas_module_info): New global variable; this is the
 	`GnomeModuleInfo' structure to initialize this module.
