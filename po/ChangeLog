@@ -1,3 +1,8 @@
+2003-05-05  Christian Rose  <menthos@menthos.com>
+
+	* sr.po, sr@Latn.po: Added Serbian translation by
+	Dušan Marjanović <mdfk@root.co.yu>.
+
 2003-04-29  Abel Cheung  <maddog@linux.org.hk>
 
 	* hi.po: Fix header (msgfmt check failed).
