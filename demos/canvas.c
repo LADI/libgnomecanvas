@@ -13,13 +13,28 @@ item_event (GnomeCanvas *canvas, GnomeCanvasId *item, GdkEvent *event, gpointer 
 	switch (event->type) {
 	case GDK_ENTER_NOTIFY:
 		gnome_canvas_configure (canvas, *item,
-					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, "white",
+					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, item_data,
 					GNOME_CANVAS_END);
 		break;
 
 	case GDK_LEAVE_NOTIFY:
 		gnome_canvas_configure (canvas, *item,
-					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, "black",
+					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, item_data,
+					GNOME_CANVAS_END);
+		break;
+
+	case GDK_BUTTON_PRESS:
+		printf ("button_press\n");
+		gnome_canvas_configure (canvas, *item,
+					GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_STRING, "cyan",
+					GNOME_CANVAS_WIDTH_PIXELS, 5,
+					GNOME_CANVAS_END);
+		break;
+
+	case GDK_BUTTON_RELEASE:
+		printf ("button_release\n");
+		gnome_canvas_configure (canvas, *item,
+					GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_NONE,
 					GNOME_CANVAS_END);
 		break;
 
@@ -81,14 +96,22 @@ create_canvas (void)
 					50.0, 35.0, 90.0, 50.0,
 					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, "green",
 					GNOME_CANVAS_END);
-	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, NULL);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, "white");
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_LEAVE_NOTIFY, "green");
 
-	gnome_canvas_create_item (GNOME_CANVAS (canvas), "rectangle",
-				  20.0, 65.0, 50.0, 80.0,
-				  GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, "yellow",
-				  GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_STRING, "blue",
-				  GNOME_CANVAS_WIDTH_PIXELS, 10,
-				  GNOME_CANVAS_END);
+	cid = gnome_canvas_create_item (GNOME_CANVAS (canvas), "rectangle",
+					20.0, 65.0, 50.0, 80.0,
+					GNOME_CANVAS_FILL_COLOR, GNOME_CANVAS_COLOR_STRING, "yellow",
+					GNOME_CANVAS_OUTLINE_COLOR, GNOME_CANVAS_COLOR_STRING, "blue",
+					GNOME_CANVAS_WIDTH_PIXELS, 5,
+					GNOME_CANVAS_END);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_ENTER_NOTIFY, "white");
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_LEAVE_NOTIFY, "yellow");
+
+	cid = gnome_canvas_create_tag (GNOME_CANVAS (canvas), GNOME_CANVAS_ALL);
+
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_BUTTON_PRESS, NULL);
+	gnome_canvas_bind (GNOME_CANVAS (canvas), cid, GDK_BUTTON_RELEASE, NULL);
 
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
