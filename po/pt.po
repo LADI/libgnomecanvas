@@ -1,12 +1,14 @@
-# libgnomecanvas-2.0's Portuguese Translation
-# Copyright (C) 2001 Free Software Foundation, Inc.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001
+# libgnomecanvas's Portuguese Translation
+# Copyright (C) 2001 libgnomecanvas
+# Distributed under the same licence as the libgnomecanvas package
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2003
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.0\n"
-"POT-Creation-Date: 2003-08-11 20:32+0200\n"
-"PO-Revision-Date: 2002-05-28 02:47+0000\n"
+"Project-Id-Version: 2.4\n"
+"Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"POT-Creation-Date: 2003-08-24 16:46+0100\n"
+"PO-Revision-Date: 2003-08-24 16:50+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -138,7 +140,7 @@ msgstr "Escala"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "Tamanho da fonte, relativa ao tamanho de defeito"
+msgstr "Tamanho da fonte, relativa ao tamanho por omissão"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
