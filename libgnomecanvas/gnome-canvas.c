@@ -672,21 +672,21 @@ gnome_canvas_item_move (GnomeCanvasItem *item, double dx, double dy)
 }
 
 /* Convenience function to reorder items in a group's child list.  This puts the
- * specified link after the "before" link.
+ * specified link after the "before" link. Returns TRUE if the list was changed.
  */
-static void
+static gboolean
 put_item_after (GList *link, GList *before)
 {
 	GnomeCanvasGroup *parent;
 
 	if (link == before)
-		return;
+		return FALSE;
 
 	parent = GNOME_CANVAS_GROUP (GNOME_CANVAS_ITEM (link->data)->parent);
 
 	if (before == NULL) {
 		if (link == parent->item_list)
-			return;
+			return FALSE;
 
 		link->prev->next = link->next;
 
@@ -701,7 +701,7 @@ put_item_after (GList *link, GList *before)
 		parent->item_list = link;
 	} else {
 		if ((link == parent->item_list_end) && (before == parent->item_list_end->prev))
-			return;
+			return FALSE;
 
 		if (link->next)
 			link->next->prev = link->prev;
@@ -723,6 +723,7 @@ put_item_after (GList *link, GList *before)
 		else
 			parent->item_list_end = link;
 	}
+	return TRUE;
 }
 
 
@@ -757,10 +758,10 @@ gnome_canvas_item_raise (GnomeCanvasItem *item, int positions)
 	if (!before)
 		before = parent->item_list_end;
 
-	put_item_after (link, before);
-
-	redraw_if_visible (item);
-	item->canvas->need_repick = TRUE;
+	if (put_item_after (link, before)) {
+		redraw_if_visible (item);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
@@ -795,10 +796,10 @@ gnome_canvas_item_lower (GnomeCanvasItem *item, int positions)
 	else
 		before = NULL;
 
-	put_item_after (link, before);
-
-	redraw_if_visible (item);
-	item->canvas->need_repick = TRUE;
+	if (put_item_after (link, before)) {
+		redraw_if_visible (item);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
@@ -823,10 +824,10 @@ gnome_canvas_item_raise_to_top (GnomeCanvasItem *item)
 	link = g_list_find (parent->item_list, item);
 	g_assert (link != NULL);
 
-	put_item_after (link, parent->item_list_end);
-
-	redraw_if_visible (item);
-	item->canvas->need_repick = TRUE;
+	if (put_item_after (link, parent->item_list_end)) {
+		redraw_if_visible (item);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
@@ -851,10 +852,10 @@ gnome_canvas_item_lower_to_bottom (GnomeCanvasItem *item)
 	link = g_list_find (parent->item_list, item);
 	g_assert (link != NULL);
 
-	put_item_after (link, NULL);
-
-	redraw_if_visible (item);
-	item->canvas->need_repick = TRUE;
+	if (put_item_after (link, NULL)) {
+		redraw_if_visible (item);
+		item->canvas->need_repick = TRUE;
+	}
 }
 
 
