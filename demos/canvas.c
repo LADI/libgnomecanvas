@@ -53,6 +53,7 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 {
 	GnomeCanvas *canvas;
 	GnomeCanvasItem **board;
+	GnomeCanvasItem *text;
 	int num, pos, newpos;
 	int x, y;
 	double dx, dy;
@@ -62,8 +63,21 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	board = gtk_object_get_user_data (GTK_OBJECT (canvas));
 	num = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_num"));
 	pos = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item), "piece_pos"));
+	text = gtk_object_get_data (GTK_OBJECT (item), "text");
 
 	switch (event->type) {
+	case GDK_ENTER_NOTIFY:
+		gnome_canvas_item_set (text,
+				       "GnomeCanvasText::fill_color", "white",
+				       NULL);
+		break;
+
+	case GDK_LEAVE_NOTIFY:
+		gnome_canvas_item_set (text,
+				       "GnomeCanvasText::fill_color", "black",
+				       NULL);
+		break;
+
 	case GDK_BUTTON_PRESS:
 		y = pos / 4;
 		x = pos % 4;
@@ -107,18 +121,81 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	return FALSE;
 }
 
+#define SCRAMBLE_MOVES 256
+
+static void
+scramble (GtkObject *object, gpointer data)
+{
+	GnomeCanvas *canvas;
+	GnomeCanvasItem **board;
+	int i;
+	int pos, oldpos;
+	int dir;
+	int x, y;
+
+	srand (time (NULL));
+
+	canvas = data;
+	board = gtk_object_get_user_data (object);
+
+	/* First, find the blank spot */
+
+	for (pos = 0; pos < 16; pos++)
+		if (board[pos] == NULL)
+			break;
+
+	/* "Move the blank spot" around in order to scramble the pieces */
+
+	for (i = 0; i < SCRAMBLE_MOVES; i++) {
+retry_scramble:
+		dir = rand () % 4;
+
+		x = y = 0;
+
+		if ((dir == 0) && (pos > 3)) /* up */
+			y = -1;
+		else if ((dir == 1) && (pos < 12)) /* down */
+			y = 1;
+		else if ((dir == 2) && ((pos % 4) != 0)) /* left */
+			x = -1;
+		else if ((dir == 3) && ((pos % 4) != 3)) /* right */
+			x = 1;
+		else
+			goto retry_scramble;
+
+		oldpos = pos + y * 4 + x;
+		board[pos] = board[oldpos];
+		board[oldpos] = NULL;
+		gtk_object_set_data (GTK_OBJECT (board[pos]), "piece_pos", GINT_TO_POINTER (pos));
+		gnome_canvas_item_move (board[pos], -x * PIECE_SIZE, -y * PIECE_SIZE);
+		gnome_canvas_update_now (canvas);
+		gdk_flush (); /* Force X repaint */
+		pos = oldpos;
+	}
+}
+
 static GtkWidget *
 create_fifteen (void)
 {
+	GtkWidget *vbox;
 	GtkWidget *frame;
 	GtkWidget *canvas;
+	GtkWidget *button;
 	GnomeCanvasItem **board;
+	GnomeCanvasItem *text;
 	int i, x, y;
+	char buf[20];
+
+	vbox = gtk_vbox_new (FALSE, 4);
+	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
+	gtk_widget_show (vbox);
 
 	frame = gtk_frame_new (NULL);
-	gtk_container_border_width (GTK_CONTAINER (frame), 4);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
+	gtk_box_pack_start (GTK_BOX (vbox), frame, TRUE, TRUE, 0);
 	gtk_widget_show (frame);
+
+	/* Create the canvas and board */
 
 	canvas = gnome_canvas_new (gtk_widget_get_default_visual (), gtk_widget_get_default_colormap ());
 	gnome_canvas_set_size (GNOME_CANVAS (canvas), PIECE_SIZE * 4, PIECE_SIZE * 4);
@@ -137,18 +214,39 @@ create_fifteen (void)
 
 		board[i] = gnome_canvas_item_new (GNOME_CANVAS (canvas),
 						  GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas)->root),
-						  gnome_canvas_rect_get_type (),
-						  "GnomeCanvasRE::x1", (double) (x * PIECE_SIZE),
-						  "GnomeCanvasRE::y1", (double) (y * PIECE_SIZE),
-						  "GnomeCanvasRE::x2", (double) ((x + 1) * PIECE_SIZE - 1),
-						  "GnomeCanvasRE::y2", (double) ((y + 1) * PIECE_SIZE - 1),
-						  "GnomeCanvasRE::fill_color", get_piece_color (i),
-						  "GnomeCanvasRE::outline_color", "black",
-						  "GnomeCanvasRE::width_pixels", 0,
+						  gnome_canvas_group_get_type (),
+						  "GnomeCanvasGroup::x", (double) (x * PIECE_SIZE),
+						  "GnomeCanvasGroup::y", (double) (y * PIECE_SIZE),
 						  NULL);
+
+		gnome_canvas_item_new (GNOME_CANVAS (canvas),
+				       GNOME_CANVAS_GROUP (board[i]),
+				       gnome_canvas_rect_get_type (),
+				       "GnomeCanvasRE::x1", 0.0,
+				       "GnomeCanvasRE::y1", 0.0,
+				       "GnomeCanvasRE::x2", (double) (PIECE_SIZE - 1),
+				       "GnomeCanvasRE::y2", (double) (PIECE_SIZE - 1),
+				       "GnomeCanvasRE::fill_color", get_piece_color (i),
+				       "GnomeCanvasRE::outline_color", "black",
+				       "GnomeCanvasRE::width_pixels", 0,
+				       NULL);
+
+		sprintf (buf, "%d", i + 1);
+
+		text = gnome_canvas_item_new (GNOME_CANVAS (canvas),
+					      GNOME_CANVAS_GROUP (board[i]),
+					      gnome_canvas_text_get_type (),
+					      "GnomeCanvasText::text", buf,
+					      "GnomeCanvasText::x", (double) PIECE_SIZE / 2.0,
+					      "GnomeCanvasText::y", (double) PIECE_SIZE / 2.0,
+					      "GnomeCanvasText::font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+					      "GnomeCanvasText::anchor", GTK_ANCHOR_CENTER,
+					      "GnomeCanvasText::fill_color", "black",
+					      NULL);
 
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_num", GINT_TO_POINTER (i));
 		gtk_object_set_data (GTK_OBJECT (board[i]), "piece_pos", GINT_TO_POINTER (i));
+		gtk_object_set_data (GTK_OBJECT (board[i]), "text", text);
 		gtk_signal_connect (GTK_OBJECT (board[i]), "event",
 				    (GtkSignalFunc) piece_event,
 				    NULL);
@@ -156,7 +254,17 @@ create_fifteen (void)
 
 	board[15] = NULL;
 
-	return frame;
+	/* Scramble button */
+
+	button = gtk_button_new_with_label ("Scramble");
+	gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0);
+	gtk_object_set_user_data (GTK_OBJECT (button), board);
+	gtk_signal_connect (GTK_OBJECT (button), "clicked",
+			    (GtkSignalFunc) scramble,
+			    canvas);
+	gtk_widget_show (button);
+
+	return vbox;
 }
 
 
