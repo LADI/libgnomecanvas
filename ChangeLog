@@ -1,3 +1,11 @@
+2002-04-17  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas-rich-text.c
+	(gnome_canvas_rich_text_init): Changed the default of cursor_blink
+	to TRUE.
+
+	* */*.[ch]: Replace deprecated GTK+ calls with new ones.
+
 2002-03-28  Jody Goldberg <jody@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-clipgroup.c

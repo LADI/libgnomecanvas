@@ -52,7 +52,7 @@ struct _GnomeCanvasRichTextClass {
 			     GtkTextTag *tag);
 };
 
-GtkType gnome_canvas_rich_text_get_type(void);
+GType gnome_canvas_rich_text_get_type(void) G_GNUC_CONST;
 
 void gnome_canvas_rich_text_cut_clipboard(GnomeCanvasRichText *text);
 

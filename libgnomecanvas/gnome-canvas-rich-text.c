@@ -30,9 +30,10 @@
 #include <gtk/gtktextdisplay.h>
 #include <gtk/gtkmain.h>
 
-#include <libgnomecanvas/gnome-canvas.h>
-#include <libgnomecanvas/gnome-canvas-util.h>
-#include <libgnomecanvas/gnome-canvas-rich-text.h>
+#include "gnome-canvas.h"
+#include "gnome-canvas-util.h"
+#include "gnome-canvas-rich-text.h"
+#include "gnome-canvas-i18n.h"
 
 struct _GnomeCanvasRichTextPrivate {
 	GtkTextLayout *layout;
@@ -78,27 +79,27 @@ struct _GnomeCanvasRichTextPrivate {
 };
 
 enum {
-	ARG_0,
-	ARG_TEXT,
-	ARG_X,
-	ARG_Y,
-	ARG_WIDTH,
-	ARG_HEIGHT,
-	ARG_EDITABLE,
-	ARG_VISIBLE,
-	ARG_CURSOR_VISIBLE,
-	ARG_CURSOR_BLINK,
-	ARG_GROW_HEIGHT,
-	ARG_WRAP_MODE,
-	ARG_JUSTIFICATION,
-	ARG_DIRECTION,
-	ARG_ANCHOR,
-	ARG_PIXELS_ABOVE_LINES,
-	ARG_PIXELS_BELOW_LINES,
-	ARG_PIXELS_INSIDE_WRAP,
-	ARG_LEFT_MARGIN,
-	ARG_RIGHT_MARGIN,
-	ARG_INDENT,
+	PROP_0,
+	PROP_TEXT,
+	PROP_X,
+	PROP_Y,
+	PROP_WIDTH,
+	PROP_HEIGHT,
+	PROP_EDITABLE,
+	PROP_VISIBLE,
+	PROP_CURSOR_VISIBLE,
+	PROP_CURSOR_BLINK,
+	PROP_GROW_HEIGHT,
+	PROP_WRAP_MODE,
+	PROP_JUSTIFICATION,
+	PROP_DIRECTION,
+	PROP_ANCHOR,
+	PROP_PIXELS_ABOVE_LINES,
+	PROP_PIXELS_BELOW_LINES,
+	PROP_PIXELS_INSIDE_WRAP,
+	PROP_LEFT_MARGIN,
+	PROP_RIGHT_MARGIN,
+	PROP_INDENT,
 };
 
 enum {
@@ -111,10 +112,10 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 static void gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass);
 static void gnome_canvas_rich_text_init(GnomeCanvasRichText *text);
-static void gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, 
-					   guint arg_id);
-static void gnome_canvas_rich_text_get_arg(GtkObject *object, GtkArg *arg, 
-					   guint arg_id);
+static void gnome_canvas_rich_text_set_property(GObject *object, guint property_id,
+						const GValue *value, GParamSpec *pspec);
+static void gnome_canvas_rich_text_get_property(GObject *object, guint property_id,
+						GValue *value, GParamSpec *pspec);
 static void gnome_canvas_rich_text_update(GnomeCanvasItem *item, double *affine,
 					  ArtSVP *clip_path, int flags);
 static void gnome_canvas_rich_text_realize(GnomeCanvasItem *item);
@@ -149,28 +150,31 @@ static gint blink_cb(gpointer data);
 #define CURSOR_ON_TIME 800
 #define CURSOR_OFF_TIME 400
 
-GtkType
+GType
 gnome_canvas_rich_text_get_type(void)
 {
-	static GtkType type = 0;
+	static GType rich_text_type;
 
-	if (!type) {
-		GtkTypeInfo info = {
-			"GnomeCanvasRichText",
-			sizeof(GnomeCanvasRichText),
-			sizeof(GnomeCanvasRichTextClass),
-			(GtkClassInitFunc) gnome_canvas_rich_text_class_init,
-			(GtkObjectInitFunc) gnome_canvas_rich_text_init,
-			NULL, /* reserved 1 */
-			NULL, /* reserved 2 */
-			(GtkClassInitFunc) NULL
+	if (!rich_text_type) {
+		static const GTypeInfo object_info = {
+			sizeof (GnomeCanvasRichTextClass),
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_rich_text_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasRichText),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_rich_text_init,
+			NULL			/* value_table */
 		};
 
-		type = gtk_type_unique(gnome_canvas_item_get_type(), &info);
+		rich_text_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasRichText",
+							 &object_info, 0);
 	}
 
-	return type;
-} /* gnome_canvas_rich_text_get_type */
+	return rich_text_type;
+}
 
 static void
 gnome_canvas_rich_text_finalize(GObject *object)
@@ -193,82 +197,193 @@ gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 	GtkObjectClass *object_class = GTK_OBJECT_CLASS(klass);
 	GnomeCanvasItemClass *item_class = GNOME_CANVAS_ITEM_CLASS(klass);
 	
-	parent_class = gtk_type_class(gnome_canvas_item_get_type());
+	parent_class = g_type_class_peek_parent (klass);
 
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::text",
-		GTK_TYPE_STRING, GTK_ARG_READWRITE, ARG_TEXT);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::x",
-		GTK_TYPE_DOUBLE, GTK_ARG_READWRITE, ARG_X);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::y",
-		GTK_TYPE_DOUBLE, GTK_ARG_READWRITE, ARG_Y);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::width",
-		GTK_TYPE_DOUBLE, GTK_ARG_READWRITE, ARG_WIDTH);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::height",
-		GTK_TYPE_DOUBLE, GTK_ARG_READWRITE, ARG_HEIGHT);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::editable",
-		GTK_TYPE_BOOL, GTK_ARG_READWRITE, ARG_EDITABLE);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::visible",
-		GTK_TYPE_BOOL, GTK_ARG_READWRITE, ARG_VISIBLE);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::cursor_visible",
-		GTK_TYPE_BOOL, GTK_ARG_READWRITE, ARG_CURSOR_VISIBLE);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::cursor_blink",
-		GTK_TYPE_BOOL, GTK_ARG_READWRITE, ARG_CURSOR_BLINK);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::grow_height",
-		GTK_TYPE_BOOL, GTK_ARG_READWRITE, ARG_GROW_HEIGHT);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::wrap_mode",
-		GTK_TYPE_WRAP_MODE, GTK_ARG_READWRITE, ARG_WRAP_MODE);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::justification",
-		GTK_TYPE_JUSTIFICATION, GTK_ARG_READWRITE, ARG_JUSTIFICATION);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::direction",
-		GTK_TYPE_DIRECTION_TYPE, GTK_ARG_READWRITE, ARG_DIRECTION);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::anchor",
-		GTK_TYPE_ANCHOR_TYPE, GTK_ARG_READWRITE, ARG_ANCHOR);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::pixels_above_lines",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_PIXELS_ABOVE_LINES);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::pixels_below_lines",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_PIXELS_BELOW_LINES);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::pixels_inside_wrap",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_PIXELS_INSIDE_WRAP);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::left_margin",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_LEFT_MARGIN);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::right_margin",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_RIGHT_MARGIN);
-	gtk_object_add_arg_type(
-		"GnomeCanvasRichText::indent",
-		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_INDENT);
+	gobject_class->set_property = gnome_canvas_rich_text_set_property;
+	gobject_class->get_property = gnome_canvas_rich_text_get_property;
+
+	g_object_class_install_property (
+		gobject_class,
+		PROP_TEXT,
+		g_param_spec_string ("text",
+				     _("Text"),
+				     _("Text to display"),
+				     NULL,
+				     G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_X,
+		g_param_spec_double ("x",
+				     _("X"),
+				     _("X position"),
+				     -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
+				     G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_Y,
+		g_param_spec_double ("y",
+				     _("Y"),
+				     _("Y position"),
+				     -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
+				     G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_WIDTH,
+		g_param_spec_double ("width",
+				     _("Width"),
+				     _("Width for text box"),
+				     -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
+				     G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_HEIGHT,
+		g_param_spec_double ("height",
+				     _("Height"),
+				     _("Height for text box"),
+				     -G_MAXDOUBLE, G_MAXDOUBLE, 0.0,
+				     G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_EDITABLE,
+		g_param_spec_boolean ("editable",
+				      _("Editable"),
+				      _("Is this rich text item editable?"),
+				      TRUE,
+				      G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_VISIBLE,
+		g_param_spec_boolean ("visible",
+				      _("Visible"),
+				      _("Is this rich text item visible?"),
+				      TRUE,
+				      G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_CURSOR_VISIBLE,
+		g_param_spec_boolean ("cursor_visible",
+				      _("Cursor Visible"),
+				      _("Is the cursor visible in this this rich text item?"),
+				      TRUE,
+				      G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_CURSOR_BLINK,
+		g_param_spec_boolean ("cursor_blink",
+				      _("Cursor Blink"),
+				      _("Does the cursor blink in this this rich text item?"),
+				      TRUE,
+				      G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_GROW_HEIGHT,
+		g_param_spec_boolean ("grow_height",
+				      _("Grow Height"),
+				      _("Should the text box height grow if the text does not fit?"),
+				      FALSE,
+				      G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_WRAP_MODE,
+		g_param_spec_enum ("wrap_mode",
+				   _("Wrap Mode"),
+				   _("Wrap mode for multiline text"),
+				   GTK_TYPE_WRAP_MODE,
+				   GTK_WRAP_WORD,
+				   G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_JUSTIFICATION,
+		g_param_spec_enum ("justification",
+				   _("Justification"),
+				   _("Justification mode"),
+				   GTK_TYPE_JUSTIFICATION,
+				   GTK_JUSTIFY_LEFT,
+				   G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_DIRECTION,
+		g_param_spec_enum ("direction",
+				   _("Direction"),
+				   _("Text direction"),
+				   GTK_TYPE_DIRECTION_TYPE,
+				   gtk_widget_get_default_direction (),
+				   G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_ANCHOR,
+		g_param_spec_enum ("anchor",
+				   _("Anchor"),
+				   _("Anchor point for text"),
+				   GTK_TYPE_ANCHOR_TYPE,
+				   GTK_ANCHOR_NW,
+				   G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_PIXELS_ABOVE_LINES,
+		g_param_spec_int ("pixels_above_lines",
+				  _("Pixels Above Lines"),
+				  _("Number of pixels to put above lines"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_PIXELS_BELOW_LINES,
+		g_param_spec_int ("pixels_below_lines",
+				  _("Pixels Below Lines"),
+				  _("Number of pixels to put below lines"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_PIXELS_INSIDE_WRAP,
+		g_param_spec_int ("pixels_inside_wrap",
+				  _("Pixels Inside Wrap"),
+				  _("Number of pixels to put inside the wrap"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_LEFT_MARGIN,
+		g_param_spec_int ("left_margin",
+				  _("Left Margin"),
+				  _("Number of pixels in the left margin"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_RIGHT_MARGIN,
+		g_param_spec_int ("right_margin",
+				  _("Right Margin"),
+				  _("Number of pixels in the right margin"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
+	g_object_class_install_property (
+		gobject_class,
+		PROP_INDENT,
+		g_param_spec_int ("indent",
+				  _("Indentation"),
+				  _("Number of pixels for indentation"),
+				  G_MININT, G_MAXINT,
+				  0,
+				  G_PARAM_READWRITE));
 
 	/* Signals */
 	signals[TAG_CHANGED] = g_signal_new(
 		"tag_changed",
-		G_OBJECT_CLASS_TYPE(object_class),
+		G_TYPE_FROM_CLASS(object_class),
 		G_SIGNAL_RUN_LAST,
-		GTK_SIGNAL_OFFSET(GnomeCanvasRichTextClass, tag_changed),
+		G_STRUCT_OFFSET(GnomeCanvasRichTextClass, tag_changed),
 		NULL, NULL,
-		gtk_marshal_VOID__OBJECT,
+		g_cclosure_marshal_VOID__OBJECT,
 		G_TYPE_NONE, 1,
 		G_TYPE_OBJECT);
 
-	object_class->set_arg = gnome_canvas_rich_text_set_arg;
-	object_class->get_arg = gnome_canvas_rich_text_get_arg;
 	gobject_class->finalize = gnome_canvas_rich_text_finalize;
 
 	item_class->update = gnome_canvas_rich_text_update;
@@ -292,7 +407,7 @@ gnome_canvas_rich_text_init(GnomeCanvasRichText *text)
 
 	/* Try to set some sane defaults */
 	text->_priv->cursor_visible = TRUE;
-	text->_priv->cursor_blink = FALSE;
+	text->_priv->cursor_blink = TRUE;
 	text->_priv->editable = TRUE;
 	text->_priv->visible = TRUE;
 	text->_priv->grow_height = FALSE;
@@ -309,51 +424,52 @@ gnome_canvas_rich_text_init(GnomeCanvasRichText *text)
 } /* gnome_canvas_rich_text_init */
 
 static void
-gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
+gnome_canvas_rich_text_set_property (GObject *object, guint property_id,
+				     const GValue *value, GParamSpec *pspec)
 {
 	GnomeCanvasRichText *text = GNOME_CANVAS_RICH_TEXT(object);
 
-	switch (arg_id) {
-	case ARG_TEXT:
+	switch (property_id) {
+	case PROP_TEXT:
 		if (text->_priv->text)
 			g_free(text->_priv->text);
 
-		text->_priv->text = g_strdup(GTK_VALUE_STRING(*arg));
+		text->_priv->text = g_value_dup_string (value);
 
 		gtk_text_buffer_set_text(
 			get_buffer(text), text->_priv->text, strlen(text->_priv->text));
 
 		break;
-	case ARG_X:
-		text->_priv->x = GTK_VALUE_DOUBLE(*arg);
+	case PROP_X:
+		text->_priv->x = g_value_get_double (value);
 		break;
-	case ARG_Y:
-		text->_priv->y = GTK_VALUE_DOUBLE(*arg);
+	case PROP_Y:
+		text->_priv->y = g_value_get_double (value);
 		break;
-	case ARG_WIDTH:
-		text->_priv->width = GTK_VALUE_DOUBLE(*arg);
+	case PROP_WIDTH:
+		text->_priv->width = g_value_get_double (value);
 		break;
-	case ARG_HEIGHT:
-		text->_priv->height = GTK_VALUE_DOUBLE(*arg);
+	case PROP_HEIGHT:
+		text->_priv->height = g_value_get_double (value);
 		break;
-	case ARG_EDITABLE:
-		text->_priv->editable = GTK_VALUE_BOOL(*arg);
+	case PROP_EDITABLE:
+		text->_priv->editable = g_value_get_boolean (value);
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->editable =
 				text->_priv->editable;
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_VISIBLE:
-		text->_priv->visible = GTK_VALUE_BOOL(*arg);
+	case PROP_VISIBLE:
+		text->_priv->visible = g_value_get_boolean (value);
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->invisible =
 				!text->_priv->visible;
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_CURSOR_VISIBLE:
-		text->_priv->cursor_visible = GTK_VALUE_BOOL(*arg);
+	case PROP_CURSOR_VISIBLE:
+		text->_priv->cursor_visible = g_value_get_boolean (value);
 		if (text->_priv->layout) {
 			gtk_text_layout_set_cursor_visible(
 				text->_priv->layout, text->_priv->cursor_visible);
@@ -366,8 +482,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 				gnome_canvas_rich_text_stop_cursor_blink(text);
 		}
 		break;
-	case ARG_CURSOR_BLINK:
-		text->_priv->cursor_blink = GTK_VALUE_BOOL(*arg);
+	case PROP_CURSOR_BLINK:
+		text->_priv->cursor_blink = g_value_get_boolean (value);
 		if (text->_priv->layout && text->_priv->cursor_visible) {
 			if (text->_priv->cursor_blink && !text->_priv->blink_timeout) {
 				gnome_canvas_rich_text_start_cursor_blink(
@@ -380,12 +496,12 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			}
 		}
 		break;
-	case ARG_GROW_HEIGHT:
-		text->_priv->grow_height = GTK_VALUE_BOOL(*arg);
+	case PROP_GROW_HEIGHT:
+		text->_priv->grow_height = g_value_get_boolean (value);
 		/* FIXME: Recalc here */
 		break;
-	case ARG_WRAP_MODE:
-		text->_priv->wrap_mode = GTK_VALUE_ENUM(*arg);
+	case PROP_WRAP_MODE:
+		text->_priv->wrap_mode = g_value_get_enum (value);
 
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->wrap_mode = 
@@ -393,8 +509,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_JUSTIFICATION:
-		text->_priv->justification = GTK_VALUE_ENUM(*arg);
+	case PROP_JUSTIFICATION:
+		text->_priv->justification = g_value_get_enum (value);
 
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->justification =
@@ -402,8 +518,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_DIRECTION:
-		text->_priv->direction = GTK_VALUE_ENUM(*arg);
+	case PROP_DIRECTION:
+		text->_priv->direction = g_value_get_enum (value);
 
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->direction =
@@ -411,11 +527,11 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_ANCHOR:
-		text->_priv->anchor = GTK_VALUE_ENUM(*arg);
+	case PROP_ANCHOR:
+		text->_priv->anchor = g_value_get_enum (value);
 		break;
-	case ARG_PIXELS_ABOVE_LINES:
-		text->_priv->pixels_above_lines = GTK_VALUE_INT(*arg);
+	case PROP_PIXELS_ABOVE_LINES:
+		text->_priv->pixels_above_lines = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->pixels_above_lines =
@@ -423,8 +539,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_PIXELS_BELOW_LINES:
-		text->_priv->pixels_below_lines = GTK_VALUE_INT(*arg);
+	case PROP_PIXELS_BELOW_LINES:
+		text->_priv->pixels_below_lines = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->pixels_below_lines =
@@ -432,8 +548,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_PIXELS_INSIDE_WRAP:
-		text->_priv->pixels_inside_wrap = GTK_VALUE_INT(*arg);
+	case PROP_PIXELS_INSIDE_WRAP:
+		text->_priv->pixels_inside_wrap = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->pixels_inside_wrap =
@@ -441,8 +557,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_LEFT_MARGIN:
-		text->_priv->left_margin = GTK_VALUE_INT(*arg);
+	case PROP_LEFT_MARGIN:
+		text->_priv->left_margin = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->left_margin =
@@ -450,8 +566,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_RIGHT_MARGIN:
-		text->_priv->right_margin = GTK_VALUE_INT(*arg);
+	case PROP_RIGHT_MARGIN:
+		text->_priv->right_margin = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->right_margin =
@@ -459,8 +575,8 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 			gtk_text_layout_default_style_changed(text->_priv->layout);
 		}
 		break;
-	case ARG_INDENT:
-		text->_priv->pixels_above_lines = GTK_VALUE_INT(*arg);
+	case PROP_INDENT:
+		text->_priv->pixels_above_lines = g_value_get_int (value);
 		
 		if (text->_priv->layout) {
 			text->_priv->layout->default_style->indent = text->_priv->indent;
@@ -469,74 +585,76 @@ gnome_canvas_rich_text_set_arg(GtkObject *object, GtkArg *arg, guint arg_id)
 		break;
 		       
 	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 		break;
 	}
 
 	gnome_canvas_item_request_update(GNOME_CANVAS_ITEM(text));
-} /* gnome_canvas_rich_text_set_arg */
+}
 
 static void
-gnome_canvas_rich_text_get_arg(GtkObject *object, GtkArg *arg, guint arg_id)
+gnome_canvas_rich_text_get_property (GObject *object, guint property_id,
+				     GValue *value, GParamSpec *pspec)
 {
 	GnomeCanvasRichText *text = GNOME_CANVAS_RICH_TEXT(object);
 
-	switch (arg_id) {
-	case ARG_TEXT:
-		GTK_VALUE_STRING(*arg) = g_strdup(text->_priv->text);
+	switch (property_id) {
+	case PROP_TEXT:
+		g_value_set_string (value, text->_priv->text);
 		break;
-	case ARG_X:
-		GTK_VALUE_DOUBLE(*arg) = text->_priv->x;
+	case PROP_X:
+		g_value_set_double (value, text->_priv->x);
 		break;
-	case ARG_Y:
-		GTK_VALUE_DOUBLE(*arg) = text->_priv->y;
+	case PROP_Y:
+		g_value_set_double (value, text->_priv->y);
 		break;
-	case ARG_EDITABLE:
-		GTK_VALUE_BOOL(*arg) = text->_priv->editable;
+	case PROP_EDITABLE:
+		g_value_set_boolean (value, text->_priv->editable);
 		break;
-	case ARG_CURSOR_VISIBLE:
-		GTK_VALUE_BOOL(*arg) = text->_priv->cursor_visible;
+	case PROP_CURSOR_VISIBLE:
+		g_value_set_boolean (value, text->_priv->cursor_visible);
 		break;
-	case ARG_CURSOR_BLINK:
-		GTK_VALUE_BOOL(*arg) = text->_priv->cursor_blink;
+	case PROP_CURSOR_BLINK:
+		g_value_set_boolean (value, text->_priv->cursor_blink);
 		break;
-	case ARG_GROW_HEIGHT:
-		GTK_VALUE_BOOL(*arg) = text->_priv->grow_height;
+	case PROP_GROW_HEIGHT:
+		g_value_set_boolean (value, text->_priv->grow_height);
 		break;
-	case ARG_WRAP_MODE:
-		GTK_VALUE_ENUM(*arg) = text->_priv->wrap_mode;
+	case PROP_WRAP_MODE:
+		g_value_set_enum (value, text->_priv->wrap_mode);
 		break;
-	case ARG_JUSTIFICATION:
-		GTK_VALUE_ENUM(*arg) = text->_priv->justification;
+	case PROP_JUSTIFICATION:
+		g_value_set_enum (value, text->_priv->justification);
 		break;
-	case ARG_DIRECTION:
-		GTK_VALUE_ENUM(*arg) = text->_priv->direction;
+	case PROP_DIRECTION:
+		g_value_set_enum (value, text->_priv->direction);
 		break;
-	case ARG_ANCHOR:
-		GTK_VALUE_ENUM(*arg) = text->_priv->anchor;
+	case PROP_ANCHOR:
+		g_value_set_enum (value, text->_priv->anchor);
 		break;
-	case ARG_PIXELS_ABOVE_LINES:
-		GTK_VALUE_INT(*arg) = text->_priv->pixels_above_lines;
+	case PROP_PIXELS_ABOVE_LINES:
+		g_value_set_enum (value, text->_priv->pixels_above_lines);
 		break;
-	case ARG_PIXELS_BELOW_LINES:
-		GTK_VALUE_INT(*arg) = text->_priv->pixels_below_lines;
+	case PROP_PIXELS_BELOW_LINES:
+		g_value_set_int (value, text->_priv->pixels_below_lines);
 		break;
-	case ARG_PIXELS_INSIDE_WRAP:
-		GTK_VALUE_INT(*arg) = text->_priv->pixels_inside_wrap;
+	case PROP_PIXELS_INSIDE_WRAP:
+		g_value_set_int (value, text->_priv->pixels_inside_wrap);
 		break;
-	case ARG_LEFT_MARGIN:
-		GTK_VALUE_INT(*arg) = text->_priv->left_margin;
+	case PROP_LEFT_MARGIN:
+		g_value_set_int (value, text->_priv->left_margin);
 		break;
-	case ARG_RIGHT_MARGIN:
-		GTK_VALUE_INT(*arg) = text->_priv->right_margin;
+	case PROP_RIGHT_MARGIN:
+		g_value_set_int (value, text->_priv->right_margin);
 		break;
-	case ARG_INDENT:
-		GTK_VALUE_INT(*arg) = text->_priv->indent;
+	case PROP_INDENT:
+		g_value_set_int (value, text->_priv->indent);
 		break;
 	default:
-		arg->type = GTK_TYPE_INVALID;
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 		break;
 	}
-} /* gnome_canvas_rich_text_get_arg */
+}
 
 static void
 gnome_canvas_rich_text_realize(GnomeCanvasItem *item)
@@ -824,9 +942,10 @@ gnome_canvas_rich_text_start_selection_drag(GnomeCanvasRichText *text,
 
 	gtk_text_buffer_place_cursor(get_buffer(text), &newplace);
 
-	text->_priv->selection_drag_handler = gtk_signal_connect(
-		GTK_OBJECT(text), "event",
-		GTK_SIGNAL_FUNC(selection_motion_event_handler), NULL);
+	text->_priv->selection_drag_handler = g_signal_connect(
+		text, "event",
+		G_CALLBACK (selection_motion_event_handler),
+		NULL);
 } /* gnome_canvas_rich_text_start_selection_drag */
 
 static gboolean
@@ -836,7 +955,7 @@ gnome_canvas_rich_text_end_selection_drag(GnomeCanvasRichText *text,
 	if (text->_priv->selection_drag_handler == 0)
 		return FALSE;
 
-	gtk_signal_disconnect(GTK_OBJECT(text), text->_priv->selection_drag_handler);
+	g_signal_handler_disconnect (text, text->_priv->selection_drag_handler);
 	text->_priv->selection_drag_handler = 0;
 
 #if 0

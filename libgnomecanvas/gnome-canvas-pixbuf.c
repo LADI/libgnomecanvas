@@ -119,25 +119,27 @@ static GnomeCanvasItemClass *parent_class;
 GtkType
 gnome_canvas_pixbuf_get_type (void)
 {
-	static GtkType canvas_pixbuf_type = 0;
+	static GType pixbuf_type;
 
-	if (!canvas_pixbuf_type) {
-		static const GtkTypeInfo canvas_pixbuf_info = {
-			"GnomeCanvasPixbuf",
-			sizeof (GnomeCanvasPixbuf),
+	if (!pixbuf_type) {
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasPixbufClass),
-			(GtkClassInitFunc) gnome_canvas_pixbuf_class_init,
-			(GtkObjectInitFunc) gnome_canvas_pixbuf_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_pixbuf_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasPixbuf),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_pixbuf_init,
+			NULL			/* value_table */
 		};
 
-		canvas_pixbuf_type = gtk_type_unique (gnome_canvas_item_get_type (),
-						      &canvas_pixbuf_info);
+		pixbuf_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasPixbuf",
+						     &object_info, 0);
 	}
 
-	return canvas_pixbuf_type;
+	return pixbuf_type;
 }
 
 /* Class initialization function for the pixbuf canvas item */
@@ -152,7 +154,7 @@ gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_pixbuf_set_property;
 	gobject_class->get_property = gnome_canvas_pixbuf_get_property;

@@ -91,9 +91,9 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 static void
 setup_item (GnomeCanvasItem *item)
 {
-	gtk_signal_connect (GTK_OBJECT (item), "event",
-			    (GtkSignalFunc) item_event,
-			    NULL);
+	g_signal_connect (item, "event",
+			  G_CALLBACK (item_event),
+			  NULL);
 }
 
 static void
@@ -813,11 +813,11 @@ create_canvas_primitives (gint aa)
 	gtk_widget_show (w);
 
 	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.05, 5.00, 0.05, 0.50, 0.50));
-	gtk_signal_connect (GTK_OBJECT (adj), "value_changed",
-			    (GtkSignalFunc) zoom_changed,
-			    canvas);
+	g_signal_connect (adj, "value_changed",
+			  G_CALLBACK (zoom_changed),
+			  canvas);
 	w = gtk_spin_button_new (adj, 0.0, 2);
-	gtk_widget_set_usize (w, 50, 0);
+	gtk_widget_set_size_request (w, 50, -1);
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
@@ -838,14 +838,14 @@ create_canvas_primitives (gint aa)
 			  0, 0);
 	gtk_widget_show (frame);
 
-	gtk_widget_set_usize (canvas, 600, 450);
+	gtk_widget_set_size_request (canvas, 600, 450);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 600, 450);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
-	gtk_signal_connect_after (GTK_OBJECT (canvas), "key_press_event",
-				  (GtkSignalFunc) key_press,
-				  NULL);
+	g_signal_connect_after (canvas, "key_press_event",
+				G_CALLBACK (key_press),
+				NULL);
 
 	w = gtk_hscrollbar_new (GTK_LAYOUT (canvas)->hadjustment);
 	gtk_table_attach (GTK_TABLE (table), w,

@@ -75,24 +75,27 @@ static void gnome_canvas_ellipse_update      (GnomeCanvasItem *item, double *aff
 static GnomeCanvasItemClass *re_parent_class;
 
 
-GtkType
+GType
 gnome_canvas_re_get_type (void)
 {
-	static GtkType re_type = 0;
+	static GType re_type;
 
 	if (!re_type) {
-		GtkTypeInfo re_info = {
-			"GnomeCanvasRE",
-			sizeof (GnomeCanvasRE),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasREClass),
-			(GtkClassInitFunc) gnome_canvas_re_class_init,
-			(GtkObjectInitFunc) gnome_canvas_re_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_re_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasRE),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_re_init,
+			NULL			/* value_table */
 		};
 
-		re_type = gtk_type_unique (gnome_canvas_shape_get_type (), &re_info);
+		re_type = g_type_register_static (GNOME_TYPE_CANVAS_SHAPE, "GnomeCanvasRE",
+						  &object_info, 0);
 	}
 
 	return re_type;
@@ -109,7 +112,7 @@ gnome_canvas_re_class_init (GnomeCanvasREClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	re_parent_class = gtk_type_class (gnome_canvas_shape_get_type ());
+	re_parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_re_set_property;
 	gobject_class->get_property = gnome_canvas_re_get_property;
@@ -253,24 +256,27 @@ static void gnome_canvas_rect_class_init (GnomeCanvasRectClass *class);
 
 
 
-GtkType
+GType
 gnome_canvas_rect_get_type (void)
 {
-	static GtkType rect_type = 0;
+	static GType rect_type;
 
 	if (!rect_type) {
-		GtkTypeInfo rect_info = {
-			"GnomeCanvasRect",
-			sizeof (GnomeCanvasRect),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasRectClass),
-			(GtkClassInitFunc) gnome_canvas_rect_class_init,
-			(GtkObjectInitFunc) NULL,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_rect_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasRect),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) NULL,
+			NULL			/* value_table */
 		};
 
-		rect_type = gtk_type_unique (gnome_canvas_re_get_type (), &rect_info);
+		rect_type = g_type_register_static (GNOME_TYPE_CANVAS_RE, "GnomeCanvasRect",
+						    &object_info, 0);
 	}
 
 	return rect_type;
@@ -318,24 +324,27 @@ gnome_canvas_rect_update (GnomeCanvasItem *item, double affine[6], ArtSVP *clip_
 static void gnome_canvas_ellipse_class_init (GnomeCanvasEllipseClass *class);
 
 
-GtkType
+GType
 gnome_canvas_ellipse_get_type (void)
 {
-	static GtkType ellipse_type = 0;
+	static GType ellipse_type;
 
 	if (!ellipse_type) {
-		GtkTypeInfo ellipse_info = {
-			"GnomeCanvasEllipse",
-			sizeof (GnomeCanvasEllipse),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasEllipseClass),
-			(GtkClassInitFunc) gnome_canvas_ellipse_class_init,
-			(GtkObjectInitFunc) NULL,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_ellipse_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasEllipse),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) NULL,
+			NULL			/* value_table */
 		};
 
-		ellipse_type = gtk_type_unique (gnome_canvas_re_get_type (), &ellipse_info);
+		ellipse_type = g_type_register_static (GNOME_TYPE_CANVAS_RE, "GnomeCanvasEllipse",
+						       &object_info, 0);
 	}
 
 	return ellipse_type;

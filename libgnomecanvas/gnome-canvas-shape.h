@@ -74,7 +74,7 @@ void gnome_canvas_shape_set_path_def (GnomeCanvasShape *shape, GnomeCanvasPathDe
 GnomeCanvasPathDef *gnome_canvas_shape_get_path_def (GnomeCanvasShape *shape);
 
 /* Standard Gtk function */
-GtkType gnome_canvas_shape_get_type (void);
+GType gnome_canvas_shape_get_type (void) G_GNUC_CONST;
 
 G_END_DECLS
 

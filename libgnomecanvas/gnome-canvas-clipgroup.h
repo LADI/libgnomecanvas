@@ -50,7 +50,7 @@ struct _GnomeCanvasClipgroupClass {
 
 
 /* Standard Gtk function */
-GtkType gnome_canvas_clipgroup_get_type (void);
+GType gnome_canvas_clipgroup_get_type (void) G_GNUC_CONST;
 
 
 G_END_DECLS

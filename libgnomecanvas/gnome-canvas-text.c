@@ -155,24 +155,27 @@ static GnomeCanvasItemClass *parent_class;
  * 
  * Return value: The type ID of the &GnomeCanvasText class.
  **/
-GtkType
+GType
 gnome_canvas_text_get_type (void)
 {
-	static GtkType text_type = 0;
+	static GType text_type;
 
 	if (!text_type) {
-		GtkTypeInfo text_info = {
-			"GnomeCanvasText",
-			sizeof (GnomeCanvasText),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasTextClass),
-			(GtkClassInitFunc) gnome_canvas_text_class_init,
-			(GtkObjectInitFunc) gnome_canvas_text_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_text_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasText),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_text_init,
+			NULL			/* value_table */
 		};
 
-		text_type = gtk_type_unique (gnome_canvas_item_get_type (), &text_info);
+		text_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasText",
+						    &object_info, 0);
 	}
 
 	return text_type;
@@ -190,7 +193,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_text_set_property;
 	gobject_class->get_property = gnome_canvas_text_get_property;

@@ -25,11 +25,11 @@ set_dimension (GnomeCanvas *canvas, char *arrow_name, char *text_name,
 	points->coords[2] = x2;
 	points->coords[3] = y2;
 
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), arrow_name),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), arrow_name),
 			       "points", points,
 			       NULL);
 	sprintf (buf, "%d", dim);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), text_name),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), text_name),
 			       "text", buf,
 			       "x", tx,
 			       "y", ty,
@@ -57,14 +57,14 @@ set_arrow_shape (GnomeCanvas *canvas)
 	GnomeCanvasPoints *points;
 	char buf[100];
 
-	width = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (canvas), "width"));
-	shape_a = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (canvas), "shape_a"));
-	shape_b = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (canvas), "shape_b"));
-	shape_c = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (canvas), "shape_c"));
+	width = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (canvas), "width"));
+	shape_a = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (canvas), "shape_a"));
+	shape_b = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (canvas), "shape_b"));
+	shape_c = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (canvas), "shape_c"));
 
 	/* Big arrow */
 
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "big_arrow"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "big_arrow"),
 			       "width_pixels", 10 * width,
 			       "arrow_shape_a", (double) (shape_a * 10),
 			       "arrow_shape_b", (double) (shape_b * 10),
@@ -84,22 +84,22 @@ set_arrow_shape (GnomeCanvas *canvas)
 	points->coords[7] = MIDDLE + 10 * (shape_c + width / 2.0);
 	points->coords[8] = points->coords[0];
 	points->coords[9] = points->coords[1];
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "outline"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "outline"),
 			       "points", points,
 			       NULL);
 	gnome_canvas_points_free (points);
 
 	/* Drag boxes */
 
-	move_drag_box (gtk_object_get_data (GTK_OBJECT (canvas), "width_drag_box"),
+	move_drag_box (g_object_get_data (G_OBJECT (canvas), "width_drag_box"),
 		       LEFT,
 		       MIDDLE - 10 * width / 2.0);
 
-	move_drag_box (gtk_object_get_data (GTK_OBJECT (canvas), "shape_a_drag_box"),
+	move_drag_box (g_object_get_data (G_OBJECT (canvas), "shape_a_drag_box"),
 		       RIGHT - 10 * shape_a,
 		       MIDDLE);
 
-	move_drag_box (gtk_object_get_data (GTK_OBJECT (canvas), "shape_b_c_drag_box"),
+	move_drag_box (g_object_get_data (G_OBJECT (canvas), "shape_b_c_drag_box"),
 		       RIGHT - 10 * shape_b,
 		       MIDDLE - 10 * (shape_c + width / 2.0));
 
@@ -144,39 +144,39 @@ set_arrow_shape (GnomeCanvas *canvas)
 	/* Info */
 
 	sprintf (buf, "width: %d", width);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "width_info"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "width_info"),
 			       "text", buf,
 			       NULL);
 
 	sprintf (buf, "arrow_shape_a: %d", shape_a);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "shape_a_info"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "shape_a_info"),
 			       "text", buf,
 			       NULL);
 
 	sprintf (buf, "arrow_shape_b: %d", shape_b);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "shape_b_info"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "shape_b_info"),
 			       "text", buf,
 			       NULL);
 	sprintf (buf, "arrow_shape_c: %d", shape_c);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "shape_c_info"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "shape_c_info"),
 			       "text", buf,
 			       NULL);
 
 	/* Sample arrows */
 
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "sample_1"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "sample_1"),
 			       "width_pixels", width,
 			       "arrow_shape_a", (double) shape_a,
 			       "arrow_shape_b", (double) shape_b,
 			       "arrow_shape_c", (double) shape_c,
 			       NULL);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "sample_2"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "sample_2"),
 			       "width_pixels", width,
 			       "arrow_shape_a", (double) shape_a,
 			       "arrow_shape_b", (double) shape_b,
 			       "arrow_shape_c", (double) shape_c,
 			       NULL);
-	gnome_canvas_item_set (gtk_object_get_data (GTK_OBJECT (canvas), "sample_3"),
+	gnome_canvas_item_set (g_object_get_data (G_OBJECT (canvas), "sample_3"),
 			       "width_pixels", width,
 			       "arrow_shape_a", (double) shape_a,
 			       "arrow_shape_b", (double) shape_b,
@@ -224,7 +224,7 @@ highlight_box (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 }
 
 static void
-create_drag_box (GnomeCanvasGroup *root, char *box_name, GtkSignalFunc callback)
+create_drag_box (GnomeCanvasGroup *root, char *box_name, GCallback callback)
 {
 	GnomeCanvasItem *box;
 
@@ -234,14 +234,14 @@ create_drag_box (GnomeCanvasGroup *root, char *box_name, GtkSignalFunc callback)
 				     "outline_color", "black",
 				     "width_pixels", 0,
 				     NULL);
-	gtk_signal_connect (GTK_OBJECT (box), "event",
-			    (GtkSignalFunc) highlight_box,
-			    NULL);
-	gtk_signal_connect (GTK_OBJECT (box), "event",
-			    callback,
-			    NULL);
+	g_signal_connect (box, "event",
+			  G_CALLBACK (highlight_box),
+			  NULL);
+	g_signal_connect (box, "event",
+			  callback,
+			  NULL);
 
-	gtk_object_set_data (GTK_OBJECT (root->item.canvas), box_name, box);
+	g_object_set_data (G_OBJECT (root->item.canvas), box_name, box);
 }
 
 static gint
@@ -258,7 +258,7 @@ width_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	if (width < 0)
 		return FALSE;
 
-	gtk_object_set_data (GTK_OBJECT (item->canvas), "width", GINT_TO_POINTER (width));
+	g_object_set_data (G_OBJECT (item->canvas), "width", GINT_TO_POINTER (width));
 	set_arrow_shape (item->canvas);
 
 	return FALSE;
@@ -278,7 +278,7 @@ shape_a_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	if ((shape_a < 0) || (shape_a > 30))
 		return FALSE;
 
-	gtk_object_set_data (GTK_OBJECT (item->canvas), "shape_a", GINT_TO_POINTER (shape_a));
+	g_object_set_data (G_OBJECT (item->canvas), "shape_a", GINT_TO_POINTER (shape_a));
 	set_arrow_shape (item->canvas);
 
 	return FALSE;
@@ -299,15 +299,15 @@ shape_b_c_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	x = event->motion.x;
 	shape_b = (RIGHT - x) / 10;
 	if ((shape_b >= 0) && (shape_b <= 30)) {
-		gtk_object_set_data (GTK_OBJECT (item->canvas), "shape_b", GINT_TO_POINTER (shape_b));
+		g_object_set_data (G_OBJECT (item->canvas), "shape_b", GINT_TO_POINTER (shape_b));
 		change = TRUE;
 	}
 
 	y = event->motion.y;
-	width = GPOINTER_TO_INT (gtk_object_get_data (GTK_OBJECT (item->canvas), "width"));
+	width = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (item->canvas), "width"));
 	shape_c = ((MIDDLE - 5 * width) - y) / 10;
 	if (shape_c >= 0) {
-		gtk_object_set_data (GTK_OBJECT (item->canvas), "shape_c", GINT_TO_POINTER (shape_c));
+		g_object_set_data (G_OBJECT (item->canvas), "shape_c", GINT_TO_POINTER (shape_c));
 		change = TRUE;
 	}
 
@@ -331,7 +331,7 @@ create_dimension (GnomeCanvasGroup *root, char *arrow_name, char *text_name, Gtk
 				      "arrow_shape_b", 5.0,
 				      "arrow_shape_c", 3.0,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (root->item.canvas), arrow_name, item);
+	g_object_set_data (G_OBJECT (root->item.canvas), arrow_name, item);
 
 	item = gnome_canvas_item_new (root,
 				      gnome_canvas_text_get_type (),
@@ -339,7 +339,7 @@ create_dimension (GnomeCanvasGroup *root, char *arrow_name, char *text_name, Gtk
 				      "font", "Sans 12",
 				      "anchor", anchor,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (root->item.canvas), text_name, item);
+	g_object_set_data (G_OBJECT (root->item.canvas), text_name, item);
 }
 
 static void
@@ -355,7 +355,7 @@ create_info (GnomeCanvasGroup *root, char *info_name, double x, double y)
 				      "font", "Sans 14",
 				      "anchor", GTK_ANCHOR_NW,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (root->item.canvas), info_name, item);
+	g_object_set_data (G_OBJECT (root->item.canvas), info_name, item);
 }
 
 static void
@@ -376,7 +376,7 @@ create_sample_arrow (GnomeCanvasGroup *root, char *sample_name, double x1, doubl
 				      "first_arrowhead", TRUE,
 				      "last_arrowhead", TRUE,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (root->item.canvas), sample_name, item);
+	g_object_set_data (G_OBJECT (root->item.canvas), sample_name, item);
 	gnome_canvas_points_free (points);
 }
 
@@ -411,17 +411,17 @@ create_canvas_arrowhead (void)
 	gtk_widget_show (frame);
 
 	canvas = gnome_canvas_new ();
-	gtk_widget_set_usize (canvas, 500, 350);
+	gtk_widget_set_size_request (canvas, 500, 350);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 500, 350);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
 	root = gnome_canvas_root (GNOME_CANVAS (canvas));
 
-	gtk_object_set_data (GTK_OBJECT (canvas), "width", GINT_TO_POINTER (DEFAULT_WIDTH));
-	gtk_object_set_data (GTK_OBJECT (canvas), "shape_a", GINT_TO_POINTER (DEFAULT_SHAPE_A));
-	gtk_object_set_data (GTK_OBJECT (canvas), "shape_b", GINT_TO_POINTER (DEFAULT_SHAPE_B));
-	gtk_object_set_data (GTK_OBJECT (canvas), "shape_c", GINT_TO_POINTER (DEFAULT_SHAPE_C));
+	g_object_set_data (G_OBJECT (canvas), "width", GINT_TO_POINTER (DEFAULT_WIDTH));
+	g_object_set_data (G_OBJECT (canvas), "shape_a", GINT_TO_POINTER (DEFAULT_SHAPE_A));
+	g_object_set_data (G_OBJECT (canvas), "shape_b", GINT_TO_POINTER (DEFAULT_SHAPE_B));
+	g_object_set_data (G_OBJECT (canvas), "shape_c", GINT_TO_POINTER (DEFAULT_SHAPE_C));
 
 	/* Big arrow */
 
@@ -438,7 +438,7 @@ create_canvas_arrowhead (void)
 				      "width_pixels", DEFAULT_WIDTH * 10,
 				      "last_arrowhead", TRUE,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (canvas), "big_arrow", item);
+	g_object_set_data (G_OBJECT (canvas), "big_arrow", item);
 	gnome_canvas_points_free (points);
 
 	/* Arrow outline */
@@ -450,13 +450,13 @@ create_canvas_arrowhead (void)
 				      "cap_style", GDK_CAP_ROUND,
 				      "join_style", GDK_JOIN_ROUND,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (canvas), "outline", item);
+	g_object_set_data (G_OBJECT (canvas), "outline", item);
 
 	/* Drag boxes */
 
-	create_drag_box (root, "width_drag_box", (GtkSignalFunc) width_event);
-	create_drag_box (root, "shape_a_drag_box", (GtkSignalFunc) shape_a_event);
-	create_drag_box (root, "shape_b_c_drag_box", (GtkSignalFunc) shape_b_c_event);
+	create_drag_box (root, "width_drag_box", G_CALLBACK (width_event));
+	create_drag_box (root, "shape_a_drag_box", G_CALLBACK (shape_a_event));
+	create_drag_box (root, "shape_b_c_drag_box", G_CALLBACK (shape_b_c_event));
 
 	/* Dimensions */
 

@@ -18,8 +18,8 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	if ((event->type != GDK_BUTTON_PRESS) || (event->button.button != 1))
 		return FALSE;
 
-	parent1 = gtk_object_get_data (GTK_OBJECT (item), "parent1");
-	parent2 = gtk_object_get_data (GTK_OBJECT (item), "parent2");
+	parent1 = g_object_get_data (G_OBJECT (item), "parent1");
+	parent2 = g_object_get_data (G_OBJECT (item), "parent2");
 
 	if (item->parent == parent1)
 		gnome_canvas_item_reparent (item, GNOME_CANVAS_GROUP (parent2));
@@ -64,7 +64,7 @@ create_canvas_features (void)
 	gtk_widget_show (frame);
 
 	canvas = gnome_canvas_new ();
-	gtk_widget_set_usize (canvas, 400, 200);
+	gtk_widget_set_size_request (canvas, 400, 200);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 400, 200);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
@@ -115,11 +115,11 @@ create_canvas_features (void)
 				      "fill_color", "mediumseagreen",
 				      "width_units", 3.0,
 				      NULL);
-	gtk_object_set_data (GTK_OBJECT (item), "parent1", parent1);
-	gtk_object_set_data (GTK_OBJECT (item), "parent2", parent2);
-	gtk_signal_connect (GTK_OBJECT (item), "event",
-			    (GtkSignalFunc) item_event,
-			    NULL);
+	g_object_set_data (G_OBJECT (item), "parent1", parent1);
+	g_object_set_data (G_OBJECT (item), "parent2", parent2);
+	g_signal_connect (item, "event",
+			  G_CALLBACK (item_event),
+			  NULL);
 
 	/* A group to be reparented */
 
@@ -148,11 +148,11 @@ create_canvas_features (void)
 			       "fill_color", "steelblue",
 			       NULL);
 
-	gtk_object_set_data (GTK_OBJECT (group), "parent1", parent1);
-	gtk_object_set_data (GTK_OBJECT (group), "parent2", parent2);
-	gtk_signal_connect (GTK_OBJECT (group), "event",
-			    (GtkSignalFunc) item_event,
-			    NULL);
+	g_object_set_data (G_OBJECT (group), "parent1", parent1);
+	g_object_set_data (G_OBJECT (group), "parent2", parent2);
+	g_signal_connect (group, "event",
+			  G_CALLBACK (item_event),
+			  NULL);
 
 	/* Done */
 

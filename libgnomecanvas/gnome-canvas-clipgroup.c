@@ -60,24 +60,27 @@ static void gnome_canvas_clipgroup_update          (GnomeCanvasItem           *i
 
 static GnomeCanvasGroupClass *parent_class;
 
-GtkType
+GType
 gnome_canvas_clipgroup_get_type (void)
 {
-	static GtkType clipgroup_type = 0;
+	static GType clipgroup_type;
 
 	if (!clipgroup_type) {
-		GtkTypeInfo clipgroup_info = {
-			"GnomeCanvasClipgroup",
-			sizeof (GnomeCanvasClipgroup),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasClipgroupClass),
-			(GtkClassInitFunc) gnome_canvas_clipgroup_class_init,
-			(GtkObjectInitFunc) gnome_canvas_clipgroup_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_clipgroup_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasClipgroup),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_clipgroup_init,
+			NULL			/* value_table */
 		};
 
-		clipgroup_type = gtk_type_unique (gnome_canvas_group_get_type (), &clipgroup_info);
+		clipgroup_type = g_type_register_static (GNOME_TYPE_CANVAS_GROUP, "GnomeCanvasClipgroup",
+							 &object_info, 0);
 	}
 
 	return clipgroup_type;

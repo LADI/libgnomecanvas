@@ -109,7 +109,7 @@ create_canvas_rich_text (void)
 	/* Create the canvas and board */
 
 	canvas = gnome_canvas_new ();
-	gtk_widget_set_usize (canvas, 600, 450);
+	gtk_widget_set_size_request (canvas, 600, 450);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 

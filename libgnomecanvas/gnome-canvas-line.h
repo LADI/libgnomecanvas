@@ -146,7 +146,7 @@ struct _GnomeCanvasLineClass {
 
 
 /* Standard Gtk function */
-GtkType gnome_canvas_line_get_type (void) G_GNUC_CONST;
+GType gnome_canvas_line_get_type (void) G_GNUC_CONST;
 
 
 G_END_DECLS

@@ -241,7 +241,7 @@ create_canvas (gboolean aa)
 	else
 		canvas = gnome_canvas_new ();
 
-	gtk_widget_set_usize (canvas, 600, 250);
+	gtk_widget_set_size_request (canvas, 600, 250);
 	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 600, 250);
 	gtk_widget_show (canvas);
 

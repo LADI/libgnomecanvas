@@ -19,10 +19,9 @@ create_canvas (void)
 /* 	gtk_debug_flags = GTK_DEBUG_OBJECTS; */
 
 	app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_policy (GTK_WINDOW (app), TRUE, TRUE, FALSE);
 
-	gtk_signal_connect (GTK_OBJECT (app), "delete_event",
-			    (GtkSignalFunc) quit_cb, NULL);
+	g_signal_connect (app, "delete_event",
+			  G_CALLBACK (quit_cb), NULL);
 
 	notebook = gtk_notebook_new ();
 	gtk_widget_show (notebook);

@@ -68,24 +68,27 @@ static void gnome_canvas_polygon_update      (GnomeCanvasItem *item, double *aff
 
 static GnomeCanvasItemClass *parent_class;
 
-GtkType
+GType
 gnome_canvas_polygon_get_type (void)
 {
-	static GtkType polygon_type = 0;
+	static GType polygon_type;
 
 	if (!polygon_type) {
-		GtkTypeInfo polygon_info = {
-			"GnomeCanvasPolygon",
-			sizeof (GnomeCanvasPolygon),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasPolygonClass),
-			(GtkClassInitFunc) gnome_canvas_polygon_class_init,
-			(GtkObjectInitFunc) gnome_canvas_polygon_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_polygon_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasPolygon),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_polygon_init,
+			NULL			/* value_table */
 		};
 
-		polygon_type = gtk_type_unique (gnome_canvas_shape_get_type (), &polygon_info);
+		polygon_type = g_type_register_static (GNOME_TYPE_CANVAS_SHAPE, "GnomeCanvasPolygon",
+						       &object_info, 0);
 	}
 
 	return polygon_type;
@@ -102,7 +105,7 @@ gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_shape_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_polygon_set_property;
 	gobject_class->get_property = gnome_canvas_polygon_get_property;

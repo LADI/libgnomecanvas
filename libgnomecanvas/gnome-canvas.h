@@ -228,14 +228,13 @@ struct _GnomeCanvasItemClass {
 };
 
 
-/* Standard Gtk function */
-GtkType gnome_canvas_item_get_type (void) G_GNUC_CONST;
+GType gnome_canvas_item_get_type (void) G_GNUC_CONST;
 
 /* Create a canvas item using the standard Gtk argument mechanism.  The item is
  * automatically inserted at the top of the specified canvas group.  The last
  * argument must be a NULL pointer.
  */
-GnomeCanvasItem *gnome_canvas_item_new (GnomeCanvasGroup *parent, GtkType type,
+GnomeCanvasItem *gnome_canvas_item_new (GnomeCanvasGroup *parent, GType type,
 					const gchar *first_arg_name, ...);
 
 /* Constructors for use in derived classes and language wrappers */
@@ -386,8 +385,7 @@ struct _GnomeCanvasGroupClass {
 };
 
 
-/* Standard Gtk function */
-GtkType gnome_canvas_group_get_type (void) G_GNUC_CONST;
+GType gnome_canvas_group_get_type (void) G_GNUC_CONST;
 
 
 /*** GnomeCanvas ***/
@@ -512,8 +510,7 @@ struct _GnomeCanvasClass {
 };
 
 
-/* Standard Gtk function */
-GtkType gnome_canvas_get_type (void) G_GNUC_CONST;
+GType gnome_canvas_get_type (void) G_GNUC_CONST;
 
 /* Creates a new canvas.  You should check that the canvas is created with the
  * proper visual and colormap.  Any visual will do unless you intend to insert

@@ -95,7 +95,7 @@ struct _GnomeCanvasWidgetClass {
 
 
 /* Standard Gtk function */
-GtkType gnome_canvas_widget_get_type (void) G_GNUC_CONST;
+GType gnome_canvas_widget_get_type (void) G_GNUC_CONST;
 
 
 G_END_DECLS

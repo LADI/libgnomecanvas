@@ -95,24 +95,27 @@ static void gcbp_draw_ctx_unref (GCBPDrawCtx * ctx);
 
 static GnomeCanvasItemClass *parent_class;
 
-GtkType
+GType
 gnome_canvas_shape_get_type (void)
 {
-	static GtkType shape_type = 0;
+	static GType shape_type;
 
 	if (!shape_type) {
-		GtkTypeInfo shape_info = {
-			"GnomeCanvasShape",
-			sizeof (GnomeCanvasShape),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasShapeClass),
-			(GtkClassInitFunc) gnome_canvas_shape_class_init,
-			(GtkObjectInitFunc) gnome_canvas_shape_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_shape_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasShape),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_shape_init,
+			NULL			/* value_table */
 		};
 
-	        shape_type = gtk_type_unique (gnome_canvas_item_get_type (), &shape_info);
+		shape_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasShape",
+						     &object_info, 0);
 	}
 
 	return shape_type;
@@ -129,7 +132,7 @@ gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	/* when this gets checked into libgnomeui, change the
            GTK_TYPE_POINTER to GTK_TYPE_GNOME_CANVAS_SHAPE, and add an
@@ -1386,7 +1389,7 @@ gcbp_ensure_mask (GnomeCanvasShape * shape, gint width, gint height)
 
 		canvas = GNOME_CANVAS_ITEM (shape)->canvas;
 
-		ctx = gtk_object_get_data (GTK_OBJECT (canvas), "BpathDrawCtx");
+		ctx = g_object_get_data (G_OBJECT (canvas), "BpathDrawCtx");
 
 		if (!ctx) {
 			/* Ctx is not defined for parent canvas yet */
@@ -1408,7 +1411,7 @@ gcbp_ensure_mask (GnomeCanvasShape * shape, gint width, gint height)
 			ctx->clear_gc = NULL;
 			ctx->xor_gc = NULL;
 
-			gtk_object_set_data (GTK_OBJECT (canvas), "BpathDrawContext", ctx);
+			g_object_set_data (G_OBJECT (canvas), "BpathDrawContext", ctx);
 
 		} else {
 			ctx->refcount++;
@@ -1459,7 +1462,7 @@ gcbp_draw_ctx_unref (GCBPDrawCtx * ctx)
 		if (ctx->clip)
 			gdk_bitmap_unref (ctx->clip);
 
-		gtk_object_remove_data (GTK_OBJECT (ctx->canvas), "BpathDrawCtx");
+		g_object_set_data (G_OBJECT (ctx->canvas), "BpathDrawCtx", NULL);
 	}
 }
 

@@ -75,27 +75,30 @@ static void gnome_canvas_widget_draw (GnomeCanvasItem *item,
 static GnomeCanvasItemClass *parent_class;
 
 
-GtkType
+GType
 gnome_canvas_widget_get_type (void)
 {
-	static GtkType witem_type = 0;
+	static GType widget_type;
 
-	if (!witem_type) {
-		GtkTypeInfo witem_info = {
-			"GnomeCanvasWidget",
-			sizeof (GnomeCanvasWidget),
+	if (!widget_type) {
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasWidgetClass),
-			(GtkClassInitFunc) gnome_canvas_widget_class_init,
-			(GtkObjectInitFunc) gnome_canvas_widget_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_widget_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasWidget),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_widget_init,
+			NULL			/* value_table */
 		};
 
-		witem_type = gtk_type_unique (gnome_canvas_item_get_type (), &witem_info);
+		widget_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasWidget",
+						      &object_info, 0);
 	}
 
-	return witem_type;
+	return widget_type;
 }
 
 static void
@@ -109,7 +112,7 @@ gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_widget_set_property;
 	gobject_class->get_property = gnome_canvas_widget_get_property;
@@ -189,7 +192,7 @@ gnome_canvas_widget_destroy (GtkObject *object)
 	witem = GNOME_CANVAS_WIDGET (object);
 
 	if (witem->widget && !witem->in_destroy) {
-		gtk_signal_disconnect (GTK_OBJECT (witem->widget), witem->destroy_id);
+		g_signal_handler_disconnect (witem->widget, witem->destroy_id);
 		gtk_widget_destroy (witem->widget);
 		witem->widget = NULL;
 	}
@@ -311,17 +314,16 @@ gnome_canvas_widget_set_property (GObject            *object,
 	switch (param_id) {
 	case PROP_WIDGET:
 		if (witem->widget) {
-			gtk_signal_disconnect (GTK_OBJECT (witem->widget), witem->destroy_id);
+			g_signal_handler_disconnect (witem->widget, witem->destroy_id);
 			gtk_container_remove (GTK_CONTAINER (item->canvas), witem->widget);
 		}
 
 		obj = g_value_get_object (value);
 		if (obj) {
 			witem->widget = GTK_WIDGET (obj);
-			witem->destroy_id = gtk_signal_connect (GTK_OBJECT (obj),
-								"destroy",
-								(GtkSignalFunc) do_destroy,
-								witem);
+			witem->destroy_id = g_signal_connect (obj, "destroy",
+							      G_CALLBACK (do_destroy),
+							      witem);
 			gtk_layout_put (GTK_LAYOUT (item->canvas), witem->widget,
 					witem->cx + item->canvas->zoom_xofs,
 					witem->cy + item->canvas->zoom_yofs);
@@ -457,7 +459,7 @@ gnome_canvas_widget_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 			witem->cheight = (int) (witem->height * item->canvas->pixels_per_unit + 0.5);
 		}
 
-		gtk_widget_set_usize (witem->widget, witem->cwidth, witem->cheight);
+		gtk_widget_set_size_request (witem->widget, witem->cwidth, witem->cheight);
 	} else {
 		witem->cwidth = 0.0;
 		witem->cheight = 0.0;

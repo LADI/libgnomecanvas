@@ -111,24 +111,27 @@ static void   gnome_canvas_line_render      (GnomeCanvasItem *item, GnomeCanvasB
 static GnomeCanvasItemClass *parent_class;
 
 
-GtkType
+GType
 gnome_canvas_line_get_type (void)
 {
-	static GtkType line_type = 0;
+	static GType line_type;
 
 	if (!line_type) {
-		GtkTypeInfo line_info = {
-			"GnomeCanvasLine",
-			sizeof (GnomeCanvasLine),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasLineClass),
-			(GtkClassInitFunc) gnome_canvas_line_class_init,
-			(GtkObjectInitFunc) gnome_canvas_line_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_2 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_line_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasLine),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_line_init,
+			NULL			/* value_table */
 		};
 
-		line_type = gtk_type_unique (gnome_canvas_item_get_type (), &line_info);
+		line_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasLine",
+						    &object_info, 0);
 	}
 
 	return line_type;
@@ -145,7 +148,7 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_line_set_property;
 	gobject_class->get_property = gnome_canvas_line_get_property;

@@ -133,24 +133,27 @@ static GtkObjectClass *item_parent_class;
  *
  * Return value:  The type ID of the &GnomeCanvasItem class.
  **/
-GtkType
+GType
 gnome_canvas_item_get_type (void)
 {
-	static GtkType canvas_item_type = 0;
+	static GType canvas_item_type;
 
 	if (!canvas_item_type) {
-		static const GtkTypeInfo canvas_item_info = {
-			"GnomeCanvasItem",
-			sizeof (GnomeCanvasItem),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasItemClass),
-			(GtkClassInitFunc) gnome_canvas_item_class_init,
-			(GtkObjectInitFunc) gnome_canvas_item_init,
-			NULL, /* reserved_1 */
-			NULL, /* reserved_1 */
-			(GtkClassInitFunc) NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_item_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasItem),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_item_init,
+			NULL			/* value_table */
 		};
 
-		canvas_item_type = gtk_type_unique (gtk_object_get_type (), &canvas_item_info);
+		canvas_item_type = g_type_register_static (GTK_TYPE_OBJECT, "GnomeCanvasItem",
+							   &object_info, 0);
 	}
 
 	return canvas_item_type;
@@ -181,15 +184,15 @@ gnome_canvas_item_init (GnomeCanvasItem *item)
  * Return value: The newly-created item.
  **/
 GnomeCanvasItem *
-gnome_canvas_item_new (GnomeCanvasGroup *parent, GtkType type, const gchar *first_arg_name, ...)
+gnome_canvas_item_new (GnomeCanvasGroup *parent, GType type, const gchar *first_arg_name, ...)
 {
 	GnomeCanvasItem *item;
 	va_list args;
 
 	g_return_val_if_fail (GNOME_IS_CANVAS_GROUP (parent), NULL);
-	g_return_val_if_fail (gtk_type_is_a (type, gnome_canvas_item_get_type ()), NULL);
+	g_return_val_if_fail (g_type_is_a (type, gnome_canvas_item_get_type ()), NULL);
 
-	item = GNOME_CANVAS_ITEM (gtk_type_new (type));
+	item = GNOME_CANVAS_ITEM (g_object_new (type, NULL));
 
 	va_start (args, first_arg_name);
 	gnome_canvas_item_construct (item, parent, first_arg_name, args);
@@ -1110,7 +1113,7 @@ gnome_canvas_item_reparent (GnomeCanvasItem *item, GnomeCanvasGroup *new_group)
 
 	/* Everything is ok, now actually reparent the item */
 
-	gtk_object_ref (GTK_OBJECT (item)); /* protect it from the unref in group_remove */
+	g_object_ref (G_OBJECT (item)); /* protect it from the unref in group_remove */
 
 	redraw_if_visible (item);
 
@@ -1123,7 +1126,7 @@ gnome_canvas_item_reparent (GnomeCanvasItem *item, GnomeCanvasGroup *new_group)
 	redraw_if_visible (item);
 	item->canvas->need_repick = TRUE;
 
-	gtk_object_unref (GTK_OBJECT (item));
+	g_object_unref (G_OBJECT (item));
 }
 
 /**
@@ -1344,27 +1347,30 @@ static GnomeCanvasItemClass *group_parent_class;
  *
  * Return value:  The type ID of the &GnomeCanvasGroup class.
  **/
-GtkType
+GType
 gnome_canvas_group_get_type (void)
 {
-	static GtkType group_type = 0;
+	static GType canvas_group_type;
 
-	if (!group_type) {
-		static const GtkTypeInfo group_info = {
-			"GnomeCanvasGroup",
-			sizeof (GnomeCanvasGroup),
+	if (!canvas_group_type) {
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasGroupClass),
-			(GtkClassInitFunc) gnome_canvas_group_class_init,
-			(GtkObjectInitFunc) gnome_canvas_group_init,
-			NULL,
-			NULL,
-			NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_group_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvasGroup),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_group_init,
+			NULL			/* value_table */
 		};
 
-		group_type = gtk_type_unique (gnome_canvas_item_get_type (), &group_info);
+		canvas_group_type = g_type_register_static (GNOME_TYPE_CANVAS_ITEM, "GnomeCanvasGroup",
+							    &object_info, 0);
 	}
 
-	return group_type;
+	return canvas_group_type;
 }
 
 /* Class initialization function for GnomeCanvasGroupClass */
@@ -1379,7 +1385,7 @@ gnome_canvas_group_class_init (GnomeCanvasGroupClass *class)
 	object_class = (GtkObjectClass *) class;
 	item_class = (GnomeCanvasItemClass *) class;
 
-	group_parent_class = gtk_type_class (gnome_canvas_item_get_type ());
+	group_parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_group_set_property;
 	gobject_class->get_property = gnome_canvas_group_get_property;
@@ -1832,7 +1838,7 @@ gnome_canvas_group_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 static void
 group_add (GnomeCanvasGroup *group, GnomeCanvasItem *item)
 {
-	gtk_object_ref (GTK_OBJECT (item));
+	g_object_ref (G_OBJECT (item));
 	gtk_object_sink (GTK_OBJECT (item));
 
 	if (!group->item_list) {
@@ -1868,7 +1874,7 @@ group_remove (GnomeCanvasGroup *group, GnomeCanvasItem *item)
 			/* Unparent the child */
 
 			item->parent = NULL;
-			gtk_object_unref (GTK_OBJECT (item));
+			g_object_unref (G_OBJECT (item));
 
 			/* Remove it from the list */
 
@@ -1939,24 +1945,27 @@ enum {
  *
  * Return value:  The type ID of the &GnomeCanvas class.
  **/
-GtkType
+GType
 gnome_canvas_get_type (void)
 {
-	static GtkType canvas_type = 0;
+	static GType canvas_type;
 
 	if (!canvas_type) {
-		static const GtkTypeInfo canvas_info = {
-			"GnomeCanvas",
-			sizeof (GnomeCanvas),
+		static const GTypeInfo object_info = {
 			sizeof (GnomeCanvasClass),
-			(GtkClassInitFunc) gnome_canvas_class_init,
-			(GtkObjectInitFunc) gnome_canvas_init,
-			NULL,
-			NULL,
-			NULL
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) gnome_canvas_class_init,
+			(GClassFinalizeFunc) NULL,
+			NULL,			/* class_data */
+			sizeof (GnomeCanvas),
+			0,			/* n_preallocs */
+			(GInstanceInitFunc) gnome_canvas_init,
+			NULL			/* value_table */
 		};
 
-		canvas_type = gtk_type_unique (gtk_layout_get_type (), &canvas_info);
+		canvas_type = g_type_register_static (GTK_TYPE_LAYOUT, "GnomeCanvas",
+						      &object_info, 0);
 	}
 
 	return canvas_type;
@@ -2006,7 +2015,7 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 	object_class  = (GtkObjectClass *) klass;
 	widget_class  = (GtkWidgetClass *) klass;
 
-	canvas_parent_class = gtk_type_class (gtk_layout_get_type ());
+	canvas_parent_class = g_type_class_peek_parent (klass);
 
 	gobject_class->set_property = gnome_canvas_set_property;
 	gobject_class->get_property = gnome_canvas_get_property;
@@ -2101,15 +2110,15 @@ gnome_canvas_init (GnomeCanvas *canvas)
 	
 	/* Create the root item as a special case */
 
-	canvas->root = GNOME_CANVAS_ITEM (gtk_type_new (gnome_canvas_group_get_type ()));
+	canvas->root = GNOME_CANVAS_ITEM (g_object_new (gnome_canvas_group_get_type (), NULL));
 	canvas->root->canvas = canvas;
 
-	gtk_object_ref (GTK_OBJECT (canvas->root));
+	g_object_ref (canvas->root);
 	gtk_object_sink (GTK_OBJECT (canvas->root));
 
-	canvas->root_destroy_id = gtk_signal_connect (GTK_OBJECT (canvas->root), "destroy",
-						      (GtkSignalFunc) panic_root_destroyed,
-						      canvas);
+	canvas->root_destroy_id = g_signal_connect (canvas->root, "destroy",
+						    G_CALLBACK (panic_root_destroyed),
+						    canvas);
 
 	canvas->need_repick = TRUE;
 }
@@ -2165,11 +2174,11 @@ gnome_canvas_destroy (GtkObject *object)
 	canvas = GNOME_CANVAS (object);
 
 	if (canvas->root_destroy_id) {
-		gtk_signal_disconnect (GTK_OBJECT (canvas->root), canvas->root_destroy_id);
+		g_signal_handler_disconnect (canvas->root, canvas->root_destroy_id);
 		canvas->root_destroy_id = 0;
 	}
 	if (canvas->root) {
-		gtk_object_unref (GTK_OBJECT (canvas->root));
+		g_object_unref (G_OBJECT (canvas->root));
 		canvas->root = NULL;
 	}
 
@@ -2193,7 +2202,7 @@ gnome_canvas_destroy (GtkObject *object)
 GtkWidget *
 gnome_canvas_new (void)
 {
-	return GTK_WIDGET (gtk_type_new (gnome_canvas_get_type ()));
+	return GTK_WIDGET (g_object_new (gnome_canvas_get_type (), NULL));
 }
 
 /**
@@ -2405,10 +2414,10 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 	/* Signal GtkLayout that it should do a redraw. */
 
 	if (changed_x)
-		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.hadjustment), "value_changed");
+		g_signal_emit_by_name (canvas->layout.hadjustment, "value_changed");
 
 	if (changed_y)
-		gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.vadjustment), "value_changed");
+		g_signal_emit_by_name (canvas->layout.vadjustment, "value_changed");
 }
 
 /* Size allocation handler for the canvas */
@@ -2437,8 +2446,8 @@ gnome_canvas_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 		   canvas->layout.hadjustment->value,
 		   canvas->layout.vadjustment->value);
 
-	gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.hadjustment), "changed");
-	gtk_signal_emit_by_name (GTK_OBJECT (canvas->layout.vadjustment), "changed");
+	g_signal_emit_by_name (canvas->layout.hadjustment, "changed");
+	g_signal_emit_by_name (canvas->layout.vadjustment, "changed");
 }
 
 /* Emits an event for an item in the canvas, be it the current item, grabbed
@@ -2560,14 +2569,13 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	finished = FALSE;
 
 	while (item && !finished) {
-		gtk_object_ref (GTK_OBJECT (item));
+		g_object_ref (G_OBJECT (item));
 
-		gtk_signal_emit (
-			GTK_OBJECT (item), item_signals[ITEM_EVENT],
-			&ev, &finished);
+		g_signal_emit (item, item_signals[ITEM_EVENT], 0,
+			       &ev, &finished);
 		
 		parent = item->parent;
-		gtk_object_unref (GTK_OBJECT (item));
+		g_object_unref (G_OBJECT (item));
 
 		item = parent;
 	}
@@ -4004,7 +4012,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 
 	gobject_class = (GObjectClass *) class;
 
-	item_parent_class = gtk_type_class (gtk_object_get_type ());
+	item_parent_class = g_type_class_peek_parent (class);
 
 	gobject_class->set_property = gnome_canvas_item_set_property;
 	gobject_class->get_property = gnome_canvas_item_get_property;
