@@ -1,3 +1,21 @@
+2002-05-03  Sebastian Rittau  <srittau@jroger.in-berlin.de>
+
+	* libgnomecanvas/gnome-canvas-path-def.c:
+	(gnome_canvas_path_def_all_open): Document.
+	(gnome_canvas_path_def_all_closed): Fixed typos in doc string.
+
+	* libgnomecanvas/gnome-canvas-util.c:
+	(gnome_canvas_update_bbox): Fixed doc string.
+	(gnome_canvas_buf_ensure_buf): dito
+	* libgnomecanvas/gnome-canvas.c:
+	(gnome_canvas_new): dito
+	(gnome_canvas_new_aa): dito
+
+	* docs/reference/libgnomecanvas-docs.sgml:
+	* docs/reference/libgnomecanvas-sections.txt:
+	* docs/reference/tmpl/*.sgml
+	Reorganized the chapter structure, gave document a name.
+
 2002-05-02  Federico Mena Quintero  <federico@ximian.com>
 
 	* libgnomecanvas/gnome-canvas.c

@@ -2190,7 +2190,6 @@ gnome_canvas_destroy (GtkObject *object)
 
 /**
  * gnome_canvas_new:
- * @void:
  *
  * Creates a new empty canvas in non-antialiased mode.  If you wish to use the
  * &GnomeCanvasImage item inside this canvas, then you must push the gdk_imlib
@@ -2207,7 +2206,6 @@ gnome_canvas_new (void)
 
 /**
  * gnome_canvas_new_aa:
- * @void:
  *
  * Creates a new empty canvas in antialiased mode.  You should push the GdkRGB
  * visual and colormap before calling this functions, and they can be popped

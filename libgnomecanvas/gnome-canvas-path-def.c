@@ -1110,6 +1110,15 @@ gnome_canvas_path_def_any_open (const GnomeCanvasPathDef * path)
 	return (!path->allclosed);
 }
 
+/**
+ * gnome_canvas_path_def_all_open:
+ * @path: a GnomeCanvasPathDef
+ *
+ * This function returns a boolean value indicating if the path only
+ * contains open segments.
+ *
+ * Returns: boolean, indicating if the path has all open segments.
+ */
 gboolean
 gnome_canvas_path_def_all_open (const GnomeCanvasPathDef * path)
 {
@@ -1139,10 +1148,10 @@ gnome_canvas_path_def_any_closed (const GnomeCanvasPathDef * path)
  * gnome_canvas_path_def_all_closed:
  * @path: a GnomeCanvasPathDef
  *
- * This function returns a boolean valid indicating if the path only
+ * This function returns a boolean value indicating if the path only
  * contains closed segments.
  *
- * Returns: boolean, idicating if the path has all closed segments.
+ * Returns: boolean, indicating if the path has all closed segments.
  */
 gboolean
 gnome_canvas_path_def_all_closed (const GnomeCanvasPathDef * path)

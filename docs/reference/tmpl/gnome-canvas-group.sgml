@@ -1,5 +1,5 @@
 <!-- ##### SECTION Title ##### -->
-GnomeCanvasClipgroup
+GnomeCanvasGroup
 
 <!-- ##### SECTION Short_Description ##### -->
 
@@ -9,18 +9,19 @@ GnomeCanvasClipgroup
 
 </para>
 
+
 <!-- ##### SECTION See_Also ##### -->
 <para>
 
 </para>
 
-<!-- ##### STRUCT GnomeCanvasClipgroup ##### -->
+
+<!-- ##### STRUCT GnomeCanvasGroup ##### -->
 <para>
 
 </para>
 
-@group: 
-@path: 
-@wind: 
-@svp: 
+@item: 
+@item_list: 
+@item_list_end: 
 

@@ -14,6 +14,14 @@ GnomeCanvasRichText
 
 </para>
 
+<!-- ##### STRUCT GnomeCanvasRichText ##### -->
+<para>
+
+</para>
+
+@item: 
+@_priv: 
+
 <!-- ##### STRUCT GnomeCanvasRichTextPrivate ##### -->
 <para>
 
@@ -60,5 +68,26 @@ GnomeCanvasRichText
 
 @text: 
 @Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_get_iter_location ##### -->
+<para>
+
+</para>
+
+@text: 
+@iter: 
+@location: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_get_iter_at_location ##### -->
+<para>
+
+</para>
+
+@text: 
+@iter: 
+@x: 
+@y: 
 
 

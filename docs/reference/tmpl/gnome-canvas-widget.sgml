@@ -14,3 +14,23 @@ GnomeCanvasWidget
 
 </para>
 
+<!-- ##### STRUCT GnomeCanvasWidget ##### -->
+<para>
+
+</para>
+
+@item: 
+@widget: 
+@x: 
+@y: 
+@width: 
+@height: 
+@anchor: 
+@cx: 
+@cy: 
+@cwidth: 
+@cheight: 
+@destroy_id: 
+@size_pixels: 
+@in_destroy: 
+

@@ -14,6 +14,34 @@ gnome-canvas-util
 
 </para>
 
+<!-- ##### MACRO GNOME_CANVAS_EPSILON ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO GNOME_CANVAS_COLOR ##### -->
+<para>
+
+</para>
+
+@r: 
+@g: 
+@b: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_COLOR_A ##### -->
+<para>
+
+</para>
+
+@r: 
+@g: 
+@b: 
+@a: 
+
+
 <!-- ##### TYPEDEF GnomeCanvasPoints ##### -->
 <para>
 

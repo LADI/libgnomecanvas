@@ -599,7 +599,7 @@ gnome_canvas_item_request_redraw_svp (GnomeCanvasItem *item, const ArtSVP *svp)
 
 /**
  * gnome_canvas_update_bbox:
- * @canvas: the canvas needing update
+ * @item: the canvas item needing update
  * @x1: Left coordinate of the new bounding box
  * @y1: Top coordinate of the new bounding box
  * @x2: Right coordinate of the new bounding box
@@ -619,7 +619,7 @@ gnome_canvas_update_bbox (GnomeCanvasItem *item, int x1, int y1, int x2, int y2)
 }
 
 /**
- * gnome_canvas_ensure_buf
+ * gnome_canvas_buf_ensure_buf:
  * @buf: the buf that needs to be represened in RGB format
  *
  * Ensure that the buffer is in RGB format, suitable for compositing.
