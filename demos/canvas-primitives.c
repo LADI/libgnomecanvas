@@ -1,6 +1,7 @@
 #include <config.h>
 #include <math.h>
 #include "testgnome.h"
+#include <gdk/gdkkeysyms.h>
 
 #ifdef GTK_HAVE_FEATURES_1_1_0
 
@@ -518,6 +519,25 @@ setup_lines (GnomeCanvasGroup *root)
 	gnome_canvas_points_free (points);
 }
 
+static gint
+key_press (GnomeCanvas *canvas, GdkEventKey *event, gpointer data)
+{
+	int x, y;
+
+	gnome_canvas_get_scroll_offsets (canvas, &x, &y);
+
+	if (event->keyval == GDK_Up)
+		gnome_canvas_scroll_to (canvas, x, y - 20);
+	else if (event->keyval == GDK_Down)
+		gnome_canvas_scroll_to (canvas, x, y + 20);
+	else if (event->keyval == GDK_Left)
+		gnome_canvas_scroll_to (canvas, x - 10, y);
+	else if (event->keyval == GDK_Right)
+		gnome_canvas_scroll_to (canvas, x + 10, y);
+
+	return FALSE;
+}
+
 GtkWidget *
 create_canvas_primitives (void)
 {
@@ -587,6 +607,10 @@ create_canvas_primitives (void)
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
 
+	gtk_signal_connect (GTK_OBJECT (canvas), "key_press_event",
+			    (GtkSignalFunc) key_press,
+			    NULL);
+
 	w = gtk_hscrollbar_new (GTK_LAYOUT (canvas)->hadjustment);
 	gtk_table_attach (GTK_TABLE (table), w,
 			  0, 1, 1, 2,
@@ -613,6 +637,9 @@ create_canvas_primitives (void)
 	setup_texts (root);
 	setup_images (root);
 	setup_lines (root);
+
+	GTK_WIDGET_SET_FLAGS (canvas, GTK_CAN_FOCUS);
+	gtk_widget_grab_focus (canvas);
 
 	return vbox;
 }
