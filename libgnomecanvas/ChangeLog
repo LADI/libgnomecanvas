@@ -1,3 +1,8 @@
+2001-09-11  Anders Carlsson  <andersca@gnu.org>
+
+	* gnome-canvas-rich-text.c (gnome_canvas_rich_text_add_tag): #if 0 out
+	unused function.
+
 2001-09-10  Frank Belew  <frb@ximian.com>
 	* Makefile.am: remove -Wno-unused since it is GCC only
 

@@ -1940,6 +1940,7 @@ gnome_canvas_rich_text_render(GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 	g_warning ("rich text item not implemented for anti-aliased canvas");
 } /* gnome_canvas_rich_text_render */
 
+#if 0
 static GtkTextTag *
 gnome_canvas_rich_text_add_tag(GnomeCanvasRichText *text, char *tag_name,
 			       int start_offset, int end_offset, 
@@ -1975,3 +1976,4 @@ gnome_canvas_rich_text_add_tag(GnomeCanvasRichText *text, char *tag_name,
 
 	return tag;
 } /* gnome_canvas_rich_text_add_tag */
+#endif
