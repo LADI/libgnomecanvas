@@ -1,3 +1,7 @@
+2001-06-18  Cody Russell  <bratsche@gnome.org>
+
+	* gnome-canvas.[ch]: Added some new signals to GnomeCanvasItem.
+
 2001-06-17  Lauris Kaplinski  <lauris@ximian.com>
 
 	* gnome-canvas-path-def.c (gnome_canvas_path_def_copy): Free dst->bpath

@@ -101,16 +101,21 @@ enum {
 
 enum {
 	ITEM_EVENT,
+        ITEM_BUTTON_PRESS_EVENT,
+        ITEM_BUTTON_RELEASE_EVENT,
+        ITEM_MOTION_NOTIFY_EVENT,
+        ITEM_KEY_PRESS_EVENT,
+        ITEM_KEY_RELEASE_EVENT,
+        ITEM_ENTER_NOTIFY_EVENT,
+        ITEM_LEAVE_NOTIFY_EVENT,
 	ITEM_LAST_SIGNAL
 };
 
 
-static void gnome_canvas_request_update (GnomeCanvas *canvas);
-
-
-static void gnome_canvas_item_class_init (GnomeCanvasItemClass *class);
-static void gnome_canvas_item_init       (GnomeCanvasItem      *item);
-static void gnome_canvas_item_shutdown   (GObject              *object);
+static void gnome_canvas_request_update    (GnomeCanvas *canvas);
+static void gnome_canvas_item_class_init   (GnomeCanvasItemClass *class);
+static void gnome_canvas_item_init         (GnomeCanvasItem      *item);
+static void gnome_canvas_item_shutdown     (GObject              *object);
 static void gnome_canvas_item_set_property (GObject               *object,
 					    guint                  param_id,
 					    const GValue          *value,
@@ -121,14 +126,14 @@ static void gnome_canvas_item_get_property (GObject               *object,
 					    GParamSpec            *pspec);
 
 
-static void gnome_canvas_item_realize   (GnomeCanvasItem *item);
-static void gnome_canvas_item_unrealize (GnomeCanvasItem *item);
-static void gnome_canvas_item_map       (GnomeCanvasItem *item);
-static void gnome_canvas_item_unmap     (GnomeCanvasItem *item);
-static void gnome_canvas_item_update    (GnomeCanvasItem *item, double *affine,
-					 ArtSVP *clip_path, int flags);
+static void gnome_canvas_item_realize      (GnomeCanvasItem *item);
+static void gnome_canvas_item_unrealize    (GnomeCanvasItem *item);
+static void gnome_canvas_item_map          (GnomeCanvasItem *item);
+static void gnome_canvas_item_unmap        (GnomeCanvasItem *item);
+static void gnome_canvas_item_update       (GnomeCanvasItem *item, double *affine,
+                                            ArtSVP *clip_path, int flags);
 
-static int emit_event (GnomeCanvas *canvas, GdkEvent *event);
+static int  emit_event                     (GnomeCanvas *canvas, GdkEvent *event);
 
 static guint item_signals[ITEM_LAST_SIGNAL] = { 0 };
 
@@ -195,6 +200,68 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 				gtk_marshal_BOOLEAN__BOXED,
 				GTK_TYPE_BOOL, 1,
 				GDK_TYPE_EVENT);
+        item_signals[ITEM_BUTTON_PRESS_EVENT] =
+                gtk_signal_new ("button_press_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_BUTTON_RELEASE_EVENT] =
+                gtk_signal_new ("button_release_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_MOTION_NOTIFY_EVENT] =
+                gtk_signal_new ("motion_notify_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_KEY_PRESS_EVENT] =
+                gtk_signal_new ("key_press_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_KEY_RELEASE_EVENT] =
+                gtk_signal_new ("key_release_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_ENTER_NOTIFY_EVENT] =
+                gtk_signal_new ("enter_notify_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
+
+        item_signals[ITEM_LEAVE_NOTIFY_EVENT] =
+                gtk_signal_new ("leave_notify_event",
+                                GTK_RUN_LAST,
+                                GTK_CLASS_TYPE (object_class),
+                                GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
+                                gtk_marshal_BOOLEAN__BOXED,
+                                GTK_TYPE_BOOL, 1,
+                                GDK_TYPE_EVENT);
 
 	gobject_class->shutdown = gnome_canvas_item_shutdown;
 
@@ -203,6 +270,15 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 	class->map = gnome_canvas_item_map;
 	class->unmap = gnome_canvas_item_unmap;
 	class->update = gnome_canvas_item_update;
+
+        class->event = NULL;
+        class->button_press_event = NULL;
+        class->button_release_event = NULL;
+        class->motion_notify_event = NULL;
+        class->key_press_event = NULL;
+        class->key_release_event = NULL;
+        class->enter_notify_event = NULL;
+        class->leave_notify_event = NULL;
 }
 
 /* Object initialization function for GnomeCanvasItem */
@@ -2619,6 +2695,7 @@ gnome_canvas_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 /* Emits an event for an item in the canvas, be it the current item, grabbed
  * item, or focused item, as appropriate.
  */
+
 static int
 emit_event (GnomeCanvas *canvas, GdkEvent *event)
 {
@@ -2627,11 +2704,17 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	GnomeCanvasItem *item;
 	GnomeCanvasItem *parent;
 	guint mask;
+        guint signal_num;
 
 	/* Perform checks for grabbed items */
 
 	if (canvas->grabbed_item && !is_descendant (canvas->current_item, canvas->grabbed_item))
+        {
+                g_warning ("emit_event() returning FALSE!\n");
 		return FALSE;
+        }
+
+        signal_num = -1;
 
 	if (canvas->grabbed_item) {
 		switch (event->type) {
@@ -2658,14 +2741,17 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 			break;
 
 		case GDK_KEY_PRESS:
+                        signal_num = ITEM_KEY_PRESS_EVENT;
 			mask = GDK_KEY_PRESS_MASK;
 			break;
 
 		case GDK_KEY_RELEASE:
+                        signal_num = ITEM_KEY_RELEASE_EVENT;
 			mask = GDK_KEY_RELEASE_MASK;
 			break;
 
 		default:
+                        signal_num = -1;
 			mask = 0;
 			break;
 		}
@@ -2680,7 +2766,8 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 
 	ev = *event;
 
-	switch (ev.type) {
+	switch (ev.type)
+        {
 	case GDK_ENTER_NOTIFY:
 	case GDK_LEAVE_NOTIFY:
 		gnome_canvas_window_to_world (canvas,
@@ -2689,9 +2776,19 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 		break;
 
 	case GDK_MOTION_NOTIFY:
+                gnome_canvas_window_to_world (canvas,
+                                              ev.motion.x, ev.motion.y,
+                                              &ev.motion.x, &ev.motion.y);
+                break;
+
 	case GDK_BUTTON_PRESS:
 	case GDK_2BUTTON_PRESS:
 	case GDK_3BUTTON_PRESS:
+                gnome_canvas_window_to_world (canvas,
+                                              ev.motion.x, ev.motion.y,
+                                              &ev.motion.x, &ev.motion.y);
+                break;
+
 	case GDK_BUTTON_RELEASE:
 		gnome_canvas_window_to_world (canvas,
 					      ev.motion.x, ev.motion.y,
@@ -2719,12 +2816,50 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 
 	finished = FALSE;
 
-	while (item && !finished) {
+	while (item && !finished)
+        {
 		gtk_object_ref (GTK_OBJECT (item));
 
 		gtk_signal_emit (GTK_OBJECT (item), item_signals[ITEM_EVENT],
 				 &ev,
 				 &finished);
+
+                if (GTK_OBJECT_DESTROYED (item))
+                {
+                        g_print ("Object is destroyed, returning.\n");
+                        parent = item->parent;
+                        gtk_object_unref (GTK_OBJECT (item));
+                        return finished;
+                }
+
+                switch (event->type)
+                {
+                case GDK_MOTION_NOTIFY:
+                        signal_num = ITEM_MOTION_NOTIFY_EVENT;
+                        break;
+
+                case GDK_BUTTON_PRESS:
+                case GDK_2BUTTON_PRESS:
+                case GDK_3BUTTON_PRESS:
+                        signal_num = ITEM_BUTTON_PRESS_EVENT;
+                        break;
+
+                case GDK_BUTTON_RELEASE:
+                        signal_num = ITEM_BUTTON_RELEASE_EVENT;
+                        break;
+
+                default:
+                        signal_num = -1;
+                        break;
+                }
+
+                if (signal_num != -1)
+                {
+                        gtk_signal_emit (GTK_OBJECT (item),
+                                         item_signals[signal_num],
+                                         &ev,
+                                         &finished);
+                }
 
 		if (GTK_OBJECT_DESTROYED (item))
 			finished = TRUE;

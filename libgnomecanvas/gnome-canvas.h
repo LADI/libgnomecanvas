@@ -226,7 +226,14 @@ struct _GnomeCanvasItemClass {
 	/* Signal: an event ocurred for an item of this type.  The (x, y)
 	 * coordinates are in the canvas world coordinate system.
 	 */
-	gint (* event) (GnomeCanvasItem *item, GdkEvent *event);
+	gboolean (* event)                (GnomeCanvasItem *item, GdkEvent *event);
+        gboolean (* button_press_event)   (GnomeCanvasItem *item, GdkEventButton *event);
+        gboolean (* button_release_event) (GnomeCanvasItem *item, GdkEventButton *event);
+        gboolean (* motion_notify_event)  (GnomeCanvasItem *item, GdkEventMotion *event);
+        gboolean (* key_press_event)      (GnomeCanvasItem *item, GdkEventKey *event);
+        gboolean (* key_release_event)    (GnomeCanvasItem *item, GdkEventKey *event);
+        gboolean (* enter_notify_event)   (GnomeCanvasItem *item, GdkEventCrossing *event);
+        gboolean (* leave_notify_event)   (GnomeCanvasItem *item, GdkEventCrossing *event);
 };
 
 
