@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-07-24 11:50+0100\n"
+"POT-Creation-Date: 2002-08-28 17:38+0200\n"
 "PO-Revision-Date: 2002-07-24 11:52+0100\n"
 "Last-Translator: Sun G11n <gnome_int_l10n@ireland.sun.com>\n"
 "Language-Team: Sun G11n <gnome_int_l10n@ireland.sun.com>\n"
@@ -72,12 +72,11 @@ msgstr "字体族"
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
 msgstr "字体族名称，即 Sans、Helvetica、Times、Monospace"
 
+# SUN CHANGED MESSAGE
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
-# SUN CHANGED MESSAGE
 msgid "Font style"
 msgstr "字体风格"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
@@ -111,32 +110,29 @@ msgstr "以磅为单位的字体大小"
 msgid "Rise"
 msgstr "提升"
 
-#: libgnomecanvas/gnome-canvas-text.c:341
 # SUN CHANGED MESSAGE
+#: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr "文本与下方(上方如果间距为负)水平基线的间距"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
 msgstr "删除线"
 
-#: libgnomecanvas/gnome-canvas-text.c:352
 # SUN CHANGED MESSAGE
+#: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
 msgstr "是否在文本上划上删除线"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
 msgstr "下划线"
 
-#: libgnomecanvas/gnome-canvas-text.c:361
 # SUN CHANGED MESSAGE
+#: libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
 msgstr "为文本加上下划线"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -188,17 +184,15 @@ msgstr "设置字体族"
 msgid "Whether this tag affects the font family"
 msgstr "此标记是否会影响字体族"
 
-#: libgnomecanvas/gnome-canvas-text.c:476
 # SUN CHANGED MESSAGE
+#: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
 msgstr "设置字体风格"
 
-
-#: libgnomecanvas/gnome-canvas-text.c:477
 # SUN CHANGED MESSAGE
+#: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
 msgstr "此标记是否会影响字体风格"
-
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -269,221 +263,185 @@ msgstr "此标记是否会影响字体缩放"
 msgid "Text to display"
 msgstr "要显示的文本"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:218
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
 msgstr "X 位置"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:226
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y position"
 msgstr "Y 位置"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:233
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:233
 msgid "Width"
 msgstr "宽度"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:234
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width for text box"
 msgstr "文本框的宽度"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:241
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:241
 msgid "Height"
 msgstr "高度"
 
-
+# SUN CHANGED MESSAGE
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
 #, fuzzy
-# SUN CHANGED MESSAGE
 msgid "Height for text box"
 msgstr "文本框的高度"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:249
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
 msgstr "可编辑"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:250
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
 msgstr "此多信息文本项是否可编辑？"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:257
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
 msgstr "可见"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:258
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
 msgstr "此多信息文本项是否可见？"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:265
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
 msgstr "光标可见"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:266
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this this rich text item?"
 msgstr "光标在此多信息文本项中是否可见？"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:273
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
 msgstr "光标闪烁"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:274
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this this rich text item?"
 msgstr "光标在此多信息文本项中是否闪烁？"
 
-
+# SUN CHANGED MESSAGE
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 #, fuzzy
-# SUN CHANGED MESSAGE
 msgid "Grow Height"
 msgstr "增加高度"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:282
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "如果文本放不下，是否增加文本框高度？"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:289
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
 msgstr "换行模式"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:290
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
 msgstr "对多行文本采用换行模式"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:298
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
 msgstr "对齐"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:299
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
 msgstr "对齐模式"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:307
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
 msgstr "方向"
 
-
+# SUN CHANGED MESSAGE
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
 #, fuzzy
-# SUN CHANGED MESSAGE
 msgid "Text direction"
 msgstr "文本方向"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:316
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
 msgstr "锚点"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:317
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor point for text"
 msgstr "文本的锚点"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:325
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:325
 msgid "Pixels Above Lines"
 msgstr "行上的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:326
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
 msgstr "放置在行上的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:334
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
 msgstr "行下的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:335
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Number of pixels to put below lines"
 msgstr "放置在行下的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:343
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
 msgstr "换行间的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:344
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
 msgstr "放置在换行间的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:352
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
 msgstr "左边距"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:353
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
 msgstr "左边距的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:361
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
 msgstr "右边距"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:362
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
 msgstr "右边距的像素数"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:370
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
 msgstr "缩进"
 
-
-#: libgnomecanvas/gnome-canvas-rich-text.c:371
 # SUN NEW TRANSLATION
+#: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "缩进的像素数"
-
