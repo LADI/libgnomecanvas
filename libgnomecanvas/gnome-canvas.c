@@ -2383,7 +2383,6 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		/* So I think we can request full redraw here */
 		/* The reason is, that coverage UTA will be invalidated by offset change */
 		/* fixme: Strictly this is not correct - we have to remove our own idle (Lauris) */
-		g_print ("Queueing redraw\n");
 		gtk_widget_queue_draw (GTK_WIDGET (canvas));
 	}
 
