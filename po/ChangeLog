@@ -1,6 +1,18 @@
+2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
+
+	* Makefile.in.in: Upgrade to gettext-0.10.37.
+
 2001-06-26  Fatih Demir <kabalak@gtranslator.org>
 
 	* ta.po: Added Tamil translation by Dinesh Nadarajah.
+
+2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
+
+	* Makefile.in.in: Upgrade to gettext-0.10.37.
+
+2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
+
+	* Makefile.in.in: Upgrade to gettext-0.10.37.
 
 2001-06-19  Héctor García Álvarez  <hector@scouts-es.org>
 

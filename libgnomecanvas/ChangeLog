@@ -1,3 +1,12 @@
+Tue Jun 26 12:14:31 2001  Tim Janik  <timj@gtk.org>
+
+	* libgnomecanvas-2.0.pc: add missing -I include directive in
+	CFlags, so third-party code compiles.
+	
+	* gnome-canvas-shape.c (gnome_canvas_shape_point): put a on-shot
+	FIXME warning here for shape->priv->fill_set == TRUE &&
+	shape->priv->fill_svp == NULL and avoid segfaulting in user-code.
+
 Tue Jun 26 11:29:54 2001  Tim Janik  <timj@gtk.org>
 
 	* libgnomecanvas-2.0.pc.in (Requires): fix deps, we actually require

@@ -1115,14 +1115,22 @@ gnome_canvas_shape_point (GnomeCanvasItem *item, double x, double y,
 
 	/* todo: update? */
 	if (shape->priv->fill_set) {
-		wind = art_svp_point_wind (shape->priv->fill_svp, cx, cy);
-		if ((shape->priv->wind == ART_WIND_RULE_NONZERO) && (wind != 0)) {
-			*actual_item = item;
-			return 0.0;
-		}
-		if ((shape->priv->wind == ART_WIND_RULE_ODDEVEN) && ((wind & 0x1) != 0)) {
-			*actual_item = item;
-			return 0.0;
+		if (!shape->priv->fill_svp) {
+			static gboolean need_warning = TRUE;
+			if (need_warning) {
+				need_warning = FALSE;
+				g_warning (G_STRLOC ": FIXME: shape->priv->fill_set == TRUE && shape->priv->fill_svp == NULL");
+			}
+		} else {
+			wind = art_svp_point_wind (shape->priv->fill_svp, cx, cy);
+			if ((shape->priv->wind == ART_WIND_RULE_NONZERO) && (wind != 0)) {
+				*actual_item = item;
+				return 0.0;
+			}
+			if ((shape->priv->wind == ART_WIND_RULE_ODDEVEN) && ((wind & 0x1) != 0)) {
+				*actual_item = item;
+				return 0.0;
+			}
 		}
 	}
 
