@@ -41,7 +41,7 @@
 #include "libart_lgpl/art_svp_vpath_stroke.h"
 #include "gnome-canvas-line.h"
 #include "gnome-canvas-util.h"
-#include "gnometypebuiltins.h"
+#include "gnomecanvastypebuiltins.h"
 
 #define noVERBOSE
 

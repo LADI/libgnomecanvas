@@ -24,7 +24,7 @@
 #define GNOME_CANVAS_PIXBUF_H
 
 #include <libgnome/gnome-defs.h>
-#include <libgnomeui/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas.h>
 
 BEGIN_GNOME_DECLS
 
