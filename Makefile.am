@@ -1,3 +1,3 @@
 SUBDIRS = libgnomecanvas demos po
 
-EXTRA_DIST = message-of-doom
+EXTRA_DIST = message-of-doom COPYING.LIB

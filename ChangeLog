@@ -1,3 +1,9 @@
+2001-09-18  Anders Carlsson  <andersca@gnu.org>
+
+	* COPYING.LIB: Add this file.
+
+	* Makefile.am (EXTRA_DIST): Add COPYING.LIB
+
 2001-09-13  Havoc Pennington  <hp@redhat.com>
 
 	* autogen.sh (srcdir): remove more CERTIFIED_GNOMIE bullshit, 
