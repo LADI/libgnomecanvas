@@ -1,7 +1,7 @@
 2001-04-15  Martin Baulig  <baulig@suse.de>
 
-	* libgnomecanvas-init.c (gtk_module_info): Don't depend on libgnome.
-	(libgnomecanvas_requirements): Depend on libgnomebase.
+	* libgnomecanvas-init.c (gtk_module_info): Depend on libgnomebase,
+	not libgnome.
 
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
