@@ -1,3 +1,9 @@
+# Nepali Translation of libgnomecanvas
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the libgnomecanvas package.
+# Pawan Chitrakar  <pawan@nplinux.org>
+#
+
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas-2.0.\n"
@@ -299,7 +305,6 @@ msgid "Cursor Visible"
 msgstr "देखिएको करसर"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "यस पाठ्यमा करसर देखिन्छ?"
 
@@ -308,7 +313,6 @@ msgid "Cursor Blink"
 msgstr "करसर ब्लिङ्क"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
 msgstr "यस पाठ्यमा करसर ब्लिङ्क गरेको छ ?"
 
