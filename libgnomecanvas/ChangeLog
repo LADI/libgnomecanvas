@@ -6,6 +6,12 @@
 2001-09-10  Frank Belew  <frb@ximian.com>
 	* Makefile.am: remove -Wno-unused since it is GCC only
 
+2001-09-10  Alex Larsson  <alexl@redhat.com>
+
+	* libgnomecanvas/libgnomecanvastypes.c (gnome_canvas_points_get_type):
+
+	Update to new g_boxed_type_register_static() API
+
 2001-09-06  Anders Carlsson  <andersca@gnu.org>
 
 	* libgnomecanvas-2.0.pc.in (Cflags): Change includedir to be

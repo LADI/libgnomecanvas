@@ -1,9 +1,3 @@
-2001-09-10  Alex Larsson  <alexl@redhat.com>
-
-	* libgnomecanvas/libgnomecanvastypes.c (gnome_canvas_points_get_type):
-
-	Update to new g_boxed_type_register_static() API
-
 Tue Sep 04 16:42:30 2001  George Lebl <jirka@5z.com>
 
 	* configure.in: remove CERTIFIED_GNOMIE bullshit
