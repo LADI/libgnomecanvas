@@ -5,12 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"POT-Creation-Date: 2002-04-29 15:30+0200\n"
+"POT-Creation-Date: 2002-05-06 00:54+0100\n"
 "PO-Revision-Date: 2001-12-25 19:07+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <none@none.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1396 libgnomecanvas/gnome-canvas.c:1397
@@ -51,23 +51,23 @@ msgstr "Fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "DescriÁ„o de fonte como texto"
+msgstr "Descri√ß√£o de fonte como texto"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "DescriÁ„o de fonte"
+msgstr "Descri√ß√£o de fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "DescriÁ„o de fonte como estrutura PangoFontDescription"
+msgstr "Descri√ß√£o de fonte como estrutura PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "FamÌlia fonte"
+msgstr "Fam√≠lia fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Nome da famÌlia da fonte, por ex. Sans, Helvetica, Times, Monospace"
+msgstr "Nome da fam√≠lia da fonte, por ex. Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
@@ -77,7 +77,7 @@ msgstr "Estilo fonte"
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "VariaÁ„o fonte"
+msgstr "Varia√ß√£o fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
@@ -87,7 +87,7 @@ msgstr "Peso fonte"
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "Expans„o fonte"
+msgstr "Expans√£o fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
@@ -119,7 +119,7 @@ msgstr "Riscada"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "Se texto È riscado ou n„o"
+msgstr "Se texto √© riscado ou n√£o"
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
@@ -173,11 +173,11 @@ msgstr "Altura do texto renderizado"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "Conjunto de famÌlia de fonte"
+msgstr "Conjunto de fam√≠lia de fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Se esta etiqueta afecta ou n„o a famÌlia da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o a fam√≠lia da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -185,7 +185,7 @@ msgstr "Conjunto de estilo da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "Se esta etiqueta afecta ou n„o o estilo da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o o estilo da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -193,7 +193,7 @@ msgstr "Conjunto de variantes da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Se esta etiqueta afecta ou n„o a variante da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o a variante da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -201,15 +201,15 @@ msgstr "Conjunto de peso da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "Se esta etiqueta afecta ou n„o o peso da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o o peso da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Conjunto de expans„o fonte"
+msgstr "Conjunto de expans√£o fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Se esta etiqueta afecta ou n„o a expans„o da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o a expans√£o da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -217,7 +217,7 @@ msgstr "Conjunto tamanho fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Se esta etiqueta afecta ou n„o o tamanho da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o o tamanho da fonte"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -225,7 +225,7 @@ msgstr "Conjunto subida"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "Se esta etiqueta afecta ou n„o a subida"
+msgstr "Se esta etiqueta afecta ou n√£o a subida"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -233,7 +233,7 @@ msgstr "Conjunto riscado"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "Se esta etiqueta afecta ou n„o o riscado"
+msgstr "Se esta etiqueta afecta ou n√£o o riscado"
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -241,7 +241,7 @@ msgstr "Conjunto sublinhado"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "Se esta etiqueta afecta ou n„o o sublinhado"
+msgstr "Se esta etiqueta afecta ou n√£o o sublinhado"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
@@ -249,4 +249,4 @@ msgstr "Conjunto escala"
 
 #: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "Se esta etiqueta afecta ou n„o a escala da fonte"
+msgstr "Se esta etiqueta afecta ou n√£o a escala da fonte"
