@@ -1,16 +1,16 @@
 # Translation into spanish of libgnomecanvas.
 # Copyright (C) 2001 Free Software Foundation, Inc.
-# Héctor García Álvarez <hector@scouts-es.org>, 2001.
+# HÃ©ctor GarcÃ­a Ãlvarez <hector@scouts-es.org>, 2001.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2002-05-13 19:09+0200\n"
+"POT-Creation-Date: 2002-06-02 00:35+0200\n"
 "PO-Revision-Date: 2001-06-19 12:54+0200\n"
-"Last-Translator: Héctor García Álvarez <hector@scouts-es.org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"Last-Translator: HÃ©ctor GarcÃ­a Ãlvarez <hector@scouts-es.org>\n"
+"Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -38,7 +38,7 @@ msgstr "Texto"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "Text a renderizar"
+msgstr "Texto a renderizar"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
@@ -54,15 +54,15 @@ msgstr "Fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Descrición de fuente como una cadena"
+msgstr "DescriciÃ³n de fuente como una cadena"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "Descripción de fuente"
+msgstr "DescripciÃ³n de fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Descripción de fuente como una estructura PangoFontDescription"
+msgstr "DescripciÃ³n de fuente como una estructura PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
@@ -81,7 +81,7 @@ msgstr "Estilo de la fuente"
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "Variación de la fuente"
+msgstr "VariaciÃ³n de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
@@ -96,7 +96,7 @@ msgstr "Alargamiento de la fuente"
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
-msgstr "Tamaño de la fuente"
+msgstr "TamaÃ±o de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -104,7 +104,7 @@ msgstr "Puntos de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points"
-msgstr "Tamaño de la fuente en puntos"
+msgstr "TamaÃ±o de la fuente en puntos"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -114,7 +114,7 @@ msgstr "Aumento"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Desviación por encima del texto base (por debajo si el aumento es negativo)"
+"DesviaciÃ³n por encima del texto base (por debajo si el aumento es negativo)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -138,7 +138,7 @@ msgstr "Escala"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "Tamaño de la fuente, relativo al tamaño por defecto"
+msgstr "TamaÃ±o de la fuente, relativo al tamaÃ±o por defecto"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
@@ -196,7 +196,7 @@ msgstr "Juego variable de fuentes"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Si esta etiqueta afecta la variación de fuentes"
+msgstr "Si esta etiqueta afecta la variaciÃ³n de fuentes"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -216,11 +216,11 @@ msgstr "Si esta etiqueta afecta al alargamiento de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Seleccionar el tamaño de la fuente"
+msgstr "Seleccionar el tamaÃ±o de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Si esta etiqueta afecta al tamaño de la fuente"
+msgstr "Si esta etiqueta afecta al tamaÃ±o de la fuente"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -255,9 +255,8 @@ msgid "Whether this tag affects font scaling"
 msgstr "Si esta etiqueta afecta al escalado de fuentes"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
-#, fuzzy
 msgid "Text to display"
-msgstr "Text a renderizar"
+msgstr "Texto a renderizar"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
@@ -280,9 +279,8 @@ msgid "Height"
 msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
-#, fuzzy
 msgid "Height for text box"
-msgstr "Altura del texto rederizado"
+msgstr "Altura para la caja de texto"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
@@ -346,9 +344,8 @@ msgid "Direction"
 msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
-#, fuzzy
 msgid "Text direction"
-msgstr "Descripción de fuente"
+msgstr "DirecciÃ³n del texto"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
