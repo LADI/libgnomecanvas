@@ -39,7 +39,7 @@ create_canvas_features (void)
 	GnomeCanvasItem *item;
 
 	vbox = gtk_vbox_new (FALSE, GNOME_PAD_SMALL);
-	gtk_container_border_width (GTK_CONTAINER (vbox), GNOME_PAD_SMALL);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox), GNOME_PAD_SMALL);
 	gtk_widget_show (vbox);
 
 	/* Instructions */

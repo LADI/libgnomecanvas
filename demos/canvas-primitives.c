@@ -669,7 +669,7 @@ create_canvas_primitives (void)
 	GnomeCanvasGroup *root;
 
 	vbox = gtk_vbox_new (FALSE, 4);
-	gtk_container_border_width (GTK_CONTAINER (vbox), 4);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox), 4);
 	gtk_widget_show (vbox);
 
 	w = gtk_label_new ("Drag an item with button 1.  Click button 2 on an item to lower it,\n"
