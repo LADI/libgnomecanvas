@@ -228,6 +228,9 @@ recalc_bounds (GnomeCanvasWidget *witem)
 	case GTK_ANCHOR_SE:
 		witem->cx -= witem->cwidth;
 		break;
+
+        default:
+                break;
 	}
 
 	switch (witem->anchor) {
@@ -247,6 +250,9 @@ recalc_bounds (GnomeCanvasWidget *witem)
 	case GTK_ANCHOR_SE:
 		witem->cy -= witem->cheight;
 		break;
+
+        default:
+                break;
 	}
 
 	/* Bounds */
@@ -536,6 +542,9 @@ gnome_canvas_widget_bounds (GnomeCanvasItem *item, double *x1, double *y1, doubl
 	case GTK_ANCHOR_SE:
 		*x1 -= witem->width;
 		break;
+
+        default:
+                break;
 	}
 
 	switch (witem->anchor) {
@@ -555,6 +564,9 @@ gnome_canvas_widget_bounds (GnomeCanvasItem *item, double *x1, double *y1, doubl
 	case GTK_ANCHOR_SE:
 		*y1 -= witem->height;
 		break;
+
+        default:
+                break;
 	}
 
 	*x2 = *x1 + witem->width;

@@ -1,3 +1,22 @@
+2001-06-11  Cody Russell  <bratsche@gnome.org>
+
+	* Makefile.am: Updates for GnomeCanvasBpath.
+
+	* gnome-canvas-pixbuf.c: Fixed some weird switch/enum warnings
+	by adding default: tag to the switch.
+
+	* gnome-canvas-text.c: Fixed some weird switch/enum warnings
+	by adding default: tag to the switch.
+
+	* gnome-canvas-widget.c: Fixed some weird switch/enum warnings
+	by adding default: tag to the switch.
+
+	* gnome-canvas-bpath.[ch]: Added.
+
+	* gnome-canvas-bpath-private.h: Added.
+
+	* gp-path.[ch]: Added. (possibly temporarily).
+
 2001-05-21  Joe Shaw  <joe@ximian.com>
 
 	* gnome-canvas.c (emit_event): Use the focused item if we are

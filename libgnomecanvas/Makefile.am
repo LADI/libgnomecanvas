@@ -25,6 +25,7 @@ libgnomecanvas_2_la_LIBADD = \
 libgnomecanvasincludedir = $(includedir)/gnome/2/libgnomecanvas
 
 libgnomecanvasinclude_HEADERS =			\
+	gnome-canvas-bpath.h			\
 	gnome-canvas-line.h			\
 	gnome-canvas-pixbuf.h			\
 	gnome-canvas-polygon.h			\
@@ -37,6 +38,8 @@ libgnomecanvasinclude_HEADERS =			\
 
 libgnomecanvas_2_la_SOURCES =			\
 	$(libgnomecanvasinclude_HEADERS)	\
+	gnome-canvas-bpath.c			\
+	gp-path.c				\
 	gnome-canvas-i18n.h			\
 	gnome-canvas-line.c			\
 	gnome-canvas-pixbuf.c			\

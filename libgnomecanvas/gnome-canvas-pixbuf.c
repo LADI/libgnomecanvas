@@ -656,6 +656,9 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	case GTK_ANCHOR_SE:
 		ti_len *= (x - w);
 		break;
+
+        default:
+                break;
 	}
 
 	if (priv->y_in_pixels) {
@@ -684,6 +687,9 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	case GTK_ANCHOR_SE:
 		tj_len *= y - h;
 		break;
+
+        default:
+                break;
 	}
 
 	/* Compute the final affine */

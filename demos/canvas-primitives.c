@@ -1,5 +1,6 @@
 #include <config.h>
 #include <math.h>
+#include <string.h>
 #include "canvas_demo.h"
 #include <gdk/gdkkeysyms.h>
 

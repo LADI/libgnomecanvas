@@ -1,3 +1,7 @@
+2001-06-11  Cody Russell  <bratsche@gnome.org>
+
+	* canvas-primitives.c: #include <strlen.h>
+
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
 	* toroid.png: New file; moved here from gnome-libs/test-gnome.

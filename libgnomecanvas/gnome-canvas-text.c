@@ -625,6 +625,9 @@ get_bounds_item_relative (GnomeCanvasText *text, double *px1, double *py1, doubl
 		x -= text->max_width;
 		clip_x -= text->clip_width;
 		break;
+
+	default:
+		break;
 	}
 
 	switch (text->anchor) {
@@ -645,6 +648,9 @@ get_bounds_item_relative (GnomeCanvasText *text, double *px1, double *py1, doubl
 	case GTK_ANCHOR_SE:
 		y -= text->height;
 		clip_y -= text->clip_height;
+		break;
+
+	default:
 		break;
 	}
 
@@ -715,6 +721,9 @@ get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double
 		text->cx -= text->max_width;
 		text->clip_cx -= text->clip_cwidth;
 		break;
+
+	default:
+		break;
 	}
 
 	switch (text->anchor) {
@@ -735,6 +744,9 @@ get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double
 	case GTK_ANCHOR_SE:
 		text->cy -= text->height;
 		text->clip_cy -= text->clip_cheight;
+		break;
+
+	default:
 		break;
 	}
 
@@ -1746,6 +1758,9 @@ gnome_canvas_text_bounds (GnomeCanvasItem *item, double *x1, double *y1, double 
 	case GTK_ANCHOR_SE:
 		*x1 -= width;
 		break;
+
+	default:
+		break;
 	}
 
 	switch (text->anchor) {
@@ -1764,6 +1779,9 @@ gnome_canvas_text_bounds (GnomeCanvasItem *item, double *x1, double *y1, double 
 	case GTK_ANCHOR_S:
 	case GTK_ANCHOR_SE:
 		*y1 -= height;
+		break;
+
+	default:
 		break;
 	}
 
