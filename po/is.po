@@ -27,11 +27,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
-msgstr ""
+msgstr "Afstallað"
 
 #: libgnomecanvas/gnome-canvas.c:2054
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Afstöllunarhamur canvas."
 
 #: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
@@ -44,11 +44,11 @@ msgstr "Texti til framreiðslu"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr ""
+msgstr "Merking"
 
 #: libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr ""
+msgstr "Merktur texti til að teikna"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -63,9 +63,8 @@ msgid "Font description"
 msgstr "Lýsing leturs"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
-#, fuzzy
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Lýsing leturs sem PangoFontDescription strúkt"
+msgstr "Lýsing leturs sem PangoFontDescription strúktúr"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
@@ -73,7 +72,7 @@ msgstr "Leturfjölskylda"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "JNafn leturfjölskyldu, dæmi: Sans, Helvetica, Times, Monospace"
+msgstr "Heiti leturfjölskyldu, dæmi: Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
@@ -83,7 +82,7 @@ msgstr "Stíll leturs"
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr ""
+msgstr "Leturafbrigði"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
@@ -93,7 +92,7 @@ msgstr "Þyngd leturs"
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr ""
+msgstr "Teygja letur"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
@@ -110,11 +109,11 @@ msgstr "Stærð leturs í punktum"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr ""
+msgstr "Ris"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
+msgstr "Lyfta textanum yfir grunnlínu (eða undir grunnlínu ef ris er beikvætt)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
