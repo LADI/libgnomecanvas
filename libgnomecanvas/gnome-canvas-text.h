@@ -1,3 +1,4 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
  * Copyright (C) 1997, 1998, 1999, 2000 Free Software Foundation
  * All rights reserved.
@@ -29,6 +30,7 @@
  *
  *
  * Author: Federico Mena <federico@nuclecu.unam.mx>
+ * Port to Pango co-done by Gergõ Érdi <cactus@cactus.rulez.org>
  */
 
 #ifndef GNOME_CANVAS_TEXT_H
@@ -75,6 +77,7 @@ G_BEGIN_DECLS
  * stretch		PangoStretch		RW		Pango stretch of font to use	[*]
  * size			int			RW		Size (in pixels) of font	[*]
  * size_points		double			RW		Size (in points) of font
+ * scale                double                  RW              Ratio to scale font		[*]
  *
  * anchor		GtkAnchorType		RW		Anchor side for the text
  * justification	GtkJustification	RW		Justification for multiline text
@@ -112,6 +115,7 @@ struct _GnomeCanvasText {
 	PangoUnderline underline;
 	gboolean       strikethrough;
 	int            rise;
+	double         scale;
 	
 	char *text;			/* Text to display */
 	GdkBitmap *stipple;		/* Stipple for text */
@@ -152,6 +156,8 @@ struct _GnomeCanvasText {
 	guint underline_set : 1;        /* Apply specified underline style? */
 	guint strike_set    : 1;        /* Apply specified strikethrough style? */
 	guint rise_set      : 1;        /* Apply specified ascension/descension? */
+
+	guint scale_set     : 1;        /* Apply specified font scaling ratio? */
 };
 
 struct _GnomeCanvasTextClass {

@@ -77,6 +77,7 @@ enum {
 	PROP_STRIKETHROUGH, PROP_STRIKETHROUGH_SET,
 	PROP_UNDERLINE,     PROP_UNDERLINE_SET,
 	PROP_RISE,          PROP_RISE_SET,
+	PROP_SCALE,         PROP_SCALE_SET,
 
 	/* Clipping */
 	PROP_ANCHOR,
@@ -352,6 +353,17 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 				    PANGO_TYPE_UNDERLINE,
 				    PANGO_UNDERLINE_NONE,
 				    G_PARAM_READABLE | G_PARAM_WRITABLE));
+
+	g_object_class_install_property
+		(gobject_class,
+		 PROP_SCALE,
+		 g_param_spec_double ("scale",
+				      _("Scale"),
+				      _("Size of font, relative to default size"),
+				      0.0,
+				      G_MAXDOUBLE,
+				      1.0,
+				      G_PARAM_READABLE | G_PARAM_WRITABLE));  
 	
         g_object_class_install_property
 		(gobject_class,
@@ -482,6 +494,10 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 	ADD_SET_PROP ("underline_set", PROP_UNDERLINE_SET,
 		      _("Underline set"),
 		      _("Whether this tag affects underlining"));
+
+	ADD_SET_PROP ("scale_set", PROP_SCALE_SET,
+		      _("Scale set"),
+		      _("Whether this tag affects font scaling"));
 #undef ADD_SET_PROP
 	
 	object_class->destroy = gnome_canvas_text_destroy;
@@ -982,7 +998,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
 		break;
-		
+
 	case PROP_SIZE_SET:
 		text->size_set = g_value_get_boolean (value);
 
@@ -990,6 +1006,21 @@ gnome_canvas_text_set_property (GObject            *object,
 		recalc_bounds (text);
 		break;
 
+	case PROP_SCALE:
+		text->scale = g_value_get_double (value);
+		text->scale_set = TRUE;
+		
+		gnome_canvas_text_apply_font_desc (text);
+		recalc_bounds (text);
+		break;
+		
+	case PROP_SCALE_SET:
+		text->scale_set = g_value_get_boolean (value);
+		
+		gnome_canvas_text_apply_font_desc (text);
+		recalc_bounds (text);
+		break;		
+		
 	case PROP_UNDERLINE:
 		text->underline = g_value_get_enum (value);
 		text->underline_set = TRUE;
@@ -1192,50 +1223,76 @@ gnome_canvas_text_get_property (GObject            *object,
 
 	case PROP_FAMILY:
 		g_value_set_string (value, text->font_desc.family_name);
+		break;
 	case PROP_FAMILY_SET:
 		g_value_set_boolean (value, text->family_set);
+		break;
 		
 	case PROP_STYLE:
 		g_value_set_enum (value, text->font_desc.style);
+		break;
 	case PROP_STYLE_SET:
 		g_value_set_boolean (value, text->style_set);
+		break;
 		
 	case PROP_VARIANT:
 		g_value_set_enum (value, text->font_desc.variant);
+		break;
 	case PROP_VARIANT_SET:
 		g_value_set_boolean (value, text->variant_set);
-		
+		break;
+
 	case PROP_WEIGHT:
 		g_value_set_int (value, text->font_desc.weight);
+		break;
 	case PROP_WEIGHT_SET:
 		g_value_set_boolean (value, text->weight_set);
+		break;
 		
 	case PROP_STRETCH:
 		g_value_set_enum (value, text->font_desc.stretch);
+		break;
 	case PROP_STRETCH_SET:
 		g_value_set_boolean (value, text->stretch_set);
+		break;
 		
 	case PROP_SIZE:
 		g_value_set_int (value, text->font_desc.size);
+		break;
 	case PROP_SIZE_POINTS:
 		g_value_set_double (value, ((double)text->font_desc.size) / (double)PANGO_SCALE);
+		break;
 	case PROP_SIZE_SET:
 		g_value_set_boolean (value, text->size_set);
-
+		break;
+		
+	case PROP_SCALE:
+		g_value_set_double (value, text->scale);
+		break;
+	case PROP_SCALE_SET:
+		g_value_set_boolean (value, text->scale_set);
+		break;
+		
 	case PROP_UNDERLINE:
 		g_value_set_enum (value, text->underline);
+		break;
 	case PROP_UNDERLINE_SET:
 		g_value_set_boolean (value, text->underline_set);
+		break;
 		
 	case PROP_STRIKETHROUGH:
 		g_value_set_boolean (value, text->strikethrough);
+		break;
 	case PROP_STRIKETHROUGH_SET:
 		g_value_set_boolean (value, text->strike_set);
-
+		break;
+		
 	case PROP_RISE:
 		g_value_set_int (value, text->rise);
+		break;
 	case PROP_RISE_SET:
 		g_value_set_boolean (value, text->rise_set);
+		break;
 		
 	case PROP_ATTRIBUTES:
 		g_value_set_boxed (value, text->attr_list);
@@ -1330,6 +1387,9 @@ gnome_canvas_text_apply_font_desc (GnomeCanvasText *text)
 
 	if (text->size_set)
 		font_desc->size = text->font_desc.size;
+
+	if (text->scale_set)
+		font_desc->size *= text->scale;
 	
 	pango_layout_set_font_description (text->layout,
 					   font_desc);

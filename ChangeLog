@@ -1,3 +1,8 @@
+2001-05-06  ERDI Gergo  <cactus@cactus.rulez.org>
+
+	* libgnomecanvas/gnome-canvas-text.[ch]: new 'scale' property that
+	does post-font-size-setting scaling of font size
+
 2001-05-05  ERDI Gergo  <cactus@cactus.rulez.org>
 
 	* libgnomecanvas/gnome-canvas-text.[ch]: new properties:
