@@ -928,8 +928,8 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 			gnome_canvas_shape_ensure_gdk_points (gdk, len);
 			for (i = 0; i < len; i++) {
-				gdk->points[pos + i].x = (gint16) vpath[i].x;
-				gdk->points[pos + i].y = (gint16) vpath[i].y;
+				gdk->points[pos + i].x = (gint) floor (vpath[i].x + 0.5);
+				gdk->points[pos + i].y = (gint) floor (vpath[i].y + 0.5);
 			}
 			gdk->num_points += len;
 
@@ -959,8 +959,8 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 			gnome_canvas_shape_ensure_gdk_points (gdk, len);
 			for (i = 0; i < len; i++) {
-				gdk->points[pos + i].x = (gint16) vpath[i].x;
-				gdk->points[pos + i].y = (gint16) vpath[i].y;
+				gdk->points[pos + i].x = (gint) floor (vpath[i].x + 0.5);
+				gdk->points[pos + i].y = (gint) floor (vpath[i].y + 0.5);
 			}
 			gdk->num_points += len;
 
