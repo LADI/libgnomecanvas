@@ -1,12 +1,13 @@
 # libgnomecanvas eesti tõlge.
 # Copyright (C) 2002 Free Software Foundation, Inc.
 # Tõivo Leedjärv <toivo@linux.ee>, 2002.
+# Aarne Männik <amannik@hot.ee>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-30 16:22+0200\n"
+"POT-Creation-Date: 2004-11-14 12:12+0100\n"
 "PO-Revision-Date: 2002-08-14 23:29+0300\n"
 "Last-Translator: Tõivo Leedjärv <toivo@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
@@ -26,11 +27,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
-msgstr ""
+msgstr "Sakitõrjega"
 
 #: libgnomecanvas/gnome-canvas.c:2054
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Kanvaade sakitõrjega mood"
 
 #: libgnomecanvas/gnome-canvas-text.c:206
 #: libgnomecanvas/gnome-canvas-rich-text.c:209
@@ -81,7 +82,7 @@ msgstr "Kirjalaad"
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr ""
+msgstr "Kirja variant"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
@@ -100,7 +101,7 @@ msgstr "Kirjasuurus"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr ""
+msgstr "Kirja punkid"
 
 #: libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points"
@@ -108,12 +109,12 @@ msgstr "Kirja suurus punktides"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr ""
+msgstr "Tõus"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
+msgstr "Teksti paigutuskaugus baasjoonest üleval (baasjoonest all kui tõus on negatiivne)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -133,11 +134,11 @@ msgstr "Teksti allakriipsutuse laad"
 
 #: libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
-msgstr ""
+msgstr "Mastaap"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr ""
+msgstr "Kirja suurus, vaikeväärtusega võrreldes"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
@@ -179,7 +180,7 @@ msgstr "Kirjaperekond määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja perekonda"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -187,15 +188,15 @@ msgstr "Kirjalaad määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja stiili"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr ""
+msgstr "Kirja variant määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja varianti"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -203,7 +204,7 @@ msgstr "Kirja paksus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja paksust"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
@@ -211,7 +212,7 @@ msgstr "Kirja venitus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja venitust"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -219,15 +220,15 @@ msgstr "Kirjasuurus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja suurust"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr ""
+msgstr "Tõus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "Kas see silt mõjutab tõusu"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -235,7 +236,7 @@ msgstr "Läbikriipsutus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "Kas see silt mõjutab läbikriipsutust"
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -243,15 +244,15 @@ msgstr "Allakriipsutus määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "Kas see silt mõjutab allakriipsutust"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr ""
+msgstr "Mastaap määratud"
 
 #: libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "Kas see silt mõjutab kirja mastaapi"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text to display"
@@ -287,7 +288,7 @@ msgstr "Redigeeritav"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Is this rich text item editable?"
-msgstr ""
+msgstr "Kas see küllase teksti lõik on toimetatav"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:257
 msgid "Visible"
@@ -295,7 +296,7 @@ msgstr "Nähtav"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Is this rich text item visible?"
-msgstr ""
+msgstr "Kas see küllane tekst on nähtav"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:265
 msgid "Cursor Visible"
@@ -303,7 +304,7 @@ msgstr "Kursor nähtav"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Is the cursor visible in this rich text item?"
-msgstr ""
+msgstr "Kas kursor on nähtav selles küllase teksti lõigus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
@@ -311,7 +312,7 @@ msgstr "Vilkuv kursor"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Does the cursor blink in this rich text item?"
-msgstr ""
+msgstr "Kas kursor vilgub selles küllase teksti lõigus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
@@ -319,15 +320,15 @@ msgstr "Kasvav kõrgus"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr ""
+msgstr "Kas teksti kasti kõrgus peaks kasvama kui tekst ei mahu sinna"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
-msgstr ""
+msgstr "Mähismood"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr ""
+msgstr "Mähismood mitmerealisele tekstile"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
@@ -335,7 +336,7 @@ msgstr "Joondamine"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification mode"
-msgstr ""
+msgstr "Joondamismood"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
@@ -359,7 +360,7 @@ msgstr "Pikslit ridade peal"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
-msgstr ""
+msgstr "Joonest üles asetatavate pikslite arv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
@@ -371,11 +372,11 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "Piksleid mähises"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr ""
+msgstr "Mähisesse asetatavate pikslite arv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
