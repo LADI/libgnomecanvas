@@ -37,8 +37,7 @@
 #define GNOME_CANVAS_TEXT_H
 
 
-#include <gtk/gtkpacker.h> /* why the hell is GtkAnchorType here and not in gtkenums.h? */
-#include "gnome-canvas.h"
+#include <libgnomecanvas/gnome-canvas.h>
 
 
 G_BEGIN_DECLS

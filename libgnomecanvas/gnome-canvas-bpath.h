@@ -14,12 +14,11 @@
 #ifndef GNOME_CANVAS_BPATH_H
 #define GNOME_CANVAS_BPATH_H
 
-#include <libgnome/gnome-defs.h>
-#include <libgnomeui/gnome-canvas.h>
-#include "gnome-canvas-shape.h"
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas-shape.h>
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Bpath item for the canvas.
@@ -57,6 +56,6 @@ struct _GnomeCanvasBpathClass {
 /* Standard Gtk function */
 GtkType gnome_canvas_bpath_get_type (void);
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

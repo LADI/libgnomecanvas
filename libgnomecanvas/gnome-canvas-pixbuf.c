@@ -29,9 +29,6 @@
 #include <libart_lgpl/art_rgb_rgba_affine.h>
 #include "gnome-canvas-pixbuf.h"
 
-/* For GtkTypeAnchor */
-#include <gtk/gtkpacker.h>
-
 
 
 /* Private part of the GnomeCanvasPixbuf structure */

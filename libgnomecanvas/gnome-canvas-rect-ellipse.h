@@ -35,9 +35,9 @@
 #define GNOME_CANVAS_RECT_ELLIPSE_H
 
 
-#include "gnome-canvas.h"
+#include <libgnomecanvas/gnome-canvas.h>
 
-#include "gnome-canvas-shape.h"
+#include <libgnomecanvas/gnome-canvas-shape.h>
 
 #include <libart_lgpl/art_svp.h>
 

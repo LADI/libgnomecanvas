@@ -1,3 +1,14 @@
+2001-06-25  Jens Finke <jens@gnome.org>
+
+	* gnome-canvas-bpath.h, gnome-canvas-clipgroup.h,
+	gnome-canvas-line.h, gnome-canvas-path-def.h,
+	gnome-canvas-pixbuf.c, gnome-canvas-polygon.h,
+	gnome-canvas-rect-ellipse.h, gnome-canvas-shape-private.h,
+	gnome-canvas-shape.h, gnome-canvas-text.h, gnome-canvas-widget.h:
+	Removed deprecated includes, use G_BEGIN_DECLS instead of
+	GNOME_BEGIN_DECLS. Prefixed package headers with libgnomecanvas/
+	where they get included.
+
 2001-06-25  Rusty Conover <rconover@bangtail.net>
 
 	* gnome-canvas-text.c (gnome_canvas_text_destroy,
@@ -38,8 +49,6 @@
 	large amounts of text. Since the text need not be rerasterized by
 	Pango since it is cached; only the item rgba affine need be
 	applied to the cached bitmap.
-
-	
 
 2001-06-20  Rusty Conover  <rconover@bangtail.net>
 

@@ -14,11 +14,10 @@
 #ifndef GNOME_CANVAS_SHAPE_H
 #define GNOME_CANVAS_SHAPE_H
 
-#include <libgnome/gnome-defs.h>
-#include <libgnomeui/gnome-canvas.h>
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 /* Shape item for the canvas.
@@ -75,6 +74,6 @@ GnomeCanvasPathDef *gnome_canvas_shape_get_path_def(GObject *object);
 /* Standard Gtk function */
 GtkType gnome_canvas_shape_get_type (void);
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

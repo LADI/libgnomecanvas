@@ -36,9 +36,9 @@
 #define GNOME_CANVAS_POLYGON_H
 
 
-#include "gnome-canvas.h"
-#include "gnome-canvas-shape.h"
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas-shape.h>
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 
 G_BEGIN_DECLS
 

@@ -17,9 +17,8 @@
 
 #include <glib.h>
 #include <libart_lgpl/art_bpath.h>
-#include <libgnome/gnome-defs.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 typedef struct _GnomeCanvasPathDef GnomeCanvasPathDef;
 
@@ -89,6 +88,6 @@ gboolean gnome_canvas_path_def_all_open (const GnomeCanvasPathDef * path);
 gboolean gnome_canvas_path_def_any_closed (const GnomeCanvasPathDef * path);
 gboolean gnome_canvas_path_def_all_closed (const GnomeCanvasPathDef * path);
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

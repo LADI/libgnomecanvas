@@ -36,7 +36,7 @@
 #define GNOME_CANVAS_LINE_H
 
 
-#include "gnome-canvas.h"
+#include <libgnomecanvas/gnome-canvas.h>
 
 
 G_BEGIN_DECLS

@@ -18,11 +18,11 @@
 #include <libart_lgpl/art_svp.h>
 #include <libart_lgpl/art_vpath_dash.h>
 #include <libart_lgpl/art_svp_wind.h>
-#include <libgnomeui/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas.h>
 
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 typedef struct _GnomeCanvasShapePrivGdk GnomeCanvasShapePrivGdk;
 typedef struct _GCBPDrawCtx GCBPDrawCtx;
@@ -97,6 +97,6 @@ struct _GnomeCanvasShapePriv {
 	GnomeCanvasShapePrivGdk * gdk;	/* Gdk specific things */
 };
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif

@@ -14,16 +14,15 @@
  *          Lauris Kaplinski <lauris@ximian.com>
  */
 
-#include <libgnome/gnome-defs.h>
-#include <libgnomeui/gnome-canvas.h>
-#include <libgnomeui/gnome-canvas-util.h>
+#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas-util.h>
 
 #include <libart_lgpl/art_bpath.h>
 #include <libart_lgpl/art_svp_wind.h>
 #include <libart_lgpl/art_vpath_dash.h>
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 
-BEGIN_GNOME_DECLS
+G_BEGIN_DECLS
 
 
 #define GNOME_TYPE_CANVAS_CLIPGROUP            (gnome_canvas_clipgroup_get_type ())
@@ -54,6 +53,6 @@ struct _GnomeCanvasClipgroupClass {
 GtkType gnome_canvas_clipgroup_get_type (void);
 
 
-END_GNOME_DECLS
+G_END_DECLS
 
 #endif
