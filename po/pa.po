@@ -1,18 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: punlinux\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2004-02-19 13:14+0530\n"
+"PO-Revision-Date: 2004-06-18 09:43+0530\n"
 "Last-Translator: Amanpreet Singh Alam <amanlinux@netscape.net>\n"
-"Language-Team: KBST Punjab <kbstpunjab@netscape.net>\n"
+"Language-Team: Punjabi <punlinux-i18n@lists.sourceforge.>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
@@ -40,15 +39,15 @@ msgstr "ਮੂਲ ਪਾਠ"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਮੂਲ ਪਾਠ"
+msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਮੂਲ ਪਾਠ"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "ਸਪਸ਼ਟ ਬਣਾਉਣਾ"
+msgstr "ਸਪਸ਼ਟ ਬਣਾਉਣਾ"
 
 #: libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "ਮੂਲ ਪਾਠ ਨੂੰ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਸਪਸ਼ਟ ਬਣਾਉ"
+msgstr "ਮੂਲ ਪਾਠ ਨੂੰ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਸਪਸ਼ਟ ਬਣਾਉ"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -77,7 +76,7 @@ msgstr "ਫੋਟ ਵਰਗ ਦਾ ਨਾਉ ਜਿਵੇ ਕਿ  Sans, Helvetic
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "ਫੋਟ ਸ਼ੈਲੀ"
+msgstr "ਫੋਟ ਸ਼ੈਲੀ"
 
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
@@ -114,7 +113,7 @@ msgstr "ਉਤਪਤੀ"
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "ਹੇਠਲੀ ਲਕੀਰ ਉਪਰ ਮੂਲ ਪਾਠ ਦੀ ਸ਼ਾਖਾ(ਜੇ ਉਤਪਤੀ ਨਾਂਵਾਚਕ ਹੈ ਤਾਂ ਹੇਠਲੀ ਲਕੀਰ ਥਲੇ)"
+msgstr "ਹੇਠਲੀ ਲਕੀਰ ਉਪਰ ਮੂਲ ਪਾਠ ਦੀ ਸ਼ਾਖਾ(ਜੇ ਉਤਪਤੀ ਨਾਂਵਾਚਕ ਹੈ ਤਾਂ ਹੇਠਲੀ ਲਕੀਰ ਥਲੇ)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -126,11 +125,11 @@ msgstr "ਭਾਵੇਂ ਮੂਲ ਪਾਠ ਨੂੰ ਵਿੰਨਣ ਲਈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ"
+msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ"
 
 #: libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
-msgstr "ਇਸ ਮੂਲ ਪਾਠ ਲਈ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਉਣ ਦੀ ਸ਼ੈਲੀ"
+msgstr "ਇਸ ਮੂਲ ਪਾਠ ਲਈ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਉਣ ਦੀ ਸ਼ੈਲੀ"
 
 #: libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -164,7 +163,7 @@ msgstr "ਪਾਠ ਦੀ ਚੌਡ਼ਾਈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਚੌਡ਼ਾਈ"
+msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਚੌਡ਼ਾਈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
@@ -172,7 +171,7 @@ msgstr "ਪਾਠ ਦੀ ਉਚਾਈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਉਚਾਈ"
+msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਉਚਾਈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
@@ -184,11 +183,11 @@ msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਦੇ ਵਰਗ ਨੂੰ
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "ਅਖਰ ਸ਼ੈਲੀ ਸਮੂਹ"
+msgstr "ਅਖਰ ਸ਼ੈਲੀ ਸਮੂਹ"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਸ਼ੈਲੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਸ਼ੈਲੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -240,11 +239,11 @@ msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਵਿੰਨਣ ਵਿਚ ਪ੍ਰ�
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਸਮੂਹ"
+msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਸਮੂਹ"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਓਣ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਓਣ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
@@ -303,18 +302,16 @@ msgid "Cursor Visible"
 msgstr "ਕਰਸਰ ਦਿਸੇ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
-msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਦਿਸਦਾ ਹੈ?"
+msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਦਿਸਦਾ ਹੈ? "
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
 msgstr "ਝਪਕਦਾ ਕਰਸਰ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
-msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਝਪਕਦਾ ਹੈ ?"
+msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਝਪਕਦਾ ਹੈ ? "
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
@@ -342,11 +339,11 @@ msgstr "ਉਚਿਤ ਸਿਧ ਕਰਨ ਦਾ ਢੰਗ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
-msgstr "ਦਿਸ਼ਾ"
+msgstr "ਦਿਸ਼ਾ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Text direction"
-msgstr "ਪਾਠ ਦਿਸ਼ਾ"
+msgstr "ਪਾਠ ਦਿਸ਼ਾ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
@@ -362,7 +359,7 @@ msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਬਿੰਦੂ (ਪਿਕਸਲ)
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Number of pixels to put above lines"
-msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:334
 msgid "Pixels Below Lines"
@@ -370,7 +367,7 @@ msgstr "ਸਤਰਾਂ ਦੇ ਹੇਠਾਂ ਬਿੰਦੂ(ਪਿਕਸਲ)"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Number of pixels to put below lines"
-msgstr "ਲਾਈਨਾਂ ਤੋਂ ਹੇਠਾਂ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਲਾਈਨਾਂ ਤੋਂ ਹੇਠਾਂ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:343
 msgid "Pixels Inside Wrap"
@@ -378,23 +375,23 @@ msgstr "ਢਕਣ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲ)"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Number of pixels to put inside the wrap"
-msgstr "ਢਕਣ ਵਿਚ  ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲ)ਦੀ ਗਿਣਤੀ"
+msgstr "ਢਕਣ ਵਿਚ  ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲ)ਦੀ ਗਿਣਤੀ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
-msgstr "ਖਬਾ ਹਾਸ਼ੀਆ"
+msgstr "ਖੱਬਾ ਹਾਸ਼ੀਆ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
-msgstr "ਖਬੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਖੱਬੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
-msgstr "ਸਜਾ ਹਾਸ਼ੀਆ"
+msgstr "ਸੱਜਾ ਹਾਸ਼ੀਆ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
-msgstr "ਸਜੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਸੱਜੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
