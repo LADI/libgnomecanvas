@@ -1,5 +1,16 @@
 2001-04-12  Martin Baulig  <baulig@suse.de>
 
+	* libgnomecanvas.h: New header file.
+	It #includes <libgnomecanvas/gnome-canvas.h> and
+	<libgnomecanvas/gnome-canvas-util.h> and also contains the
+	module init stuff.
+
+	* libgnomecanvastypes.c (libgnomecanvas_module_info):
+	New global variable; this is the `GnomeModuleInfo' structure
+	to initialize this module.
+
+2001-04-12  Martin Baulig  <baulig@suse.de>
+
 	* libgnomecanvastypes.c: Migrate to GObject.
 
 2001-03-24  Martin Baulig  <baulig@suse.de>

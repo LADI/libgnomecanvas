@@ -29,7 +29,8 @@ libgnomecanvas_headers =			\
 	gnome-canvas-text.h			\
 	gnome-canvas-util.h			\
 	gnome-canvas-widget.h			\
-	gnome-canvas.h
+	gnome-canvas.h				\
+	libgnomecanvas.h
 
 libgnomecanvasinclude_HEADERS =			\
 	$(libgnomecanvas_headers)
