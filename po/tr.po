@@ -1,17 +1,17 @@
 # Turkish translation of libgnomecanvas2.
 # Copyright (C) 2001 Free Software Foundation, Inc.
-# Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
-# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2001.
+# GÃ¶rkem Ã‡etin <gorkem@gelecek.com.tr>, 2001.
+# Ã–mer FadÄ±l USTA <omer_fad@hotmail.com>, 2001.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2  1.103.0\n"
 "POT-Creation-Date: 2002-09-27 23:13+0200\n"
 "PO-Revision-Date: 2001-06-02 14:13+0200\n"
-"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Last-Translator: Ã–mer FadÄ±l USTA <omer_fad@hotmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-9\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -39,76 +39,76 @@ msgstr "Metin"
 
 #: libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "Sıvanacak Metin"
+msgstr "SÄ±vanacak Metin"
 
 #: libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "İşaretleme"
+msgstr "Ä°ÅŸaretleme"
 
 #: libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "İşaretlenmiş Sıvanacak Metin"
+msgstr "Ä°ÅŸaretlenmiÅŸ SÄ±vanacak Metin"
 
 #: libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
-msgstr "Yazıtipi"
+msgstr "YazÄ±tipi"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Yazıtipini tanımlayacak bir yazı kullan"
+msgstr "YazÄ±tipini tanÄ±mlayacak bir yazÄ± kullan"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "Yazıtipi Tanımlaması"
+msgstr "YazÄ±tipi TanÄ±mlamasÄ±"
 
 #: libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Yazıtipi tanımlaması için PangoYazıtipiTanımlama yı kullan"
+msgstr "YazÄ±tipi tanÄ±mlamasÄ± iÃ§in PangoYazÄ±tipiTanÄ±mlama yÄ± kullan"
 
 #: libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "Yazıtipi Ailesi"
+msgstr "YazÄ±tipi Ailesi"
 
 #: libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Yazıtipi ailesinin adı, örneğin Sans, HElvetica, Times,Monospace"
+msgstr "YazÄ±tipi ailesinin adÄ±, Ã¶rneÄŸin Sans, HElvetica, Times,Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:276
 #: libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "Yazıtipi stili"
+msgstr "YazÄ±tipi stili"
 
 #: libgnomecanvas/gnome-canvas-text.c:286
 #: libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "Yazıtipi varyantı"
+msgstr "YazÄ±tipi varyantÄ±"
 
 #: libgnomecanvas/gnome-canvas-text.c:296
 #: libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "Yazıtipi genişliği"
+msgstr "YazÄ±tipi geniÅŸliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "Yazıtipi sıkıştırması"
+msgstr "YazÄ±tipi sÄ±kÄ±ÅŸtÄ±rmasÄ±"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
-msgstr "Yazıtipi boyu"
+msgstr "YazÄ±tipi boyu"
 
 #: libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr "Yazıtipi Noktaları"
+msgstr "YazÄ±tipi NoktalarÄ±"
 
 #: libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points"
-msgstr "Noktalar içinde Yazıtipi boyutu"
+msgstr "Noktalar iÃ§inde YazÄ±tipi boyutu"
 
 #: libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "Şişirtmek"
+msgstr "ÅiÅŸirtmek"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
@@ -125,11 +125,11 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "Altı Çizgili"
+msgstr "AltÄ± Ã‡izgili"
 
 #: libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
-msgstr "Bu metin için alt çizgi stili"
+msgstr "Bu metin iÃ§in alt Ã§izgi stili"
 
 #: libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -137,7 +137,7 @@ msgstr "Derece"
 
 #: libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "Varsayılan olarak kabul edilen Yazıtipi boyutu"
+msgstr "VarsayÄ±lan olarak kabul edilen YazÄ±tipi boyutu"
 
 #: libgnomecanvas/gnome-canvas-text.c:425
 #: libgnomecanvas/gnome-canvas-text.c:433
@@ -147,7 +147,7 @@ msgstr "Renk"
 
 #: libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "Metin Rengi(yazıyla)"
+msgstr "Metin Rengi(yazÄ±yla)"
 
 #: libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
@@ -155,79 +155,79 @@ msgstr "Metin Rengi(GdkRenkleri)"
 
 #: libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Metin Rengi (R/G/B/A kominasyonundaki tamsayı)"
+msgstr "Metin Rengi (R/G/B/A kominasyonundaki tamsayÄ±)"
 
 #: libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
-msgstr "Metin genişliği"
+msgstr "Metin geniÅŸliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
-msgstr "Sıvanmış Metnin genişliği"
+msgstr "SÄ±vanmÄ±ÅŸ Metnin geniÅŸliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
-msgstr "Metin yüksekliği"
+msgstr "Metin yÃ¼ksekliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
-msgstr "Sıvanmış Metnin yüksekliği"
+msgstr "SÄ±vanmÄ±ÅŸ Metnin yÃ¼ksekliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "Yazıtipi ailesini ayarla"
+msgstr "YazÄ±tipi ailesini ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Bu etiket Yazıtipi ailesini belirler"
+msgstr "Bu etiket YazÄ±tipi ailesini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "Yazıtipi stilini ayarla"
+msgstr "YazÄ±tipi stilini ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "Bu etiket Yazıtipi stilini belirler"
+msgstr "Bu etiket YazÄ±tipi stilini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "Yazıtipi varyantını ayarla"
+msgstr "YazÄ±tipi varyantÄ±nÄ± ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Bu etiket Yazıtipi genişliğini belirler"
+msgstr "Bu etiket YazÄ±tipi geniÅŸliÄŸini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Yazıtipi genişliğini ayarla"
+msgstr "YazÄ±tipi geniÅŸliÄŸini ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "Bu etiket Yazıtipi genişliğini belirler"
+msgstr "Bu etiket YazÄ±tipi geniÅŸliÄŸini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Yazıtipi sıkıştırmasını ayarla"
+msgstr "YazÄ±tipi sÄ±kÄ±ÅŸtÄ±rmasÄ±nÄ± ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Bu etiket Yazıtipi sıkıştırmasını belirler"
+msgstr "Bu etiket YazÄ±tipi sÄ±kÄ±ÅŸtÄ±rmasÄ±nÄ± belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Yazıtipi boyutunu ayarla"
+msgstr "YazÄ±tipi boyutunu ayarla"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Bu etiket Yazıtipi boyutunu belirler"
+msgstr "Bu etiket YazÄ±tipi boyutunu belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "Şişkinliği ayarlar"
+msgstr "ÅiÅŸkinliÄŸi ayarlar"
 
 #: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "Bu etiket Yazıtipi şişkinliğini belirler"
+msgstr "Bu etiket YazÄ±tipi ÅŸiÅŸkinliÄŸini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -239,11 +239,11 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "Alt Çizgiyi ayarlar"
+msgstr "Alt Ã‡izgiyi ayarlar"
 
 #: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "Bu etiket Yazıtipi alt çizgisini belirler"
+msgstr "Bu etiket YazÄ±tipi alt Ã§izgisini belirler"
 
 #: libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
@@ -256,7 +256,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-rich-text.c:210
 #, fuzzy
 msgid "Text to display"
-msgstr "Sıvanacak Metin"
+msgstr "SÄ±vanacak Metin"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X position"
@@ -281,7 +281,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-rich-text.c:242
 #, fuzzy
 msgid "Height for text box"
-msgstr "Sıvanmış Metnin yüksekliği"
+msgstr "SÄ±vanmÄ±ÅŸ Metnin yÃ¼ksekliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:249
 msgid "Editable"
@@ -318,7 +318,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 #, fuzzy
 msgid "Grow Height"
-msgstr "Yazıtipi genişliği"
+msgstr "YazÄ±tipi geniÅŸliÄŸi"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
@@ -347,7 +347,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
 #, fuzzy
 msgid "Text direction"
-msgstr "Yazıtipi Tanımlaması"
+msgstr "YazÄ±tipi TanÄ±mlamasÄ±"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:316
 msgid "Anchor"
