@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2002-01-30 02:46+0100\n"
+"POT-Creation-Date: 2002-02-19 10:47+0100\n"
 "PO-Revision-Date: 2001-05-30 11:59+0200\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
 "Language-Team: Gnome French Team <gnomefr@gnomefr.traduc.org>\n"
