@@ -1,3 +1,11 @@
+2001-10-24  jacob berkman  <jacob@ximian.com>
+
+	* glade/glade-canvas.c: moved from libglade/glade/
+
+	* configure.in: add libglade checks
+
+	* Makefile.am (SUBDIRS): build glade/
+
 2001-10-08  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
 
 	* configure.in: Added "sk" to ALL_LINGUAS.

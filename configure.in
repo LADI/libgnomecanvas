@@ -30,9 +30,17 @@ GNOME_COMPILE_WARNINGS(maximum)
 dnl
 dnl GTK+ check
 dnl
-PKG_CHECK_MODULES(LIBGNOMECANVAS, gtk+-2.0 >= 1.3.2 libart-2.0 >= 2.3.5 pango >= 0.13 pangoft2 >= 0.13)
+CANVAS_MODULES="gtk+-2.0 >= 1.3.2 libart-2.0 >= 2.3.5 pango >= 0.13 pangoft2 >= 0.13"
+PKG_CHECK_MODULES(LIBGNOMECANVAS, $CANVAS_MODULES)
 AC_SUBST(LIBGNOMECANVAS_CFLAGS)
 AC_SUBST(LIBGNOMECANVAS_LIBS)
+
+PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= 1.99.3)
+AC_SUBST(CANVAS_GLADE_CFLAGS)
+AC_SUBST(CANVAS_GLADE_LIBS)
+
+GLADE_MODULE_DIR="`$PKG_CONFIG --variable=moduledir libglade-2.0`"
+AC_SUBST(GLADE_MODULE_DIR)
 
 dnl Don't use AC_PROG_AWK since we need the full pathname.
 AC_PATH_PROGS(AWK, mawk gawk nawk awk, )
@@ -58,6 +66,7 @@ Makefile
 po/Makefile.in
 libgnomecanvas/Makefile
 libgnomecanvas/libgnomecanvas-2.0.pc
+glade/Makefile
 demos/Makefile
 ])
 
