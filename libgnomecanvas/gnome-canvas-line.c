@@ -169,7 +169,7 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
                 (gobject_class,
                  PROP_FILL_COLOR_GDK,
                  g_param_spec_boxed ("fill_color_gdk", NULL, NULL,
-				     GTK_TYPE_GDK_COLOR,
+				     GDK_TYPE_COLOR,
 				     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
@@ -199,21 +199,21 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
                 (gobject_class,
                  PROP_CAP_STYLE,
                  g_param_spec_enum ("cap_style", NULL, NULL,
-                                    GTK_TYPE_GDK_CAP_STYLE,
+                                    GDK_TYPE_CAP_STYLE,
                                     GDK_CAP_BUTT,
                                     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_JOIN_STYLE,
                  g_param_spec_enum ("join_style", NULL, NULL,
-                                    GTK_TYPE_GDK_JOIN_STYLE,
+                                    GDK_TYPE_JOIN_STYLE,
                                     GDK_JOIN_MITER,
                                     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
                  PROP_LINE_STYLE,
                  g_param_spec_enum ("line_style", NULL, NULL,
-                                    GTK_TYPE_GDK_LINE_STYLE,
+                                    GDK_TYPE_LINE_STYLE,
                                     GDK_LINE_SOLID,
                                     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property

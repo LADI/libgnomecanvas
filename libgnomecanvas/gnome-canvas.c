@@ -194,7 +194,7 @@ gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
 				GTK_SIGNAL_OFFSET (GnomeCanvasItemClass, event),
 				gtk_marshal_BOOLEAN__BOXED,
 				GTK_TYPE_BOOL, 1,
-				GTK_TYPE_GDK_EVENT);
+				GDK_TYPE_EVENT);
 
 	gobject_class->shutdown = gnome_canvas_item_shutdown;
 

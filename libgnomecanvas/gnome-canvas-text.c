@@ -230,7 +230,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
                 (gobject_class,
                  PROP_FILL_COLOR_GDK,
                  g_param_spec_boxed ("fill_color_gdk", NULL, NULL,
-				     GTK_TYPE_GDK_COLOR,
+				     GDK_TYPE_COLOR,
 				     (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property
                 (gobject_class,
