@@ -1,3 +1,8 @@
+Mon Mar 31 07:21:33 2003  Tim Janik  <timj@gtk.org>
+
+	* libgnomecanvas/gnome-canvas-pixbuf.c:
+	(gnome_canvas_pixbuf_update): change update logic to fix redrawing bugs.
+
 2003-03-27  Anders Carlsson  <andersca@codefactory.se>
 
 	* configure.in: Release 2.3.0
@@ -337,7 +342,7 @@
 
 	* configure.in: Release 1.112.1
 
-2002-03-03  Tõivo Leedjärv  <leedjarv@interest.ee>
+2002-03-03  TÃµivo LeedjÃ¤rv  <leedjarv@interest.ee>
 
 	* configure.in (ALL_LINGUAS): Added et (Estonian).
 
@@ -1407,7 +1412,7 @@ Tue Jun 26 11:29:54 2001  Tim Janik  <timj@gtk.org>
 	This is a good test case for fixing the breakage since it is only
 	caused in gdk mode rather then aa canvas.
 
-2001-06-19  Héctor García Álvarez <hector@scouts-es.org>
+2001-06-19  HÃ©ctor GarcÃ­a Ãlvarez <hector@scouts-es.org>
 
 	* configure.in: added "es" for Spanish to $ALL_LINGUAS
 	
