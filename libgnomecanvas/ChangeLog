@@ -1,3 +1,9 @@
+2001-09-21  jacob berkman  <jacob@ximian.com>
+
+	* gnome-canvas-pixbuf.c (gnome_canvas_pixbuf_init): correctly
+	initialize priv->anchor to GTK_ANCHOR_NW (like we say the default
+	is)
+
 Tue Sep 18 17:19:41 2001  Owen Taylor  <otaylor@redhat.com>
 
 	* gnome-canvas-text.[ch]: Changes to match new PangoFontDescription

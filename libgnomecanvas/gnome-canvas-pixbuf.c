@@ -257,6 +257,7 @@ gnome_canvas_pixbuf_init (GnomeCanvasPixbuf *gcp)
 	priv->height = 0.0;
 	priv->x = 0.0;
 	priv->y = 0.0;
+	priv->anchor = GTK_ANCHOR_NW;
 }
 
 /* Destroy handler for the pixbuf canvas item */
