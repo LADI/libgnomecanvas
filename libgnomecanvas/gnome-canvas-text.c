@@ -684,20 +684,6 @@ get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double
 	}
 }
 
-/* Recalculates the bounding box of the text item.  The bounding box is defined
- * by the text's extents if the clip rectangle is disabled.  If it is enabled,
- * the bounding box is defined by the clip rectangle itself.
- */
-static void
-recalc_bounds (GnomeCanvasText *text)
-{
-	GnomeCanvasItem *item;
-
-	item = GNOME_CANVAS_ITEM (text);
-
-	get_bounds (text, &item->x1, &item->y1, &item->x2, &item->y2);
-}
-
 /* Convenience function to set the text's GC's foreground color */
 static void
 set_text_gc_foreground (GnomeCanvasText *text)
@@ -826,7 +812,6 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		text->text = g_value_dup_string (value);
 		pango_layout_set_text (text->layout, text->text, -1);
-		recalc_bounds (text);
 
 		text->priv->render_dirty = 1;
 		break;
@@ -834,18 +819,15 @@ gnome_canvas_text_set_property (GObject            *object,
 	case PROP_MARKUP:
 		gnome_canvas_text_set_markup (text,
 					      g_value_get_string (value));
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_X:
 		text->x = g_value_get_double (value);
-		recalc_bounds (text);
 		break;
 
 	case PROP_Y:
 		text->y = g_value_get_double (value);
-		recalc_bounds (text);
 		break;
 
 	case PROP_FONT: {
@@ -911,7 +893,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		}
 		
 		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -931,7 +912,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->scale_set = TRUE;
 		
 		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 		
@@ -939,7 +919,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->scale_set = g_value_get_boolean (value);
 		
 		gnome_canvas_text_apply_font_desc (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;		
 		
@@ -948,7 +927,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->underline_set = TRUE;
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -956,7 +934,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->underline_set = g_value_get_boolean (value);
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -965,7 +942,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->strike_set = TRUE;
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -973,7 +949,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->strike_set = g_value_get_boolean (value);
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -982,7 +957,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->rise_set = TRUE;
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -990,7 +964,6 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->rise_set = TRUE;
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
@@ -1001,13 +974,11 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->attr_list = g_value_peek_pointer (value);
 		
 		gnome_canvas_text_apply_attributes (text);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_ANCHOR:
 		text->anchor = g_value_get_enum (value);
-		recalc_bounds (text);
 		break;
 
 	case PROP_JUSTIFICATION:
@@ -1029,36 +1000,30 @@ gnome_canvas_text_set_property (GObject            *object,
 			break;
 		}		  
 		pango_layout_set_alignment (text->layout, align);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_WIDTH:
 		text->clip_width = fabs (g_value_get_double (value));
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_HEIGHT:
 		text->clip_height = fabs (g_value_get_double (value));
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP:
 		text->clip = g_value_get_boolean (value);
-		recalc_bounds (text);
 		text->priv->render_dirty = 1;
 		break;
 
 	case PROP_X_OFFSET:
 		text->xofs = g_value_get_double (value);
-		recalc_bounds (text);
 		break;
 
 	case PROP_Y_OFFSET:
 		text->yofs = g_value_get_double (value);
-		recalc_bounds (text);
 		break;
 
         case PROP_FILL_COLOR: {
@@ -1378,7 +1343,6 @@ gnome_canvas_text_set_font_desc (GnomeCanvasText      *text,
 		text->font_desc = NULL;
 
 	gnome_canvas_text_apply_font_desc (text);
-	recalc_bounds (text);
 	text->priv->render_dirty = 1;
 }
 

@@ -1,3 +1,12 @@
+2001-12-12  Alexander Larsson  <alla@lysator.liu.se>
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_font_desc):
+	Fix the text item redraw error. It was setting the bbox
+	without calling gnome_canvas_update_bbox(), so the old bbox
+	was never repainted. Solved by removing the bogus recalc_bounds()
+	function. That is handled by gnome_canvas_item_request_update()
+	anyway.
+	
 2001-12-11  Alex Larsson  <alexl@redhat.com>
 
 	* gnome-canvas-text.c (gnome_canvas_text_set_property):
