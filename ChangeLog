@@ -1,3 +1,7 @@
+2004-08-13  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Added nb to ALL_LINGUAS.
+
 2004-07-09  Sven Herzberg  <herzi@gnome-de.org>
 
 	* libgnomecanvas/gnome-canvas-util.h: fixed an error when compiling
