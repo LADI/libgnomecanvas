@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.5.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-24 14:00+0100\n"
-"PO-Revision-Date: 2004-01-24 13:34+0100\n"
+"POT-Creation-Date: 2004-01-24 23:50+0100\n"
+"PO-Revision-Date: 2004-01-24 23:43+0100\n"
 "Last-Translator: Christophe Merlet (RedFox) <christophe@merlet.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Police"
 
 #: libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Description de la police comme une chaîne"
+msgstr "Description de la police en tant que chaîne"
 
 #: libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
@@ -189,7 +189,7 @@ msgstr "Indique si cette balise affecte la famille de la police"
 
 #: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "Style de police défini"
+msgstr "Style de la police défini"
 
 #: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
@@ -197,7 +197,7 @@ msgstr "Indique si cette balise affecte le style de la police"
 
 #: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "Variante de police définie"
+msgstr "Variante de la police définie"
 
 #: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
@@ -205,7 +205,7 @@ msgstr "Indique si cette balise affecte la variante de la police"
 
 #: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Épaisseur de police définie"
+msgstr "Épaisseur de la police définie"
 
 #: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
@@ -213,15 +213,15 @@ msgstr "Indique si cette balise affecte l'épaisseur de la police"
 
 #: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Étirement de police défini"
+msgstr "Étirement de la police défini"
 
 #: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Indique si cette police affecte l'étirement de la police"
+msgstr "Indique si cette balise affecte l'étirement de la police"
 
 #: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Taille de police définie"
+msgstr "Taille de la police définie"
 
 #: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
@@ -329,11 +329,11 @@ msgstr "La hauteur de la zone de texte s'ajuste-t-elle à la taille du texte ?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
-msgstr "Mode de retour à la ligne"
+msgstr "Mode de coupure"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr "Mode de retour à la ligne pour texte multiligne"
+msgstr "Mode de coupure pour le texte multiligne"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
