@@ -1,3 +1,9 @@
+2001-12-07 Marc Mulcahy <marc.mulcahy@sun.com>
+
+	* gnome-canvas-rich-text.(ch): Added
+	gnome_canvas_rich_text_get_iter_location and
+	gnome_canvas_rich_text_get_iter_at_location
+
 2001-12-06  jacob berkman  <jacob@ximian.com>
 
 	* gnome-canvas.c (gnome_canvas_get_property): 

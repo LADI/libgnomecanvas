@@ -64,6 +64,15 @@ void gnome_canvas_rich_text_set_buffer(GnomeCanvasRichText *text,
 				       GtkTextBuffer *buffer);
 
 GtkTextBuffer *gnome_canvas_rich_text_get_buffer(GnomeCanvasRichText *text);
+void
+gnome_canvas_rich_text_get_iter_location (GnomeCanvasRichText *text,
+					  const GtkTextIter *iter,
+					  GdkRectangle      *location);
+void
+gnome_canvas_rich_text_get_iter_at_location (GnomeCanvasRichText *text,
+                                    GtkTextIter *iter,
+                                    gint         x,
+					     gint         y);
 
 G_END_DECLS
 

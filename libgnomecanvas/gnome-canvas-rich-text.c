@@ -1652,6 +1652,34 @@ gnome_canvas_rich_text_get_buffer(GnomeCanvasRichText *text)
 	return get_buffer(text);
 } /* gnome_canvas_rich_text_get_buffer */
 
+void
+gnome_canvas_rich_text_get_iter_location (GnomeCanvasRichText *text,
+					  const GtkTextIter *iter,
+					  GdkRectangle      *location)
+{
+  g_return_if_fail (GNOME_IS_CANVAS_RICH_TEXT (text));
+  g_return_if_fail (gtk_text_iter_get_buffer (iter) == text->_priv->buffer);
+
+  gtk_text_layout_get_iter_location (text->_priv->layout, iter, location);
+}
+
+void
+gnome_canvas_rich_text_get_iter_at_location (GnomeCanvasRichText *text,
+                                    GtkTextIter *iter,
+                                    gint         x,
+                                    gint         y)
+{
+  g_return_if_fail (GNOME_IS_CANVAS_RICH_TEXT (text));
+  g_return_if_fail (iter != NULL);
+  g_return_if_fail (text->_priv->layout != NULL);
+
+  gtk_text_layout_get_iter_at_pixel (text->_priv->layout,
+                                     iter,
+                                     x,
+                                     y);
+}
+
+
 static void
 gnome_canvas_rich_text_set_attributes_from_style(GnomeCanvasRichText *text,
 						 GtkTextAttributes *values,
