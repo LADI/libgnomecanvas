@@ -23,9 +23,7 @@ INCLUDES = \
         -DGNOMECANVASPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
         -DGNOMECANVASBINDIR=\""$(bindir)"\" 		\
         -DGNOMECANVASLOCALSTATEDIR=\""$(localstatedir)"\" 	\
-        -DGNOMECANVASLOCALEDIR=\""$(gnomelocaledir)"\" 	\
-	-DG_LOG_DOMAIN=\"GnomeCanvas\"			\
-	-DVERSION=\"$(VERSION)\"
+	-DG_LOG_DOMAIN=\"GnomeCanvas\"
 
 lib_LTLIBRARIES = libgnomecanvas-2.la
 
@@ -85,6 +83,8 @@ gnome-canvas-marshal.h: gnome-canvas-marshal.list $(GLIB_GENMARSHAL)
 	$(GLIB_GENMARSHAL) $< --header --prefix=gnome_canvas_marshal > $@
 gnome-canvas-marshal.c: gnome-canvas-marshal.list $(GLIB_GENMARSHAL)
 	$(GLIB_GENMARSHAL) $< --body --prefix=gnome_canvas_marshal > $@
+
+CLEANFILES = $(marshal_sources)
 
 EXTRA_DIST = \
 	gnome-canvas-marshal.list	\
