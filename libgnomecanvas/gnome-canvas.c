@@ -3627,7 +3627,9 @@ get_visible_region (GnomeCanvas *canvas, ArtIRect *visible)
 /**
  * gnome_canvas_request_redraw_uta:
  * @canvas: A canvas.
- * @uta: Microtile array that specifies the area to be redrawn.
+ * @uta: Microtile array that specifies the area to be redrawn.  It will
+ * be freed by this function, so the argument you pass will be invalid
+ * after you call this function.
  *
  * Informs a canvas that the specified area, given as a microtile array, needs
  * to be repainted.  To be used only by item implementations.
@@ -3641,8 +3643,10 @@ gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (uta != NULL);
 
-	if (!GTK_WIDGET_DRAWABLE (canvas))
+	if (!GTK_WIDGET_DRAWABLE (canvas)) {
+		art_uta_free (uta);
 		return;
+	}
 
 	get_visible_region (canvas, &visible);
 

@@ -209,7 +209,7 @@ highlight_box (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 					GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
 					fleur,
 					event->button.time);
-		gdk_cursor_destroy (fleur);
+		gdk_cursor_unref (fleur);
 		break;
 
 	case GDK_BUTTON_RELEASE:

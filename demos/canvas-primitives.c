@@ -36,11 +36,13 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 				y = item_y;
 
 				fleur = gdk_cursor_new (GDK_FLEUR);
+#if 0
 				gnome_canvas_item_grab (item,
 							GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
 							fleur,
 							event->button.time);
-				gdk_cursor_destroy (fleur);
+#endif
+				gdk_cursor_unref (fleur);
 				dragging = TRUE;
 			}
 			break;
