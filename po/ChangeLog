@@ -1,3 +1,7 @@
+2003-04-29  Abel Cheung  <maddog@linux.org.hk>
+
+	* hi.po: Fix header (msgfmt check failed).
+
 2003-03-26  Christian Rose  <menthos@menthos.com>
 
 	* yi.po: Added Yiddish translation by
