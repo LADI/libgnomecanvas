@@ -1930,6 +1930,7 @@ gnome_canvas_rich_text_draw(GnomeCanvasItem *item, GdkDrawable *drawable,
 		text->_priv->layout,
 		GTK_WIDGET(item->canvas),
 		drawable,
+		GTK_WIDGET (item->canvas)->style->text_gc[GTK_STATE_NORMAL],
 		x - x1, y - y1,
 		0, 0, (x2 - x1) - (x - x1), (y2 - y1) - (y - y1));
 } /* gnome_canvas_rich_text_draw */

@@ -1,3 +1,10 @@
+Tue Sep 25 23:00:43 2001  Jonathan Blandford  <jrb@redhat.com>
+
+	* gnome-canvas-rich-text.c (gnome_canvas_rich_text_draw): modify
+	to match change in gtk_text_layout_draw.  Arbitrarily chose
+	GTK_WIDGET (item->canvas)->style->text_gc[GTK_STATE_NORMAL] to be
+	the cursor_gc.
+
 2001-09-25  Matt Wilson  <msw@redhat.com>
 
 	* gnome-canvas-line.c (get_bounds): if there are no coordinates,
