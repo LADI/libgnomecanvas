@@ -1,3 +1,7 @@
+Tue Sep 04 16:42:30 2001  George Lebl <jirka@5z.com>
+
+	* configure.in: remove CERTIFIED_GNOMIE bullshit
+
 2001-09-04  Richard Hult  <rhult@codefactory.se>
 
 	* configure.in: Bumped version number to 1.103.0.
