@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tamil Libgnomecanvas 1.7\n"
-"POT-Creation-Date: 2002-01-10 12:39+0100\n"
+"POT-Creation-Date: 2002-01-27 11:25+0100\n"
 "PO-Revision-Date: 2001-10-09 11:09-0500\n"
 "Last-Translator: Dinesh Nadarajah <n_dinesh@yahoo.com>\n"
 "Language-Team: Tamil <tamilinux@yahoogroups.com>\n"
@@ -14,20 +14,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # libgnomecanvas/gnome-canvas.c:1519 libgnomecanvas/gnome-canvas.c:1520
-#: libgnomecanvas/gnome-canvas.c:1392 libgnomecanvas/gnome-canvas.c:1393
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
 msgid "X"
 msgstr "Å¡¢¨º(X)"
 
 # libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
-#: libgnomecanvas/gnome-canvas.c:1399 libgnomecanvas/gnome-canvas.c:1400
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
 msgid "Y"
 msgstr "¦¿ÎÅ¡¢¨º(Y)"
 
-#: libgnomecanvas/gnome-canvas.c:2041
+#: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
 msgstr ""
 
-#: libgnomecanvas/gnome-canvas.c:2042
+#: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
 msgstr ""
 

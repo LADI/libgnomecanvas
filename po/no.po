@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2002-01-10 12:39+0100\n"
+"POT-Creation-Date: 2002-01-27 11:25+0100\n"
 "PO-Revision-Date: 2001-12-14 22:23+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -13,19 +13,19 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1392 libgnomecanvas/gnome-canvas.c:1393
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1399 libgnomecanvas/gnome-canvas.c:1400
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2041
+#: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
 msgstr "Antialias-modus"
 
-#: libgnomecanvas/gnome-canvas.c:2042
+#: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
 msgstr "Antialias-modus for canvas."
 

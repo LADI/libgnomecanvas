@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-01-18 13:39+0200\n"
+"POT-Creation-Date: 2002-01-27 11:25+0100\n"
 "PO-Revision-Date: 2002-01-18 12:38+0200\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -59,9 +59,7 @@ msgstr "Опис шрифту"
 
 #: libgnomecanvas/gnome-canvas-text.c:248
 msgid "Font description as a PangoFontDescription struct"
-msgstr ""
-"Опис шрифту у вигляді структури "
-"PangoFontDescription"
+msgstr "Опис шрифту у вигляді структури PangoFontDescription"
 
 #: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Font family"
@@ -69,9 +67,7 @@ msgstr "Ґарнітура"
 
 #: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr ""
-"Назва ґарнітури, наприклад Sans, Helvetica, Times, "
-"Monospace"
+msgstr "Назва ґарнітури, наприклад Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
@@ -137,8 +133,7 @@ msgstr "Масштаб"
 
 #: libgnomecanvas/gnome-canvas-text.c:368
 msgid "Size of font, relative to default size"
-msgstr ""
-"Розмір шрифту відносно типового розміру"
+msgstr "Розмір шрифту відносно типового розміру"
 
 #: libgnomecanvas/gnome-canvas-text.c:422
 #: libgnomecanvas/gnome-canvas-text.c:430
@@ -156,9 +151,7 @@ msgstr "Колір тексту у вигляді GdkColor"
 
 #: libgnomecanvas/gnome-canvas-text.c:439
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr ""
-"Колір тексту у вигляді складеного цілого "
-"з Ч/З/С/А"
+msgstr "Колір тексту у вигляді складеного цілого з Ч/З/С/А"
 
 #: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Text width"

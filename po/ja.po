@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.108.0\n"
-"POT-Creation-Date: 2002-01-10 12:39+0100\n"
+"POT-Creation-Date: 2002-01-27 11:25+0100\n"
 "PO-Revision-Date: 2001-12-25 23:44+0900\n"
 "Last-Translator: Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
@@ -15,19 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=euc-jp\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1392 libgnomecanvas/gnome-canvas.c:1393
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1399 libgnomecanvas/gnome-canvas.c:1400
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2041
+#: libgnomecanvas/gnome-canvas.c:2039
 msgid "Antialiased"
 msgstr "アンチエイリアス"
 
-#: libgnomecanvas/gnome-canvas.c:2042
+#: libgnomecanvas/gnome-canvas.c:2040
 msgid "The antialiasing mode of the canvas."
 msgstr "キャンバスのアンチエイリアスのモード"
 
