@@ -752,6 +752,8 @@ create_canvas_primitives (gint aa)
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 	gtk_widget_show (hbox);
 
+	/* Create the canvas */
+
 	if (aa) {
 		gtk_widget_push_visual (gdk_rgb_get_visual ());
 		gtk_widget_push_colormap (gdk_rgb_get_cmap ());
@@ -761,6 +763,33 @@ create_canvas_primitives (gint aa)
 		gtk_widget_push_colormap (gdk_imlib_get_colormap ());
 		canvas = gnome_canvas_new ();
 	}
+
+	/* Setup canvas items */
+
+	root = gnome_canvas_root (GNOME_CANVAS (canvas));
+
+	setup_divisions (root);
+	setup_rectangles (root);
+	setup_ellipses (root);
+	setup_texts (root);
+	setup_images (root, aa);
+	setup_lines (root);
+	setup_polygons (root);
+	setup_widgets (root);
+
+#if 0
+	{
+		double affine[6];
+
+#if 1
+		art_affine_rotate (affine, 15);
+#else
+		art_affine_scale (affine, 1.5, 0.7);
+#endif
+		gnome_canvas_item_affine_relative (root, affine);
+	}
+#endif
+
 	gtk_widget_pop_colormap ();
 	gtk_widget_pop_visual ();
 
@@ -779,7 +808,7 @@ create_canvas_primitives (gint aa)
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
-	/* Canvas and scrollbars */
+	/* Layout the stuff */
 
 	table = gtk_table_new (2, 2, FALSE);
 	gtk_table_set_row_spacings (GTK_TABLE (table), 4);
@@ -820,32 +849,6 @@ create_canvas_primitives (gint aa)
 			  GTK_EXPAND | GTK_FILL | GTK_SHRINK,
 			  0, 0);
 	gtk_widget_show (w);
-
-	/* Setup canvas items */
-
-	root = gnome_canvas_root (GNOME_CANVAS (canvas));
-
-	setup_divisions (root);
-	setup_rectangles (root);
-	setup_ellipses (root);
-	setup_texts (root);
-	setup_images (root, aa);
-	setup_lines (root);
-	setup_polygons (root);
-	setup_widgets (root);
-
-#if 0
-	{
-		double affine[6];
-
-#if 1
-		art_affine_rotate (affine, 15);
-#else
-		art_affine_scale (affine, 1.5, 0.7);
-#endif
-		gnome_canvas_item_affine_relative (root, affine);
-	}
-#endif
 
 	GTK_WIDGET_SET_FLAGS (canvas, GTK_CAN_FOCUS);
 	gtk_widget_grab_focus (canvas);
