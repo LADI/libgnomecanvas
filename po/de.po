@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas (cvs)\n"
-"POT-Creation-Date: 2003-08-25 20:26+0200\n"
+"POT-Creation-Date: 2003-11-24 11:22+0100\n"
 "PO-Revision-Date: 2002-07-05 12:02+0200\n"
 "Last-Translator: Manuel Borchers <webmaster@matronix.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
