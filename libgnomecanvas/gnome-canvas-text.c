@@ -610,15 +610,6 @@ get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double
 	text->clip_cwidth = text->clip_width * item->canvas->pixels_per_unit;
 	text->clip_cheight = text->clip_height * item->canvas->pixels_per_unit;
 
-	/* Calculate text dimensions */
-
-	if (text->layout)
-	        pango_layout_get_pixel_size (text->layout,
-					     &text->max_width,
-					     &text->height);
-	else
-		text->height = 0;
-
 	/* Anchor text */
 
 	switch (text->anchor) {
@@ -1086,6 +1077,17 @@ gnome_canvas_text_set_property (GObject            *object,
 			set_text_gc_foreground (text);
 	}
 
+	/* Calculate text dimensions */
+
+	if (text->layout)
+	        pango_layout_get_pixel_size (text->layout,
+					     &text->max_width,
+					     &text->height);
+	else {
+		text->max_width = 0;
+		text->height = 0;
+	}
+	
 	gnome_canvas_item_request_update (item);
 }
 
