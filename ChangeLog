@@ -1,3 +1,9 @@
+2004-07-09  Sven Herzberg  <herzi@gnome-de.org>
+
+	* libgnomecanvas/gnome-canvas-util.h: fixed an error when compiling
+	third party software that doesn't include gnome-canvas.h before
+	gnome-canvas-util.h
+
 ==================== 2.7.1 ====================
 
 2004-05-31  Anders Carlsson  <andersca@gnome.org>
