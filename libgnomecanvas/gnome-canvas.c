@@ -101,6 +101,7 @@ static void group_add                   (GnomeCanvasGroup *group,
 					 GnomeCanvasItem  *item);
 static void group_remove                (GnomeCanvasGroup *group,
 					 GnomeCanvasItem  *item);
+static void add_idle                    (GnomeCanvas      *canvas);
 
 
 /*** GnomeCanvasItem ***/
@@ -2245,6 +2246,9 @@ gnome_canvas_map (GtkWidget *widget)
 
 	canvas = GNOME_CANVAS (widget);
 
+	if (canvas->need_update)
+		add_idle (canvas);
+
 	/* Map items */
 
 	if (GNOME_CANVAS_ITEM_GET_CLASS (canvas->root)->map)
@@ -3505,13 +3509,12 @@ gnome_canvas_request_update (GnomeCanvas *canvas)
 static void
 gnome_canvas_request_update_real (GnomeCanvas *canvas)
 {
-	if (canvas->need_update) {
-		g_assert (canvas->idle_id != 0);
+	if (canvas->need_update)
 		return;
-	}
 
 	canvas->need_update = TRUE;
-	add_idle (canvas);
+	if (GTK_WIDGET_MAPPED ((GtkWidget *) canvas))
+		add_idle (canvas);
 }
 
 /* Computes the union of two microtile arrays while clipping the result to the
