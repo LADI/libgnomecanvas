@@ -1007,6 +1007,7 @@ gnome_canvas_item_grab (GnomeCanvasItem *item, guint event_mask, GdkCursor *curs
 
 	item->canvas->grabbed_item = item;
 	item->canvas->grabbed_event_mask = event_mask;
+	item->canvas->current_item = item; /* So that events go to the grabbed item */
 
 	return retval;
 }
@@ -1201,45 +1202,34 @@ gnome_canvas_item_reparent (GnomeCanvasItem *item, GnomeCanvasGroup *new_group)
 void
 gnome_canvas_item_grab_focus (GnomeCanvasItem *item)
 {
+	GnomeCanvasItem *focused_item;
 	GdkEvent ev;
 
 	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
 	g_return_if_fail (GTK_WIDGET_CAN_FOCUS (GTK_WIDGET (item->canvas)));
 
-	/* If we have to grab focus, the GDK_FOCUS_CHANGE event that
-	 * comes in from GTK will suffice so we don't need to send any
-	 * events of our own. Also, it doesn't matter what the old
-	 * value of focused_item is, since the canvas itself wasn't
-	 * focused.
-	 */
-	if (! GTK_WIDGET_HAS_FOCUS (GTK_WIDGET (item->canvas))) {
-		item->canvas->focused_item = item;
-		gtk_widget_grab_focus (GTK_WIDGET (item->canvas));
-		return;
-	}
-	
-	/* If the canvas is focused and the correct item is focused,
-	 * we have no work to do.
-	 */
-	if (item->canvas->focused_item == item)
-		return;
+	focused_item = item->canvas->focused_item;
 
-	/* Send focus change events explicitly, since we aren't
-	 * changing the focus at the GTK level.
-	 */
-	ev.focus_change.type = GDK_FOCUS_CHANGE;
-	ev.focus_change.window = GTK_LAYOUT (item->canvas)->bin_window;
-	ev.focus_change.send_event = FALSE;
-	
-	if (item->canvas->focused_item) {
+	if (focused_item) {
+		ev.focus_change.type = GDK_FOCUS_CHANGE;
+		ev.focus_change.window = GTK_LAYOUT (item->canvas)->bin_window;
+		ev.focus_change.send_event = FALSE;
 		ev.focus_change.in = FALSE;
+
 		emit_event (item->canvas, &ev);
 	}
-	
+
 	item->canvas->focused_item = item;
-	
-	ev.focus_change.in = TRUE;
-	emit_event (item->canvas, &ev);
+	gtk_widget_grab_focus (GTK_WIDGET (item->canvas));
+
+	if (focused_item) {                                                     
+		ev.focus_change.type = GDK_FOCUS_CHANGE;                        
+		ev.focus_change.window = GTK_LAYOUT (item->canvas)->bin_window;
+		ev.focus_change.send_event = FALSE;                             
+		ev.focus_change.in = TRUE;                                      
+
+		emit_event (item->canvas, &ev);                          
+	}                               
 }
 
 
@@ -2505,6 +2495,61 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 	GnomeCanvasItem *item;
 	GnomeCanvasItem *parent;
 	guint mask;
+        guint signal_num;
+
+	/* Perform checks for grabbed items */
+
+	if (canvas->grabbed_item &&
+	    !is_descendant (canvas->current_item, canvas->grabbed_item)) {
+                g_warning ("emit_event() returning FALSE!\n");
+		return FALSE;
+        }
+
+        signal_num = -1;
+
+	if (canvas->grabbed_item) {
+		switch (event->type) {
+		case GDK_ENTER_NOTIFY:
+			mask = GDK_ENTER_NOTIFY_MASK;
+			break;
+
+		case GDK_LEAVE_NOTIFY:
+			mask = GDK_LEAVE_NOTIFY_MASK;
+			break;
+
+		case GDK_MOTION_NOTIFY:
+			mask = GDK_POINTER_MOTION_MASK;
+			break;
+
+		case GDK_BUTTON_PRESS:
+		case GDK_2BUTTON_PRESS:
+		case GDK_3BUTTON_PRESS:
+			mask = GDK_BUTTON_PRESS_MASK;
+			break;
+
+		case GDK_BUTTON_RELEASE:
+			mask = GDK_BUTTON_RELEASE_MASK;
+			break;
+
+		case GDK_KEY_PRESS:
+                        signal_num = ITEM_KEY_PRESS_EVENT;
+			mask = GDK_KEY_PRESS_MASK;
+			break;
+
+		case GDK_KEY_RELEASE:
+                        signal_num = ITEM_KEY_RELEASE_EVENT;
+			mask = GDK_KEY_RELEASE_MASK;
+			break;
+
+		default:
+                        signal_num = -1;
+			mask = 0;
+			break;
+		}
+
+		if (!(mask & canvas->grabbed_event_mask))
+			return FALSE;
+	}
 
 	/* Convert to world coordinates -- we have two cases because of diferent
 	 * offsets of the fields in the event structures.
@@ -2554,43 +2599,6 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 		(event->type == GDK_KEY_RELEASE) ||
 		(event->type == GDK_FOCUS_CHANGE)))
 		item = canvas->focused_item;
-
-	if (canvas->grabbed_item) {
-		switch (event->type) {
-		case GDK_ENTER_NOTIFY:
-			mask = GDK_ENTER_NOTIFY_MASK;
-			break;
-
-		case GDK_LEAVE_NOTIFY:
-			mask = GDK_LEAVE_NOTIFY_MASK;
-			break;
-
-		case GDK_MOTION_NOTIFY:
-			mask = GDK_POINTER_MOTION_MASK;
-			break;
-
-		case GDK_BUTTON_PRESS:
-		case GDK_2BUTTON_PRESS:
-		case GDK_3BUTTON_PRESS:
-			mask = GDK_BUTTON_PRESS_MASK;
-			break;
-
-		case GDK_BUTTON_RELEASE:
-			mask = GDK_BUTTON_RELEASE_MASK;
-			break;
-
-		default:
-			mask = 0;
-			break;
-		}
-
-		if (mask) {
-			if (mask & canvas->grabbed_event_mask)
-				item = canvas->grabbed_item;
-			else
-				item = NULL;
-		}
-	}
 
 	/* The event is propagated up the hierarchy (for if someone connected to
 	 * a group instead of a leaf event), and emission is stopped if a
