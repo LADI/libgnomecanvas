@@ -6,19 +6,20 @@
 #
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch> 2001
-# Pablo Saratxaga <pablo@walon.org>, 2003.
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas2 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 11:44+0100\n"
-"PO-Revision-Date: 2003-07-12 03:51+0200\n"
-"Last-Translator: Pablo Saratxaga <pablo@mandrakesoft.com>\n"
-"Language-Team: Walon <linux-wa@chanae.alphanet.ch>\n"
+"POT-Creation-Date: 2004-04-06 20:00+0200\n"
+"PO-Revision-Date: 2004-04-06 21:16+0200\n"
+"Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
 
 #: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
@@ -117,8 +118,7 @@ msgid "Rise"
 msgstr "Hôteu"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Eplaeçmint e hôteu pa rapoirt al roye di båze pol tecse (å dzo del roye si "
 "l' valixhance est negative)"
@@ -129,7 +129,7 @@ msgstr "Båré"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "Bårer li tecse d' ene roye å d' truviè"
+msgstr "Bårer li tecse d' ene roye åd triviè"
 
 #: libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
@@ -310,18 +310,16 @@ msgid "Cursor Visible"
 msgstr "Cursoe veyåve"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:266
-#, fuzzy
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Est çki l' cursoe est veyåve dins ç' cayet di tecse eritchî chal?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:273
 msgid "Cursor Blink"
-msgstr ""
+msgstr "Gligntant cursoe"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:274
-#, fuzzy
 msgid "Does the cursor blink in this rich text item?"
-msgstr "Est çki l' cursoe est veyåve dins ç' cayet di tecse eritchî chal?"
+msgstr "Est çki l' cursoe gligntêye dins ç' cayet di tecse eritchî chal?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:281
 msgid "Grow Height"
@@ -412,3 +410,4 @@ msgstr "Ritrait"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Nombe di picsels pol ritrait"
+
