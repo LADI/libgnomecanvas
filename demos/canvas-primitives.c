@@ -86,58 +86,6 @@ setup_item (GnomeCanvasItem *item)
 			    NULL);
 }
 
-#define SCROLL_DIST 5
-
-static void
-scroll (GtkWidget *widget, gpointer data)
-{
-	GtkArrowType type;
-	GnomeCanvas *canvas;
-	int dx, dy;
-
-	type = GPOINTER_TO_INT (gtk_object_get_user_data (GTK_OBJECT (widget)));
-	canvas = data;
-
-	dx = 0;
-	dy = 0;
-
-	switch (type) {
-	case GTK_ARROW_LEFT:
-		dx = -SCROLL_DIST;
-		break;
-
-	case GTK_ARROW_RIGHT:
-		dx = SCROLL_DIST;
-		break;
-
-	case GTK_ARROW_UP:
-		dy = -SCROLL_DIST;
-		break;
-
-	case GTK_ARROW_DOWN:
-		dy = SCROLL_DIST;
-		break;
-	}
-
-	gnome_canvas_scroll_to (canvas, canvas->display_x1 + dx, canvas->display_y1 + dy);
-}
-
-static GtkWidget *
-make_arrow (GtkArrowType type, gpointer data)
-{
-	GtkWidget *w;
-
-	w = gtk_button_new ();
-	gtk_signal_connect (GTK_OBJECT (w), "clicked",
-			    (GtkSignalFunc) scroll,
-			    data);
-	gtk_container_add (GTK_CONTAINER (w), gtk_arrow_new (type, GTK_SHADOW_IN));
-	gtk_object_set_user_data (GTK_OBJECT (w), GINT_TO_POINTER (type));
-	gtk_widget_show_all (w);
-
-	return w;
-}
-
 static void
 setup_heading (GnomeCanvasGroup *root, char *text, int pos)
 {
@@ -575,6 +523,7 @@ create_canvas_primitives (void)
 {
 	GtkWidget *vbox;
 	GtkWidget *hbox;
+	GtkWidget *table;
 	GtkWidget *w;
 	GtkWidget *frame;
 	GtkWidget *canvas;
@@ -595,7 +544,11 @@ create_canvas_primitives (void)
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 	gtk_widget_show (hbox);
 
-	canvas = gnome_canvas_new (gdk_imlib_get_visual (), gdk_imlib_get_colormap ());
+	gtk_widget_push_visual (gdk_imlib_get_visual ());
+	gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+	canvas = gnome_canvas_new ();
+	gtk_widget_pop_colormap ();
+	gtk_widget_pop_visual ();
 
 	/* Zoom */
 
@@ -612,23 +565,45 @@ create_canvas_primitives (void)
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
-	/* Scroll buttons */
+	/* Canvas and scrollbars */
 
-	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_LEFT, canvas), FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_DOWN, canvas), FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_UP, canvas), FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (hbox), make_arrow (GTK_ARROW_RIGHT, canvas), FALSE, FALSE, 0);
-
-	/* Canvas */
+	table = gtk_table_new (2, 2, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 4);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 4);
+	gtk_box_pack_start (GTK_BOX (vbox), table, TRUE, TRUE, 0);
+	gtk_widget_show (table);
 
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-	gtk_box_pack_start (GTK_BOX (vbox), frame, TRUE, TRUE, 0);
+	gtk_table_attach (GTK_TABLE (table), frame,
+			  0, 1, 0, 1,
+			  GTK_EXPAND | GTK_FILL | GTK_SHRINK,
+			  GTK_EXPAND | GTK_FILL | GTK_SHRINK,
+			  0, 0);
 	gtk_widget_show (frame);
 
 	gnome_canvas_set_size (GNOME_CANVAS (canvas), 600, 450);
+	gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas), 0, 0, 600, 450);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
+
+	w = gtk_hscrollbar_new (GTK_LAYOUT (canvas)->hadjustment);
+	gtk_table_attach (GTK_TABLE (table), w,
+			  0, 1, 1, 2,
+			  GTK_EXPAND | GTK_FILL | GTK_SHRINK,
+			  GTK_FILL,
+			  0, 0);
+	gtk_widget_show (w);
+
+	w = gtk_vscrollbar_new (GTK_LAYOUT (canvas)->vadjustment);
+	gtk_table_attach (GTK_TABLE (table), w,
+			  1, 2, 0, 1,
+			  GTK_FILL,
+			  GTK_EXPAND | GTK_FILL | GTK_SHRINK,
+			  0, 0);
+	gtk_widget_show (w);
+
+	/* Setup canvas items */
 
 	root = GNOME_CANVAS_GROUP (gnome_canvas_root (GNOME_CANVAS (canvas)));
 

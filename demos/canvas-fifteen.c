@@ -199,7 +199,7 @@ create_canvas_fifteen (void)
 
 	/* Create the canvas and board */
 
-	canvas = gnome_canvas_new (gtk_widget_get_default_visual (), gtk_widget_get_default_colormap ());
+	canvas = gnome_canvas_new ();
 	gnome_canvas_set_size (GNOME_CANVAS (canvas), PIECE_SIZE * 4 + 1, PIECE_SIZE * 4 + 1);
 	gtk_container_add (GTK_CONTAINER (frame), canvas);
 	gtk_widget_show (canvas);
