@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas HEAD\n"
-"POT-Creation-Date: 2003-02-05 19:53+0100\n"
+"POT-Creation-Date: 2003-03-27 12:45+0100\n"
 "PO-Revision-Date: 2003-02-06 10:27+0700\n"
 "Last-Translator: Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Language-Team: Indonesia <id@li.org>\n"
@@ -14,21 +14,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1400 libgnomecanvas/gnome-canvas.c:1401
+#: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
 #: libgnomecanvas/gnome-canvas-rich-text.c:217
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1407 libgnomecanvas/gnome-canvas.c:1408
+#: libgnomecanvas/gnome-canvas.c:1408 libgnomecanvas/gnome-canvas.c:1409
 #: libgnomecanvas/gnome-canvas-rich-text.c:225
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2052
+#: libgnomecanvas/gnome-canvas.c:2053
 msgid "Antialiased"
 msgstr "Antialias"
 
-#: libgnomecanvas/gnome-canvas.c:2053
+#: libgnomecanvas/gnome-canvas.c:2054
 msgid "The antialiasing mode of the canvas."
 msgstr "Mode antialias untuk kanvas"
 
@@ -114,7 +114,8 @@ msgstr "Angkat"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Jarak dari garis batas bawah font (bila dibawah garis, maka nilai bernilai negatif)"
+"Jarak dari garis batas bawah font (bila dibawah garis, maka nilai bernilai "
+"negatif)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -320,7 +321,9 @@ msgstr "Tinggi bisa disesuaikan sendiri"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Apakah tinggi kotak teks bisa berubah ukurannya sendiri bila teksnya tidak cukup?"
+msgstr ""
+"Apakah tinggi kotak teks bisa berubah ukurannya sendiri bila teksnya tidak "
+"cukup?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
@@ -328,7 +331,9 @@ msgstr "Potong Kalimat"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap mode for multiline text"
-msgstr "Memotong kalimat bila terlalu panjang pada teks yang memiliki baris lebih dari satu"
+msgstr ""
+"Memotong kalimat bila terlalu panjang pada teks yang memiliki baris lebih "
+"dari satu"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:298
 msgid "Justification"
