@@ -42,7 +42,7 @@ enum {
 	PROP_WIND
 };
 
-static void gnome_canvas_clipgroup_class_init      (GnomeCanvasClipgroupClass *class);
+static void gnome_canvas_clipgroup_class_init      (GnomeCanvasClipgroupClass *klass);
 static void gnome_canvas_clipgroup_init            (GnomeCanvasClipgroup      *clipgroup);
 static void gnome_canvas_clipgroup_destroy         (GtkObject                 *object);
 static void gnome_canvas_clipgroup_set_property    (GObject                   *object,
@@ -84,17 +84,21 @@ gnome_canvas_clipgroup_get_type (void)
 }
 
 static void
-gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *class)
+gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *klass)
 {
         GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
 
-        gobject_class = (GObjectClass *) class;
-	object_class = (GtkObjectClass *) class;
-	item_class = (GnomeCanvasItemClass *) class;
+        gobject_class = (GObjectClass *) klass;
+	object_class = (GtkObjectClass *) klass;
+	item_class = (GnomeCanvasItemClass *) klass;
+	parent_class = g_type_class_ref (GNOME_TYPE_CANVAS_GROUP);
 
-	parent_class = gtk_type_class (gnome_canvas_group_get_type ());
+	object_class->destroy	    = gnome_canvas_clipgroup_destroy;
+	gobject_class->set_property = gnome_canvas_clipgroup_set_property;
+	gobject_class->get_property = gnome_canvas_clipgroup_get_property;
+	item_class->update	    = gnome_canvas_clipgroup_update;
 
         g_object_class_install_property (gobject_class,
                                          PROP_PATH,
@@ -105,13 +109,6 @@ gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *class)
                                          g_param_spec_uint ("wind", NULL, NULL,
                                                             0, G_MAXUINT, 0,
                                                             (G_PARAM_READABLE | G_PARAM_WRITABLE)));
-
-	object_class->destroy = gnome_canvas_clipgroup_destroy;
-
-	gobject_class->set_property = gnome_canvas_clipgroup_set_property;
-	gobject_class->get_property = gnome_canvas_clipgroup_get_property;
-
-	item_class->update = gnome_canvas_clipgroup_update;
 }
 
 static void

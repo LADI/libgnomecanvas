@@ -1,3 +1,10 @@
+2002-03-28  Jody Goldberg <jody@gnome.org>
+
+	* libgnomecanvas/gnome-canvas-clipgroup.c
+	(gnome_canvas_clipgroup_class_init) : assign virtuals _before_ you
+	  install properties.  While we're at it lets not use C++ keywords for
+	  no reason.
+
 2002-03-26  Wang Jian  <lark@linux.net.cn>
 
 	* configure.in: Added "zh_CN" to ALL_LINGUAS.
