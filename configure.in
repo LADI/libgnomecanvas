@@ -18,9 +18,6 @@ AC_PATH_PROGS(PATH_TO_XRDB, "xrdb")
 
 GNOME_COMPILE_WARNINGS
 
-dnl utility conditional
-AM_CONDITIONAL(FALSE, test "x" = "y")
-
 ALL_LINGUAS="az es fr it nn no ru sv ta tr wa zh_TW"
 AM_GLIB_GNU_GETTEXT
 
@@ -29,9 +26,6 @@ AC_SUBST(CPPFLAGS)
 AC_SUBST(LDFLAGS)
 
 GNOME_COMPILE_WARNINGS(maximum)
-
-dnl Utility conditional
-AM_CONDITIONAL(FALSE, test x = y)
 
 dnl
 dnl GTK+ check

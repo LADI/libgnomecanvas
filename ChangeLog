@@ -1,3 +1,7 @@
+2001-09-20  Frank Belew <frb@ximian.com>
+
+	* configure.in: removed AM_CONDITIONAL(FALSE...), both of them
+
 2001-09-18  Anders Carlsson  <andersca@gnu.org>
 
 	* COPYING.LIB: Add this file.
