@@ -1,0 +1,43 @@
+<!doctype book PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY libgnomecanvas-GnomeCanvasBpath SYSTEM "sgml/gnome-canvas-bpath.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasClipgroup SYSTEM "sgml/gnome-canvas-clipgroup.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasLine SYSTEM "sgml/gnome-canvas-line.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasPixbuf SYSTEM "sgml/gnome-canvas-pixbuf.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasPolygon SYSTEM "sgml/gnome-canvas-polygon.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasEllipse SYSTEM "sgml/gnome-canvas-rect-ellipse.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasRichText SYSTEM "sgml/gnome-canvas-rich-text.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasShape SYSTEM "sgml/gnome-canvas-shape.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasText SYSTEM "sgml/gnome-canvas-text.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvasWidget SYSTEM "sgml/gnome-canvas-widget.sgml">
+<!ENTITY libgnomecanvas-GnomeCanvas SYSTEM "sgml/gnome-canvas.sgml">
+<!ENTITY libgnomecanvas-gnome-canvas-i18n SYSTEM "sgml/gnome-canvas-i18n.sgml">
+<!ENTITY libgnomecanvas-gnome-canvas-marshal SYSTEM "sgml/gnome-canvas-marshal.sgml">
+<!ENTITY libgnomecanvas-gnome-canvas-path-def SYSTEM "sgml/gnome-canvas-path-def.sgml">
+<!ENTITY libgnomecanvas-gnome-canvas-util SYSTEM "sgml/gnome-canvas-util.sgml">
+<!ENTITY libgnomecanvas-libgnomecanvas SYSTEM "sgml/libgnomecanvas.sgml">
+]>
+<book id="index">
+  <bookinfo>
+    <title>[Insert name here] Reference Manual</title>
+  </bookinfo>
+
+  <chapter>
+    <title>[Insert title here]</title>
+    &libgnomecanvas-GnomeCanvasBpath;
+    &libgnomecanvas-GnomeCanvasClipgroup;
+    &libgnomecanvas-GnomeCanvasLine;
+    &libgnomecanvas-GnomeCanvasPixbuf;
+    &libgnomecanvas-GnomeCanvasPolygon;
+    &libgnomecanvas-GnomeCanvasEllipse;
+    &libgnomecanvas-GnomeCanvasRichText;
+    &libgnomecanvas-GnomeCanvasShape;
+    &libgnomecanvas-GnomeCanvasText;
+    &libgnomecanvas-GnomeCanvasWidget;
+    &libgnomecanvas-GnomeCanvas;
+    &libgnomecanvas-gnome-canvas-i18n;
+    &libgnomecanvas-gnome-canvas-marshal;
+    &libgnomecanvas-gnome-canvas-path-def;
+    &libgnomecanvas-gnome-canvas-util;
+    &libgnomecanvas-libgnomecanvas;
+  </chapter>
+</book>

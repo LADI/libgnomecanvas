@@ -1,0 +1,637 @@
+<!-- ##### SECTION Title ##### -->
+GnomeCanvas
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GNOME_CANVAS_EPSILON ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO GNOME_CANVAS_COLOR ##### -->
+<para>
+
+</para>
+
+@r: 
+@g: 
+@b: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_COLOR_A ##### -->
+<para>
+
+</para>
+
+@r: 
+@g: 
+@b: 
+@a: 
+
+
+<!-- ##### TYPEDEF GnomeCanvasBuf ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gnome_canvas_item_new ##### -->
+<para>
+
+</para>
+
+@parent: 
+@type: 
+@first_arg_name: 
+@Varargs: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_construct ##### -->
+<para>
+
+</para>
+
+@item: 
+@parent: 
+@first_arg_name: 
+@args: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_set ##### -->
+<para>
+
+</para>
+
+@item: 
+@first_arg_name: 
+@Varargs: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_set_valist ##### -->
+<para>
+
+</para>
+
+@item: 
+@first_arg_name: 
+@args: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_move ##### -->
+<para>
+
+</para>
+
+@item: 
+@dx: 
+@dy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_affine_relative ##### -->
+<para>
+
+</para>
+
+@item: 
+@affine: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_affine_absolute ##### -->
+<para>
+
+</para>
+
+@item: 
+@affine: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_scale ##### -->
+<para>
+
+</para>
+
+@item: 
+@x: 
+@y: 
+@scale_x: 
+@scale_y: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_rotate ##### -->
+<para>
+
+</para>
+
+@item: 
+@x: 
+@y: 
+@angle: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_raise ##### -->
+<para>
+
+</para>
+
+@item: 
+@positions: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_lower ##### -->
+<para>
+
+</para>
+
+@item: 
+@positions: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_raise_to_top ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_lower_to_bottom ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_show ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_hide ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_grab ##### -->
+<para>
+
+</para>
+
+@item: 
+@event_mask: 
+@cursor: 
+@etime: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_ungrab ##### -->
+<para>
+
+</para>
+
+@item: 
+@etime: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_w2i ##### -->
+<para>
+
+</para>
+
+@item: 
+@x: 
+@y: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_i2w ##### -->
+<para>
+
+</para>
+
+@item: 
+@x: 
+@y: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_i2w_affine ##### -->
+<para>
+
+</para>
+
+@item: 
+@affine: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_i2c_affine ##### -->
+<para>
+
+</para>
+
+@item: 
+@affine: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_reparent ##### -->
+<para>
+
+</para>
+
+@item: 
+@new_group: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_grab_focus ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_get_bounds ##### -->
+<para>
+
+</para>
+
+@item: 
+@x1: 
+@y1: 
+@x2: 
+@y2: 
+
+
+<!-- ##### FUNCTION gnome_canvas_item_request_update ##### -->
+<para>
+
+</para>
+
+@item: 
+
+
+<!-- ##### MACRO GNOME_TYPE_CANVAS_GROUP ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO GNOME_CANVAS_GROUP ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_GROUP_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO GNOME_IS_CANVAS_GROUP ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO GNOME_IS_CANVAS_GROUP_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_GROUP_GET_CLASS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### FUNCTION gnome_canvas_group_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### MACRO GNOME_TYPE_CANVAS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO GNOME_CANVAS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO GNOME_IS_CANVAS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO GNOME_IS_CANVAS_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO GNOME_CANVAS_GET_CLASS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_new_aa ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_root ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_set_scroll_region ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@x1: 
+@y1: 
+@x2: 
+@y2: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_scroll_region ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@x1: 
+@y1: 
+@x2: 
+@y2: 
+
+
+<!-- ##### FUNCTION gnome_canvas_set_pixels_per_unit ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@n: 
+
+
+<!-- ##### FUNCTION gnome_canvas_scroll_to ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@cx: 
+@cy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_scroll_offsets ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@cx: 
+@cy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_update_now ##### -->
+<para>
+
+</para>
+
+@canvas: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_item_at ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@x: 
+@y: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_request_redraw_uta ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@uta: 
+
+
+<!-- ##### FUNCTION gnome_canvas_request_redraw ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@x1: 
+@y1: 
+@x2: 
+@y2: 
+
+
+<!-- ##### FUNCTION gnome_canvas_w2c_affine ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@affine: 
+
+
+<!-- ##### FUNCTION gnome_canvas_w2c ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@wx: 
+@wy: 
+@cx: 
+@cy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_w2c_d ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@wx: 
+@wy: 
+@cx: 
+@cy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_c2w ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@cx: 
+@cy: 
+@wx: 
+@wy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_window_to_world ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@winx: 
+@winy: 
+@worldx: 
+@worldy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_world_to_window ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@worldx: 
+@worldy: 
+@winx: 
+@winy: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_color ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@spec: 
+@color: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_color_pixel ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@rgba: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gnome_canvas_set_stipple_origin ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@gc: 
+
+
+<!-- ##### FUNCTION gnome_canvas_set_dither ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@dither: 
+
+
+<!-- ##### FUNCTION gnome_canvas_get_dither ##### -->
+<para>
+
+</para>
+
+@canvas: 
+@Returns: 
+
+

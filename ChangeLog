@@ -1,3 +1,7 @@
+2001-12-02  Malcolm Tredinnick <malcolm@commsecure.com.au>
+	* configure.in, Makefile.am, docs/*: Add the necessary voodoo to
+	  build the API docs.
+
 2001-11-28  Anders Carlsson  <andersca@gnu.org>
 
 	* configure.in: Up version to 1.107.0

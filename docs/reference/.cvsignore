@@ -1,0 +1,12 @@
+Makefile
+Makefile.in
+sgml
+html
+*.stamp
+libgnomecanvas-undocumented.txt
+libgnomecanvas-unused.txt
+libgnomecanvas-decl-list.txt
+libgnomecanvas-decl.txt
+libgnomecanvas.args
+libgnomecanvas.hierarchy
+libgnomecanvas.signals

@@ -1,0 +1,66 @@
+<!-- ##### SECTION Title ##### -->
+GnomeCanvasRichText
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT GnomeCanvasRichTextPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_cut_clipboard ##### -->
+<para>
+
+</para>
+
+@text: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_copy_clipboard ##### -->
+<para>
+
+</para>
+
+@text: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_paste_clipboard ##### -->
+<para>
+
+</para>
+
+@text: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_set_buffer ##### -->
+<para>
+
+</para>
+
+@text: 
+@buffer: 
+
+
+<!-- ##### FUNCTION gnome_canvas_rich_text_get_buffer ##### -->
+<para>
+
+</para>
+
+@text: 
+@Returns: 
+
+
