@@ -8,6 +8,7 @@ _libs
 so_locations
 .exrc
 libgnomecanvas-2.0.pc
+libgnomecanvas-2.0-uninstalled.pc
 symlink_stamp
 
 libgnomecanvas.defs
