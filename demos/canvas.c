@@ -34,6 +34,7 @@ create_canvas (void)
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_arrowhead (), gtk_label_new ("Arrowhead"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_fifteen (), gtk_label_new ("Fifteen"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_features (), gtk_label_new ("Features"));
+	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), create_canvas_rich_text (), gtk_label_new ("Rich Text"));
 
 	gtk_widget_show (app);
 }

@@ -1,3 +1,9 @@
+2001-08-11  Martin Baulig  <baulig@suse.de>
+
+	* canvas-rich-text.c: New file.
+
+	* canvas.c: Added the rich text demo
+
 Thu Jun 28 14:07:57 2001  Jonathan Blandford  <jrb@redhat.com>
 
 	* canvas-primitives.c (setup_curves): ifdefed out dead code to

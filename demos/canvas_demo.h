@@ -8,3 +8,4 @@ GtkWidget *create_canvas_primitives (int aa);
 GtkWidget *create_canvas_arrowhead (void);
 GtkWidget *create_canvas_fifteen (void);
 GtkWidget *create_canvas_features (void);
+GtkWidget *create_canvas_rich_text (void);
