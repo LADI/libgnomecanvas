@@ -1,8 +1,8 @@
 2001-08-14  Martin Baulig  <baulig@suse.de>
 
-	Released libgnomecanvas 1.100.0 "Pearl Harbor".
+	Released libgnomecanvas 1.102.0 "Roswell".
 
-	* configure.in: Bumped version number to 1.100.0.
+	* configure.in: Bumped version number to 1.102.0.
 
 2001-08-11  Martin Baulig  <baulig@suse.de>
 

@@ -65,14 +65,26 @@ marshal_sources =				\
 	gnome-canvas-marshal.c			\
 	gnome-canvas-marshal.h
 
-$(libgnomecanvas_2_la_OBJECTS): $(marshal_sources)
+BUILT_SOURCES =					\
+	$(marshal_sources)
 
-gnome-canvas-marshal.h: gnome-canvas-marshal.list
-	glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --header > $@
-gnome-canvas-marshal.c: gnome-canvas-marshal.list
-	glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --body > $@
+$(srcdir)/gnome-canvas-marshal.h: @REBUILD@ Makefile.am gnome-canvas-marshal.list
+	cd $(srcdir) \
+	&& glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --header >> xgen-gmh \
+	&& (cmp -s xgen-gmh gnome-canvas-marshal.h || cp xgen-gmh gnome-canvas-marshal.h) \
+	&& rm -f xgen-gmh xgen-gmh~
 
-EXTRA_DIST = libgnomecanvas-2.0.pc.in
+$(srcdir)/gnome-canvas-marshal.c: @REBUILD@ Makefile.am gnome-canvas-marshal.list
+	cd $(srcdir) \
+	&& glib-genmarshal --prefix=gnome_canvas_marshal gnome-canvas-marshal.list --body >> xgen-gmc \
+	&& cp xgen-gmc gnome-canvas-marshal.c \
+	&& rm -f xgen-gmc xgen-gmc~
+
+EXTRA_DIST = \
+	gnome-canvas-marshal.list	\
+	gnome-canvas-marshal.c		\
+	gnome-canvas-marshal.h		\
+	libgnomecanvas-2.0.pc.in
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libgnomecanvas-2.0.pc
