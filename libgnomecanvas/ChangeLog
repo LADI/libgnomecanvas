@@ -1,3 +1,9 @@
+2001-04-19  Michael Meeks  <michael@ximian.com>
+
+	* gnome-canvas.c (gnome_canvas_item_shutdown): this
+	has to be capable of being called twice, for whatever reason.
+	stop xform being double freed.
+
 2001-04-18  Michael Meeks  <michael@ximian.com>
 
 	* libgnomecanvastypes.c (libgnomecanvas_types_init): rename to
@@ -12,7 +18,6 @@
 	* Makefile.am: remove libgnomebase bits.
 	(libgnomecanvas_2_la_SOURCES): add internal header:
 
-ls
 	* gnome-canvas-i18n.h: add.
 
 2001-04-15  Martin Baulig  <baulig@suse.de>

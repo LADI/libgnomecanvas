@@ -396,8 +396,8 @@ gnome_canvas_item_shutdown (GObject *object)
 	if (item->parent)
 		group_remove (GNOME_CANVAS_GROUP (item->parent), item);
 
-	if (item->xform)
-		g_free (item->xform);
+	g_free (item->xform);
+	item->xform = NULL;
 
 	if (G_OBJECT_CLASS (item_parent_class)->shutdown)
 		(* G_OBJECT_CLASS (item_parent_class)->shutdown) (object);

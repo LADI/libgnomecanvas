@@ -2,7 +2,15 @@
 #include <math.h>
 #include "canvas_demo.h"
 
-void
+static gboolean
+quit_cb (GtkWidget *widget, GdkEventAny *event, gpointer dummy)
+{
+	gtk_main_quit ();
+
+	return TRUE;
+}
+
+static void
 create_canvas (void)
 {
 	GtkWidget *app;
@@ -12,6 +20,9 @@ create_canvas (void)
 
 	app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_policy (GTK_WINDOW (app), TRUE, TRUE, FALSE);
+
+	gtk_signal_connect (GTK_OBJECT (app), "delete_event",
+			    (GtkSignalFunc) quit_cb, NULL);
 
 	notebook = gtk_notebook_new ();
 	gtk_widget_show (notebook);
