@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD\n"
-"POT-Creation-Date: 2003-01-13 04:06+0100\n"
+"POT-Creation-Date: 2003-01-23 16:16+0100\n"
 "PO-Revision-Date: 2003-01-16 21:43+0100\n"
 "Last-Translator: Tegshbayar <zahiatotbr@msn.com>\n"
 "Language-Team: mongolian <mn@li.org>\n"
@@ -113,8 +113,11 @@ msgid "Rise"
 msgstr "Өсөлт"
 
 #: libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Бааз шугамын дээрх текстийн тэнцүүлэлт(Хэрэв өсөлт сөрөг бол бааз шугамын доор)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Бааз шугамын дээрх текстийн тэнцүүлэлт(Хэрэв өсөлт сөрөг бол бааз шугамын "
+"доор)"
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -320,7 +323,8 @@ msgstr "Сунгах Өндөр"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Хайрцаглагдсан текст дотор текстийн хэмжээ багтахгүй бол түүнийг сунгах эсэх?"
+msgstr ""
+"Хайрцаглагдсан текст дотор текстийн хэмжээ багтахгүй бол түүнийг сунгах эсэх?"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:289
 msgid "Wrap Mode"
@@ -401,4 +405,3 @@ msgstr "Догол Мөр"
 #: libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Number of pixels for indentation"
 msgstr "Догол Мөрийн Цэгийн Тоо"
-
