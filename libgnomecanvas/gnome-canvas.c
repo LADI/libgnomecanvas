@@ -3650,6 +3650,9 @@ gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
 	g_return_if_fail (GNOME_IS_CANVAS (canvas));
 	g_return_if_fail (uta != NULL);
 
+	if (!GTK_WIDGET_DRAWABLE (canvas))
+		return;
+
 	get_visible_region (canvas, &visible);
 
 	if (canvas->need_redraw) {
