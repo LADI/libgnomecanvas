@@ -4,6 +4,9 @@
 	(gnome_canvas_clipgroup_class_init) : assign virtuals _before_ you
 	  install properties.  While we're at it lets not use C++ keywords for
 	  no reason.
+	(gnome_canvas_clipgroup_get_property) : WIND was registered as a uint,
+	  not an enum.
+	(gnome_canvas_clipgroup_set_property) : ditto.
 
 2002-03-26  Wang Jian  <lark@linux.net.cn>
 

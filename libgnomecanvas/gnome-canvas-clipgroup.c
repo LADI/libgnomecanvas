@@ -173,7 +173,7 @@ gnome_canvas_clipgroup_set_property (GObject      *object,
 		break;
 
 	case PROP_WIND:
-		cgroup->wind = g_value_get_enum (value);
+		cgroup->wind = g_value_get_uint (value);
 		gnome_canvas_item_request_update (item);
 		break;
 
@@ -198,7 +198,7 @@ gnome_canvas_clipgroup_get_property (GObject    *object,
 		break;
 
 	case PROP_WIND:
-		g_value_set_enum (value, cgroup->wind);
+		g_value_set_uint (value, cgroup->wind);
 		break;
 
 	default:
