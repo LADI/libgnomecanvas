@@ -23,11 +23,9 @@
 #ifndef GNOME_CANVAS_RICH_TEXT_H
 #define GNOME_CANVAS_RICH_TEXT_H
 
-#include <gnome.h>
+#include <libgnomecanvas/gnome-canvas.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
+G_BEGIN_DECLS
 
 #define GNOME_TYPE_CANVAS_RICH_TEXT             (gnome_canvas_rich_text_get_type ())
 #define GNOME_CANVAS_RICH_TEXT(obj)             (GTK_CHECK_CAST ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichText))
@@ -93,8 +91,17 @@ struct _GnomeCanvasRichTextClass {
 
 GtkType gnome_canvas_rich_text_get_type(void);
 
-#ifdef __cplusplus
-}
-#endif /* __cplusplus */
+void gnome_canvas_rich_text_cut_clipboard(GnomeCanvasRichText *text);
 
-#endif /* GTK_TEXT_VIEW_H */
+void gnome_canvas_rich_text_copy_clipboard(GnomeCanvasRichText *text);
+
+void gnome_canvas_rich_text_paste_clipboard(GnomeCanvasRichText *text);
+
+void gnome_canvas_rich_text_set_buffer(GnomeCanvasRichText *text,
+				       GtkTextBuffer *buffer);
+
+GtkTextBuffer *gnome_canvas_rich_text_get_buffer(GnomeCanvasRichText *text);
+
+G_END_DECLS
+
+#endif /* GNOME_CANVAS_RICH_TEXT_H */

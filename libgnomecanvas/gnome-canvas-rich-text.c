@@ -21,23 +21,29 @@
  */
 
 #include <math.h>
+#include <stdio.h>
 #include <string.h>
 
-#include "gtk/gtkbindings.h"
-#include "gtk/gtkdnd.h"
-#include "gtk/gtkmain.h"
-#include "gtk/gtkmenu.h"
-#include "gtk/gtkmenuitem.h"
-#include "gtk/gtkseparatormenuitem.h"
-#include "gtk/gtksignal.h"
-#include "gtk/gtktextdisplay.h"
-#include "gtk/gtktextview.h"
-#include "gtk/gtkimmulticontext.h"
-#include "gdk/gdkkeysyms.h"
+#include <gtk/gtkbindings.h>
+#include <gtk/gtkdnd.h>
+#include <gtk/gtkmain.h>
+#include <gtk/gtkmenu.h>
+#include <gtk/gtkvbox.h>
+#include <gtk/gtkwindow.h>
+#include <gtk/gtkbutton.h>
+#include <gtk/gtkmenuitem.h>
+#include <gtk/gtkseparatormenuitem.h>
+#include <gtk/gtksignal.h>
+#include <gtk/gtktextdisplay.h>
+#include <gtk/gtktextview.h>
+#include <gtk/gtkimmulticontext.h>
+#include <gdk/gdkkeysyms.h>
 #include <string.h>
 
-#include "libgnomecanvas/gnome-canvas.h"
-#include "gtktextcanvas.h"
+#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/gnome-canvas-util.h>
+#include <libgnomecanvas/gnome-canvas-rect-ellipse.h>
+#include <libgnomecanvas/gnome-canvas-rich-text.h>
 
 enum {
 	ARG_0,
@@ -105,8 +111,6 @@ static void gnome_canvas_rich_text_unselect(GnomeCanvasRichText *text);
 
 static GtkTextBuffer *get_buffer(GnomeCanvasRichText *text);
 static gint blink_cb(gpointer data);
-
-#define g_signal_handlers_disconnect_by_func(obj, func, data) g_signal_handlers_disconnect_matched(obj, G_SIGNAL_MATCH_FUNC | G_SIGNAL_MATCH_DATA, 0, 0, NULL, func, data)
 
 #define PREBLINK_TIME 300
 #define CURSOR_ON_TIME 800
@@ -206,7 +210,7 @@ gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 		GTK_TYPE_INT, GTK_ARG_READWRITE, ARG_INDENT);
 
 	/* Signals */
-	signals[TAG_CHANGED] = g_signal_newc(
+	signals[TAG_CHANGED] = g_signal_new(
 		"tag_changed",
 		G_OBJECT_CLASS_TYPE(object_class),
 		G_SIGNAL_RUN_LAST,
@@ -1668,16 +1672,16 @@ gnome_canvas_rich_text_ensure_layout(GnomeCanvasRichText *text)
 
 		g_signal_connect_data(
 			G_OBJECT(text->layout), "invalidated",
-			invalidated_handler, text, NULL, FALSE, FALSE);
+			G_CALLBACK (invalidated_handler), text, NULL, 0);
 
 		g_signal_connect_data(
 			G_OBJECT(text->layout), "changed",
-			changed_handler, text, NULL, FALSE, FALSE);
+			G_CALLBACK (changed_handler), text, NULL, 0);
 
 #if 0
 		g_signal_connect_data(
 			G_OBJECT(text->layout), "allocate_child",
-			child_allocated, text, NULL, FALSE, FALSE);
+			G_CALLBACK (child_allocated), text, NULL, 0);
 #endif
 	}
 } /* gnome_canvas_rich_text_ensure_layout */
@@ -1888,16 +1892,15 @@ gnome_canvas_rich_text_add_tag(GnomeCanvasRichText *text, char *tag_name,
 	GtkTextIter start, end;
 	va_list var_args;
 
-	g_return_if_fail(text);
-	g_return_if_fail(start_offset >= 0);
-	g_return_if_fail(end_offset >= 0);
+	g_return_val_if_fail(text, NULL);
+	g_return_val_if_fail(start_offset >= 0, NULL);
+	g_return_val_if_fail(end_offset >= 0, NULL);
 
 	if (tag_name) {
 		GtkTextTagTable *tag_table;
 
 		tag_table = gtk_text_buffer_get_tag_table(get_buffer(text));
-		g_return_if_fail(
-			gtk_text_tag_table_lookup(tag_table, tag_name) == NULL);
+		g_return_val_if_fail(gtk_text_tag_table_lookup(tag_table, tag_name) == NULL, NULL);
 	}
 
 	tag = gtk_text_buffer_create_tag(
@@ -2064,7 +2067,7 @@ button_clicked(GtkWidget *canvas, GdkEventButton *event,
 		
 		g_signal_connect_data(
 			G_OBJECT(tag), "event", G_CALLBACK(tag_event_handler),
-			NULL, NULL, FALSE, FALSE);
+			NULL, NULL, 0);
 	}
 
 	return FALSE;
@@ -2211,7 +2214,7 @@ main(int argc, char *argv[])
 
 	g_signal_connect_data(
 		G_OBJECT(item), "tag_changed",
-		G_CALLBACK(tag_changed), NULL, NULL, FALSE, FALSE);
+		G_CALLBACK(tag_changed), NULL, NULL, 0);
 
 	button = gtk_button_new_with_label("Cut");
 	gtk_signal_connect(GTK_OBJECT(button), "clicked",
