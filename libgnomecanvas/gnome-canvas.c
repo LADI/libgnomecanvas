@@ -2036,8 +2036,7 @@ gnome_canvas_get_property (GObject    *object,
 {
 	switch (prop_id) {
 	case PROP_AA:
-		g_value_set_ulong (value,
-				   GNOME_CANVAS (object)->aa);
+		g_value_set_boolean (value, GNOME_CANVAS (object)->aa);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -2053,7 +2052,7 @@ gnome_canvas_set_property (GObject      *object,
 {
 	switch (prop_id) {
 	case PROP_AA:
-		GNOME_CANVAS (object)->aa = g_value_get_ulong (value);
+		GNOME_CANVAS (object)->aa = g_value_get_boolean (value);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -2102,11 +2101,11 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 
 	g_object_class_install_property (G_OBJECT_CLASS (object_class),
 					 PROP_AA,
-					 g_param_spec_ulong ("aa",
-							     _("Antialiased"),
-							     _("The antialiasing mode of the canvas."),
-							     0, 1, 0,
-							     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+					 g_param_spec_boolean ("aa",
+							       _("Antialiased"),
+							       _("The antialiasing mode of the canvas."),
+							       FALSE,
+							       G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
 	canvas_signals[DRAW_BACKGROUND] =
 		g_signal_new ("draw_background",
@@ -2272,7 +2271,7 @@ GtkWidget *
 gnome_canvas_new_aa (void)
 {
 	return GTK_WIDGET (g_object_new (GNOME_TYPE_CANVAS,
-					 "aa", 1,
+					 "aa", TRUE,
 					 NULL));
 }
 

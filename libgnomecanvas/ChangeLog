@@ -1,3 +1,10 @@
+Wed Dec 12 21:45:08 2001  Tim Janik  <timj@gtk.org>
+
+	* gnome-canvas.c (gnome_canvas_class_init): fix canvas::aa
+	property. it needs to be CONSTRUCT_ONLY because anti-aliased
+	can't be changed after construction. also, this property needs
+	to be boolean and not ulong.
+
 2001-12-12  Alexander Larsson  <alla@lysator.liu.se>
 
 	* gnome-canvas-text.c (gnome_canvas_text_set_font_desc):
