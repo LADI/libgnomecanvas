@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-libs 2.0\n"
-"POT-Creation-Date: 2001-08-14 16:22+0200\n"
-"PO-Revision-Date: 2001-08-07 10:35+0200\n"
+"POT-Creation-Date: 2001-09-19 18:13+0200\n"
+"PO-Revision-Date: 2001-09-19 18:14+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,22 +59,22 @@ msgstr "Skrifttypefamilie"
 
 #: libgnomecanvas/gnome-canvas-text.c:257
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr ""
+msgstr "Navn på skrifttypefamilien, f.eks. Sans, Helvetica, Times, Monospace"
 
 #: libgnomecanvas/gnome-canvas-text.c:273
 #: libgnomecanvas/gnome-canvas-text.c:274
 msgid "Font style"
-msgstr ""
+msgstr "Skrifttypestil"
 
 #: libgnomecanvas/gnome-canvas-text.c:283
 #: libgnomecanvas/gnome-canvas-text.c:284
 msgid "Font variant"
-msgstr ""
+msgstr "Skrifttypevariant"
 
 #: libgnomecanvas/gnome-canvas-text.c:293
 #: libgnomecanvas/gnome-canvas-text.c:294
 msgid "Font weight"
-msgstr ""
+msgstr "Skrifttypens tyngde"
 
 #: libgnomecanvas/gnome-canvas-text.c:305
 #: libgnomecanvas/gnome-canvas-text.c:306
@@ -84,7 +84,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-text.c:315
 #: libgnomecanvas/gnome-canvas-text.c:316
 msgid "Font size"
-msgstr ""
+msgstr "Skrifttypens størrelse"
 
 #: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font points"
@@ -96,7 +96,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:337
 msgid "Rise"
-msgstr ""
+msgstr "Hev"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
 msgid ""
@@ -105,11 +105,11 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
-msgstr ""
+msgstr "Gjennomstreket"
 
 #: libgnomecanvas/gnome-canvas-text.c:349
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "Om teksten skal gjennomstrekes"
 
 #: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Underline"
