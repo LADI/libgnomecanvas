@@ -3672,7 +3672,11 @@ gnome_canvas_request_redraw_uta (GnomeCanvas *canvas,
 		ArtUta *new_uta;
 
 		g_assert (canvas->redraw_area != NULL);
-		g_assert (canvas->idle_id != 0);
+		/* ALEX: This can fail if e.g. redraw_uta is called by an item
+		   update function and we're called from update_now -> do_update
+		   because update_now sets idle_id == 0. There is also some way
+		   to get it from the expose handler (see bug #102811).
+		   g_assert (canvas->idle_id != 0);  */
 
 		new_uta = uta_union_clip (canvas->redraw_area, uta, &visible);
 		art_uta_free (canvas->redraw_area);
