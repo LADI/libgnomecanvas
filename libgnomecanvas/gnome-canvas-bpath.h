@@ -7,7 +7,7 @@
  *
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
- *          Lauris Kaplinski <lauris@ariman.ee>
+ *          Lauris Kaplinski <lauris@ximian.com>
  */
 
 #ifndef GNOME_CANVAS_BPATH_H

@@ -1,3 +1,9 @@
+2001-06-17  Lauris Kaplinski  <lauris@ximian.com>
+
+	* gnome-canvas-path-def.c (gnome_canvas_path_def_copy): Free dst->bpath
+	only for non-static paths.
+	Lots of typo and other small fixes for inline docs
+
 2001-06-17    <rconover@gnome.org>
 
 	* gp-path.c gp-path.h: Removed since they are now replaces with

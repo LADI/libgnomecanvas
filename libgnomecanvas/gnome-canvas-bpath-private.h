@@ -10,7 +10,7 @@
  *
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
- *          Lauris Kaplinski <lauris@ariman.ee>
+ *          Lauris Kaplinski <lauris@ximian.com>
  */
 
 #include <gdk/gdk.h>

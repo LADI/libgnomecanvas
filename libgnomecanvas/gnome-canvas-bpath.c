@@ -7,7 +7,7 @@
  *
  * Authors: Federico Mena <federico@nuclecu.unam.mx>
  *          Raph Levien <raph@acm.org>
- *          Lauris Kaplinski <lauris@ariman.ee>
+ *          Lauris Kaplinski <lauris@ximian.com>
  *          Miguel de Icaza <miguel@kernel.org>
  *          Cody Russell <bratsche@gnome.org>
  */

@@ -8,7 +8,7 @@
  * Copyright (C) 1998,1999 The Free Software Foundation
  *
  * Author:
- *          Lauris Kaplinski <lauris@ariman.ee>
+ *          Lauris Kaplinski <lauris@ximian.com>
  */
 
 /* These includes are set up for standalone compile. If/when this codebase

@@ -4,7 +4,7 @@
 /*
  * GnomeCanvasPathDef
  *
- * (C) 1999-2000 Lauris Kaplinski <lauris@ariman.ee>
+ * (C) 1999-2000 Lauris Kaplinski <lauris@ximian.com>
  * Released under LGPL
  *
  * This is mostly like GnomeCanvasBpathDef, but with added functionality:

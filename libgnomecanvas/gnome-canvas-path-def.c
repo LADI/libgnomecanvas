@@ -3,10 +3,12 @@
 /*
  * GnomeCanvasPathDef
  *
- * (C) 1999-2000 Lauris Kaplinski <lauris@ariman.ee>
+ * (C) 1999-2000 Lauris Kaplinski <lauris@ximian.com>
  * Released under LGPL
  *
  * Docified by Rusty Conover <rconover@gnome.org>
+ *
+ * Copyright 1999-2001 Ximian Inc. and authors.
  */
 
 #include <string.h>
@@ -42,7 +44,7 @@ static gboolean sp_bpath_all_open (const ArtBpath * bpath);
 /**
  * gnome_canvas_path_def_new:
  * 
- * This function creates a new #gnome_canvas_path.
+ * This function creates a new empty #gnome_canvas_path_def.
  *
  * Returns: the new canvas path definition. 
  */
@@ -61,7 +63,9 @@ gnome_canvas_path_def_new (void)
  * @length: number of points to allocate for the path
  *
  * This funtion creates a new #gnome_canvas_path_def with @length
- * number of points allocated.
+ * number of points allocated. It is useful, if you know the exact
+ * number of points in path, so you can avoid automatic point
+ * array reallocation.
  *
  * Returns: the new canvas path definition
  */
@@ -96,9 +100,11 @@ gnome_canvas_path_def_new_sized (gint length)
  * This function constructs a new #gnome_canvas_path_def and uses the
  * passed @bpath as the contents.  The passed bpath should not be
  * static as the path definition is editable when constructed with
- * this function.  For constructing a #gnome_canvas_path_defstatic
+ * this function. Also, passed bpath will be freed with art_free, if
+ * path is destroyed, so use it with caution.
+ * For constructing a #gnome_canvas_path_def
  * from (non-modifiable) bpath use
- * #gnome_canvas_path_def_new_static_bpath.
+ * #gnome_canvas_path_def_new_from_static_bpath.
  *
  * Returns: the new canvas path definition that is populated with the
  * passed bezier path, if the @bpath is bad NULL is returned.
@@ -130,11 +136,12 @@ gnome_canvas_path_def_new_from_bpath (ArtBpath * bpath)
  * gnome_canvas_path_def_new_from_static_bpath:
  * @bpath: libart bezier path
  *
- * This function constructs a new #gnome_canvas_path_Def and
+ * This function constructs a new #gnome_canvas_path_def and
  * references the passed @bpath as its contents.  The
  * #gnome_canvas_path_def returned from this function is to be
  * considered static and non-editable (meaning you cannot change the
- * path from what you passed in @bpath).
+ * path from what you passed in @bpath). The bpath will not be freed,
+ * if path will be destroyed, so use it with caution.
  *
  * Returns: the new canvas path definition that references the passed
  * @bpath, or if the path is bad NULL is returned.
@@ -167,7 +174,7 @@ gnome_canvas_path_def_new_from_static_bpath (ArtBpath * bpath)
  * @bpath: libart bezier path
  *
  * This function constructs a new #gnome_canvas_path_def and
- * duplicated the contents of the passed @bpath in the definition.
+ * duplicates the contents of the passed @bpath in the definition.
  *
  * Returns: the newly created #gnome_canvas_path_def or NULL if the
  * path is invalid.
@@ -195,7 +202,7 @@ gnome_canvas_path_def_new_from_foreign_bpath (ArtBpath * bpath)
  * gnome_canvas_path_def_ref:
  * @path: a GnomeCanvasPathDef
  *
- * Increment the reference cound of the GnomeCanvasPathDef.
+ * Increment the reference count of the GnomeCanvasPathDef.
  */
 void
 gnome_canvas_path_def_ref (GnomeCanvasPathDef * path)
@@ -209,8 +216,7 @@ gnome_canvas_path_def_ref (GnomeCanvasPathDef * path)
  * gnome_canvas_path_def_finish:
  * @path: a GnomeCanvasPathDef
  *
- * Add a point at the end of the definition. If the point is never
- * defined it is set to ART_END.
+ * Trims dynamic point array to exact length of path.
  */
 void
 gnome_canvas_path_def_finish (GnomeCanvasPathDef * path)
@@ -233,8 +239,8 @@ gnome_canvas_path_def_finish (GnomeCanvasPathDef * path)
  * @space: number of points to guarantee are allocated at the end of
  * the path.
  *
- * This function allocates a enough space for @space points at the end
- * of the path.
+ * This function ensures that enough space for @space points is
+ * allocated at the end of the path.
  */
 void
 gnome_canvas_path_def_ensure_space (GnomeCanvasPathDef * path, gint space)
@@ -256,7 +262,9 @@ gnome_canvas_path_def_ensure_space (GnomeCanvasPathDef * path, gint space)
  * @dst: a GnomeCanvasPathDef where the contents of @src will be stored.
  * @src: a GnomeCanvasPathDef whose contents will be copied it @src.
  *
- * This function copies the contents @src to @dest.
+ * This function copies the contents @src to @dest. The old @dest path
+ * array is freed and @dest is marked as non-static (editable),
+ * regardless of the status of @src.
  */
 void 
 gnome_canvas_path_def_copy (GnomeCanvasPathDef * dst, const GnomeCanvasPathDef * src)
@@ -264,7 +272,7 @@ gnome_canvas_path_def_copy (GnomeCanvasPathDef * dst, const GnomeCanvasPathDef *
 	g_return_if_fail (dst != NULL);
 	g_return_if_fail (src != NULL);
 
-	g_free (dst->bpath);
+	if (!dst->sbpath) g_free (dst->bpath);
 
 	memcpy (dst, src, sizeof (GnomeCanvasPathDef));
 
@@ -279,7 +287,8 @@ gnome_canvas_path_def_copy (GnomeCanvasPathDef * dst, const GnomeCanvasPathDef *
  * gnome_canvas_path_def_duplicate:
  * @path: a GnomeCanvasPathDef to duplicate
  *
- * This function duplicates the passed @path.
+ * This function duplicates the passed @path. The new path is
+ * marked as non-static regardless of the state of original.
  *
  * Returns: a GnomeCanvasPathDef which is a duplicate of @path.
  */
@@ -308,7 +317,7 @@ gnome_canvas_path_def_duplicate (const GnomeCanvasPathDef * path)
  * path.
  *
  * This function concatenates a list of GnomeCanvasPathDefs into one
- * new GnomeCanvasPathDef.
+ * newly created GnomeCanvasPathDef.
  *
  * Returns: a new GnomeCanvasPathDef
  */
@@ -355,10 +364,9 @@ gnome_canvas_path_def_concat (const GSList * list)
  *
  * This function splits the passed @path into a list of
  * GnomeCanvasPathDefs which represent each segment of the origional
- * path.  The path is split when ever an ART_MOVETO, ART_MOVETO_OPEN
- * or ART_END is encountered.  The effect of applying is function on a
- * path that is closed is that you get a list returned with a
- * duplicate of the origional path.
+ * path.  The path is split when ever an ART_MOVETO or ART_MOVETO_OPEN
+ * is encountered. The closedness of resulting paths is set accordingly
+ * to closedness of corresponding segment.
  *
  * Returns: a list of GnomeCanvasPathDef(s).
  */
@@ -540,7 +548,7 @@ gnome_canvas_path_def_closed_parts (const GnomeCanvasPathDef * path)
  * @path: a GnomeCanvasPathDef
  *
  * This function closes all of the open segments in the passed path
- * and reutrns a new GnomeCanvasPathDef.
+ * and returns a new GnomeCanvasPathDef.
  *
  * Returns: a GnomeCanvasPathDef that contains the contents of @path
  * but has modified the path is fully closed
@@ -668,8 +676,9 @@ gnome_canvas_path_def_reset (GnomeCanvasPathDef * path)
  * @x: x coordinate
  * @y: y coordinate
  *
- * This function sets the current coordinates of the last point in
- * GnomeCanvasPathDef to @x and @y.
+ * This function adds starts new subpath on @path, and sets its
+ * starting point to @x and @y. If current subpath is empty, it
+ * simply changes its starting coordinates to new values.
  */
 void
 gnome_canvas_path_def_moveto (GnomeCanvasPathDef * path, gdouble x, gdouble y)
@@ -693,7 +702,7 @@ gnome_canvas_path_def_moveto (GnomeCanvasPathDef * path, gdouble x, gdouble y)
  * @x: x coordinate
  * @y: y coordinate
  *
- * This function add a lineto point to the passed @path with the
+ * This function add a line segment to the passed @path with the
  * specified @x and @y coordinates.
  */
 void
@@ -756,8 +765,11 @@ gnome_canvas_path_def_lineto (GnomeCanvasPathDef * path, gdouble x, gdouble y)
  * @x: x coordinate
  * @y: y coordinate
  *
- * This functions adds a new lineto point on the path my manipulating
- * the last defined point on thepath to point to the new coordinates.
+ * This functions adds a new line segment with loose endpoint to the path, or
+ * if endpoint is already loose, changes its coordinates to @x, @y. You
+ * can change the coordinates of loose endpoint as many times as you want,
+ * the last ones set will be fixed, if you continue line. This is useful
+ * for handling drawing with mouse.
  */ 
 void
 gnome_canvas_path_def_lineto_moving (GnomeCanvasPathDef * path, gdouble x, gdouble y)
@@ -823,7 +835,7 @@ gnome_canvas_path_def_lineto_moving (GnomeCanvasPathDef * path, gdouble x, gdoub
  * @x2: end of curve x coordinate
  * @y2: end of curve y coordinate
  *
- * This function adds a bezier curve point to the path definition.
+ * This function adds a bezier curve segment to the path definition.
  */
  
 void
@@ -880,8 +892,9 @@ gnome_canvas_path_def_curveto (GnomeCanvasPathDef * path, gdouble x0, gdouble y0
  * gnome_canvas_path_def_closepath:
  * @path: a GnomeCanvasPathDef
  *
- * This function closes the passed @path by adding a ART_LINETO point
- * to the path if needed.
+ * This function closes the last subpath of @path, adding a ART_LINETO to
+ * subpath starting point, if needed and changing starting pathcode to
+ * ART_MOVETO
  */
 void
 gnome_canvas_path_def_closepath (GnomeCanvasPathDef * path)
@@ -916,8 +929,8 @@ gnome_canvas_path_def_closepath (GnomeCanvasPathDef * path)
  * gnome_canvas_path_def_closepath_current:
  * @path: a GnomeCanvasPathDef
  *
- * This function closes the current open path segment in the passed
- * path by adding a ART_LINETO point.
+ * This function closes the last subpath by setting the coordinates of
+ * the endpoint of the last segment (line or curve) to starting point.
  */
 void
 gnome_canvas_path_def_closepath_current (GnomeCanvasPathDef * path)
@@ -985,7 +998,7 @@ gint gnome_canvas_path_def_length (const GnomeCanvasPathDef * path)
  * @path: a GnomeCanvasPathDef
  *
  * This function is a boolean test to see if the path is empty,
- * meaning containing no points.
+ * meaning containing no line segments.
  *
  * Returns: boolean, indicating if the path is empty.
  */
@@ -1002,7 +1015,8 @@ gnome_canvas_path_def_is_empty (const GnomeCanvasPathDef * path)
  * @path: a GnomeCanvasPathdef
  *
  * This function is a boolean test checking to see if the path has a
- * current point defined.
+ * current point defined. Current point will be set by line operators,
+ * and cleared by closing subpath.
  *
  * Returns: boolean, indicating if the path has a current point defined.
  */
@@ -1041,11 +1055,11 @@ gnome_canvas_path_def_currentpoint (const GnomeCanvasPathDef * path, ArtPoint * 
  * gnome_canvas_path_def_last_bpath:
  * @path: a GnomeCanvasPathDef
  *
- * This function returns the last ArtBpath point in the path
+ * This function returns pointer to the last ArtBpath segment in the path
  * definition.
  *
- * Returns: ArtBpath, being the last point in the path definition or
- * null if no last point has been defined.
+ * Returns: ArtBpath, being the last segment in the path definition or
+ * null if no line segments have been defined.
  */
 ArtBpath *
 gnome_canvas_path_def_last_bpath (const GnomeCanvasPathDef * path)
