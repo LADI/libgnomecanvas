@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "POT-Creation-Date: 2002-10-31 05:06+0100\n"
-"PO-Revision-Date: 2002-12-10 19:37+EDT\n"
+"PO-Revision-Date: 2002-12-21 22:37+EDT\n"
 "Last-Translator: Ge'ez Frontier Foundation <locales@geez.org>\n"
 "Language-Team: Amharic <locales@geez.org>\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr ""
 #: libgnomecanvas/gnome-canvas-text.c:308
 #: libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr ""
+msgstr "የፊደል ቅርጽ ዘርጋ"
 
 #: libgnomecanvas/gnome-canvas-text.c:318
 #: libgnomecanvas/gnome-canvas-text.c:319
@@ -119,7 +119,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr ""
+msgstr "ስርዝ"
 
 #: libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -341,7 +341,7 @@ msgstr ""
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:307
 msgid "Direction"
-msgstr ""
+msgstr "አቅጣጫ"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Text direction"
