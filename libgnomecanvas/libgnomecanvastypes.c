@@ -35,10 +35,9 @@ gnome_canvas_points_get_type (void)
 
     if (!type_canvas_points)
 	type_canvas_points = g_boxed_type_register_static
-	    ("GnomeCanvasPoints", NULL,
+	    ("GnomeCanvasPoints", 
 	     (GBoxedCopyFunc) gnome_canvas_points_ref,
-	     (GBoxedFreeFunc) gnome_canvas_points_unref,
-	     TRUE);
+	     (GBoxedFreeFunc) gnome_canvas_points_unref);
 
     return type_canvas_points;
 }
