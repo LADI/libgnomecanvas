@@ -2,7 +2,7 @@
 #include "testgnome.h"
 
 
-#ifdef GTK_HAVE_ACCEL_GROUP
+#ifdef GTK_HAVE_FEATURES_1_1_0
 
 
 /*** Primitives ***/
@@ -24,15 +24,19 @@ item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	case GDK_BUTTON_PRESS:
 		switch (event->button.button) {
 		case 1:
-			x = event->button.x;
-			y = event->button.y;
+			if (event->button.state & GDK_SHIFT_MASK)
+				gtk_object_destroy (GTK_OBJECT (item));
+			else {
+				x = event->button.x;
+				y = event->button.y;
 
-			fleur = gdk_cursor_new (GDK_FLEUR);
-			gnome_canvas_item_grab (item,
-						GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
-						fleur,
-						event->button.time);
-			gdk_cursor_destroy (fleur);
+				fleur = gdk_cursor_new (GDK_FLEUR);
+				gnome_canvas_item_grab (item,
+							GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
+							fleur,
+							event->button.time);
+				gdk_cursor_destroy (fleur);
+			}
 			break;
 
 		case 2:
@@ -231,13 +235,32 @@ setup_rectangles (GnomeCanvasGroup *root)
 {
 	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_rect_get_type (),
-					   "x1", 10.0,
-					   "y1", 10.0,
-					   "x2", 160.0,
+					   "x1", 20.0,
+					   "y1", 30.0,
+					   "x2", 70.0,
 					   "y2", 60.0,
+					   "outline_color", "red",
+					   "width_pixels", 8,
+					   NULL));
+
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_rect_get_type (),
+					   "x1", 90.0,
+					   "y1", 40.0,
+					   "x2", 180.0,
+					   "y2", 100.0,
 					   "fill_color", "mediumseagreen",
 					   "outline_color", "black",
-					   "width_pixels", 4,
+					   "width_units", 4.0,
+					   NULL));
+
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_rect_get_type (),
+					   "x1", 10.0,
+					   "y1", 80.0,
+					   "x2", 80.0,
+					   "y2", 140.0,
+					   "fill_color", "steelblue",
 					   NULL));
 }
 
@@ -246,28 +269,92 @@ setup_ellipses (GnomeCanvasGroup *root)
 {
 	setup_item (gnome_canvas_item_new (root,
 					   gnome_canvas_ellipse_get_type (),
-					   "x1", 20.0,
-					   "y1", 70.0,
-					   "x2", 100.0,
-					   "y2", 130.0,
-					   "fill_color", "tan",
-					   "outline_color", "slateblue",
-					   "width_units", 6.0,
+					   "x1", 220.0,
+					   "y1", 30.0,
+					   "x2", 270.0,
+					   "y2", 60.0,
+					   "outline_color", "goldenrod",
+					   "width_pixels", 8,
 					   NULL));
+
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_ellipse_get_type (),
+					   "x1", 290.0,
+					   "y1", 40.0,
+					   "x2", 380.0,
+					   "y2", 100.0,
+					   "fill_color", "wheat",
+					   "outline_color", "midnightblue",
+					   "width_units", 4.0,
+					   NULL));
+
+	setup_item (gnome_canvas_item_new (root,
+					   gnome_canvas_ellipse_get_type (),
+					   "x1", 210.0,
+					   "y1", 80.0,
+					   "x2", 280.0,
+					   "y2", 140.0,
+					   "fill_color", "cadetblue",
+					   NULL));
+}
+
+static GnomeCanvasGroup *
+make_anchor (GnomeCanvasGroup *root, double x, double y)
+{
+	GnomeCanvasGroup *group;
+
+	group = GNOME_CANVAS_GROUP (gnome_canvas_item_new (root,
+							   gnome_canvas_group_get_type (),
+							   "x", x,
+							   "y", y,
+							   NULL));
+	setup_item (GNOME_CANVAS_ITEM (group));
+
+	gnome_canvas_item_new (group,
+			       gnome_canvas_rect_get_type (),
+			       "x1", -2.0,
+			       "y1", -2.0,
+			       "x2", 2.0,
+			       "y2", 2.0,
+			       "outline_color", "black",
+			       "width_pixels", 0,
+			       NULL);
+
+	return group;
 }
 
 static void
 setup_texts (GnomeCanvasGroup *root)
 {
-	setup_item (gnome_canvas_item_new (root,
-					   gnome_canvas_text_get_type (),
-					   "text", "Hello, world!",
-					   "x", 200.0,
-					   "y", 100.0,
-					   "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
-					   "anchor", GTK_ANCHOR_CENTER,
-					   "fill_color", "blue",
-					   NULL));
+	gnome_canvas_item_new (make_anchor (root, 420.0, 40.0),
+			       gnome_canvas_text_get_type (),
+			       "text", "Anchor west",
+			       "x", 0.0,
+			       "y", 0.0,
+			       "font", "-adobe-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1",
+			       "anchor", GTK_ANCHOR_W,
+			       "fill_color", "blue",
+			       NULL);
+
+	gnome_canvas_item_new (make_anchor (root, 500.0, 75.0),
+			       gnome_canvas_text_get_type (),
+			       "text", "Anchor center",
+			       "x", 0.0,
+			       "y", 0.0,
+			       "font", "-bitstream-charter-bold-*-normal--20-*-0-0-p-*-iso8859-1",
+			       "anchor", GTK_ANCHOR_CENTER,
+			       "fill_color", "firebrick",
+			       NULL);
+
+	gnome_canvas_item_new (make_anchor (root, 500.0, 130.0),
+			       gnome_canvas_text_get_type (),
+			       "text", "Anchor south",
+			       "x", 0.0,
+			       "y", 0.0,
+			       "font", "-bitstream-courier-bold-r-normal--25-*-0-0-m-*-iso8859-1",
+			       "anchor", GTK_ANCHOR_S,
+			       "fill_color", "darkgreen",
+			       NULL);
 }
 
 static void
