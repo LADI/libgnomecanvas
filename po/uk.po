@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"POT-Creation-Date: 2002-03-11 16:55+0200\n"
+"POT-Creation-Date: 2002-03-18 14:22+0100\n"
 "PO-Revision-Date: 2002-03-11 16:49+0200\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -13,13 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1390
-#: libgnomecanvas/gnome-canvas.c:1391
+#: libgnomecanvas/gnome-canvas.c:1390 libgnomecanvas/gnome-canvas.c:1391
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1397
-#: libgnomecanvas/gnome-canvas.c:1398
+#: libgnomecanvas/gnome-canvas.c:1397 libgnomecanvas/gnome-canvas.c:1398
 msgid "Y"
 msgstr "Y"
 
@@ -109,7 +107,8 @@ msgid "Rise"
 msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:338
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 
 #: libgnomecanvas/gnome-canvas-text.c:348
@@ -249,4 +248,3 @@ msgstr "Встановити масштаб"
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr ""
-
