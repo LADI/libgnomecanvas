@@ -243,7 +243,7 @@ gnome_canvas_shape_init (GnomeCanvasShape *shape)
 	shape->priv->cap = GDK_CAP_BUTT;
 	shape->priv->join = GDK_JOIN_MITER;
 	shape->priv->wind = ART_WIND_RULE_ODDEVEN;
-	shape->priv->miterlimit = 11.0;			/* PS default? */
+	shape->priv->miterlimit = 10.43;	   /* X11 default */
 
 	shape->priv->dash.n_dash = 0;
 	shape->priv->dash.dash = NULL;
@@ -761,10 +761,10 @@ gnome_canvas_shape_draw (GnomeCanvasItem *item,
 			len = GPOINTER_TO_INT (l->data);
 
 			gdk_draw_polygon (drawable,
-				gdk->outline_gc,
-				FALSE,
-				&dpoints[pos],
-				len);
+					  gdk->outline_gc,
+					  FALSE,
+					  &dpoints[pos],
+					  len);
 
 			pos += len;
 		}
@@ -798,21 +798,33 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 {
 	GnomeCanvasShapePriv * priv;
 	GnomeCanvasShapePrivGdk * gdk;
-
+	int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+	gboolean bbox_set = FALSE;
+	gint width = 0; /* silence gcc */
+	
 	g_assert (!((GnomeCanvasItem *) shape)->canvas->aa);
 
 	priv = shape->priv;
 	gdk = priv->gdk;
 	g_assert (gdk != NULL);
 
-	if (shape->priv->outline_set) {
+	if (priv->outline_set) {
 		GdkLineStyle style;
-		gint width;
 
 		if (priv->width_pixels) {
-			width = (int) priv->width;
+			width = (int) floor (priv->width + 0.5);
+			/* Never select 0 pixels unless the user asked for it,
+			 * since that is the X11 zero width lines are non-specified */
+			if (priv->width_pixels != 0 && width == 0) {
+				width = 1;
+			}
 		} else {
-			width = (int) (priv->width * priv->scale);
+			width = (int) floor ((priv->width * priv->scale) + 0.5);
+			/* Never select 0 pixels unless the user asked for it,
+			 * since that is the X11 zero width lines are non-speciifed */
+			if (priv->width != 0 && width == 0) {
+				width = 1;
+			}
 		}
 
 		/* If dashed, set it in GdkGC */
@@ -923,13 +935,24 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 			path = (GnomeCanvasPathDef *) clist->data;
 			bpath = gnome_canvas_path_def_bpath (path);
-			vpath = art_bez_path_to_vec (bpath, 0.5);
+			vpath = art_bez_path_to_vec (bpath, 0.1);
 			for (len = 0; vpath[len].code != ART_END; len++) ;
 
 			gnome_canvas_shape_ensure_gdk_points (gdk, len);
 			for (i = 0; i < len; i++) {
 				gdk->points[pos + i].x = (gint) floor (vpath[i].x + 0.5);
 				gdk->points[pos + i].y = (gint) floor (vpath[i].y + 0.5);
+
+				if (bbox_set) {
+					x1 = MIN (x1, gdk->points[pos + i].x);
+					x2 = MAX (x2, gdk->points[pos + i].x);
+					y1 = MIN (y1, gdk->points[pos + i].y);
+					y2 = MAX (y2, gdk->points[pos + i].y);
+				} else {
+					bbox_set = TRUE;
+					x1 = x2 = gdk->points[pos + i].x;
+					y1 = y2 = gdk->points[pos + i].y;
+				}
 			}
 			gdk->num_points += len;
 
@@ -954,13 +977,24 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 			path = (GnomeCanvasPathDef *) olist->data;
 			bpath = gnome_canvas_path_def_bpath (path);
-			vpath = art_bez_path_to_vec (bpath, 0.5);
+			vpath = art_bez_path_to_vec (bpath, 0.1);
 			for (len = 0; vpath[len].code != ART_END; len++) ;
 
 			gnome_canvas_shape_ensure_gdk_points (gdk, len);
 			for (i = 0; i < len; i++) {
 				gdk->points[pos + i].x = (gint) floor (vpath[i].x + 0.5);
 				gdk->points[pos + i].y = (gint) floor (vpath[i].y + 0.5);
+				
+				if (bbox_set) {
+					x1 = MIN (x1, gdk->points[pos + i].x);
+					x2 = MAX (x2, gdk->points[pos + i].x);
+					y1 = MIN (y1, gdk->points[pos + i].y);
+					y2 = MAX (y2, gdk->points[pos + i].y);
+				} else {
+					bbox_set = TRUE;
+					x1 = x2 = gdk->points[pos + i].x;
+					y1 = y2 = gdk->points[pos + i].y;
+				}
 			}
 			gdk->num_points += len;
 
@@ -977,6 +1011,20 @@ gnome_canvas_shape_update_gdk (GnomeCanvasShape * shape, double * affine, ArtSVP
 
 	}
 
+	if (bbox_set) {
+		if (priv->outline_set && (priv->join == GDK_JOIN_MITER)) {
+			int stroke_border = ceil (10.43*width/2); /* 10.43 is the miter limit for X11 */
+			x1 -= stroke_border;
+			x2 += stroke_border;
+			y1 -= stroke_border;
+			y2 += stroke_border;
+		}
+		
+		gnome_canvas_update_bbox (GNOME_CANVAS_ITEM (shape),
+					  x1, y1,
+					  x2 + 1, y2 + 1);
+	}
+	
 }
 
 static void
@@ -1001,7 +1049,8 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 	/* Reset bbox */
 
-	gnome_canvas_item_reset_bounds (item);
+	if (item->canvas->aa)
+		gnome_canvas_item_reset_bounds (item);
 	
 	/* Clipped fill SVP */
 
@@ -1019,7 +1068,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 		/* Render, until SVP */
 
-		vpath = art_bez_path_to_vec (abp, 0.25);
+		vpath = art_bez_path_to_vec (abp, 0.1);
 		art_free (abp);
 
 		pvpath = art_vpath_perturb (vpath);
@@ -1045,11 +1094,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		} else {
 
 			/* No clipping */
-
-			gnome_canvas_item_update_svp_clip (item,
-				&shape->priv->fill_svp,
-				svp,
-				NULL);
+			shape->priv->fill_svp = svp;
 		}
 	}
 
@@ -1072,7 +1117,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 
 		abp = art_bpath_affine_transform (gnome_canvas_path_def_bpath (priv->path), affine);
 
-		vpath = art_bez_path_to_vec (abp, 0.25);
+		vpath = art_bez_path_to_vec (abp, 0.1);
 		art_free (abp);
 
 		pvpath = art_vpath_perturb (vpath);
@@ -1107,8 +1152,7 @@ gnome_canvas_shape_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_p
 		} else {
 
 			/* No clipping (yet) */
-
-			gnome_canvas_item_update_svp_clip (item, &priv->outline_svp, svp, NULL);
+			shape->priv->outline_svp = svp;
 		}
 	}
 

@@ -1,3 +1,12 @@
+2001-11-19  Alex Larsson  <alexl@redhat.com>
+
+	* gnome-canvas-shape.c (gnome_canvas_shape_init):
+	Use 10.43 as default miter limit, as this is the default for X11.
+	(gnome_canvas_shape_update_gdk, gnome_canvas_shape_update):
+	Done use the svps to generate bboxes in non-aa mode. They may
+	be slightly different due to rounding to integer coords.
+	Use a precision of 0.1 always in art_bez_path_to_vec().
+
 2001-11-19  Michael Meeks  <michael@ximian.com>
 
 	* gnome-canvas.c (emit_event): remove
