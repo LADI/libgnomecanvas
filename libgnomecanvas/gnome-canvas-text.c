@@ -289,12 +289,13 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 	g_object_class_install_property
 		(gobject_class,
 		 PROP_WEIGHT,
-		 g_param_spec_enum ("weight",
-				    _("Font weight"),
-				    _("Font weight"),
-				    PANGO_TYPE_WEIGHT,
-				    PANGO_WEIGHT_NORMAL,
-				    G_PARAM_READABLE | G_PARAM_WRITABLE));
+		 g_param_spec_int ("weight",
+				   _("Font weight"),
+				   _("Font weight"),
+				   0,
+				   G_MAXINT,
+				   PANGO_WEIGHT_NORMAL,
+				   G_PARAM_READABLE | G_PARAM_WRITABLE));
 	
 	
 	g_object_class_install_property

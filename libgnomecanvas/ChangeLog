@@ -1,5 +1,10 @@
 2001-09-24  Matt Wilson  <msw@redhat.com>
 
+	* gnome-canvas-text.c (gnome_canvas_text_class_init): revert
+	property change, the real bug is in pango.
+
+2001-09-24  Matt Wilson  <msw@redhat.com>
+
 	* gnome-canvas-text.c (gnome_canvas_text_set_font_desc): free
 	text->font_desc, not font_desc.
 
