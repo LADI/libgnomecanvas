@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the libgnomecanvas package.
 # Pawan Chitrakar  <pawan@nplinux.org>
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas-2.0.\n"
