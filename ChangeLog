@@ -1,3 +1,8 @@
+2003-12-10  Richard Hult  <richard@imendio.com>
+
+	* docs/reference/libgnomecanvas-docs.sgml: Make this valid xml so
+	that gtk-doc doesn't fall back to the old output.
+
 2003-12-08  Anders Carlsson  <andersca@gnome.org>
 
 	* configure.in: Release 2.5.1
