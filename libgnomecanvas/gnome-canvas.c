@@ -2171,6 +2171,9 @@ gnome_canvas_init (GnomeCanvas *canvas)
 	gtk_layout_set_hadjustment (GTK_LAYOUT (canvas), NULL);
 	gtk_layout_set_vadjustment (GTK_LAYOUT (canvas), NULL);
 
+	/* Disable the gtk+ double buffering since the canvas uses it's own. */
+	gtk_widget_set_double_buffered (GTK_WIDGET (canvas), FALSE);
+	
 	/* Create the root item as a special case */
 
 	canvas->root = GNOME_CANVAS_ITEM (gtk_type_new (gnome_canvas_group_get_type ()));
