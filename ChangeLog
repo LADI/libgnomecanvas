@@ -1,3 +1,8 @@
+2005-01-12  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* libgnomecanvas/libgnomecanvas.h: Include gnome-canvas-clipgroup.h.
+	Closes bug #140912. Thanks to Ondrej Sury <ondrej at sury org>
+
 2004-12-25  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* demos/canvas-curve.c: (create_canvas_bezier_curve): ANSIfication

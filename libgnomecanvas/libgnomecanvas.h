@@ -36,6 +36,7 @@
 #include <libgnomecanvas/gnome-canvas-rect-ellipse.h>
 #include <libgnomecanvas/gnome-canvas-bpath.h>
 #include <libgnomecanvas/gnome-canvas-util.h>
+#include <libgnomecanvas/gnome-canvas-clipgroup.h>
 
 G_BEGIN_DECLS
 
