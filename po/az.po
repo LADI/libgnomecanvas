@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
 "POT-Creation-Date: 2001-12-11 20:47+0100\n"
-"PO-Revision-Date: 2001-06-07 20:33GMT +0200\n"
+"PO-Revision-Date: 2001-12-19 19:48GMT+0200\n"
 "Last-Translator: Vasif İsmayıloğlu MD <azerb_linux@hotmail.com>\n"
-"Language-Team: Azerbaijani Turkish <linuxaz@azerimal.net>\n"
+"Language-Team: Azerbaijani Turkic <linuxaz@azerimail.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.8\n"
+"X-Generator: KBabel 0.9.5\n"
 
 #: libgnomecanvas/gnome-canvas.c:1456 libgnomecanvas/gnome-canvas.c:1457
 msgid "X"
@@ -24,11 +24,11 @@ msgstr "Y"
 
 #: libgnomecanvas/gnome-canvas.c:2106
 msgid "Antialiased"
-msgstr ""
+msgstr "Hamar (antialyans)"
 
 #: libgnomecanvas/gnome-canvas.c:2107
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "Kanvasın hamarlanmış halı."
 
 #: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text"
@@ -108,10 +108,8 @@ msgid "Rise"
 msgstr "Yüksəlmə"
 
 #: libgnomecanvas/gnome-canvas-text.c:338
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
-"Mətnin Offseti ana xəttin üstündə olsun (yüksəlmə mənfi isə altında olsun)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr "Mətnin Offseti ana xəttin üstündə olsun (yüksəlmə mənfi isə altında olsun)"
 
 #: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Strikethrough"
@@ -250,3 +248,4 @@ msgstr "Miqyaslama dəstəsi"
 #: libgnomecanvas/gnome-canvas-text.c:506
 msgid "Whether this tag affects font scaling"
 msgstr "Bu təqin yazı növü miqyaslamasına harda tə'sir edəcəyi"
+
