@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string.h>
 #include "canvas_demo.h"
-#include "gnome-canvas-path-def.h"
+#include <libgnomecanvas/gnome-canvas-path-def.h>
 #include <gdk/gdkkeysyms.h>
 
 static void

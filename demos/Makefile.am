@@ -1,10 +1,6 @@
 INCLUDES = \
-	-I. 						\
-	-I$(srcdir) -I$(top_srcdir) 			\
-	-I$(srcdir)/../libgnomecanvas			\
+	-I$(top_srcdir) 				\
 	-I$(top_builddir)				\
-	-I$(builddir)					\
-        -I$(includedir)                                 \
 	$(WARN_CFLAGS)					\
 	$(LIBGNOMECANVAS_CFLAGS)			\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
