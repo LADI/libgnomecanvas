@@ -107,6 +107,8 @@ G_BEGIN_DECLS
 typedef struct _GnomeCanvasText GnomeCanvasText;
 typedef struct _GnomeCanvasTextClass GnomeCanvasTextClass;
 
+typedef struct _GnomeCanvasTextPrivate GnomeCanvasTextPrivate;
+
 struct _GnomeCanvasText {
 	GnomeCanvasItem item;
 
@@ -158,6 +160,8 @@ struct _GnomeCanvasText {
 	guint rise_set      : 1;        /* Apply specified ascension/descension? */
 
 	guint scale_set     : 1;        /* Apply specified font scaling ratio? */
+
+	GnomeCanvasTextPrivate *private;	
 };
 
 struct _GnomeCanvasTextClass {

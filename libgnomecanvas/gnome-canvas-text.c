@@ -99,6 +99,11 @@ enum {
 	PROP_TEXT_HEIGHT
 };
 
+struct _GnomeCanvasTextPrivate {
+	guint render_dirty : 1;
+	FT_Bitmap bitmap;
+};
+
 
 static void gnome_canvas_text_class_init (GnomeCanvasTextClass *class);
 static void gnome_canvas_text_init (GnomeCanvasText *text);
@@ -541,6 +546,10 @@ gnome_canvas_text_init (GnomeCanvasText *text)
 	text->underline_set = FALSE;
 	text->strike_set    = FALSE;
 	text->rise_set      = FALSE;
+	
+	text->private = g_new(GnomeCanvasTextPrivate, 1);
+	text->private->bitmap.buffer = NULL;
+	text->private->render_dirty = 1;
 }
 
 /* Destroy handler for the text item */
@@ -576,6 +585,12 @@ gnome_canvas_text_destroy (GtkObject *object)
 		gdk_bitmap_unref (text->stipple);
 	text->stipple = NULL;
 
+	if(text->private->bitmap.buffer) {
+		g_free(text->private->bitmap.buffer);		
+	}
+	g_free(text->private);
+	text->private = NULL;
+	
 	if (GTK_OBJECT_CLASS (parent_class)->destroy)
 		(* GTK_OBJECT_CLASS (parent_class)->destroy) (object);
 }
@@ -656,6 +671,9 @@ get_bounds_item_relative (GnomeCanvasText *text, double *px1, double *py1, doubl
 
 	/* Bounds */
 
+
+	
+
 	if (text->clip) {
 		/* maybe do bbox intersection here? */
 		*px1 = clip_x;
@@ -680,6 +698,7 @@ get_bounds (GnomeCanvasText *text, double *px1, double *py1, double *px2, double
 
 	/* Get canvas pixel coordinates for text position */
 
+	
 	wx = text->x;
 	wy = text->y;
 	gnome_canvas_item_i2w (item, &wx, &wy);
@@ -869,12 +888,15 @@ gnome_canvas_text_set_property (GObject            *object,
 		text->text = g_value_dup_string (value);
 		pango_layout_set_text (text->layout, text->text, -1);
 		recalc_bounds (text);
+
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_MARKUP:
 		gnome_canvas_text_set_markup (text,
 					      g_value_get_string (value));
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_X:
@@ -910,6 +932,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 			gnome_canvas_text_apply_font_desc (text);
 		}
+		text->private->render_dirty = 1;
 		break;
 	}
 
@@ -919,6 +942,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_FAMILY:
@@ -927,6 +951,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_FAMILY_SET:
@@ -934,6 +959,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 		
 	case PROP_STYLE:
@@ -942,6 +968,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_STYLE_SET:
@@ -949,6 +976,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 		
 	case PROP_VARIANT:
@@ -957,6 +985,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_VARIANT_SET:
@@ -964,6 +993,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 		
 	case PROP_WEIGHT:
@@ -972,6 +1002,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_WEIGHT_SET:
@@ -979,6 +1010,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_STRETCH:
@@ -987,6 +1019,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_STRETCH_SET:
@@ -994,6 +1027,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_SIZE:
@@ -1002,6 +1036,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_SIZE_POINTS:
@@ -1010,6 +1045,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_SIZE_SET:
@@ -1017,6 +1053,7 @@ gnome_canvas_text_set_property (GObject            *object,
 
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_SCALE:
@@ -1025,6 +1062,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 		
 	case PROP_SCALE_SET:
@@ -1032,6 +1070,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_font_desc (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;		
 		
 	case PROP_UNDERLINE:
@@ -1040,6 +1079,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_UNDERLINE_SET:
@@ -1047,6 +1087,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_STRIKETHROUGH:
@@ -1055,6 +1096,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_STRIKETHROUGH_SET:
@@ -1062,6 +1104,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_RISE:
@@ -1070,6 +1113,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_RISE_SET:
@@ -1077,6 +1121,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_ATTRIBUTES:
@@ -1087,6 +1132,7 @@ gnome_canvas_text_set_property (GObject            *object,
 		
 		gnome_canvas_text_apply_attributes (text);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_ANCHOR:
@@ -1114,21 +1160,25 @@ gnome_canvas_text_set_property (GObject            *object,
 		}		  
 		pango_layout_set_alignment (text->layout, align);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_WIDTH:
 		text->clip_width = fabs (g_value_get_double (value));
 		recalc_bounds (text);
+		text->private->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP_HEIGHT:
 		text->clip_height = fabs (g_value_get_double (value));
 		recalc_bounds (text);
+		text->private->render_dirty = 1;				
 		break;
 
 	case PROP_CLIP:
 		text->clip = g_value_get_boolean (value);
 		recalc_bounds (text);
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_X_OFFSET:
@@ -1154,6 +1204,7 @@ gnome_canvas_text_set_property (GObject            *object,
 				      0xff);
 			color_changed = TRUE;
 		}
+		text->private->render_dirty = 1;
 		break;
 	}
 
@@ -1178,6 +1229,7 @@ gnome_canvas_text_set_property (GObject            *object,
         case PROP_FILL_COLOR_RGBA:
 		text->rgba = g_value_get_uint (value);
 		color_changed = TRUE;
+		text->private->render_dirty = 1;
 		break;
 
 	case PROP_FILL_STIPPLE:
@@ -1523,7 +1575,9 @@ gnome_canvas_text_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_pa
 			text->affine[i] = affine[i];
 		get_bounds_item_relative (text, &i_bbox.x0, &i_bbox.y0, &i_bbox.x1, &i_bbox.y1);
 		art_drect_affine_transform (&c_bbox, &i_bbox, affine);
-		gnome_canvas_update_bbox (item, c_bbox.x0, c_bbox.y0, c_bbox.x1, c_bbox.y1);
+
+		
+		gnome_canvas_update_bbox (item, floor(c_bbox.x0), floor(c_bbox.y0), ceil(c_bbox.x1), ceil(c_bbox.y1));
 
 	}
 }
@@ -1589,18 +1643,22 @@ gnome_canvas_text_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 		gdk_gc_set_clip_rectangle (text->gc, NULL);
 }
 
+
 /* Render handler for the text item */
 static void
 gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 {
 	GnomeCanvasText *text;
 	guint32 fg_color;
-	int i;
-	double affine[6];
-	ArtPoint start_i, start_c;
-	FT_Bitmap bitmap;
-	
+	double affine[6], anchor_affine[6], anchor_x = 0.0, anchor_y = 0.0,
+		bitmap_width, bitmap_height;
 
+
+	int render_x = 0, render_y = 0; /* offsets for text rendering,
+					 * for clipping rectangles */
+
+
+	
 	text = GNOME_CANVAS_TEXT (item);
 
 	if (!text->text)
@@ -1610,36 +1668,136 @@ gnome_canvas_text_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 
         gnome_canvas_buf_ensure_buf (buf);
 
-	bitmap.rows = text->height;
-	bitmap.width = text->max_width;
-	bitmap.pitch = (text->max_width+3)&~3;
-	bitmap.buffer = g_malloc0 (bitmap.rows * bitmap.pitch);
-	bitmap.num_grays = 256;
-	bitmap.pixel_mode = ft_pixel_mode_grays;
-	pango_ft2_render_layout (&bitmap, text->layout, 0, 0);
+	
+	if(text->private->render_dirty) {		
+		if(text->private->bitmap.buffer) {
+			g_free(text->private->bitmap.buffer);
+		}
+		text->private->bitmap.rows =  (text->clip) ? text->clip_height : text->height;
+		text->private->bitmap.width = (text->clip) ? text->clip_width : text->max_width;
+		text->private->bitmap.pitch = (text->max_width+3)&~3;
+		text->private->bitmap.buffer = g_malloc0 (text->private->bitmap.rows * text->private->bitmap.pitch);
+		text->private->bitmap.num_grays = 256;
+		text->private->bitmap.pixel_mode = ft_pixel_mode_grays;
 
-	art_affine_scale (affine, item->canvas->pixels_per_unit, item->canvas->pixels_per_unit);
-	for (i = 0; i < 6; i++)
-		affine[i] = text->affine[i];
 
-	start_i.x = text->cx;
-	start_i.y = text->cy;
-	art_affine_point (&start_c, &start_i, text->affine);
-	affine[4] = start_c.x;
-	affine[5] = start_c.y;
+		/* What this does is when a clipping rectangle is
+		   being used shift the rendering of the text by the
+		   correct amount so that the correct result is
+		   obtained as if all text was rendered, then clipped.
+		   In this sense we can use smaller buffers and less
+		   rendeirng since hopefully FreeType2 checks to see
+		   if the glyph falls in the bounding box before
+		   rasterizing it. */
+
+		if(text->clip) {
+			switch(text->anchor) {
+			case GTK_ANCHOR_NW:				
+				break;
+			case GTK_ANCHOR_W:
+				render_y -= (text->height-text->clip_height)*0.5;
+				break;
+			case GTK_ANCHOR_SW:
+				/* you don't want this */
+				render_y -= (text->height-text->clip_height);
+				break;
+			case GTK_ANCHOR_N:
+				render_x -= (text->max_width-text->clip_width)*0.5;
+				break;
+			case GTK_ANCHOR_CENTER:
+				render_x -= (text->max_width-text->clip_width)*0.5;
+				render_y -= (text->height-text->clip_height)*0.5;
+				break;
+			case GTK_ANCHOR_S:
+				render_x -= (text->max_width-text->clip_width)*0.5;
+				render_y -= (text->height-text->clip_height);
+				break;
+			case GTK_ANCHOR_NE:
+				render_x -= (text->max_width-text->clip_width);
+				break;
+			case GTK_ANCHOR_E:
+				render_x -= (text->max_width-text->clip_width);
+				render_y -= (text->height-text->clip_height)*0.5;
+				break;
+			case GTK_ANCHOR_SE:
+			        render_x -= (text->max_width-text->clip_width);
+				render_y -= (text->height-text->clip_height);
+			default:
+				break;			
+			}
+		}
+		
+
+		pango_ft2_render_layout (&text->private->bitmap, text->layout, render_x, render_y);
+		
+		text->private->render_dirty = 0;
+	}
+
+
+
+	memcpy(affine, text->affine, sizeof(gdouble)*6);       
+
+	anchor_x = text->x*item->canvas->pixels_per_unit;
+	anchor_y = text->y*item->canvas->pixels_per_unit;
+
+	bitmap_width = text->private->bitmap.width;
+	bitmap_height = text->private->bitmap.rows;
+
+	
+	/* Figure out the correct translation to apply to affine due
+	 * to the anchor */
+	switch(text->anchor) {
+	case GTK_ANCHOR_NW:
+		break;
+	case GTK_ANCHOR_W:
+		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_SW:
+		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_N:
+		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_CENTER:
+		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
+		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_S:
+		anchor_x -= (bitmap_width*0.5)*item->canvas->pixels_per_unit;
+		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_NE:
+		anchor_x -= (bitmap_width)*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_E:
+		anchor_x -= bitmap_width*item->canvas->pixels_per_unit;
+		anchor_y -= (bitmap_height*0.5)*item->canvas->pixels_per_unit;
+		break;
+	case GTK_ANCHOR_SE:
+		anchor_x -= bitmap_width*item->canvas->pixels_per_unit;
+		anchor_y -= bitmap_height*item->canvas->pixels_per_unit;
+	default:
+		break;
+	}
+
+	/* Honor the anchor offsets */
+	anchor_x += text->xofs;
+	anchor_y += text->yofs;
+	
+	art_affine_translate(anchor_affine, anchor_x, anchor_y);
+	art_affine_multiply(affine, affine, anchor_affine);
+
 	art_rgb_a_affine (buf->buf,
 			  buf->rect.x0, buf->rect.y0, buf->rect.x1, buf->rect.y1,
 			  buf->buf_rowstride,
-			  bitmap.buffer,
-			  bitmap.width,
-			  bitmap.rows,
-			  bitmap.pitch,
+			  text->private->bitmap.buffer,
+			  text->private->bitmap.width,
+			  text->private->bitmap.rows,
+			  text->private->bitmap.pitch,
 			  fg_color,
 			  affine,
 			  ART_FILTER_NEAREST, NULL);
-
-	g_free (bitmap.buffer);
-	
+			
 	buf->is_bg = 0;
 }
 
@@ -1671,13 +1829,14 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
  	        PangoRectangle log_rect;
 
 		pango_layout_iter_get_line_extents (iter, NULL, &log_rect);
-		
-		x1 = PANGO_PIXELS (log_rect.x);
-		y1 = PANGO_PIXELS (log_rect.y);
-		x2 = PANGO_PIXELS (log_rect.x+log_rect.width);
-		y2 = PANGO_PIXELS (log_rect.x+log_rect.height);
-		
+				
 		if (text->clip) {
+			x1 = PANGO_PIXELS (log_rect.x);
+			y1 = PANGO_PIXELS (log_rect.y);
+			x2 = PANGO_PIXELS (log_rect.x+log_rect.width);
+			y2 = PANGO_PIXELS (log_rect.x+log_rect.height);
+
+
 			if (x1 < text->clip_cx)
 				x1 = text->clip_cx;
 
@@ -1692,6 +1851,11 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 
 			if ((x1 >= x2) || (y1 >= y2))
 				continue;
+		} else {
+			x1 = text->x;
+			y1 = text->y;
+			x2 = log_rect.width;
+			y2 = log_rect.height;			
 		}
 
 		/* Calculate distance from point to rectangle */
@@ -1787,5 +1951,5 @@ gnome_canvas_text_bounds (GnomeCanvasItem *item, double *x1, double *y1, double 
 	}
 
 	*x2 = *x1 + width;
-	*y2 = *y1 + height;
+	*y2 = *y1 + height;	
 }

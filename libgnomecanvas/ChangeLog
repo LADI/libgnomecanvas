@@ -1,3 +1,46 @@
+2001-06-25  Rusty Conover <rconover@bangtail.net>
+
+	* gnome-canvas-text.c (gnome_canvas_text_destroy,
+	gnome_canvas_text_init): Added code to handle cached Pango text
+	bitmaps.
+
+	* gnome-canvas-text.c (gnome_canvas_text_set_property: Added code
+	to mark the cached Pango bitmap of the text as dirty causing it to
+	be rerendered the next time the item's render method is invoked.
+
+	* gnome-canvas-text.c (gnome_canvas_text_render): A bunch of
+	changes:
+
+	First, a change to allow caching of Pango's rendering of the text
+	so it need not be rerendered everytime.  This makes rendering
+	large amounts of text much faster in AA mode.
+
+	Second, the method of clipping of text was changed so that the
+	Pango's rendering buffer is sized the same as the clip rectangle
+	if enabled.  If clipping is enabled an offset is also applied to
+	the text's rendering to reflect the anchor of the clipping
+	rectangle.  
+
+	Third, I made the item respect the anchor argument in AA mode and
+	be generally more sane with its positioning as pointed out by Tim
+	Janik <timj@gtk.org>.  Also made the item respect the anchor
+	offset parameters.  Neither of these properties were getting their
+	proper respect, but I think they are a little bit closer to
+	working correctly now, maybe.
+
+	* gnome-canvas-text.c (gnome_canvas_text_point): Changed this
+	method in attempt to make it actually function.  It seems to work
+	better now.
+	
+	* gnome-canvas-text.h: Added GnomeCanvasTextPrivate which is a
+	private structure to store the cached rendering of the text done
+	by Pango.  This speeds up the rendering method signifigantly for
+	large amounts of text. Since the text need not be rerasterized by
+	Pango since it is cached; only the item rgba affine need be
+	applied to the cached bitmap.
+
+	
+
 2001-06-20  Rusty Conover  <rconover@bangtail.net>
 
 	* This is the start of the changes to convert most shape items to

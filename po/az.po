@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.96.0\n"
-"POT-Creation-Date: 2001-06-20 01:09-0600\n"
+"POT-Creation-Date: 2001-06-25 02:26-0600\n"
 "PO-Revision-Date: 2001-06-07 20:33GMT +0200\n"
 "Last-Translator: Vasif İsmayıloğlu MD <azerb_linux@hotmail.com>\n"
 "Language-Team: Azerbaijani Turkish <linuxaz@azerimal.net>\n"
@@ -22,224 +22,224 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas-text.c:197
+#: libgnomecanvas/gnome-canvas-text.c:202
 msgid "Text"
 msgstr "Mətn"
 
-#: libgnomecanvas/gnome-canvas-text.c:198
+#: libgnomecanvas/gnome-canvas-text.c:203
 msgid "Text to render"
 msgstr "Render ediləcək mətn"
 
-#: libgnomecanvas/gnome-canvas-text.c:206
+#: libgnomecanvas/gnome-canvas-text.c:211
 msgid "Markup"
 msgstr "İşarət"
 
-#: libgnomecanvas/gnome-canvas-text.c:207
+#: libgnomecanvas/gnome-canvas-text.c:212
 msgid "Marked up text to render"
 msgstr "Render ediləcək işarət"
 
-#: libgnomecanvas/gnome-canvas-text.c:232
+#: libgnomecanvas/gnome-canvas-text.c:237
 msgid "Font"
 msgstr "Yazı Növü"
 
-#: libgnomecanvas/gnome-canvas-text.c:233
+#: libgnomecanvas/gnome-canvas-text.c:238
 msgid "Font description as a string"
 msgstr "Yazı növü izahat kəlimə olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:241
+#: libgnomecanvas/gnome-canvas-text.c:246
 msgid "Font description"
 msgstr "Yazı növü izahatı"
 
-#: libgnomecanvas/gnome-canvas-text.c:242
+#: libgnomecanvas/gnome-canvas-text.c:247
 msgid "Font description as a PangoFontDescription struct"
 msgstr "Yazı növü izahatı PangoFontDescription olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:250
+#: libgnomecanvas/gnome-canvas-text.c:255
 msgid "Font family"
 msgstr "Yazı növü ailəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:251
+#: libgnomecanvas/gnome-canvas-text.c:256
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
 msgstr "Yazı növü ailəsi adı, Helvetika, Tayms vs kimi"
 
-#: libgnomecanvas/gnome-canvas-text.c:267
-#: libgnomecanvas/gnome-canvas-text.c:268
+#: libgnomecanvas/gnome-canvas-text.c:272
+#: libgnomecanvas/gnome-canvas-text.c:273
 msgid "Font style"
 msgstr "Yazı növü tərzi"
 
-#: libgnomecanvas/gnome-canvas-text.c:277
-#: libgnomecanvas/gnome-canvas-text.c:278
+#: libgnomecanvas/gnome-canvas-text.c:282
+#: libgnomecanvas/gnome-canvas-text.c:283
 msgid "Font variant"
 msgstr "Yazı növü variantı"
 
-#: libgnomecanvas/gnome-canvas-text.c:287
-#: libgnomecanvas/gnome-canvas-text.c:288
+#: libgnomecanvas/gnome-canvas-text.c:292
+#: libgnomecanvas/gnome-canvas-text.c:293
 msgid "Font weight"
 msgstr "Yazı növü qalınlığı"
 
-#: libgnomecanvas/gnome-canvas-text.c:299
-#: libgnomecanvas/gnome-canvas-text.c:300
+#: libgnomecanvas/gnome-canvas-text.c:304
+#: libgnomecanvas/gnome-canvas-text.c:305
 msgid "Font stretch"
 msgstr "Yazı növü genişliyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:309
-#: libgnomecanvas/gnome-canvas-text.c:310
+#: libgnomecanvas/gnome-canvas-text.c:314
+#: libgnomecanvas/gnome-canvas-text.c:315
 msgid "Font size"
 msgstr "Yazı növü böyüklüyü"
 
-#: libgnomecanvas/gnome-canvas-text.c:320
+#: libgnomecanvas/gnome-canvas-text.c:325
 msgid "Font points"
 msgstr "Yazı növü nöqtələri"
 
-#: libgnomecanvas/gnome-canvas-text.c:321
+#: libgnomecanvas/gnome-canvas-text.c:326
 msgid "Font size in points"
 msgstr "Yazı növü böyüklüyü nöqtə olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:331
+#: libgnomecanvas/gnome-canvas-text.c:336
 msgid "Rise"
 msgstr "Yüksəlmə"
 
-#: libgnomecanvas/gnome-canvas-text.c:332
+#: libgnomecanvas/gnome-canvas-text.c:337
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Mətnin Offseti ana xəttin üstündə olsun (yüksəlmə mənfi isə "
 "altında olsun)"
 
-#: libgnomecanvas/gnome-canvas-text.c:342
+#: libgnomecanvas/gnome-canvas-text.c:347
 msgid "Strikethrough"
 msgstr "Qaralanmış"
 
-#: libgnomecanvas/gnome-canvas-text.c:343
+#: libgnomecanvas/gnome-canvas-text.c:348
 msgid "Whether to strike through the text"
 msgstr "Mətni harada qaralayacağıq"
 
-#: libgnomecanvas/gnome-canvas-text.c:351
+#: libgnomecanvas/gnome-canvas-text.c:356
 msgid "Underline"
 msgstr "Altı Çızılı"
 
-#: libgnomecanvas/gnome-canvas-text.c:352
+#: libgnomecanvas/gnome-canvas-text.c:357
 msgid "Style of underline for this text"
 msgstr "Bu mətn üçün alt cızıq tərzi"
 
-#: libgnomecanvas/gnome-canvas-text.c:361
+#: libgnomecanvas/gnome-canvas-text.c:366
 msgid "Scale"
 msgstr "Miqyasla"
 
-#: libgnomecanvas/gnome-canvas-text.c:362
+#: libgnomecanvas/gnome-canvas-text.c:367
 msgid "Size of font, relative to default size"
 msgstr "Yazı növü böyüklüyü, əsasa nəzərən"
 
-#: libgnomecanvas/gnome-canvas-text.c:416
-#: libgnomecanvas/gnome-canvas-text.c:424
-#: libgnomecanvas/gnome-canvas-text.c:432
+#: libgnomecanvas/gnome-canvas-text.c:421
+#: libgnomecanvas/gnome-canvas-text.c:429
+#: libgnomecanvas/gnome-canvas-text.c:437
 msgid "Color"
 msgstr "Rəng"
 
-#: libgnomecanvas/gnome-canvas-text.c:417
+#: libgnomecanvas/gnome-canvas-text.c:422
 msgid "Text color, as string"
 msgstr "Mətn rəngi, qatar olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:425
+#: libgnomecanvas/gnome-canvas-text.c:430
 msgid "Text color, as a GdkColor"
 msgstr "Mətn rəngi, GdkColor olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:433
+#: libgnomecanvas/gnome-canvas-text.c:438
 msgid "Text color, as an R/G/B/A combined integer"
 msgstr "Mətn rəngi, R/G/B/A kombinasiyalı tam sayı olaraq"
 
-#: libgnomecanvas/gnome-canvas-text.c:446
+#: libgnomecanvas/gnome-canvas-text.c:451
 msgid "Text width"
 msgstr "Mətn genişliyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:447
+#: libgnomecanvas/gnome-canvas-text.c:452
 msgid "Width of the rendered text"
 msgstr "Render edilmiş mətn genişliyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:454
+#: libgnomecanvas/gnome-canvas-text.c:459
 msgid "Text height"
 msgstr "Mətn hündürlüyü"
 
-#: libgnomecanvas/gnome-canvas-text.c:455
+#: libgnomecanvas/gnome-canvas-text.c:460
 msgid "Height of the rendered text"
 msgstr "Render edilmiş mətn hündürlüyü"
 
-#: libgnomecanvas/gnome-canvas-text.c:463
+#: libgnomecanvas/gnome-canvas-text.c:468
 msgid "Font family set"
 msgstr "Yazı növü ailəsi dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:464
+#: libgnomecanvas/gnome-canvas-text.c:469
 msgid "Whether this tag affects the font family"
 msgstr "Bu təqin yazı növü ailəsinə harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:467
+#: libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font style set"
 msgstr "Yazı növü dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:468
+#: libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font style"
 msgstr "Bu təqin yazı növü tərzinə  harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:471
+#: libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font variant set"
 msgstr "Yazı növü variantı dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:472
+#: libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font variant"
 msgstr "Bu təqin yazı növü variantına harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:475
+#: libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font weight set"
 msgstr "Yazı növü qalınlığı dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:476
+#: libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font weight"
 msgstr "Bu təqin yazı növü qalınlığına harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:479
+#: libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font stretch set"
 msgstr "Yazı növü genişliyi dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:480
+#: libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font stretch"
 msgstr "Bu təqin yazı növü genişliyinə harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:483
+#: libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font size set"
 msgstr "Yazı növü böyüklüyü dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:484
+#: libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font size"
 msgstr "Bu təqin yazı növü böyüklüyünə harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:487
+#: libgnomecanvas/gnome-canvas-text.c:492
 msgid "Rise set"
 msgstr "Yüksəklik dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:488
+#: libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the rise"
 msgstr "Bu təqin yüksəkliyə harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:491
+#: libgnomecanvas/gnome-canvas-text.c:496
 msgid "Strikethrough set"
 msgstr "Qaralanma dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:492
+#: libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects strikethrough"
 msgstr "Bu təqin qaralanmağa harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:495
+#: libgnomecanvas/gnome-canvas-text.c:500
 msgid "Underline set"
 msgstr "Altı cızıqlı dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:496
+#: libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects underlining"
 msgstr "Bu təqin alt cızıqlara harda tə'sir edəcəyi"
 
-#: libgnomecanvas/gnome-canvas-text.c:499
+#: libgnomecanvas/gnome-canvas-text.c:504
 msgid "Scale set"
 msgstr "Miqyaslama dəstəsi"
 
-#: libgnomecanvas/gnome-canvas-text.c:500
+#: libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects font scaling"
 msgstr "Bu təqin yazı növü miqyaslamasına harda tə'sir edəcəyi"
