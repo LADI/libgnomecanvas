@@ -1,3 +1,7 @@
+2003-06-11  Kenneth Rohde Christiansen  <kenneth@gnu.org>
+
+	* configure.in: Added "li" to ALL_LINGUAS.
+
 2003-05-18  Martin Kretzschmar  <m_kretzschmar@gmx.net>
 
 	Implement general clipping in clipgroup. Fixes bug #104602.
