@@ -31,7 +31,7 @@
 GType
 gnome_canvas_points_get_type (void)
 {
-    GType type_canvas_points = 0;
+    static GType type_canvas_points = 0;
 
     if (!type_canvas_points)
 	type_canvas_points = g_boxed_type_register_static
