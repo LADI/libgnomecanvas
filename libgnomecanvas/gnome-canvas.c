@@ -499,7 +499,7 @@ gnome_canvas_item_dispose (GObject *object)
 	g_free (item->xform);
 	item->xform = NULL;
 
-	(* G_OBJECT_CLASS (item_parent_class)->dispose) (object);
+	G_OBJECT_CLASS (item_parent_class)->dispose (object);
 }
 
 /* Realize handler for canvas items */
@@ -2549,8 +2549,8 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 
 	/* Perform checks for grabbed items */
 
-	if (canvas->grabbed_item && !is_descendant (canvas->current_item, canvas->grabbed_item))
-        {
+	if (canvas->grabbed_item &&
+	    !is_descendant (canvas->current_item, canvas->grabbed_item)) {
                 g_warning ("emit_event() returning FALSE!\n");
 		return FALSE;
         }
@@ -2657,24 +2657,14 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 
 	finished = FALSE;
 
-	while (item && !finished)
-        {
+	while (item && !finished) {
 		gtk_object_ref (GTK_OBJECT (item));
 
-		gtk_signal_emit (GTK_OBJECT (item), item_signals[ITEM_EVENT],
-				 &ev,
-				 &finished);
+		gtk_signal_emit (
+			GTK_OBJECT (item), item_signals[ITEM_EVENT],
+			&ev, &finished);
 
-                if (GTK_OBJECT_DESTROYED (item))
-                {
-                        g_print ("Object is destroyed, returning.\n");
-                        parent = item->parent;
-                        gtk_object_unref (GTK_OBJECT (item));
-                        return finished;
-                }
-
-                switch (event->type)
-                {
+                switch (event->type) {
                 case GDK_MOTION_NOTIFY:
                         signal_num = ITEM_MOTION_NOTIFY_EVENT;
                         break;
@@ -2699,9 +2689,6 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
                                          item_signals[signal_num],
                                          &ev,
                                          &finished);
-
-		if (GTK_OBJECT_DESTROYED (item))
-			finished = TRUE;
 
 		parent = item->parent;
 		gtk_object_unref (GTK_OBJECT (item));
