@@ -1,13 +1,7 @@
-2001-08-06  gettextize  <bug-gnu-utils@gnu.org>
+2001-08-07  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* Makefile.in.in: Upgrade to gettext-0.10.39.
-
-2001-08-06  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.39.
-	* cat-id-tbl.c: Remove file.
-	* stamp-cat-id: Remove file.
-
+	* no.po: Updated Norwegian (bokmål) translation.
+	
 2001-08-05  Héctor García Álvarez  <hector@scouts-es.org>
 
         * es.po: Added Spanish translation.
@@ -20,29 +14,9 @@
 
 	* sv.po: Added Swedish translation.
 
-2001-06-29  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.37.
-
-2001-06-29  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.37.
-
-2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.37.
-
 2001-06-26  Fatih Demir <kabalak@gtranslator.org>
 
 	* ta.po: Added Tamil translation by Dinesh Nadarajah.
-
-2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.37.
-
-2001-06-26  gettextize  <bug-gnu-utils@gnu.org>
-
-	* Makefile.in.in: Upgrade to gettext-0.10.37.
 
 2001-06-19  Héctor García Álvarez  <hector@scouts-es.org>
 
