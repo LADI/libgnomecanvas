@@ -6,7 +6,7 @@ INCLUDES = \
 	-DG_LOG_DOMAIN=\"GnomeCanvas\"			\
 	$(CANVAS_GLADE_CFLAGS)
 
-glademoduledir = $(GLADE_MODULE_DIR)
+glademoduledir = $(libdir)/libglade/2.0
 glademodule_LTLIBRARIES = libcanvas.la
 
 libcanvas_la_LIBADD = \

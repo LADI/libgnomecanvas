@@ -1,3 +1,10 @@
+2001-11-07  jacob berkman  <jacob@ximian.com>
+
+	* glade/Makefile.am (glademoduledir): install into our prefix
+	rather than libglade's
+
+	* configure.in: remove libglade module dir check
+
 2001-11-06  jacob berkman  <jacob@ximian.com>
 
 	* glade/glade-canvas.c (canvas_new): function to create a canvas,
