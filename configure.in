@@ -55,10 +55,6 @@ GNOME_PKGCONFIG_CHECK_MODULES(GTK, gtk+-2.0:1.3.2)
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
-dnl AC_SUBST GTK+ version
-GTK_VERSION=`$PKG_CONFIG --modversion gtk+`
-AC_SUBST(GTK_VERSION)
-
 dnl
 dnl Libart check
 dnl

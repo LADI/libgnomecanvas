@@ -14,7 +14,6 @@ INCLUDES = \
         -DGNOMECANVASBINDIR=\""$(bindir)"\" 		\
         -DGNOMECANVASLOCALSTATEDIR=\""$(localstatedir)"\" 	\
         -DGNOMECANVASLOCALEDIR=\""$(gnomelocaledir)"\" 	\
-	-DGTK_VERSION=\""$(GTK_VERSION)"\"		\
 	-DG_LOG_DOMAIN=\"GnomeCanvas\"			\
 	-DVERSION=\"$(VERSION)\"
 
