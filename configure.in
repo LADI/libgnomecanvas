@@ -54,6 +54,15 @@ AC_PATH_PROGS(PERL, perl5 perl)
 # glib-genmarshal
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
+AC_ARG_WITH(html-dir, [  --with-html-dir=PATH path to installed docs ])
+
+if test "x$with_html_dir" = "x" ; then
+  HTML_DIR='${datadir}/gtk-doc/html'
+else
+  HTML_DIR=$with_html_dir
+fi
+
+AC_SUBST(HTML_DIR)
 GNOME_GTKDOC_CHECK
 
 # define a MAINT-like variable REBUILD which is set if Perl
