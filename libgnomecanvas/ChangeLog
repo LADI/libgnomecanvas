@@ -1,3 +1,12 @@
+2001-10-22  Havoc Pennington  <hp@redhat.com>
+
+	* gnome-canvas-rich-text.c:
+	#define GTK_TEXT_USE_INTERNAL_UNSUPPORTED_API so we don't barf on 
+	including the internal headers.
+
+	* gnome-canvas-rich-text.h: Get gtktextlayout.h out of the
+	header. gtktextlayout.h is not public.
+
 2001-10-04  Matt Wilson  <msw@redhat.com>
 
 	* gnome-canvas-text.c (gnome_canvas_text_point): free the iter

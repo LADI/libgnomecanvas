@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define GTK_TEXT_USE_INTERNAL_UNSUPPORTED_API
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtksignal.h>
 #include <gtk/gtktextdisplay.h>

@@ -24,7 +24,7 @@
 #define GNOME_CANVAS_RICH_TEXT_H
 
 #include <libgnomecanvas/gnome-canvas.h>
-#include <gtk/gtktextlayout.h>
+#include <gtk/gtktextbuffer.h>
 
 G_BEGIN_DECLS
 
