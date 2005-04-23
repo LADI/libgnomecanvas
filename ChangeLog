@@ -1,6 +1,6 @@
 2005-03-30  Steve Murphy  <murf@e-tools.com>
 
-        * configure.in: Added "rw" to ALL_LINGUAS.
+	* configure.in: Added "rw" to ALL_LINGUAS.
 
 2005-03-12  Tor Lillqvist  <tml@novell.com>
 
@@ -150,7 +150,7 @@
 
 2004-04-09  Guntupalli Karunakar  <karunakar@freedomink.org>
 
-        * configure.in: Added "gu" (Gujarati) to ALL_LINGUAS.
+	* configure.in: Added "gu" (Gujarati) to ALL_LINGUAS.
 
 ==================== 2.6.0 ====================
 
@@ -176,7 +176,7 @@
 
 2004-03-04  Guntupalli Karunakar  <karunakar@freedomink.org>
 
-        * configure.in: Added "pa" (Punjabi) to ALL_LINGUAS.
+	* configure.in: Added "pa" (Punjabi) to ALL_LINGUAS.
 
 2004-03-04  Glynn Foster  <glynn.foster@sun.com>
 
@@ -371,7 +371,7 @@ Mon Mar 31 07:21:33 2003  Tim Janik  <timj@gtk.org>
 
 2003-03-19  Paul Duffy <dubhthach@frink.nuigalway.ie>
 
-        * configure.in: Added "ga" to ALL_LINGUAS.
+	* configure.in: Added "ga" to ALL_LINGUAS.
 
 2003-03-06  Sebastian Rittau  <srittau@jroger.in-berlin.de>
 
@@ -499,7 +499,7 @@ Mon Mar 31 07:21:33 2003  Tim Janik  <timj@gtk.org>
 
 	* configure.in: Release 2.1.0
 
-2202-08-24  Sebastian Rittau  <srittau@jroger.in-berlin.de>
+2002-08-24  Sebastian Rittau  <srittau@jroger.in-berlin.de>
 
 	The following patch needs to go into 2.0.x as well if it doesn't
 	break anything.
@@ -931,7 +931,7 @@ Sat Jan  5 07:07:08 2002  Tim Janik  <timj@gtk.org>
 
 2001-12-27  Duarte Loreto <happyguy_pt@hotmail.com>
 
-        * configure.in: Added portuguese to ALL_LINGUAS
+	* configure.in: Added portuguese to ALL_LINGUAS
 
 2001-12-23  Takayuki KUSANO  <AE5T-KSN@asahi-net.or.jp>
 
@@ -1428,24 +1428,24 @@ Wed Aug 15 12:54:58 2001  Tim Janik  <timj@gtk.org>
 
 	2001-02-11  Rusty Conover  <rconover@zootweb.com>
 
-        * gnome-canvas-line.c (gnome_canvas_line_set_arg): Added fix for
-        when the color of a line changes the SVP's of the arrowheads also
-        change color.  They didn't change color before.
+	* gnome-canvas-line.c (gnome_canvas_line_set_arg): Added fix for
+	when the color of a line changes the SVP's of the arrowheads also
+	change color.  They didn't change color before.
 
 	2000-05-01  Iain Holmes  <ih@csd.abdn.ac.uk>
 
-        * gnome-canvas-widget.c (gnome_canvas_widget_render)
-        (gnome_canvas_widget_draw): New functions to queue a widget redraw
-        when the item is redrawn.
-        (gnome_canvas_widget_class_init): Connect the render and draw
-        functions to the item.
+	* gnome-canvas-widget.c (gnome_canvas_widget_render)
+	(gnome_canvas_widget_draw): New functions to queue a widget redraw
+	when the item is redrawn.
+	(gnome_canvas_widget_class_init): Connect the render and draw
+	functions to the item.
 
 	2000-02-15  Federico Mena Quintero  <federico@helixcode.com>
 
-        * gnome-canvas-line.c (get_points): New function to copy the list
-        of the line's points without the endpoint adjustments for
-        arrowheads.  Based on a patch by Rusty Conover <rconover@zootweb.com>.
-        (gnome_canvas_line_get_arg): Use get_points().
+	* gnome-canvas-line.c (get_points): New function to copy the list
+	of the line's points without the endpoint adjustments for
+	arrowheads.  Based on a patch by Rusty Conover <rconover@zootweb.com>.
+	(gnome_canvas_line_get_arg): Use get_points().
 
 2001-08-13  Darin Adler  <darin@bentspoon.com>
 
