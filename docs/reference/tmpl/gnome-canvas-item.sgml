@@ -104,7 +104,7 @@ coordinates.
 </para>
 
 @canvasitem: the object which received the signal.
-@event: A GdkEvent structure containing the event that occured.
+@event: A GdkEvent structure containing the event that occurred.
 @Returns: Signal handlers should return %TRUE to stop signal emission or %FALSE
 to allow other signal handlers to process this event.
 
