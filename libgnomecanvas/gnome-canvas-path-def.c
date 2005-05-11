@@ -63,7 +63,7 @@ gnome_canvas_path_def_new (void)
  * gnome_canvas_path_def_new_sized:
  * @length: number of points to allocate for the path
  *
- * This funtion creates a new #gnome_canvas_path_def with @length
+ * This function creates a new #gnome_canvas_path_def with @length
  * number of points allocated. It is useful, if you know the exact
  * number of points in path, so you can avoid automatic point
  * array reallocation.

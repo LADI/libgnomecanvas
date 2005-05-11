@@ -1,5 +1,9 @@
 2005-05-11  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-path-def.c: Fix typo.
+
+2005-05-11  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas.h: Another typo.
 
 2005-05-10  Kjartan Maraas  <kmaraas@gnome.org>
