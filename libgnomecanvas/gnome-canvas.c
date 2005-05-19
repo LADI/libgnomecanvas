@@ -316,26 +316,27 @@ gnome_canvas_item_dispose (GObject *object)
 
 	item = GNOME_CANVAS_ITEM (object);
 
-	redraw_if_visible (item);
+	if (item->canvas)
+		redraw_if_visible (item);
 
 	/* Make the canvas forget about us */
 
-	if (item == item->canvas->current_item) {
+	if (item->canvas && item == item->canvas->current_item) {
 		item->canvas->current_item = NULL;
 		item->canvas->need_repick = TRUE;
 	}
 
-	if (item == item->canvas->new_current_item) {
+	if (item->canvas && item == item->canvas->new_current_item) {
 		item->canvas->new_current_item = NULL;
 		item->canvas->need_repick = TRUE;
 	}
 
-	if (item == item->canvas->grabbed_item) {
+	if (item->canvas && item == item->canvas->grabbed_item) {
 		item->canvas->grabbed_item = NULL;
 		gdk_pointer_ungrab (GDK_CURRENT_TIME);
 	}
 
-	if (item == item->canvas->focused_item)
+	if (item->canvas && item == item->canvas->focused_item)
 		item->canvas->focused_item = NULL;
 
 	/* Normal destroy stuff */
@@ -348,6 +349,8 @@ gnome_canvas_item_dispose (GObject *object)
 
 	if (item->parent)
 		group_remove (GNOME_CANVAS_GROUP (item->parent), item);
+
+	item->canvas = NULL;
 
 	g_free (item->xform);
 	item->xform = NULL;
@@ -1536,6 +1539,7 @@ gnome_canvas_group_destroy (GtkObject *object)
 		child = list->data;
 		list = list->next;
 
+		// child is unref'ed by the child's group_remove().
 		gtk_object_destroy (GTK_OBJECT (child));
 	}
 
@@ -2188,6 +2192,7 @@ gnome_canvas_destroy (GtkObject *object)
 		canvas->root_destroy_id = 0;
 	}
 	if (canvas->root) {
+		gtk_object_destroy (GTK_OBJECT (canvas->root));
 		g_object_unref (G_OBJECT (canvas->root));
 		canvas->root = NULL;
 	}
