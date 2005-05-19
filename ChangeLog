@@ -1,5 +1,10 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-pixbuf.c:
+	(gnome_canvas_pixbuf_render): Merge fix for bug #129891.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas-line.c: (gnome_canvas_line_update):
 	Merge fix for bug #127185.
 
