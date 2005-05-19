@@ -131,6 +131,8 @@ static void gnome_canvas_rich_text_render(GnomeCanvasItem *item,
 					  GnomeCanvasBuf *buf);
 static gint gnome_canvas_rich_text_event(GnomeCanvasItem *item, 
 					 GdkEvent *event);
+static void gnome_canvas_rich_text_get_bounds(GnomeCanvasItem *text, double *px1, double *py1,
+	   double *px2, double *py2);
 
 static void gnome_canvas_rich_text_ensure_layout(GnomeCanvasRichText *text);
 static void gnome_canvas_rich_text_destroy_layout(GnomeCanvasRichText *text);
@@ -393,6 +395,7 @@ gnome_canvas_rich_text_class_init(GnomeCanvasRichTextClass *klass)
 	item_class->point = gnome_canvas_rich_text_point;
 	item_class->render = gnome_canvas_rich_text_render;
 	item_class->event = gnome_canvas_rich_text_event;
+	item_class->bounds = gnome_canvas_rich_text_get_bounds;
 } /* gnome_canvas_rich_text_class_init */
 
 static void
@@ -1988,6 +1991,13 @@ get_bounds(GnomeCanvasRichText *text, double *px1, double *py1,
 	*px2 = cx2;
 	*py2 = cy2;
 } /* get_bounds */
+
+static void gnome_canvas_rich_text_get_bounds(GnomeCanvasItem *item, double *px1, double *py1,
+	   double *px2, double *py2)
+{
+	GnomeCanvasRichText *text = GNOME_CANVAS_RICH_TEXT(item);
+	get_bounds (text, px1, py1, px2, py2);
+}
 
 static void
 gnome_canvas_rich_text_update(GnomeCanvasItem *item, double *affine,

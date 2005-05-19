@@ -1,5 +1,13 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-rich-text.c:
+	(gnome_canvas_rich_text_class_init),
+	(gnome_canvas_rich_text_get_bounds): Make
+	gnome_canvas_item_get_bounds() work with Rich Text
+	items. Patch from Jean Bréfort. Closes bug #99954.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	reviewed by: Tim Janik 
 
 	* libgnomecanvas/gnome-canvas-bpath.c:
