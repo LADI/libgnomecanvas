@@ -192,7 +192,7 @@ gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class)
                                          PROP_WIDTH_UNITS,
                                          g_param_spec_double ("width_units", NULL, NULL,
                                                               0.0, G_MAXDOUBLE, 0.0,
-                                                              (G_PARAM_WRITABLE)));
+                                                              (G_PARAM_READABLE | G_PARAM_WRITABLE)));
         g_object_class_install_property (gobject_class,
                                          PROP_CAP_STYLE,
                                          g_param_spec_enum ("cap_style", NULL, NULL,
@@ -618,6 +618,10 @@ gnome_canvas_shape_get_property (GObject     *object,
 
 	case PROP_WIDTH_PIXELS:
 		g_value_set_uint (value, priv->width);
+		break;
+
+	case PROP_WIDTH_UNITS:
+		g_value_set_double (value, priv->width);
 		break;
 
 	case PROP_MITERLIMIT:

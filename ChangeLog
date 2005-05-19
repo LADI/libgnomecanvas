@@ -1,5 +1,11 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-shape.c:
+	(gnome_canvas_shape_class_init), (gnome_canvas_shape_get_property):
+	Merge fix for bug #126113.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas.c: (gnome_canvas_item_dispose),
 	(gnome_canvas_group_destroy), (gnome_canvas_destroy): Merge
 	fix for bug #90259 from HEAD.
