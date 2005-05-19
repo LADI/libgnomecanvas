@@ -1,5 +1,12 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-pixbuf.c:
+	(gnome_canvas_pixbuf_render): Use HYPER for interpolation
+	instead of _NEAREST in the gdk-pixbuf related code path.
+	Closes bug #129891. Patch from Daniel Llano.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas-line.c: (gnome_canvas_line_update):
 	Fix a crasher. Patch from Bob Gibbs. Closes bug #127185
 
