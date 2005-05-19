@@ -1,5 +1,10 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-line.c: (gnome_canvas_line_update):
+	Merge fix for bug #127185.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas-shape.c:
 	(gnome_canvas_shape_class_init), (gnome_canvas_shape_get_property):
 	Merge fix for bug #126113.
