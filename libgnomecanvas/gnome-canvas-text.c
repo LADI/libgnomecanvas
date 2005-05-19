@@ -455,7 +455,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 				      _("Text width"),
 				      _("Width of the rendered text"),
 				      0.0, G_MAXDOUBLE, 0.0,
-				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
+				      G_PARAM_READABLE));
         g_object_class_install_property
                 (gobject_class,
                  PROP_TEXT_HEIGHT,
@@ -463,7 +463,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 				      _("Text height"),
 				      _("Height of the rendered text"),
 				      0.0, G_MAXDOUBLE, 0.0,
-				      (G_PARAM_READABLE | G_PARAM_WRITABLE)));
+				      G_PARAM_READABLE));
 
 	/* Style props are set (explicitly applied) or not */
 #define ADD_SET_PROP(propname, propval, nick, blurb) g_object_class_install_property (gobject_class, propval, g_param_spec_boolean (propname, nick, blurb, FALSE, G_PARAM_READABLE | G_PARAM_WRITABLE))
