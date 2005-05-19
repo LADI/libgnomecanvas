@@ -100,8 +100,9 @@ gnome_canvas_bpath_class_init (GnomeCanvasBpathClass *class)
 
 	g_object_class_install_property (gobject_class,
                                          PROP_BPATH,
-                                         g_param_spec_pointer ("bpath", NULL, NULL,
-                                                               (G_PARAM_READABLE | G_PARAM_WRITABLE)));
+                                         g_param_spec_boxed ("bpath", NULL, NULL,
+                                                             GNOME_TYPE_CANVAS_PATH_DEF,
+                                                             (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 
 	item_class->update = gnome_canvas_bpath_update;
 }
@@ -134,7 +135,7 @@ gnome_canvas_bpath_set_property (GObject      *object,
 
 	switch (param_id) {
 	case PROP_BPATH:
-		gpp = g_value_get_pointer (value);
+		gpp = (GnomeCanvasPathDef*) g_value_get_boxed (value);
 
 		gnome_canvas_shape_set_path_def (GNOME_CANVAS_SHAPE (object), gpp);
 
@@ -159,11 +160,7 @@ gnome_canvas_bpath_get_property (GObject     *object,
 
 	switch (param_id) {
 	case PROP_BPATH:
-		if (shape->priv->path) {
-			gnome_canvas_path_def_ref (shape->priv->path);
-			g_value_set_pointer (value, shape->priv->path);
-		} else
-			g_value_set_pointer (value, NULL);
+		g_value_set_boxed (value, shape->priv->path);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, param_id, pspec);

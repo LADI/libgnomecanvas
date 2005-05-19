@@ -1,3 +1,15 @@
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
+	reviewed by: Tim Janik 
+
+	* libgnomecanvas/gnome-canvas-bpath.c:
+	(gnome_canvas_bpath_class_init), (gnome_canvas_bpath_set_property),
+	(gnome_canvas_bpath_get_property):
+	* libgnomecanvas/gnome-canvas-path-def.c: (path_def_boxed_copy),
+	(gnome_canvas_path_def_get_type):
+	* libgnomecanvas/gnome-canvas-path-def.h: Fixes for perl bindings
+	Closes bug #116734. Patch from Muppet <scott at asofyet org>
+
 2005-05-11  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-path-def.c: Fix typo.

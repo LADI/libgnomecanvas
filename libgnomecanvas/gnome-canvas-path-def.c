@@ -40,6 +40,28 @@ static gint sp_bpath_length (const ArtBpath * bpath);
 static gboolean sp_bpath_all_closed (const ArtBpath * bpath);
 static gboolean sp_bpath_all_open (const ArtBpath * bpath);
 
+/* Boxed Type Support */
+
+static GnomeCanvasPathDef *
+path_def_boxed_copy (GnomeCanvasPathDef * path_def)
+{
+	if (path_def)
+		gnome_canvas_path_def_ref (path_def);
+	return path_def;
+}
+
+GType
+gnome_canvas_path_def_get_type (void)
+{
+	static GType t = 0;
+	if (t == 0)
+		t = g_boxed_type_register_static
+				("GnomeCanvasPathDef",
+				 (GBoxedCopyFunc)path_def_boxed_copy,
+				 (GBoxedFreeFunc)gnome_canvas_path_def_unref);
+	return t;
+}
+
 /* Constructors */
 
 /**

@@ -15,12 +15,15 @@
  *
  */
 
-#include <glib.h>
+#include <glib-object.h>
 #include <libart_lgpl/art_bpath.h>
 
 G_BEGIN_DECLS
 
 typedef struct _GnomeCanvasPathDef GnomeCanvasPathDef;
+
+#define GNOME_TYPE_CANVAS_PATH_DEF	(gnome_canvas_path_def_get_type ())
+GType gnome_canvas_path_def_get_type (void) G_GNUC_CONST;
 
 /* Constructors */
 
