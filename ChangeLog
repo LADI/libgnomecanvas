@@ -1,5 +1,12 @@
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* libgnomecanvas/gnome-canvas-shape.c:
+	(gnome_canvas_shape_class_init), (gnome_canvas_shape_get_property):
+	Fix bug #126113 - width_units property not readable for shapes.
+	Patch from Jean Bréfort.
+
+2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas.c: (gnome_canvas_item_dispose),
 	(gnome_canvas_group_destroy), (gnome_canvas_destroy): Disposing
 	a canvas group should dispose all of its children. Closes
