@@ -1,3 +1,7 @@
+2005-05-24  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* Fix the fix for bug #90259 here too.
+
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-text.c:
