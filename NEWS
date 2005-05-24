@@ -1,3 +1,46 @@
+libgnomecanvas 2.10.2
+---------------------
+
+What's new since 2.10.1
+
+* Bug fixes:
+	- Fix crash introduced in the dispose handling fix (Tim Janik)
+	  (This exposed a crash in libgal/widgets/e-canvas.c and might
+	   cause more bugs like this to pop up)
+
+
+libgnomecanvas 2.10.1
+---------------------
+
+What's new since 2.10.0
+
+* Bug fixes:
+	- Some win32 fixes (Tor)
+	- Disposing a canvas group should dispose all of its children
+	  http://bugzilla.gnome.org/show_bug.cgi?id=90259
+	- width_units property not readable for shapes
+	  http://bugzilla.gnome.org/show_bug.cgi?id=126113
+	- gnome-canvas-line seg fault when using clip_path
+	  http://bugzilla.gnome.org/show_bug.cgi?id=127185
+	- better interpolation for images should be used
+	  http://bugzilla.gnome.org/show_bug.cgi?id=129891
+	- text-height and text-width properties are not writable
+	  http://bugzilla.gnome.org/show_bug.cgi?id=143499
+
+* Translations:
+	- Added Kinyarwanda translation (Steve Murphy)
+
+libgnomecanvas 2.10.0
+---------------------
+
+What's new since 2.9.2
+
+* Bug fixes:
+	- None
+
+* Translations:
+	- Updated Canadian English
+
 libgnomecanvas 2.9.2
 --------------------
 

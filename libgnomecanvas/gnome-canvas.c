@@ -350,12 +350,13 @@ gnome_canvas_item_dispose (GObject *object)
 	if (item->parent)
 		group_remove (GNOME_CANVAS_GROUP (item->parent), item);
 
-	item->canvas = NULL;
-
 	g_free (item->xform);
 	item->xform = NULL;
 
 	G_OBJECT_CLASS (item_parent_class)->dispose (object);
+	/* items should remove any reference to item->canvas after the
+	   first ::destroy */
+	item->canvas = NULL;
 }
 
 /* Realize handler for canvas items */

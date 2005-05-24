@@ -1,3 +1,8 @@
+2005-05-24  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* Fix some issues with patch in bug #90259. (Tim Janik)
+	  This closes the canvas part of bug #304915 too.
+
 2005-05-19  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-text.c:
