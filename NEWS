@@ -1,6 +1,20 @@
 libgnomecanvas 2.11.1
 ---------------------
 
+What's new since 2.10.0:
+
+* Bug fixes:
+	- Fix a bunch of typos in the developer docs (Kjartan)
+	- Fixes for the perl bindings (scott at asofyet org)
+	- Make gnome_canvas_item_get_bounds() work with Rich
+	  text items (Jean Bréfort)
+	- Dispose fixes (Arjan J. Molenaar)
+	- width_units property not readable for shapes (Jean Bréfort)
+	- Fix a crash in gnome_canvas_line_update() (Bob Gibbs)
+	- Use HYPER for interpolation in the gdk-pixbuf code path
+	  (Daniel Llano)
+	- text-height and text-width are not writable (Olivier Andrieu)
+
 libgnomecanvas 2.10.0
 ---------------------
 
