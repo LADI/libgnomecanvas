@@ -14,6 +14,7 @@ What's new since 2.10.0:
 	- Use HYPER for interpolation in the gdk-pixbuf code path
 	  (Daniel Llano)
 	- text-height and text-width are not writable (Olivier Andrieu)
+	- set item->canvas to NULL, once the canvas got destroyed
 
 libgnomecanvas 2.10.0
 ---------------------
