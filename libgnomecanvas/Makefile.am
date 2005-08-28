@@ -2,17 +2,6 @@ if PLATFORM_WIN32
 no_undefined = -no-undefined
 endif
 
-if OS_WIN32
-install-libtool-import-lib:
-	$(INSTALL) .libs/libgnomecanvas-2.dll.a $(DESTDIR)$(libdir)
-
-uninstall-libtool-import-lib:
-	-rm $(DESTDIR)$(libdir)/libgnomecanvas-2.dll.a
-else
-install-libtool-import-lib:
-uninstall-libtool-import-lib:
-endif
-
 INCLUDES = \
 	-I$(top_srcdir) 				\
 	-I$(top_builddir)				\
@@ -100,7 +89,3 @@ dist-hook:
 	for file in $(DONT_DIST_SOURCE) ; do \
 	    rm -f $(distdir)/$$file ; \
 	done
-
-install-data-local: install-libtool-import-lib
-
-uninstall-local: uninstall-libtool-import-lib

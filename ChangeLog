@@ -1,4 +1,7 @@
-2005-08-28  Tor Lillqvist  <tml@novell.com>
+2005-08-29  Tor Lillqvist  <tml@novell.com>
+
+	* libgnomecanvas/Makefile.am: No need to install the Win32 import
+	library separately, libtool --install does it.
 
 	* libgnomecanvas-zip.in: Include also documentation in the
 	developer package.
