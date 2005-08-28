@@ -22,4 +22,5 @@ lib/libgnomecanvas-2.dll.a
 lib/libglade/2.0/libcanvas.dll.a
 lib/pkgconfig/libgnomecanvas-2.0.pc
 include/libgnomecanvas-2.0
+share/gtk-doc/html/libgnomecanvas
 EOF

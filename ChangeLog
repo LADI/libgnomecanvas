@@ -1,5 +1,8 @@
 2005-08-28  Tor Lillqvist  <tml@novell.com>
 
+	* libgnomecanvas-zip.in: Include also documentation in the
+	developer package.
+
 	* tests/Makefile.am (TESTS_ENVIRONMENT): Fix Makefile variable
 	syntax (add parens).
 
