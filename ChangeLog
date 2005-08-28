@@ -1,3 +1,8 @@
+2005-08-28  Tor Lillqvist  <tml@novell.com>
+
+	* tests/Makefile.am (TESTS_ENVIRONMENT): Fix Makefile variable
+	syntax (add parens).
+
 2005-06-07  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
 
 	* configure.in: Added 'gl' to ALL_LINGUAS.

@@ -4,7 +4,7 @@ check_PROGRAMS = \
 TESTS = $(check_PROGRAMS)
 
 TESTS_ENVIRONMENT = \
-	LIBGLADE_MODULE_PATH="$(top_builddir)/glade/.libs:$LIBGLADE_MODULE_PATH"
+	LIBGLADE_MODULE_PATH="$(top_builddir)/glade/.libs:$(LIBGLADE_MODULE_PATH)"
 
 INCLUDES = \
 	-I$(top_srcdir)		\
