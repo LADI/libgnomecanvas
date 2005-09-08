@@ -1,3 +1,15 @@
+Thu Sep  8 10:56:26 2005  Tim Janik  <timj@gtk.org>
+
+	* applied patch from hans de graaff with minor cosmetic fixups.
+
+2005-07-15  Hans de Graaff  <hans@degraaff.org>
+
+        * libgnomecanvas/gnome-canvas-pixbuf.c:
+        (compute_viewport_affine): Multiply the width and height with the
+        scaling factor when using middle or east anchors so that the new
+        position is correctly calculated for width_in_pixels and
+        height_in_pixels pixbufs.
+
 ========================= 2.12.0 ==========================
 
 2005-09-06  Kjartan Maraas  <kmaraas@gnome.org>

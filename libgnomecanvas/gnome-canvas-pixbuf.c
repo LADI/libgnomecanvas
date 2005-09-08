@@ -601,13 +601,13 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	case GTK_ANCHOR_N:
 	case GTK_ANCHOR_CENTER:
 	case GTK_ANCHOR_S:
-		ti_len *= (x - (w/ 2));
+		ti_len *= x - w * si_len / 2;
 		break;
 
 	case GTK_ANCHOR_NE:
 	case GTK_ANCHOR_E:
 	case GTK_ANCHOR_SE:
-		ti_len *= (x - w);
+		ti_len *= x - w * si_len;
 		break;
 
         default:
@@ -632,13 +632,13 @@ compute_viewport_affine (GnomeCanvasPixbuf *gcp, double *viewport_affine, double
 	case GTK_ANCHOR_W:
 	case GTK_ANCHOR_CENTER:
 	case GTK_ANCHOR_E:
-		tj_len *= y - (h / 2);
+		tj_len *= y - h * sj_len / 2;
 		break;
 
 	case GTK_ANCHOR_SW:
 	case GTK_ANCHOR_S:
 	case GTK_ANCHOR_SE:
-		tj_len *= y - h;
+		tj_len *= y - h * sj_len;
 		break;
 
         default:
