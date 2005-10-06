@@ -958,7 +958,7 @@ gnome_canvas_pixbuf_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 				   render_affine[5] - buf->rect.y0,
 				   render_affine[0],
 				   render_affine[3],
-				   GDK_INTERP_HYPER,
+				   GDK_INTERP_BILINEAR,
 				   255);
 
 	    gdk_pixbuf_unref (dest_pixbuf);

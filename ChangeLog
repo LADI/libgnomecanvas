@@ -1,3 +1,11 @@
+2005-10-06  Federico Mena Quintero  <federico@ximian.com>
+
+	Merged from the gnome-2-12 branch:
+
+	* libgnomecanvas/gnome-canvas-pixbuf.c
+	(gnome_canvas_pixbuf_render): HYPER interpolation is a slow buggy piece of
+	shit.  Use BILINEAR.  Fixes bug #129891.
+
 2005-10-07  Danek Duvall <danek.duvall@sun.com>
 
 	* libgnomecanvas/gnome-canvas.h: Cast GNOME_CANVAS_COLOR macros
