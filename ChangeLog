@@ -1,3 +1,9 @@
+2005-10-06  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas-pixbuf.c
+	(gnome_canvas_pixbuf_render): HYPER interpolation is a slow buggy piece of
+	shit.  Use BILINEAR.  Fixes bug #129891.
+
 ========================= 2.12.0 ==========================
 
 2005-09-06  Kjartan Maraas  <kmaraas@gnome.org>
