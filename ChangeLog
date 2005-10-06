@@ -1,3 +1,9 @@
+2005-10-07  Danek Duvall <danek.duvall@sun.com>
+
+	* libgnomecanvas/gnome-canvas.h: Cast GNOME_CANVAS_COLOR macros
+	to use unsigned ints so that shifting left 24 bits won't overflow
+	into the sign bit. Fixes #317718.
+
 Thu Sep  8 10:56:26 2005  Tim Janik  <timj@gtk.org>
 
 	* applied patch from hans de graaff with minor cosmetic fixups.
