@@ -1862,6 +1862,8 @@ group_add (GnomeCanvasGroup *group, GnomeCanvasItem *item)
 
 	if (group->item.object.flags & GNOME_CANVAS_ITEM_MAPPED)
 		(* GNOME_CANVAS_ITEM_GET_CLASS (item)->map) (item);
+
+	g_object_notify (G_OBJECT (item), "parent");
 }
 
 /* Removes an item from a group */

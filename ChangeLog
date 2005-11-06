@@ -1,3 +1,10 @@
+2005-11-06  Sven Herzberg  <herzi@gnome-de.org>
+
+	reviewed by: Tim Janik <timj@gtk.org>
+
+	* libgnomecanvas/gnome-canvas.c: added g_object_notify() to allow
+	users to connect to the notify::parent signal, closes bug 320791
+
 2005-10-06  Federico Mena Quintero  <federico@ximian.com>
 
 	Merged from the gnome-2-12 branch:
