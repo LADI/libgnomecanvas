@@ -690,51 +690,48 @@ static gboolean
 put_item_after (GList *link, GList *before)
 {
 	GnomeCanvasGroup *parent;
-
-	if (link == before)
-		return FALSE;
+	GList *old_before, *old_after;
+	GList *after;
 
 	parent = GNOME_CANVAS_GROUP (GNOME_CANVAS_ITEM (link->data)->parent);
 
-	if (before == NULL) {
-		if (link == parent->item_list)
-			return FALSE;
+	if (before)
+		after = before->next;
+	else
+		after = parent->item_list;
 
-		link->prev->next = link->next;
+	if (before == link || after == link)
+		return FALSE;
 
-		if (link->next)
-			link->next->prev = link->prev;
-		else
-			parent->item_list_end = link->prev;
+	/* Unlink */
 
-		link->prev = before;
-		link->next = parent->item_list;
-		link->next->prev = link;
+	old_before = link->prev;
+	old_after = link->next;
+
+	if (old_before)
+		old_before->next = old_after;
+	else
+		parent->item_list = old_after;
+
+	if (old_after)
+		old_after->prev = old_before;
+	else
+		parent->item_list_end = old_before;
+
+	/* Relink */
+
+	link->prev = before;
+	if (before)
+		before->next = link;
+	else
 		parent->item_list = link;
-	} else {
-		if ((link == parent->item_list_end) && (before == parent->item_list_end->prev))
-			return FALSE;
 
-		if (link->next)
-			link->next->prev = link->prev;
+	link->next = after;
+	if (after)
+		after->prev = link;
+	else
+		parent->item_list_end = link;
 
-		if (link->prev)
-			link->prev->next = link->next;
-		else {
-			parent->item_list = link->next;
-			parent->item_list->prev = NULL;
-		}
-
-		link->prev = before;
-		link->next = before->next;
-
-		link->prev->next = link;
-
-		if (link->next)
-			link->next->prev = link;
-		else
-			parent->item_list_end = link;
-	}
 	return TRUE;
 }
 

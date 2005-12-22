@@ -1,3 +1,9 @@
+2005-12-21  Federico Mena Quintero  <federico@ximian.com>
+
+	* libgnomecanvas/gnome-canvas.c (put_item_after): Simplify the
+	code and make it correct - it wasn't resetting the item_list_end
+	correctly when moving the last item in the list.  Fixes bug #323850.
+
 2005-11-10  Simos Xenitellis  <simos@gnome.org>
 
 	* configure.in: Added Tatar (tt) to ALL_LINGUAS.
