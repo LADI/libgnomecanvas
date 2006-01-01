@@ -17,6 +17,9 @@ Bug fixes:
 	- Correctly calculate width_in_pixels and height_in_pixels
 	in gnome-canvas-pixbuf.c. (Hans de Graaff)
 
+Docs:
+	- Add API docs for gnome-canvas-rich-text.c (Dinoop Thomas)
+
 Translation updates:
 	- Added Tatar (tt)
 	- Updated Belarusian (be), Dutch (nl)
