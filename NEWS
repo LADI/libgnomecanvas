@@ -1,3 +1,26 @@
+libgnomecanvas 2.13.0
+---------------------
+
+What's new since 2.12.0:
+
+Bug fixes:
+	- Correctly reset item_list_end when moving the last
+	item in the list. Fixes bug #323850. (Federico, Denis Auroux) 
+	- Remove a bunch of cruft and compiler warnings (Kjartan)
+	- Add g_object_notify() call to allow users to connect to
+	the notify::parent signal. Closes bug #320791. (Sven Herzberg)
+	- Use BILINEAR interpolation instead of HYPER which is
+	"a slow buggy piece of shit". (Federico)
+	- Cast GNOME_CANVAS_COLOR macros to use unsigned ints so that 
+	shifting left 24 bits won't overflow into the sign bit. 
+	Fixes bug #317718. (Danek Duvall)
+	- Correctly calculate width_in_pixels and height_in_pixels
+	in gnome-canvas-pixbuf.c. (Hans de Graaff)
+
+Translation updates:
+	- Added Tatar (tt)
+	- Updated Belarusian (be), Dutch (nl)
+
 libgnomecanvas 2.12.0
 ---------------------
 
