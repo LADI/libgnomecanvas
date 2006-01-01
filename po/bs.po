@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-07 14:38+0100\n"
+"POT-Creation-Date: 2006-01-01 22:11+0100\n"
 "PO-Revision-Date: 2004-03-16 01:09+0000\n"
 "Last-Translator: Kenan Hadžiavdić <kenanh@frisurf.no>\n"
 "Language-Team: Bosnian <lokal@lugbih.org>\n"
@@ -16,26 +16,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
-#: libgnomecanvas/gnome-canvas-rich-text.c:217
+#: libgnomecanvas/gnome-canvas.c:1398 libgnomecanvas/gnome-canvas.c:1399
+#: libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1408 libgnomecanvas/gnome-canvas.c:1409
-#: libgnomecanvas/gnome-canvas-rich-text.c:225
+#: libgnomecanvas/gnome-canvas.c:1405 libgnomecanvas/gnome-canvas.c:1406
+#: libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2053
+#: libgnomecanvas/gnome-canvas.c:2049
 msgid "Antialiased"
 msgstr "Antialias-mod"
 
-#: libgnomecanvas/gnome-canvas.c:2054
+#: libgnomecanvas/gnome-canvas.c:2050
 msgid "The antialiasing mode of the canvas."
 msgstr "Antialias-mod za canvas."
 
 #: libgnomecanvas/gnome-canvas-text.c:206
-#: libgnomecanvas/gnome-canvas-rich-text.c:209
+#: libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text"
 msgstr "Tekst"
 
@@ -257,152 +257,152 @@ msgstr "Postavljen omjer"
 msgid "Whether this tag affects font scaling"
 msgstr "Da li ova oznaka utiče na omjer"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:210
+#: libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
 msgstr "Tekst koji će se prikazati"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:218
+#: libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
 msgstr "Pozicija X"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:226
+#: libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
 msgstr "Pozicija Y"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:233
+#: libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
 msgstr "Širina"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:234
+#: libgnomecanvas/gnome-canvas-rich-text.c:236
 msgid "Width for text box"
 msgstr "Širina okvira za tekst"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:241
+#: libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
 msgstr "Visina"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:242
+#: libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
 msgstr "Visina okvira za tekst"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:249
+#: libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
 msgstr "Izmjenljivo"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:250
+#: libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
 msgstr "Da li je ova stavka obogaćenog teksta izmjenljiva?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:257
+#: libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
 msgstr "Vidljivo"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:258
+#: libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
 msgstr "Da li je ova stavka obogaćenog teksta vidljiva?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:265
+#: libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Cursor Visible"
 msgstr "Vidljiv kursor"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:266
+#: libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Da li je kursor vidljiv u ovoj stavci obogaćenog teksta?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:273
+#: libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Cursor Blink"
 msgstr "Treperenje kursora"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:274
+#: libgnomecanvas/gnome-canvas-rich-text.c:276
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Da li kursor treperi u ovoj stavci obogaćenog teksta?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:281
+#: libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Grow Height"
 msgstr "Rast visine"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:282
+#: libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
 msgstr ""
 "Da li će se visina okvira za tekst povećavati ako nema dovoljno mjesta za "
 "tekst?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:289
+#: libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
 msgstr "Način prijeloma"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:290
+#: libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
 msgstr "Način prijeloma višelinijskog teksta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:298
+#: libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
 msgstr "Ravnanje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:299
+#: libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
 msgstr "Način ravnanja"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:307
+#: libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
 msgstr "Smjer"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:308
+#: libgnomecanvas/gnome-canvas-rich-text.c:310
 msgid "Text direction"
 msgstr "Smjer teksta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:316
+#: libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor"
 msgstr "Sidro"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:317
+#: libgnomecanvas/gnome-canvas-rich-text.c:319
 msgid "Anchor point for text"
 msgstr "Tačka sidrenja teksta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:325
+#: libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
 msgstr "Piskli iznad linija"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:326
+#: libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
 msgstr "Broj piksli iznad linija"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:334
+#: libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
 msgstr "Piksli ispod linija"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:335
+#: libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
 msgstr "Broj piksli ispod linija"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:343
+#: libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
 msgstr "Pisksli unutar omota"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:344
+#: libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
 msgstr "Broj piksli unutar omota"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:352
+#: libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
 msgstr "Lijeva margina"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:353
+#: libgnomecanvas/gnome-canvas-rich-text.c:355
 msgid "Number of pixels in the left margin"
 msgstr "Broj piksli u lijevoj margini"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:361
+#: libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Right Margin"
 msgstr "Desna margina"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:362
+#: libgnomecanvas/gnome-canvas-rich-text.c:364
 msgid "Number of pixels in the right margin"
 msgstr "Broj piksli u desnoj margini"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:370
+#: libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Indentation"
 msgstr "Uvlačenje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:371
+#: libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "Broj piksli za uvlačenje"

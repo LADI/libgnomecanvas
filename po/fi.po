@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.109.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-07 14:38+0100\n"
+"POT-Creation-Date: 2006-01-01 22:11+0100\n"
 "PO-Revision-Date: 2004-02-07 18:21+0200\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -16,26 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
-#: libgnomecanvas/gnome-canvas-rich-text.c:217
+#: libgnomecanvas/gnome-canvas.c:1398 libgnomecanvas/gnome-canvas.c:1399
+#: libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1408 libgnomecanvas/gnome-canvas.c:1409
-#: libgnomecanvas/gnome-canvas-rich-text.c:225
+#: libgnomecanvas/gnome-canvas.c:1405 libgnomecanvas/gnome-canvas.c:1406
+#: libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2053
+#: libgnomecanvas/gnome-canvas.c:2049
 msgid "Antialiased"
 msgstr "Pehmennetty"
 
-#: libgnomecanvas/gnome-canvas.c:2054
+#: libgnomecanvas/gnome-canvas.c:2050
 msgid "The antialiasing mode of the canvas."
 msgstr "Piirtoalueen pehmennystapa."
 
 #: libgnomecanvas/gnome-canvas-text.c:206
-#: libgnomecanvas/gnome-canvas-rich-text.c:209
+#: libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text"
 msgstr "Teksti"
 
@@ -257,150 +257,150 @@ msgstr "Skaalaus asetettu"
 msgid "Whether this tag affects font scaling"
 msgstr "Vaikuttaako tämä lappu kirjasimen skaalaukseen"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:210
+#: libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
 msgstr "Piirtyvä teksti"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:218
+#: libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
 msgstr "X-sijainti"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:226
+#: libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
 msgstr "Y-sijainti"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:233
+#: libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
 msgstr "Leveys"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:234
+#: libgnomecanvas/gnome-canvas-rich-text.c:236
 msgid "Width for text box"
 msgstr "Tekstilaatikon leveys"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:241
+#: libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
 msgstr "Korkeus"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:242
+#: libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
 msgstr "Tekstilaatikon korkeus"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:249
+#: libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
 msgstr "Muokattavissa"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:250
+#: libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
 msgstr "Onko tämä muotoiltava teksti muokattavissa?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:257
+#: libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
 msgstr "Näkyvä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:258
+#: libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
 msgstr "Onko tämä muotoiltava teksti näkyvä?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:265
+#: libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Cursor Visible"
 msgstr "Kohdistin näkyy"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:266
+#: libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Onko kohdistin näkyvä tässä muotoiltavassa tekstikohteessa?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:273
+#: libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Cursor Blink"
 msgstr "Kohdistin vilkkuu"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:274
+#: libgnomecanvas/gnome-canvas-rich-text.c:276
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Vilkkuuko kohdistin tässä muotoiltavassa tekstikohteessa?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:281
+#: libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Grow Height"
 msgstr "Kasvata korkeutta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:282
+#: libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "Kasvaako tekstilaatikon korkeus, jos teksti ei muuten sovi?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:289
+#: libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
 msgstr "Rivitystapa"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:290
+#: libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
 msgstr "Monirivisen tekstin rivitystapa"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:298
+#: libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
 msgstr "Tasaus"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:299
+#: libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
 msgstr "Tasaustapa"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:307
+#: libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
 msgstr "Suunta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:308
+#: libgnomecanvas/gnome-canvas-rich-text.c:310
 msgid "Text direction"
 msgstr "Tekstin suunta"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:316
+#: libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor"
 msgstr "Ankkuri"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:317
+#: libgnomecanvas/gnome-canvas-rich-text.c:319
 msgid "Anchor point for text"
 msgstr "Tekstin ankkuripiste"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:325
+#: libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
 msgstr "Kuvapisteitä rivien yläpuolella"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:326
+#: libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
 msgstr "Rivien yläpuolella olevien kuvapisteiden määrä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:334
+#: libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
 msgstr "Kuvapisteitä rivien alla"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:335
+#: libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
 msgstr "Rivien alapuolella olevien kuvapisteiden määrä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:343
+#: libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
 msgstr "Kuvapisteitä rivityksen sisällä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:344
+#: libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
 msgstr "Rivityksen sisällä olevien kuvapisteiden määrä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:352
+#: libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
 msgstr "Vasen reunus"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:353
+#: libgnomecanvas/gnome-canvas-rich-text.c:355
 msgid "Number of pixels in the left margin"
 msgstr "Vasemman reunuksen kuvapisteiden määrä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:361
+#: libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Right Margin"
 msgstr "Oikea reunus"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:362
+#: libgnomecanvas/gnome-canvas-rich-text.c:364
 msgid "Number of pixels in the right margin"
 msgstr "Oikean reunuksen kuvapisteiden määrä"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:370
+#: libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Indentation"
 msgstr "Sisennys"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:371
+#: libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "Sisennyksen kuvapisteiden määrä"

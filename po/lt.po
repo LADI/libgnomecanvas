@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-07 14:38+0100\n"
+"POT-Creation-Date: 2006-01-01 22:11+0100\n"
 "PO-Revision-Date: 2004-03-06 19:36+0200\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -15,26 +15,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: libgnomecanvas/gnome-canvas.c:1401 libgnomecanvas/gnome-canvas.c:1402
-#: libgnomecanvas/gnome-canvas-rich-text.c:217
+#: libgnomecanvas/gnome-canvas.c:1398 libgnomecanvas/gnome-canvas.c:1399
+#: libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1408 libgnomecanvas/gnome-canvas.c:1409
-#: libgnomecanvas/gnome-canvas-rich-text.c:225
+#: libgnomecanvas/gnome-canvas.c:1405 libgnomecanvas/gnome-canvas.c:1406
+#: libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2053
+#: libgnomecanvas/gnome-canvas.c:2049
 msgid "Antialiased"
 msgstr "Glotninimas"
 
-#: libgnomecanvas/gnome-canvas.c:2054
+#: libgnomecanvas/gnome-canvas.c:2050
 msgid "The antialiasing mode of the canvas."
 msgstr "Kreivės glotninimo nustatymas"
 
 #: libgnomecanvas/gnome-canvas-text.c:206
-#: libgnomecanvas/gnome-canvas-rich-text.c:209
+#: libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text"
 msgstr "Tekstas"
 
@@ -256,150 +256,150 @@ msgstr "Mastelio nustatymas"
 msgid "Whether this tag affects font scaling"
 msgstr "Ar ši žymį keičia šrifto mastelį"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:210
+#: libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
 msgstr "Rodomas tekstas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:218
+#: libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
 msgstr "X padėtis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:226
+#: libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
 msgstr "Y padėtis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:233
+#: libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
 msgstr "Plotis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:234
+#: libgnomecanvas/gnome-canvas-rich-text.c:236
 msgid "Width for text box"
 msgstr "Teksto lauko plotis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:241
+#: libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
 msgstr "Aukštis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:242
+#: libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
 msgstr "Teksto lauko aukštis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:249
+#: libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
 msgstr "Redaguojamas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:250
+#: libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
 msgstr "Ar šis raiškiojo teksto elementas yra taisomas?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:257
+#: libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
 msgstr "Matomas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:258
+#: libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
 msgstr "Ar šis raiškiojo teksto elementas yra matomas?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:265
+#: libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Cursor Visible"
 msgstr "Matomas žymeklis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:266
+#: libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
 msgstr "Ar žymeklis yra matomas šiame raiškiojo teksto elemente?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:273
+#: libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Cursor Blink"
 msgstr "Mirksintis žymeklis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:274
+#: libgnomecanvas/gnome-canvas-rich-text.c:276
 msgid "Does the cursor blink in this rich text item?"
 msgstr "Ar žymelis šiame raiškiojo teksto elemente yra mirksintis?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:281
+#: libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Grow Height"
 msgstr "Kintantis aukštis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:282
+#: libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "Ar tekslo laukas turi kisti, jei tekstas į jį nebetelpa"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:289
+#: libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
 msgstr "Laužymo režimas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:290
+#: libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
 msgstr "Laužymo režimas kelių eilučių tekstui"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:298
+#: libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
 msgstr "Išlyginimas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:299
+#: libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
 msgstr "Išlyginimo režimas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:307
+#: libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
 msgstr "Kryptis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:308
+#: libgnomecanvas/gnome-canvas-rich-text.c:310
 msgid "Text direction"
 msgstr "Teksto kryptis"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:316
+#: libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor"
 msgstr "Prieraišas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:317
+#: libgnomecanvas/gnome-canvas-rich-text.c:319
 msgid "Anchor point for text"
 msgstr "Teksto pririšimo taškas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:325
+#: libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
 msgstr "Taškai virš teksto"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:326
+#: libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
 msgstr "Erdvė taškais paliekama virš teksto"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:334
+#: libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
 msgstr "Taškai žemiau teksto"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:335
+#: libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
 msgstr "Endvė taškais paliekama žemiau teksto"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:343
+#: libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
 msgstr "Taškai laužymo viduje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:344
+#: libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
 msgstr "Erdvė taškais paliekama laužymo lauko viduje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:352
+#: libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
 msgstr "Kairė paraštė"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:353
+#: libgnomecanvas/gnome-canvas-rich-text.c:355
 msgid "Number of pixels in the left margin"
 msgstr "Taškų skaičius kairėje pusėje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:361
+#: libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Right Margin"
 msgstr "Dešinė paraštė"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:362
+#: libgnomecanvas/gnome-canvas-rich-text.c:364
 msgid "Number of pixels in the right margin"
 msgstr "Taškų skaičius dešinėje pusėje"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:370
+#: libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Indentation"
 msgstr "Atitraukimas"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:371
+#: libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "Taškų skaičius skirtas atitraukimui nuo krašto"

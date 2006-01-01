@@ -58,14 +58,13 @@ piece_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 	GnomeCanvas *canvas;
 	GnomeCanvasItem **board;
 	GnomeCanvasItem *text;
-	int num, pos, newpos;
+	int pos, newpos;
 	int x, y;
 	double dx = 0.0, dy = 0.0;
 	int move;
 
 	canvas = item->canvas;
 	board = g_object_get_data (G_OBJECT (canvas), "board");
-	num = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (item), "piece_num"));
 	pos = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (item), "piece_pos"));
 	text = g_object_get_data (G_OBJECT (item), "text");
 
