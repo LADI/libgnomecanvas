@@ -1539,6 +1539,14 @@ gnome_canvas_rich_text_event(GnomeCanvasItem *item, GdkEvent *event)
 } /* gnome_canvas_rich_text_event */
 
 /* Cut/Copy/Paste */
+
+/**
+ * gnome_canvas_rich_text_cut_clipboard:
+ * @text: a #GnomeCanvasRichText.
+ * 
+ * Copies the currently selected @text to clipboard, then deletes said text
+ * if it's editable.
+ **/
 void
 gnome_canvas_rich_text_cut_clipboard(GnomeCanvasRichText *text)
 {
@@ -1550,6 +1558,13 @@ gnome_canvas_rich_text_cut_clipboard(GnomeCanvasRichText *text)
 				      text->_priv->editable);
 } /* gnome_canvas_rich_text_cut_clipboard */
 
+
+/**
+ * gnome_canvas_rich_text_copy_clipboard:
+ * @text: a #GnomeCanvasRichText.
+ *
+ * Copies the currently selected @text to clipboard.
+ **/
 void
 gnome_canvas_rich_text_copy_clipboard(GnomeCanvasRichText *text)
 {
@@ -1560,6 +1575,13 @@ gnome_canvas_rich_text_copy_clipboard(GnomeCanvasRichText *text)
 				       gtk_clipboard_get (GDK_SELECTION_PRIMARY));
 } /* gnome_canvas_rich_text_cut_clipboard */
 
+
+/**
+ * gnome_canvas_rich_text_paste_clipboard:
+ * @text: a #GnomeCanvasRichText.
+ *
+ * Pastes the contents of the clipboard at the insertion point.
+ **/
 void
 gnome_canvas_rich_text_paste_clipboard(GnomeCanvasRichText *text)
 {
@@ -1729,6 +1751,14 @@ changed_handler(GtkTextLayout *layout, gint start_y,
 	gtk_idle_add(request_update, text);
 } /* changed_handler */
 
+
+/**
+ * gnome_canvas_rich_text_set_buffer:
+ * @text: a #GnomeCanvasRichText.
+ * @buffer: a #GtkTextBuffer.
+ *
+ * Sets the buffer field of the @text to @buffer. 
+ **/ 
 void
 gnome_canvas_rich_text_set_buffer(GnomeCanvasRichText *text, 
 				  GtkTextBuffer *buffer)
@@ -1769,6 +1799,16 @@ get_buffer(GnomeCanvasRichText *text)
 	return text->_priv->buffer;
 } /* get_buffer */
 
+
+/**
+ * gnome_canvas_rich_text_get_buffer:
+ * @text: a #GnomeCanvasRichText.
+ *
+ * Returns a #GtkTextBuffer associated with the #GnomeCanvasRichText.
+ * This function creates a new #GtkTextBuffer if the text buffer is NULL.
+ *
+ * Return value: the #GtkTextBuffer.
+ **/
 GtkTextBuffer *
 gnome_canvas_rich_text_get_buffer(GnomeCanvasRichText *text)
 {
@@ -1777,6 +1817,15 @@ gnome_canvas_rich_text_get_buffer(GnomeCanvasRichText *text)
 	return get_buffer(text);
 } /* gnome_canvas_rich_text_get_buffer */
 
+
+/**
+ * gnome_canvas_rich_text_get_iter_location:
+ * @text: a #GnomeCanvasRichText.
+ * @iter: a #GtkTextIter.
+ * @location: a #GdkRectangle containing the bounds of the character at @iter.
+ *
+ * Gets a rectangle which roughly contains the character at @iter.
+ **/
 void
 gnome_canvas_rich_text_get_iter_location (GnomeCanvasRichText *text,
 					  const GtkTextIter *iter,
@@ -1788,6 +1837,16 @@ gnome_canvas_rich_text_get_iter_location (GnomeCanvasRichText *text,
   gtk_text_layout_get_iter_location (text->_priv->layout, iter, location);
 }
 
+
+/**
+ * gnome_canvas_rich_text_get_iter_at_location:
+ * @text: a #GnomeCanvasRichText.
+ * @iter: a #GtkTextIter.
+ * @x: x position, in buffer coordinates.
+ * @y: y position, in buffer coordinates.
+ *
+ * Retrieves the iterator at the buffer coordinates x and y. 
+ **/ 
 void
 gnome_canvas_rich_text_get_iter_at_location (GnomeCanvasRichText *text,
                                     GtkTextIter *iter,
