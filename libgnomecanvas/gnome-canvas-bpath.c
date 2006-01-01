@@ -127,11 +127,9 @@ gnome_canvas_bpath_set_property (GObject      *object,
                                  GParamSpec   *pspec)
 {
 	GnomeCanvasItem         *item;
-	GnomeCanvasBpath        *bpath;
 	GnomeCanvasPathDef      *gpp;
 
 	item = GNOME_CANVAS_ITEM (object);
-	bpath = GNOME_CANVAS_BPATH (object);
 
 	switch (param_id) {
 	case PROP_BPATH:

@@ -213,10 +213,6 @@ gnome_canvas_item_new (GnomeCanvasGroup *parent, GType type, const gchar *first_
 static void
 item_post_create_setup (GnomeCanvasItem *item)
 {
-	GtkObject *obj;
-
-	obj = GTK_OBJECT (item);
-
 	group_add (GNOME_CANVAS_GROUP (item->parent), item);
 
 	gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2 + 1, item->y2 + 1);
@@ -1457,13 +1453,11 @@ gnome_canvas_group_set_property (GObject *gobject, guint param_id,
 				 const GValue *value, GParamSpec *pspec)
 {
 	GnomeCanvasItem *item;
-	GnomeCanvasGroup *group;
 	double *xlat;
 
 	g_return_if_fail (GNOME_IS_CANVAS_GROUP (gobject));
 
 	item = GNOME_CANVAS_ITEM (gobject);
-	group = GNOME_CANVAS_GROUP (gobject);
 
 	switch (param_id) {
 	case GROUP_PROP_X:
@@ -1488,12 +1482,10 @@ gnome_canvas_group_get_property (GObject *gobject, guint param_id,
 				 GValue *value, GParamSpec *pspec)
 {
 	GnomeCanvasItem *item;
-	GnomeCanvasGroup *group;
 
 	g_return_if_fail (GNOME_IS_CANVAS_GROUP (gobject));
 
 	item = GNOME_CANVAS_ITEM (gobject);
-	group = GNOME_CANVAS_GROUP (gobject);
 
 	switch (param_id) {
 	case GROUP_PROP_X:
@@ -2694,9 +2686,6 @@ pick_current_item (GnomeCanvas *canvas, GdkEvent *event)
 	    && (canvas->current_item != NULL)
 	    && !canvas->left_grabbed_item) {
 		GdkEvent new_event;
-		GnomeCanvasItem *item;
-
-		item = canvas->current_item;
 
 		new_event = canvas->pick_event;
 		new_event.type = GDK_LEAVE_NOTIFY;
@@ -3075,11 +3064,8 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 static void
 paint (GnomeCanvas *canvas)
 {
-	GtkWidget *widget;
 	ArtIRect *rects;
 	gint n_rects, i;
-
-	widget = GTK_WIDGET (canvas);
 
 	if (canvas->aa)
 		rects = art_rect_list_from_uta (canvas->redraw_area,

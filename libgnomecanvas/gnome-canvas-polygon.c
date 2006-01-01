@@ -226,12 +226,8 @@ gnome_canvas_polygon_get_property (GObject              *object,
 				   GValue               *value,
 				   GParamSpec           *pspec)
 {
-	GnomeCanvasPolygon *poly;
-
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_POLYGON (object));
-
-	poly = GNOME_CANVAS_POLYGON (object);
 
 	switch (param_id) {
 	case PROP_POINTS:

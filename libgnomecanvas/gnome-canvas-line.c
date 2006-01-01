@@ -406,14 +406,10 @@ get_bounds (GnomeCanvasLine *line, double *bx1, double *by1, double *bx2, double
 static void
 get_bounds_canvas (GnomeCanvasLine *line, double *bx1, double *by1, double *bx2, double *by2, double affine[6])
 {
-	GnomeCanvasItem *item;
-
 	/* It would be possible to tighten the bounds somewhat by transforming the individual points before
 	   aggregating them into the bbox. But it hardly seems worth it. */
 	ArtDRect bbox_world;
 	ArtDRect bbox_canvas;
-
-	item = GNOME_CANVAS_ITEM (line);
 
 	get_bounds (line, &bbox_world.x0, &bbox_world.y0, &bbox_world.x1, &bbox_world.y1);
 

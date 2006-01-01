@@ -1440,7 +1440,6 @@ get_event_coordinates(GdkEvent *event, gint *x, gint *y)
 		*x = event->motion.x;
 		*y = event->motion.y;
 		return TRUE;
-		break;
 	case GDK_BUTTON_PRESS:
 	case GDK_2BUTTON_PRESS:
 	case GDK_3BUTTON_PRESS:
@@ -1448,11 +1447,9 @@ get_event_coordinates(GdkEvent *event, gint *x, gint *y)
 		*x = event->button.x;
 		*y = event->button.y;
 		return TRUE;
-		break;
 
 	default:
 		return FALSE;
-		break;
 	}
 } /* get_event_coordinates */
 

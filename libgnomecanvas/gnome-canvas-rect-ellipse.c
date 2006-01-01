@@ -106,11 +106,9 @@ gnome_canvas_re_class_init (GnomeCanvasREClass *class)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
-	GnomeCanvasItemClass *item_class;
 
 	gobject_class = (GObjectClass *) class;
 	object_class = (GtkObjectClass *) class;
-	item_class = (GnomeCanvasItemClass *) class;
 
 	re_parent_class = g_type_class_peek_parent (class);
 
@@ -158,12 +156,8 @@ gnome_canvas_re_init (GnomeCanvasRE *re)
 static void
 gnome_canvas_re_destroy (GtkObject *object)
 {
-	GnomeCanvasRE *re;
-
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GNOME_IS_CANVAS_RE (object));
-
-	re = GNOME_CANVAS_RE (object);
 
 	if (GTK_OBJECT_CLASS (re_parent_class)->destroy)
 		(* GTK_OBJECT_CLASS (re_parent_class)->destroy) (object);

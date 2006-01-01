@@ -1,3 +1,24 @@
+===================== 2.13.0 =========================
+
+2006-01-01  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* demos/canvas-fifteen.c: (piece_event):
+	* libgnomecanvas/gnome-canvas-bpath.c:
+	(gnome_canvas_bpath_set_property):
+	* libgnomecanvas/gnome-canvas-line.c: (get_bounds_canvas):
+	* libgnomecanvas/gnome-canvas-pixbuf.c:
+	(gnome_canvas_pixbuf_update):
+	* libgnomecanvas/gnome-canvas-polygon.c:
+	(gnome_canvas_polygon_get_property):
+	* libgnomecanvas/gnome-canvas-rect-ellipse.c:
+	(gnome_canvas_re_class_init), (gnome_canvas_re_destroy):
+	* libgnomecanvas/gnome-canvas-rich-text.c: (get_event_coordinates):
+	* libgnomecanvas/gnome-canvas-shape.c: (gcbp_ensure_mask):
+	* libgnomecanvas/gnome-canvas.c: (item_post_create_setup),
+	(gnome_canvas_group_set_property),
+	(gnome_canvas_group_get_property), (pick_current_item), (paint):
+	Remove a bunch of crufty unused code and compiler warnings.
+
 2005-12-21  Federico Mena Quintero  <federico@ximian.com>
 
 	* libgnomecanvas/gnome-canvas.c (put_item_after): Simplify the

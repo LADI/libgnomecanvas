@@ -739,7 +739,7 @@ gnome_canvas_pixbuf_update (GnomeCanvasItem *item, double *affine, ArtSVP *clip_
 	 * better to turn them off, than to chase subtle optimization bugs
 	 * throughgout all of gnome-canvas-pixbuf.c - TIMJ
 	 */
-#if USE_BROKEN_OPTIMIZATIONS
+#ifdef USE_BROKEN_OPTIMIZATIONS
 	if (((flags & GNOME_CANVAS_UPDATE_VISIBILITY)
 	     && !(GTK_OBJECT_FLAGS (item) & GNOME_CANVAS_ITEM_VISIBLE))
 	    || (flags & GNOME_CANVAS_UPDATE_AFFINE)

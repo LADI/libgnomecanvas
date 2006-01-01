@@ -1402,10 +1402,6 @@ gcbp_ensure_mask (GnomeCanvasShape * shape, gint width, gint height)
 		if (!ctx) {
 			/* Ctx is not defined for parent canvas yet */
 
-			GdkWindow * window;
-
-			window = ((GtkWidget *) (((GnomeCanvasItem *) shape)->canvas))->window;
-
 			ctx = g_new (GCBPDrawCtx, 1);
 
 			ctx->refcount = 1;
