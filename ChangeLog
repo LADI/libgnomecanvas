@@ -1,3 +1,7 @@
+2006-03-21  Vladimer Sichinava  <vlsichinava@gmail.com>
+
+        * configure.in: Added "ka" (Georgian) to ALL_LINGUAS
+
 ======================= 2.14.0 ============================
 
 2006-03-13  Kjartan Maraas  <kmaraas@gnome.org>
