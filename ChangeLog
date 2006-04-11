@@ -1,3 +1,10 @@
+Tue Apr 11 16:46:20 2006  Tim Janik  <timj@gtk.org>
+
+	* libgnomecanvas/gnome-canvas.c:
+	gnome_canvas_set_pixels_per_unit():
+	scroll_to(): applied a patch from Sven Herzberg to check hadjustment
+	and vadjustment for NULL. the rationale is provided in #305941.
+
 2006-03-24  Gora Mohanty  <gmohanty@cvs.gnome.org>
 
         * configure.in: Added 'or' (Oriya) to ALL_LINGUAS.

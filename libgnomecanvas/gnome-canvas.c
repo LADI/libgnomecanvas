@@ -2400,12 +2400,12 @@ scroll_to (GnomeCanvas *canvas, int cx, int cy)
 		gtk_widget_queue_draw (GTK_WIDGET (canvas));
 	}
 
-	if (((int) canvas->layout.hadjustment->value) != cx) {
+	if (canvas->layout.hadjustment && ((int) canvas->layout.hadjustment->value) != cx) {
 		canvas->layout.hadjustment->value = cx;
 		changed_x = TRUE;
 	}
 
-	if (((int) canvas->layout.vadjustment->value) != cy) {
+	if (canvas->layout.vadjustment && ((int) canvas->layout.vadjustment->value) != cy) {
 		canvas->layout.vadjustment->value = cy;
 		changed_y = TRUE;
 	}
@@ -3374,8 +3374,16 @@ gnome_canvas_set_pixels_per_unit (GnomeCanvas *canvas, double n)
 		anchor_x = anchor_y = 0;
 
 	/* Find the coordinates of the anchor point in units. */
-	ax = (canvas->layout.hadjustment->value + anchor_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
-	ay = (canvas->layout.vadjustment->value + anchor_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
+	if(canvas->layout.hadjustment) {
+		ax = (canvas->layout.hadjustment->value + anchor_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
+	} else {
+		ax = (0.0                               + anchor_x) / canvas->pixels_per_unit + canvas->scroll_x1 + canvas->zoom_xofs;
+	}
+	if(canvas->layout.hadjustment) {
+		ay = (canvas->layout.vadjustment->value + anchor_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
+	} else {
+		ay = (0.0                               + anchor_y) / canvas->pixels_per_unit + canvas->scroll_y1 + canvas->zoom_yofs;
+	}
 
 	/* Now calculate the new offset of the upper left corner. */
 	x1 = ((ax - canvas->scroll_x1) * n) - anchor_x;
