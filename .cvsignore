@@ -35,4 +35,5 @@ gnome-libs.spec
 .lclintrc
 libvfs
 compatConf.sh
+intltool-*
 libgnomecanvas2-*.tar.gz
