@@ -1,3 +1,8 @@
+2006-07-11  Sven Herzberg  <herzi@gnome-de.org>
+
+	* libgnomecanvas/gnome-canvas.c: allow group->destroy() to modify
+	group->item_list without unleashing hell (developed with Tim Janik)
+
 2006-06-17  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* .cvsignore:
