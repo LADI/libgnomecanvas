@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-15 12:32+0100\n"
-"PO-Revision-Date: 2006-09-19 00:40+0300\n"
+"PO-Revision-Date: 2006-09-21 16:29+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -388,19 +388,19 @@ msgstr "Mähisesse asetatavate pikslite arv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:352
 msgid "Left Margin"
-msgstr "Vasak ääris"
+msgstr "Vasak veeris"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Number of pixels in the left margin"
-msgstr "Vasaku äärise pikslite arv"
+msgstr "Vasaku veerise pikslite arv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:361
 msgid "Right Margin"
-msgstr "Parem ääris"
+msgstr "Parem veeris"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Number of pixels in the right margin"
-msgstr "Parema äärise pikslite arv"
+msgstr "Parema veerise pikslite arv"
 
 #: libgnomecanvas/gnome-canvas-rich-text.c:370
 msgid "Indentation"
