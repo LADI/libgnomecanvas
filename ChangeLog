@@ -1,3 +1,9 @@
+2006-11-10  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* libgnomecanvas/gnome-canvas-shape.c: (gcbp_ensure_mask):
+	Fix a typo in a g_object_set_data call. Reported by elubarsky at
+	gmail com. Closes bug #355580.
+
 2006-07-11  Sven Herzberg  <herzi@gnome-de.org>
 
 	* libgnomecanvas/gnome-canvas.c: allow group->destroy() to modify

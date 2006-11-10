@@ -1415,7 +1415,7 @@ gcbp_ensure_mask (GnomeCanvasShape * shape, gint width, gint height)
 			ctx->clear_gc = NULL;
 			ctx->xor_gc = NULL;
 
-			g_object_set_data (G_OBJECT (canvas), "BpathDrawContext", ctx);
+			g_object_set_data (G_OBJECT (canvas), "BpathDrawCtx", ctx);
 
 		} else {
 			ctx->refcount++;
