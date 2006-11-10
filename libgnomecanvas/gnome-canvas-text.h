@@ -30,7 +30,7 @@
  *
  *
  * Author: Federico Mena <federico@nuclecu.unam.mx>
- * Port to Pango co-done by Gergı …rdi <cactus@cactus.rulez.org>
+ * Port to Pango co-done by Gerg√µ √ârdi <cactus@cactus.rulez.org>
  */
 
 #ifndef GNOME_CANVAS_TEXT_H

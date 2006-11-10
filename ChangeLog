@@ -1,5 +1,11 @@
 2006-11-10  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* NEWS: Update some.
+	* libgnomecanvas/gnome-canvas-text.h: Convert to UTF-8.
+	Noticed by Danny Milo. Closes bug #164327.
+
+2006-11-10  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* libgnomecanvas/gnome-canvas-shape.c: (gcbp_ensure_mask):
 	Fix a typo in a g_object_set_data call. Reported by elubarsky at
 	gmail com. Closes bug #355580.
