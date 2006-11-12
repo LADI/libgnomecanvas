@@ -1,3 +1,10 @@
+2006-11-12  Sven Herzberg  <herzi@gnome-de.org>
+
+	* demos/Makefile.am: build dash demo
+	* demos/dash-demo.c: a demo to demonstrate the dash property
+	* libgnomecanvas/gnome-canvas-shape.c: don't allocate too much memory.
+	Closes bug #153583 (Patch from Peter G. Baum)
+
 2006-11-10  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* NEWS: Update some.

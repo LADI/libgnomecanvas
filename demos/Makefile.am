@@ -15,7 +15,9 @@ LDADD =	\
 	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la \
 	$(INTLLIBS)
 
-noinst_PROGRAMS = canvas_demo
+noinst_PROGRAMS=\
+	canvas_demo \
+	dash-demo
 
 canvas_demo_SOURCES =		\
 	canvas.c		\

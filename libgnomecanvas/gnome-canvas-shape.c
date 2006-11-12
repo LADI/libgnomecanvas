@@ -486,7 +486,7 @@ gnome_canvas_shape_set_property (GObject      *object,
 			priv->dash.offset = dash->offset;
 			priv->dash.n_dash = dash->n_dash;
 			if (dash->dash != NULL) {
-				priv->dash.dash = g_new (double, dash->n_dash * sizeof (double));
+				priv->dash.dash = g_new (double, dash->n_dash);
 				memcpy (priv->dash.dash, dash->dash, dash->n_dash * sizeof (double));
 			}
 		}
