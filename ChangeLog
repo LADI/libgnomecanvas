@@ -1,3 +1,9 @@
+2006-11-14  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in: depend on pkg-config 0.18
+	* libgnomecanvas/libgnomecanvas-2.0.pc.in: move pango dependencies to
+	Requires.private. Closes bug #352196 (Bug reported by Samuel Thibault)
+
 2006-11-12  Sven Herzberg  <herzi@gnome-de.org>
 
 	* demos/Makefile.am: build dash demo

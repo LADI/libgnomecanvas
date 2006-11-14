@@ -85,6 +85,7 @@ CANVAS_MODULES="dnl
   libart-2.0 >= libart_required_version dnl
   pango >= pango_required_version dnl
   pangoft2 >= pango_required_version"
+PKG_PROG_PKG_CONFIG([0.18])
 PKG_CHECK_MODULES(LIBGNOMECANVAS, $CANVAS_MODULES)
 
 PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= libglade_required_version)
