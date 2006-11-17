@@ -1,3 +1,11 @@
+2006-11-17  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/gnome-canvas-shape.c: changed the get_property() implementation
+	for "dash" to return something useful (ArtVpathDash*) and also to be
+	consistent with set_property() ('though tis code really sucks as we
+	should really use GParamSpecBoxed instead). Closes bug #153585
+	(Patch by Peter G. Baum)
+
 2006-11-14  Sven Herzberg  <herzi@gnome-de.org>
 
 	* configure.in: depend on pkg-config 0.18

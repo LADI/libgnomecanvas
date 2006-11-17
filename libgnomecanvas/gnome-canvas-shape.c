@@ -629,7 +629,7 @@ gnome_canvas_shape_get_property (GObject     *object,
 		break;
 
 	case PROP_DASH:
-		g_value_set_pointer (value, priv->dash.dash);
+		g_value_set_pointer (value, &priv->dash);
 		break;
 		
 	default:
