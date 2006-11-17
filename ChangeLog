@@ -1,3 +1,9 @@
+2006-11-18  Sven Herzberg  <herzi@gnome-de.org>
+
+	* libgnomecanvas/gnome-canvas.c: added documentation about how to pass
+	construct parameters to GnomeCanvasItem implementations. Closes bug
+	#156165 (Pointed out by Stefan Kost)
+
 2006-11-17  Sven Herzberg  <herzi@gnome-de.org>
 
 	* src/gnome-canvas-shape.c: changed the get_property() implementation

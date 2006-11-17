@@ -184,7 +184,9 @@ gnome_canvas_item_init (GnomeCanvasItem *item)
  * created at the top of its parent's stack, and starts up as visible.  The item
  * is of the specified @type, for example, it can be
  * gnome_canvas_rect_get_type().  The list of object arguments/value pairs is
- * used to configure the item.
+ * used to configure the item. If you need to pass construct time parameters, you
+ * should use g_object_new() to pass the parameters and
+ * gnome_canvas_item_construct() to set up the canvas item.
  *
  * Return value: The newly-created item.
  **/
