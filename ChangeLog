@@ -1,3 +1,10 @@
+2006-11-22  Sven Herzberg  <herzi@gnome-de.org>
+
+	* docs/reference/tmpl/gnome-canvas-text.sgml,
+	* libgnomecanvas/gnome-canvas-text.c: added some documentation about
+	the fact that GnomeCanvasText doesn't zoom. Closes bug #154679
+	(Pointed out by Stefan Kost)
+
 2006-11-18  Sven Herzberg  <herzi@gnome-de.org>
 
 	* libgnomecanvas/gnome-canvas.c: added documentation about how to pass

@@ -7,7 +7,10 @@ Text canvas item
 <!-- ##### SECTION Long_Description ##### -->
 <para>
 A canvas item for displaying text. See #GnomeCanvasRichText for a more advanced
-text display and editing canvas item.
+text display and editing canvas item. NB: The #GnomeCanvasText item doesn't
+scale with the zoom property of the #GnomeCanvas. A zoomable implementation
+could derive from #GnomeCanvasText and check the zoom property for manual
+adjustments to the font size.
 </para>
 
 <!-- ##### SECTION See_Also ##### -->
