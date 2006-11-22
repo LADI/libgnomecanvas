@@ -1,5 +1,11 @@
 2006-11-22  Sven Herzberg  <herzi@gnome-de.org>
 
+	* libgnomecanvas/gnome-canvas-text.c: improved the calculation of the
+	bounding box. Fixes bug #155317 (Based on a patch from Roderich
+	Schupp)
+
+2006-11-22  Sven Herzberg  <herzi@gnome-de.org>
+
 	* docs/reference/tmpl/gnome-canvas-text.sgml,
 	* libgnomecanvas/gnome-canvas-text.c: added some documentation about
 	the fact that GnomeCanvasText doesn't zoom. Closes bug #154679

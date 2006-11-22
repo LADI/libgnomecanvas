@@ -1617,13 +1617,12 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 
 		pango_layout_iter_get_line_extents (iter, NULL, &log_rect);
 				
+		x1 = text->cx + PANGO_PIXELS (log_rect.x);
+		y1 = text->cy + PANGO_PIXELS (log_rect.y);
+		x2 = x1 + PANGO_PIXELS (log_rect.width);
+		y2 = y1 + PANGO_PIXELS (log_rect.height);
+
 		if (text->clip) {
-			x1 = PANGO_PIXELS (log_rect.x);
-			y1 = PANGO_PIXELS (log_rect.y);
-			x2 = PANGO_PIXELS (log_rect.x+log_rect.width);
-			y2 = PANGO_PIXELS (log_rect.y+log_rect.height);
-
-
 			if (x1 < text->clip_cx)
 				x1 = text->clip_cx;
 
@@ -1638,11 +1637,6 @@ gnome_canvas_text_point (GnomeCanvasItem *item, double x, double y,
 
 			if ((x1 >= x2) || (y1 >= y2))
 				continue;
-		} else {
-			x1 = text->x;
-			y1 = text->y;
-			x2 = log_rect.width;
-			y2 = log_rect.height;			
 		}
 
 		/* Calculate distance from point to rectangle */
