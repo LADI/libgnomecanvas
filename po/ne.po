@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.gnome-2-14.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-02 07:23+0200\n"
+"POT-Creation-Date: 2006-11-23 08:11+0100\n"
 "PO-Revision-Date: 2006-08-24 11:47+0545\n"
 "Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -21,21 +21,21 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms: nplurals=2;plural=(n!=1)\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1398 ../libgnomecanvas/gnome-canvas.c:1399
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: ../libgnomecanvas/gnome-canvas.c:1405 ../libgnomecanvas/gnome-canvas.c:1406
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2049
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "एन्टिएलाइज गरिएको"
 
-#: ../libgnomecanvas/gnome-canvas.c:2050
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
 msgstr "क्यानभासको एन्टि-एजाइजिङ मोड"
 
@@ -101,24 +101,32 @@ msgid "Font stretch"
 msgstr "फन्ट तन्काई"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "फन्ट साइज"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr ""
+ "फन्ट साइज ( PANGO_SCALE को गुणक जस्तो उदाहरणका लागि: १२ पोइन्ट फन्टका लागि 12*PANGO_SCALE "
+"12*PANGO_SCALE )"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "फन्ट बिन्दु"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "बिन्दुमा फन्ट साइज"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "बिन्दुमा फन्ट साइज  (जस्तै: १२ पोइन्ट फन्ट साइजका लागि १२)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
 msgstr "राइज"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr "पाठको सुरुआत आधार रेखाभन्दा माथि (तल यदि उचाइ नकारात्मक भएमा)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
@@ -406,4 +414,3 @@ msgstr "इन्डेन्टेसन"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "इन्डेन्टेसनका लागि पिक्सेलको सङ्ख्या"
-
