@@ -4,36 +4,36 @@
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002
-#
+# Djihed Afifi <djihed@gmail.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-23 08:49+0200\n"
-"PO-Revision-Date: 2006-10-06 12:16-0000\n"
+"POT-Creation-Date: 2006-11-23 06:58+0000\n"
+"PO-Revision-Date: 2006-11-23 07:00+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1398
-#: ../libgnomecanvas/gnome-canvas.c:1399
+#: ../libgnomecanvas/gnome-canvas.c:1400
+#: ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "س"
 
-#: ../libgnomecanvas/gnome-canvas.c:1405
-#: ../libgnomecanvas/gnome-canvas.c:1406
+#: ../libgnomecanvas/gnome-canvas.c:1407
+#: ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "ص"
 
-#: ../libgnomecanvas/gnome-canvas.c:2043
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "الحواف المحسّنة"
 
-#: ../libgnomecanvas/gnome-canvas.c:2044
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
 msgstr "نظام الحواف المحسّنة للّوحة."
 
@@ -99,17 +99,20 @@ msgid "Font stretch"
 msgstr "تمديد الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "حجم الخط"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
+msgstr "حجم الخط (مضاعف لـ PANGO_SCALE، مثال 12*PANGO_SCALE لحجم خط 12 نقط)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "نقاط الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "حجم الخط بالنقاط"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "حجم الخط بالنقط ( مثال 12 لحجم خط 12 نقط)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -404,4 +407,7 @@ msgstr "الإزاحة"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "عدد بكسلات الإزاحة"
+
+#~ msgid "Font size in points"
+#~ msgstr "حجم الخط بالنقاط"
 
