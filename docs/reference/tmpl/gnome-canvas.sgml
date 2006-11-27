@@ -33,7 +33,9 @@ translating and scaling, can be performed on all items in a group.
 <para>
 There is a special root group created by a #GnomeCanvas. This is the top
 level group under which all items in a canvas are contained. To get the root
-group from a canvas call gnome_canvas_root().
+group from a canvas call gnome_canvas_root(). To clear a canvas you can
+simply walk through the item_list member of the #GnomeCanvasGroup and call
+gtk_object_destroy() on each one.
 </para>
 
 <para>
