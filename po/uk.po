@@ -1,35 +1,35 @@
 # Ukrainian translation of libgnomecanvas.
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Yuriy Syrota <rasta@renome.rovno.ua>, 2001.
-# Maxim Dziumanenko <dziumanenko@gmail.com>, 2004
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2007
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-31 11:11+0300\n"
-"PO-Revision-Date: 2004-03-10 20:15+0200\n"
+"POT-Creation-Date: 2007-01-18 18:13+0200\n"
+"PO-Revision-Date: 2007-01-15 20:15+0200\n"
 "Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1398 ../libgnomecanvas/gnome-canvas.c:1399
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: ../libgnomecanvas/gnome-canvas.c:1405 ../libgnomecanvas/gnome-canvas.c:1406
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2043
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "Згладжування"
 
-#: ../libgnomecanvas/gnome-canvas.c:2044
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
 msgstr "Режим згладжування полотна."
 
@@ -95,17 +95,25 @@ msgid "Font stretch"
 msgstr "Ширина шрифту"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "Розмір шрифту"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr ""
+"Розмір шрифту (як множник PANGO_SCALE, наприклад. 12*PANGO_SCALE для шрифту "
+"з розміром 12 пунктів)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "Шрифт в пунктах"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "Розмір шрифту в пунктах"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr ""
+"Розмір шрифту у пунктах (наприклад, 12 для шрифту з розміром 12 пунктів)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -123,11 +131,11 @@ msgstr "Закреслений"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "Закреслення тексту"
+msgstr "Закреслений стиль тексту"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "Підкреслення"
+msgstr "Підкреслений"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
@@ -181,7 +189,7 @@ msgstr "Гарнітура шрифту"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Чи впливатиме ця ознака на родину шрифту"
+msgstr "Чи впливатиме ця ознака на гарнітуру шрифту"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -233,7 +241,7 @@ msgstr "Чи впливатиме ця ознака на вертикальни�
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "Закреслення"
+msgstr "Закреслений"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -253,7 +261,7 @@ msgstr "Масштаб"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "Чи впливатиме ця ознака на масштабування шрифту"
+msgstr "Чи впливатиме ця ознака на зміну масштабу шрифту"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
