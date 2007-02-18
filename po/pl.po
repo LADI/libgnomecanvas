@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 16:29+0100\n"
+"POT-Creation-Date: 2007-02-18 23:31+0100\n"
 "PO-Revision-Date: 2002-05-18 09:44+0200\n"
 "Last-Translator: GNOME PL Team <translators@gnome.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1398 ../libgnomecanvas/gnome-canvas.c:1399
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: ../libgnomecanvas/gnome-canvas.c:1405 ../libgnomecanvas/gnome-canvas.c:1406
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2043
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "Antyaliasing"
 
-#: ../libgnomecanvas/gnome-canvas.c:2044
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
 msgstr "Tryb wyświetlania z antyaliasingiem."
 
@@ -98,17 +98,24 @@ msgid "Font stretch"
 msgstr "Rozciągnięcie czcionki"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "Rozmiar czcionki"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr ""
+"Rozmiar czcionki (jako wielokrotność PANGO_SCALE, np. 12*PANGO_SCALE dla "
+"czcionki o rozmiarze 12pkt.)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "Punkty czcionki"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "Rozmiar czcionki w punktach"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "Rozmiar czcionki w punktach (np. 12 dla czcionki o rozmiarze 12pkt.)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -410,3 +417,6 @@ msgstr "Wcięcie"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "Liczba pikseli we wcięciu"
+
+#~ msgid "Font size in points"
+#~ msgstr "Rozmiar czcionki w punktach"
