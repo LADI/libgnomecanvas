@@ -1,402 +1,413 @@
+# translation of libgnomecanvas.HEAD.po to Punjabi
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
 #
+# Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
+# A S Alam <aalam@users.sf.net>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: punlinux\n"
+"Project-Id-Version: libgnomecanvas.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-01 22:11+0100\n"
-"PO-Revision-Date: 2004-06-18 09:43+0530\n"
-"Last-Translator: Amanpreet Singh Alam <amanlinux@netscape.net>\n"
-"Language-Team: Punjabi <punlinux-i18n@lists.sourceforge.>\n"
+"POT-Creation-Date: 2007-01-02 05:44+0000\n"
+"PO-Revision-Date: 2007-02-18 09:49+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: libgnomecanvas/gnome-canvas.c:1398 libgnomecanvas/gnome-canvas.c:1399
-#: libgnomecanvas/gnome-canvas-rich-text.c:219
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: libgnomecanvas/gnome-canvas.c:1405 libgnomecanvas/gnome-canvas.c:1406
-#: libgnomecanvas/gnome-canvas-rich-text.c:227
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: libgnomecanvas/gnome-canvas.c:2049
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "ਐਨਟੀਕਲਾਈਇੰਗ"
 
-#: libgnomecanvas/gnome-canvas.c:2050
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
-msgstr "ਪਰਦੇ ਦਾ ਐਨਟੀਕਲਾਈਇੰਗ ਢੰਗ"
+msgstr "ਕੈਨਵਸ ਐਨਟੀਕਲਾਈਇੰਗ ਢੰਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:206
-#: libgnomecanvas/gnome-canvas-rich-text.c:211
+#: ../libgnomecanvas/gnome-canvas-text.c:206
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text"
-msgstr "ਮੂਲ ਪਾਠ"
+msgstr "ਪਾਠ"
 
-#: libgnomecanvas/gnome-canvas-text.c:207
+#: ../libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਮੂਲ ਪਾਠ"
+msgstr "ਰੈਂਡਰ ਕਰਨ ਲਈ ਪਾਠ"
 
-#: libgnomecanvas/gnome-canvas-text.c:215
+#: ../libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "ਸਪਸ਼ਟ ਬਣਾਉਣਾ"
+msgstr "ਮਾਰਕਅੱਪ"
 
-#: libgnomecanvas/gnome-canvas-text.c:216
+#: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "ਮੂਲ ਪਾਠ ਨੂੰ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਸਪਸ਼ਟ ਬਣਾਉ"
+msgstr "ਰੈਂਡਰ ਕਰਨ ਲਈ ਪਾਠ ਮਾਰਕਅੱਪ (ਨਿਸ਼ਾਨਬੱਧ)"
 
-#: libgnomecanvas/gnome-canvas-text.c:241
+#: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
 msgstr "ਫੋਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:242
+#: ../libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "ਫੋਟ ਦਾ ਲਡ਼ੀ ਵਾਂਗ  ਵਰਣਨ"
+msgstr "ਫੋਂਟ ਵੇਰਵਾ ਸਤਰ ਵਾਂਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:250
+#: ../libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "ਫੋਟ ਵਰਣਨ"
+msgstr "ਫੋਂਟ ਵਰਣਨ"
 
-#: libgnomecanvas/gnome-canvas-text.c:251
+#: ../libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "ਫੋਟ ਵਰਣਨ ਦੀ ਤਰ੍ਹਾਂ PangoFontDescription struc"
+msgstr "ਫੋਂਟ ਵਰਣਨ ਦੀ ਤਰ੍ਹਾਂ PangoFontDescription struc"
 
-#: libgnomecanvas/gnome-canvas-text.c:259
+#: ../libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "ਫੋਟ ਵਰਗ"
+msgstr "ਫੋਂਟ ਵਰਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:260
+#: ../libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "ਫੋਟ ਵਰਗ ਦਾ ਨਾਉ ਜਿਵੇ ਕਿ  Sans, Helvetica, Times, Monospace"
+msgstr "ਫੋਂਟ ਵਰਗ ਦਾ ਨਾਂ ਜਿਵੇਂ ਕਿ Sans, Helvetica, Times, Monospace"
 
-#: libgnomecanvas/gnome-canvas-text.c:276
-#: libgnomecanvas/gnome-canvas-text.c:277
+#: ../libgnomecanvas/gnome-canvas-text.c:276
+#: ../libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "ਫੋਟ ਸ਼ੈਲੀ"
+msgstr "ਫੋਂਟ ਸ਼ੈਲੀ"
 
-#: libgnomecanvas/gnome-canvas-text.c:286
-#: libgnomecanvas/gnome-canvas-text.c:287
+#: ../libgnomecanvas/gnome-canvas-text.c:286
+#: ../libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "ਫੋਟ ਬਦਲਣ ਵਾਲੇ"
+msgstr "ਫੋਂਟ ਰੂਪ"
 
-#: libgnomecanvas/gnome-canvas-text.c:296
-#: libgnomecanvas/gnome-canvas-text.c:297
+#: ../libgnomecanvas/gnome-canvas-text.c:296
+#: ../libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "ਫੋਟ ਭਾਰ"
+msgstr "ਫੋਂਟ ਭਾਰ"
 
-#: libgnomecanvas/gnome-canvas-text.c:308
-#: libgnomecanvas/gnome-canvas-text.c:309
+#: ../libgnomecanvas/gnome-canvas-text.c:308
+#: ../libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "ਫੋਟ ਵਿਸਤਾਰ"
+msgstr "ਫੋਂਟ ਵਿਸਤਾਰ"
 
-#: libgnomecanvas/gnome-canvas-text.c:318
-#: libgnomecanvas/gnome-canvas-text.c:319
+#: ../libgnomecanvas/gnome-canvas-text.c:318
 msgid "Font size"
-msgstr "ਫੋਟ ਆਕਾਰ"
+msgstr "ਫੋਂਟ ਆਕਾਰ"
 
-#: libgnomecanvas/gnome-canvas-text.c:329
-msgid "Font points"
-msgstr "ਫੋਟ ਬਿੰਦੂ"
-
-#: libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "ਬਿੰਦੂਆਂ ਵਿਚ ਫੋਟ ਆਕਾਰ"
-
-#: libgnomecanvas/gnome-canvas-text.c:340
-msgid "Rise"
-msgstr "ਉਤਪਤੀ"
-
-#: libgnomecanvas/gnome-canvas-text.c:341
+#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "ਹੇਠਲੀ ਲਕੀਰ ਉਪਰ ਮੂਲ ਪਾਠ ਦੀ ਸ਼ਾਖਾ(ਜੇ ਉਤਪਤੀ ਨਾਂਵਾਚਕ ਹੈ ਤਾਂ ਹੇਠਲੀ ਲਕੀਰ ਥਲੇ)"
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr "ਫੋਂਟ ਆਕਾਰ (PANGO_SCALE ਦੇ ਗੁਣਾਂਕ ਵਾਂਗ, ਜਿਵੇਂ ਕਿ 12pt ਫੋਂਟ ਆਕਾਰ ਲਈ 12*PANGO_SCALE)"
 
-#: libgnomecanvas/gnome-canvas-text.c:351
+#: ../libgnomecanvas/gnome-canvas-text.c:329
+msgid "Font points"
+msgstr "ਫੋਂਟ ਬਿੰਦੂ"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:330
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "ਫੋਂਟ ਆਕਾਰ ਬਿੰਦੂਆਂ 'ਚ (ਜਿਵੇਂ ਕਿ 12pt ਫੋਂਟ ਆਕਾਰ ਲਈ 12)"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:340
+msgid "Rise"
+msgstr "ਉਭਾਰੋ"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:341
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"ਆਧਾਰ ਲਾਇਨ ਉਪਰ ਮੂਲ ਪਾਠ ਦੀ ਸ਼ਾਖਾ (ਜੇ ਉਭਾਰਨਾ ਨਾਂਵਾਚਕ ਹੈ ਤਾਂ ਆਧਾਰ ਲਾਇਨ "
+"ਥੱਲੇ)"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "ਵਿੰਨਣਾ"
+msgstr "ਵਿੰਨੋ"
 
-#: libgnomecanvas/gnome-canvas-text.c:352
+#: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "ਭਾਵੇਂ ਮੂਲ ਪਾਠ ਨੂੰ ਵਿੰਨਣ ਲਈ"
+msgstr "ਕੀ ਪਾਠ ਨੂੰ ਵਿੱਚੋਂ ਵਿੰਨ੍ਹਣਾ ਹੈ"
 
-#: libgnomecanvas/gnome-canvas-text.c:360
+#: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ"
+msgstr "ਹੇਠਾਂ ਰੇਖਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:361
+#: ../libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
 msgstr "ਇਸ ਮੂਲ ਪਾਠ ਲਈ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਉਣ ਦੀ ਸ਼ੈਲੀ"
 
-#: libgnomecanvas/gnome-canvas-text.c:370
+#: ../libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
-msgstr "ਪੈਮਾਨਾ"
+msgstr "ਸਕੇਲ"
 
-#: libgnomecanvas/gnome-canvas-text.c:371
+#: ../libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "ਮੂਲ ਆਕਾਰ ਦੀ ਤੁਲਨਾ ਵਿਚ ਫੋਟ ਦਾ ਆਕਾਰ"
+msgstr "ਮੂਲ ਆਕਾਰ ਦੀ ਤੁਲਨਾ ਵਿਚ ਫੋਂਟ ਦਾ ਆਕਾਰ"
 
-#: libgnomecanvas/gnome-canvas-text.c:425
-#: libgnomecanvas/gnome-canvas-text.c:433
-#: libgnomecanvas/gnome-canvas-text.c:441
+#: ../libgnomecanvas/gnome-canvas-text.c:425
+#: ../libgnomecanvas/gnome-canvas-text.c:433
+#: ../libgnomecanvas/gnome-canvas-text.c:441
 msgid "Color"
 msgstr "ਰੰਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:426
+#: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "ਮੂਲ ਪਾਠ ਰੰਗ,ਲਡ਼ੀ ਵਾਂਗ"
+msgstr "ਪਾਠ ਰੰਗ, ਸਤਰ ਵਾਂਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:434
+#: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
-msgstr "ਪਾਠ ਰੰਗ,Gdk ਰੰਗ ਦੀ ਤਰਾਂ "
+msgstr "ਪਾਠ ਰੰਗ,Gdk ਰੰਗ ਵਾਂਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:442
+#: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "ਜੁਡ਼ੇ ਪੂਰਨ ਅੰਕ R/G/B/A  ਦੀ ਤਰਾਂ ਮੂਲ ਪਾਠ ਰੰਗ"
+msgstr "ਪਾਠ ਰੰਗ, ਜੁਡ਼ੇ ਪੂਰਨ ਅੰਕ R/G/B/A ਵਾਂਗ"
 
-#: libgnomecanvas/gnome-canvas-text.c:455
+#: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
-msgstr "ਪਾਠ ਦੀ ਚੌਡ਼ਾਈ"
+msgstr "ਪਾਠ ਚੌੜਾਈ"
 
-#: libgnomecanvas/gnome-canvas-text.c:456
+#: ../libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਚੌਡ਼ਾਈ"
+msgstr "ਰੈਂਡਰ ਕੀਤੇ ਪਾਠ ਦੀ ਚੌੜਾਈ"
 
-#: libgnomecanvas/gnome-canvas-text.c:463
+#: ../libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
-msgstr "ਪਾਠ ਦੀ ਉਚਾਈ"
+msgstr "ਪਾਠ ਉਚਾਈ"
 
-#: libgnomecanvas/gnome-canvas-text.c:464
+#: ../libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
-msgstr "ਪ੍ਰਦਰਸ਼ਿਤ ਕੀਤੇ ਮੂਲ ਪਾਠ ਦੀ ਉਚਾਈ"
+msgstr "ਰੈਂਡਰ ਕੀਤੇ ਪਾਠ ਦੀ ਉਚਾਈ"
 
-#: libgnomecanvas/gnome-canvas-text.c:472
+#: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "ਫੋਟ ਵਰਗ  ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਵਰਗ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:473
+#: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਦੇ ਵਰਗ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਵਰਗ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:476
+#: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "ਅਖਰ ਸ਼ੈਲੀ ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਸ਼ੈਲੀ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:477
+#: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਸ਼ੈਲੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਸ਼ੈਲ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:480
+#: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "ਫੋਟ ਬਦਲਣ ਵਾਲਾ ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਰੂਪ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:481
+#: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਬਦਲਣ ਵਾਲੇ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਰੂਪ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:484
+#: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "ਫੋਟ ਭਾਰ ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਭਾਰ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:485
+#: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਦੇ ਭਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਭਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:488
+#: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "ਫੋਟ ਵਿਸਤਾਰ ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਵਿਸਤਾਰ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:489
+#: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਵਿਸਤਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਵਿਸਤਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:492
+#: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "ਫੋਟ ਆਕਾਰ ਸਮੂਹ"
+msgstr "ਫੋਂਟ ਆਕਾਰ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:493
+#: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਫੋਟ ਦੇ ਆਕਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਆਕਾਰ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:496
+#: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "ਉਤਪਤੀ ਸਮੂਹ"
+msgstr "ਉਭਾਰੋ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:497
+#: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਉਤਪਤੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਉਭਾਰਨ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:500
+#: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "ਵਿੰਨਣ ਸਮੂਹ"
+msgstr "ਵਿੰਨਣ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:501
+#: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਵਿੰਨਣ ਵਿਚ ਪ੍ਰਭਾਵ ਪਾਉਂਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਵਿੰਨ੍ਹਣ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:504
+#: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਸਮੂਹ"
+msgstr "ਹੇਠ ਰੇਖਾ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:505
+#: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਸ਼ਬਦਾਂ ਹੇਠ ਲਕੀਰ ਲਾਓਣ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਹੇਠ ਰੇਖਾ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-text.c:508
+#: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr "ਮਾਪ ਸਮੂਹ"
+msgstr "ਸਕੇਲ ਸੈੱਟ"
 
-#: libgnomecanvas/gnome-canvas-text.c:509
+#: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "ਭਾਵੇਂ ਇਹ ਲੇਬਲ ਅਖਰਾਂ ਦੇ ਮਾਪ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ"
+msgstr "ਕੀ ਇਹ ਟੈਗ ਫੋਂਟ ਸਕੇਲਿੰਗ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:212
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
-msgstr "ਦਿਖਾਉਣ ਵਾਲਾ ਮੂਲ ਪਾਠ"
+msgstr "ਵੇਖਾਉਣ ਲਈ ਪਾਠ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:220
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
 msgstr "X ਸਥਿਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:228
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
 msgstr "Y ਸਥਿਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:235
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
 msgstr "ਚੌਡ਼ਾਈ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:236
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:236
 msgid "Width for text box"
-msgstr "ਮੂਲ ਪਾਠ ਡਬੇ ਦੀ ਚੌਡ਼ਾਈ"
+msgstr "ਪਾਠ ਬਕਸੇ ਲਈ ਚੌੜਾਈ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:243
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
 msgstr "ਉਚਾਈ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:244
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
-msgstr "ਪਾਠ ਡਬੇ ਦੀ ਉਚਾਈ"
+msgstr "ਪਾਠ ਡੱਬੇ ਦੀ ਉਚਾਈ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:251
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
 msgstr "ਸੋਧਯੋਗ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:252
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
 msgstr "ਕੀ ਇਹ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਸੋਧਣਯੋਗ ਹੈ?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:259
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
-msgstr "ਦਿਸੇ"
+msgstr "ਦਿੱਖ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:260
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
 msgstr "ਕੀ ਇਹ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਦਿਸਦੀ ਹੈ?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:267
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Cursor Visible"
-msgstr "ਕਰਸਰ ਦਿਸੇ"
+msgstr "ਕਰਸਰ ਵੇਖਾਈ ਦੇਵੇ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:268
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
 msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਦਿਸਦਾ ਹੈ? "
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:275
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Cursor Blink"
-msgstr "ਝਪਕਦਾ ਕਰਸਰ"
+msgstr "ਝਪਕਦੀ ਕਰਸਰ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:276
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:276
 msgid "Does the cursor blink in this rich text item?"
-msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਝਪਕਦਾ ਹੈ ? "
+msgstr "ਕੀ ਇਸ ਖਾਸ ਮੂਲ ਪਾਠ ਚੀਜ਼ ਵਿਚ ਕਰਸਰ ਝਪਕਦੀ ਹੈ?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:283
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Grow Height"
 msgstr "ਉਚਾਈ ਵਧਾਓ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:284
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "ਜੇ ਪਾਠ ਯੋਗ ਆਕਾਰ ਦਾ ਨਹੀਂ ਤਾਂ ਕੀ ਮੂਲ ਪਾਠ ਡਬੇ ਦੀ ਉਚਾਈ ਵਧਾਉਣੀ ਚਾਹੀਦੀ ਹੈ?"
+msgstr "ਜੇ ਪਾਠ ਯੋਗ ਆਕਾਰ ਦਾ ਨਹੀਂ ਤਾਂ ਕੀ ਮੂਲ ਪਾਠ ਡੱਬੇ ਦੀ ਉਚਾਈ ਵਧਾਉਣੀ ਚਾਹੀਦੀ ਹੈ?"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:291
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
-msgstr "ਢਕਣ ਦਾ ਢੰਗ"
+msgstr "ਸਮੇਟਣ ਢੰਗ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:292
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
-msgstr "ਜਿਆਦਾ ਸਤਰਾਂ ਵਾਲੇ ਮੂਲ ਪਾਠ ਵਾਸਤੇ ਢਕਣ ਦਾ ਢੰਗ"
+msgstr "ਜਿਆਦਾ ਸਤਰਾਂ ਵਾਲੇ ਮੂਲ ਪਾਠ ਵਾਸਤੇ ਸਮੇਟ ਢੰਗ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:300
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
-msgstr "ਉਚਿਤ ਸਿਧ"
+msgstr "ਇਕਸਾਰ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:301
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
-msgstr "ਉਚਿਤ ਸਿਧ ਕਰਨ ਦਾ ਢੰਗ"
+msgstr "ਇਕਸਾਰ ਢੰਗ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:309
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
 msgstr "ਦਿਸ਼ਾ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:310
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:310
 msgid "Text direction"
 msgstr "ਪਾਠ ਦਿਸ਼ਾ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:318
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor"
-msgstr "ਠਹਿਰਾਉ"
+msgstr "ਅੰਕਰ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:319
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:319
 msgid "Anchor point for text"
 msgstr "ਮੂਲ ਪਾਠ ਲਈ Anchor ਬਿੰਦੂ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:327
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
-msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਬਿੰਦੂ (ਪਿਕਸਲ)"
+msgstr "ਲਾਇਨ ਤੋਂ ਉੱਤੇ ਪਿਕਸਲ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:328
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
-msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਲਾਈਨਾਂ ਤੋਂ ਉਪਰ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:336
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
-msgstr "ਸਤਰਾਂ ਦੇ ਹੇਠਾਂ ਬਿੰਦੂ(ਪਿਕਸਲ)"
+msgstr "ਲਾਇਨ ਹੇਠਾਂ ਪਿਕਸਲਾਂ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:337
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
-msgstr "ਲਾਈਨਾਂ ਤੋਂ ਹੇਠਾਂ ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਲਾਈਨਾਂ ਤੋਂ ਹੇਠਾਂ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:345
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
-msgstr "ਢਕਣ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲ)"
+msgstr "ਸਮੇਟਣ ਅੰਦਰ ਪਿਕਸਲ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:346
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
-msgstr "ਢਕਣ ਵਿਚ  ਨਿਸ਼ਾਨ ਲਾਉਣ ਲਈ ਬਿੰਦੂਆਂ (ਪਿਕਸਲ)ਦੀ ਗਿਣਤੀ"
+msgstr "ਸਮੇਟਣ ਅੰਦਰ ਆਏ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:354
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
 msgstr "ਖੱਬਾ ਹਾਸ਼ੀਆ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:355
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:355
 msgid "Number of pixels in the left margin"
-msgstr "ਖੱਬੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਖੱਬੇ ਹਾਸ਼ੀਏ ਵਿੱਚ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:363
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Right Margin"
 msgstr "ਸੱਜਾ ਹਾਸ਼ੀਆ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:364
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:364
 msgid "Number of pixels in the right margin"
-msgstr "ਸੱਜੇ ਹਾਸ਼ੀਏ ਵਿਚ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਸੱਜੇ ਹਾਸ਼ੀਏ ਵਿੱਚ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:372
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Indentation"
-msgstr "ਵਿੰਗ ਟੇਡੇ"
+msgstr "ਹਾਸ਼ੀਏ ਤੋਂ ਦੂਰ"
 
-#: libgnomecanvas/gnome-canvas-rich-text.c:373
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
-msgstr "ਵਿੰਗ ਟੇਡੇ ਬਿੰਦੂ (ਪਿਕਸਲਾਂ) ਦੀ ਗਿਣਤੀ"
+msgstr "ਹਾਸ਼ੀਏ ਤੋਂ ਦੂਰ ਪਿਕਸਲਾਂ ਦੀ ਗਿਣਤੀ"
+
