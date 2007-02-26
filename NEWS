@@ -5,7 +5,32 @@ What's new since 2.14.0:
 
 Bug fixes
 	* Fix a typo in gnome-canvas-shape.c
-	* 
+	* Improve calculation of bounding box in gnome-canvas-text
+	  (Robert Schupp)
+	* Documentation fixes (Sven Herzberg)
+	* Build fixes (Samuel Thibault)
+	* Memory allocation fix (Peter G. Baum)
+	* Use po/LINGUAS (Przemysław Grzegorczyk)
+	* Check hadjustment and vadjustment for NULL in
+	  gnome_canvas_pixels_per_unit (Sven Herzberg, Tim Janik)
+	* Allow group->destroy() to modify group->item_list without
+	  unleashing hell (Sven Herzberg, Tim Janik)
+	* Change the get_property() implementation for "dash" to return
+	  something useful (Peter G. Baum)
+
+Updated and new transations:
+	- or (Gora Mohanty), bn_IN (Runa Bhattacharjee),
+	  lv (Raivis Dejus), uk (Maxim Dziumanenko),
+	  sl (Matic Žgur), ml (Ani Peter), ro (Mişu Moldovan)
+	  ne (Pawan Chitrakar), ar (Djihed Afifi), et (Priit Laes)
+	  gu (Ankit Patel), nl (Wouter Bolsterlee), 
+	  es (Francisco Javier F. Serrador), mk (Jovan Naumovski)
+	  ca (Josep Puigdemont i Casamajó), bg (Alexander Shopov)
+	  sv (Daniel Nylander), fi (Illka Tuohela), nb (Kjartan Maraas)
+	  en_GB (David Lodge), vi (Clytie Siddall) en_CA (Adam Weinberger)
+	  de (Hendrik Richter), he (Yair Hershkovitz), 
+	  pt_BR (Leonardo Ferreira Fontenelle), fr (Stéphane Raimbault)
+	  ko (Changwoo Ryu)
 libgnomecanvas 2.14.0
 ---------------------
 
