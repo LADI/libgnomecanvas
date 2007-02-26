@@ -403,7 +403,7 @@ plant_flower (GnomeCanvasGroup *root, double x, double y, GtkAnchorType anchor, 
 /*  					       "anchor", anchor, */
 					       NULL);
 		setup_item (image);
-		gdk_pixbuf_unref(im);
+		g_object_unref (im);
 	}
 }
 
@@ -425,7 +425,7 @@ setup_images (GnomeCanvasGroup *root, int aa)
 /*  					       "anchor", GTK_ANCHOR_CENTER, */
 					       NULL);
 		setup_item (image);
-		gdk_pixbuf_unref(im);
+		g_object_unref (im);
 	} else
 		g_warning ("Could not find the toroid.png sample file");
 
