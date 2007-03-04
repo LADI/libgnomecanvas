@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.dz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-06 05:23+0100\n"
-"PO-Revision-Date: 2006-03-29 17:35-0500\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2007-01-02 05:44+0000\n"
+"PO-Revision-Date: 2007-03-01 16:34+0530\n"
+"Last-Translator: norbu <nor_den@hotmail.com>\n"
 "Language-Team: DZONGKHA <pgeyleg@dit.gov.bt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,23 +19,23 @@ msgstr ""
 "X-Poedit-Country: BHUTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1402
-#: ../libgnomecanvas/gnome-canvas.c:1403
+#: ../libgnomecanvas/gnome-canvas.c:1400
+#: ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "ཨེགསི།"
 
-#: ../libgnomecanvas/gnome-canvas.c:1409
-#: ../libgnomecanvas/gnome-canvas.c:1410
+#: ../libgnomecanvas/gnome-canvas.c:1407
+#: ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "ཝའི།"
 
-#: ../libgnomecanvas/gnome-canvas.c:2055
+#: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
 msgstr "ཨེན་ཊི་ཨེ་ལའིསི།"
 
-#: ../libgnomecanvas/gnome-canvas.c:2056
+#: ../libgnomecanvas/gnome-canvas.c:2046
 msgid "The antialiasing mode of the canvas."
 msgstr "འབྲི་གཞིའི་ ཨེན་ཊི་ཨེ་ལའིསིང་ ཐབས་ལམ།"
 
@@ -101,17 +101,20 @@ msgid "Font stretch"
 msgstr "ཡིག་གཟུགས་བསྣར་ཚད།"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "ཡིག་གཟུགས་ཚད།"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
+msgstr "ཡིག་གཟུགས་ཚད་ (པང་གོ་ཆ་ཚད་ཀྱི་སྣ་མང་ཅིག་སྦེ་ དཔེར་བརྗོད་ 12*PANGO_SCALE   12pt ཡིག་གཟུགས་ཚད་ཅིག་གི་དོན་ལུ་) (_S)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "ཡིག་གཟུགས་ཡིག་ཚད།"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "ཡིག་གཟུགས་ཚད་ ཡིག་ཚད་ནང༌།"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "ཡིག་གཟུགས་ཚད་ ཡིག་ཚད་ནང་(དཔེར་བརྗོད་ ༡༢པིཊི་ ཡིག་གཟུགས་ཚད་ཅིག་གི་དོན་ལུ་ ༡༢)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -406,4 +409,7 @@ msgstr "འགོ་མཚམས།"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "འགོ་མཚམས་ཀྱི་དོན་ལུ་ པིག་སེལསི་གི་གྱངས་ཁ།"
+
+#~ msgid "Font size in points"
+#~ msgstr "ཡིག་གཟུགས་ཚད་ ཡིག་ཚད་ནང༌།"
 
