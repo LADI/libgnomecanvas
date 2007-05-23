@@ -81,6 +81,7 @@
 #include <gdk/gdkprivate.h>
 #include <gtk/gtkmain.h>
 #include <gtk/gtksignal.h>
+#include "gailcanvas.h"
 #include "gnome-canvas.h"
 #include "gnome-canvas-i18n.h"
 #include "libart_lgpl/art_rect.h"
@@ -159,8 +160,9 @@ gnome_canvas_item_get_type (void)
 
 		canvas_item_type = g_type_register_static (GTK_TYPE_OBJECT, "GnomeCanvasItem",
 							   &object_info, 0);
+		/* Tell ATK how to create the appropriate AtkObject peers */
+		gail_canvas_init (canvas_item_type);
 	}
-
 	return canvas_item_type;
 }
 
