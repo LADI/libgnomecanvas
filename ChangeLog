@@ -1,4 +1,9 @@
-2007-05-23  Sven Herzberg <herzi@gnome-de.org>
+2007-05-24  Sven Herzberg  <herzi@gnome-de.org>
+
+	Reverting the gail canvas commit to not introduce a circular
+	dependency.
+
+2007-05-23  Sven Herzberg  <herzi@gnome-de.org>
 
 	Roll ATK support for GnomeCanvas into libgnomecanvas,
 	formerly it was in libgail. Patch by Bill Haneman.

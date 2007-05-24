@@ -24,7 +24,7 @@ libgnomecanvas_2_la_LDFLAGS = $(no_undefined) \
 
 libgnomecanvasincludedir = $(includedir)/libgnomecanvas-2.0/libgnomecanvas
 
-libgnomecanvas_public_h_sources =			\
+libgnomecanvasinclude_HEADERS =			\
 	gnome-canvas-shape.h			\
 	gnome-canvas-bpath.h			\
 	gnome-canvas-clipgroup.h		\
@@ -40,20 +40,10 @@ libgnomecanvas_public_h_sources =			\
 	gnome-canvas.h				\
 	libgnomecanvas.h
 
-libgnomecanvas_private_h_sources = 	\
-	gnome-canvas-shape-private.h	\
-	gailcanvas.h			\
-	gailcanvasitem.h		\
-	gailcanvasgroup.h		\
-	gailcanvaswidget.h		\
-	gailcanvastext.h		\
-	gailcanvasitemfactory.h		\
-	gailcanvasgroupfactory.h	\
-	gailcanvaswidgetfactory.h	\
-	gailcanvastextfactory.h
-
-libgnomecanvas_c_sources =			\
+libgnomecanvas_2_la_SOURCES =			\
+	$(libgnomecanvasinclude_HEADERS)	\
 	gnome-canvas-shape.c			\
+	gnome-canvas-shape-private.h		\
 	gnome-canvas-bpath.c			\
 	gnome-canvas-path-def.c			\
 	gnome-canvas-clipgroup.c		\
@@ -67,23 +57,7 @@ libgnomecanvas_c_sources =			\
 	gnome-canvas-util.c			\
 	gnome-canvas-widget.c			\
 	gnome-canvas.c				\
-	libgnomecanvastypes.c			\
-	gailcanvas.c				\
-	gailcanvasitem.c			\
-	gailcanvasgroup.c			\
-	gailcanvaswidget.c			\
-	gailcanvastext.c			\
-	gailcanvasitemfactory.c			\
-	gailcanvasgroupfactory.c		\
-	gailcanvaswidgetfactory.c		\
-	gailcanvastextfactory.c	
-
-libgnomecanvas_2_la_SOURCES =			\
-	$(libgnomecanvas_c_sources)	\
-	$(libgnomecanvas_private_h_sources)
-
-libgnomecanvasinclude_HEADERS = 	\
-	$(libgnomecanvas_public_h_sources)
+	libgnomecanvastypes.c
 
 $(libgnomecanvas_2_la_OBJECTS): $(marshal_sources)
 

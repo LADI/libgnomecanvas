@@ -22,9 +22,7 @@ CFILE_GLOB=$(top_srcdir)/libgnomecanvas/*.c
 
 # Header files to ignore when scanning.
 IGNORE_HFILES=gnome-canvas-shape-private.h gnome-canvas-i18n.h \
-  gnome-canvas-marshal.h gailcanvas.h gailcanvasitem.h gailcanvaswidget.h \
-  gailcanvasgroup.h gailcanvasgroupfactory.h gailcanvasitemfactory.h \
-  gailcanvastextfactory.h gailcanvaswidgetfactory.h gailcanvastext.h
+  gnome-canvas-marshal.h
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed if your app/lib
 # contains GtkObjects/GObjects and you want to document signals and properties.
