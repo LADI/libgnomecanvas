@@ -1,4 +1,12 @@
-2007-06-25  Sven Herzberg <herzi@gnome-de.org>
+============================= 2.19.0 ========================
+
+2007-07-10  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.ac,
+	* ChangeLog,
+	* po/ChangeLog: update files for 2.19.0
+
+2007-06-25  Sven Herzberg  <herzi@gnome-de.org>
 
 	Roll ATK support for GnomeCanvas into libgnomecanvas,
 	formerly it was in libgail. Patch by Bill Haneman.

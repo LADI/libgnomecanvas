@@ -1,3 +1,31 @@
+libgnomecanvas 2.19.0
+---------------------
+
+What's new since 2.14.1:
+
+Bug fixes
+	* Merge gailcanvas into gnomecanvas (Bill Haneman, Li Yuan, Sven Herzberg)
+
+Updated and new traslations:
+	- da (Peter Bach)
+	- dz (Pema Geyleg)
+	- el (Simos Xenitellis)
+	- eu (Inaki Larranaga Murgoitio)
+	- gl (Ignacio Casal Quinteiro)
+	- it (Francesco Marletta)
+	- ja (Takeshi AIHANA)
+	- lt (Gintautas Miliauskas)
+	- or (Subhransu Behera)
+	- pt_BR (Leonardo Ferreira Fontenelle)
+	- ro (Mişu Moldovan)
+	- ru (Leonid Kanter)
+	- sq (Laurnet Dhima)
+	- sr (Goran Rakić)
+	- ta (I Felix)
+	- zh_CN (Yang Zhang)
+	- zh_HK (Chao-Hsiung Liao)
+	- zh_TW (Chao-Hsiung Liao)
+
 libgnomecanvas 2.14.1
 ---------------------
 
