@@ -1,3 +1,36 @@
+2007-06-25  Sven Herzberg <herzi@gnome-de.org>
+
+	Roll ATK support for GnomeCanvas into libgnomecanvas,
+	formerly it was in libgail. Patch by Bill Haneman.
+	See bug #363103.
+
+	* configure.in:
+	Depend on libgail explicitly, since the ATK support for
+	gnome-canvas uses some libgail-util API.
+
+	* libgnomecanvas/gnome-canvas.c:
+	(gnome_canvas_init): Register the gail_canvas factory types
+	with ATK when GnomeCanvas is first used.
+
+	* libgnomevanvas/gailcanvas.[ch]: New, bootstraps
+	ATK support for GnomeCanvas instances and provides
+	ATK implementations for GnomeCanvas.
+
+	* libgnomevanvas/gailcanvasitem.[ch]: New, ATK support
+	for generic canvas items.
+
+	* libgnomevanvas/gailcanvaswidget.[ch]: New, ATK support
+	for canvas internal widgets.
+	
+	* libgnomevanvas/gailcanvastext.[ch]: New, ATK support
+	for canvas text objects.	
+
+	* libgnomevanvas/gailcanvas*factory.[ch]: New,
+	factories for creating the above ATK peers on demand,
+	that is, when gtk_widget_get_accessible() is called
+	on the corresponding GnomeCanvas instances or their
+	sub-parts.
+
 2007-06-04  Sven Herzberg  <herzi@gnome-de.org>
 
 	Patch from Li Yuan:
