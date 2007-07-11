@@ -1,3 +1,8 @@
+2007-07-11  Sven Herzberg  <herzi@gnome-de.org>
+
+	* libgnomecanvas/libgnomecanvas-2.0.pc.in: depend on the right gail.pc
+	file
+
 ============================= 2.19.0 ========================
 
 2007-07-10  Sven Herzberg  <herzi@gnome-de.org>
