@@ -1,3 +1,11 @@
+libgnomecanvas 2.19.1
+---------------------
+
+What's new since 2.19.0:
+
+Bug fixes
+	* libgnomecanvas-2.0.pc refers to nonexistent gail-1.0.pc (455605)
+
 libgnomecanvas 2.19.0
 ---------------------
 
