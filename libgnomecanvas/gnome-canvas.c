@@ -1162,7 +1162,6 @@ gnome_canvas_item_grab_focus (GnomeCanvasItem *item)
 	}
 
 	item->canvas->focused_item = item;
-        g_object_set_data (item->canvas, "focused_item", item);
 	gtk_widget_grab_focus (GTK_WIDGET (item->canvas));
 
 	if (focused_item) {                                                     
@@ -1932,7 +1931,8 @@ static GtkLayoutClass *canvas_parent_class;
 static guint canvas_signals[LAST_SIGNAL];
 
 enum {
-	PROP_AA = 1
+	PROP_AA = 1,
+	PROP_FOCUSED_ITEM
 };
 
 /**
@@ -1979,6 +1979,9 @@ gnome_canvas_get_property (GObject    *object,
 	case PROP_AA:
 		g_value_set_boolean (value, GNOME_CANVAS (object)->aa);
 		break;
+	case PROP_FOCUSED_ITEM:
+		g_value_set_object (value, GNOME_CANVAS (object)->focused_item);
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -1994,6 +1997,9 @@ gnome_canvas_set_property (GObject      *object,
 	switch (prop_id) {
 	case PROP_AA:
 		GNOME_CANVAS (object)->aa = g_value_get_boolean (value);
+		break;
+	case PROP_FOCUSED_ITEM:
+		GNOME_CANVAS (object)->focused_item = g_value_get_object (value);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -2047,6 +2053,11 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 							       _("The antialiasing mode of the canvas."),
 							       FALSE,
 							       G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+
+	g_object_class_install_property (gobject_class, PROP_FOCUSED_ITEM,
+		 			 g_param_spec_object ("focused_item", NULL, NULL,
+					 GNOME_TYPE_CANVAS_ITEM,
+					 (G_PARAM_READABLE | G_PARAM_WRITABLE)));
 
 	canvas_signals[DRAW_BACKGROUND] =
 		g_signal_new ("draw_background",
