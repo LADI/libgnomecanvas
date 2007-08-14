@@ -144,6 +144,11 @@ gnome_canvas_new() to create new non-aa canvas or
 gnome_canvas_new_aa() for an anti-aliased canvas.
 </para>
 
+<!-- ##### ARG GnomeCanvas:focused-item ##### -->
+<para>
+
+</para>
+
 <!-- ##### MACRO GNOME_CANVAS_EPSILON ##### -->
 <para>
 A tiny value used by internal canvas operations.
