@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.5.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-24 22:12+0100\n"
-"PO-Revision-Date: 2007-05-13 18:38+0200\n"
+"POT-Creation-Date: 2007-08-18 04:03+0100\n"
+"PO-Revision-Date: 2007-08-21 00:46+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -27,11 +27,11 @@ msgstr "X"
 msgid "Y"
 msgstr "O"
 
-#: ../libgnomecanvas/gnome-canvas.c:2045
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
 msgstr ""
 
-#: ../libgnomecanvas/gnome-canvas.c:2046
+#: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr ""
 
