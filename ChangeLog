@@ -1,3 +1,20 @@
+2007-08-22  Federico Mena Quintero  <federico@novell.com>
+
+	Avoid tearing while repainting.
+
+	* libgnomecanvas/gnome-canvas.c (REDRAW_QUANTUM_SIZE): Renamed
+	from IMAGE_{WIDTH, HEIGHT}; use a single value.
+	(IMAGE_WIDTH_AA, IMAGE_HEIGHT_AA): Removed.
+	(paint): Don't use different redraw quantum sizes for the
+	antialiased and non-antialiased case.  Extract big rectangles from
+	the microtile array, turn them into a GdkRegion, and *then* expose
+	with that region, so that we can repaint without tearing.
+	(gnome_canvas_paint_rect): Don't use different redraw quantum
+	sizes for the antialiased and non-antialiased case.
+	(gnome_canvas_paint_rect): Don't tile the area to paint; instead, draw 
+	the complete rectangle in one pass.  The callers already took care of 
+	generating appropriate rectangles for us.
+
 ============================= 2.19.2 ========================
 
 2007-07-26  Sven Herzberg  <herzi@gnome-de.org>
