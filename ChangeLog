@@ -1,3 +1,8 @@
+2007-08-29  Sven Herzberg  <herzi@gnome-de.org>
+
+	* libgnomecanvas/gailcanvas.c: fix compilation with gcc 2.x (Patch by
+	Jens Granseur, fixes #455662)
+
 2007-08-22  Federico Mena Quintero  <federico@novell.com>
 
 	Avoid tearing while repainting.

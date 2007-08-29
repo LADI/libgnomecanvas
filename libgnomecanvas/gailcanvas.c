@@ -54,7 +54,6 @@ gail_canvas_get_type (void)
 				   parent_type);
       GType atkobject_parent_type = atk_object_factory_get_accessible_type (factory);
       GTypeQuery query;
-      g_type_query (atkobject_parent_type, &query);
       static GTypeInfo tinfo =
       {
         0, /* class size */
@@ -68,6 +67,7 @@ gail_canvas_get_type (void)
         (GInstanceInitFunc) NULL, /* instance init */
         NULL /* value table */
       };
+      g_type_query (atkobject_parent_type, &query);
       tinfo.class_size = query.class_size;
       tinfo.instance_size = query.instance_size;
 
