@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.5.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-18 04:03+0100\n"
-"PO-Revision-Date: 2007-08-21 00:46+0200\n"
+"POT-Creation-Date: 2007-08-21 12:13+0100\n"
+"PO-Revision-Date: 2007-09-01 19:21+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -339,7 +339,7 @@ msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
-msgstr ""
+msgstr "Justificacion"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
