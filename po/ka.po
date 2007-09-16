@@ -1,39 +1,40 @@
+# translation of ka.po to Georgian
 # Georgian translation for LibGnomeCanvas.
 # Copyright © 2006 Ubuntu Georgian Translators.
-# Gia Shervashidze <giasher@telenet.ge>, 2006.
 #
+# Gia Shervashidze <giasher@telenet.ge>, 2006.
+# Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2.13.0\n"
+"Project-Id-Version: ka\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-10 00:20+0100\n"
-"PO-Revision-Date: 2006-02-19 03:15+0400\n"
-"Last-Translator: Gia Shervashidze <giasher@telenet.ge>\n"
-"Language-Team: Georgian <ka@li.org>\n"
+"POT-Creation-Date: 2007-09-16 17:05+0200\n"
+"PO-Revision-Date: 2007-09-16 17:09+0200\n"
+"Last-Translator: Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>\n"
+"Language-Team: Georgian <http://mail.gnome.org/mailman/listinfo/gnome-ge-list>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Poedit-Language: Georgian\n"
 "X-Poedit-Country: GEORGIA\n"
+"X-Generator: KBabel 1.11.4\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1398
-#: ../libgnomecanvas/gnome-canvas.c:1399
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "X"
 
-#: ../libgnomecanvas/gnome-canvas.c:1405
-#: ../libgnomecanvas/gnome-canvas.c:1406
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2049
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
 msgstr "დაგლუვებული"
 
-#: ../libgnomecanvas/gnome-canvas.c:2050
+#: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr "ზედაპირის დაგლუვების რეჟიმი."
 
@@ -99,17 +100,22 @@ msgid "Font stretch"
 msgstr "შრიფტის სიგანე"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
-#: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size"
 msgstr "შრიფტის ზომა"
+
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr "შრიფტის ზომა (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "შრიფტი პუნქტებში"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-msgid "Font size in points"
-msgstr "შრიფტი ზომა პუნქტებში"
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "შრიფტის ზომა პუნქტებში (მაგ: 12, 12 პუნქტიანი შრიფტისთვის)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
