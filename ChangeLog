@@ -1,3 +1,12 @@
+============================= 2.20.0 ========================
+
+2007-10-13  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in: set the version number to 2.20.1
+	* NEWS: mention the news
+	* ChangeLog,
+	* po/ChangeLog: added tags for the release
+
 ============================= 2.19.2 ========================
 
 2007-07-26  Sven Herzberg  <herzi@gnome-de.org>
