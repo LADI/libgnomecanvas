@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-23 06:58+0000\n"
+"POT-Creation-Date: 2007-10-21 20:04+0100\n"
 "PO-Revision-Date: 2007-01-25 23:13+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -18,25 +18,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
+"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && "
+"n<=10 ? 2 : 3\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1400
-#: ../libgnomecanvas/gnome-canvas.c:1401
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
 msgstr "س"
 
-#: ../libgnomecanvas/gnome-canvas.c:1407
-#: ../libgnomecanvas/gnome-canvas.c:1408
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
 msgstr "ص"
 
-#: ../libgnomecanvas/gnome-canvas.c:2045
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
 msgstr "محسّن الحواف"
 
-#: ../libgnomecanvas/gnome-canvas.c:2046
+#: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr "نمط الحواف المحسّنة للّوحة."
 
@@ -106,7 +105,9 @@ msgid "Font size"
 msgstr "مقاس الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:319
-msgid "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
 msgstr "مقاس الخط (مضاعف لـ PANGO_SCALE، مثال 12*PANGO_SCALE لحجم خط 12 نقط)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
@@ -122,8 +123,10 @@ msgid "Rise"
 msgstr "الزيادة"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -410,4 +413,3 @@ msgstr "الإزاحة"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "عدد بكسلات الإزاحة"
-
