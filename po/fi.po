@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 1.109.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-06 16:53+0300\n"
+"POT-Creation-Date: 2007-10-31 17:20+0300\n"
 "PO-Revision-Date: 2006-12-09 06:54+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -113,7 +113,7 @@ msgstr "Kirjasinpisteitä"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "Kirjasinkoko pisteinä (esim. arvo 12 12pt kirjasinkooko)"
+msgstr "Kirjasinkoko pisteinä (esim. arvo 12 12pt kirjasinkoolle)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
