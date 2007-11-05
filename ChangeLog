@@ -1,3 +1,14 @@
+2007-11-05  Federico Mena Quintero  <federico@novell.com>
+
+	Fix these bugs:
+	http://bugzilla.gnome.org/show_bug.cgi?id=493808
+	https://bugzilla.novell.com/show_bug.cgi?id=336941
+
+	* libgnomecanvas/gnome-canvas.c (paint): Oops, use the correct
+	visible rectangle; we forgot to take the zoom_{x,y}ofs into
+	account.  Also, take those offsets into account when generating
+	the actual rectangle to be added to the GdkRegion.
+
 2007-08-29  Sven Herzberg  <herzi@gnome-de.org>
 
 	* libgnomecanvas/gailcanvas.c: fix compilation with gcc 2.x (Patch by

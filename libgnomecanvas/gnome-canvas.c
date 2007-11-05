@@ -3040,6 +3040,7 @@ gnome_canvas_expose (GtkWidget *widget, GdkEventExpose *event)
 
 		if (canvas->need_update || canvas->need_redraw) {
 			ArtUta *uta;
+
 			/* Update or drawing is scheduled, so just mark exposed area as dirty */
 			uta = art_uta_from_irect (&rect);
 			gnome_canvas_request_redraw_uta (canvas, uta);
@@ -3082,8 +3083,8 @@ paint (GnomeCanvas *canvas)
 
 	/* Turn those rectangles into a GdkRegion for exposing */
 
-	visible_rect.x0 = canvas->layout.hadjustment->value;
-	visible_rect.y0 = canvas->layout.vadjustment->value;
+	visible_rect.x0 = canvas->layout.hadjustment->value - canvas->zoom_xofs;
+	visible_rect.y0 = canvas->layout.vadjustment->value - canvas->zoom_yofs;
 	visible_rect.x1 = visible_rect.x0 + GTK_WIDGET (canvas)->allocation.width;
 	visible_rect.y1 = visible_rect.y0 + GTK_WIDGET (canvas)->allocation.height;
 
@@ -3096,8 +3097,8 @@ paint (GnomeCanvas *canvas)
 		if (!art_irect_empty (&clipped)) {
 			GdkRectangle gdkrect;
 
-			gdkrect.x = clipped.x0;
-			gdkrect.y = clipped.y0;
+			gdkrect.x = clipped.x0 + canvas->zoom_xofs;
+			gdkrect.y = clipped.y0 + canvas->zoom_yofs;
 			gdkrect.width = clipped.x1 - clipped.x0;
 			gdkrect.height = clipped.y1 - clipped.y0;
 
@@ -3200,6 +3201,7 @@ idle_handler (gpointer data)
 	GDK_THREADS_ENTER ();
 
 	canvas = GNOME_CANVAS (data);
+
 	do_update (canvas);
 
 	/* Reset idle id */
