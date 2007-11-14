@@ -1,4 +1,3 @@
-# Slovenian translation of libgnomecanvas.
 # Copyright (C) 2002-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgnomecanvas package.
 #
@@ -10,13 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 05:44+0000\n"
-"PO-Revision-Date: 2007-01-16 07:56+0100\n"
-"Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
+"POT-Creation-Date: 2007-01-18 00:29+0000\n"
+"PO-Revision-Date: 2007-11-14 15:01+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400
 #: ../libgnomecanvas/gnome-canvas.c:1401
@@ -295,7 +298,7 @@ msgstr "Uredljiv"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
-msgstr "Ali je predmet bogatega besedila moč urejati?"
+msgstr "Ali je predmet bogatega besedila mogoče urejati?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
