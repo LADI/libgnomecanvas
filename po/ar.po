@@ -1,4 +1,4 @@
-# translation of libgnomecanvas.HEAD.ar.po to Arabic
+# translation of libgnomecanvas.HEAD.po to Arabic
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
 # Djihed Afifi <djihed@gmail.com>, 2006.
@@ -8,18 +8,17 @@
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas\n"
+"Project-Id-Version: libgnomecanvas.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-21 20:04+0100\n"
-"PO-Revision-Date: 2007-01-25 23:13+0200\n"
+"PO-Revision-Date: 2007-12-26 22:23+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && "
-"n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
@@ -88,7 +87,7 @@ msgstr "أسلوب الخط"
 #: ../libgnomecanvas/gnome-canvas-text.c:286
 #: ../libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "شكل مختلف للخط"
+msgstr "تنويعة الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:296
 #: ../libgnomecanvas/gnome-canvas-text.c:297
@@ -102,13 +101,13 @@ msgstr "تمديد الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
 msgid "Font size"
-msgstr "مقاس الخط"
+msgstr "حجم الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
-msgstr "مقاس الخط (مضاعف لـ PANGO_SCALE، مثال 12*PANGO_SCALE لحجم خط 12 نقط)"
+msgstr "حجم الخط (مضاعف لـ PANGO_SCALE، مثال 12*PANGO_SCALE لحجم خط 12 نقط)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -123,14 +122,12 @@ msgid "Rise"
 msgstr "الزيادة"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr ""
-"مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr "مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "اشطب"
+msgstr "شطب"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -150,7 +147,7 @@ msgstr "المقياس"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "مقاس الخط، نسبةً لمقاس الخط اﻻفتراضي"
+msgstr "مقاس الخط، نسبةً لمقاس الخط المبدئي"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:425
 #: ../libgnomecanvas/gnome-canvas-text.c:433
@@ -160,15 +157,15 @@ msgstr "اللون"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "لون النص كسلسلة محارف"
+msgstr "لون النص، كسلسلة محارف"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
-msgstr "لون النص كـ GdkColor"
+msgstr "لون النص، كـ GdkColor"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "لون النص كعدد R/G/B/A صحيح مركب"
+msgstr "لون النص، كعدد R/G/B/A صحيح مركب"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -188,83 +185,83 @@ msgstr "ارتفاع النص المنسّق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "تعيين عائلة الخطوط"
+msgstr "ضبط عائلة الخطوط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "ما اذا كان هذا الوسم مؤثرا في عائلة الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في عائلة الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "تعيين أسلوب الخط"
+msgstr "ضبط أسلوب الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "ما اذا كان هذا الوسم مؤثرا في أسلوب الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في أسلوب الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "تعيين مغاير الخط"
+msgstr "ضبط تنويعة الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "ما اذا كان هذا الوسم مؤثرا في مغاير الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في مغاير الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "تعيين وزن الخط"
+msgstr "ضبط وزن الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "ما اذا كان هذا الوسم مؤثرا في وزن الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في وزن الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "تعيين تمديد الخط"
+msgstr "ضبط تمديد الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "ما اذا كان هذا الوسم مؤثرا في تمديد الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في تمديد الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "تعيين مقاس الخط"
+msgstr "ضبط حجم الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "ما اذا كان هذا الوسم مؤثرا في مقاس الخط"
+msgstr "ما إذا كان هذا الوسم مؤثرا في حجم الخط"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "تعيين الزيادة"
+msgstr "ضبط الزيادة"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "ما اذا كان هذا الوسم مؤثرا في الزيادة"
+msgstr "ما إذا كان هذا الوسم مؤثرا في الزيادة"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "تعيين الشطب"
+msgstr "ضبط الشطب"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "ما اذا كان هذا الوسم مؤثرا في الشطب"
+msgstr "ما إذا كان هذا الوسم مؤثرا في الشطب"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "تعيين التسطير"
+msgstr "ضبط التسطير"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "ما اذا كان هذا الوسم مؤثرا في التسطير"
+msgstr "ما إذا كان هذا الوسم مؤثرا في التسطير"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr "تعيين المقياس"
+msgstr "ضبط المقياس"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "ما اذا كان هذا الوسم مؤثرا في المقياس"
+msgstr "ما إذا كان هذا الوسم مؤثرا في المقياس"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
@@ -272,11 +269,11 @@ msgstr "نص ليُعرض"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
-msgstr "موضع س"
+msgstr "الموضع س"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
-msgstr "موضع ص"
+msgstr "الموضع ص"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
@@ -288,7 +285,7 @@ msgstr "عرض صندوق النص"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
-msgstr "الإرتفاع"
+msgstr "الارتفاع"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
@@ -344,11 +341,11 @@ msgstr "نمط الالتواء للنص المتعدد الأسطر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
-msgstr "الضبط"
+msgstr "التسوية"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:301
 msgid "Justification mode"
-msgstr "نظام الضبط"
+msgstr "نمط التسوية"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
@@ -413,3 +410,4 @@ msgstr "الإزاحة"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "عدد بكسلات الإزاحة"
+
