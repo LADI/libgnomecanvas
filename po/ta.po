@@ -1,15 +1,16 @@
 # Tamil translation of libgnomecanvas.po.
 # Copyright (C) 2001, 2002, 2003 Free Software Foundation, Inc.
 # Dinesh Nadarajah <n_dinesh@yahoo.com>, 2001, 2002, 2003.
-# 
+# தங்கம் அருண் <thangam.arunx@gmail.com >,  2007
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Tamil Libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 05:44+0000\n"
+"POT-Creation-Date: 2007-03-12 03:48+0000\n"
 "PO-Revision-Date: 2004-02-23 17:53-0600\n"
-"Last-Translator: Dinesh Nadarajah <dinesh_list@sbcglobal.net>\n"
-"Language-Team: Tamil <tamilinux@yahoogroups.com>\n"
+"Last-Translator: தங்கம் அருண் <thangam.arunx@gmail.com>\n"
+"Language-Team: தமிழ் <ubuntu-l10n-tam@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,13 +19,13 @@ msgstr ""
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X"
-msgstr "வாிசை(X)"
+msgstr "வரிசை(X)"
 
 # libgnomecanvas/gnome-canvas.c:1526 libgnomecanvas/gnome-canvas.c:1527
 #: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y"
-msgstr "நெடுவாிசை(Y)"
+msgstr "நெடுவரிசை(Y)"
 
 #: ../libgnomecanvas/gnome-canvas.c:2045
 msgid "Antialiased"
@@ -124,6 +125,7 @@ msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
 msgstr ""
+"எழுத்துரு அளவு ( PANGO_SCALE-ஆல் பெருக்கிய , உதாரணமாக 12-புள்ளி எழுத்துருக்கு 12*PANGO_SCALE)"
 
 # libgnomecanvas/gnome-canvas-text.c:326
 #: ../libgnomecanvas/gnome-canvas-text.c:329
@@ -132,7 +134,7 @@ msgstr "எழுத்துரு புள்ளிகள்"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr ""
+msgstr "புள்ளிகளில் எழுத்துரு அளவு ( உதாரணமாக 12-புள்ளி  எழுத்துருக்கு 12)"
 
 # libgnomecanvas/gnome-canvas-text.c:337
 #: ../libgnomecanvas/gnome-canvas-text.c:340
@@ -144,8 +146,8 @@ msgstr "எழிந்திரு"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"கீழ்கோட்டுக்கு மேல் இருக்கவேண்டிய உரையின் இடைவெளி ஒதுக்கம் (below the baseline if rise "
-"is negative)"
+"கீழ்கோட்டுக்கு மேல் இருக்கவேண்டிய உரையின் இடைவெளி ஒதுக்கம் (தளக்கோடு கீழே அதிகரித்தால்"
+"அது கழித்தல்(-))"
 
 # libgnomecanvas/gnome-canvas-text.c:348
 #: ../libgnomecanvas/gnome-canvas-text.c:351
@@ -373,7 +375,7 @@ msgstr "நிலை காட்டி பாக்கக்கூடியத�
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
-msgstr "þந்த செழிப்பு-உரை உருப்படியில் நிலை காட்டி தெரியுமா?"
+msgstr "இந்த செழிப்பு-உரை உருப்படியில் நிலை காட்டி தெரியுமா?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Cursor Blink"
@@ -424,7 +426,7 @@ msgstr "நங்கூரம்"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:319
 msgid "Anchor point for text"
-msgstr "உரைக்கான ஆங்கூரம் இடம்"
+msgstr "உரைக்கான நங்கூரம் இடம்"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
