@@ -14,7 +14,11 @@ bin/libgnomecanvas-2-@LIBGNOMECANVAS_CURRENT_MINUS_AGE@.dll
 lib/libglade/2.0/libcanvas.dll
 EOF
 
-zip $ZIP lib/locale/*/LC_MESSAGES/libgnomecanvas-2.0.mo
+if [ -f share/locale/de/LC_MESSAGES/libgnomecanvas-2.0.mo ]; then
+  zip $ZIP share/locale/*/LC_MESSAGES/libgnomecanvas-2.0.mo
+else
+  zip $ZIP lib/locale/*/LC_MESSAGES/libgnomecanvas-2.0.mo
+fi
 
 rm $DEVZIP
 zip -r $DEVZIP -@ <<EOF

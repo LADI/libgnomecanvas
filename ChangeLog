@@ -1,3 +1,9 @@
+2008-01-22  Tor Lillqvist  <tml@novell.com>
+
+	* libgnomecanvas-zip.in: Look for catalogs in share/locale first,
+	as that is where they will end up with a properly built GNU
+	gettext.
+
 2007-11-05  Federico Mena Quintero  <federico@novell.com>
 
 	Fix these bugs:
