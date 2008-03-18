@@ -1,14 +1,14 @@
-# Albanian translation of libgnomecanvas
+# Përkthimi i libgnomecanvas në shqip.
 # This file is distributed under the same license as the libgnomecanvas package.
-# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2007, 2008 Free Software Foundation, Inc.
 #
-# Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2007.
+# Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-06 10:16+0100\n"
-"PO-Revision-Date: 2007-03-06 10:19+0100\n"
+"POT-Creation-Date: 2008-03-17 17:43+0100\n"
+"PO-Revision-Date: 2008-03-18 16:51+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -26,11 +26,12 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2045
+# (pofilter) simplecaps: checks the capitalisation of two strings isn't wildly different
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
-msgstr "Modalitet Antialias"
+msgstr "Modalitet antialias"
 
-#: ../libgnomecanvas/gnome-canvas.c:2046
+#: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr "Modaliteti antialias i telës."
 
@@ -71,9 +72,10 @@ msgstr "Përshkrimi i gërmave si strukturë PangoFontDescription"
 msgid "Font family"
 msgstr "Familja e gërmave"
 
+# (pofilter) sentencecount: The number of sentences differ: 2 versus 1
 #: ../libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "Emri i familjes së gërmave, për shembull Sans, Helvetica, Times, Monospace"
+msgstr "Emri i familjes së gërmave, p.sh. Sans, Helvetica, Times, Monospace"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
@@ -107,6 +109,7 @@ msgstr ""
 "Madhësia e gërmave (si shumëfish i PANGO_SCALE, p.sh. 12*PANGO_SCALE për "
 "madhësi gërmash prej 12pt)"
 
+# (pofilter) brackets: translation has extra '(', ')'
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "Pikët e gërmave (si njësi matëse)"
@@ -265,10 +268,12 @@ msgstr "Tregon nëse ky tag ka efekt mbi shkallën"
 msgid "Text to display"
 msgstr "Teksti që duhet shfaqur"
 
+# (pofilter) simplecaps: checks the capitalisation of two strings isn't wildly different
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
 msgstr "Pozicioni X"
 
+# (pofilter) simplecaps: checks the capitalisation of two strings isn't wildly different
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
 msgstr "Pozicioni Y"
@@ -291,7 +296,7 @@ msgstr "Lartësia për kutinë e tekstit"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
-msgstr "Pjesë e ndryshueshme"
+msgstr "E ndryshueshme"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
@@ -329,9 +334,10 @@ msgstr "Rritja e lartësisë"
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "Kutia e tekstit duhet t'a rrisë lartësinë nëse nuk e merr të gjithë tekstin?"
 
+# (pofilter) doublequoting: checks whether doublequoting is consistent between the two strings
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
-msgstr "Mënyra \"në krye automatikisht\""
+msgstr "Në krye automatikisht"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
@@ -363,7 +369,7 @@ msgstr "Pika e spirancimit për tekstin"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
-msgstr "Pixel mbi rreshta"
+msgstr "Piksel mbi rreshta"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
@@ -371,7 +377,7 @@ msgstr "Numri i pixel që duhen vënë mbi rreshta"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
-msgstr "Pixel poshtë rreshtave"
+msgstr "Piksel nën rreshta"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
@@ -379,11 +385,12 @@ msgstr "Numri i pixel që duhen vënë poshtë rreshtave"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
-msgstr "Piksel Brenda Mbështjelljes"
+msgstr "Piksel brenda një në krye"
 
+# (pofilter) unchanged: please translate
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
-msgstr "Number of pixels to put inside the wrap"
+msgstr "Numri i pixel që duhen vënë midis rreshtave që shkojnë në krye"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
