@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-21 20:04+0100\n"
+"POT-Creation-Date: 2007-12-26 21:29+0000\n"
 "PO-Revision-Date: 2007-12-26 22:23+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && "
+"n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
@@ -122,8 +123,10 @@ msgid "Rise"
 msgstr "الزيادة"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -410,4 +413,3 @@ msgstr "الإزاحة"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "عدد بكسلات الإزاحة"
-
