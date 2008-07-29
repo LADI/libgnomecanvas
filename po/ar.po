@@ -126,7 +126,7 @@ msgstr "الزيادة"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"مقدار التغيير للنص على السطر اﻷساس (تحت السطر اﻷساس إذا كانت الزيادة سالبة)"
+"مقدار التغيير للنص على السطر الأساس (تحت السطر الأساس إذا كانت الزيادة سالبة)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -368,19 +368,19 @@ msgstr "نقطة المرساة للنص"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Pixels Above Lines"
-msgstr "بكسلات فوق اﻷسطر"
+msgstr "بكسلات فوق الأسطر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:328
 msgid "Number of pixels to put above lines"
-msgstr "عدد البكسلات لوضعها فوق اﻷسطر"
+msgstr "عدد البكسلات لوضعها فوق الأسطر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Pixels Below Lines"
-msgstr "بكسلات تحت اﻷسطر"
+msgstr "بكسلات تحت الأسطر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:337
 msgid "Number of pixels to put below lines"
-msgstr "عدد البكسلات لوضعها تحت اﻷسطر"
+msgstr "عدد البكسلات لوضعها تحت الأسطر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Pixels Inside Wrap"
