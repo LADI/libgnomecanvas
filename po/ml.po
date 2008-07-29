@@ -1,25 +1,26 @@
 # translation of libgnomecanvas.HEAD.ml.po to Malayalam
-# translation of libgnomecanvas.HEAD.ml.po to
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# This file is distributed under the same license as the libgnomecanvas package.
+# Copyright (C) 2003-2008 libgnomecanvas'S COPYRIGHT HOLDER.
 # FSF-India <locale@gnu.org.in>, 2003.
 # Suresh Valiya Parambil <mvpsuresh@yahoo.com>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006.
 # Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, 2008.
-#
+# Santhosh Thottingal <santhosh.thottingal@gmail.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-01 04:11+0000\n"
-"PO-Revision-Date: 2008-03-01 22:04+0530\n"
-"Last-Translator: Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>\n"
+"POT-Creation-Date: 2008-03-02 04:13+0000\n"
+"PO-Revision-Date: 2008-07-24 22:21+0530\n"
+"Last-Translator: Santhosh Thottingal <santhosh.thottingal@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-discuss@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Malayalam\n"
+"X-Poedit-Country: INDIA\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400
 #: ../libgnomecanvas/gnome-canvas.c:1401
@@ -39,7 +40,7 @@ msgstr "ആന്റിഎലിയാസ് ചെയ്ത"
 
 #: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
-msgstr "ആന്റിഎലിയാസ് ചെയ്ത കാന്‍വാസിന്റെ രീതി"
+msgstr "കാന്‍വാസിന്റെ ആന്റിഎലിയാസ് രീതി."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:211
@@ -56,67 +57,67 @@ msgstr "അടയാളം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "ചിത്രീകരിയ്ക്കാനുള്ള അടയാളപ്പെടുത്തിയ പദാവലി"
+msgstr "ചിത്രീകരിയ്ക്കാനായി അടയാളപ്പെടുത്തിയ പദാവലി"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
-msgstr "അക്ഷരരൂപം"
+msgstr "അക്ഷരസഞ്ചയം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "അക്ഷരരൂപത്തിന്റെ വിവരണം ഒരു വാചകമായി"
+msgstr "അക്ഷരസഞ്ചയത്തിന്റെ വിവരണം ഒരു വാചകത്തില്‍"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
-msgstr "അക്ഷരരൂപത്തിന്റെ വിവരണം"
+msgstr "അക്ഷരസഞ്ചയവിവരണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "ഒരു PangoFontDescription struct ആയി അക്ഷരരൂപത്തിന്റെ വിവരണം"
+msgstr "PangoFontDescription struct ആയി അക്ഷരസഞ്ചയത്തിന്റെ വിവരണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "അക്ഷരരൂപത്തിന്റെ കുടുംബം"
+msgstr "അക്ഷരസഞ്ചയകുടുംബം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "അക്ഷരരൂപം ഏതു് കുടുംബത്തില്‍ നിന്നുമാണു്, ഉദാ, സാന്‍സ്, ഹെല്‍വെറ്റിക്കാ, ടൈംസ്, മോണോസ്പെയിസ്"
+msgstr "അക്ഷരസഞ്ചയം ഏതു് കുടുംബത്തില്‍ നിന്നുമാണു്, ഉദാ, സാന്‍സ്, ഹെല്‍വെറ്റിക്കാ, ടൈംസ്, മോണോസ്പെയിസ്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "അക്ഷരരൂപത്തിന്റെ രീതി:"
+msgstr "അക്ഷരസഞ്ചയത്തിന്റെ സ്വഭാവം:"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:286
 #: ../libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr "അക്ഷരുപത്തിന്റെ വ്യതിയാനം"
+msgstr "അക്ഷസഞ്ചയത്തിന്റെ വകഭേദം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:296
 #: ../libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "അക്ഷരരൂപത്തിന്റെ ഘനം"
+msgstr "അക്ഷരത്തിന്റെ ഘനം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:308
 #: ../libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "അക്ഷരരൂപത്തിന്റെ വലിവു്"
+msgstr "അക്ഷരത്തിന്റെ വലിവു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
 msgid "Font size"
-msgstr "അക്ഷരരൂപത്തിന്റെ വലിപ്പം"
+msgstr "അക്ഷരത്തിന്റെ വലിപ്പം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:319
 msgid "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
-msgstr "അക്ഷരരൂപത്തിന്റെ വലിപ്പം (PANGO_SCALE എന്നതിന്റെ തവണകളായി ഉദാ. 12 പോയിന്റ് അക്ഷരരൂപത്തിന്റെ വലിപ്പത്തിനു് 12*PANGO_SCALE)"
+msgstr "അക്ഷരത്തിന്റെ വലിപ്പം (PANGO_SCALE എന്നതിന്റെ പെരുക്കങ്ങളായി ഉദാ. 12 പോയിന്റ് അക്ഷരത്തിന്റെ വലിപ്പത്തിനു് 12*PANGO_SCALE)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr "അക്ഷരുപത്തിന്റെ പോയിന്റുകള്‍"
+msgstr "അക്ഷസഞ്ചയത്തിന്റെ പോയിന്റുകള്‍"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "പോയിന്റിലുള്ള അക്ഷരരൂപത്തിന്റെ വലിപ്പം (ഉദാ. 12 പോയിന്റ് അക്ഷരരൂപത്തിന്റെ വലിപ്പത്തിനു് 12)"
+msgstr "പോയിന്റിലുള്ള അക്ഷരത്തിന്റെ വലിപ്പം (ഉദാ. 12 പോയിന്റ് അക്ഷരരൂപത്തിന്റെ വലിപ്പത്തിനു് 12)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -124,15 +125,15 @@ msgstr "ഉയര്‍ച്ച"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
 msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "ബെയിസ്ലൈനിനു് മുകളിലുളള വാചകത്തിന്റെ ഓഫ്‌സെറ്റ്"
+msgstr "അടിസ്ഥാനരേഖയ്ക്കു മുകളിലേയ്ക്കുള്ള വാചകത്തിന്റെ നീങ്ങിയിരിപ്പു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "കുറുകെ വരയ്ക്കുക"
+msgstr "വെട്ടിയിടല്‍"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr "വാചകത്തിന്റെ കുറുകെ വരയ്ക്കണോ?"
+msgstr "വാചകം വെട്ടിയിടണോയെന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
@@ -144,11 +145,11 @@ msgstr "ഈ വാചകത്തിന്റെ  അടിവരയുടെ �
 
 #: ../libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
-msgstr "തോത്"
+msgstr "തോതു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "സഹജമായ വലിപ്പത്തിനനുസരിച്ചുളള അക്ഷരരൂപത്തിന്റെ വലിപ്പം"
+msgstr "സഹജമായ വലിപ്പത്തിനനുസരിച്ചുളള അക്ഷരത്തിന്റെ വലിപ്പം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:425
 #: ../libgnomecanvas/gnome-canvas-text.c:433
@@ -162,11 +163,11 @@ msgstr "പദാവലിയുടെ നിറം, വാചകമായി"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
-msgstr "പദാവലിയുടെ നിറം, ഒരു GdkColor പോലെ"
+msgstr "പദാവലിയുടെ നിറം, ഒരു GdkColor ആയി"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "പദാവലിയുടെ നിറം ഒരു R/G/B/A എണ്ണല്‍ സംഖ്യ പോലെ"
+msgstr "പദാവലിയുടെ നിറം ഒരു R/G/B/A സമ്മിശ്രസംഖ്യയായി"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -186,51 +187,51 @@ msgstr "കാണിച്ചിരിക്കുന്ന പദാവലി�
 
 #: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "അക്ഷരരൂപ കുടുംബത്തിന്റെ ഗണം"
+msgstr "അക്ഷരസഞ്ചയകുടുംബത്തിന്റെ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "അക്ഷരരൂപകുടുംബത്തെ ഈ ടാഗ് ബാധിയ്ക്കുമോ എന്നു്"
+msgstr "അക്ഷരസഞ്ചയകുടുംബത്തെ ഈ മുദ്ര ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "അക്ഷരരൂപ രീതിയുടെ ഗണം:"
+msgstr "അക്ഷരസഞ്ചയസ്വഭാവത്തിന്റെ ഗണം:"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "ഈ ടാഗ് അക്ഷരരൂപ ശൈലിയെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര അക്ഷരസഞ്ചയ ശൈലിയെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "അക്ഷരരുപ വ്യതിയാനത്തിന്റെ ഗണം"
+msgstr "അക്ഷരസഞ്ചയവകഭേദത്തിന്റെ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "ഈ ടാഗ് അക്ഷരരൂപ വ്യതിയാനത്തെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര അക്ഷരസഞ്ചയവ്യതിയാനത്തെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "അക്ഷരരൂപ ഘനത്തിന്റെ ഗണം"
+msgstr "അക്ഷരസഞ്ചയ ഘനത്തിന്റെ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "ഈ ടാഗ് അക്ഷരരൂപ ഘനത്തെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര അക്ഷരസഞ്ചയ ഘനത്തെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "അക്ഷരരൂപ വലിവിന്റെ ഗണം"
+msgstr "അക്ഷരസഞ്ചയ വലിവിന്റെ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "ഈ ടാഗ് അക്ഷരരൂപ വലിവിനെ ബാധിക്കുന്നുണ്ടോ"
+msgstr "ഈ മുദ്ര അക്ഷരസഞ്ചയവലിവിനെ ബാധിയ്ക്കുന്നുണ്ടോ"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "അക്ഷരരൂപവലിപ്പം"
+msgstr "അക്ഷരത്തിന്റെ വലിപ്പ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "ഈ ടാഗ് അക്ഷരരൂപ വലിപ്പത്തെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര അക്ഷരസഞ്ചയ വലിപ്പത്തെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -238,15 +239,15 @@ msgstr "ഉയര്‍ച്ചാ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "ഈ ടാഗ് ഉയര്‍ച്ചയെ ബാധിക്കുന്നുണ്ടോ എന്ന്"
+msgstr "ഈ മുദ്ര ഉയര്‍ച്ചയെ ബാധിയ്ക്കുന്നുണ്ടോ എന്ന്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "കുറുകെ വരയ്ക്കുക"
+msgstr "വെട്ടിയിടല്‍ ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "ഈ ടാഗ് കുറുകെയുള്ള വരയെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര കുറുകെയുള്ള വരയെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -254,15 +255,15 @@ msgstr "അടിവരയിടുന്ന ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "ഈ ടാഗ് അടിവരയെ ബാധിക്കുമോ എന്നു്"
+msgstr "ഈ മുദ്ര അടിവരയെ ബാധിയ്ക്കുമോ എന്നു്"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr "തോത് ഗണം"
+msgstr "തോതു് ഗണം"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "ഈ ടാഗ് സ്കെയിലിങിനെ ബാധിക്കുമോ എന്ന്"
+msgstr "ഈ മുദ്ര തോതിനെ ബാധിയ്ക്കുമോ എന്ന്"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
@@ -270,11 +271,11 @@ msgstr "പ്രദര്‍ശിപ്പിക്കുന്നതിനു
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
-msgstr "X സ്ഥാനം:"
+msgstr "X സ്ഥാനം"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:228
 msgid "Y position"
-msgstr "Y സ്ഥാനം:"
+msgstr "Y സ്ഥാനം"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
@@ -294,7 +295,7 @@ msgstr "പദാവലിക്കളത്തിന്റെ ഉയരം"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
-msgstr "ചിട്ടപ്പെടുത്തിയ"
+msgstr "ചിട്ടപ്പെടുത്താവുന്നതു്"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:252
 msgid "Is this rich text item editable?"
@@ -302,7 +303,7 @@ msgstr "ഈ റിച്ച് ടെക്സ്റ്റ് ഇനത്തെ
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Visible"
-msgstr "ദൃശ്യമായ"
+msgstr "ദൃശ്യമായതു്"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
@@ -330,7 +331,7 @@ msgstr "ഉയരം കൂട്ടുക"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "വാചകം ഉള്‍ക്കൌള്ളാതാകുമ്പോള്‍ പദാവലിക്കളത്തിന്റെ ഉയരം കൂട്ടണോ?"
+msgstr "വാചകം ഉള്‍‌ക്കൊള്ളാതാകുമ്പോള്‍ പദാവലിക്കളത്തിന്റെ ഉയരം കൂട്ടണോ?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
@@ -373,7 +374,7 @@ msgid "Number of pixels to put above lines"
 msgstr "വരിക്കു് മുകളിലിടേണ്ട പിക്സലുകളുടെ എണ്ണം"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
-msgid "Pixels Below Lines" 
+msgid "Pixels Below Lines"
 msgstr "വരിക്കു താഴെയുള്ള പിക്സലുകള്‍"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:337
@@ -390,19 +391,19 @@ msgstr "നിരത്തലിനുളളിലുളള പിക്സല�
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
-msgstr "ഇടതു് അതിരു്"
+msgstr "ഇടതു് മാര്‍ജിന്‍"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:355
 msgid "Number of pixels in the left margin"
-msgstr "ഇടതു് അതിരിലെ പിക്സലുകളുടെ എണ്ണം"
+msgstr "ഇടതു് മാര്‍ജിനിലെ പിക്സലുകളുടെ എണ്ണം"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Right Margin"
-msgstr "വലതു് അതിരു്"
+msgstr "വലതു് മാര്‍ജിന്‍"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:364
 msgid "Number of pixels in the right margin"
-msgstr "വലതു് അതിരിലെ പിക്സലുകളുടെ എണ്ണം "
+msgstr "വലതു് മാര്‍ജിനിലെ പിക്സലുകളുടെ എണ്ണം "
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Indentation"
