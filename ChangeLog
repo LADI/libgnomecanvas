@@ -1,3 +1,11 @@
+2008-08-12  Sven Herzberg  <sven@imendio.com>
+
+	Bug 469482 – need to register gailcanvas into a11y type system
+
+	* libgnomecanvas/gailcanvas.c,
+	* libgnomecanvas/gailcanvas.h,
+	* libgnomecanvas/gnome-canvas.c: properly initialize gail canvas
+
 2008-03-05  Vincent Untz  <vuntz@gnome.org>
 
 	* configure.in: bump version to 2.21.92, even if nothing was released.

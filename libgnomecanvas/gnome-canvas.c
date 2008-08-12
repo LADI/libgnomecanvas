@@ -81,6 +81,7 @@
 #include <gdk/gdkprivate.h>
 #include <gtk/gtkmain.h>
 #include <gtk/gtksignal.h>
+#include "gailcanvas.h"
 #include "gnome-canvas.h"
 #include "gnome-canvas-i18n.h"
 #include "libart_lgpl/art_rect.h"
@@ -2076,6 +2077,8 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
+
+	gail_canvas_init();
 }
 
 /* Callback used when the root item of a canvas is destroyed.  The user should
