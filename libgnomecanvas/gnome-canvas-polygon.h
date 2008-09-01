@@ -60,11 +60,11 @@ G_BEGIN_DECLS
  */
 
 #define GNOME_TYPE_CANVAS_POLYGON            (gnome_canvas_polygon_get_type ())
-#define GNOME_CANVAS_POLYGON(obj)            (GTK_CHECK_CAST ((obj), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygon))
-#define GNOME_CANVAS_POLYGON_CLASS(klass)    (GTK_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygonClass))
-#define GNOME_IS_CANVAS_POLYGON(obj)         (GTK_CHECK_TYPE ((obj), GNOME_TYPE_CANVAS_POLYGON))
-#define GNOME_IS_CANVAS_POLYGON_CLASS(klass) (GTK_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_POLYGON))
-#define GNOME_CANVAS_POLYGON_GET_CLASS(obj)  (GTK_CHECK_GET_CLASS ((obj), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygonClass))
+#define GNOME_CANVAS_POLYGON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygon))
+#define GNOME_CANVAS_POLYGON_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygonClass))
+#define GNOME_IS_CANVAS_POLYGON(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GNOME_TYPE_CANVAS_POLYGON))
+#define GNOME_IS_CANVAS_POLYGON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_POLYGON))
+#define GNOME_CANVAS_POLYGON_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GNOME_TYPE_CANVAS_POLYGON, GnomeCanvasPolygonClass))
 
 
 typedef struct _GnomeCanvasPolygon GnomeCanvasPolygon;

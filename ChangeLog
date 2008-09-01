@@ -1,3 +1,19 @@
+2008-09-01  Stefan Kost  <ensonic@users.sf.net>
+
+	* libgnomecanvas/gnome-canvas-bpath.h:
+	* libgnomecanvas/gnome-canvas-clipgroup.h:
+	* libgnomecanvas/gnome-canvas-line.h:
+	* libgnomecanvas/gnome-canvas-pixbuf.h:
+	* libgnomecanvas/gnome-canvas-polygon.h:
+	* libgnomecanvas/gnome-canvas-rect-ellipse.h:
+	* libgnomecanvas/gnome-canvas-rich-text.h:
+	* libgnomecanvas/gnome-canvas-shape.h:
+	* libgnomecanvas/gnome-canvas-text.h:
+	* libgnomecanvas/gnome-canvas-widget.h:
+	* libgnomecanvas/gnome-canvas.h:
+	  Do not use deprecated GTK_OBJECT macros. This helps to build apps with
+	  deprecation warnings when using libgnomecanvas.
+
 2008-08-12  Sven Herzberg  <sven@imendio.com>
 
 	Bug 469482 – need to register gailcanvas into a11y type system

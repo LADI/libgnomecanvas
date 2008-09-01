@@ -83,11 +83,11 @@ G_BEGIN_DECLS
 
 
 #define GNOME_TYPE_CANVAS_LINE            (gnome_canvas_line_get_type ())
-#define GNOME_CANVAS_LINE(obj)            (GTK_CHECK_CAST ((obj), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLine))
-#define GNOME_CANVAS_LINE_CLASS(klass)    (GTK_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLineClass))
-#define GNOME_IS_CANVAS_LINE(obj)         (GTK_CHECK_TYPE ((obj), GNOME_TYPE_CANVAS_LINE))
-#define GNOME_IS_CANVAS_LINE_CLASS(klass) (GTK_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_LINE))
-#define GNOME_CANVAS_LINE_GET_CLASS(obj)  (GTK_CHECK_GET_CLASS ((obj), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLineClass))
+#define GNOME_CANVAS_LINE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLine))
+#define GNOME_CANVAS_LINE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLineClass))
+#define GNOME_IS_CANVAS_LINE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GNOME_TYPE_CANVAS_LINE))
+#define GNOME_IS_CANVAS_LINE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_LINE))
+#define GNOME_CANVAS_LINE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GNOME_TYPE_CANVAS_LINE, GnomeCanvasLineClass))
 
 
 typedef struct _GnomeCanvasLine GnomeCanvasLine;

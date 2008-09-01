@@ -29,11 +29,11 @@
 G_BEGIN_DECLS
 
 #define GNOME_TYPE_CANVAS_RICH_TEXT             (gnome_canvas_rich_text_get_type ())
-#define GNOME_CANVAS_RICH_TEXT(obj)             (GTK_CHECK_CAST ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichText))
-#define GNOME_CANVAS_RICH_TEXT_CLASS(klass)     (GTK_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichTextClass))
-#define GNOME_IS_CANVAS_RICH_TEXT(obj)          (GTK_CHECK_TYPE ((obj), GNOME_TYPE_CANVAS_RICH_TEXT))
-#define GNOME_IS_CANVAS_RICH_TEXT_CLASS(klass)  (GTK_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_RICH_TEXT))
-#define GNOME_CANVAS_RICH_TEXT_GET_CLASS(obj)   (GTK_CHECK_GET_CLASS ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichTextClass))
+#define GNOME_CANVAS_RICH_TEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichText))
+#define GNOME_CANVAS_RICH_TEXT_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichTextClass))
+#define GNOME_IS_CANVAS_RICH_TEXT(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GNOME_TYPE_CANVAS_RICH_TEXT))
+#define GNOME_IS_CANVAS_RICH_TEXT_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_RICH_TEXT))
+#define GNOME_CANVAS_RICH_TEXT_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), GNOME_TYPE_CANVAS_RICH_TEXT, GnomeCanvasRichTextClass))
 
 typedef struct _GnomeCanvasRichText             GnomeCanvasRichText;
 typedef struct _GnomeCanvasRichTextPrivate      GnomeCanvasRichTextPrivate;

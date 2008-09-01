@@ -61,11 +61,11 @@ G_BEGIN_DECLS
 
 
 #define GNOME_TYPE_CANVAS_WIDGET            (gnome_canvas_widget_get_type ())
-#define GNOME_CANVAS_WIDGET(obj)            (GTK_CHECK_CAST ((obj), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidget))
-#define GNOME_CANVAS_WIDGET_CLASS(klass)    (GTK_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidgetClass))
-#define GNOME_IS_CANVAS_WIDGET(obj)         (GTK_CHECK_TYPE ((obj), GNOME_TYPE_CANVAS_WIDGET))
-#define GNOME_IS_CANVAS_WIDGET_CLASS(klass) (GTK_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_WIDGET))
-#define GNOME_CANVAS_WIDGET_GET_CLASS(obj)  (GTK_CHECK_GET_CLASS ((obj), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidgetClass))
+#define GNOME_CANVAS_WIDGET(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidget))
+#define GNOME_CANVAS_WIDGET_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidgetClass))
+#define GNOME_IS_CANVAS_WIDGET(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GNOME_TYPE_CANVAS_WIDGET))
+#define GNOME_IS_CANVAS_WIDGET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GNOME_TYPE_CANVAS_WIDGET))
+#define GNOME_CANVAS_WIDGET_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GNOME_TYPE_CANVAS_WIDGET, GnomeCanvasWidgetClass))
 
 
 typedef struct _GnomeCanvasWidget GnomeCanvasWidget;
