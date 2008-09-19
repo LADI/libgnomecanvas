@@ -1,14 +1,14 @@
 # Romanian translation for libgnomecanvas
-# Copyright (C) 2003 - 2007 Free Software Foundation, Inc.
-# Mişu Moldovan <dumol@gnome.ro>, 2003 - 2007.
+# Copyright (C) 2003 - 2008 Free Software Foundation, Inc.
+# Mișu Moldovan <dumol@gnome.ro>, 2003 - 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 05:44+0000\n"
-"PO-Revision-Date: 2007-03-11 00:03+0200\n"
-"Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
+"POT-Creation-Date: 2007-03-10 03:38+0000\n"
+"PO-Revision-Date: 2008-09-18 21:35+0300\n"
+"Last-Translator: Mișu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,15 +39,15 @@ msgstr "Text"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "Text de afişat"
+msgstr "Text de afișat"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "Selecţie"
+msgstr "Selecție"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "Text selectat de afişat"
+msgstr "Text selectat de afișat"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -55,7 +55,7 @@ msgstr "Font"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Descriere font sub formă de şir"
+msgstr "Descriere font sub formă de șir"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
@@ -102,8 +102,8 @@ msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
 msgstr ""
-"Mărime font (ca multiplu de PANGO_SCALE, de ex. 12*PANGO_SCALE pentru "
-"o mărime de 12pt)"
+"Mărime font (ca multiplu de PANGO_SCALE, de ex. 12*PANGO_SCALE pentru o "
+"mărime de 12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -115,17 +115,17 @@ msgstr "Mărime font în puncte (de ex. 12 pentru un font de 12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "Înălţare"
+msgstr "Înălțare"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
-"Distanţa textului faţă de linia de bază (negativă când textul e coborât)"
+"Distanța textului față de linia de bază (negativă când textul e coborât)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "Înţepat"
+msgstr "Înțepat"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -155,7 +155,7 @@ msgstr "Culoare"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "Culoare text, ca un şir de caractere"
+msgstr "Culoare text, ca un șir de caractere"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
@@ -167,19 +167,19 @@ msgstr "Culoare text, ca un întreg combinat R/G/B/A"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
-msgstr "Lăţime text"
+msgstr "Lățime text"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:456
 msgid "Width of the rendered text"
-msgstr "Lăţime text afişat"
+msgstr "Lățime text afișat"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:463
 msgid "Text height"
-msgstr "Înălţime text"
+msgstr "Înălțime text"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:464
 msgid "Height of the rendered text"
-msgstr "Înălţime text afişat"
+msgstr "Înălțime text afișat"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
@@ -231,7 +231,7 @@ msgstr "Pentru fonturile ce au o mărime anume"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "Înălţare font"
+msgstr "Înălțare font"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
@@ -239,7 +239,7 @@ msgstr "Pentru fonturile ce se depărtează de linia de bază"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "Înţepare"
+msgstr "Înțepare"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -263,7 +263,7 @@ msgstr "Pentru fonturile cu o scalare anume"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
-msgstr "Text de afişat"
+msgstr "Text de afișat"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:220
 msgid "X position"
@@ -275,19 +275,19 @@ msgstr "Coordonată Y"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width"
-msgstr "Lăţime"
+msgstr "Lățime"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:236
 msgid "Width for text box"
-msgstr "Lăţime căsuţă de text"
+msgstr "Lățime căsuță de text"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height"
-msgstr "Înălţime"
+msgstr "Înălțime"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:244
 msgid "Height for text box"
-msgstr "Înălţime căsuţă de text"
+msgstr "Înălțime căsuță de text"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Editable"
@@ -323,11 +323,11 @@ msgstr "Pâlpâie cursorul în acest element de text cu atribute?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Grow Height"
-msgstr "Măreşte înălţimea"
+msgstr "Mărește înălțimea"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:284
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Ar trebui înălţimea căsuţei de text să crească dacă nu încape textul?"
+msgstr "Ar trebui înălțimea căsuței de text să crească dacă nu încape textul?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap Mode"
@@ -347,11 +347,11 @@ msgstr "Mod de aliniere"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Direction"
-msgstr "Direcţie"
+msgstr "Direcție"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:310
 msgid "Text direction"
-msgstr "Direcţie text"
+msgstr "Direcție text"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor"
@@ -383,7 +383,7 @@ msgstr "Pixeli la ruperea rândurilor"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
-msgstr "Număr de pixeli incluşi la ruperea unui rând"
+msgstr "Număr de pixeli incluși la ruperea unui rând"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Left Margin"
@@ -409,5 +409,3 @@ msgstr "Indentare"
 msgid "Number of pixels for indentation"
 msgstr "Număr de pixeli la indentare"
 
-#~ msgid "Font size in points"
-#~ msgstr "Mărime font în puncte"
