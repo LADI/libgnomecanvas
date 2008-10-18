@@ -7,6 +7,7 @@ INCLUDES = \
 	-I$(top_builddir)				\
 	$(WARN_CFLAGS) 					\
 	$(LIBGNOMECANVAS_CFLAGS)			\
+	$(LIBGNOMECANVAS_DEPRECATED_CFLAGS)		\
         -DGNOMECANVASLIBDIR=\""$(libdir)"\" 		\
         -DGNOMECANVASDATADIR=\""$(datadir)"\" 		\
         -DGNOMECANVASPIXMAPDIR=\""$(datadir)/pixmaps"\"	\

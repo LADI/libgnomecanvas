@@ -26,9 +26,8 @@
 
 #define GTK_TEXT_USE_INTERNAL_UNSUPPORTED_API
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtksignal.h>
-#include <gtk/gtktextdisplay.h>
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
+#include <gtk/gtktextlayout.h>
 
 #include "gnome-canvas.h"
 #include "gnome-canvas-util.h"

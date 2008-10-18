@@ -116,7 +116,7 @@ static GnomeCanvasItemClass *parent_class;
  *
  * Return value: The type ID of the #GnomeCanvasPixbuf class.
  **/
-GtkType
+GType
 gnome_canvas_pixbuf_get_type (void)
 {
 	static GType pixbuf_type;

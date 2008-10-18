@@ -79,8 +79,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <gdk/gdkprivate.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtksignal.h>
+#include <gtk/gtk.h>
 #include "gailcanvas.h"
 #include "gnome-canvas.h"
 #include "gnome-canvas-i18n.h"

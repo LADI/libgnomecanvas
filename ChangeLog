@@ -1,3 +1,15 @@
+2008-10-18  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* configure.in:
+	* libgnomecanvas/Makefile.am:
+	* libgnomecanvas/gailcanvas.h:
+	* libgnomecanvas/gnome-canvas-pixbuf.c:
+	* libgnomecanvas/gnome-canvas-rich-text.c:
+	* libgnomecanvas/gnome-canvas-rich-text.h:
+	* libgnomecanvas/gnome-canvas.c:
+	* libgnomecanvas/gnome-canvas.h:
+	Use and enforce single GTK+ includes.
+
 2008-09-01  Stefan Kost  <ensonic@users.sf.net>
 
 	* libgnomecanvas/gnome-canvas-bpath.h:

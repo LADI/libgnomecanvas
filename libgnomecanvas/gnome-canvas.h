@@ -37,7 +37,7 @@
 #ifndef GNOME_CANVAS_H
 #define GNOME_CANVAS_H
 
-#include <gtk/gtklayout.h>
+#include <gtk/gtk.h>
 #include <stdarg.h>
 #include <libart_lgpl/art_misc.h>
 #include <libart_lgpl/art_rect.h>

@@ -21,7 +21,7 @@
 #ifndef __GAIL_CANVAS_H__
 #define __GAIL_CANVAS_H__
 
-#include <gtk/gtkaccessible.h>
+#include <gtk/gtk.h>
 
 /* This code provides the ATK implementation for gnome-canvas widgets. */
 
