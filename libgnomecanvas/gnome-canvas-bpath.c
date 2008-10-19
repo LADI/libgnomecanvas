@@ -19,7 +19,7 @@
 #include <math.h>
 #include <string.h>
 
-#include <gtk/gtkobject.h>
+#include <gtk/gtk.h>
 #include "gnome-canvas.h"
 #include "gnome-canvas-util.h"
 

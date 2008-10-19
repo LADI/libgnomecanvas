@@ -17,8 +17,7 @@
 #include <math.h>
 #include <string.h>
 
-#include <gtk/gtkobject.h>
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 
 #include <libart_lgpl/art_misc.h>
 #include <libart_lgpl/art_rect.h>

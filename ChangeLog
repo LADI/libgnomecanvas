@@ -1,3 +1,10 @@
+2008-10-19  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* libgnomecanvas/gnome-canvas-bpath.c:
+	* libgnomecanvas/gnome-canvas-clipgroup.c:
+	* libgnomecanvas/gnome-canvas-shape.c:
+	More GTK+ single header include fixage.
+
 2008-10-18  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* configure.in:
