@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
 
 #include <glade/glade-xml.h>
 

@@ -1,3 +1,10 @@
+2008-12-07  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* demos/dash-demo.c:
+	* tests/test-libglade-canvas.c:
+	Use single GTK+ includes also for tests and demos.
+	Thanks to Przemysław Grzegorczyk (#563566).
+
 2008-10-19  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* libgnomecanvas/gnome-canvas-bpath.c:

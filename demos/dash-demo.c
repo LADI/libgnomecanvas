@@ -23,8 +23,7 @@
  * if advised of the possibility of such damage.
  */
 
-#include <gtk/gtkmain.h>
-#include <gtk/gtkwindow.h>
+#include <gtk/gtk.h>
 
 #include <libart_lgpl/art_vpath_dash.h>
 #include <libgnomecanvas/libgnomecanvas.h>
