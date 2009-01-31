@@ -1,14 +1,14 @@
 # Chinese (Hong Kong) translation for libgnomecanvas.
 # Copyright (C) 2001-04, 06, 07 Free Software Foundation, Inc.
 # Abel Cheung <abel@oaka.org>, 2001-04, 06.
-# 
-# 
+# Woodman Tuen <wmtuen@gmail.com>, 2007.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas 2.17.0\n"
+"Project-Id-Version: libgnomecanvas 2.21.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-28 03:33+0000\n"
-"PO-Revision-Date: 2007-03-04 09:00+0800\n"
+"POT-Creation-Date: 2009-01-30 22:37+0800\n"
+"PO-Revision-Date: 2009-01-31 14:27+0800\n"
 "Last-Translator: Woodman Tuen <wmtuen@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,39 +16,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X"
 msgstr "X"
 
 #: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2045
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "Antialiased"
 msgstr "平滑化"
 
-#: ../libgnomecanvas/gnome-canvas.c:2046
+#: ../libgnomecanvas/gnome-canvas.c:2053
 msgid "The antialiasing mode of the canvas."
 msgstr "canvas 的平滑化模式。"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text"
 msgstr "文字"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:207
 msgid "Text to render"
-msgstr "描繪的文字"
+msgstr "準備描繪的文字"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "標記文字"
+msgstr "標記"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "準備描繪，而且已加上標記的文字"
+msgstr "欲描繪的標記文字"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -68,16 +68,16 @@ msgstr "以 PangoFontDescription 結構表示的字型"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
-msgstr "字族"
+msgstr "字型族系"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr "字族名稱，例如：Sans、Helvetica、Times、Monospace"
+msgstr "字型族系名稱，例如：Sans、Helvetica、Times、Monospace"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
 msgid "Font style"
-msgstr "字體款式"
+msgstr "字型樣式"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:286
 #: ../libgnomecanvas/gnome-canvas-text.c:287
@@ -87,7 +87,7 @@ msgstr "字型變化"
 #: ../libgnomecanvas/gnome-canvas-text.c:296
 #: ../libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "字型粗幼"
+msgstr "字型粗細"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:308
 #: ../libgnomecanvas/gnome-canvas-text.c:309
@@ -114,7 +114,7 @@ msgstr "字型大小（以點計算，例如 12 為 12 點大小）"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "升高文字"
+msgstr "升高"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
@@ -135,7 +135,7 @@ msgstr "底線"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
-msgstr "此段文字的底線款式"
+msgstr "此文字的底線樣式"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -153,7 +153,7 @@ msgstr "顏色"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "以字串方式表達的文字顏色"
+msgstr "文字顏色，以字串方式表示"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
@@ -161,7 +161,7 @@ msgstr "以 GdkColor 方式表達的文字顏色"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "以 R/G/B/A 數值合併後的整數表達的文字顏色"
+msgstr "文字顏色，以 R/G/B/A 數值合併後的整數表示"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -181,19 +181,19 @@ msgstr "所描繪的文字的高度"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "字型集設定"
+msgstr "字型族系設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "此標籤會否影響字型集"
+msgstr "此標籤是否影響字型族系"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "字體款式設定"
+msgstr "字型樣式設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "此標籤會否影響字體款式"
+msgstr "此標籤是否影響字型樣式"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -201,15 +201,15 @@ msgstr "字型變化設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "此標籤會否影響字型變化"
+msgstr "此標籤是否影響字型變化"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "字型粗幼設定"
+msgstr "字型粗細設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "此標籤會否影響字型粗幼"
+msgstr "此標籤是否影響字型粗細"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
@@ -217,7 +217,7 @@ msgstr "字型寬緊設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "此標籤會否影響字型寬緊"
+msgstr "此標籤是否影響字型寬緊"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -225,7 +225,7 @@ msgstr "字型大小設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "此標籤會否影響字型大小"
+msgstr "此標籤是否影響字型大小"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -233,7 +233,7 @@ msgstr "升高文字設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "此標籤會否影響文字升高的情況"
+msgstr "此標籤是否影響文字升高的情況"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -241,7 +241,7 @@ msgstr "刪除線設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "此標籤會否影響文字的刪除線"
+msgstr "此標籤是否影響刪除線的設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -249,7 +249,7 @@ msgstr "底線設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "此標籤會否影響底線"
+msgstr "此標籤是否影響底線的設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
@@ -257,153 +257,153 @@ msgstr "縮放設定"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "此標籤會否影響字型的縮放"
+msgstr "此標籤是否影響字型的縮放"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:212
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
 msgstr "準備顯示的文字"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:220
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X position"
 msgstr "水平位置"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:228
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y position"
 msgstr "垂直位置"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width"
 msgstr "闊度"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:236
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width for text box"
 msgstr "文字容器元件的闊度"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:242
 msgid "Height"
 msgstr "高度"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:244
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height for text box"
 msgstr "文字容器元件的高度"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Editable"
 msgstr "可編輯"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:252
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
 msgstr "可否編輯該 rich text？"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:259
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Visible"
 msgstr "顯示文字"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:260
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Is this rich text item visible?"
 msgstr "是否顯示該 rich text？"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:267
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Cursor Visible"
 msgstr "顯示游標"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:268
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Is the cursor visible in this rich text item?"
 msgstr "是否在該 rich text 中顯示游標？"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
 msgstr "閃爍游標"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:276
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
-msgstr "該 rich text 中的游標會否閃爍？"
+msgstr "該 rich text 中的游標是否閃爍？"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
 msgstr "自動增加高度"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:284
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "如果文字無法完全在文字容器元件內顯示，應否增加文字容器元件的高度？"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "自動換行模式"
+msgstr "換行模式"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:292
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
 msgstr "橫跨多行的文字的換行模式"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
-msgstr "對齊"
+msgstr "對齊方式"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:301
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
 msgstr "對齊方式"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
 msgstr "方向"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:310
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Text direction"
-msgstr "文字的方向"
+msgstr "文字方向"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
 msgstr "錨點"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:319
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor point for text"
 msgstr "文字的錨點"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
 msgstr "每行頂部加上的像素"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:328
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
 msgstr "每行頂部加上的像素數目"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
 msgstr "每行底部加上的像素"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:337
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
 msgstr "每行底部加上的像素數目"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:345
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
 msgstr "換行時加上的像素"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:346
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
 msgstr "換行時加上的像素數目"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
 msgstr "左邊邊界"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:355
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Number of pixels in the left margin"
 msgstr "左邊邊界的闊度（以像素計算）"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Right Margin"
 msgstr "右邊邊界"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:364
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Number of pixels in the right margin"
 msgstr "右邊邊界的闊度（以像素計算）"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Indentation"
 msgstr "縮排"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:373
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "每次縮排所移動的像素數目"
 
