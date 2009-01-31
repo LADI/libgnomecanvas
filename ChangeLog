@@ -1,5 +1,11 @@
 2009-01-31  Vincent Untz  <vuntz@gnome.org>
 
+	* configure.in: post-release bump to 2.25.91
+
+==================== 2.25.90 ====================
+
+2009-01-31  Vincent Untz  <vuntz@gnome.org>
+
 	* configure.in:
 	* NEWS: version 2.25.90
 
