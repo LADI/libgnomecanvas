@@ -1,3 +1,8 @@
+2009-01-31  Vincent Untz  <vuntz@gnome.org>
+
+	* configure.in:
+	* NEWS: version 2.25.90
+
 2008-12-07  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* demos/dash-demo.c:

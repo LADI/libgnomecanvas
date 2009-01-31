@@ -1,3 +1,48 @@
+libgnomecanvas 2.25.90
+---------------------
+
+What's new since 2.19.2
+
+Bug fixes
+	* Avoid tearing while repainting (Federico Mena Quintero)
+	* Fix compilation with gcc 2.x (Jens Granseur)
+	* Register gailcanvas into a11y type system (Sven Herzberg)
+	* Do not use deprecated GTK_OBJECT macros (Stefan Kost)
+	* Use single GTK+ includes (Cosimo Cecchi, Przemysław Grzegorczyk)
+
+Translations
+	* Khaled Hosny (ar)
+	* Khandakar Mujahidul Islam (bn)
+	* Reşat SABIQ (crh)
+	* Lucas Lommer (cs)
+	* Jorge González (es)
+	* Iñaki Larrañaga Murgoitio (eu)
+	* Pauli Virtanen (fi)
+	* Robert-André Mauchin (fr)
+	* Ignacio Casal Quinteiro (gl)
+	* Launchpad Translations Administrators (hr)
+	* Francesco Marletta (it)
+	* Vladimer Sichinava ვლადიმერ სიჭინავა (ka)
+	* Raivis Dejus (lv)
+	* Sangeeta Kumari (mai)
+	* Santhosh Thottingal (ml)
+	* Badral (mn)
+	* sandeep shedmake (mr)
+	* Nabin Gautam (ne)
+	* Åsmund Skjæveland (nn)
+	* Yannig Marchegay (Kokoyaya) (oc)
+	* Leonardo Ferreira Fontenelle (pt_BR)
+	* Mișu Moldovan (ro)
+	* Marcel Telka (sk)
+	* Matej Urbančič (sl)
+	* Laurent Dhima (sq)
+	* தங்கம் அருண் (ta)
+	* Krishna Babu K (te)
+	* Theppitak Karoonboonyanan (th)
+	* Baris Cicek (tr)
+	* Woodman Tuen (zh_HK)
+	* Woodman Tuen (zh_TW)
+ 
 libgnomecanvas 2.19.2
 ---------------------
 
