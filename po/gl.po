@@ -4,26 +4,28 @@
 #
 # Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005.
 # Ignacio Casal Quinteiro <icq@svn.gnome.org>, 2008.
+# Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-14 14:24+0100\n"
-"PO-Revision-Date: 2008-02-14 14:25+0100\n"
-"Last-Translator: Ignacio Casal Quinteiro <icq@svn.gnome.org>\n"
+"POT-Creation-Date: 2009-03-13 22:15+0100\n"
+"PO-Revision-Date: 2009-03-10 20:17+0000\n"
+"Last-Translator: Suso Baleato <suso.baleato@xunta.es>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: gl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X"
 msgstr "X"
 
 #: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y"
 msgstr "Y"
 
@@ -36,7 +38,7 @@ msgid "The antialiasing mode of the canvas."
 msgstr "O modo de suavizado do lenzo."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text"
 msgstr "Texto"
 
@@ -106,7 +108,9 @@ msgstr "Tamaño do tipo de letra"
 msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
-msgstr "Tampo do tipo de letra (coma un múltiplo de PANGO_SCALE, ex. 12*PANGO_SCALE para un tamaño do tipo de letra de 12pt)"
+msgstr ""
+"Tampo do tipo de letra (en múltiplo de PANGO_SCALE, p.ex. 12*PANGO_SCALE "
+"para un tamaño de tipo de letra de 12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -114,14 +118,17 @@ msgstr "Puntos do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "Tamaño do tipo de letra en puntos (ex. 12 para un tamaño de tipo de letra de 12pt)"
+msgstr ""
+"Tamaño do tipo de letra en puntos (p.ex. 12 para un tamaño de tipo de letra "
+"de 12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "Incremento"
+msgstr "Elevación"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Desprazamento do texto por riba da liña base (por debaixo da liña base se a "
 "elevación é negativa)"
@@ -166,7 +173,7 @@ msgstr "Cor do texto, como unha GdkColor"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Cor do texto, como un enteiro combinado R/G/B/A "
+msgstr "Cor do texto, como un enteiro combinado R/G/B/A"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -190,7 +197,7 @@ msgstr "Definición da familia do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Indica se esta etiqueta afecta ou non á familia do tipo de letra."
+msgstr "Indica se esta etiqueta afecta ou non á familia do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -206,7 +213,7 @@ msgstr "Definición da variante do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Indica se esta etiqueta afecta ou non á variante do tipo de letra."
+msgstr "Indica se esta etiqueta afecta ou non á variante do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -222,7 +229,7 @@ msgstr "Definición da expansión do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Indica se esta etiqueta afecta ou non á expansión do tipo de letra "
+msgstr "Indica se esta etiqueta afecta ou non á expansión do tipo de letra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -264,151 +271,150 @@ msgstr "Definición da escala"
 msgid "Whether this tag affects font scaling"
 msgstr "Indica se esta etiqueta afecta ou non á escala de tipo de letra"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:212
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
-msgstr "Texto a mostrar"
+msgstr "Texto que se vai mostrar"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:220
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X position"
 msgstr "Posición X"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:228
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y position"
 msgstr "Posición Y"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width"
 msgstr "Largura"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:236
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width for text box"
 msgstr "Largura da caixa de texto"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:242
 msgid "Height"
 msgstr "Altura"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:244
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height for text box"
 msgstr "Altura da caixa de texto"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Editable"
-msgstr "Editable"
+msgstr "Editábel"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:252
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
-msgstr "É editable este elemento de texto enriquecido?"
+msgstr "É editábel este elemento de texto enriquecido?"
+
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:258
+msgid "Visible"
+msgstr "Visíbel"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:259
-msgid "Visible"
-msgstr "Visible"
-
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:260
 msgid "Is this rich text item visible?"
-msgstr "É visible este elemento de texto enriquecido?"
+msgstr "É visíbel este elemento de texto enriquecido?"
+
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:266
+msgid "Cursor Visible"
+msgstr "Cursor visíbel"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:267
-msgid "Cursor Visible"
-msgstr "Cursor visible"
-
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:268
 msgid "Is the cursor visible in this rich text item?"
-msgstr "É visible o cursor neste elemento de texto enriquecido?"
+msgstr "É visíbel o cursor neste elemento de texto enriquecido?"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
 msgstr "Intermitencia do cursor"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:276
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
-msgstr "Está pestanexando o cursor neste elemento de texto enriquecido?"
+msgstr "É intermitente o cursor neste elemento de texto enriquecido?"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
 msgstr "Altura de crecemento"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:284
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
 msgstr "Debe crecer a altura da caixa de texto se o texto non cabe?"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "Modo de separador"
+msgstr "Modo de axuste"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:292
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
-msgstr "Modo de separador para texto con múltiples liñas"
+msgstr "Modo de axuste para texto con múltiples liñas"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
 msgstr "Xustificación"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:301
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
 msgstr "Modo de xustificación"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
-msgstr "dirección"
+msgstr "Dirección"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:310
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Text direction"
-msgstr "dirección do texto"
+msgstr "Dirección do texto"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
 msgstr "Áncora"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:319
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor point for text"
 msgstr "Punto de ancoraxe para o texto"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
-msgstr "Píxeles por riba das liñas"
+msgstr "Píxeles sobre as liñas"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:328
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
-msgstr "Número de píxeles a colocar sobre as liñas"
+msgstr "Número de píxeles que se van colocar sobre as liñas"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
 msgstr "Píxeles por baixo das liñas"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:337
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
-msgstr "Número de píxeles a colocar abaixo das liñas"
+msgstr "Número de píxeles que se van colocar por baixo das liñas"
+
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:344
+msgid "Pixels Inside Wrap"
+msgstr "Píxeles dentro do separador"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
-msgid "Pixels Inside Wrap"
-msgstr "Píxeles dentro de separador"
-
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:346
 msgid "Number of pixels to put inside the wrap"
-msgstr "Número de píxeles a colocar dentro do separador"
+msgstr "Número de píxeles que se van colocar dentro do separador"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
 msgstr "Marxe esquerda"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:355
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Number of pixels in the left margin"
-msgstr "Número de píxeles na marxe esquerda"
+msgstr "Número de píxeles da marxe esquerda"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Right Margin"
 msgstr "Marxe dereita"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:364
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Number of pixels in the right margin"
-msgstr "Número de píxeles na marxe dereita"
+msgstr "Número de píxeles da marxe dereita"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Indentation"
 msgstr "Sangría"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:373
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "Número de píxeles para a sangría"
-
