@@ -1,16 +1,17 @@
-# translation of libgnomecanvas to Qırımtatarca
+# Qırımtatarca (Qırım Türkçe) libgnomecanvas.
 # This file is distributed under the same license as the libgnomecanvas package.
-# Reşat SABIQ <tilde.birlik@gmail.com>, 2008.
 #
-#
+# Reşat SABIQ <tilde.birlik@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas TRUNK\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-16 20:41-0600\n"
-"PO-Revision-Date: 2008-11-17 00:57-0600\n"
+"Project-Id-Version: libgnomecanvas\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2009-03-13 21:15+0000\n"
+"PO-Revision-Date: 2009-03-15 23:18-0500\n"
 "Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
-"Language-Team: Qırımtatarca (Qırım Türkçesi)\n"
+"Language-Team: Qırımtatarca (Qırım Türkçesi) <tilde-birlik-tercime@lists."
+"sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,23 +28,23 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas.c:2052
-# tüylü
 msgid "Antialiased"
-msgstr "Lağapsızlaştırılğan (Tegizleştirilgen)"
+msgstr "Tahallüssizleştirilgen (Tegizleştirilgen)"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas.c:2053
-# tüylü
 msgid "The antialiasing mode of the canvas."
-msgstr "Bezniñ lağapsızlaştırma kelişi."
+msgstr "Bezniñ tahallüssizleştirilüv kelişi."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text"
 msgstr "Metin"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:207
-# tüylü
 msgid "Text to render"
 msgstr "Qılınacaq metin"
 
@@ -79,9 +80,9 @@ msgstr "Urufat ailesi"
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
 msgstr "Urufat ailesiniñ ismi, meselâ Sans, Helvetica, Times, Monospace"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
-# tüylü
 msgid "Font style"
 msgstr "Urufat uslûbı"
 
@@ -104,41 +105,49 @@ msgstr "Urufat kerilmesi"
 msgid "Font size"
 msgstr "Urufat ölçüsi"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:319
-# tüylü
 msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
-msgstr "Urufat ölçüsi (PANGO_SCALE'niñ qatı olaraq, meselâ 12 noqtaliq (pt) urufat ölçüsi içün 12*PANGO_SCALE)"
+msgstr ""
+"Urufat ölçüsi (PANGO_SCALE'niñ qatı olaraq, meselâ 12 noqtaliq (pt) urufat "
+"ölçüsi içün 12*PANGO_SCALE)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "Urufat noqtaları"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:330
-# tüylü
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "Noqtalar cınsından urufat ölçüsi (meselâ 12 noqtalıq (pt) urufat ölçüsi içün 12)"
+msgstr ""
+"Noqtalar cınsından urufat ölçüsi (meselâ 12 noqtalıq (pt) urufat ölçüsi içün "
+"12)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
 msgstr "Yükseliş"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Metinniñ temel-sızıq üstünde çıqıntısı (eger negativ ise temel-sızıq altında)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Metinniñ temel-sızıq üstünde çıqıntısı (eger menfiy ise temel-sızıq altında)"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "Üzerini sız"
+msgstr "Üzerini sızuv"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
 msgstr "Metinniñ üzeri sızılğan olıp olmaycağı"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "Altını sız"
+msgstr "Altını sızuv"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
@@ -186,10 +195,10 @@ msgstr "Metin yüksekligi"
 msgid "Height of the rendered text"
 msgstr "Qılınğan metinniñ yüksekligi"
 
+# tüklü
 #: ../libgnomecanvas/gnome-canvas-text.c:472
-# tüylü
 msgid "Font family set"
-msgstr "Urufat ailesi seti"
+msgstr "Urufat ailesi kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
@@ -197,7 +206,7 @@ msgstr "Bu nişannıñ urufat ailesine tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "Urufat uslûbı seti"
+msgstr "Urufat uslûbı kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
@@ -205,7 +214,7 @@ msgstr "Bu nişannıñ urufat uslûbına tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "Urufat variantı seti"
+msgstr "Urufat variantı kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
@@ -213,7 +222,7 @@ msgstr "Bu nişannıñ urufat variantına tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Urufat ağırlığı seti"
+msgstr "Urufat ağırlığı kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
@@ -221,7 +230,7 @@ msgstr "Bu nişannıñ urufat ağırlığına tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Urufat kerilmesi seti"
+msgstr "Urufat kerilmesi kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
@@ -229,7 +238,7 @@ msgstr "Bu nişannıñ urufat kerilmesine tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Urufat ölçüsi seti"
+msgstr "Urufat ölçüsi kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
@@ -237,7 +246,7 @@ msgstr "Bu nişannıñ urufat ölçüsine tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "Yükeliş seti"
+msgstr "Yükseliş kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
@@ -245,7 +254,7 @@ msgstr "Bu nişannıñ urufat yükselişine tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "Üzerini sızuv seti"
+msgstr "Üzerini sızuv kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -253,7 +262,7 @@ msgstr "Bu nişannıñ üzerini sızuvğa tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "Alt-sızıq seti"
+msgstr "Alt-sızıq kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
@@ -261,7 +270,7 @@ msgstr "Bu nişannıñ altını sızuvğa tesir etip etmegeni"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr "Miqyas seti"
+msgstr "Miqyas kümesi"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
@@ -301,7 +310,7 @@ msgstr "Tarir etilebilir"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
-msgstr "Bu zengin metin unsurı tahrir etile bilemi?"
+msgstr "Bu zengin metin unsurı tarir etile bilemi?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Visible"
@@ -414,4 +423,3 @@ msgstr "Kirintileme"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "Kirintileme içün piksel sayısı"
-
