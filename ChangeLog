@@ -1,3 +1,8 @@
+2009-03-17  Vincent Untz  <vuntz@gnome.org>
+
+	* NEWS:
+	* configure.in: version 2.26.0
+
 2009-01-31  Vincent Untz  <vuntz@gnome.org>
 
 	* configure.in: post-release bump to 2.25.91
