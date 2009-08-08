@@ -236,7 +236,7 @@ setup_rectangles (GnomeCanvasGroup *root)
 						   "outline_color", "black",
 						   "width_units", 4.0,
 						   NULL));
-		gdk_bitmap_unref (stipple);
+		g_object_unref (stipple);
 	}
 
 	setup_item (gnome_canvas_item_new (root,
@@ -299,7 +299,7 @@ setup_ellipses (GnomeCanvasGroup *root)
 						   "outline_color", "black",
 						   "width_pixels", 0,
 						   NULL));
-		gdk_bitmap_unref (stipple);
+		g_object_unref (stipple);
 	}
 }
 
@@ -355,7 +355,7 @@ setup_texts (GnomeCanvasGroup *root)
 				       "fill_color", "blue",
 				       "fill_stipple", stipple,
 				       NULL);
-		gdk_bitmap_unref (stipple);
+		g_object_unref (stipple);
 	}
 
 	gnome_canvas_item_new (make_anchor (root, 470.0, 75.0),
@@ -536,7 +536,7 @@ make_hilbert (GnomeCanvasGroup *root)
 						   "cap_style", GDK_CAP_PROJECTING,
 						   "join_style", GDK_JOIN_MITER,
 						   NULL));
-		gdk_bitmap_unref (stipple);
+		g_object_unref (stipple);
 	}
 
 	gnome_canvas_points_free (points);
@@ -658,7 +658,7 @@ setup_polygons (GnomeCanvasGroup *root)
 						   "fill_stipple", stipple,
 						   "outline_color", "black",
 						   NULL));
-		gdk_bitmap_unref (stipple);
+		g_object_unref (stipple);
 	}
 	gnome_canvas_points_free (points);
 
@@ -769,7 +769,7 @@ create_canvas_primitives (gint aa)
 
 	/* Create the canvas */
 
-	gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+	gtk_widget_push_colormap (gdk_rgb_get_colormap ());
 	if (aa)
 	  canvas = gnome_canvas_new_aa ();
 	else
@@ -814,7 +814,7 @@ create_canvas_primitives (gint aa)
 	gtk_box_pack_start (GTK_BOX (hbox), w, FALSE, FALSE, 0);
 	gtk_widget_show (w);
 
-	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.05, 5.00, 0.05, 0.50, 0.50));
+	adj = GTK_ADJUSTMENT (gtk_adjustment_new (1.00, 0.05, 5.00, 0.05, 0.50, 0));
 	g_signal_connect (adj, "value_changed",
 			  G_CALLBACK (zoom_changed),
 			  canvas);

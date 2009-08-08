@@ -234,7 +234,7 @@ create_canvas (gboolean aa)
 	GtkWidget        *canvas = NULL;
 	GtkWidget        *frame;
 
-	gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+	gtk_widget_push_colormap (gdk_rgb_get_colormap ());
 
 	if (aa)
 		canvas = gnome_canvas_new_aa ();

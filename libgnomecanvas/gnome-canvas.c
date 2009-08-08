@@ -1833,8 +1833,7 @@ gnome_canvas_group_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 static void
 group_add (GnomeCanvasGroup *group, GnomeCanvasItem *item)
 {
-	g_object_ref (G_OBJECT (item));
-	gtk_object_sink (GTK_OBJECT (item));
+	g_object_ref_sink (G_OBJECT (item));
 
 	if (!group->item_list) {
 		group->item_list = g_list_append (group->item_list, item);
@@ -2129,8 +2128,7 @@ gnome_canvas_init (GnomeCanvas *canvas)
 	canvas->root = GNOME_CANVAS_ITEM (g_object_new (gnome_canvas_group_get_type (), NULL));
 	canvas->root->canvas = canvas;
 
-	g_object_ref (canvas->root);
-	gtk_object_sink (GTK_OBJECT (canvas->root));
+	g_object_ref_sink (canvas->root);
 
 	canvas->root_destroy_id = g_signal_connect (canvas->root, "destroy",
 						    G_CALLBACK (panic_root_destroyed),
@@ -2146,7 +2144,7 @@ remove_idle (GnomeCanvas *canvas)
 	if (canvas->idle_id == 0)
 		return;
 
-	gtk_idle_remove (canvas->idle_id);
+	g_source_remove (canvas->idle_id);
 	canvas->idle_id = 0;
 }
 
@@ -2330,7 +2328,7 @@ gnome_canvas_unrealize (GtkWidget *widget)
 
 	(* GNOME_CANVAS_ITEM_GET_CLASS (canvas->root)->unrealize) (canvas->root);
 
-	gdk_gc_destroy (canvas->pixmap_gc);
+	g_object_unref (canvas->pixmap_gc);
 	canvas->pixmap_gc = NULL;
 
 	if (GTK_WIDGET_CLASS (canvas_parent_class)->unrealize)
@@ -2952,7 +2950,6 @@ gnome_canvas_paint_rect (GnomeCanvas *canvas, gint x0, gint y0, gint x1, gint y1
 		buf.rect.x1 = draw_x2;
 		buf.rect.y1 = draw_y2;
 		color = &widget->style->bg[GTK_STATE_NORMAL];
-		buf.bg_color = (((color->red & 0xff00) << 8) | (color->green & 0xff00) | (color->blue >> 8));
 		buf.is_bg = 1;
 		buf.is_buf = 0;
 
@@ -2962,7 +2959,7 @@ gnome_canvas_paint_rect (GnomeCanvas *canvas, gint x0, gint y0, gint x1, gint y1
 			(* GNOME_CANVAS_ITEM_GET_CLASS (canvas->root)->render) (canvas->root, &buf);
 
 		if (buf.is_bg) {
-			gdk_rgb_gc_set_foreground (canvas->pixmap_gc, buf.bg_color);
+			gdk_gc_set_rgb_fg_color (canvas->pixmap_gc, color);
 			gdk_draw_rectangle (canvas->layout.bin_window,
 					    canvas->pixmap_gc,
 					    TRUE,
@@ -3000,15 +2997,15 @@ gnome_canvas_paint_rect (GnomeCanvas *canvas, gint x0, gint y0, gint x1, gint y1
 
 		/* Copy the pixmap to the window and clean up */
 
-		gdk_draw_pixmap (canvas->layout.bin_window,
-				 canvas->pixmap_gc,
-				 pixmap,
-				 0, 0,
-				 draw_x1 + canvas->zoom_xofs,
-				 draw_y1 + canvas->zoom_yofs,
-				 draw_width, draw_height);
+		gdk_draw_drawable (canvas->layout.bin_window,
+				   canvas->pixmap_gc,
+				   pixmap,
+				   0, 0,
+				   draw_x1 + canvas->zoom_xofs,
+				   draw_y1 + canvas->zoom_yofs,
+				   draw_width, draw_height);
 
-		gdk_pixmap_unref (pixmap);
+		g_object_unref (pixmap);
 	}
 }
 

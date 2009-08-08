@@ -24,10 +24,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#define GTK_TEXT_USE_INTERNAL_UNSUPPORTED_API
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
-#include <gtk/gtktextlayout.h>
+#define GTK_TEXT_USE_INTERNAL_UNSUPPORTED_API
+#include <gtk/gtktextdisplay.h>
 
 #include "gnome-canvas.h"
 #include "gnome-canvas-util.h"
@@ -1252,7 +1252,7 @@ gnome_canvas_rich_text_button_press_event(GnomeCanvasItem *item,
 	event_type = event->type;
 	if (event_type == GDK_BUTTON_PRESS) {
 		text->_priv->clicks++;
-		text->_priv->click_timeout = gtk_timeout_add(400, _click, text);
+		text->_priv->click_timeout = g_timeout_add(400, _click, text);
 
 		if (text->_priv->clicks > 3)
 			text->_priv->clicks = text->_priv->clicks % 3;
@@ -1616,10 +1616,10 @@ blink_cb(gpointer data)
 
 	visible = gtk_text_layout_get_cursor_visible(text->_priv->layout);
 	if (visible)
-		text->_priv->blink_timeout = gtk_timeout_add(
+		text->_priv->blink_timeout = g_timeout_add(
 			CURSOR_OFF_TIME, blink_cb, text);
 	else
-		text->_priv->blink_timeout = gtk_timeout_add(
+		text->_priv->blink_timeout = g_timeout_add(
 			CURSOR_ON_TIME, blink_cb, text);
 
 	gtk_text_layout_set_cursor_visible(text->_priv->layout, !visible);
@@ -1639,25 +1639,25 @@ gnome_canvas_rich_text_start_cursor_blink(GnomeCanvasRichText *text,
 		return;
 
 	if (text->_priv->preblink_timeout != 0) {
-		gtk_timeout_remove(text->_priv->preblink_timeout);
+		g_source_remove(text->_priv->preblink_timeout);
 		text->_priv->preblink_timeout = 0;
 	}
 
 	if (with_delay) {
 		if (text->_priv->blink_timeout != 0) {
-			gtk_timeout_remove(text->_priv->blink_timeout);
+			g_source_remove(text->_priv->blink_timeout);
 			text->_priv->blink_timeout = 0;
 		}
 
 		gtk_text_layout_set_cursor_visible(text->_priv->layout, TRUE);
 
-		text->_priv->preblink_timeout = gtk_timeout_add(
+		text->_priv->preblink_timeout = g_timeout_add(
 			PREBLINK_TIME, preblink_cb, text);
 	}
 	else {
 		if (text->_priv->blink_timeout == 0) {
 			gtk_text_layout_set_cursor_visible(text->_priv->layout, TRUE);
-			text->_priv->blink_timeout = gtk_timeout_add(
+			text->_priv->blink_timeout = g_timeout_add(
 				CURSOR_ON_TIME, blink_cb, text);
 		}
 	}
@@ -1667,7 +1667,7 @@ static void
 gnome_canvas_rich_text_stop_cursor_blink(GnomeCanvasRichText *text)
 {
 	if (text->_priv->blink_timeout) {
-		gtk_timeout_remove(text->_priv->blink_timeout);
+		g_source_remove(text->_priv->blink_timeout);
 		text->_priv->blink_timeout = 0;
 	}
 } /* gnome_canvas_rich_text_stop_cursor_blink */
@@ -1697,7 +1697,7 @@ invalidated_handler(GtkTextLayout *layout, gpointer data)
 
 	/* We are called from the update cycle; gotta put this in an idle
 	   loop. */
-	gtk_idle_add(request_update, text);
+	g_idle_add(request_update, text);
 } /* invalidated_handler */
 
 static void
@@ -1747,7 +1747,7 @@ changed_handler(GtkTextLayout *layout, gint start_y,
 
 	/* We are called from the update cycle; gotta put this in an idle
 	   loop. */
-	gtk_idle_add(request_update, text);
+	g_idle_add(request_update, text);
 } /* changed_handler */
 
 

@@ -578,7 +578,7 @@ gnome_canvas_text_destroy (GtkObject *object)
 	text->attr_list = NULL;
 	
 	if (text->stipple)
-		gdk_bitmap_unref (text->stipple);
+		g_object_unref (text->stipple);
 	text->stipple = NULL;
 
 	if (text->priv && text->priv->bitmap.buffer) {
@@ -696,11 +696,11 @@ static void
 set_stipple (GnomeCanvasText *text, GdkBitmap *stipple, int reconfigure)
 {
 	if (text->stipple && !reconfigure)
-		gdk_bitmap_unref (text->stipple);
+		g_object_unref (text->stipple);
 
 	text->stipple = stipple;
 	if (stipple && !reconfigure)
-		gdk_bitmap_ref (stipple);
+		g_object_ref (stipple);
 
 	if (text->gc) {
 		if (stipple) {
@@ -1259,11 +1259,11 @@ gnome_canvas_text_get_property (GObject            *object,
 		break;
 
 	case PROP_FILL_COLOR:
-                g_value_set_string_take_ownership (value,
-						   g_strdup_printf ("#%02x%02x%02x",
-                                                                    text->rgba >> 24,
-                                                                    (text->rgba >> 16) & 0xff,
-                                                                    (text->rgba >> 8) & 0xff));
+		g_value_take_string (value,
+				     g_strdup_printf ("#%02x%02x%02x",
+				     text->rgba >> 24,
+				     (text->rgba >> 16) & 0xff,
+				     (text->rgba >> 8) & 0xff));
 		break;
 
 	case PROP_FILL_COLOR_GDK: {
@@ -1435,7 +1435,7 @@ gnome_canvas_text_unrealize (GnomeCanvasItem *item)
 
 	text = GNOME_CANVAS_TEXT (item);
 
-	gdk_gc_unref (text->gc);
+	g_object_unref (text->gc);
 	text->gc = NULL;
 
 	if (parent_class->unrealize)

@@ -50,7 +50,7 @@ static void   gnome_canvas_bpath_update      (GnomeCanvasItem *item, double *aff
 
 static GnomeCanvasShapeClass *parent_class;
 
-GtkType
+GType
 gnome_canvas_bpath_get_type (void)
 {
 	static GType bpath_type;

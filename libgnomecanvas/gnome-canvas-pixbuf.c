@@ -279,7 +279,7 @@ gnome_canvas_pixbuf_destroy (GtkObject *object)
 	    gnome_canvas_request_redraw (item->canvas, item->x1, item->y1, item->x2, item->y2);
 
 	    if (priv->pixbuf)
-		gdk_pixbuf_unref (priv->pixbuf);
+		g_object_unref (priv->pixbuf);
 
 	    g_free (priv);
 	    gcp->priv = NULL;
@@ -327,11 +327,11 @@ gnome_canvas_pixbuf_set_property (GObject            *object,
 				g_return_if_fail
 				    (gdk_pixbuf_get_bits_per_sample (pixbuf) == 8);
 
-				gdk_pixbuf_ref (pixbuf);
+				g_object_ref (pixbuf);
 			}
 
 			if (priv->pixbuf)
-				gdk_pixbuf_unref (priv->pixbuf);
+				g_object_unref (priv->pixbuf);
 
 			priv->pixbuf = pixbuf;
 		}
@@ -884,16 +884,14 @@ gnome_canvas_pixbuf_draw (GnomeCanvasItem *item, GdkDrawable *drawable,
 					   w * 4,
 					   NULL, NULL);
 
-	gdk_pixbuf_render_to_drawable_alpha (pixbuf, drawable,
-					     0, 0,
-					     d_rect.x0 - x, d_rect.y0 - y,
-					     w, h,
-					     GDK_PIXBUF_ALPHA_FULL,
-					     0,
-					     GDK_RGB_DITHER_MAX,
-					     d_rect.x0, d_rect.y0);
+	gdk_draw_pixbuf (drawable, NULL, pixbuf,
+			 0, 0,
+			 d_rect.x0 - x, d_rect.y0 - y,
+			 w, h,
+			 GDK_RGB_DITHER_MAX,
+			 d_rect.x0, d_rect.y0);
 
-	gdk_pixbuf_unref (pixbuf);
+	g_object_unref (pixbuf);
 	g_free (buf);
 }
 
@@ -961,7 +959,7 @@ gnome_canvas_pixbuf_render (GnomeCanvasItem *item, GnomeCanvasBuf *buf)
 				   GDK_INTERP_BILINEAR,
 				   255);
 
-	    gdk_pixbuf_unref (dest_pixbuf);
+	    g_object_unref (dest_pixbuf);
 	  }
 	else if (gdk_pixbuf_get_has_alpha(priv->pixbuf))
 		art_rgb_rgba_affine (buf->buf,

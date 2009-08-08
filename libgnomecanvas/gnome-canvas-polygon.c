@@ -42,15 +42,12 @@
 
 #include "gnome-canvas-shape.h"
 
-
 #define NUM_STATIC_POINTS 256	/* Number of static points to use to avoid allocating arrays */
-
 
 enum {
 	PROP_0,
 	PROP_POINTS
 };
-
 
 static void gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class);
 static void gnome_canvas_polygon_init       (GnomeCanvasPolygon      *poly);
