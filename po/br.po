@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2009-05-18 02:28+0000\n"
-"PO-Revision-Date: 2009-09-04 13:09+0100\n"
+"PO-Revision-Date: 2009-09-08 04:40+0100\n"
 "Last-Translator: Denis\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgstr "Stil an nodrezh"
 #: ../libgnomecanvas/gnome-canvas-text.c:286
 #: ../libgnomecanvas/gnome-canvas-text.c:287
 msgid "Font variant"
-msgstr ""
+msgstr "Adstumm an nodrezh"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:296
 #: ../libgnomecanvas/gnome-canvas-text.c:297
@@ -115,16 +115,14 @@ msgid "Font size in points (eg. 12 for a 12pt font size)"
 msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
-#, fuzzy
 msgid "Rise"
-msgstr "Sevel"
+msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
 msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
-#, fuzzy
 msgid "Strikethrough"
 msgstr "Barrennet"
 
@@ -347,14 +345,12 @@ msgid "Justification mode"
 msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:308
-#, fuzzy
 msgid "Direction"
-msgstr "Tuadur"
+msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:309
-#, fuzzy
 msgid "Text direction"
-msgstr "Tuadur an destenn"
+msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
