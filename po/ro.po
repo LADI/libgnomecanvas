@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-10 03:38+0000\n"
-"PO-Revision-Date: 2008-09-18 21:35+0300\n"
+"PO-Revision-Date: 2009-09-20 00:02+0300\n"
 "Last-Translator: Mișu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -335,7 +335,7 @@ msgstr "Formatare rânduri"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:292
 msgid "Wrap mode for multiline text"
-msgstr "Rupe rândurile pentru textul ce se întinde pe mai multe linii"
+msgstr "Rupe rândurile pentru textul pe mai multe linii"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification"
