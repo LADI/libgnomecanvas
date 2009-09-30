@@ -11,7 +11,10 @@ INCLUDES = \
 	$(CANVAS_GLADE_CFLAGS)
 
 glademoduledir = $(libdir)/libglade/2.0
+
+if USE_GLADE
 glademodule_LTLIBRARIES = libcanvas.la
+endif
 
 libcanvas_la_LIBADD = \
 	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la	\

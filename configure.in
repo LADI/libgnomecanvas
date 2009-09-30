@@ -97,7 +97,15 @@ if test "$enable_maintainer_mode" = "yes"; then
 	AC_SUBST(LIBGNOMECANVAS_DEPRECATED_CFLAGS)
 fi
 
-PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= libglade_required_version)
+AC_ARG_ENABLE(glade,
+              AC_HELP_STRING([--enable-glade],
+	                     [enable glade support]),,
+	      [enable_glade=no])
+AM_CONDITIONAL(USE_GLADE, test "$enable_glade" = yes)
+
+if test "$enable_glade" = yes; then
+  PKG_CHECK_MODULES(CANVAS_GLADE, $CANVAS_MODULES libglade-2.0 >= libglade_required_version)
+fi
 
 AC_MSG_CHECKING([for native Win32])
 case "$host" in
@@ -202,3 +210,15 @@ docs/reference/Makefile
 ])
 
 AC_OUTPUT
+
+echo "
+Configure summary:
+
+	Compiler....................: ${CC}
+	Compiler Flags..............: ${CFLAGS}
+	Prefix .....................: ${prefix}
+
+	Glade support...............: ${enable_glade}
+	Rebuilds....................: ${enable_rebuilds}
+	Win32.......................: ${platform_win32}
+"
