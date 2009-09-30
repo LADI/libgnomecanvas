@@ -71,7 +71,7 @@ gnome_canvas_polygon_get_type (void)
 	static GType polygon_type;
 
 	if (!polygon_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasPolygonClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

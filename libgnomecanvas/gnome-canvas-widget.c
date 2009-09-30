@@ -81,7 +81,7 @@ gnome_canvas_widget_get_type (void)
 	static GType widget_type;
 
 	if (!widget_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasWidgetClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

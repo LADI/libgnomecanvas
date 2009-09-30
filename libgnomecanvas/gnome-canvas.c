@@ -144,7 +144,7 @@ gnome_canvas_item_get_type (void)
 	static GType canvas_item_type;
 
 	if (!canvas_item_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasItemClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
@@ -1357,7 +1357,7 @@ gnome_canvas_group_get_type (void)
 	static GType canvas_group_type;
 
 	if (!canvas_group_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasGroupClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
@@ -1948,7 +1948,7 @@ gnome_canvas_get_type (void)
 	static GType canvas_type;
 
 	if (!canvas_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

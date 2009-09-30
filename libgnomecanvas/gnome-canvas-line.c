@@ -117,7 +117,7 @@ gnome_canvas_line_get_type (void)
 	static GType line_type;
 
 	if (!line_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasLineClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

@@ -122,7 +122,7 @@ gnome_canvas_pixbuf_get_type (void)
 	static GType pixbuf_type;
 
 	if (!pixbuf_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasPixbufClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

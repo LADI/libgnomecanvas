@@ -161,7 +161,7 @@ gnome_canvas_text_get_type (void)
 	static GType text_type;
 
 	if (!text_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasTextClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

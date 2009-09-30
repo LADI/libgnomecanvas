@@ -100,7 +100,7 @@ gnome_canvas_shape_get_type (void)
 	static GType shape_type;
 
 	if (!shape_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasShapeClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

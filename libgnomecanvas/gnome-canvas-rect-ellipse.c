@@ -81,7 +81,7 @@ gnome_canvas_re_get_type (void)
 	static GType re_type;
 
 	if (!re_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasREClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
@@ -256,7 +256,7 @@ gnome_canvas_rect_get_type (void)
 	static GType rect_type;
 
 	if (!rect_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasRectClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
@@ -324,7 +324,7 @@ gnome_canvas_ellipse_get_type (void)
 	static GType ellipse_type;
 
 	if (!ellipse_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasEllipseClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

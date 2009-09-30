@@ -157,7 +157,7 @@ gnome_canvas_rich_text_get_type(void)
 	static GType rich_text_type;
 
 	if (!rich_text_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasRichTextClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

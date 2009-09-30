@@ -95,7 +95,7 @@ gnome_canvas_clipgroup_get_type (void)
 	static GType clipgroup_type;
 
 	if (!clipgroup_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasClipgroupClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,

@@ -56,7 +56,7 @@ gnome_canvas_bpath_get_type (void)
 	static GType bpath_type;
 
 	if (!bpath_type) {
-		static const GTypeInfo object_info = {
+		const GTypeInfo object_info = {
 			sizeof (GnomeCanvasBpathClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
