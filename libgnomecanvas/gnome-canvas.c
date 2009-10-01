@@ -2517,6 +2517,10 @@ emit_event (GnomeCanvas *canvas, GdkEvent *event)
 			mask = GDK_KEY_RELEASE_MASK;
 			break;
 
+		case GDK_SCROLL:
+			mask = GDK_SCROLL_MASK;
+			break;
+
 		default:
 			mask = 0;
 			break;
