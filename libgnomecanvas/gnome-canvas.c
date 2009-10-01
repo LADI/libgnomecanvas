@@ -3105,31 +3105,13 @@ paint (GnomeCanvas *canvas)
 			gdkrect.width = clipped.x1 - clipped.x0;
 			gdkrect.height = clipped.y1 - clipped.y0;
 
-			gdk_region_union_with_rect (region, &gdkrect);
+			region = gdk_region_rectangle (&gdkrect);
+			gdk_window_invalidate_region (canvas->layout.bin_window, region, FALSE);
+			gdk_region_destroy (region);
 		}
 	}
 
 	art_free (rects);
-
-	/* Expose! */
-
-	gdk_region_get_clipbox (region, &region_area);
-
-	expose_event.type = GDK_EXPOSE;
-	expose_event.window = canvas->layout.bin_window;
-	expose_event.send_event = TRUE;
-	expose_event.area.x = region_area.x;
-	expose_event.area.y = region_area.y;
-	expose_event.area.width = region_area.width;
-	expose_event.area.height = region_area.height;
-	expose_event.region = region;
-	expose_event.count = 0;
-
-	gdk_window_begin_paint_region (canvas->layout.bin_window, region);
-	gtk_widget_send_expose (GTK_WIDGET (canvas), (GdkEvent *) &expose_event);
-	gdk_window_end_paint (canvas->layout.bin_window);
-
-	gdk_region_destroy (region);
 
 	canvas->redraw_x1 = 0;
 	canvas->redraw_y1 = 0;
