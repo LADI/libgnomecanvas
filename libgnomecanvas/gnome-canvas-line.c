@@ -879,7 +879,8 @@ gnome_canvas_line_get_property (GObject              *object,
 
 	switch (param_id) {
 	case PROP_POINTS:
-		g_value_set_boxed (value, get_points (line));
+		/* get_points returns a copy */
+		g_value_set_boxed_take_ownership (value, get_points (line));
 		break;
 
 	case PROP_FILL_COLOR:
@@ -964,7 +965,7 @@ gnome_canvas_line_get_property (GObject              *object,
 
 static void
 gnome_canvas_line_render (GnomeCanvasItem *item,
-			     GnomeCanvasBuf *buf)
+			  GnomeCanvasBuf *buf)
 {
 	GnomeCanvasLine *line;
 
