@@ -2,7 +2,11 @@ AUTOMAKE_OPTIONS = 1.7
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 
-SUBDIRS = libgnomecanvas glade demos po tests docs
+SUBDIRS = libgnomecanvas glade demos po docs
+
+if USE_GLADE
+SUBDIRS += tests
+endif
 
 EXTRA_DIST = \
 	COPYING.LIB		\
