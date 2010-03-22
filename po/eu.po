@@ -1,21 +1,22 @@
-# translation of libgnomecanvas.HEAD.po to Basque
+# translation of eu.po to Basque
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2007, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas.HEAD\n"
+"Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-30 18:38+0200\n"
-"PO-Revision-Date: 2007-03-29 13:26+0200\n"
+"PO-Revision-Date: 2010-03-22 15:57+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
@@ -74,8 +75,7 @@ msgstr "Letra-tipoen familia"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:260
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
-msgstr ""
-"Letra-tipoen familien izena; adibidez, Sans, Helvetica, Times, Monospace"
+msgstr "Letra-tipoen familien izena; adibidez, Sans, Helvetica, Times, Monospace"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
@@ -106,7 +106,7 @@ msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
 msgstr ""
-"Letra-tamaina (PANGO_SCALEren anitzkoitza, adib. 12*PANGO_SCALE 12pt-tako "
+"Letra-tamaina (PANGO_SCALEren anizkoitza, adib. 12*PANGO_SCALE 12pt-tako "
 "letra-tamaina zehazteko)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
@@ -124,8 +124,7 @@ msgid "Rise"
 msgstr "Goratzea"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid ""
-"Offset of text above the baseline (below the baseline if rise is negative)"
+msgid "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Testuaren desplazamendua oinarri-lerroaren gainetik (oinarri-lerroaren "
 "azpitik goratzea negatiboa bada)"
@@ -194,8 +193,7 @@ msgstr "Letra-tipoen familiaren ezarpena"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr ""
-"Etiketa honek letra-tipoen familiari eragiten dion ala ez adierazten du"
+msgstr "Etiketa honek letra-tipoen familiari eragiten dion ala ez adierazten du"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -203,8 +201,7 @@ msgstr "Letra-tipoen estiloaren ezarpena"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr ""
-"Etiketa honek letra-tipoen estiloari eragiten dion ala ez adierazten du"
+msgstr "Etiketa honek letra-tipoen estiloari eragiten dion ala ez adierazten du"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -212,8 +209,7 @@ msgstr "Letra-tipoen aldaeraren ezarpena"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr ""
-"Etiketa honek letra-tipoen aldaerari eragiten dion ala ez adierazten du"
+msgstr "Etiketa honek letra-tipoen aldaerari eragiten dion ala ez adierazten du"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -229,8 +225,7 @@ msgstr "Letra-tipo tiratuaren ezarpena"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr ""
-"Etiketa honek letra-tipoaren luzatzeari eragiten dion ala ez adierazten du"
+msgstr "Etiketa honek letra-tipoaren luzatzeari eragiten dion ala ez adierazten du"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -270,8 +265,7 @@ msgstr "Eskala ezartzea"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr ""
-"Etiketa honek letra-tipoaren eskalari eragiten dion ala ez adierazten du"
+msgstr "Etiketa honek letra-tipoaren eskalari eragiten dion ala ez adierazten du"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:212
 msgid "Text to display"
@@ -420,3 +414,4 @@ msgstr "Koska"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:373
 msgid "Number of pixels for indentation"
 msgstr "Koskarako pixel-kopurua"
+
