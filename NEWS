@@ -1,3 +1,37 @@
+libgnomecanvas 2.30.0
+---------------------
+
+What's new since 2.26.0
+
+Bug fixes
+	* Do not use deprecated API (Kjartan Maraas, Andre Klapper)
+	* Reduce relocations (Christian Persch)
+	* Make glade support optional at configure time (Sven Neumann, Robert
+	  Ancell)
+	* Forward scroll events to items holding a grap (Paul Davis)
+	* Make the paint method work on Quartz too (Paul Davis)
+	* Getting GnomeCanvasLine's points property leaks (Torsten Shoenfeld)
+	* Fix linking with pedantic linkers (Matthias Clasen)
+
+Translations
+	* Khaled Hosny (ar)
+	* astur (ast)
+	* Israt Jahan (bn)
+	* Runa Bhattacharjee (bn_IN)
+	* Denis Arnaud (br)
+	* Jordi Mallach (ca)
+	* Carles Ferrando Garcia (ca@valencia)
+	* Lucas Lommer (cs)
+	* Iestyn Pryce (cy)
+	* Thomas Thurman (en@shaw)
+	* Iñaki Larrañaga Murgoitio (eu)
+	* Fran Diéguez (gl)
+	* Shankar Prasad (kn)
+	* Leonardo Ferreira Fontenelle (pt_BR)
+	* Mișu Moldovan (ro)
+	* Yuri Kozlov (ru)
+	* Ni Hui (zh_CN)
+
 libgnomecanvas 2.26.0
 ---------------------
 
