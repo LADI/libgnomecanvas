@@ -1,3 +1,11 @@
+libgnomecanvas 2.30.1
+---------------------
+
+What's new since 2.30.0
+
+Bug fixes
+	* Fix background drawing (Paul Davis)
+
 libgnomecanvas 2.30.0
 ---------------------
 
