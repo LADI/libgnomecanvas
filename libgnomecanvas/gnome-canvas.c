@@ -2954,6 +2954,7 @@ gnome_canvas_paint_rect (GnomeCanvas *canvas, gint x0, gint y0, gint x1, gint y1
 		buf.rect.x1 = draw_x2;
 		buf.rect.y1 = draw_y2;
 		color = &widget->style->bg[GTK_STATE_NORMAL];
+		buf.bg_color = (((color->red & 0xff00) << 8) | (color->green & 0xff00) | (color->blue >> 8));
 		buf.is_bg = 1;
 		buf.is_buf = 0;
 
