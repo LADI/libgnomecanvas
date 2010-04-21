@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas.HEAD.kn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 14:31+0100\n"
+"POT-Creation-Date: 2010-04-21 11:58+0530\n"
 "PO-Revision-Date: 2009-03-25 17:31+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -104,7 +104,9 @@ msgstr "ಆಕ್ಷರ ಶೈಲಿಯ ಗಾತ್ರ"
 msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
-msgstr "ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ (PANGO_SCALE ನ ಗುಣಕವಾಗಿ, ಉದಾ. 12*PANGO_SCALE ವು ಒಂದು 12pt ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರವನ್ನು ಸೂಚಿಸುತ್ತದೆ)"
+msgstr ""
+"ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ (PANGO_SCALE ನ ಗುಣಕವಾಗಿ, ಉದಾ. 12*PANGO_SCALE ವು ಒಂದು 12pt "
+"ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರವನ್ನು ಸೂಚಿಸುತ್ತದೆ)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -112,14 +114,16 @@ msgstr "ಅಕ್ಷರಶೈಲಿಯ ಪಾಯಿಂಟುಗಳು"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ ಪಾಯಿಂಟುಗಳಲ್ಲಿ (. 12 ಒಂದು 12pt ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರವನ್ನು ಸೂಚಿಸುತ್ತದೆ)"
+msgstr ""
+"ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ ಪಾಯಿಂಟುಗಳಲ್ಲಿ (. 12 ಒಂದು 12pt ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರವನ್ನು ಸೂಚಿಸುತ್ತದೆ)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
 msgstr "ಏರಿಸು"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr "ಬೇಸ್‌ಲೈನಿನ ಮೇಲಿನ ಪಠ್ಯದ ಆಫ್‌ಸೆಟ್‌ (ಏರಿಕೆಯು ಋಣವಾಗಿದ್ದಲ್ಲಿ ಬೇಸ್‌ಲೈನಿನ ಕೆಳಗೆ)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
@@ -407,4 +411,3 @@ msgstr "ಇಂಡೆಂಟೇಶನ್"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "ಇಂಡೆಂಟೇಶನ್‌ಗೆ ಪಿಕ್ಸೆಲ್‌ಗಳ ಸಂಖ್ಯೆ"
-
