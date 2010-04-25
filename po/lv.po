@@ -5,19 +5,22 @@
 #
 # Peteris Krisjanis <peteris.krisjanis@os.lv>, 2002.
 # Raivis Dejus <orvils@gmail.com>, 2006, 2009.
+# Peteris Krisjanis <pecisk@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 14:31+0100\n"
-"PO-Revision-Date: 2009-01-24 18:44+0200\n"
-"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2010-03-27 12:49+0000\n"
+"PO-Revision-Date: 2010-04-25 18:59+0300\n"
+"Last-Translator: Peteris Krisjanis <pecisk@gmail.com>\n"
+"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:218
@@ -29,13 +32,13 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2052
+#: ../libgnomecanvas/gnome-canvas.c:2051
 msgid "Antialiased"
-msgstr "Antialiasēts"
+msgstr "Kropļojumnovērsums"
 
-#: ../libgnomecanvas/gnome-canvas.c:2053
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "The antialiasing mode of the canvas."
-msgstr "Attēla antialiasinga režīms."
+msgstr "Attēla kropļojumnovērses režīms."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:210
@@ -106,7 +109,9 @@ msgstr "Fonta izmērs"
 msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
-msgstr "Fonta izmērs (kā PANGO_SCALE pavairotājs, piem. 12*PANGO_SCALE lai iegūtu 12pt fonta izmēru)"
+msgstr ""
+"Fonta izmērs (kā PANGO_SCALE pavairotājs, piem. 12*PANGO_SCALE lai iegūtu "
+"12pt fonta izmēru)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -114,21 +119,22 @@ msgstr "Fonta punkti"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "Fonta izmērs punktos (piem. 12 lai iegūtu 12pt fonta izmēru)"
+msgstr "Fonta izmērs punktos (piem., 12 lai iegūtu 12pt fonta izmēru)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
 msgstr "Pacēlums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
 "Teksta nobīde virs bāzes līnijas (zem bāzes līnijas, ja pacelšana ir "
 "negatīva)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "Caursvītrot"
+msgstr "Caursvītrojums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -136,11 +142,11 @@ msgstr "Vai caursvītrot tekstu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
-msgstr "Pasvītrots"
+msgstr "Pasvītrojums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:361
 msgid "Style of underline for this text"
-msgstr "Pasvītrotais stils šim tekstam"
+msgstr "Pasvītrojuma stils šim tekstam"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:370
 msgid "Scale"
@@ -148,7 +154,7 @@ msgstr "Mērogs"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr "Fonta izmērs, relatīvs attiecība uz noklusēto izmēru"
+msgstr "Fonta izmērs, relatīvs attiecībā uz noklusēto izmēru"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:425
 #: ../libgnomecanvas/gnome-canvas-text.c:433
@@ -166,7 +172,7 @@ msgstr "Teksta krāsa, kā GdkColor"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Teksta krāsa, kā R/G/B/A kombinēts skaitlis"
+msgstr "Teksta krāsa, kā R/G/B/A kombinēts vesels skaitlis"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -186,7 +192,7 @@ msgstr "Renderēta teksta augstums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:472
 msgid "Font family set"
-msgstr "Fonta ģimenes iestādījums"
+msgstr "Fonta ģimenes iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
@@ -194,7 +200,7 @@ msgstr "Vai šis tags ietekmē fonta kopu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
-msgstr "Fonta stila iestādījums"
+msgstr "Fonta stila iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
@@ -202,7 +208,7 @@ msgstr "Vai šis tags ietekmē fonta stilu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
-msgstr "Fonta varianta iestādījums"
+msgstr "Fonta varianta iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
@@ -210,7 +216,7 @@ msgstr "Vai šis tags ietekmē fonta variantu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Fonta smaguma iestādījums"
+msgstr "Fonta smaguma iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
@@ -218,7 +224,7 @@ msgstr "Vai šis tags ietekmē fonta 'smagumu'"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Fonta izstiepuma iestādījums"
+msgstr "Fonta izstiepuma iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
@@ -226,7 +232,7 @@ msgstr "Vai šis tags ietekmē fonta izstiepumu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
-msgstr "Fonta izmēra iestādījums"
+msgstr "Fonta izmēra iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
@@ -234,7 +240,7 @@ msgstr "Vai šis tags ietekmē fonta izmēru"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "Pacēluma iestādījums"
+msgstr "Pacēluma iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
@@ -242,7 +248,7 @@ msgstr "Vai šis tags ietekmē pacēlumu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "Caursvītrošanas iestādījums"
+msgstr "Caursvītrošanas iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -250,7 +256,7 @@ msgstr "Vai šis tags ietekmē caursvītrošanu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "Pasvītrošanas iestādījums"
+msgstr "Pasvītrošanas iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
@@ -258,7 +264,7 @@ msgstr "Vai šis tags ietekmē pasvītrošanu"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr "Mēroga iestādījums"
+msgstr "Mēroga iestatījums"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
@@ -266,7 +272,7 @@ msgstr "Vai šis tags ietekmē fonta mērogošanu"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
-msgstr "Parādāmais teksts"
+msgstr "Attēlojamais teksts"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X position"
@@ -310,7 +316,7 @@ msgstr "Vai šis teksta priekšmets ir redzams?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Cursor Visible"
-msgstr "Kursors Redzams"
+msgstr "Kursora redzamība"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Is the cursor visible in this rich text item?"
@@ -318,7 +324,7 @@ msgstr "Vai kursors ir redzams šajā teksta priekšmetā?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
-msgstr "Kursors mirgošana"
+msgstr "Kursora mirgošana"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
@@ -326,27 +332,27 @@ msgstr "Vai kursors mirgo šajā teksta priekšmetā?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
-msgstr "Augošs Augstums"
+msgstr "Augošs augstums"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Vai teksta kastītei vajadzētu augt ja teksts neiekļaujas tajā?"
+msgstr "Vai teksta kastītei vajadzētu augt, ja teksts neiekļaujas tajā?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "Iekļausanas Režīms"
+msgstr "Aplaušanas režīms"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
-msgstr "Iekļaušanas režīms vairāklīniju tekstam"
+msgstr "Aplaušanas režīms vairāklīniju tekstam"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
-msgstr "Taisnošana"
+msgstr "Izlīdzināšana"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
-msgstr "Taisnošanas režīms"
+msgstr "Izlīdzināšanas režīms"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
@@ -366,15 +372,15 @@ msgstr "Enkura punkts tekstam"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
-msgstr "Pikseļi Starp Rindām"
+msgstr "Pikseļi virs rindām"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
-msgstr "Pikseļu skaits, ko novietot starp rindām"
+msgstr "Pikseļu skaits, ko novietot virs rindām"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
-msgstr "Pikseļi Zem Rindām"
+msgstr "Pikseļi zem rindām"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
@@ -382,11 +388,11 @@ msgstr "Pikseļu skaits, ko novietot zem rindām"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
-msgstr "Pikseļu Iekšpusē Iekļaušana"
+msgstr "Pikseļu skaits iekļāvuma iekšpusē"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
-msgstr "Pikseļu daudzums, ko ievietot iekļaušanas iekšienē"
+msgstr "Pikseļu daudzums, ko ievietot iekļāvuma iekšienē"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
@@ -410,5 +416,5 @@ msgstr "Atkāpju veidošana"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
-msgstr "Pikseļu daudzums atkāpei"
+msgstr "Atkāpes pikseļu daudzums"
 
