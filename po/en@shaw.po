@@ -4,13 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: metacity\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2009-11-06 19:17+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2010-05-07 07:29+0000\n"
+"PO-Revision-Date: 2010-05-12 18:37 -0400\n"
 "Last-Translator: Thomas Thurman <tthurman@gnome.org>\n"
-"Language-Team: Shavian <ubuntu-l10n-en-shaw@lists.launchpad.net>\n"
+"Language-Team: Shavian <ubuntu-l10n-en-shaw@launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:218
@@ -21,6 +23,16 @@ msgstr "X"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y"
 msgstr "Y"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas.c:2051
+msgid "Antialiased"
+msgstr "Antialiased"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas.c:2052
+msgid "The antialiasing mode of the canvas."
+msgstr "𐑞 antialiasing 𐑥𐑴𐑛 𐑝 𐑞 𐑒𐑨𐑯𐑝𐑩𐑕."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:210
@@ -51,9 +63,19 @@ msgstr "𐑓𐑪𐑯𐑑 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯 𐑨𐑟 𐑩 
 msgid "Font description"
 msgstr "𐑓𐑪𐑯𐑑 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
 
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:251
+msgid "Font description as a PangoFontDescription struct"
+msgstr "𐑓𐑪𐑯𐑑 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯 𐑨𐑟 𐑩 PangoFontDescription struct"
+
 #: ../libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
 msgstr "𐑓𐑪𐑯𐑑 𐑓𐑨𐑥𐑦𐑤𐑦"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:260
+msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
+msgstr "𐑯𐑱𐑥 𐑝 𐑞 𐑓𐑪𐑯𐑑 𐑓𐑨𐑥𐑦𐑤𐑦, 𐑧.𐑡𐑰. 𐑕𐑨𐑯𐑟, Helvetica, 𐑑𐑲𐑥𐑟, Monospace"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:276
 #: ../libgnomecanvas/gnome-canvas-text.c:277
@@ -79,9 +101,22 @@ msgstr "𐑓𐑪𐑯𐑑 𐑕𐑑𐑮𐑧𐑗"
 msgid "Font size"
 msgstr "𐑓𐑪𐑯𐑑 𐑕𐑲𐑟"
 
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:319
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr ""
+"𐑓𐑪𐑯𐑑 𐑕𐑲𐑟 (𐑨𐑟 𐑩 𐑥𐑳𐑤𐑑𐑦𐑐𐑩𐑤 𐑝 PANGO_SCALE, eg. 12*PANGO_SCALE 𐑓𐑹 𐑩 12pt 𐑓𐑪𐑯𐑑 𐑕𐑲𐑟)"
+
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
 msgstr "𐑓𐑪𐑯𐑑 𐑐𐑶𐑯𐑑𐑕"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:330
+msgid "Font size in points (eg. 12 for a 12pt font size)"
+msgstr "𐑓𐑪𐑯𐑑 𐑕𐑲𐑟 𐑦𐑯 𐑐𐑶𐑯𐑑𐑕 (eg. 12 𐑓𐑹 𐑩 12pt 𐑓𐑪𐑯𐑑 𐑕𐑲𐑟)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
@@ -91,6 +126,11 @@ msgstr "𐑮𐑲𐑟"
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr "𐑪𐑓𐑕𐑧𐑑 𐑝 𐑑𐑧𐑒𐑕𐑑 𐑩𐑚𐑳𐑝 𐑞 𐑚𐑱𐑕𐑤𐑲𐑯 (𐑚𐑩𐑤𐑴 𐑞 𐑚𐑱𐑕𐑤𐑲𐑯 𐑦𐑓 𐑮𐑲𐑟 𐑦𐑟 𐑯𐑧𐑜𐑩𐑑𐑦𐑝)"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:351
+msgid "Strikethrough"
+msgstr "Strikethrough"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -121,6 +161,11 @@ msgstr "𐑒𐑳𐑤𐑼"
 #: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
 msgstr "𐑑𐑧𐑒𐑕𐑑 𐑒𐑳𐑤𐑼, 𐑨𐑟 𐑕𐑑𐑮𐑦𐑙"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:434
+msgid "Text color, as a GdkColor"
+msgstr "𐑑𐑧𐑒𐑕𐑑 𐑒𐑳𐑤𐑼, 𐑨𐑟 𐑩 GdkColor"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
@@ -197,6 +242,16 @@ msgstr "𐑮𐑲𐑟 𐑕𐑧𐑑"
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
 msgstr "𐑢𐑧𐑞𐑼 𐑞𐑦𐑕 𐑑𐑨𐑜 𐑩𐑓𐑧𐑒𐑑𐑕 𐑞 𐑮𐑲𐑟"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:500
+msgid "Strikethrough set"
+msgstr "Strikethrough 𐑕𐑧𐑑"
+
+#, fuzzy
+#: ../libgnomecanvas/gnome-canvas-text.c:501
+msgid "Whether this tag affects strikethrough"
+msgstr "𐑢𐑧𐑞𐑼 𐑞𐑦𐑕 𐑑𐑨𐑜 𐑩𐑓𐑧𐑒𐑑𐑕 strikethrough"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -361,3 +416,4 @@ msgstr "𐑦𐑯𐑛𐑧𐑯𐑑𐑱𐑖𐑩𐑯"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "𐑯𐑳𐑥𐑚𐑼 𐑝 𐑐𐑦𐑒𐑕𐑩𐑤𐑟 𐑓𐑹 𐑦𐑯𐑛𐑧𐑯𐑑𐑱𐑖𐑩𐑯"
+
