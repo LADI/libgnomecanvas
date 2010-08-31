@@ -1,30 +1,33 @@
 # Indonesian translation of libgnomecanvas.
 # Copyright (C) 2005 THE lbgnomecanvas'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the libgnomecanvas package.
-# Mohammad DAMT <mdamt@bisnisweb.com>, 2005.
 #
+# Mohammad DAMT <mdamt@bisnisweb.com>, 2005.
+# Dirgita <dirgitadevina@gmail.com>, 2010.
+# Dirgita <dirgitadevina@yahoo.co.id>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=libgnomecanvas&component=general\n"
-"POT-Creation-Date: 2010-04-25 18:21+0000\n"
-"PO-Revision-Date: 2010-05-07 14:28+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Project-Id-Version: libgnomecanvas.master.id\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2010-07-21 11:33+0000\n"
+"PO-Revision-Date: 2010-08-12 17:01+0700\n"
+"Last-Translator: Dirgita <dirgitadevina@yahoo.co.id>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Indonesian\n"
 "X-Poedit-Country: Indonesia\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../libgnomecanvas/gnome-canvas.c:1400
-#: ../libgnomecanvas/gnome-canvas.c:1401
+#: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X"
 msgstr "X"
 
-#: ../libgnomecanvas/gnome-canvas.c:1407
-#: ../libgnomecanvas/gnome-canvas.c:1408
+#: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y"
 msgstr "Y"
@@ -48,11 +51,11 @@ msgstr "Teks yang hendak ditulis"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr "Markup"
+msgstr "Marka"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr "Teks bermarkup yang hendak ditulis"
+msgstr "Teks bermarka yang hendak ditulis"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -60,7 +63,7 @@ msgstr "Fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:242
 msgid "Font description as a string"
-msgstr "Deskripsi fonta sebagai suatu string"
+msgstr "Deskripsi fonta sebagai string"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:250
 msgid "Font description"
@@ -68,7 +71,7 @@ msgstr "Deskripsi fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:251
 msgid "Font description as a PangoFontDescription struct"
-msgstr "Keterangan fonta dalam bentuk struct PangoFontDescription"
+msgstr "Deskripsi fonta dalam bentuk struktur PangoFontDescription"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:259
 msgid "Font family"
@@ -91,40 +94,47 @@ msgstr "Varian fonta"
 #: ../libgnomecanvas/gnome-canvas-text.c:296
 #: ../libgnomecanvas/gnome-canvas-text.c:297
 msgid "Font weight"
-msgstr "Bobot fonta"
+msgstr "Tebal fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:308
 #: ../libgnomecanvas/gnome-canvas-text.c:309
 msgid "Font stretch"
-msgstr "Stretch fonta"
+msgstr "Renggangan fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:318
 msgid "Font size"
 msgstr "Ukuran fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:319
-msgid "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font size)"
-msgstr "Ukuran fonta (sebagai kelipatan dari PANGO_SCALE, mis. 12*PANGO_SCALE bagi ukuran fonta 12pt)"
+msgid ""
+"Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
+"size)"
+msgstr ""
+"Ukuran fonta (kelipatan dari PANGO_SCALE, mis. 12*PANGO_SCALE untuk ukuran "
+"12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
-msgstr "Point fonta"
+msgstr "Poin fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
-msgstr "Ukuran fonta dalam poin (mis. 12 bagi ukuran fonta 12pt)"
+msgstr "Ukuran fonta dalam poin (mis. 12 untuk ukuran 12pt)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "Angkat"
+msgstr "Pengangkatan"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
-msgid "Offset of text above the baseline (below the baseline if rise is negative)"
-msgstr "Jarak dari garis batas bawah fonta (bila dibawah garis, maka nilai bernilai negatif)"
+msgid ""
+"Offset of text above the baseline (below the baseline if rise is negative)"
+msgstr ""
+"Jarak teks dari garis dasar (di atasnya, bernilai negatif apabila di "
+"bawahnya)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
-msgstr "Dicoret"
+msgstr "Coret"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
@@ -154,7 +164,7 @@ msgstr "Warna"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:426
 msgid "Text color, as string"
-msgstr "Warna teks, dalam kata-kata"
+msgstr "Warna teks, dalam format string"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:434
 msgid "Text color, as a GdkColor"
@@ -162,7 +172,7 @@ msgstr "Warna teks, dalam format GdkColor"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:442
 msgid "Text color, as an R/G/B/A combined integer"
-msgstr "Warna teks, dalam format RGBA integer"
+msgstr "Warna teks, dalam format integer RGBA"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:455
 msgid "Text width"
@@ -194,7 +204,7 @@ msgstr "Set gaya fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "Menentukan apakah tag berpengaruh pada gaya fonta"
+msgstr "Menentukan apakah tag ini berpengaruh pada gaya fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -202,23 +212,23 @@ msgstr "Set varian fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Menentukan apakah tag berpegaruh pada jenis fonta"
+msgstr "Menentukan apakah tag ini berpegaruh pada varian fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
-msgstr "Set bobot fonta"
+msgstr "Set tebal fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr "Menentukan apakah tag berpengaruh pada bobot fonta"
+msgstr "Menentukan apakah tag ini berpengaruh pada tebal fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
-msgstr "Set stretch fonta"
+msgstr "Set renggangan fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Menentukan apakah tag berpengaruh pada stretch fonta"
+msgstr "Menentukan apakah tag ini berpengaruh pada renggangan fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -226,15 +236,15 @@ msgstr "Set ukuran fonta"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Menentukan apakah tag berpengaruh pada ukuran font"
+msgstr "Menentukan apakah tag ini berpengaruh pada ukuran font"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr "Set angkat"
+msgstr "Set pengangkatan"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "Menentukan apakah tag berpengaruh pada nilai angkatan"
+msgstr "Menentukan apakah tag ini berpengaruh pada nilai pengangkatan"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -242,7 +252,7 @@ msgstr "Set coretan"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr "Menentukan apakah tag berpengaruh pada coretan"
+msgstr "Menentukan apakah tag ini berpengaruh pada coretan"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
@@ -250,7 +260,7 @@ msgstr "Set garis bawah"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr "Menentukan apakah tag berpengaruh pada garis bawah"
+msgstr "Menentukan apakah tag ini berpengaruh pada garis bawah"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
@@ -258,7 +268,7 @@ msgstr "Set skala"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "Menentukan apakah tag berpengaruh pada skala"
+msgstr "Menentukan apakah tag ini berpengaruh pada skala fonta"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
@@ -290,27 +300,27 @@ msgstr "Tinggi kotak teks"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Editable"
-msgstr "Bisa diedit"
+msgstr "Dapat disunting"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
-msgstr "Apakah kotak teks ini bisa diedit?"
+msgstr "Apakah item teks ini dapat disunting?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Visible"
-msgstr "Kelihatan"
+msgstr "Terlihat"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Is this rich text item visible?"
-msgstr "Apakah kotak teks ini bisa dilihat?"
+msgstr "Apakah item teks ini dapat dilihat?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Cursor Visible"
-msgstr "Kursor Nampak"
+msgstr "Kursor Terlihat"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Is the cursor visible in this rich text item?"
-msgstr "Apakah kursor dalam objek teks ini akan kelihatan?"
+msgstr "Apakah kursor di dalam objek teks ini dapat dilihat?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
@@ -318,23 +328,25 @@ msgstr "Kursor Berkedip"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
-msgstr "Apakah kursor bisa berkedip dalam objek teks ini?"
+msgstr "Apakah kursor bisa berkedip di dalam objek teks ini?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
-msgstr "Tinggi Dikembangkan"
+msgstr "Kembangkan Tinggi"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
-msgstr "Apakah tinggi kotak teks bisa berubah ukurannya sendiri bila teksnya tidak cukup?"
+msgstr ""
+"Apakah tinggi kotak teks bisa berubah ukurannya sendiri bila teksnya tidak "
+"cukup?"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "Lipat Kalimat"
+msgstr "Mode Pembengkokan"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
-msgstr "Mode pelipatakan bagi teks lebih dari sebaris"
+msgstr "Mode pembengkokan untuk teks lebih dari satu baris"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
@@ -354,35 +366,35 @@ msgstr "Arah teks"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
-msgstr "Anchor"
+msgstr "Jangkar"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor point for text"
-msgstr "Titik anchor pada teks"
+msgstr "Titik jangkar pada teks"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
-msgstr "Piksel Di Atas Garis"
+msgstr "Piksel di Atas Baris"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
-msgstr "Jumlah piksel di atas garis"
+msgstr "Jumlah piksel di atas baris"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
-msgstr "Piksel Di Bawah Garis"
+msgstr "Piksel di Bawah Baris"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
-msgstr "Jumlah piksel di bawah garis"
+msgstr "Jumlah piksel di bawah baris"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
-msgstr "Piksel Dalam Pelipatan"
+msgstr "Piksel Dalam Pembengkokan"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
-msgstr "Jumlah pixel dalam pelipatan"
+msgstr "Jumlah piksel dalam pembengkokan"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
@@ -407,4 +419,3 @@ msgstr "Indentasi"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "Jumlah piksel untuk indentasi"
-
