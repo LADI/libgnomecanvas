@@ -7,9 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas trunk\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-13 00:55+0900\n"
+"Project-Id-Version: libgnomecanvas master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2010-08-31 14:46+0000\n"
 "PO-Revision-Date: 2007-03-13 00:55+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -18,25 +19,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:218
 msgid "X"
-msgstr "Ｘ"
+msgstr "X"
 
 #: ../libgnomecanvas/gnome-canvas.c:1407 ../libgnomecanvas/gnome-canvas.c:1408
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:226
 msgid "Y"
-msgstr "Ｙ"
+msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2045
+#: ../libgnomecanvas/gnome-canvas.c:2051
 msgid "Antialiased"
 msgstr "アンチエイリアス"
 
-#: ../libgnomecanvas/gnome-canvas.c:2046
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "The antialiasing mode of the canvas."
 msgstr "キャンバスをアンチエイリアス・モードにするかどうかです"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:210
 msgid "Text"
 msgstr "文字列"
 
@@ -263,152 +264,152 @@ msgstr "スケール設定"
 msgid "Whether this tag affects font scaling"
 msgstr "このタグがフォントのスケーリングに影響するかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:212
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
 msgstr "表示する文字列"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:220
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X position"
 msgstr "位置 X"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:228
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y position"
 msgstr "位置 Y"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width"
 msgstr "幅"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:236
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width for text box"
 msgstr "文字列を論理的に囲む矩形の幅"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:242
 msgid "Height"
 msgstr "高さ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:244
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height for text box"
 msgstr "テクスト・ボックスの高さ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Editable"
 msgstr "編集可"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:252
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
 msgstr "このリッチ・テキスト形式のアイテムが編集可能かどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:259
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Visible"
 msgstr "表示"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:260
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Is this rich text item visible?"
 msgstr "このリッチ・テキスト形式のアイテムが表示可能かどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:267
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Cursor Visible"
 msgstr "カーソル表示"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:268
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Is the cursor visible in this rich text item?"
 msgstr "このリッチ・テキスト形式のアイテムでカーソルを表示するかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
 msgstr "カーソル点滅"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:276
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
 msgstr "このリッチ・テキスト形式のアイテム上のカーソルを点滅させるかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
 msgstr "フォントの高さ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:284
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
 msgstr ""
 "文字列がキャンバスに合わない場合に文字列を論理的に囲む矩形の高さを調整するか"
 "どうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
 msgstr "行ラップ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:292
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
 msgstr "複数行にまたがる文字列を行ラップするかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
 msgstr "行端揃え"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:301
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
 msgstr "行端を揃えるかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
 msgstr "方向"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:310
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:309
 msgid "Text direction"
 msgstr "文字列の向き"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
 msgstr "アンカー"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:319
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor point for text"
 msgstr "文字列に (リンクの) アンカーを挿入するかどうか"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
 msgstr "線と文字の上方向の間隔"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:328
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
 msgstr "線と文字の上方向の間隔 (ピクセル単位)"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
 msgstr "線と文字の下方向の間隔"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:337
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
 msgstr "線と文字の下方向の間隔"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:345
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
 msgstr "ラップするまでの長さ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:346
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
 msgstr "ラップする際の一行の長さ (ピクセル単位)"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
 msgstr "左マージン"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:355
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Number of pixels in the left margin"
 msgstr "左側のマージン (ピクセル単位)"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Right Margin"
 msgstr "右マージン"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:364
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Number of pixels in the right margin"
 msgstr "右側のマージン (ピクセル単位)"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Indentation"
 msgstr "字下げ"
 
-#: ../libgnomecanvas/gnome-canvas-rich-text.c:373
+#: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "字下げするの間隔 (ピクセル単位)"
