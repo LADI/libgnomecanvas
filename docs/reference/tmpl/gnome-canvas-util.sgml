@@ -35,6 +35,9 @@ to decrement it call gnome_canvas_points_unref().
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasPoints ##### -->
 <para>
 A structure to manage an array of points (X and Y coordinates). The memory

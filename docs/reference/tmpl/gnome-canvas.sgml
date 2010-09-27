@@ -101,6 +101,9 @@ scroll offset call gnome_canvas_get_scroll_offsets().
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvas ##### -->
 <para>
 This should not be accessed directly. Use the accessor functions as described
@@ -201,6 +204,7 @@ A buffer used for rendering for antialiased mode canvas widgets.
 
 </para>
 
+@void: 
 @Returns: 
 
 
@@ -209,6 +213,7 @@ A buffer used for rendering for antialiased mode canvas widgets.
 
 </para>
 
+@void: 
 @Returns: 
 
 

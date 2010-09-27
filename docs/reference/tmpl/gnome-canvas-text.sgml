@@ -21,6 +21,9 @@ adjustments to the font size.
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasText ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

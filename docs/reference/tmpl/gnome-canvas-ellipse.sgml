@@ -19,6 +19,9 @@ defined in the parent classes including #GnomeCanvasRE which is shared with
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasEllipse ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

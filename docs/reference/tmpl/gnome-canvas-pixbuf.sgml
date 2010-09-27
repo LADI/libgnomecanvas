@@ -17,6 +17,9 @@ A canvas item for drawing pixbuf images.
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasPixbuf ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

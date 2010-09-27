@@ -17,6 +17,9 @@ This forms a base class for rectangle and ellipse canvas items.
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasRE ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties

@@ -18,6 +18,9 @@ a #GnomeCanvasPathDef.
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GnomeCanvasClipgroup ##### -->
 <para>
 This structure should not be accessed directly. Use the object's properties
