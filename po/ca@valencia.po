@@ -1,21 +1,19 @@
-# translation of libgnomecanvas.master.po to catalan
 # Catalan translation of libgnomecanvas.
-# Copyright © 2002, 2004, 2005, 2009 Free Software Foundation, Inc.
-#
+# Copyright © 2002, 2004, 2005 Free Software Foundation, Inc.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2004, 2005.
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2009.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: libgnomecanvas.master\n"
+"Project-Id-Version: libgnomecanvas 2.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-07 18:52+0200\n"
-"PO-Revision-Date: 2009-08-04 09:40+0200\n"
-"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
-"Language-Team: catalan <tradgnome@softcatala.org>\n"
+"POT-Creation-Date: 2010-10-29 21:26+0100\n"
+"PO-Revision-Date: 2010-03-29 20:57+0200\n"
+"Last-Translator: Jordi Mallach <jordi@sindominio.net>\n"
+"Language-Team: Catalan <gnome@softcatala.net>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: ../libgnomecanvas/gnome-canvas.c:1400 ../libgnomecanvas/gnome-canvas.c:1401
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:218
@@ -27,11 +25,11 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2052
+#: ../libgnomecanvas/gnome-canvas.c:2051
 msgid "Antialiased"
 msgstr "Suavitzat"
 
-#: ../libgnomecanvas/gnome-canvas.c:2053
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "The antialiasing mode of the canvas."
 msgstr "El mode suavitzat del llenç."
 
@@ -193,7 +191,7 @@ msgstr "Joc de família de tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr "Si esta etiqueta afecta a la família de tipus de lletra"
+msgstr "Si esta etiqueta afecta la família de tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -201,7 +199,7 @@ msgstr "Joc d'estil de tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr "Si esta etiqueta afecta a l'estil del tipus de lletra"
+msgstr "Si esta etiqueta afecta l'estil del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -209,7 +207,7 @@ msgstr "Joc de variant de tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr "Si esta etiqueta afecta a la variant del tipus de lletra"
+msgstr "Si esta etiqueta afecta la variant del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -225,7 +223,7 @@ msgstr "Joc d'amplada del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr "Si esta etiqueta afecta a l'amplada del tipus de lletra"
+msgstr "Si esta etiqueta afecta l'amplada del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -233,7 +231,7 @@ msgstr "Joc de mida de tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr "Si esta etiqueta afecta a la mida del tipus de lletra"
+msgstr "Si esta etiqueta afecta la mida del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
@@ -241,7 +239,7 @@ msgstr "Joc d'alçada"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr "Si esta etiqueta afecta a l'alçada"
+msgstr "Si esta etiqueta afecta l'alçada"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
@@ -265,7 +263,7 @@ msgstr "Joc d'escala"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr "Si esta etiqueta afecta a l'escalat del tipus de lletra"
+msgstr "Si esta etiqueta afecta l'escalat del tipus de lletra"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
@@ -345,11 +343,11 @@ msgstr "Mode d'ajust per a text en múltiples línies"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
-msgstr "Justificat"
+msgstr "Justificació"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
-msgstr "Mode de justificat"
+msgstr "Mode de justificació"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
@@ -414,3 +412,6 @@ msgstr "Sagnat"
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
 msgstr "Nombre de píxels per al sagnat"
+
+#~ msgid "Font size in points"
+#~ msgstr "Mida del tipus de lletra en punts"
