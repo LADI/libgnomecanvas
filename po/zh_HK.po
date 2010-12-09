@@ -2,15 +2,17 @@
 # Copyright (C) 2001-04, 06, 07 Free Software Foundation, Inc.
 # Abel Cheung <abel@oaka.org>, 2001-04, 06.
 # Woodman Tuen <wmtuen@gmail.com>, 2007.
+# Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas 2.21.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 22:37+0800\n"
-"PO-Revision-Date: 2009-01-31 14:27+0800\n"
-"Last-Translator: Woodman Tuen <wmtuen@gmail.com>\n"
+"POT-Creation-Date: 2010-12-09 20:22+0800\n"
+"PO-Revision-Date: 2010-12-09 20:22+0800\n"
+"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,11 +27,11 @@ msgstr "X"
 msgid "Y"
 msgstr "Y"
 
-#: ../libgnomecanvas/gnome-canvas.c:2052
+#: ../libgnomecanvas/gnome-canvas.c:2051
 msgid "Antialiased"
 msgstr "平滑化"
 
-#: ../libgnomecanvas/gnome-canvas.c:2053
+#: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "The antialiasing mode of the canvas."
 msgstr "canvas 的平滑化模式。"
 
@@ -329,11 +331,11 @@ msgstr "如果文字無法完全在文字容器元件內顯示，應否增加文
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "換行模式"
+msgstr "換列模式"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
-msgstr "橫跨多行的文字的換行模式"
+msgstr "橫跨多行的文字的換列模式"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
@@ -361,27 +363,27 @@ msgstr "文字的錨點"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
-msgstr "每行頂部加上的像素"
+msgstr "每列頂部加上的像素"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
-msgstr "每行頂部加上的像素數目"
+msgstr "每列頂部加上的像素數目"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
-msgstr "每行底部加上的像素"
+msgstr "每列底部加上的像素"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
-msgstr "每行底部加上的像素數目"
+msgstr "每列底部加上的像素數目"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
-msgstr "換行時加上的像素"
+msgstr "換列時加上的像素"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
-msgstr "換行時加上的像素數目"
+msgstr "換列時加上的像素數目"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
