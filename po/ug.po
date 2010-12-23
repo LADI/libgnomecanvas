@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=libgnomecanvas&component=general\n"
-"POT-Creation-Date: 2010-11-13 23:06+0000\n"
+"POT-Creation-Date: 2010-11-20 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Gheyret Kenji<gheyret@yahoo.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -46,7 +46,7 @@ msgstr "سىزىدىغان تېكىست"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:215
 msgid "Markup"
-msgstr ""
+msgstr "بەلگە"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
@@ -239,7 +239,7 @@ msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr ""
+msgstr "ئۆچۈرۈش سىزىقىنى تەڭشىكى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
@@ -247,7 +247,7 @@ msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr ""
+msgstr "ئاستى سىزىق تەڭشىكى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
@@ -287,7 +287,7 @@ msgstr "ئېگىزلىك"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:243
 msgid "Height for text box"
-msgstr ""
+msgstr "تېكىست كۆزنەكچىسىنىڭ ئېگىزلىكى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:250
 msgid "Editable"
@@ -319,7 +319,7 @@ msgstr "نۇربەلگىسىنىڭ لىپىلدىشى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:275
 msgid "Does the cursor blink in this rich text item?"
-msgstr ""
+msgstr "بۇ rich تېكىست تۈرىدە نۇربەلگىسى لىپىلدىسۇنمۇ؟"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
@@ -331,7 +331,7 @@ msgstr ""
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
-msgstr "قۇر قاتلايدۇ"
+msgstr "قۇر قاتلاش ھالىتى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
