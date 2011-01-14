@@ -8,8 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgnomecanvas\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=libgnomecanvas&component=general\n"
-"POT-Creation-Date: 2010-11-20 11:00+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=libgnomecanvas&component=general\n"
+"POT-Creation-Date: 2010-12-23 18:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Gheyret Kenji<gheyret@yahoo.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -29,11 +30,11 @@ msgstr "Y"
 
 #: ../libgnomecanvas/gnome-canvas.c:2051
 msgid "Antialiased"
-msgstr ""
+msgstr "ھەرە چىشقا قارشى"
 
 #: ../libgnomecanvas/gnome-canvas.c:2052
 msgid "The antialiasing mode of the canvas."
-msgstr ""
+msgstr "رەسىم تاختىنىڭ ھەرە چىشقا قارشى ھالىتى."
 
 #: ../libgnomecanvas/gnome-canvas-text.c:206
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:210
@@ -50,7 +51,7 @@ msgstr "بەلگە"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:216
 msgid "Marked up text to render"
-msgstr ""
+msgstr "كۆرسىتىلىدىغان بەلگە تېكىستى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:241
 msgid "Font"
@@ -105,6 +106,8 @@ msgid ""
 "Font size (as a multiple of PANGO_SCALE, eg. 12*PANGO_SCALE for a 12pt font "
 "size)"
 msgstr ""
+"خەت چوڭلۇقى(PANGO_SCALE ھەسسىلىكى بويىچە، مەسىلەن: 12*PANGO_SCALE يەنى 12pt "
+"خەت چوڭلۇقىنى بىلدۈرىدۇ)\""
 
 #: ../libgnomecanvas/gnome-canvas-text.c:329
 msgid "Font points"
@@ -113,15 +116,19 @@ msgstr "خەت نۇسخىسى نۇقتىسى"
 #: ../libgnomecanvas/gnome-canvas-text.c:330
 msgid "Font size in points (eg. 12 for a 12pt font size)"
 msgstr ""
+"نۇقتا بويىچە ئىپادىلەنگەن خەت چوڭلۇقى(مەسىلەن: 12 خەت چوڭلۇقىنىڭ 12pt "
+"ئىكەنلىكىنى بىلدۈرىدۇ)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:340
 msgid "Rise"
-msgstr "كۈن چىقىش"
+msgstr "ئۆرلىتىش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:341
 msgid ""
 "Offset of text above the baseline (below the baseline if rise is negative)"
 msgstr ""
+"تېكىستنىڭ ئاساسىي سىزىقتىن ئېغىشى(مەنپىي قىممەت بولسا ئاساسىي سىزىقنىڭ "
+"ئاستىدا)"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:351
 msgid "Strikethrough"
@@ -129,7 +136,7 @@ msgstr "ئۆچۈرۈش سىزىقى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:352
 msgid "Whether to strike through the text"
-msgstr ""
+msgstr "تېكىستكە ئۆچۈرۈش سىزىقى سىزامدۇ يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:360
 msgid "Underline"
@@ -145,7 +152,7 @@ msgstr "نىسبىتى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:371
 msgid "Size of font, relative to default size"
-msgstr ""
+msgstr "خەت چوڭلۇقى، كۆڭۈلدىكى چوڭلۇققا نىسبەتەن"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:425
 #: ../libgnomecanvas/gnome-canvas-text.c:433
@@ -187,7 +194,7 @@ msgstr "خەت نۇسخىسى ئاتىنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:473
 msgid "Whether this tag affects the font family"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخا ئاتىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:476
 msgid "Font style set"
@@ -195,7 +202,7 @@ msgstr "خەت نۇسخىسى ئۇسلۇبى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:477
 msgid "Whether this tag affects the font style"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخا ئۇسلۇبىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:480
 msgid "Font variant set"
@@ -203,7 +210,7 @@ msgstr "خەت نۇسخىسى باشقا ئاتىنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:481
 msgid "Whether this tag affects the font variant"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىنىڭ باشقا ئاتىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:484
 msgid "Font weight set"
@@ -211,7 +218,7 @@ msgstr "خەت نۇسخىسى توملۇقىنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:485
 msgid "Whether this tag affects the font weight"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىسىنىڭ توملۇقىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:488
 msgid "Font stretch set"
@@ -219,7 +226,7 @@ msgstr "خەت نۇسخىسىنى سوزۇشنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:489
 msgid "Whether this tag affects the font stretch"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىسىنى سوزۇشقا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:492
 msgid "Font size set"
@@ -227,51 +234,51 @@ msgstr "خەت نۇسخىسى چوڭلۇقىنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:493
 msgid "Whether this tag affects the font size"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىسىنىڭ چوڭلۇقىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:496
 msgid "Rise set"
-msgstr ""
+msgstr "ئۆرلىتىش تەڭشىكى"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:497
 msgid "Whether this tag affects the rise"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىسىنى ئۆرلىتىشكە تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:500
 msgid "Strikethrough set"
-msgstr "ئۆچۈرۈش سىزىقىنى تەڭشىكى"
+msgstr "ئۆچۈرۈش سىزىقىنى بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:501
 msgid "Whether this tag affects strikethrough"
-msgstr ""
+msgstr "بۇ بەلگە ئۆچۈرۈش سىزىقىغا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:504
 msgid "Underline set"
-msgstr "ئاستى سىزىق تەڭشىكى"
+msgstr "ئاستى سىزىق بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:505
 msgid "Whether this tag affects underlining"
-msgstr ""
+msgstr "بۇ بەلگە ئاستى سىزىققا تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:508
 msgid "Scale set"
-msgstr ""
+msgstr "نىسبەت بەلگىلەش"
 
 #: ../libgnomecanvas/gnome-canvas-text.c:509
 msgid "Whether this tag affects font scaling"
-msgstr ""
+msgstr "بۇ بەلگە خەت نۇسخىسى نىسپىتىگە تەسىر كۆرسىتەمدۇ-يوق"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:211
 msgid "Text to display"
-msgstr ""
+msgstr "كۆرسىتىدىغان تېكىست"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:219
 msgid "X position"
-msgstr ""
+msgstr "X ئورنى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:227
 msgid "Y position"
-msgstr ""
+msgstr "Y ئورنى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:234
 msgid "Width"
@@ -279,7 +286,7 @@ msgstr "كەڭلىك"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:235
 msgid "Width for text box"
-msgstr ""
+msgstr "تېكىست كۆزنەكچىسىنىڭ كەڭلىكى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:242
 msgid "Height"
@@ -295,7 +302,7 @@ msgstr "تەھرىرچان"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:251
 msgid "Is this rich text item editable?"
-msgstr ""
+msgstr "مول تېكىست تۈرىنى تەھرىرلىگىلى بولامدۇ؟"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:258
 msgid "Visible"
@@ -303,7 +310,7 @@ msgstr "كۆرۈنۈشچان"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:259
 msgid "Is this rich text item visible?"
-msgstr ""
+msgstr "مول تېكىست تۈرى كۆرۈنەمدۇ؟"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:266
 msgid "Cursor Visible"
@@ -311,7 +318,7 @@ msgstr "نۇربەلگىسىنى كۆرسىتىش"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:267
 msgid "Is the cursor visible in this rich text item?"
-msgstr ""
+msgstr "نۇربەلگە مول تېكىست تۈرىدە كۆرۈنەمدۇ؟"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:274
 msgid "Cursor Blink"
@@ -323,11 +330,11 @@ msgstr "بۇ rich تېكىست تۈرىدە نۇربەلگىسى لىپىلدى�
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:282
 msgid "Grow Height"
-msgstr ""
+msgstr "ئېگىزلىكىنى ئېگىزلىتىش"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:283
 msgid "Should the text box height grow if the text does not fit?"
-msgstr ""
+msgstr "ئەگەر تېكىست پاتمىسا تېكىست كۆزنەكچىسىنى ئېگىزلىتەمدۇ؟"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:290
 msgid "Wrap Mode"
@@ -335,15 +342,15 @@ msgstr "قۇر قاتلاش ھالىتى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:291
 msgid "Wrap mode for multiline text"
-msgstr ""
+msgstr "كۆپ قۇرلۇق تېكىستنىڭ قۇر قاتلاش ھالىتى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:299
 msgid "Justification"
-msgstr "تەڭشە"
+msgstr "تەڭشەش"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:300
 msgid "Justification mode"
-msgstr ""
+msgstr "تەڭشەش ھالىتى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:308
 msgid "Direction"
@@ -355,35 +362,35 @@ msgstr "تېكىست يۆنىلىشى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:317
 msgid "Anchor"
-msgstr "قۇلۇپلا"
+msgstr "لەڭگەر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:318
 msgid "Anchor point for text"
-msgstr ""
+msgstr "تېكىست لەڭگەر"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:326
 msgid "Pixels Above Lines"
-msgstr ""
+msgstr "قۇر ئۈستىدىكى پىكسېل"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:327
 msgid "Number of pixels to put above lines"
-msgstr ""
+msgstr "قۇر ئۈستىگە قوشىدىغان پىكسېل سانى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:335
 msgid "Pixels Below Lines"
-msgstr ""
+msgstr "قۇر ئاستىدىكى پىكسېل"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:336
 msgid "Number of pixels to put below lines"
-msgstr ""
+msgstr "قۇر ئاستىغا قوشىدىغان پىكسېل سانى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:344
 msgid "Pixels Inside Wrap"
-msgstr ""
+msgstr "قۇر ئالماشقاندىكى پىكسېل"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:345
 msgid "Number of pixels to put inside the wrap"
-msgstr ""
+msgstr "قۇر ئالماشقاندا قوشىدىغان پىكسېل سانى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:353
 msgid "Left Margin"
@@ -391,7 +398,7 @@ msgstr "سولدىكى بوشلۇق"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:354
 msgid "Number of pixels in the left margin"
-msgstr ""
+msgstr "سول تەرەپتىكى بوشلۇقنىڭ پىكسېل سانى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:362
 msgid "Right Margin"
@@ -399,7 +406,7 @@ msgstr "ئوڭ بوشلۇق"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:363
 msgid "Number of pixels in the right margin"
-msgstr ""
+msgstr "ئوڭ تەرەپتىكى بوشلۇقنىڭ پىكسېل سانى"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:371
 msgid "Indentation"
@@ -407,4 +414,4 @@ msgstr "تارايت"
 
 #: ../libgnomecanvas/gnome-canvas-rich-text.c:372
 msgid "Number of pixels for indentation"
-msgstr ""
+msgstr "تارايتىشنىڭ پىكسېل سانى"
