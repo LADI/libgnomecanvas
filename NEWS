@@ -1,3 +1,18 @@
+libgnomecanvas 2.30.3
+---------------------
+
+What's new since 2.30.2
+
+Bug fixes
+	* Fix delivering of scroll events again (Paul Davis)
+
+Translations
+	* Carles Ferrando (ca@valencia) 
+	* Gheyret T.Kenji (ug)
+	* Sahran (ug)
+	* Wei-Lun Chao (zh_TW, zh_CN)
+	*
+	*
 libgnomecanvas 2.30.2
 ---------------------
 
