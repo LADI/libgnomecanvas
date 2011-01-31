@@ -1910,6 +1910,8 @@ static gint gnome_canvas_expose              (GtkWidget        *widget,
 					      GdkEventExpose   *event);
 static gboolean gnome_canvas_key             (GtkWidget        *widget,
 					      GdkEventKey      *event);
+static gboolean gnome_canvas_scroll          (GtkWidget        *widget,
+					      GdkEventScroll   *event);
 static gint gnome_canvas_crossing            (GtkWidget        *widget,
 					      GdkEventCrossing *event);
 static gint gnome_canvas_focus_in            (GtkWidget        *widget,
@@ -2040,6 +2042,7 @@ gnome_canvas_class_init (GnomeCanvasClass *klass)
 	widget_class->leave_notify_event = gnome_canvas_crossing;
 	widget_class->focus_in_event = gnome_canvas_focus_in;
 	widget_class->focus_out_event = gnome_canvas_focus_out;
+	widget_class->scroll_event = gnome_canvas_scroll;
 
 	klass->draw_background = gnome_canvas_draw_background;
 	klass->render_background = NULL;
@@ -2827,6 +2830,24 @@ gnome_canvas_motion (GtkWidget *widget, GdkEventMotion *event)
 	return emit_event (canvas, (GdkEvent *) event);
 }
 
+static gboolean
+gnome_canvas_scroll (GtkWidget *widget, GdkEventScroll *event)
+{
+	GnomeCanvas *canvas;
+
+	g_return_val_if_fail (GNOME_IS_CANVAS (widget), FALSE);
+	g_return_val_if_fail (event != NULL, FALSE);
+
+	canvas = GNOME_CANVAS (widget);
+
+	if (event->window != canvas->layout.bin_window)
+		return FALSE;
+
+	canvas->state = event->state;
+	pick_current_item (canvas, (GdkEvent *) event);
+	return emit_event (canvas, (GdkEvent *) event);
+}
+
 /* Key event handler for the canvas */
 static gboolean
 gnome_canvas_key (GtkWidget *widget, GdkEventKey *event)
@@ -3072,8 +3093,6 @@ paint (GnomeCanvas *canvas)
 	gint n_rects, i;
 	ArtIRect visible_rect;
 	GdkRegion *region;
-	GdkEventExpose expose_event;
-	GdkRectangle region_area;
 
 	/* Extract big rectangles from the microtile array */
 
