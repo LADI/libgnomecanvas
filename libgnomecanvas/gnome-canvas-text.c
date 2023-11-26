@@ -32,7 +32,7 @@
  *
  *
  * Author: Federico Mena <federico@nuclecu.unam.mx>
- * Port to Pango co-done by Gergı …rdi <cactus@cactus.rulez.org>
+ * Port to Pango co-done by Gerg≈ë √ârdi <cactus@cactus.rulez.org>
  */
 
 #include <config.h>
