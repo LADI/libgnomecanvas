@@ -1342,7 +1342,9 @@ gcbp_destroy_gdk (GnomeCanvasShape * shape)
 {
 	GnomeCanvasShapePrivGdk * gdk;
 
-	g_assert (!((GnomeCanvasItem *)shape)->canvas->aa);
+	if (((GnomeCanvasItem *)shape)->canvas != NULL) {
+		g_assert (!((GnomeCanvasItem *)shape)->canvas->aa);
+	}
 
 	gdk = shape->priv->gdk;
 
