@@ -1,3 +1,5 @@
+This is a maintenance fork of libgnomecanvas
+
 The GNOME canvas is an engine for structured graphics that
 offers a rich imaging model, high performance rendering, and a
 powerful, high-level API.  It offers a choice of two rendering
