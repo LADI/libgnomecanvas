@@ -12,6 +12,7 @@ INCLUDES = \
 	-DG_LOG_DOMAIN=\"GnomeCanvas\"
 
 LDADD =	\
+	$(LIBGNOMECANVAS_LIBS)				\
 	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la \
 	$(INTLLIBS)
 
